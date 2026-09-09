@@ -14,7 +14,11 @@ npm run simulate       # 10k-round simulation of the game core
 npm test               # unit tests
 npm run typecheck
 npm run lint
-npm run build          # production build
+npm run photos         # ESPN/Commons → public/faces/*.jpg (add --sheet for contact sheets)
+npm run icons          # placeholder app icons → public/icons
+npm run build          # production build (PWA service worker + manifest included)
+npm run size           # gzip budget check on dist/
+npm run e2e            # Playwright smoke tests against the production build
 ```
 
 Copy `.env.example` to `.env` if you need to override defaults; nothing is required for local dev.

@@ -3,7 +3,7 @@ import { PlayScreen } from './components/PlayScreen'
 import { StartScreen } from './components/StartScreen'
 import type { Bundle } from './game/bundle'
 import { GAME_CONFIG, type GameConfig } from './game/config'
-import { defaultRng, type Rng } from './game/rng'
+import { defaultRng, mulberry32, type Rng } from './game/rng'
 import { useGame, type GameDeps } from './state/useGame'
 import { wheelValue } from './components/Wheels'
 import type { GameState } from './state/machine'
@@ -22,10 +22,17 @@ interface Props {
   deps?: GameDeps
 }
 
+/** `?seed=123` makes a run reproducible (debugging, e2e). Production play stays random. */
+function rngFromLocation(): Rng | null {
+  if (typeof location === 'undefined') return null
+  const seed = new URLSearchParams(location.search).get('seed')
+  return seed && /^\d+$/.test(seed) ? mulberry32(Number(seed)) : null
+}
+
 export default function App({
   bundle: given,
   config = GAME_CONFIG,
-  rng = defaultRng,
+  rng = rngFromLocation() ?? defaultRng,
   deps = {},
 }: Props) {
   const [bundle, setBundle] = useState<Bundle | null>(given ?? null)

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0b1020"/>
+  <rect x="7.68" y="44.8" width="48.64" height="2.88" rx="1.28" fill="#34d399"/>
+  <text x="50%" y="38.4" text-anchor="middle" font-family="Arial Narrow, Impact, Helvetica, Arial, sans-serif" font-weight="900" font-size="32" fill="#ffffff" letter-spacing="-0.64">NF</text>
+</svg>

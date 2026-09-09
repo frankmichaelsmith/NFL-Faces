@@ -31,6 +31,12 @@ export function StartScreen({ bestStreak, bestStreakRoll, onStart, muted, onTogg
       >
         Start
       </button>
+      <a
+        href="/attribution.html"
+        className="absolute bottom-4 text-xs text-white/35 underline-offset-2 hover:underline"
+      >
+        Photo credits
+      </a>
     </main>
   )
 }

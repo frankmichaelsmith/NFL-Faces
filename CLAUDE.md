@@ -70,6 +70,9 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - **Timer:** `performance.now()`, starts on the frame the photos are painted; a tap after 0 is a timeout.
 - **Broken image:** faces are chosen and preloaded at spin start; a failed load swaps in another face from the same pool. Only reroll the combo if the failure lands before wheel 1 stops.
 - Timestamps UTC ISO 8601. Seasons are integers (the year the regular season starts).
+- **Reproducible runs:** `?seed=123` in the URL seeds the game's rng (debugging, e2e). Production play stays random.
+- **Live-season refresh:** `.github/workflows/refresh-live-season.yml` re-pulls ESPN every Tuesday, processes new faces, rebuilds, tests, and commits to `main`; Vercel deploys. It needs no secrets.
+- **Gates before finishing any task:** `npm run typecheck && npm run lint && npm test && npm run simulate`; after UI work also `npm run build && npm run size && npm run e2e`.
 
 ## Phase status
 
@@ -81,6 +84,6 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - [x] M4 — Wheels and polish (signed off 2026-09-09)
 - [x] M5 — Photos (signed off 2026-09-09; 37 QBs from 2000–09 still need manual photos → M9)
 - [x] M6 — Persistence and share (signed off 2026-09-09)
-- [x] M7 — Analytics, audio, haptics (built 2026-09-09; awaiting Frank checkpoint)
-- [ ] M8 — Hardening
+- [x] M7 — Analytics, audio, haptics (signed off 2026-09-09)
+- [x] M8 — Hardening (built 2026-09-09; awaiting Frank checkpoint)
 - [ ] M9 — Launch content

@@ -10,6 +10,7 @@ import path from 'node:path'
 import { GAME_CONFIG } from '../src/game/config'
 import { parseContent } from './lib/content'
 import { buildBundle, renderReport } from './lib/build'
+import { renderAttribution } from './lib/attribution'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 
@@ -38,6 +39,10 @@ async function main() {
   await mkdir(path.join(ROOT, 'public/data'), { recursive: true })
   await writeFile(path.join(ROOT, 'public/data/bundle.json'), JSON.stringify(bundle))
   await writeFile(path.join(ROOT, 'docs/build-report.md'), renderReport(bundle, report))
+  await writeFile(
+    path.join(ROOT, 'public/attribution.html'),
+    renderAttribution(content.people.filter((p) => p.espn_id in bundle.people)),
+  )
   console.log(
     `bundle ${bundle.buildHash}: ${bundle.combos.length} combos, ${report.answers} answers, ${report.people} people, ` +
       `${report.missingPhotos.length} answers without a photo, ${report.droppedCombos.length} dropped, ${report.ties.length} ties` +

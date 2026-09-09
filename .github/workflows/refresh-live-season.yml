@@ -1,0 +1,40 @@
+# Weekly refresh of the live season (CLAUDE.md: "whoever is starting right now, refreshed weekly").
+# Re-pulls ESPN, rebuilds the bundle, processes any new starters' faces, and commits to main.
+# Vercel deploys main on push. No secrets needed: every source is public.
+name: Refresh live season
+
+on:
+  schedule:
+    # Tuesdays 14:00 UTC (10:00 ET), after Monday night football and depth-chart updates.
+    - cron: '0 14 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run pull:espn -- --refresh
+      - run: npm run photos
+      - run: npm run build:content
+      - run: npm test
+      - run: npm run simulate
+      - name: Commit if anything changed
+        run: |
+          git config user.name "nfl-faces-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add content public/data public/faces docs/build-report.md
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "Weekly live-season refresh ($(date -u +%Y-%m-%d))"
+            git push
+          fi

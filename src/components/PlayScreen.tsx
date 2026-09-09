@@ -6,6 +6,7 @@ import { FaceCards } from './FaceCards'
 import { TimerBar } from './TimerBar'
 import { Wheels } from './Wheels'
 import { MuteButton } from './MuteButton'
+import { Announcer } from './Announcer'
 import { wheelValue } from './Wheels'
 
 interface Props {
@@ -89,6 +90,17 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
         revealAt={state.revealAt}
         decisionMs={config.decisionMs}
         frozen={state.phase !== 'awaiting'}
+      />
+      <Announcer
+        revealAt={state.phase === 'awaiting' ? state.revealAt : null}
+        decisionMs={config.decisionMs}
+        message={
+          state.phase === 'correct'
+            ? `Correct. Streak ${state.streak}.`
+            : over
+              ? `${state.lastOutcome === 'timeout' ? 'Time ran out' : 'Wrong'}. The answer was ${round ? bundle.people[round.combo.answer]?.name : ''}. Streak ${state.streak}.`
+              : null
+        }
       />
 
       {round && state.phase !== 'spinning' ? (

@@ -16,6 +16,13 @@ raw-photos/*
 # ESPN response cache for the pull script
 .cache/
 
+# playwright
+test-results/
+playwright-report/
+
+# generated PWA artifacts
+dev-dist/
+
 # misc
 .DS_Store
 *.log

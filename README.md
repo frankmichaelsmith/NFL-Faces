@@ -2,7 +2,7 @@
 
 Two wheels land on a season and a team. Tap the quarterback who led that team in passing yards that season. Five seconds. Streak.
 
-Static site, no backend. See `CLAUDE.md` for the working rules and locked decisions, `docs/spec.md` for the original spec.
+Live at https://nfl-faces.vercel.app. Static site, no backend. See `CLAUDE.md` for the working rules and locked decisions, `docs/spec.md` for the original spec.
 
 ## Commands
 

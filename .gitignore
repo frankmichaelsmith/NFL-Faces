@@ -1,0 +1,18 @@
+# secrets — never commit
+.env
+.env.local
+.env*.local
+
+# dependencies / build
+node_modules/
+dist/
+coverage/
+.vercel
+
+# downloaded originals (large); manifest lives in content/people.csv
+raw-photos/*
+!raw-photos/.gitkeep
+
+# misc
+.DS_Store
+*.log

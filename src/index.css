@@ -1,0 +1,18 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #0b1020; /* near-black navy ground (spec §28) */
+  --color-card: #182036;
+  --color-accent: #34d399; /* streak counter + correct state */
+  --color-warn: #f59e0b; /* timer final second */
+  --color-miss: #ef4444;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  @apply bg-ink text-white antialiased;
+}

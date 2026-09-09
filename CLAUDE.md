@@ -73,7 +73,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 ## Phase status
 
 - [x] Design review and decisions (2026-09-09)
-- [ ] M0 — Scaffold ← in progress
+- [x] M0 — Scaffold (built 2026-09-09; awaiting Frank checkpoint + GitHub push)
 - [ ] M1 — Content pipeline
 - [ ] M2 — Game core
 - [ ] M3 — Playable loop

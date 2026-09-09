@@ -67,11 +67,11 @@ describe('Pro Bowl roll selection', () => {
       byCat.set(c.category, (byCat.get(c.category) ?? 0) + 1)
     }
     expect(counts.size).toBe(5)
-    // default weights: alma 1, draft 1, number 1, position 0.15 → position ≈ 4.8%
-    expect(byCat.get('position')! / N).toBeGreaterThan(0.03)
-    expect(byCat.get('position')! / N).toBeLessThan(0.07)
+    // default weights: alma 1, draft 1, number 1, position 0.3 → position ≈ 9.1%, others ≈ 30.3%
+    expect(byCat.get('position')! / N).toBeGreaterThan(0.075)
+    expect(byCat.get('position')! / N).toBeLessThan(0.105)
     for (const cat of ['alma', 'draft', 'number'])
-      expect(byCat.get(cat)! / N).toBeCloseTo(1 / 3.15, 1)
+      expect(byCat.get(cat)! / N).toBeCloseTo(1 / 3.3, 1)
     // draft has two combos; each gets half of the category's share
     expect(counts.get('brady:draft')! / counts.get('rodgers:draft')!).toBeCloseTo(1, 0)
   })

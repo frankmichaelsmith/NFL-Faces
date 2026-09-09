@@ -59,8 +59,8 @@ export const PROBOWL_CONFIG: GameConfig = {
     { kind: 'category', label: 'Category' },
   ],
   roles: ['QB', 'RB', 'WR', 'TE'],
-  // Position is the easy one; Frank (2026-09-09) wants it to land far less often (~5% of rolls).
-  categoryWeights: { alma: 1, draft: 1, number: 1, position: 0.15 },
+  // Position is the easy one; Frank (2026-09-09) wants it on ~9% of rolls, the rest even (30.3% each).
+  categoryWeights: { alma: 1, draft: 1, number: 1, position: 0.3 },
 }
 
 export function configFor(mode: Mode): GameConfig {

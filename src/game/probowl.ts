@@ -33,7 +33,7 @@ export const CATEGORY_LABELS: Record<ProBowlCategory, string> = {
 
 export type CategoryWeights = Readonly<Record<string, number>>
 
-/** Static wheel weights (never ramps): position lands on roughly one roll in twenty. */
+/** Static wheel weights (never ramps): position lands on roughly one roll in eleven. */
 export const CATEGORY_WEIGHTS: CategoryWeights = PROBOWL_CONFIG.categoryWeights ?? {}
 
 /** Combos still available for a streak that has already rolled `used` players. */

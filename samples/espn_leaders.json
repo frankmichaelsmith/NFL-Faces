@@ -1,0 +1,2169 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/leaders?lang=en&region=us",
+  "id": "0",
+  "name": "TOTAL",
+  "abbreviation": "Any",
+  "type": "total",
+  "categories": [
+    {
+      "name": "passingLeader",
+      "displayName": "Passing Leader",
+      "shortDisplayName": "PASS",
+      "abbreviation": "PYDS",
+      "leaders": [
+        {
+          "displayValue": "240/389, 3200 YDS, 17 TD, 5 INT",
+          "value": 3200,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5536?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5536/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "29/49, 352 YDS, 3 TD, 3 INT",
+          "value": 352,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "22/32, 254 YDS, 1 INT",
+          "value": 254,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11390?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11390/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2/2, 42 YDS, 2 TD",
+          "value": 42,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "5/7, 42 YDS",
+          "value": 42,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4465?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4465/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rushingLeader",
+      "displayName": "Rushing Leader",
+      "shortDisplayName": "RUSH",
+      "abbreviation": "RYDS",
+      "leaders": [
+        {
+          "displayValue": "324 CAR, 1273 YDS, 13 TD",
+          "value": 1273,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11257?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11257/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "52 CAR, 247 YDS",
+          "value": 247,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12898?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12898/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "34 CAR, 176 YDS, 2 TD",
+          "value": 176,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5536?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5536/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "33 CAR, 99 YDS",
+          "value": 99,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5644?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5644/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "5 CAR, 39 YDS",
+          "value": 39,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12601?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12601/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "5 CAR, 32 YDS",
+          "value": 32,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11390?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11390/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "7 CAR, 30 YDS",
+          "value": 30,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "9 CAR, 28 YDS",
+          "value": 28,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13206?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13206/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1 CAR, 2 YDS",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1 CAR, -2 YDS",
+          "value": -2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1494?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1494/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "receivingLeader",
+      "displayName": "Receiving Leader",
+      "shortDisplayName": "REC",
+      "abbreviation": "RECYDS",
+      "leaders": [
+        {
+          "displayValue": "60 REC, 1257 YDS, 10 TD",
+          "value": 1257,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12601?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12601/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "59 REC, 755 YDS, 5 TD",
+          "value": 755,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1494?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1494/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "42 REC, 512 YDS, 2 TD",
+          "value": 512,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/8444?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/8444/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "28 REC, 376 YDS, 2 TD",
+          "value": 376,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13295?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13295/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "22 REC, 253 YDS",
+          "value": 253,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "26 REC, 205 YDS",
+          "value": 205,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5644?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5644/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "23 REC, 167 YDS",
+          "value": 167,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11257?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11257/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "16 REC, 167 YDS",
+          "value": 167,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13934?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13934/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "9 REC, 80 YDS, 1 TD",
+          "value": 80,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10521?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10521/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "9 REC, 72 YDS, 2 TD",
+          "value": 72,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12898?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12898/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "4 REC, 46 YDS",
+          "value": 46,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12506?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12506/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "passingYards",
+      "displayName": "Passing Yards",
+      "shortDisplayName": "PYDS",
+      "abbreviation": "YDS",
+      "leaders": [
+        {
+          "displayValue": "3,200",
+          "value": 3200,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5536?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5536/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "352",
+          "value": 352,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "254",
+          "value": 254,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11390?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11390/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "42",
+          "value": 42,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "42",
+          "value": 42,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4465?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4465/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rushingYards",
+      "displayName": "Rushing Yards",
+      "shortDisplayName": "RYDS",
+      "abbreviation": "YDS",
+      "leaders": [
+        {
+          "displayValue": "1,273",
+          "value": 1273,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11257?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11257/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "247",
+          "value": 247,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12898?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12898/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "176",
+          "value": 176,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5536?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5536/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "99",
+          "value": 99,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5644?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5644/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "39",
+          "value": 39,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12601?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12601/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "32",
+          "value": 32,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11390?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11390/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "30",
+          "value": 30,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "28",
+          "value": 28,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13206?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13206/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "-2",
+          "value": -2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1494?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1494/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "receivingYards",
+      "displayName": "Receiving Yards",
+      "shortDisplayName": "RECYDS",
+      "abbreviation": "YDS",
+      "leaders": [
+        {
+          "displayValue": "1,257",
+          "value": 1257,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12601?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12601/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "755",
+          "value": 755,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1494?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1494/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "512",
+          "value": 512,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/8444?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/8444/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "376",
+          "value": 376,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13295?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13295/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "253",
+          "value": 253,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "205",
+          "value": 205,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5644?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5644/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "167",
+          "value": 167,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11257?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11257/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "167",
+          "value": 167,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13934?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13934/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "80",
+          "value": 80,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10521?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10521/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "72",
+          "value": 72,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12898?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12898/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "46",
+          "value": 46,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12506?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12506/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "totalTackles",
+      "displayName": "Tackles",
+      "shortDisplayName": "TACK",
+      "abbreviation": "TOT",
+      "leaders": [
+        {
+          "displayValue": "135",
+          "value": 135,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10459?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10459/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "109",
+          "value": 109,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1219?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1219/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "100",
+          "value": 100,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4433?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4433/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "90",
+          "value": 90,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4301?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4301/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "81",
+          "value": 81,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/8476?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/8476/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "66",
+          "value": 66,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4583?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4583/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "63",
+          "value": 63,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4474?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4474/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "50",
+          "value": 50,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "48",
+          "value": 48,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10613?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10613/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "33",
+          "value": 33,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3743?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3743/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "29",
+          "value": 29,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11428?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11428/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "24",
+          "value": 24,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10020?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10020/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "23",
+          "value": 23,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5618?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5618/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "21",
+          "value": 21,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3656?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3656/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "20",
+          "value": 20,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/2567?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/2567/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "20",
+          "value": 20,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12442?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12442/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "17",
+          "value": 17,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13306?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13306/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "16",
+          "value": 16,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4572?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4572/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "15",
+          "value": 15,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1862?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1862/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "14",
+          "value": 14,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13466?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13466/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "12",
+          "value": 12,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/2899?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/2899/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "12",
+          "value": 12,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5636?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5636/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "11",
+          "value": 11,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12683?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12683/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "10",
+          "value": 10,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13295?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13295/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "9",
+          "value": 9,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4655?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4655/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "sacks",
+      "displayName": "Sacks",
+      "shortDisplayName": "SACK",
+      "abbreviation": "SACK",
+      "leaders": [
+        {
+          "displayValue": "10.5",
+          "value": 10.5,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4433?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4433/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "10",
+          "value": 10,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "6",
+          "value": 6,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1219?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1219/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "3",
+          "value": 3,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3743?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3743/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "3",
+          "value": 3,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10459?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10459/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "3",
+          "value": 3,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12442?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12442/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/8476?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/8476/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10613?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10613/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13306?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13306/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1.5",
+          "value": 1.5,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4572?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4572/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/2567?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/2567/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3656?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3656/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4474?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4474/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4583?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4583/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10020?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10020/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "interceptions",
+      "displayName": "Interceptions",
+      "shortDisplayName": "INT",
+      "abbreviation": "INT",
+      "leaders": [
+        {
+          "displayValue": "7",
+          "value": 7,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4474?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4474/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4301?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4301/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4433?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4433/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4583?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4583/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/8476?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/8476/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10459?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10459/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3743?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3743/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10020?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10020/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "passingTouchdowns",
+      "displayName": "Passing Touchdowns",
+      "shortDisplayName": "TD",
+      "abbreviation": "TD",
+      "leaders": [
+        {
+          "displayValue": "17",
+          "value": 17,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5536?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5536/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "3",
+          "value": 3,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "quarterbackRating",
+      "displayName": "Quarterback Rating",
+      "shortDisplayName": "RAT",
+      "abbreviation": "RAT",
+      "leaders": [
+        {
+          "displayValue": "97.0",
+          "value": 96.98500061035156,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5536?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5536/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "79.4",
+          "value": 79.42916870117188,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11390?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11390/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "76.2",
+          "value": 76.23500061035156,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1490?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1490/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "158.3",
+          "value": 158.33334350585938,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "86.6",
+          "value": 86.60750579833984,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/4465?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/4465/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rushingTouchdowns",
+      "displayName": "Rushing Touchdowns",
+      "shortDisplayName": "TD",
+      "abbreviation": "TD",
+      "leaders": [
+        {
+          "displayValue": "13",
+          "value": 13,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11257?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11257/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5536?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5536/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "receptions",
+      "displayName": "Receptions",
+      "shortDisplayName": "REC",
+      "abbreviation": "REC",
+      "leaders": [
+        {
+          "displayValue": "60",
+          "value": 60,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12601?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12601/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "59",
+          "value": 59,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1494?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1494/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "42",
+          "value": 42,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/8444?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/8444/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "28",
+          "value": 28,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13295?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13295/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "26",
+          "value": 26,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/5644?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/5644/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "23",
+          "value": 23,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/11257?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/11257/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "22",
+          "value": 22,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/3590?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/3590/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "16",
+          "value": 16,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13934?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13934/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "9",
+          "value": 9,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10521?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10521/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "9",
+          "value": 9,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12898?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12898/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "4",
+          "value": 4,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12506?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12506/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    },
+    {
+      "name": "receivingTouchdowns",
+      "displayName": "Receiving Touchdowns",
+      "shortDisplayName": "TD",
+      "abbreviation": "TD",
+      "leaders": [
+        {
+          "displayValue": "10",
+          "value": 10,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12601?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12601/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "5",
+          "value": 5,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/1494?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/1494/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/8444?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/8444/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/12898?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/12898/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "2",
+          "value": 2,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/13295?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/13295/statistics/0?lang=en&region=us"
+          }
+        },
+        {
+          "displayValue": "1",
+          "value": 1,
+          "rel": [
+            "athlete"
+          ],
+          "athlete": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/athletes/10521?lang=en&region=us"
+          },
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/teams/23?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/teams/23/athletes/10521/statistics/0?lang=en&region=us"
+          }
+        }
+      ]
+    }
+  ]
+}

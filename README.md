@@ -8,7 +8,8 @@ Static site, no backend. See `CLAUDE.md` for the working rules and locked decisi
 
 ```
 npm run dev            # local dev server
-npm run build:content  # CSV → public/data/*.json + build report
+npm run pull:espn      # ESPN → content/*.csv (add --refresh to bypass the cache, --samples to refresh /samples)
+npm run build:content  # CSV → public/data/bundle.json + docs/build-report.md
 npm run simulate       # 10k-round simulation of the game core
 npm test               # unit tests
 npm run typecheck

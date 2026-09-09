@@ -1,0 +1,248 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5536?lang=en&region=us",
+  "id": "5536",
+  "uid": "s:20~l:28~a:5536",
+  "guid": "b941dabb-40e2-1086-e171-df0628618bf3",
+  "type": "football",
+  "alternateIds": {
+    "sdr": "1944875"
+  },
+  "firstName": "Ben",
+  "lastName": "Roethlisberger",
+  "fullName": "Ben Roethlisberger",
+  "displayName": "Ben Roethlisberger",
+  "shortName": "B. Roethlisberger",
+  "weight": 240,
+  "displayWeight": "240 lbs",
+  "height": 77,
+  "displayHeight": "6' 5\"",
+  "age": 44,
+  "dateOfBirth": "1982-03-02T08:00Z",
+  "debutYear": 2004,
+  "links": [
+    {
+      "language": "en-US",
+      "rel": [
+        "playercard",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/nfl/player/_/id/5536/ben-roethlisberger",
+      "text": "Player Card",
+      "shortText": "Player Card",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "stats",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/nfl/player/stats/_/id/5536/ben-roethlisberger",
+      "text": "Stats",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "stats",
+        "sportscenter",
+        "app",
+        "athlete"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:5536&section=stats",
+      "text": "Stats",
+      "shortText": "Stats",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "splits",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/nfl/player/splits/_/id/5536/ben-roethlisberger",
+      "text": "Splits",
+      "shortText": "Splits",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "gamelog",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/nfl/player/gamelog/_/id/5536/ben-roethlisberger",
+      "text": "Game Log",
+      "shortText": "Game Log",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "gamelog",
+        "sportscenter",
+        "app",
+        "athlete"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:5536&section=gamelog",
+      "text": "Game Log",
+      "shortText": "Game Log",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "news",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/nfl/player/news/_/id/5536/ben-roethlisberger",
+      "text": "News",
+      "shortText": "News",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "news",
+        "sportscenter",
+        "app",
+        "athlete"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:5536&section=news",
+      "text": "News",
+      "shortText": "News",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "bio",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/nfl/player/bio/_/id/5536/ben-roethlisberger",
+      "text": "Bio",
+      "shortText": "Bio",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "bio",
+        "sportscenter",
+        "app",
+        "athlete"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:5536&section=bio",
+      "text": "Bio",
+      "shortText": "Bio",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "overview",
+        "desktop",
+        "athlete"
+      ],
+      "href": "https://www.espn.com/nfl/player/_/id/5536/ben-roethlisberger",
+      "text": "Overview",
+      "shortText": "Overview",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "overview",
+        "sportscenter",
+        "app",
+        "athlete"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~a:5536",
+      "text": "Overview",
+      "shortText": "Overview",
+      "isExternal": false,
+      "isPremium": false
+    }
+  ],
+  "birthPlace": {
+    "city": "Findlay",
+    "state": "OH",
+    "country": "USA"
+  },
+  "college": {
+    "$ref": "http://sports.core.api.espn.com/v2/colleges/193?lang=en&region=us"
+  },
+  "slug": "ben-roethlisberger",
+  "headshot": {
+    "href": "https://a.espncdn.com/i/headshots/nfl/players/full/5536.png",
+    "alt": "Ben Roethlisberger"
+  },
+  "jersey": "7",
+  "position": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8?lang=en&region=us",
+    "id": "8",
+    "name": "Quarterback",
+    "displayName": "Quarterback",
+    "abbreviation": "QB",
+    "leaf": true,
+    "parent": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/70?lang=en&region=us"
+    }
+  },
+  "linked": true,
+  "team": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2021/teams/23?lang=en&region=us"
+  },
+  "statistics": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5536/statistics?lang=en&region=us"
+  },
+  "contracts": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5536/contracts?lang=en&region=us"
+  },
+  "experience": {
+    "years": 18
+  },
+  "collegeAthlete": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football/athletes/102347?lang=en&region=us"
+  },
+  "active": false,
+  "draft": {
+    "displayText": "Year: 2004 Round: 1 Pick: 11",
+    "round": 1,
+    "year": 2004,
+    "selection": 11,
+    "team": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2004/teams/23?lang=en&region=us"
+    },
+    "pick": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2004/draft/rounds/1/picks/11?lang=en&region=us"
+    }
+  },
+  "status": {
+    "id": "2",
+    "name": "Inactive",
+    "type": "inactive",
+    "abbreviation": "Inactive"
+  },
+  "statisticslog": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5536/statisticslog?lang=en&region=us"
+  }
+}

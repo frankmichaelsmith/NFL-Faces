@@ -1,0 +1,42 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2?lang=en&region=us",
+  "id": "2",
+  "type": 2,
+  "name": "Regular Season",
+  "abbreviation": "reg",
+  "year": 2026,
+  "startDate": "2026-09-06T07:00Z",
+  "endDate": "2027-01-13T07:59Z",
+  "hasGroups": false,
+  "hasStandings": true,
+  "hasLegs": false,
+  "groups": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/groups?lang=en&region=us"
+  },
+  "week": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/weeks/1?lang=en&region=us",
+    "number": 1,
+    "startDate": "2026-09-06T07:00Z",
+    "endDate": "2026-09-16T06:59Z",
+    "text": "Week 1",
+    "rankings": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/weeks/1/rankings?lang=en&region=us"
+    },
+    "events": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/weeks/1/events?lang=en&region=us"
+    },
+    "talentpicks": {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/weeks/1/talentpicks?lang=en&region=us"
+    }
+  },
+  "weeks": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/weeks?lang=en&region=us"
+  },
+  "corrections": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/corrections?lang=en&region=us"
+  },
+  "leaders": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/leaders?lang=en&region=us"
+  },
+  "slug": "regular-season"
+}

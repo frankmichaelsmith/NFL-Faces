@@ -1,0 +1,33 @@
+team_id,espn_id,label,location,active_from
+ARI,22,Cardinals,Arizona,2000
+ATL,1,Falcons,Atlanta,2000
+BAL,33,Ravens,Baltimore,2000
+BUF,2,Bills,Buffalo,2000
+CAR,29,Panthers,Carolina,2000
+CHI,3,Bears,Chicago,2000
+CIN,4,Bengals,Cincinnati,2000
+CLE,5,Browns,Cleveland,2000
+DAL,6,Cowboys,Dallas,2000
+DEN,7,Broncos,Denver,2000
+DET,8,Lions,Detroit,2000
+GB,9,Packers,Green Bay,2000
+HOU,34,Texans,Houston,2002
+IND,11,Colts,Indianapolis,2000
+JAX,30,Jaguars,Jacksonville,2000
+KC,12,Chiefs,Kansas City,2000
+LAC,24,Chargers,Los Angeles,2000
+LAR,14,Rams,Los Angeles,2000
+LV,13,Raiders,Las Vegas,2000
+MIA,15,Dolphins,Miami,2000
+MIN,16,Vikings,Minnesota,2000
+NE,17,Patriots,New England,2000
+NO,18,Saints,New Orleans,2000
+NYG,19,Giants,New York,2000
+NYJ,20,Jets,New York,2000
+PHI,21,Eagles,Philadelphia,2000
+PIT,23,Steelers,Pittsburgh,2000
+SEA,26,Seahawks,Seattle,2000
+SF,25,49ers,San Francisco,2000
+TB,27,Buccaneers,Tampa Bay,2000
+TEN,10,Titans,Tennessee,2000
+WSH,28,Washington,Washington,2000

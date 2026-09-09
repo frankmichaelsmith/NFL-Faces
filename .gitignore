@@ -13,6 +13,9 @@ coverage/
 raw-photos/*
 !raw-photos/.gitkeep
 
+# ESPN response cache for the pull script
+.cache/
+
 # misc
 .DS_Store
 *.log

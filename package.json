@@ -13,7 +13,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "build:content": "tsx scripts/build-content.ts",
-    "simulate": "tsx scripts/simulate.ts"
+    "simulate": "tsx scripts/simulate.ts",
+    "pull:espn": "tsx scripts/pull-espn.ts"
   },
   "dependencies": {
     "react": "^19.2.8",

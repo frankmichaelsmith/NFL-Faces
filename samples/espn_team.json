@@ -1,0 +1,483 @@
+{
+  "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23?lang=en&region=us",
+  "id": "23",
+  "guid": "debcd592-8d53-71f1-fc15-5c8b8ef9df6e",
+  "uid": "s:20~l:28~t:23",
+  "alternateIds": {
+    "sdr": "8824"
+  },
+  "slug": "pittsburgh-steelers",
+  "location": "Pittsburgh",
+  "name": "Steelers",
+  "nickname": "Steelers",
+  "abbreviation": "PIT",
+  "displayName": "Pittsburgh Steelers",
+  "shortDisplayName": "Steelers",
+  "color": "000000",
+  "alternateColor": "ffb612",
+  "isActive": true,
+  "isAllStar": false,
+  "logos": [
+    {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+        "full",
+        "default"
+      ],
+      "lastUpdated": "2024-06-25T18:56Z"
+    },
+    {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/pit.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+        "full",
+        "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:56Z"
+    },
+    {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+        "full",
+        "scoreboard"
+      ],
+      "lastUpdated": "2024-06-25T18:56Z"
+    },
+    {
+      "href": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/pit.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+        "full",
+        "scoreboard",
+        "dark"
+      ],
+      "lastUpdated": "2024-06-25T18:56Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/grayscale.png",
+      "width": 500,
+      "height": 500,
+      "alt": "",
+      "rel": [
+        "full",
+        "grayscale"
+      ],
+      "lastUpdated": "2026-03-31T12:53Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/primary_logo_on_white_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "primary_logo_on_white_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/primary_logo_on_black_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "primary_logo_on_black_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/primary_logo_on_primary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "primary_logo_on_primary_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/primary_logo_on_secondary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "primary_logo_on_secondary_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/primary_logo_black.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "primary_logo_black"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/primary_logo_white.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "primary_logo_white"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/secondary_logo_on_white_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "secondary_logo_on_white_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/secondary_logo_on_black_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "secondary_logo_on_black_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/secondary_logo_on_primary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "secondary_logo_on_primary_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/secondary_logo_on_secondary_color.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "secondary_logo_on_secondary_color"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/secondary_logo_black.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "secondary_logo_black"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    },
+    {
+      "href": "https://a.espncdn.com/guid/debcd592-8d53-71f1-fc15-5c8b8ef9df6e/logos/secondary_logo_white.png",
+      "width": 4096,
+      "height": 4096,
+      "alt": "",
+      "rel": [
+        "full",
+        "secondary_logo_white"
+      ],
+      "lastUpdated": "2026-07-22T20:30Z"
+    }
+  ],
+  "record": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/teams/23/record?lang=en&region=us"
+  },
+  "oddsRecords": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/0/teams/23/odds-records?lang=en&region=us"
+  },
+  "athletes": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23/athletes?lang=en&region=us"
+  },
+  "venue": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/venues/3752?lang=en&region=us",
+    "id": "3752",
+    "guid": "cba1fd96-fceb-3ccd-89bc-ec61231f9bd9",
+    "fullName": "Acrisure Stadium",
+    "address": {
+      "city": "Pittsburgh",
+      "state": "PA",
+      "zipCode": "15212",
+      "country": "USA"
+    },
+    "grass": true,
+    "indoor": false,
+    "images": [
+      {
+        "href": "https://a.espncdn.com/i/venues/nfl/day/3752.jpg",
+        "width": 2000,
+        "height": 1125,
+        "alt": "",
+        "rel": [
+          "full",
+          "day"
+        ]
+      },
+      {
+        "href": "https://a.espncdn.com/i/venues/nfl/day/interior/3752.jpg",
+        "width": 2000,
+        "height": 1125,
+        "alt": "",
+        "rel": [
+          "full",
+          "day",
+          "interior"
+        ]
+      }
+    ]
+  },
+  "groups": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/groups/12?lang=en&region=us"
+  },
+  "ranks": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23/ranks?lang=en&region=us"
+  },
+  "statistics": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/teams/23/statistics?lang=en&region=us"
+  },
+  "links": [
+    {
+      "language": "en-US",
+      "rel": [
+        "clubhouse",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/_/name/pit/pittsburgh-steelers",
+      "text": "Clubhouse",
+      "shortText": "Clubhouse",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "roster",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/roster/_/name/pit/pittsburgh-steelers",
+      "text": "Roster",
+      "shortText": "Roster",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "roster",
+        "sportscenter",
+        "app",
+        "team"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:23&section=roster",
+      "text": "Roster",
+      "shortText": "Roster",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "stats",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/stats/_/name/pit/pittsburgh-steelers",
+      "text": "Statistics",
+      "shortText": "Statistics",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "stats",
+        "sportscenter",
+        "app",
+        "team"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:23&section=stats",
+      "text": "Statistics",
+      "shortText": "Statistics",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "schedule",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/schedule/_/name/pit",
+      "text": "Schedule",
+      "shortText": "Schedule",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "schedule",
+        "sportscenter",
+        "app",
+        "team"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:23&section=scores",
+      "text": "Schedule",
+      "shortText": "Schedule",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "photos",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/photos/_/name/pit",
+      "text": "photos",
+      "shortText": "photos",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "tickets",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.vividseats.com/pittsburgh-steelers-tickets--sports-nfl-football/performer/686?wsUser=717",
+      "text": "Tickets",
+      "shortText": "Tickets",
+      "isExternal": true,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "draftpicks",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/draft/teams/_/name/pit/pittsburgh-steelers",
+      "text": "Draft Picks",
+      "shortText": "Draft Picks",
+      "isExternal": false,
+      "isPremium": true
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "transactions",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/transactions/_/name/pit",
+      "text": "Transactions",
+      "shortText": "Transactions",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "injuries",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/injuries/_/name/pit",
+      "text": "Injuries",
+      "shortText": "Injuries",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "depthchart",
+        "desktop",
+        "team"
+      ],
+      "href": "https://www.espn.com/nfl/team/depth/_/name/pit",
+      "text": "Depth Chart",
+      "shortText": "Depth Chart",
+      "isExternal": false,
+      "isPremium": false
+    },
+    {
+      "language": "en-US",
+      "rel": [
+        "depthchart",
+        "sportscenter",
+        "app",
+        "team"
+      ],
+      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:20~l:28~t:23&section=depthchart",
+      "text": "Depth Chart",
+      "shortText": "Depth Chart",
+      "isExternal": false,
+      "isPremium": false
+    }
+  ],
+  "injuries": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/23/injuries?lang=en&region=us"
+  },
+  "notes": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/23/notes?lang=en&region=us"
+  },
+  "againstTheSpreadRecords": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/teams/23/ats?lang=en&region=us"
+  },
+  "awards": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23/awards?lang=en&region=us"
+  },
+  "franchise": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/franchises/23?lang=en&region=us"
+  },
+  "depthCharts": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23/depthcharts?lang=en&region=us"
+  },
+  "projection": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23/projection?lang=en&region=us"
+  },
+  "events": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23/events?lang=en&region=us"
+  },
+  "transactions": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/teams/23/transactions?lang=en&region=us"
+  },
+  "coaches": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/23/coaches?lang=en&region=us"
+  }
+}

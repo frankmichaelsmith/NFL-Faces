@@ -64,6 +64,10 @@ export function useGame(
   const [analytics] = useState(() => deps.analytics ?? defaultAnalytics())
   const [feedback] = useState(() => deps.feedback ?? createFeedback(stats.mute))
   const [muted, setMuted] = useState(stats.mute)
+  const statsRef = useRef(stats)
+  useEffect(() => {
+    statsRef.current = stats
+  }, [stats])
   const [state, dispatch] = useReducer(reducer, initialState, (s) => ({
     ...s,
     bestStreak: stats.best_streak,
@@ -104,19 +108,20 @@ export function useGame(
       })
       feedback.play(state.phase === 'correct' ? 'correct' : 'miss')
     }
-    setStats((prev) => {
-      let next = isRound ? recordRound(prev) : prev
-      if (isEnd) {
-        analytics.track('streak_ended', {
-          streak_length: state.streak,
-          end_reason: state.lastOutcome as 'wrong' | 'timeout' | 'exhausted',
-          is_new_best: state.streak > prev.best_streak,
-        })
-        next = recordStreakEnd(next, state.streak, losingRoll ?? '')
-      }
-      saveStats(next)
-      return next
-    })
+    // Side effects stay outside the state updater: StrictMode runs updaters twice in dev.
+    const prev = statsRef.current
+    let next = isRound ? recordRound(prev) : prev
+    if (isEnd) {
+      analytics.track('streak_ended', {
+        streak_length: state.streak,
+        end_reason: state.lastOutcome as 'wrong' | 'timeout' | 'exhausted',
+        is_new_best: state.streak > prev.best_streak,
+      })
+      next = recordStreakEnd(next, state.streak, losingRoll ?? '')
+    }
+    statsRef.current = next
+    saveStats(next)
+    setStats(next)
   }, [
     state.phase,
     state.roundIndex,
@@ -133,19 +138,16 @@ export function useGame(
 
   const onWheelLand = useCallback(() => feedback.play('tick'), [feedback])
   const toggleMute = useCallback(() => {
-    setMuted((m) => {
-      const next = !m
-      feedback.setMuted(next)
-      if (!next) feedback.unlock()
-      analytics.track('mute_toggled', { muted: next })
-      setStats((prev) => {
-        const s = setMute(prev, next)
-        saveStats(s)
-        return s
-      })
-      return next
-    })
-  }, [feedback, analytics])
+    const next = !muted
+    feedback.setMuted(next)
+    if (!next) feedback.unlock()
+    analytics.track('mute_toggled', { muted: next })
+    const s = setMute(statsRef.current, next)
+    statsRef.current = s
+    saveStats(s)
+    setStats(s)
+    setMuted(next)
+  }, [muted, feedback, analytics])
 
   const pick = useCallback(
     (used: readonly string[]) =>

@@ -14,7 +14,7 @@ export function StartScreen({ bestStreak, bestStreakRoll, onStart, muted, onTogg
       <MuteButton muted={muted} onToggle={onToggleMute} className="absolute right-4 top-4" />
       <h1 className="font-display text-7xl font-black uppercase tracking-tight">NFL Faces</h1>
       <p className="max-w-xs text-lg text-white/70">
-        Tap the quarterback who started for that team that season.
+        Tap the quarterback who started for that team that season. Six seconds.
       </p>
       {bestStreak > 0 && (
         <p className="text-sm uppercase tracking-widest text-white/50" data-testid="best">

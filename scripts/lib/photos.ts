@@ -11,10 +11,10 @@ import sharp from 'sharp'
 
 export const FACE_SIZE = 400
 export const FACE_BACKGROUND = '#182036'
-/** Square side as a multiple of head width (chosen by eye on a contact sheet, 2026-09-09). */
-export const HEAD_FACTOR = 1.5
+/** Square side as a multiple of head width. 1.5 cut chins (Frank, 2026-09-09); 1.75 keeps chin and a little neck. */
+export const HEAD_FACTOR = 1.75
 /** Fraction of the square left above the top of the head. */
-export const TOP_MARGIN = 0.12
+export const TOP_MARGIN = 0.1
 
 export interface Silhouette {
   width: number

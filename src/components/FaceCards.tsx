@@ -46,7 +46,8 @@ export function FaceCards({ bundle, round, state, onTap, onPainted, imageBaseUrl
     return () => document.removeEventListener('touchmove', block)
   }, [active])
 
-  const revealName = state.phase === 'gameover'
+  // After any tap the tapped player's name shows (Frank, 2026-09-09); after a miss the answer's name shows too.
+  const settled = state.phase === 'correct' || state.phase === 'gameover'
   // Faces whose image failed after the preload (rare): show initials instead.
   const [broken, setBroken] = useState<Record<string, true>>({})
   return (
@@ -107,7 +108,10 @@ export function FaceCards({ bundle, round, state, onTap, onPainted, imageBaseUrl
               )}
             </div>
             <div className="h-9 px-1 py-1 text-center text-xs font-semibold leading-tight">
-              {revealName && isAnswer ? <span data-testid="answer-name">{person.name}</span> : null}
+              {settled &&
+              (slot === state.tappedSlot || (state.phase === 'gameover' && isAnswer)) ? (
+                <span data-testid={isAnswer ? 'answer-name' : 'tapped-name'}>{person.name}</span>
+              ) : null}
             </div>
           </button>
         )

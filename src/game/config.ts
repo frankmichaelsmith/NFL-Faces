@@ -35,7 +35,7 @@ export const GAME_CONFIG: GameConfig = {
   ],
   firstSeason: 2000,
   roles: ['QB'],
-  decisionMs: 5000,
+  decisionMs: 6000,
   spinMsPerWheel: 1000,
   feedbackMs: 300,
   alumniProb: 0.3,

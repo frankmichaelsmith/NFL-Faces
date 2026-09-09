@@ -3,12 +3,12 @@ import { defaultCrop, parseCropSpec, planCrop } from './photos'
 
 describe('planCrop', () => {
   const sil = { width: 600, height: 436, top: 48, headCenterX: 293.5, headWidth: 163 }
-  it('squares 1.5 head widths around the head with a little room above', () => {
+  it('squares 1.75 head widths around the head with a little room above', () => {
     const box = planCrop(sil)
     expect(box.width).toBe(box.height)
-    expect(box.width).toBe(Math.round(163 * 1.5))
+    expect(box.width).toBe(Math.round(163 * 1.75))
     expect(box.left).toBe(Math.round(293.5 - box.width / 2))
-    expect(box.top).toBe(Math.round(48 - box.width * 0.12))
+    expect(box.top).toBe(Math.round(48 - box.width * 0.1))
   })
   it('clamps to the image when the head sits near an edge', () => {
     const box = planCrop({ ...sil, headCenterX: 20, top: 2 })

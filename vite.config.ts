@@ -14,7 +14,7 @@ export default defineConfig({
       manifest: {
         name: 'NFL Faces',
         short_name: 'NFL Faces',
-        description: 'Two wheels, three faces, five seconds. Tap the quarterback.',
+        description: 'Two wheels, three faces, six seconds. Tap the quarterback.',
         theme_color: '#0b1020',
         background_color: '#0b1020',
         display: 'standalone',

@@ -11,8 +11,9 @@ interface Bundle {
 }
 
 test('start, spin, tap the correct face, streak becomes 1', async ({ page }) => {
-  await page.goto('/')
-  await expect(page.getByRole('heading', { name: /NFL Faces/i })).toBeVisible()
+  // Faces is hidden from the start screen for now; ?mode=faces still opens it.
+  await page.goto('/?mode=faces')
+  await expect(page.getByRole('heading', { name: /NFL Spins/i })).toBeVisible()
   const bundle = (await (await page.request.get('/data/bundle.json')).json()) as Bundle
 
   await page.getByRole('button', { name: 'Start' }).click()
@@ -78,7 +79,7 @@ test('start, spin, tap the correct face, streak becomes 1', async ({ page }) => 
 })
 
 test('a wrong tap ends the streak and reveals the answer with a share button', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/?mode=faces')
   const bundle = (await (await page.request.get('/data/bundle.json')).json()) as Bundle
   await page.getByRole('button', { name: 'Start' }).click()
   await expect(page.getByTestId('faces')).toBeVisible({ timeout: 10_000 })

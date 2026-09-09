@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { PlayScreen } from './components/PlayScreen'
 import { StartScreen } from './components/StartScreen'
 import type { Bundle } from './game/bundle'
-import { type GameConfig, type Mode } from './game/config'
+import { VISIBLE_MODES, type GameConfig, type Mode } from './game/config'
 import { defaultRng, mulberry32, type Rng } from './game/rng'
 import { useGame, type GameDeps } from './state/useGame'
 import { loadStats, saveStats, setLastMode } from './storage/local'
@@ -31,6 +31,12 @@ function rngFromLocation(): Rng | null {
   return seed && /^\d+$/.test(seed) ? mulberry32(Number(seed)) : null
 }
 
+/** `?mode=faces` opens a hidden mode (debugging, e2e). */
+function modeFromLocation(): Mode | null {
+  const m = new URLSearchParams(location.search).get('mode')
+  return m === 'faces' || m === 'probowl' ? m : null
+}
+
 export default function App({
   bundle: given,
   rng = rngFromLocation() ?? defaultRng,
@@ -38,7 +44,8 @@ export default function App({
   mode: initialMode,
   config,
 }: Props) {
-  const [mode, setMode] = useState<Mode>(() => initialMode ?? loadStats().last_mode)
+  const forced = initialMode ?? modeFromLocation()
+  const [mode, setMode] = useState<Mode>(() => forced ?? loadStats().last_mode)
   const [bundle, setBundle] = useState<Bundle | null>(given ?? null)
   const [error, setError] = useState<string | null>(null)
   useEffect(() => {
@@ -55,11 +62,17 @@ export default function App({
     saveStats(setLastMode(loadStats(), m))
     setMode(m)
   }
+  // A remembered or hidden mode only plays if the bundle can serve it and it is on offer (or forced).
+  const available = (m: Mode) => m === 'faces' || !!bundle.probowl
+  const effective =
+    (mode === forced || VISIBLE_MODES.includes(mode)) && available(mode)
+      ? mode
+      : (VISIBLE_MODES.find(available) ?? 'faces')
   return (
     <Game
-      key={mode}
+      key={effective}
       bundle={bundle}
-      mode={mode}
+      mode={effective}
       rng={rng}
       deps={deps}
       onMode={chooseMode}

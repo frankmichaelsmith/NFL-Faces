@@ -11,6 +11,10 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - ~830 combos (32 teams × 26 seasons, Texans from 2002), ~190 unique QBs.
 - The engine stays **generic**: wheel count, the season range, the team list and the role list are config, so a position wheel or an NBA edition can return later without a rewrite. Do not hard-code "QB" or "2000" into game logic.
 
+## Start screen (Frank, 2026-09-09)
+
+The start screen is titled **NFL Spins** (`GAME_TITLE`) and offers **only Pro Bowl Mode** (`VISIBLE_MODES = ['probowl']`); the mode picker appears only when more than one mode is visible. Faces mode is hidden, not removed: `?mode=faces` opens it, and its code, content, photos and tests stay green. The app name, tab title, PWA manifest and share text still say NFL Faces until Frank renames them.
+
 ## Pro Bowl Mode (Frank, 2026-09-09 — decision 0007)
 
 A second mode with **no photos**. Three wheels: **season** (1995 → last completed season; 1995–1999 weighted to 30% of a later season via `seasonWeights`, Frank 2026-09-09), **player** (QB/RB/WR/TE named to that season's Pro Bowl, replacements included), **category** (alma mater → college logo, draft team → generated tile in era colours or UNDRAFTED, pro number → number worn that season, position). Three cards, one correct, same streak and timer, a player at most once per streak. The category is drawn by static weight (`categoryWeights`; position ≈ 9% of rolls, the rest ≈ 30% each, Frank 2026-09-09), then a combo uniformly within it. Content: `content/probowl_selections.csv` (rosters, curator `espn_id` wins), `content/probowl_players.csv` (attributes + sources), `content/draft_teams.csv` (hand table of era abbreviations, labels, colours). `npm run pull:probowl` fills the first two from Wikipedia + ESPN; `build:content` derives `bundle.probowl`. Milestones: **P1 data** · **P2 engine** (generic option values + selection + simulation) · **P3 screens** (mode picker, three wheels, logo/tile/number/position cards, assets) · **P4 finish** (per-mode best streak, share, analytics, e2e).

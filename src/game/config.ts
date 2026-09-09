@@ -39,6 +39,16 @@ export type Mode = 'faces' | 'probowl'
 
 export const MODE_LABELS: Record<Mode, string> = { faces: 'Faces', probowl: 'Pro Bowl Mode' }
 
+/**
+ * Modes offered on the start screen, in picker order. One entry hides the
+ * picker. Faces is hidden for now (Frank, 2026-09-09); it still runs via
+ * `?mode=faces` and its code, content and tests stay in place.
+ */
+export const VISIBLE_MODES: readonly Mode[] = ['probowl']
+
+/** Title shown on the start screen (the app, repo and share text still say NFL Faces). */
+export const GAME_TITLE = 'NFL Spins'
+
 export const GAME_CONFIG: GameConfig = {
   wheels: [
     { kind: 'season', label: 'Season' },

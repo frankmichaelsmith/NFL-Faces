@@ -1,4 +1,4 @@
-import { MODE_LABELS, type Mode } from '../game/config'
+import { GAME_TITLE, MODE_LABELS, VISIBLE_MODES, type Mode } from '../game/config'
 import { MuteButton } from './MuteButton'
 
 interface Props {
@@ -25,34 +25,36 @@ export function StartScreen({
   return (
     <main className="relative mx-auto flex min-h-full max-w-[720px] flex-col items-center justify-center gap-6 p-6 text-center">
       <MuteButton muted={muted} onToggle={onToggleMute} className="absolute right-4 top-4" />
-      <h1 className="font-display text-7xl font-black uppercase tracking-tight">NFL Faces</h1>
-      <div
-        role="radiogroup"
-        aria-label="Game mode"
-        className="flex rounded-2xl border border-white/15 p-1 text-sm font-bold"
-        data-testid="mode-picker"
-      >
-        {(['faces', 'probowl'] as Mode[]).map((m) => (
-          <button
-            key={m}
-            type="button"
-            role="radio"
-            aria-checked={mode === m}
-            disabled={m === 'probowl' && !proBowlAvailable}
-            onClick={() => onMode(m)}
-            data-testid={`mode-${m}`}
-            className={
-              'min-h-[44px] rounded-xl px-5 disabled:opacity-40 ' +
-              (mode === m ? 'bg-white text-ink' : 'text-white/70')
-            }
-          >
-            {MODE_LABELS[m]}
-          </button>
-        ))}
-      </div>
+      <h1 className="font-display text-7xl font-black uppercase tracking-tight">{GAME_TITLE}</h1>
+      {VISIBLE_MODES.length > 1 && (
+        <div
+          role="radiogroup"
+          aria-label="Game mode"
+          className="flex rounded-2xl border border-white/15 p-1 text-sm font-bold"
+          data-testid="mode-picker"
+        >
+          {VISIBLE_MODES.map((m) => (
+            <button
+              key={m}
+              type="button"
+              role="radio"
+              aria-checked={mode === m}
+              disabled={m === 'probowl' && !proBowlAvailable}
+              onClick={() => onMode(m)}
+              data-testid={`mode-${m}`}
+              className={
+                'min-h-[44px] rounded-xl px-5 disabled:opacity-40 ' +
+                (mode === m ? 'bg-white text-ink' : 'text-white/70')
+              }
+            >
+              {MODE_LABELS[m]}
+            </button>
+          ))}
+        </div>
+      )}
       <p className="max-w-xs text-lg text-white/70">
         {mode === 'probowl'
-          ? 'A season, a Pro Bowler, a category. Tap the one that matches. Six seconds.'
+          ? 'A season, a Pro Bowler, and a category. Tap the one that matches in 6 seconds or less.'
           : 'Tap the quarterback who started for that team that season. Six seconds.'}
       </p>
       {bestStreak > 0 && (

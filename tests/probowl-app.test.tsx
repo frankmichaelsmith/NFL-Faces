@@ -101,15 +101,30 @@ describe('Pro Bowl Mode', () => {
     cleanup()
   })
 
-  it('offers a mode picker that remembers the choice', () => {
+  it('opens in Pro Bowl Mode with no picker while Faces is hidden, but still honours a forced mode', () => {
     render(<App bundle={bundle} config={config} deps={deps} />)
-    expect(screen.getByTestId('mode-faces')).toHaveAttribute('aria-checked', 'true')
-    fireEvent.click(screen.getByTestId('mode-probowl'))
-    expect(screen.getByTestId('mode-probowl')).toHaveAttribute('aria-checked', 'true')
-    expect(screen.getByText(/a Pro Bowler, a category/i)).toBeInTheDocument()
+    expect(screen.queryByTestId('mode-picker')).toBeNull()
+    expect(screen.getByRole('heading', { name: 'NFL Spins' })).toBeInTheDocument()
+    expect(screen.getByText(/a Pro Bowler, and a category/i)).toBeInTheDocument()
     cleanup()
+    // a device that last played Faces still lands in Pro Bowl Mode
+    localStorage.setItem(
+      'nfl-faces:stats:v1',
+      JSON.stringify({
+        ...JSON.parse(localStorage.getItem('nfl-faces:stats:v1') ?? '{}'),
+        last_mode: 'faces',
+      }),
+    )
     render(<App bundle={bundle} config={config} deps={deps} />)
-    expect(screen.getByTestId('mode-probowl')).toHaveAttribute('aria-checked', 'true')
+    expect(screen.getByText(/a Pro Bowler, and a category/i)).toBeInTheDocument()
+    cleanup()
+    // a bundle without a Pro Bowl section falls back to Faces
+    render(<App bundle={{ ...bundle, probowl: undefined }} config={config} deps={deps} />)
+    expect(screen.getByText(/Tap the quarterback/i)).toBeInTheDocument()
+    cleanup()
+    // an explicit mode wins
+    render(<App bundle={bundle} config={config} deps={deps} mode="faces" />)
+    expect(screen.getByText(/Tap the quarterback/i)).toBeInTheDocument()
   })
 
   it('spins three wheels, names a Pro Bowler from that season, and renders category cards', async () => {

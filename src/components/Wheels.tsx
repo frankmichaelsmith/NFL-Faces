@@ -40,8 +40,8 @@ export function wheelValue(bundle: Bundle, kind: Kind, round: AnyRound): string 
   }
 }
 
-/** Every value a wheel can show, in strip order. */
-export function wheelValues(bundle: Bundle, kind: Kind): string[] {
+/** Every value a wheel can show, in strip order. The player reel is that season's Pro Bowlers. */
+export function wheelValues(bundle: Bundle, kind: Kind, round: AnyRound | null = null): string[] {
   switch (kind) {
     case 'season': {
       const out: string[] = []
@@ -52,8 +52,12 @@ export function wheelValues(bundle: Bundle, kind: Kind): string[] {
       return bundle.teams.map((t) => t.label.toUpperCase())
     case 'role':
       return bundle.roles
-    case 'player':
-      return Object.values(bundle.probowl?.players ?? {}).map((p) => p.name)
+    case 'player': {
+      const pb = bundle.probowl
+      if (!pb) return []
+      const ids = round ? (pb.rosters[String(round.combo.season)] ?? []) : Object.keys(pb.players)
+      return ids.map((id) => pb.players[id]?.name ?? id)
+    }
     case 'category':
       return Object.values(CATEGORY_LABELS)
   }
@@ -67,8 +71,8 @@ export function wheelValues(bundle: Bundle, kind: Kind): string[] {
 export function Wheels({ bundle, config, round, spinning, onLand }: Props) {
   const reduceMotion = useReducedMotion()
   const values = useMemo(
-    () => config.wheels.map((w) => wheelValues(bundle, w.kind)),
-    [bundle, config.wheels],
+    () => config.wheels.map((w) => wheelValues(bundle, w.kind, round)),
+    [bundle, config.wheels, round],
   )
   return (
     <div

@@ -1,0 +1,177 @@
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import App from '../src/App'
+import { createFeedback } from '../src/audio/feedback'
+import type { Bundle } from '../src/game/bundle'
+import { GAME_CONFIG } from '../src/game/config'
+import { mulberry32 } from '../src/game/rng'
+
+const bundle: Bundle = {
+  buildHash: 'test',
+  generatedAt: '',
+  firstSeason: 2010,
+  lastSeason: 2011,
+  liveSeason: null,
+  roles: ['QB'],
+  teams: [{ id: 'PIT', label: 'Steelers' }],
+  people: {
+    ben: { name: 'Ben Roethlisberger', photo: null },
+    tom: { name: 'Tom Brady', photo: null },
+    joe: { name: 'Joe Flacco', photo: null },
+  },
+  combos: [
+    {
+      season: 2010,
+      team: 'PIT',
+      role: 'QB',
+      answer: 'ben',
+      distractors: ['tom', 'joe'],
+      alumni: [],
+    },
+  ],
+  probowl: {
+    seasons: [2010, 2011],
+    rosters: { '2010': ['brady', 'brees'], '2011': ['rodgers'] },
+    players: {
+      brady: { name: 'Tom Brady', pos: 'QB', jersey: 12, college: 'mich', draft: 'NE' },
+      brees: { name: 'Drew Brees', pos: 'QB', jersey: 9, college: 'pur', draft: 'SD' },
+      rodgers: { name: 'Aaron Rodgers', pos: 'QB', jersey: 12, college: 'cal', draft: 'GB' },
+    },
+    colleges: {
+      mich: { name: 'Michigan', logo: 'mich.png' },
+      pur: { name: 'Purdue', logo: 'pur.png' },
+      cal: { name: 'California', logo: 'cal.png' },
+    },
+    teams: {
+      NE: { label: 'NE', name: 'New England Patriots', color: '002244', alt: 'c60c30' },
+      SD: { label: 'SD', name: 'San Diego Chargers', color: '0080C6', alt: 'FFC20E' },
+      GB: { label: 'GB', name: 'Green Bay Packers', color: '203731', alt: 'FFB612' },
+    },
+    combos: [
+      {
+        season: 2010,
+        player: 'brady',
+        category: 'draft',
+        answer: 'NE',
+        distractors: ['SD', 'GB', 'UDFA'],
+      },
+      { season: 2010, player: 'brees', category: 'number', answer: '9', distractors: ['12', '4'] },
+      {
+        season: 2011,
+        player: 'rodgers',
+        category: 'alma',
+        answer: 'cal',
+        distractors: ['mich', 'pur'],
+      },
+    ],
+  },
+}
+
+// Timing overrides only: the wheels must stay the mode's own.
+const config = { spinMsPerWheel: 10, feedbackMs: 10, decisionMs: GAME_CONFIG.decisionMs }
+const deps = { feedback: createFeedback(true) }
+
+async function startRound(wheels: number) {
+  fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+  await act(async () => {
+    vi.advanceTimersByTime(wheels * config.spinMsPerWheel + 5)
+  })
+  await act(async () => {
+    vi.advanceTimersByTime(40)
+  })
+  expect(screen.getByTestId('faces')).toBeInTheDocument()
+}
+
+describe('Pro Bowl Mode', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.useFakeTimers({
+      toFake: [
+        'setTimeout',
+        'clearTimeout',
+        'requestAnimationFrame',
+        'cancelAnimationFrame',
+        'performance',
+      ],
+    })
+  })
+  afterEach(() => {
+    vi.useRealTimers()
+    cleanup()
+  })
+
+  it('offers a mode picker that remembers the choice', () => {
+    render(<App bundle={bundle} config={config} deps={deps} />)
+    expect(screen.getByTestId('mode-faces')).toHaveAttribute('aria-checked', 'true')
+    fireEvent.click(screen.getByTestId('mode-probowl'))
+    expect(screen.getByTestId('mode-probowl')).toHaveAttribute('aria-checked', 'true')
+    expect(screen.getByText(/a Pro Bowler, a category/i)).toBeInTheDocument()
+    cleanup()
+    render(<App bundle={bundle} config={config} deps={deps} />)
+    expect(screen.getByTestId('mode-probowl')).toHaveAttribute('aria-checked', 'true')
+  })
+
+  it('spins three wheels, names a Pro Bowler from that season, and renders category cards', async () => {
+    render(<App bundle={bundle} config={config} deps={deps} mode="probowl" rng={mulberry32(2)} />)
+    await startRound(3)
+    const season = Number(screen.getByTestId('wheel-season').dataset.value)
+    const player = screen.getByTestId('wheel-player').dataset.value!
+    const category = screen.getByTestId('wheel-category').dataset.value!
+    const rosterNames = bundle.probowl!.rosters[String(season)]!.map(
+      (id) => bundle.probowl!.players[id]!.name,
+    )
+    expect(rosterNames).toContain(player)
+    expect(['Alma Mater', 'Draft Team', 'Pro Number', 'Pro Position']).toContain(category)
+    const cards = [0, 1, 2].map((i) => screen.getByTestId(`face-${i}`))
+    expect(cards).toHaveLength(3)
+    const combo = bundle.probowl!.combos.find(
+      (c) => c.season === season && bundle.probowl!.players[c.player]!.name === player,
+    )!
+    expect(cards.map((c) => c.dataset.value)).toContain(combo.answer)
+    if (combo.category === 'draft' || combo.category === 'alma')
+      for (const c of cards) expect(c.querySelector('img')).not.toBeNull()
+    else for (const c of cards) expect(c.querySelector('img')).toBeNull()
+  })
+
+  it('scores a correct tap, then a wrong tap reveals both labels and keeps a Pro Bowl best', async () => {
+    render(<App bundle={bundle} config={config} deps={deps} mode="probowl" rng={mulberry32(3)} />)
+    await startRound(3)
+    const answerOf = () => {
+      const season = Number(screen.getByTestId('wheel-season').dataset.value)
+      const player = screen.getByTestId('wheel-player').dataset.value!
+      return bundle.probowl!.combos.find(
+        (c) => c.season === season && bundle.probowl!.players[c.player]!.name === player,
+      )!.answer
+    }
+    const slotOf = (value: string) =>
+      [0, 1, 2].find((i) => screen.getByTestId(`face-${i}`).dataset.value === value)!
+    fireEvent.pointerDown(screen.getByTestId(`face-${slotOf(answerOf())}`))
+    expect(screen.getByTestId('streak').textContent).toBe('1')
+    // the tapped card is the answer card, so its label carries the answer testid
+    expect(screen.getByTestId('answer-name')).toBeInTheDocument()
+    await act(async () => {
+      vi.advanceTimersByTime(config.feedbackMs + 5)
+    })
+    await act(async () => {
+      vi.advanceTimersByTime(3 * config.spinMsPerWheel + 5)
+    })
+    await act(async () => {
+      vi.advanceTimersByTime(40)
+    })
+    const right = slotOf(answerOf())
+    const wrong = (right + 1) % 3
+    fireEvent.pointerDown(screen.getByTestId(`face-${wrong}`))
+    expect(screen.getByTestId('game-over')).toBeInTheDocument()
+    expect(screen.getByTestId('answer-name')).toBeInTheDocument()
+    expect(screen.getByTestId('tapped-name')).toBeInTheDocument()
+    expect(screen.getByTestId('losing-roll').textContent).toMatch(
+      /Died on 20\d\d · .+ · (Alma Mater|Draft Team|Pro Number|Pro Position)/,
+    )
+    cleanup()
+    render(<App bundle={bundle} config={config} deps={deps} mode="probowl" />)
+    expect(screen.getByTestId('best').textContent).toContain('Best streak 1')
+    cleanup()
+    render(<App bundle={bundle} config={config} deps={deps} mode="faces" />)
+    expect(screen.queryByTestId('best')).toBeNull()
+  })
+})

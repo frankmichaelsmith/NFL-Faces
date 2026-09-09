@@ -3,6 +3,8 @@ import type { Bundle } from '../game/bundle'
 import { share, type ShareResult } from '../share/share'
 import type { GameApi } from '../state/useGame'
 import { FaceCards } from './FaceCards'
+import { OptionCards } from './OptionCards'
+import { describeValue } from '../game/probowl'
 import { TimerBar } from './TimerBar'
 import { Wheels } from './Wheels'
 import { MuteButton } from './MuteButton'
@@ -98,7 +100,13 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
           state.phase === 'correct'
             ? `Correct. Streak ${state.streak}.`
             : over
-              ? `${state.lastOutcome === 'timeout' ? 'Time ran out' : 'Wrong'}. The answer was ${round ? bundle.people[round.combo.answer]?.name : ''}. Streak ${state.streak}.`
+              ? `${state.lastOutcome === 'timeout' ? 'Time ran out' : 'Wrong'}. The answer was ${
+                  round?.kind === 'faces'
+                    ? bundle.people[round.combo.answer]?.name
+                    : round && bundle.probowl
+                      ? describeValue(bundle.probowl, round.combo.category, round.combo.answer)
+                      : ''
+                }. Streak ${state.streak}.`
               : null
         }
       />
@@ -111,6 +119,15 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
           onTap={game.tap}
           onPainted={game.onPainted}
           imageBaseUrl={imageBaseUrl}
+        />
+      ) : round && round.kind === 'probowl' && state.phase !== 'spinning' ? (
+        <OptionCards
+          bundle={bundle}
+          round={round}
+          state={state}
+          onTap={game.tap}
+          onPainted={game.onPainted}
+          assetBaseUrl={import.meta.env.BASE_URL}
         />
       ) : (
         <div className="grid grid-cols-3 gap-3" aria-hidden>

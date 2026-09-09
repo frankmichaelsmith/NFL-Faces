@@ -3,7 +3,15 @@
  * wrapped so a blocked or missing localStorage never breaks play.
  */
 
+export type StatsMode = 'faces' | 'probowl'
+
+export interface ModeBest {
+  best_streak: number
+  best_streak_roll: string | null
+}
+
 export interface Stats {
+  /** Faces mode best (kept as the original fields for compatibility; mirrored in `modes.faces`). */
   best_streak: number
   /** The roll that ended the best streak, e.g. "2008 · BROWNS". Ties do not overwrite it. */
   best_streak_roll: string | null
@@ -12,6 +20,10 @@ export interface Stats {
   mute: boolean
   first_played_at: string | null
   device_id: string
+  /** Per-mode bests. */
+  modes: Record<StatsMode, ModeBest>
+  /** Mode last chosen on the start screen. */
+  last_mode: StatsMode
 }
 
 const KEY = 'nfl-faces:stats:v1'
@@ -25,6 +37,11 @@ export function defaultStats(): Stats {
     mute: true,
     first_played_at: null,
     device_id: newDeviceId(),
+    modes: {
+      faces: { best_streak: 0, best_streak_roll: null },
+      probowl: { best_streak: 0, best_streak_roll: null },
+    },
+    last_mode: 'faces',
   }
 }
 
@@ -57,9 +74,16 @@ export function loadStats(): Stats {
       return base
     }
     const parsed = JSON.parse(raw) as Partial<Stats>
-    const merged: Stats = { ...base, ...parsed }
+    const merged: Stats = { ...base, ...parsed, modes: { ...base.modes, ...(parsed.modes ?? {}) } }
     if (typeof merged.best_streak !== 'number' || !Number.isFinite(merged.best_streak))
       merged.best_streak = 0
+    // Stats written before Pro Bowl Mode existed: lift the faces best into the per-mode record.
+    if (merged.modes.faces.best_streak < merged.best_streak)
+      merged.modes.faces = {
+        best_streak: merged.best_streak,
+        best_streak_roll: merged.best_streak_roll,
+      }
+    if (merged.last_mode !== 'faces' && merged.last_mode !== 'probowl') merged.last_mode = 'faces'
     return merged
   } catch {
     return base
@@ -85,15 +109,27 @@ export function recordRound(stats: Stats, now = new Date()): Stats {
   }
 }
 
-/** Apply a streak ending at `streak` on `roll`. Best updates only on a strict improvement. */
-export function recordStreakEnd(stats: Stats, streak: number, roll: string): Stats {
-  const improved = streak > stats.best_streak
+/** Apply a streak ending at `streak` on `roll` in `mode`. Best updates only on a strict improvement. */
+export function recordStreakEnd(
+  stats: Stats,
+  streak: number,
+  roll: string,
+  mode: StatsMode = 'faces',
+): Stats {
+  const prev = stats.modes[mode]
+  const improved = streak > prev.best_streak
+  const next: ModeBest = improved ? { best_streak: streak, best_streak_roll: roll } : prev
   return {
     ...stats,
     total_streaks: stats.total_streaks + 1,
-    best_streak: improved ? streak : stats.best_streak,
-    best_streak_roll: improved ? roll : stats.best_streak_roll,
+    modes: { ...stats.modes, [mode]: next },
+    best_streak: mode === 'faces' ? next.best_streak : stats.best_streak,
+    best_streak_roll: mode === 'faces' ? next.best_streak_roll : stats.best_streak_roll,
   }
+}
+
+export function setLastMode(stats: Stats, mode: StatsMode): Stats {
+  return { ...stats, last_mode: mode }
 }
 
 export function setMute(stats: Stats, mute: boolean): Stats {

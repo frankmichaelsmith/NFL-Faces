@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react'
 import { PlayScreen } from './components/PlayScreen'
 import { StartScreen } from './components/StartScreen'
 import type { Bundle } from './game/bundle'
-import { GAME_CONFIG, type GameConfig } from './game/config'
+import { type GameConfig, type Mode } from './game/config'
 import { defaultRng, mulberry32, type Rng } from './game/rng'
 import { useGame, type GameDeps } from './state/useGame'
-import { wheelValue } from './components/Wheels'
-import type { GameState } from './state/machine'
+import { loadStats, saveStats, setLastMode } from './storage/local'
 
 const IMAGE_BASE_URL = (import.meta.env.VITE_IMAGE_BASE_URL as string | undefined) ?? '/faces/'
 /** Public URL printed on share cards. Falls back to wherever the page is served from. */
@@ -17,9 +16,12 @@ export const SITE_URL =
 interface Props {
   /** Injected in tests; otherwise fetched from /data/bundle.json. */
   bundle?: Bundle
-  config?: GameConfig
   rng?: Rng
   deps?: GameDeps
+  /** Initial mode; defaults to the last one chosen on this device. */
+  mode?: Mode
+  /** Timing/config overrides (tests). */
+  config?: Partial<GameConfig>
 }
 
 /** `?seed=123` makes a run reproducible (debugging, e2e). Production play stays random. */
@@ -31,10 +33,12 @@ function rngFromLocation(): Rng | null {
 
 export default function App({
   bundle: given,
-  config = GAME_CONFIG,
   rng = rngFromLocation() ?? defaultRng,
   deps = {},
+  mode: initialMode,
+  config,
 }: Props) {
+  const [mode, setMode] = useState<Mode>(() => initialMode ?? loadStats().last_mode)
   const [bundle, setBundle] = useState<Bundle | null>(given ?? null)
   const [error, setError] = useState<string | null>(null)
   useEffect(() => {
@@ -47,28 +51,47 @@ export default function App({
 
   if (error) return <Center>Could not load the game data ({error}).</Center>
   if (!bundle) return <Center>Loading…</Center>
-  return <Game bundle={bundle} config={config} rng={rng} deps={deps} />
+  const chooseMode = (m: Mode) => {
+    saveStats(setLastMode(loadStats(), m))
+    setMode(m)
+  }
+  return (
+    <Game
+      key={mode}
+      bundle={bundle}
+      mode={mode}
+      rng={rng}
+      deps={deps}
+      onMode={chooseMode}
+      overrides={config}
+    />
+  )
 }
 
 function Game({
   bundle,
-  config,
+  mode,
   rng,
   deps,
+  onMode,
+  overrides,
 }: {
   bundle: Bundle
-  config: GameConfig
+  mode: Mode
   rng: Rng
   deps: GameDeps
+  onMode: (m: Mode) => void
+  overrides?: Partial<GameConfig>
 }) {
-  const rollLabel = (s: GameState) =>
-    s.round ? config.wheels.map((w) => wheelValue(bundle, w.kind, s.round!)).join(' · ') : null
-  const game = useGame(bundle, config, rng, IMAGE_BASE_URL, rollLabel, deps)
+  const game = useGame(bundle, mode, rng, IMAGE_BASE_URL, deps, overrides)
   if (game.state.phase === 'idle')
     return (
       <StartScreen
-        bestStreak={game.stats.best_streak}
-        bestStreakRoll={game.stats.best_streak_roll}
+        mode={mode}
+        onMode={onMode}
+        proBowlAvailable={!!bundle.probowl}
+        bestStreak={game.stats.modes[mode].best_streak}
+        bestStreakRoll={game.stats.modes[mode].best_streak_roll}
         onStart={game.start}
         muted={game.muted}
         onToggleMute={game.toggleMute}

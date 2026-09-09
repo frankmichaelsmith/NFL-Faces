@@ -34,14 +34,14 @@ export default defineConfig({
       workbox: {
         // App shell + content bundle are precached; faces are cached as they are seen.
         globPatterns: ['**/*.{js,css,html,svg,png,json}'],
-        globIgnores: ['faces/**'],
+        globIgnores: ['faces/**', 'colleges/**', 'tiles/**'],
         runtimeCaching: [
           {
-            urlPattern: /\/faces\/.*\.jpg$/,
+            urlPattern: /\/(faces|colleges|tiles)\/.*\.(jpg|png)$/,
             handler: 'CacheFirst',
             options: {
               cacheName: 'faces',
-              expiration: { maxEntries: 400, maxAgeSeconds: 60 * 60 * 24 * 90 },
+              expiration: { maxEntries: 600, maxAgeSeconds: 60 * 60 * 24 * 90 },
             },
           },
           {

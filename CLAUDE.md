@@ -92,6 +92,6 @@ A second mode with **no photos**. Three wheels: **season** (2000 → last comple
 - [x] M8 — Hardening (signed off 2026-09-09)
 - [ ] M9 — Launch content (photo backfill pass 1 done 2026-09-09: 166/193 faces, 794/862 combos; 27 QBs have no licensed portrait anywhere we can reach — see TODO)
 - [x] Pro Bowl P1 — data (signed off 2026-09-09: 845 selections, 321 players, 3376 combos)
-- [x] Pro Bowl P2 — engine (built 2026-09-09; awaiting Frank checkpoint)
-- [ ] Pro Bowl P3 — screens and assets
+- [x] Pro Bowl P2 — engine (signed off 2026-09-09)
+- [x] Pro Bowl P3 — screens and assets (built 2026-09-09; awaiting Frank checkpoint)
 - [ ] Pro Bowl P4 — finish

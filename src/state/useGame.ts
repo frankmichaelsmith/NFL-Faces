@@ -4,9 +4,11 @@
  */
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import type { Bundle } from '../game/bundle'
-import type { GameConfig } from '../game/config'
+import { configFor, type GameConfig, type Mode } from '../game/config'
+import { nextProBowlRound } from '../game/probowl'
 import { defaultRng, type Rng } from '../game/rng'
 import { nextRound, replaceFace, type Slot } from '../game/select'
+import { wheelValue } from '../components/Wheels'
 import { type Analytics, defaultAnalytics } from '../analytics/analytics'
 import { createFeedback, type Feedback } from '../audio/feedback'
 import {
@@ -21,6 +23,7 @@ import { createReducer, initialState, type Action, type GameState } from './mach
 
 export interface GameApi {
   state: GameState
+  mode: Mode
   /** Base URL for face images; exposed so the screen and the preloader agree. */
   imageBaseUrl: string
   /** Device-local stats (best streak, totals). Updated as rounds and streaks finish. */
@@ -47,15 +50,19 @@ export interface GameDeps {
 }
 
 const now = () => performance.now()
+const NO_OVERRIDES: Partial<GameConfig> = {}
 
 export function useGame(
   bundle: Bundle,
-  config: GameConfig,
+  mode: Mode,
   rng: Rng = defaultRng,
   imageBaseUrl = '/faces/',
-  rollLabel: (state: GameState) => string | null = () => null,
   deps: GameDeps = {},
+  overrides: Partial<GameConfig> = NO_OVERRIDES,
 ): GameApi {
+  const config = useMemo(() => ({ ...configFor(mode), ...overrides }), [mode, overrides])
+  const rollLabel = (s: GameState) =>
+    s.round ? config.wheels.map((w) => wheelValue(bundle, w.kind, s.round!)).join(' · ') : null
   const reducer = useMemo(
     () => createReducer({ decisionMs: config.decisionMs }),
     [config.decisionMs],
@@ -70,7 +77,7 @@ export function useGame(
   }, [stats])
   const [state, dispatch] = useReducer(reducer, initialState, (s) => ({
     ...s,
-    bestStreak: stats.best_streak,
+    bestStreak: stats.modes[mode].best_streak,
   }))
 
   // One session_started per mount, identified by the anonymous device id.
@@ -116,9 +123,9 @@ export function useGame(
       analytics.track('streak_ended', {
         streak_length: state.streak,
         end_reason: state.lastOutcome as 'wrong' | 'timeout' | 'exhausted',
-        is_new_best: state.streak > prev.best_streak,
+        is_new_best: state.streak > prev.modes[mode].best_streak,
       })
-      next = recordStreakEnd(next, state.streak, losingRoll ?? '')
+      next = recordStreakEnd(next, state.streak, losingRoll ?? '', mode)
     }
     statsRef.current = next
     saveStats(next)
@@ -135,10 +142,11 @@ export function useGame(
     analytics,
     feedback,
     bundle.buildHash,
+    mode,
   ])
 
   const onWheelLand = useCallback(() => feedback.play('tick'), [feedback])
-  const toggleMute = useCallback(() => {
+  const toggleMute = () => {
     const next = !muted
     feedback.setMuted(next)
     if (!next) feedback.unlock()
@@ -148,12 +156,16 @@ export function useGame(
     saveStats(s)
     setStats(s)
     setMuted(next)
-  }, [muted, feedback, analytics])
+  }
 
   const pick = useCallback(
     (used: readonly string[]) =>
-      nextRound(bundle, new Set(used), rng, { alumniProb: config.alumniProb }),
-    [bundle, rng, config.alumniProb],
+      mode === 'probowl'
+        ? bundle.probowl
+          ? nextProBowlRound(bundle.probowl, new Set(used), rng)
+          : null
+        : nextRound(bundle, new Set(used), rng, { alumniProb: config.alumniProb }),
+    [bundle, mode, rng, config.alumniProb],
   )
 
   const start = useCallback(() => {
@@ -242,6 +254,7 @@ export function useGame(
 
   return {
     state,
+    mode,
     start,
     tap,
     onPainted,

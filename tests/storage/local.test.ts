@@ -57,4 +57,17 @@ describe('local stats', () => {
     expect(s.first_played_at).toBe('2026-01-01T00:00:00.000Z')
     expect(setMute(s, false).mute).toBe(false)
   })
+
+  it('keeps a best streak per mode and lifts an old faces best into the per-mode record', () => {
+    let s = recordStreakEnd(loadStats(), 4, '2010 · STEELERS', 'faces')
+    s = recordStreakEnd(s, 9, '2012 · Tom Brady · Draft Team', 'probowl')
+    expect(s.modes.faces).toEqual({ best_streak: 4, best_streak_roll: '2010 · STEELERS' })
+    expect(s.modes.probowl.best_streak).toBe(9)
+    expect(s.best_streak).toBe(4)
+    localStorage.setItem('nfl-faces:stats:v1', '{"best_streak":6,"best_streak_roll":"2001 · RAMS"}')
+    const old = loadStats()
+    expect(old.modes.faces).toEqual({ best_streak: 6, best_streak_roll: '2001 · RAMS' })
+    expect(old.modes.probowl.best_streak).toBe(0)
+    expect(old.last_mode).toBe('faces')
+  })
 })

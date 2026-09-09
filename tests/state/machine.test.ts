@@ -3,6 +3,8 @@ import type { Round } from '../../src/game/select'
 import { createReducer, initialState, remainingMs, type GameState } from '../../src/state/machine'
 
 const round = (answer: string, answerSlot: 0 | 1 | 2 = 1): Round => ({
+  kind: 'faces',
+  usedKey: answer,
   combo: { season: 2010, team: 'PIT', role: 'QB', answer, distractors: ['x', 'y'], alumni: [] },
   faces:
     answerSlot === 0

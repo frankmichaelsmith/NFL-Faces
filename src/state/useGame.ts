@@ -92,13 +92,13 @@ export function useGame(
     const key = `${state.roundIndex}:${state.phase}`
     if (recorded.current === key) return
     recorded.current = key
-    if (isRound && state.round && state.lastOutcome !== 'exhausted') {
+    if (isRound && state.round?.kind === 'faces' && state.lastOutcome !== 'exhausted') {
       analytics.track('round_completed', {
         season: state.round.combo.season,
         team_id: state.round.combo.team,
         role: state.round.combo.role,
         answer_id: state.round.combo.answer,
-        distractor_ids: state.round.faces.filter((f) => f !== state.round!.combo.answer),
+        distractor_ids: state.round.faces.filter((f) => f !== state.round?.combo.answer),
         answer_slot: state.round.answerSlot,
         tapped_slot: state.tappedSlot,
         outcome: state.lastOutcome as 'correct' | 'wrong' | 'timeout',
@@ -106,8 +106,9 @@ export function useGame(
         streak_position: state.phase === 'correct' ? state.streak : state.streak + 1,
         build_hash: bundle.buildHash,
       })
-      feedback.play(state.phase === 'correct' ? 'correct' : 'miss')
     }
+    if (isRound && state.lastOutcome !== 'exhausted')
+      feedback.play(state.phase === 'correct' ? 'correct' : 'miss')
     // Side effects stay outside the state updater: StrictMode runs updaters twice in dev.
     const prev = statsRef.current
     let next = isRound ? recordRound(prev) : prev
@@ -176,7 +177,7 @@ export function useGame(
   // swapped for another distractor before anyone sees it; the answer's card
   // falls back to initials at render time (FaceCards), never a broken image.
   useEffect(() => {
-    if (state.phase !== 'spinning' || !state.round) return
+    if (state.phase !== 'spinning' || state.round?.kind !== 'faces') return
     const round = state.round
     let cancelled = false
     const imgs = round.faces.map((id, i) => {

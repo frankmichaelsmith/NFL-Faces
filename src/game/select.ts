@@ -21,12 +21,15 @@ export interface SelectOptions {
 export type Slot = 0 | 1 | 2
 
 export interface Round {
+  kind: 'faces'
   combo: Combo
   /** Person ids in on-screen order. Exactly one equals combo.answer. */
   faces: readonly [string, string, string]
   answerSlot: Slot
   /** How many of the two wrong faces came from the alumni pool (0–2). */
   alumniCount: number
+  /** Repeat-protection key: the answer's person id. */
+  usedKey: string
 }
 
 /** Combos still available for a streak that has already used `used` answers. */
@@ -70,10 +73,12 @@ export function buildRound(combo: Combo, rng: Rng, opts: SelectOptions): Round {
   const d2 = pickDistractor(combo, rng, opts, exclude)
   const faces = shuffle(rng, [combo.answer, d1.id, d2.id]) as [string, string, string]
   return {
+    kind: 'faces',
     combo,
     faces,
     answerSlot: faces.indexOf(combo.answer) as Slot,
     alumniCount: Number(d1.alumni) + Number(d2.alumni),
+    usedKey: combo.answer,
   }
 }
 

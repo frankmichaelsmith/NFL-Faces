@@ -1,14 +1,15 @@
 import { useMemo } from 'react'
 import type { Bundle } from '../game/bundle'
 import type { GameConfig } from '../game/config'
-import type { Round } from '../game/select'
+import { CATEGORY_LABELS } from '../game/probowl'
+import type { AnyRound } from '../state/machine'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { Reel } from './Reel'
 
 interface Props {
   bundle: Bundle
   config: GameConfig
-  round: Round | null
+  round: AnyRound | null
   /** True while the round is in its spin phase. */
   spinning: boolean
   /** Fired when wheel `index` lands (M7 plays the tick). */
@@ -18,16 +19,24 @@ interface Props {
 type Kind = GameConfig['wheels'][number]['kind']
 
 /** Label for one wheel given the roll. Teams read in caps on the reel. */
-export function wheelValue(bundle: Bundle, kind: Kind, round: Round): string {
+export function wheelValue(bundle: Bundle, kind: Kind, round: AnyRound): string {
   switch (kind) {
     case 'season':
       return String(round.combo.season)
     case 'team':
-      return (
-        bundle.teams.find((t) => t.id === round.combo.team)?.label ?? round.combo.team
-      ).toUpperCase()
+      return round.kind === 'faces'
+        ? (
+            bundle.teams.find((t) => t.id === round.combo.team)?.label ?? round.combo.team
+          ).toUpperCase()
+        : ''
     case 'role':
-      return round.combo.role
+      return round.kind === 'faces' ? round.combo.role : ''
+    case 'player':
+      return round.kind === 'probowl'
+        ? (bundle.probowl?.players[round.combo.player]?.name ?? '')
+        : ''
+    case 'category':
+      return round.kind === 'probowl' ? CATEGORY_LABELS[round.combo.category] : ''
   }
 }
 
@@ -43,6 +52,10 @@ export function wheelValues(bundle: Bundle, kind: Kind): string[] {
       return bundle.teams.map((t) => t.label.toUpperCase())
     case 'role':
       return bundle.roles
+    case 'player':
+      return Object.values(bundle.probowl?.players ?? {}).map((p) => p.name)
+    case 'category':
+      return Object.values(CATEGORY_LABELS)
   }
 }
 

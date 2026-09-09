@@ -4,7 +4,7 @@
  * come back later without touching game logic (CLAUDE.md, locked decisions).
  */
 
-export type WheelKind = 'season' | 'team' | 'role'
+export type WheelKind = 'season' | 'team' | 'role' | 'player' | 'category'
 
 export interface WheelConfig {
   kind: WheelKind
@@ -28,6 +28,10 @@ export interface GameConfig {
   alumniProb: number
 }
 
+export type Mode = 'faces' | 'probowl'
+
+export const MODE_LABELS: Record<Mode, string> = { faces: 'Faces', probowl: 'Pro Bowl Mode' }
+
 export const GAME_CONFIG: GameConfig = {
   wheels: [
     { kind: 'season', label: 'Season' },
@@ -39,4 +43,19 @@ export const GAME_CONFIG: GameConfig = {
   spinMsPerWheel: 1000,
   feedbackMs: 300,
   alumniProb: 0.3,
+}
+
+/** Pro Bowl Mode (decision 0007): season → player → category; same timer, no photos. */
+export const PROBOWL_CONFIG: GameConfig = {
+  ...GAME_CONFIG,
+  wheels: [
+    { kind: 'season', label: 'Season' },
+    { kind: 'player', label: 'Player' },
+    { kind: 'category', label: 'Category' },
+  ],
+  roles: ['QB', 'RB', 'WR', 'TE'],
+}
+
+export function configFor(mode: Mode): GameConfig {
+  return mode === 'probowl' ? PROBOWL_CONFIG : GAME_CONFIG
 }

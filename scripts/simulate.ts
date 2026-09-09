@@ -14,6 +14,7 @@ import type { Bundle, Combo } from '../src/game/bundle'
 import { GAME_CONFIG } from '../src/game/config'
 import { mulberry32 } from '../src/game/rng'
 import { nextRound } from '../src/game/select'
+import { nextProBowlRound } from '../src/game/probowl'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 
@@ -106,6 +107,83 @@ async function main() {
   if (cap !== distinctAnswers)
     fail(`perfect streak cap ${cap} ≠ distinct answers ${distinctAnswers}`)
 
+  // ---- Pro Bowl Mode -------------------------------------------------------------------
+  const pb = bundle.probowl
+  let pbSummary = ''
+  if (pb) {
+    const pbRng = mulberry32(seed + 7)
+    const slots = [0, 0, 0]
+    const byCat: Record<string, number> = {}
+    let pbUsed = new Set<string>()
+    let pbStreak = 0
+    let pbLongest = 0
+    for (let i = 0; i < rounds; i++) {
+      const r = nextProBowlRound(pb, pbUsed, pbRng)
+      if (!r) {
+        fail(`probowl round ${i}: no combo after ${pbStreak} correct`)
+        break
+      }
+      const c = r.combo
+      const key = `${c.season} ${pb.players[c.player]?.name} ${c.category}`
+      if (!pb.players[c.player]) fail(`${key}: unknown player`)
+      if (r.options.filter((o) => o === c.answer).length !== 1) fail(`${key}: answer count ≠ 1`)
+      if (new Set(r.options).size !== 3) fail(`${key}: duplicate options`)
+      if (r.options[r.answerSlot] !== c.answer) fail(`${key}: answerSlot points at a wrong card`)
+      for (const o of r.options)
+        if (o !== c.answer && !c.distractors.includes(o)) fail(`${key}: ${o} not in pool`)
+      if (pbUsed.has(c.player)) fail(`${key}: player already rolled this streak`)
+      if (!pb.rosters[String(c.season)]?.includes(c.player))
+        fail(`${key}: player not on that season's roster`)
+      // the answer really is the player's attribute
+      const p = pb.players[c.player]!
+      const truth =
+        c.category === 'alma'
+          ? p.college
+          : c.category === 'draft'
+            ? p.draft
+            : c.category === 'number'
+              ? String(p.jersey)
+              : p.pos
+      if (truth !== c.answer) fail(`${key}: answer ${c.answer} ≠ player attribute ${truth}`)
+      slots[r.answerSlot] = (slots[r.answerSlot] ?? 0) + 1
+      byCat[c.category] = (byCat[c.category] ?? 0) + 1
+      if (pbRng() < accuracy) {
+        pbUsed.add(c.player)
+        pbStreak++
+        pbLongest = Math.max(pbLongest, pbStreak)
+      } else {
+        pbUsed = new Set()
+        pbStreak = 0
+      }
+    }
+    const share = slots.map((n) => n / rounds)
+    for (const [i, s] of share.entries())
+      if (s < 0.3 || s > 0.37)
+        fail(`probowl slot ${i} share ${(s * 100).toFixed(1)}% outside 30–37%`)
+    // perfect play cap = distinct players
+    const perfect = new Set<string>()
+    const perfectRng = mulberry32(seed + 8)
+    let cap = 0
+    for (;;) {
+      const r = nextProBowlRound(pb, perfect, perfectRng)
+      if (!r) break
+      perfect.add(r.combo.player)
+      if (++cap > pb.combos.length) {
+        fail('probowl perfect streak did not terminate')
+        break
+      }
+    }
+    if (cap !== Object.keys(pb.players).length)
+      fail(`probowl perfect cap ${cap} ≠ players ${Object.keys(pb.players).length}`)
+    pbSummary =
+      `probowl: ${pb.combos.length} combos, longest ${pbLongest}, perfect-play cap ${cap} (= players), ` +
+      `slots ${share.map((s) => (s * 100).toFixed(1) + '%').join(' / ')}, categories ${Object.entries(
+        byCat,
+      )
+        .map(([k, v]) => `${k} ${((100 * v) / rounds).toFixed(0)}%`)
+        .join(', ')}`
+  }
+
   const pct = (n: number) => `${((100 * n) / rounds).toFixed(1)}%`
   console.log(
     `simulate: ${rounds} rounds, seed ${seed}, accuracy ${accuracy}, bundle ${bundle.buildHash}`,
@@ -120,6 +198,7 @@ async function main() {
     `  alumni faces per round: 0 → ${pct(alumniHist[0]!)}, 1 → ${pct(alumniHist[1]!)}, 2 → ${pct(alumniHist[2]!)} (alumniProb ${opts.alumniProb})`,
   )
   console.log(`  distinct combos rolled: ${comboSeen.size} of ${bundle.combos.length}`)
+  if (pbSummary) console.log(`  ${pbSummary}`)
   if (failures.length) {
     console.error(`FAILED (${failures.length} shown):`)
     for (const f of failures) console.error('  ' + f)

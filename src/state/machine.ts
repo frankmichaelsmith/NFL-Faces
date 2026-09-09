@@ -8,7 +8,11 @@
  *                                          ├─TAP wrong / TAP late / TIMEOUT──▶ gameover
  *   gameover ──START──▶ spinning
  */
+import type { ProBowlRound } from '../game/probowl'
 import type { Round, Slot } from '../game/select'
+
+/** A round of either mode. The machine only needs answerSlot and usedKey. */
+export type AnyRound = Round | ProBowlRound
 
 export type Phase = 'idle' | 'spinning' | 'awaiting' | 'correct' | 'gameover'
 export type Outcome = 'correct' | 'wrong' | 'timeout' | 'exhausted'
@@ -21,7 +25,7 @@ export interface GameState {
   bestStreak: number
   /** Answers already correct this streak (repeat protection). */
   used: readonly string[]
-  round: Round | null
+  round: AnyRound | null
   /** Increments every round; effects key on it. */
   roundIndex: number
   /** performance.now() when the faces were painted; null until then. */
@@ -32,14 +36,14 @@ export interface GameState {
 }
 
 export type Action =
-  | { type: 'START'; round: Round | null }
+  | { type: 'START'; round: AnyRound | null }
   | { type: 'LANDED' }
   | { type: 'REVEALED'; now: number }
   | { type: 'TAP'; slot: Slot; now: number }
   | { type: 'TIMEOUT'; now: number }
-  | { type: 'NEXT'; round: Round | null }
+  | { type: 'NEXT'; round: AnyRound | null }
   /** Replace the faces of the round being spun (a photo failed to preload). Same combo, same roundIndex. */
-  | { type: 'SWAP_ROUND'; round: Round }
+  | { type: 'SWAP_ROUND'; round: AnyRound }
 
 export const initialState: GameState = {
   phase: 'idle',
@@ -61,7 +65,7 @@ export interface MachineConfig {
 export function createReducer(config: MachineConfig) {
   const spin = (
     s: GameState,
-    round: Round | null,
+    round: AnyRound | null,
     streak: number,
     used: readonly string[],
   ): GameState => {
@@ -124,7 +128,7 @@ export function createReducer(config: MachineConfig) {
             phase: 'correct',
             streak,
             bestStreak: Math.max(s.bestStreak, streak),
-            used: [...s.used, s.round.combo.answer],
+            used: [...s.used, s.round.usedKey],
             lastOutcome: 'correct',
             tappedSlot: a.slot,
             timeToTapMs: elapsed,

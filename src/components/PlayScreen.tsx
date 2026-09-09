@@ -103,7 +103,7 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
         }
       />
 
-      {round && state.phase !== 'spinning' ? (
+      {round && round.kind === 'faces' && state.phase !== 'spinning' ? (
         <FaceCards
           bundle={bundle}
           round={round}

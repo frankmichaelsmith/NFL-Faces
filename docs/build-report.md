@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-09T16:30:47.040Z.
+Generated 2026-09-09T18:25:02.818Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -147,9 +147,9 @@ None.
 
 ## Pro Bowl Mode
 
-**3376** combos across 26 seasons, 321 players, 114 colleges, 40 draft-team tiles.
+**3352** combos across 26 seasons, 317 players, 112 colleges, 40 draft-team tiles.
 
-By category: alma 844, draft 845, number 842, position 845.
+By category: alma 838, draft 839, number 836, position 839.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
@@ -166,9 +166,9 @@ By category: alma 844, draft 845, number 842, position 845.
 | 2010 | 31 | 31 | 124 |
 | 2011 | 32 | 32 | 128 |
 | 2012 | 35 | 35 | 140 |
-| 2013 | 35 | 35 | 140 |
-| 2014 | 38 | 38 | 152 |
-| 2015 | 36 | 36 | 144 |
+| 2013 | 33 | 33 | 132 |
+| 2014 | 36 | 36 | 144 |
+| 2015 | 34 | 34 | 136 |
 | 2016 | 40 | 40 | 160 |
 | 2017 | 35 | 35 | 139 |
 | 2018 | 37 | 37 | 147 |

@@ -188,6 +188,20 @@ async function main() {
         : 'unresolved: no ESPN search hit'
     }
   }
+  // Fullbacks share the running-back list on some Pro Bowl pages but are not a skill
+  // position in this game (Frank, 2026-09-09: John Kuhn was a FB, not a RB). Drop them.
+  const fullbacks: string[] = []
+  for (let i = selections.length - 1; i >= 0; i--) {
+    const s = selections[i]!
+    if (!s.espn_id) continue
+    const f = await facts(s.espn_id)
+    if (f?.position === 'FB') {
+      fullbacks.push(`${s.season} ${s.name}`)
+      selections.splice(i, 1)
+    }
+  }
+  if (fullbacks.length)
+    log(`dropped ${fullbacks.length} fullback selection(s): ${fullbacks.reverse().join(', ')}`)
   const ids = [...new Set(selections.map((s) => s.espn_id).filter(Boolean))]
   log(
     `${selections.length} selections, ${ids.length} distinct players resolved, ${selections.filter((s) => !s.espn_id).length} unresolved`,

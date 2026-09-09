@@ -20,7 +20,7 @@ export function parseCsv(text: string): ParsedCsv {
   let line = 1
   let recordStart = 1
   let i = 0
-  const src = text.replace(/^﻿/, '')
+  const src = text.replace(/^\uFEFF/, '')
   const endRecord = () => {
     record.push(field)
     field = ''

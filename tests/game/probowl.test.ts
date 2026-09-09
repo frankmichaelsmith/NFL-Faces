@@ -55,16 +55,41 @@ describe('Pro Bowl roll selection', () => {
     expect(pickProBowlCombo(S, new Set(['brady', 'brees', 'rodgers']), mulberry32(1))).toBeNull()
     expect(nextProBowlRound(S, new Set(['brady', 'brees', 'rodgers']), mulberry32(1))).toBeNull()
   })
-  it('is uniform over eligible combos', () => {
+  it('picks the category by weight, then a combo uniformly within it', () => {
     const rng = mulberry32(3)
+    const N = 40000
     const counts = new Map<string, number>()
-    for (let i = 0; i < 25000; i++) {
+    const byCat = new Map<string, number>()
+    for (let i = 0; i < N; i++) {
       const c = pickProBowlCombo(S, new Set(), rng)!
       const k = `${c.player}:${c.category}`
       counts.set(k, (counts.get(k) ?? 0) + 1)
+      byCat.set(c.category, (byCat.get(c.category) ?? 0) + 1)
     }
     expect(counts.size).toBe(5)
-    for (const n of counts.values()) expect(n / 25000).toBeGreaterThan(0.17)
+    // default weights: alma 1, draft 1, number 1, position 0.15 → position ≈ 4.8%
+    expect(byCat.get('position')! / N).toBeGreaterThan(0.03)
+    expect(byCat.get('position')! / N).toBeLessThan(0.07)
+    for (const cat of ['alma', 'draft', 'number'])
+      expect(byCat.get(cat)! / N).toBeCloseTo(1 / 3.15, 1)
+    // draft has two combos; each gets half of the category's share
+    expect(counts.get('brady:draft')! / counts.get('rodgers:draft')!).toBeCloseTo(1, 0)
+  })
+  it('honours explicit weights and skips a category weighted to zero', () => {
+    const rng = mulberry32(4)
+    for (let i = 0; i < 500; i++) {
+      const c = pickProBowlCombo(S, new Set(), rng, { alma: 0, draft: 0, number: 0, position: 1 })!
+      expect(c.category).toBe('position')
+    }
+    // once position's only player is used, the remaining categories share evenly
+    const seen = new Set<string>()
+    for (let i = 0; i < 500; i++)
+      seen.add(pickProBowlCombo(S, new Set(['brady']), rng, { position: 1 })!.category)
+    expect([...seen].sort()).toEqual(['draft', 'number'])
+    // every remaining category at zero falls back to a plain uniform roll
+    expect(
+      pickProBowlCombo(S, new Set(), rng, { alma: 0, draft: 0, number: 0, position: 0 }),
+    ).not.toBeNull()
   })
 })
 

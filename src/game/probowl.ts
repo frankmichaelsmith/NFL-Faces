@@ -2,13 +2,15 @@
  * Pro Bowl Mode selection (decision 0007). Pure functions over the bundle's
  * Pro Bowl section.
  *
- * - A roll is a uniformly random combo whose player has not yet been rolled
- *   in this streak (one player per streak, any category).
+ * - A roll picks a category by weight (`categoryWeights`, position rarely),
+ *   then a uniformly random combo of that category whose player has not yet
+ *   been rolled in this streak (one player per streak, any category).
  * - The two wrong cards are distinct values drawn uniformly from the combo's
  *   distractor pool; the correct card sits in a uniformly random slot.
  * - The roll is decided before anything animates.
  */
 import type { ProBowlCategory, ProBowlCombo, ProBowlSection } from './bundle'
+import { PROBOWL_CONFIG } from './config'
 import { sample, shuffle, type Rng } from './rng'
 import type { Slot } from './select'
 
@@ -26,8 +28,13 @@ export const CATEGORY_LABELS: Record<ProBowlCategory, string> = {
   alma: 'Alma Mater',
   draft: 'Draft Team',
   number: 'Pro Number',
-  position: 'Pro Position',
+  position: 'Position',
 }
+
+export type CategoryWeights = Readonly<Record<string, number>>
+
+/** Static wheel weights (never ramps): position lands on roughly one roll in twenty. */
+export const CATEGORY_WEIGHTS: CategoryWeights = PROBOWL_CONFIG.categoryWeights ?? {}
 
 /** Combos still available for a streak that has already rolled `used` players. */
 export function eligibleProBowlCombos(
@@ -41,9 +48,31 @@ export function pickProBowlCombo(
   section: ProBowlSection,
   used: ReadonlySet<string>,
   rng: Rng,
+  weights: CategoryWeights = CATEGORY_WEIGHTS,
 ): ProBowlCombo | null {
   const pool = eligibleProBowlCombos(section, used)
-  return pool.length ? sample(rng, pool) : null
+  if (!pool.length) return null
+  const byCategory = new Map<ProBowlCategory, ProBowlCombo[]>()
+  for (const c of pool) {
+    const list = byCategory.get(c.category)
+    if (list) list.push(c)
+    else byCategory.set(c.category, [c])
+  }
+  const categories = [...byCategory.keys()]
+  const w = categories.map((c) => Math.max(0, weights[c] ?? 1))
+  const total = w.reduce((a, b) => a + b, 0)
+  // Every remaining category weighs nothing: fall back to a plain uniform roll.
+  if (total <= 0) return sample(rng, pool)
+  let r = rng() * total
+  let chosen = categories[categories.length - 1]!
+  for (let i = 0; i < categories.length; i++) {
+    r -= w[i]!
+    if (r < 0) {
+      chosen = categories[i]!
+      break
+    }
+  }
+  return sample(rng, byCategory.get(chosen)!)
 }
 
 export function buildProBowlRound(combo: ProBowlCombo, rng: Rng): ProBowlRound {
@@ -71,8 +100,9 @@ export function nextProBowlRound(
   section: ProBowlSection,
   used: ReadonlySet<string>,
   rng: Rng,
+  weights: CategoryWeights = CATEGORY_WEIGHTS,
 ): ProBowlRound | null {
-  const combo = pickProBowlCombo(section, used, rng)
+  const combo = pickProBowlCombo(section, used, rng, weights)
   return combo ? buildProBowlRound(combo, rng) : null
 }
 

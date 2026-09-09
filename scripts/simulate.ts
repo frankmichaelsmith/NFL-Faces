@@ -160,6 +160,10 @@ async function main() {
     for (const [i, s] of share.entries())
       if (s < 0.3 || s > 0.37)
         fail(`probowl slot ${i} share ${(s * 100).toFixed(1)}% outside 30–37%`)
+    // Position is weighted down (Frank, 2026-09-09): ~5% of rolls, never more than a tenth.
+    const posShare = (byCat['position'] ?? 0) / rounds
+    if (posShare < 0.02 || posShare > 0.1)
+      fail(`probowl position share ${(posShare * 100).toFixed(1)}% outside 2–10%`)
     // perfect play cap = distinct players
     const perfect = new Set<string>()
     const perfectRng = mulberry32(seed + 8)

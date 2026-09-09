@@ -26,6 +26,11 @@ export interface GameConfig {
   feedbackMs: number
   /** Per-slot probability that a distractor is drawn from the alumni pool. */
   alumniProb: number
+  /**
+   * Relative frequency of each value on the category wheel (missing = 1).
+   * The roll picks a category by weight, then a combo uniformly within it.
+   */
+  categoryWeights?: Readonly<Record<string, number>>
 }
 
 export type Mode = 'faces' | 'probowl'
@@ -54,6 +59,8 @@ export const PROBOWL_CONFIG: GameConfig = {
     { kind: 'category', label: 'Category' },
   ],
   roles: ['QB', 'RB', 'WR', 'TE'],
+  // Position is the easy one; Frank (2026-09-09) wants it to land far less often (~5% of rolls).
+  categoryWeights: { alma: 1, draft: 1, number: 1, position: 0.15 },
 }
 
 export function configFor(mode: Mode): GameConfig {

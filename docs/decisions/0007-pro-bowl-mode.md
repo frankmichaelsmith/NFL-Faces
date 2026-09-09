@@ -14,4 +14,6 @@ A second game mode that never shows a photo. Three wheels: **season** (2000 → 
 
 **Amendment (Frank, 2026-09-09):** fullbacks are not skill players here. Pro Bowl pages that list fullbacks under running backs (2013–2015) had let four in (Kuhn, Reece, Tolbert, DiMarco); the pull now drops any selection whose ESPN position is FB.
 
+**Amendment (Frank, 2026-09-09):** the category wheel reads **Position** (not "Pro Position") and lands on it far less often than the other three. The roll picks a category by static weight (`PROBOWL_CONFIG.categoryWeights`: alma 1, draft 1, number 1, position 0.15 → about one roll in twenty), then a combo uniformly within that category. This is a fixed rule, not difficulty ramping.
+
 **Amendment (Frank, 2026-09-09):** the Pro Number answer is the number the player wore **in the rolled season**, read from that season's Pro Bowl roster page (Terrell Owens is 81 for 2003, not his last-worn 10). ESPN's last-worn number is only a fallback when the roster page prints none.

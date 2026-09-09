@@ -5,14 +5,16 @@ describe('reelStrip', () => {
   const values = ['A', 'B', 'C', 'D']
   it('repeats the wheel for the requested cycles and ends on the target', () => {
     const s = reelStrip(values, 'C', 2)
-    expect(s.items).toEqual(['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C'])
+    expect(s.items).toEqual(['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D'])
     expect(s.items[s.landIndex]).toBe('C')
     expect(s.landIndex).toBe(10)
-    expect(s.finalY).toBe(-10 * ITEM_HEIGHT_PX)
+    // the landed item sits in the middle of a three-row window
+    expect(s.finalY).toBe(-9 * ITEM_HEIGHT_PX)
+    expect(s.items[s.landIndex + 1]).toBe('D')
   })
   it('lands on the first item without a partial tail beyond it', () => {
     const s = reelStrip(values, 'A', 1)
-    expect(s.items).toEqual(['A', 'B', 'C', 'D', 'A'])
+    expect(s.items).toEqual(['A', 'B', 'C', 'D', 'A', 'B'])
     expect(s.landIndex).toBe(4)
   })
   it('rejects a target that is not on the wheel', () => {

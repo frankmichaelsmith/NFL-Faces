@@ -5,6 +5,7 @@ import { CATEGORY_LABELS } from '../game/probowl'
 import type { AnyRound } from '../state/machine'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { Reel } from './Reel'
+import { VIEWPORT_HEIGHT_PX } from './reel-math'
 
 interface Props {
   bundle: Bundle
@@ -96,7 +97,8 @@ export function Wheels({ bundle, config, round, spinning, onLand }: Props) {
           <div
             key={w.kind}
             data-testid={`wheel-${w.kind}`}
-            className="h-20 rounded-xl border border-white/10 bg-black/20"
+            className="rounded-xl border border-white/10 bg-black/20"
+            style={{ height: VIEWPORT_HEIGHT_PX }}
           />
         ),
       )}

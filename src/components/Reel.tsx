@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { cyclesFor, ITEM_HEIGHT_PX, reelStrip } from './reel-math'
+import { cyclesFor, ITEM_HEIGHT_PX, reelStrip, VIEWPORT_HEIGHT_PX } from './reel-math'
 
 interface Props {
   /** What the wheel shows; decides how a value is typeset. */
@@ -57,7 +57,7 @@ export function Reel({
         'reel relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-b from-white/10 via-black/20 to-black/40 ' +
         (landed ? 'reel-landed' : '')
       }
-      style={{ height: ITEM_HEIGHT_PX }}
+      style={{ height: VIEWPORT_HEIGHT_PX }}
     >
       {animate ? (
         <div
@@ -83,11 +83,19 @@ export function Reel({
       ) : (
         <div
           className={
-            'reel-item flex h-full items-center justify-center overflow-hidden transition-opacity duration-200 ' +
+            'flex h-full flex-col transition-opacity duration-200 ' +
             (landed ? 'opacity-100' : 'opacity-0')
           }
         >
-          <ReelLabel kind={kind} value={target} />
+          {neighbours(values, target).map((v, i) => (
+            <div
+              key={i}
+              className="reel-item flex items-center justify-center overflow-hidden"
+              style={{ height: ITEM_HEIGHT_PX }}
+            >
+              <ReelLabel kind={kind} value={v} />
+            </div>
+          ))}
         </div>
       )}
       {!landed && !animate && (
@@ -95,8 +103,19 @@ export function Reel({
           · · ·
         </div>
       )}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-ink/80 to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-ink/80 to-transparent" />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 bg-gradient-to-b from-ink/90 via-ink/60 to-transparent"
+        style={{ height: ITEM_HEIGHT_PX }}
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/60 to-transparent"
+        style={{ height: ITEM_HEIGHT_PX }}
+      />
+      <div
+        className="pointer-events-none absolute inset-x-1 rounded-lg border border-white/20"
+        style={{ top: ITEM_HEIGHT_PX, height: ITEM_HEIGHT_PX }}
+        aria-hidden
+      />
     </div>
   )
 }
@@ -114,9 +133,9 @@ export function ReelLabel({ kind, value }: { kind: NonNullable<Props['kind']>; v
     if (/^(jr\.?|sr\.?|ii|iii|iv)$/i.test(last) && parts.length > 1)
       last = `${parts.pop()!} ${last}`
     const first = parts.join(' ')
-    const size = last.length > 11 ? 'text-base' : last.length > 8 ? 'text-lg' : 'text-2xl'
+    const size = last.length > 11 ? 'text-sm' : last.length > 8 ? 'text-base' : 'text-xl'
     return (
-      <div className="flex w-full flex-col items-center px-1 leading-none">
+      <div className="flex w-full flex-col items-center px-3 leading-none">
         {first && (
           <span className="w-full truncate text-center text-[11px] font-bold uppercase tracking-wide text-white/60">
             {first}
@@ -130,12 +149,12 @@ export function ReelLabel({ kind, value }: { kind: NonNullable<Props['kind']>; v
   }
   if (kind === 'category') {
     return (
-      <span className="font-display px-1 text-center text-xl font-black uppercase leading-tight">
+      <span className="font-display px-2 text-center text-lg font-black uppercase leading-tight">
         {value}
       </span>
     )
   }
-  const size = value.length > 9 ? 'text-xl' : value.length > 7 ? 'text-2xl' : 'text-3xl'
+  const size = value.length > 9 ? 'text-lg' : value.length > 7 ? 'text-xl' : 'text-2xl'
   return (
     <span
       className={`font-display w-full truncate px-1 text-center font-black tracking-wide ${size}`}
@@ -143,4 +162,12 @@ export function ReelLabel({ kind, value }: { kind: NonNullable<Props['kind']>; v
       {value}
     </span>
   )
+}
+
+/** The value above, the value itself, and the value below, for the non-animated window. */
+function neighbours(values: readonly string[], target: string): string[] {
+  const i = Math.max(0, values.indexOf(target))
+  const n = values.length
+  if (n === 0) return ['', target, '']
+  return [values[(i - 1 + n) % n]!, target, values[(i + 1) % n]!]
 }

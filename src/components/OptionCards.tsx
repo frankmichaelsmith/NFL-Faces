@@ -61,8 +61,12 @@ export function OptionCards({ bundle, round, state, onTap, onPainted, assetBaseU
         const isAnswer = slot === round.answerSlot
         const img = broken[value] ? null : optionImage(category, value, assetBaseUrl)
         const label = describeValue(section, category, value)
+        // A caption only helps when the card is a picture; "#80" under "80" is noise (Frank, 2026-09-09).
+        const captioned = category === 'alma' || category === 'draft'
         const showName =
-          settled && (slot === state.tappedSlot || (state.phase === 'gameover' && isAnswer))
+          captioned &&
+          settled &&
+          (slot === state.tappedSlot || (state.phase === 'gameover' && isAnswer))
         return (
           <button
             key={`${state.roundIndex}-${slot}`}

@@ -148,8 +148,11 @@ describe('Pro Bowl Mode', () => {
       [0, 1, 2].find((i) => screen.getByTestId(`face-${i}`).dataset.value === value)!
     fireEvent.pointerDown(screen.getByTestId(`face-${slotOf(answerOf())}`))
     expect(screen.getByTestId('streak').textContent).toBe('1')
-    // the tapped card is the answer card, so its label carries the answer testid
-    expect(screen.getByTestId('answer-name')).toBeInTheDocument()
+    // captions appear only under picture cards (logo / tile), never under a number or position
+    const captioned = () =>
+      ['Alma Mater', 'Draft Team'].includes(screen.getByTestId('wheel-category').dataset.value!)
+    if (captioned()) expect(screen.getByTestId('answer-name')).toBeInTheDocument()
+    else expect(screen.queryByTestId('answer-name')).toBeNull()
     await act(async () => {
       vi.advanceTimersByTime(config.feedbackMs + 5)
     })
@@ -163,8 +166,13 @@ describe('Pro Bowl Mode', () => {
     const wrong = (right + 1) % 3
     fireEvent.pointerDown(screen.getByTestId(`face-${wrong}`))
     expect(screen.getByTestId('game-over')).toBeInTheDocument()
-    expect(screen.getByTestId('answer-name')).toBeInTheDocument()
-    expect(screen.getByTestId('tapped-name')).toBeInTheDocument()
+    if (captioned()) {
+      expect(screen.getByTestId('answer-name')).toBeInTheDocument()
+      expect(screen.getByTestId('tapped-name')).toBeInTheDocument()
+    } else {
+      expect(screen.queryByTestId('answer-name')).toBeNull()
+      expect(screen.queryByTestId('tapped-name')).toBeNull()
+    }
     expect(screen.getByTestId('losing-roll').textContent).toMatch(
       /Died on 20\d\d · .+ · (Alma Mater|Draft Team|Pro Number|Pro Position)/,
     )

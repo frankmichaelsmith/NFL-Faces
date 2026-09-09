@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { cyclesFor, ITEM_HEIGHT_PX, reelStrip } from './reel-math'
 
 interface Props {
+  /** What the wheel shows; decides how a value is typeset. */
+  kind?: 'season' | 'team' | 'role' | 'player' | 'category'
   /** Every value on this wheel, in strip order. */
   values: readonly string[]
   /** Where this spin lands. */
@@ -21,7 +23,16 @@ interface Props {
  * blurred while moving. With reduced motion the value simply fades in at the
  * landing time, keeping the left-to-right cadence.
  */
-export function Reel({ values, target, durationMs, spin, reduceMotion, onLand, testId }: Props) {
+export function Reel({
+  kind = 'team',
+  values,
+  target,
+  durationMs,
+  spin,
+  reduceMotion,
+  onLand,
+  testId,
+}: Props) {
   const [landed, setLanded] = useState(!spin)
   useEffect(() => {
     if (!spin) return
@@ -62,21 +73,21 @@ export function Reel({ values, target, durationMs, spin, reduceMotion, onLand, t
             <div
               key={i}
               aria-hidden={i !== strip.landIndex}
-              className="reel-item flex items-center justify-center font-display text-3xl font-black tracking-wide"
+              className="reel-item flex items-center justify-center overflow-hidden"
               style={{ height: ITEM_HEIGHT_PX }}
             >
-              {v}
+              <ReelLabel kind={kind} value={v} />
             </div>
           ))}
         </div>
       ) : (
         <div
           className={
-            'reel-item flex h-full items-center justify-center font-display text-3xl font-black tracking-wide transition-opacity duration-200 ' +
+            'reel-item flex h-full items-center justify-center overflow-hidden transition-opacity duration-200 ' +
             (landed ? 'opacity-100' : 'opacity-0')
           }
         >
-          {target}
+          <ReelLabel kind={kind} value={target} />
         </div>
       )}
       {!landed && !animate && (
@@ -87,5 +98,49 @@ export function Reel({ values, target, durationMs, spin, reduceMotion, onLand, t
       <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-ink/80 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-ink/80 to-transparent" />
     </div>
+  )
+}
+
+/**
+ * Typeset one reel value so it always fits the reel width (~110 px on a phone):
+ * seasons and team codes stay big; player names split into first/last with the
+ * last name sized by length; categories wrap to two short lines.
+ */
+export function ReelLabel({ kind, value }: { kind: NonNullable<Props['kind']>; value: string }) {
+  if (kind === 'player') {
+    const parts = value.split(' ')
+    let last = parts.length > 1 ? parts.pop()! : value
+    // "Marvin Harrison Jr." keeps the suffix with the surname, not as the big word.
+    if (/^(jr\.?|sr\.?|ii|iii|iv)$/i.test(last) && parts.length > 1)
+      last = `${parts.pop()!} ${last}`
+    const first = parts.join(' ')
+    const size = last.length > 11 ? 'text-base' : last.length > 8 ? 'text-lg' : 'text-2xl'
+    return (
+      <div className="flex w-full flex-col items-center px-1 leading-none">
+        {first && (
+          <span className="w-full truncate text-center text-[11px] font-bold uppercase tracking-wide text-white/60">
+            {first}
+          </span>
+        )}
+        <span className={`font-display w-full truncate text-center font-black ${size}`}>
+          {last}
+        </span>
+      </div>
+    )
+  }
+  if (kind === 'category') {
+    return (
+      <span className="font-display px-1 text-center text-xl font-black uppercase leading-tight">
+        {value}
+      </span>
+    )
+  }
+  const size = value.length > 9 ? 'text-xl' : value.length > 7 ? 'text-2xl' : 'text-3xl'
+  return (
+    <span
+      className={`font-display w-full truncate px-1 text-center font-black tracking-wide ${size}`}
+    >
+      {value}
+    </span>
   )
 }

@@ -9,6 +9,7 @@ import { nextProBowlRound } from '../game/probowl'
 import { defaultRng, type Rng } from '../game/rng'
 import { nextRound, replaceFace, type Slot } from '../game/select'
 import { wheelValue } from '../components/Wheels'
+import { optionImage } from '../components/OptionCards'
 import { type Analytics, defaultAnalytics } from '../analytics/analytics'
 import { createFeedback, type Feedback } from '../audio/feedback'
 import {
@@ -209,6 +210,26 @@ export function useGame(
       imgs.forEach((img) => img && (img.onerror = null))
     }
   }, [state.phase, state.round, bundle, rng, config.alumniProb, imageBaseUrl])
+
+  // Spinning (Pro Bowl): warm the logo / tile images so the cards paint instantly.
+  useEffect(() => {
+    if (
+      state.phase !== 'spinning' ||
+      state.round?.kind !== 'probowl' ||
+      typeof Image === 'undefined'
+    )
+      return
+    const base = typeof import.meta.env.BASE_URL === 'string' ? import.meta.env.BASE_URL : '/'
+    const imgs: HTMLImageElement[] = []
+    for (const value of state.round.options) {
+      const src = optionImage(state.round.combo.category, value, base)
+      if (!src) continue
+      const img = new Image()
+      img.src = src
+      imgs.push(img)
+    }
+    return () => imgs.forEach((img) => (img.src = ''))
+  }, [state.phase, state.round])
 
   // Awaiting: enforce the deadline. The reducer re-checks the clock, so a
   // throttled timer can only fire late, never early.

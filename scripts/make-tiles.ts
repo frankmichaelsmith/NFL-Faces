@@ -22,6 +22,8 @@ const TILES = path.join(ROOT, 'public/tiles')
 const COLLEGES = path.join(ROOT, 'public/colleges')
 const RAW = path.join(ROOT, 'raw-photos/colleges')
 const SIZE = 512
+/** Logos render at ~110 px on a phone; 320 px keeps them crisp at 2× and a quarter of the bytes. */
+const LOGO_SIZE = 320
 const UA =
   'nfl-faces-assets/0.1 (https://github.com/frankmichaelsmith/NFL-Faces; fmsfranksmith@gmail.com)'
 
@@ -79,15 +81,15 @@ async function main() {
       // Trim transparent margins, then fit into a square with padding so every logo reads the same size.
       const trimmed = await sharp(rawFile).ensureAlpha().trim({ threshold: 10 }).toBuffer()
       await sharp(trimmed)
-        .resize(Math.round(SIZE * 0.8), Math.round(SIZE * 0.8), {
+        .resize(Math.round(LOGO_SIZE * 0.8), Math.round(LOGO_SIZE * 0.8), {
           fit: 'contain',
           background: { r: 0, g: 0, b: 0, alpha: 0 },
         })
         .extend({
-          top: Math.round(SIZE * 0.1),
-          bottom: Math.round(SIZE * 0.1),
-          left: Math.round(SIZE * 0.1),
-          right: Math.round(SIZE * 0.1),
+          top: Math.round(LOGO_SIZE * 0.1),
+          bottom: Math.round(LOGO_SIZE * 0.1),
+          left: Math.round(LOGO_SIZE * 0.1),
+          right: Math.round(LOGO_SIZE * 0.1),
           background: { r: 0, g: 0, b: 0, alpha: 0 },
         })
         .png({ compressionLevel: 9 })

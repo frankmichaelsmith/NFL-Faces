@@ -83,6 +83,7 @@ export function Wheels({ bundle, config, round, spinning, onLand }: Props) {
         round ? (
           <Reel
             key={w.kind}
+            kind={w.kind}
             testId={`wheel-${w.kind}`}
             values={values[i]!}
             target={wheelValue(bundle, w.kind, round)}

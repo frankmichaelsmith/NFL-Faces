@@ -6,8 +6,8 @@ PIT,23,Steelers,Pittsburgh,2000
 HOU,34,Texans,Houston,2002
 `
 const people = `${PERSON_HEADER.join(',')}
-5536,roethlisberger-ben,Ben Roethlisberger,true,true,,,false,
-1,carr-david,David Carr,true,false,,,false,
+5536,roethlisberger-ben,Ben Roethlisberger,true,true,,,,false,
+1,carr-david,David Carr,true,false,,,,false,
 `
 const stints = `${STINT_HEADER.join(',')}
 2010,PIT,5536,QB,3200,0,false,leaders
@@ -69,8 +69,8 @@ describe('parseContent', () => {
 
   it('rejects an approved photo without a source', () => {
     const bad = people.replace(
-      '5536,roethlisberger-ben,Ben Roethlisberger,true,true,,,false,',
-      '5536,roethlisberger-ben,Ben Roethlisberger,true,true,,,true,',
+      '5536,roethlisberger-ben,Ben Roethlisberger,true,true,,,,false,',
+      '5536,roethlisberger-ben,Ben Roethlisberger,true,true,,,,true,',
     )
     const { errors } = parseContent({ teams, people: bad, stints })
     expect(errors).toContain(

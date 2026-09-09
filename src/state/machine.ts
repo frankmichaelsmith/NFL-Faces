@@ -38,6 +38,8 @@ export type Action =
   | { type: 'TAP'; slot: Slot; now: number }
   | { type: 'TIMEOUT'; now: number }
   | { type: 'NEXT'; round: Round | null }
+  /** Replace the faces of the round being spun (a photo failed to preload). Same combo, same roundIndex. */
+  | { type: 'SWAP_ROUND'; round: Round }
 
 export const initialState: GameState = {
   phase: 'idle',
@@ -137,6 +139,10 @@ export function createReducer(config: MachineConfig) {
       }
       case 'NEXT':
         return s.phase === 'correct' ? spin(s, a.round, s.streak, s.used) : s
+      case 'SWAP_ROUND':
+        return s.phase === 'spinning' && s.round && a.round.combo === s.round.combo
+          ? { ...s, round: a.round }
+          : s
     }
   }
 }

@@ -10,6 +10,7 @@ const person = (espn_id: string, name: string, extra: Partial<PersonRow> = {}): 
   espn_headshot: true,
   photo_source: '',
   photo_license: '',
+  photo_crop: '',
   photo_approved: false,
   notes: '',
   ...extra,

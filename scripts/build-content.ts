@@ -1,7 +1,7 @@
 /**
  * content/*.csv → public/data/bundle.json + docs/build-report.md
  *
- *   npm run build:content -- [--require-photo]
+ *   npm run build:content -- [--allow-missing-photos]
  *
  * Exit 1 on any validation error or hard failure (a combo with < 2 distractors).
  */
@@ -14,7 +14,8 @@ import { buildBundle, renderReport } from './lib/build'
 const ROOT = path.resolve(import.meta.dirname, '..')
 
 async function main() {
-  const requirePhoto = process.argv.includes('--require-photo')
+  // Since M5 every pool member needs an approved photo; the flag is for content work in progress.
+  const requirePhoto = !process.argv.includes('--allow-missing-photos')
   const files = await Promise.all(
     ['teams.csv', 'people.csv', 'stints.csv'].map((f) =>
       readFile(path.join(ROOT, 'content', f), 'utf8'),

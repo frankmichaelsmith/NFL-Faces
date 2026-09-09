@@ -32,10 +32,10 @@ export default function App({ bundle: given, config = GAME_CONFIG, rng = default
 }
 
 function Game({ bundle, config, rng }: { bundle: Bundle; config: GameConfig; rng: Rng }) {
-  const game = useGame(bundle, config, rng)
+  const game = useGame(bundle, config, rng, IMAGE_BASE_URL)
   if (game.state.phase === 'idle')
     return <StartScreen bestStreak={game.state.bestStreak} onStart={game.start} />
-  return <PlayScreen bundle={bundle} game={game} imageBaseUrl={IMAGE_BASE_URL} />
+  return <PlayScreen bundle={bundle} game={game} imageBaseUrl={game.imageBaseUrl} />
 }
 
 function Center({ children }: { children: React.ReactNode }) {

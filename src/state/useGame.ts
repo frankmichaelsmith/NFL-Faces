@@ -6,11 +6,13 @@ import { useCallback, useEffect, useMemo, useReducer } from 'react'
 import type { Bundle } from '../game/bundle'
 import type { GameConfig } from '../game/config'
 import { defaultRng, type Rng } from '../game/rng'
-import { nextRound, type Slot } from '../game/select'
+import { nextRound, replaceFace, type Slot } from '../game/select'
 import { createReducer, initialState, type Action, type GameState } from './machine'
 
 export interface GameApi {
   state: GameState
+  /** Base URL for face images; exposed so the screen and the preloader agree. */
+  imageBaseUrl: string
   /** Start a new streak (from idle or game over). */
   start: () => void
   /** Player tapped a face card. */
@@ -22,7 +24,12 @@ export interface GameApi {
 
 const now = () => performance.now()
 
-export function useGame(bundle: Bundle, config: GameConfig, rng: Rng = defaultRng): GameApi {
+export function useGame(
+  bundle: Bundle,
+  config: GameConfig,
+  rng: Rng = defaultRng,
+  imageBaseUrl = '/faces/',
+): GameApi {
   const reducer = useMemo(
     () => createReducer({ decisionMs: config.decisionMs }),
     [config.decisionMs],
@@ -48,6 +55,31 @@ export function useGame(bundle: Bundle, config: GameConfig, rng: Rng = defaultRn
     )
     return () => clearTimeout(t)
   }, [state.phase, state.roundIndex, config.wheels.length, config.spinMsPerWheel])
+
+  // Spinning: preload the three faces. A wrong face that fails to load is
+  // swapped for another distractor before anyone sees it; the answer's card
+  // falls back to initials at render time (FaceCards), never a broken image.
+  useEffect(() => {
+    if (state.phase !== 'spinning' || !state.round) return
+    const round = state.round
+    let cancelled = false
+    const imgs = round.faces.map((id, i) => {
+      const photo = bundle.people[id]?.photo
+      if (!photo || typeof Image === 'undefined') return null
+      const img = new Image()
+      img.onerror = () => {
+        if (cancelled || i === round.answerSlot) return
+        const swapped = replaceFace(round, i as Slot, rng, { alumniProb: config.alumniProb })
+        if (swapped) dispatch({ type: 'SWAP_ROUND', round: swapped })
+      }
+      img.src = imageBaseUrl + photo
+      return img
+    })
+    return () => {
+      cancelled = true
+      imgs.forEach((img) => img && (img.onerror = null))
+    }
+  }, [state.phase, state.round, bundle, rng, config.alumniProb, imageBaseUrl])
 
   // Awaiting: enforce the deadline. The reducer re-checks the clock, so a
   // throttled timer can only fire late, never early.
@@ -91,7 +123,7 @@ export function useGame(bundle: Bundle, config: GameConfig, rng: Rng = defaultRn
     return () => window.removeEventListener('keydown', onKey)
   }, [tap])
 
-  return { state, start, tap, onPainted, config }
+  return { state, start, tap, onPainted, config, imageBaseUrl }
 }
 
 export type { Action, GameState }

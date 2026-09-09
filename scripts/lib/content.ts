@@ -25,6 +25,8 @@ export interface PersonRow {
   /** Where the served photo came from (espn | commons:<file> | manual:<note>). Empty = none yet. */
   photo_source: string
   photo_license: string
+  /** Optional normalized face box "x,y,w,h" (0–1 of the source) for non-ESPN photos. */
+  photo_crop: string
   photo_approved: boolean
   notes: string
 }
@@ -58,6 +60,7 @@ export const PERSON_HEADER = [
   'espn_headshot',
   'photo_source',
   'photo_license',
+  'photo_crop',
   'photo_approved',
   'notes',
 ] as const
@@ -107,6 +110,13 @@ export function parseContent(files: ContentFiles): ParseResult {
     espn_headshot: bool(get('espn_headshot'), 'espn_headshot', err),
     photo_source: get('photo_source'),
     photo_license: get('photo_license'),
+    photo_crop: get(
+      'photo_crop',
+      (v) =>
+        v === '' ||
+        /^\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*$/.test(v) ||
+        err('photo_crop must be x,y,w,h'),
+    ),
     photo_approved: bool(get('photo_approved'), 'photo_approved', err),
     notes: get('notes'),
   }))

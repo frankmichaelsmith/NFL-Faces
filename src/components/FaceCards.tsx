@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import type { Bundle } from '../game/bundle'
 import { hueFor, initials } from '../game/people'
 import type { Round, Slot } from '../game/select'
@@ -47,6 +47,8 @@ export function FaceCards({ bundle, round, state, onTap, onPainted, imageBaseUrl
   }, [active])
 
   const revealName = state.phase === 'gameover'
+  // Faces whose image failed after the preload (rare): show initials instead.
+  const [broken, setBroken] = useState<Record<string, true>>({})
   return (
     <div className="grid grid-cols-3 gap-3" data-testid="faces" data-round={state.roundIndex}>
       {round.faces.map((id, i) => {
@@ -76,11 +78,12 @@ export function FaceCards({ bundle, round, state, onTap, onPainted, imageBaseUrl
             }
           >
             <div className="relative aspect-square w-full overflow-hidden">
-              {person.photo ? (
+              {person.photo && !broken[id] ? (
                 <img
                   src={imageBaseUrl + person.photo}
                   alt=""
                   draggable={false}
+                  onError={() => setBroken((b) => ({ ...b, [id]: true }))}
                   className="h-full w-full object-cover"
                 />
               ) : (

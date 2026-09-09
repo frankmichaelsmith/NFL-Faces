@@ -172,6 +172,7 @@ async function main() {
       espn_headshot: a.headshotUrl !== null,
       photo_source: prev?.photo_source ?? '',
       photo_license: prev?.photo_license ?? '',
+      photo_crop: prev?.photo_crop ?? '',
       photo_approved: prev?.photo_approved ?? false,
       notes: prev?.notes ?? '',
     }

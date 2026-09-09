@@ -34,7 +34,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - **Alumni weighting (Frank, 2026-09-09):** each distractor slot is drawn **independently**: with probability `ALUMNI_PROB` (**0.3**, Frank lowered it from 0.6 on 2026-09-09) from the _alumni pool_ (QBs who led the rolled team in a different season, if any), otherwise at random from the full distractor pool. Frank explicitly wants a **mix** — sometimes two alumni, sometimes one, sometimes none — not alumni on every face every round. This is a static rule, not difficulty ramping.
 - **Repeat protection:** a person is the correct answer at most once per streak. Since every combo has one answer, combos whose answer is already used are excluded at roll time (spec §10.2 recommended option). Distractors are not repeat-protected.
 - **Correct-face slot:** uniformly random each round (spec §8.2).
-- **Photos: one square face crop per person, no era variants** (replaces spec §12 aspect ratio and photo-per-era). The crop is tight to the face so jerseys, logos and colors give nothing away. `photos.csv` is gone; photo fields live on the person row (`espn_id`, `photo_source`, `photo_license`, `photo_approved`).
+- **Photos: one square face crop per person, no era variants** (400×400 JPEG in `public/faces/`, head = 1.5× head-width from the ESPN alpha silhouette; non-ESPN photos need a hand-set `photo_crop` before `photo_approved`) (replaces spec §12 aspect ratio and photo-per-era). The crop is tight to the face so jerseys, logos and colors give nothing away. `photos.csv` is gone; photo fields live on the person row (`espn_id`, `photo_source`, `photo_license`, `photo_approved`).
 - **Photo sources, in order: ESPN headshots** (by `espn_id`; ~100% coverage for 2010+), then **Wikimedia Commons** (automated search, license recorded), then **manual** for the remainder (~15 QBs from 2000–09). Frank explicitly accepted using ESPN headshots, which overrides the spec §12 license allow-list; the build no longer hard-fails on license, it only requires `photo_source` to be set. ESPN-image reuse and player likeness rights go on the Ryan/Gabriel legal list alongside the NFL mark.
 - **Stint / pool source: ESPN core API** (`sports.core.api.espn.com`), team leaders per season 2000→ and athlete records. nflverse rejected by Frank; Pro Football Reference blocks automated fetches (403) and is out. Head-coach data not needed.
 - **Team labels:** nickname only, one fixed label per franchise for all seasons. **Washington reads "Washington"** (Frank, 2026-09-09) — no Redskins/Football Team/Commanders aliases. No other franchise changed nickname since 2000, so there is no alias feature.
@@ -77,8 +77,8 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - [x] M1 — Content pipeline (signed off 2026-09-09)
 - [x] M2 — Game core (signed off 2026-09-09)
 - [x] M3 — Playable loop (signed off 2026-09-09)
-- [x] M4 — Wheels and polish (built 2026-09-09; awaiting Frank checkpoint — reel feel needs a real-phone look)
-- [ ] M5 — Photos
+- [x] M4 — Wheels and polish (signed off 2026-09-09)
+- [x] M5 — Photos (built 2026-09-09; awaiting Frank checkpoint; 37 QBs from 2000–09 still need manual photos → M9)
 - [ ] M6 — Persistence and share
 - [ ] M7 — Analytics, audio, haptics
 - [ ] M8 — Hardening

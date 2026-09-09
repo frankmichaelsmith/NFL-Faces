@@ -1,0 +1,38 @@
+all of Famer if they have been inducted into the Pro Football Hall of Fame.</ref>
+|}
+|cellspacing="2"|
+{{AmFootball position key modern}}
+|}
+{{clear}}
+<!--
+
+-->
+{{NFLDraft-header | noteswidth=250pt}}
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=1 | firstpickinround=yes | team=Cincinnati Bengals | first=Dan | last=Wilkinson | position=DT | collegeyear=1993 | college=Ohio State | collegeteam=Ohio State Buckeyes | collegelink=Ohio State | probowl=no | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=2 | team=Indianapolis Colts | first=Marshall | last=Faulk | position=RB | collegeyear=1993 | college=San Diego State | collegeteam=San Diego State Aztecs | collegelink=San Diego State | hof=yes | probowl=yes | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=3 | team=Washington Redskins | first=Heath | last=Shuler | position=QB | collegeyear=1993 | college=Tennessee | collegeteam=Tennessee Volunteers | collegelink=Tennessee | probowl=no | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=4 | team=New England Patriots | first=Willie | last=McGinest | position=LB | collegeyear=1993 | college=USC | collegeteam=USC Trojans | collegelink=USC | probowl=yes | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=5 | team=Indianapolis Colts | first=Trev | last=Alberts | position=LB | collegeyear=1993 | college=Nebraska | collegeteam=Nebraska Cornhuskers | collegelink=Nebraska | probowl=no | note=from [[1994 Los Angeles Rams season|LA Rams]]{{refn|{{Anchor|RamsColtsTrade}}'''No. 5: LA Rams → Indianapolis (D).''' LA Rams traded a first-round selection (5th overall) to Indianapolis in exchange for first- and third-round selections (7th and 83rd overall).|group="R1 –"}} | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=6 | team=Tampa Bay Buccaneers | first=Trent | last=Dilfer | position=QB | collegeyear=1993 | college=California State University, Fresno | collegeteam=Fresno State Bulldogs | collegelink=Fresno State | probowl=yes | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=7 | team=San Francisco 49ers | first=Bryant | last=Young | position=DT | collegeyear=1993 | college=University of Notre Dame | collegeteam=Notre Dame Fighting Irish | collegelink=Notre Dame | hof=yes | probowl=yes | note=from [[1994 Atlanta Falcons season|Atlanta]] via [[1994 Indianapolis Colts season|Indianapolis]] and [[1994 Los Angeles Rams season|LA Rams]]{{refn|'''No. 7: Atlanta → Indianapolis → LA Rams → San Francisco.''' Multiple trades:<br>
+{{in5|7}}{{Anchor|FalconsColtsTrade}}'''Atlanta → Indianapolis (PD).''' Atlanta traded first- and third-round selections (7th and 83rd overall) and a [[1996 NFL draft|1996]] first-round selection to Indianapolis in exchange for QB [[Jeff George]].<br>
+{{in5|7}}'''Indianapolis → LA Rams (D).''' See Round 1: [[#RamsColtsTrade|LA Rams → Indianapolis]].<br>
+{{in5|7}}{{Anchor|Rams49ersTrade}}'''LA Rams → San Francisco (D).''' The LA Rams traded a first-round selection (7th overall) to San Francisco in exchange for first-, second- and third-round selections (15th, 56th and 100th overall).|group="R1 –"}} | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=8 | team=Seattle Seahawks | first=Sam | last=Adams | dab=Sam Adams (American football) | position=DT | collegeyear=1993 | college=Texas A&M University | collegeteam=Texas A&M Aggies | collegelink=Texas A&M | probowl=yes | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=9 | team=Cleveland Browns | first=Antonio | last=Langham | position=CB | collegeyear=1993 | college=University of Alabama | collegeteam=Alabama Crimson Tide | collegelink=Alabama | probowl=no | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=10 | team=Arizona Cardinals | first=Jamir | last=Miller | position=LB | collegeyear=1993 | college=University of California, Los Angeles | collegeteam=UCLA Bruins | collegelink=UCLA | probowl=yes | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=11 | team=Chicago Bears | first=John | last=Thierry | position=DE | collegeyear=1993 | college=Alcorn State University | collegeteam=Alcorn State Braves | collegelink=Alcorn State | probowl=no | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=12 | team=New York Jets | first=Aaron | last=Glenn | position=CB | collegeyear=1993 | college=Texas A&M University | collegeteam=Texas A&M Aggies | collegelink=Texas A&M | probowl=yes | note=from [[1994 New Orleans Saints season|New Orleans]]{{refn|{{Anchor|SaintsJetsTrade}}'''No. 12: New Orleans → NY Jets (D).''' New Orleans traded a first-round selection (12th overall) to the NY Jets in exchange for first- and fifth-round selections (13th and 143rd overall).|group="R1 –"}} | cfb page exists=yes}}
+
+{{NFLDraft-row | draftyear=1994 | round=1 | picknum=13 | team=New Orleans Saints | first=Joe | last=Johnson | dab=Joe Johnson (defensive end) | position=DE | collegeyear=1993 | college=University of Louisville | collegeteam=Louisville Cardinals | collegelink=Louisville | probowl=yes | note=from [[1

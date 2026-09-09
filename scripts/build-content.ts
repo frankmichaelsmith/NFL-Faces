@@ -11,6 +11,7 @@ import { GAME_CONFIG } from '../src/game/config'
 import { parseContent } from './lib/content'
 import { buildBundle, renderReport } from './lib/build'
 import { renderAttribution } from './lib/attribution'
+import { buildProBowl, parseProBowlContent, renderProBowlReport } from './lib/probowl'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 
@@ -36,9 +37,34 @@ async function main() {
     requirePhoto,
     sources: files,
   })
+  // Pro Bowl Mode section (optional until its content exists).
+  let probowlReport = ''
+  const pb = await readProBowl()
+  if (pb) {
+    const { content: pbContent, errors: pbErrors } = parseProBowlContent(pb)
+    if (pbErrors.length) {
+      console.error(`Pro Bowl content validation failed with ${pbErrors.length} error(s):`)
+      for (const e of pbErrors.slice(0, 50)) console.error('  ' + e)
+      process.exit(1)
+    }
+    const { section, report: r } = buildProBowl(pbContent)
+    bundle.probowl = section
+    probowlReport = '\n' + renderProBowlReport(section, r)
+    if (r.hardFailures.length) {
+      console.error(`Pro Bowl HARD FAILURES (${r.hardFailures.length}):`)
+      for (const f of r.hardFailures) console.error('  ' + f)
+      process.exit(1)
+    }
+    console.log(
+      `probowl: ${section.combos.length} combos, ${section.seasons.length} seasons, ${Object.keys(section.players).length} players, ${r.unresolved.length} unresolved selections`,
+    )
+  }
   await mkdir(path.join(ROOT, 'public/data'), { recursive: true })
   await writeFile(path.join(ROOT, 'public/data/bundle.json'), JSON.stringify(bundle))
-  await writeFile(path.join(ROOT, 'docs/build-report.md'), renderReport(bundle, report))
+  await writeFile(
+    path.join(ROOT, 'docs/build-report.md'),
+    renderReport(bundle, report) + probowlReport,
+  )
   await writeFile(
     path.join(ROOT, 'public/attribution.html'),
     renderAttribution(content.people.filter((p) => p.espn_id in bundle.people)),
@@ -53,6 +79,20 @@ async function main() {
     console.error(`HARD FAILURES (${report.hardFailures.length}):`)
     for (const f of report.hardFailures) console.error('  ' + f)
     process.exit(1)
+  }
+}
+
+async function readProBowl() {
+  const read = (f: string) => readFile(path.join(ROOT, 'content', f), 'utf8')
+  try {
+    const [selections, players, draftTeams] = await Promise.all([
+      read('probowl_selections.csv'),
+      read('probowl_players.csv'),
+      read('draft_teams.csv'),
+    ])
+    return { selections, players, draftTeams }
+  } catch {
+    return null
   }
 }
 

@@ -1,0 +1,132 @@
+Offense===
+{| class="wikitable" style="width:75%;"
+!  style="width:10%;"|Position
+!  style="width:30%;"|Starter(s)
+!  style="width:30%;"|Reserve(s)
+!  style="width:30%;"|Alternate(s)
+|-
+|align=center|[[Quarterback]]
+|{{Small|12}} '''[[Rich Gannon]]''', [[Oakland Raiders|Oakland]]
+|{{Small|12}} '''[[Tom Brady]]''', [[New England Patriots|New England]]<br/>{{Small|10}} '''[[Kordell Stewart]]''', [[Pittsburgh Steelers|Pittsburgh]]
+|
+|-
+|align=center|[[Running back]]
+|{{Small|28}} '''[[Curtis Martin]]''', [[New York Jets|N.Y. Jets]]
+|{{Small|36}} [[Jerome Bettis]], [[Pittsburgh Steelers|Pittsburgh]]{{Ref label|injury|b|b}}<br/>{{Small|31}} '''[[Priest Holmes]]''', [[Kansas City Chiefs|Kansas City]]
+|{{Small|28}} '''[[Corey Dillon]]''', [[Cincinnati Bengals|Cincinnati]]{{Ref label|replacement|a|a}}
+|-
+|align=center|[[Fullback (American football)|Fullback]]
+|{{Small|37}} '''[[Larry Centers]]''', [[Buffalo Bills|Buffalo]]
+|
+|
+|-
+|align=center|[[Wide receiver]]
+|{{Small|88}} '''[[Marvin Harrison]]''', [[Indianapolis Colts|Indianapolis]]<br/>{{Small|80}} [[Rod Smith (wide receiver)|Rod Smith]], [[Denver Broncos|Denver]]{{Ref label|injury|b|b}}
+|{{Small|81}} '''[[Tim Brown (American football)|Tim Brown]]''', [[Oakland Raiders|Oakland]]{{Ref label|starter|c|c}}<br/>{{Small|82}} [[Jimmy Smith (wide receiver)|Jimmy Smith]], [[Jacksonville Jaguars|Jacksonville]]{{Ref label|injury|b|b}}
+|{{Small|80}} '''[[Troy Brown]]''', [[New England Patriots|New England]]{{Ref label|replacement|a|a}}<br>{{Small|86}} '''[[Hines Ward]]''', [[Pittsburgh Steelers|Pittsburgh]]{{Ref label|replacement|a|a}}
+|-
+|align=center|[[Tight end]]
+|{{Small|88}} [[Tony Gonzalez]], [[Kansas City Chiefs|Kansas City]]{{Ref label|injury|b|b}}
+|{{Small|82}} '''[[Shannon Sharpe]]''', [[Baltimore Ravens|Baltimore]]{{Ref label|starter|c|c}}
+|{{Small|85}} '''[[Ken Dilger]]''', [[Indianapolis Colts|Indianapolis]]{{Ref label|replacement|a|a}}<br/>{{Small|89}} '''[[Dwayne Carswell]]''', [[Denver Broncos|Denver]]{{Ref label|other|e|e}}
+|-
+|align=center|[[Offensive tackle]]
+|{{Small|72}} '''[[Lincoln Kennedy]]''', [[Oakland Raiders|Oakland]]<br/>{{Small|75}} '''[[Jonathan Ogden]]''', [[Baltimore Ravens|Baltimore]]
+|{{Small|71}} '''[[Walter Jones (American football)|Walter Jones]]''', [[Seattle Seahawks|Seattle]]
+|
+|-
+|align=center|[[Guard (American football)|Offensive guard]]
+|{{Small|66}} '''[[Alan Faneca]]''', [[Pittsburgh Steelers|Pittsburgh]]<br/>{{Small|68}} '''[[Will Shields]]''', [[Kansas City Chiefs|Kansas City]]
+|{{Small|79}} '''[[Ruben Brown]]''', [[Buffalo Bills|Buffalo]]
+|
+|-
+|align=center|[[Center (American football)|Center]]
+|{{Small|68}} '''[[Kevin Mawae]]''', [[New York Jets|N.Y. Jets]]
+|{{Small|74}} '''[[Bruce Matthews (American football)|Bruce Matthews]]''', [[Tennessee Titans|Tennessee]]
+|
+|-
+|}
+
+===Defense===
+{| class="wikitable" style="width:75%;"
+!  style="width:10%;"|Position
+!  style="width:30%;"|Starter(s)
+!  style="width:30%;"|Reserve(s)
+!  style="width:30%;"|Alternate(s)
+|-
+|align=center|[[Defensive end]]
+|{{Small|94}} '''[[John Abraham (American football)|John Abraham]]''', [[New York Jets|N.Y. Jets]]<br/>{{Small|75}} '''[[Marcellus Wiley]]''', [[San Diego Chargers|San Diego]]
+|{{Small|90}} '''[[Jevon Kearse]]''', [[Tennessee Titans|Tennessee]]
+|
+|-
+|align=center|[[Defensive tackle]]
+|{{Small|93}} [[Trevor Pryce]], [[Denver Broncos|Denver]]{{Ref label|injury|b|b}}<br/>{{Small|93}} '''[[John Randle]]''', [[Seattle Seahawks|Seattle]]
+|{{Small|95}} '''[[Sam Adams (American football)|Sam Adams]]''', [[Baltimore Ravens|Baltimore]]{{Ref label|starter|c|c}}
+||{{Small|96}} '''[[Gary Walker (defensive end)|Gary Walker]]''', [[Jacksonville Jaguars|Jacksonville]]{{Ref label|replacement|a|a}}
+|-
+|align=center|[[Linebacker|Outside linebacker]]
+|{{Small|92}} '''[[Jason Gildon]]''', [[Pittsburgh Steelers|Pittsburgh]]<br/>{{Small|95}} '''[[Jamir Miller]]''', [[Cleveland Browns|Cleveland]]
+|{{Small|55}} '''[[Junior Seau]]''', [[San Diego Chargers|San Diego]]
+|
+|-
+|align=center|[[Linebacker|Inside linebacker]]
+|{{Small|52}} '''[[Ray Lewis (American football)|Ray Lewis]]''', [[Baltimore Ravens|Baltimore]]
+|{{Small|54}} [[Zach Thomas]], [[Miami Dolphins|Miami]] {{Ref label|injury|b|b}}
+|{{Small|56}} '''[[Al Wilson]]''', [[Denver Broncos|Denver]]{{Ref label|replacement|a|a}}<br/>{{Small|97}} '''[[Kendrell Bell]]''', [[Pittsburgh Steelers|Pittsburgh]]{{Ref label|need|d|d}}
+|-
+|align=center|[[Cornerback]]
+|{{Small|29}} [[Sam Madison]], [[Miami Dolphins|Miami]]{{Ref label|injury|b|b}}<br/>{{Small|24}} [[Charles Woodson]], [[Oakland Raiders|Oakland]]{{Ref label|injury|b|b}}
+|{{Small|24}} '''[[Deltha O'Neal]]''', [[Denver Broncos|Denver]]{{Ref label|starter|c|c}}
+|{{Small|47}} '''[[Ryan McNeil (American football)|Ryan McNeil]]''', [[San Diego Chargers|San Diego]]{{Ref label|replacement|a|a}}{{Ref label|starter|c|c}}<br>{{Small|24}} '''[[Ty Law]]''', [[New England Patriots|New England]]{{Ref label|replacement|a|a}}
+|-
+|align=center|[[Defensive back|Free safety]]
+|{{Small|26}} '''[[Rod Woodson]]''', [[Baltimore Ravens|Baltimore]]
+|
+|
+|-
+|align=center|[[Defensive back|Strong safety]]
+|{{Small|37}} '''[[Rodney Harrison]]''', [[San Diego Chargers|San Diego]]
+|{{Small|36}} '''[[Lawyer Milloy]]''', [[New England Patriots|New England]]
+|
+|-
+|}
+
+===Special teams===
+{| class="wikitable" style="width:75%;"
+!  style="width:10%;"|Position
+!  style="width:30%;"|Starter(s)
+!  style="width:30%;"|Reserve(s)
+!  style="width:30%;"|Alternate(s)
+|-
+|align=center|[[Punter (American football)|Punter]]
+|{{Small|&nbsp;&nbsp;9}} '''[[Shane Lechler]]''', [[Oakland Raiders|Oakland]]
+|
+|
+|-
+|align=center|[[Placekicker]]
+|{{Small|&nbsp;&nbsp;1}} '''[[Jason Elam]]''', [[Denver Broncos|Denver]]
+|
+|
+|-
+|align=center|[[Kick returner]]
+|{{Small|84}} '''[[Jermaine Lewis (American football, born 1974)|Jermaine Lewis]]''', [[Baltimore Ravens|Baltimore]]
+|
+|
+|-
+|align=center|[[Special teams|Special teamer]]
+|{{Small|52}} '''[[Ian Gold]]''', [[Denver Broncos|Denver]]
+|
+|
+|-
+|}
+
+==NFC roster==
+
+===Offense===
+{| class="wikitable" style="width:75%;"
+!  style="width:10%;"|Position
+!  style="width:30%;"|Starter(s)
+!  style="width:30%;"|Reserve(s)
+!  style="width:30%;"|Alternate(s)
+|-
+|

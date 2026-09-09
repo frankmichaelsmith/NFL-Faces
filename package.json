@@ -19,7 +19,8 @@
     "icons": "tsx scripts/make-icons.ts",
     "size": "tsx scripts/check-budget.ts",
     "e2e": "playwright test",
-    "photos:find": "tsx scripts/find-photos.ts"
+    "photos:find": "tsx scripts/find-photos.ts",
+    "pull:probowl": "tsx scripts/pull-probowl.ts"
   },
   "dependencies": {
     "react": "^19.2.8",

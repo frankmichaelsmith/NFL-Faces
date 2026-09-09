@@ -1,0 +1,45 @@
+abbr,label,name,color,alt_color,first_season,last_season,notes
+ARI,ARI,Arizona Cardinals,97233F,FFB612,1994,,
+ATL,ATL,Atlanta Falcons,A71930,000000,1966,,
+BAL,BAL,Baltimore Ravens,241773,9E7C0C,1996,,
+BALC,BAL,Baltimore Colts,003A70,FFFFFF,1953,1983,tile reads BAL in Colts blue
+BUF,BUF,Buffalo Bills,00338D,C60C30,1960,,
+CAR,CAR,Carolina Panthers,0085CA,101820,1995,,
+CHI,CHI,Chicago Bears,0B162A,C83803,1920,,
+CIN,CIN,Cincinnati Bengals,FB4F14,000000,1968,,
+CLE,CLE,Cleveland Browns,311D00,FF3C00,1946,,
+DAL,DAL,Dallas Cowboys,041E42,869397,1960,,
+DEN,DEN,Denver Broncos,FB4F14,002244,1960,,
+DET,DET,Detroit Lions,0076B6,B0B7BC,1930,,
+GB,GB,Green Bay Packers,203731,FFB612,1921,,
+HOU,HOU,Houston Texans,03202F,A71930,2002,,
+HOUO,HOU,Houston Oilers,4B92DB,C8102E,1960,1996,tile reads HOU in Oilers columbia blue
+IND,IND,Indianapolis Colts,002C5F,A2AAAD,1984,,
+JAX,JAX,Jacksonville Jaguars,006778,9F792C,1995,,
+KC,KC,Kansas City Chiefs,E31837,FFB81C,1963,,
+LAC,LAC,Los Angeles Chargers,0080C6,FFC20E,2017,,
+LAR,LA,Los Angeles Rams,003594,FFA300,2016,,tile reads LA
+LARO,LA,Los Angeles Rams,002244,866D4B,1946,1994,tile reads LA in royal/yellow era colors
+LARD,LA,Los Angeles Raiders,A5ACAF,000000,1982,1994,tile reads LA in silver/black
+LV,LV,Las Vegas Raiders,A5ACAF,000000,2020,,
+MIA,MIA,Miami Dolphins,008E97,FC4C02,1966,,
+MIN,MIN,Minnesota Vikings,4F2683,FFC62F,1961,,
+NE,NE,New England Patriots,002244,C60C30,1971,,
+NO,NO,New Orleans Saints,D3BC8D,101820,1967,,
+NYG,NYG,New York Giants,0B2265,A71930,1925,,
+NYJ,NYJ,New York Jets,125740,FFFFFF,1963,,
+OAK,OAK,Oakland Raiders,A5ACAF,000000,1995,2019,also 1960–1981
+PHI,PHI,Philadelphia Eagles,004C54,A5ACAF,1933,,
+PHX,PHX,Phoenix Cardinals,97233F,FFFFFF,1988,1993,
+PIT,PIT,Pittsburgh Steelers,000000,FFB612,1933,,
+SD,SD,San Diego Chargers,0080C6,FFC20E,1961,2016,
+SEA,SEA,Seattle Seahawks,002244,69BE28,1976,,
+SF,SF,San Francisco 49ers,AA0000,B3995D,1946,,
+STL,STL,St. Louis Rams,002244,B3995D,1995,2015,
+STLC,STL,St. Louis Cardinals,97233F,FFFFFF,1960,1987,tile reads STL in Cardinals red
+TB,TB,Tampa Bay Buccaneers,D50A0A,34302B,1976,,
+TEN,TEN,Tennessee Titans,0C2340,4B92DB,1999,,
+TENO,TEN,Tennessee Oilers,4B92DB,C8102E,1997,1998,tile reads TEN in Oilers colors
+WSH,WSH,Washington Commanders,5A1414,FFB612,2022,,
+WSHR,WSH,Washington Redskins,5A1414,FFB612,1937,2019,tile reads WSH
+WSHF,WSH,Washington Football Team,5A1414,FFB612,2020,2021,tile reads WSH

@@ -9,7 +9,8 @@ Live at https://nfl-faces.vercel.app. Static site, no backend. See `CLAUDE.md` f
 ```
 npm run dev            # local dev server
 npm run pull:espn      # ESPN → content/*.csv (add --refresh to bypass the cache, --samples to refresh /samples)
-npm run build:content  # CSV → public/data/bundle.json + docs/build-report.md
+npm run pull:probowl   # Wikipedia + ESPN → content/probowl_*.csv (Pro Bowl Mode rosters and attributes)
+npm run build:content  # CSV → public/data/bundle.json + docs/build-report.md (both modes)
 npm run simulate       # 10k-round simulation of the game core
 npm test               # unit tests
 npm run typecheck

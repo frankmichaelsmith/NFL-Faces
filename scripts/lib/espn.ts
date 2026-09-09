@@ -162,6 +162,55 @@ export class EspnClient {
     return []
   }
 
+  /** NFL players matching a name via ESPN's site search. Ids only; verify with athleteFacts(). */
+  async searchPlayers(name: string): Promise<{ id: string; displayName: string }[]> {
+    const url = `https://site.web.api.espn.com/apis/search/v2?query=${encodeURIComponent(name)}&limit=10`
+    const d = await this.get<{
+      results?: { type: string; contents: { uid?: string; displayName: string }[] }[]
+    }>(url)
+    const players = d.results?.find((r) => r.type === 'player')?.contents ?? []
+    return (
+      players
+        // NFL-tagged players first; retired greats sometimes come back as sport-only ("s:1100") entries.
+        .filter((c) => /^s:(20~l:28|1100)~a:\d+$/.test(c.uid ?? ''))
+        .map((c) => ({ id: c.uid!.split('a:')[1]!, displayName: c.displayName }))
+    )
+  }
+
+  /** Everything Pro Bowl Mode needs from an athlete: position, jersey, college, draft, career span. */
+  async athleteFacts(id: string): Promise<EspnAthleteFacts | null> {
+    let a: RawAthleteFull
+    try {
+      a = await this.get<RawAthleteFull>(`/athletes/${id}`)
+    } catch (e) {
+      if (e instanceof NotFound) return null
+      throw e
+    }
+    const college = a.college ? await this.get<RawCollege>(a.college.$ref).catch(() => null) : null
+    const draftTeam = a.draft?.team
+      ? await this.get<RawTeam>(a.draft.team.$ref).catch(() => null)
+      : null
+    return {
+      id: a.id,
+      displayName: a.displayName,
+      position: a.position?.abbreviation ?? null,
+      jersey: a.jersey ? Number(a.jersey) : null,
+      college: college
+        ? { id: college.id, name: college.name, logo: college.logos?.[0]?.href ?? null }
+        : null,
+      draft: a.draft
+        ? {
+            year: a.draft.year,
+            round: a.draft.round,
+            pick: a.draft.selection,
+            teamAbbr: draftTeam?.abbreviation ?? null,
+          }
+        : null,
+      debutYear: a.debutYear ?? null,
+      active: a.active ?? null,
+    }
+  }
+
   async athlete(id: string): Promise<EspnAthlete> {
     const a = await this.get<RawAthlete>(`/athletes/${id}`)
     return {
@@ -197,6 +246,17 @@ export interface EspnAthlete {
   headshotUrl: string | null
 }
 
+export interface EspnAthleteFacts {
+  id: string
+  displayName: string
+  position: string | null
+  jersey: number | null
+  college: { id: string; name: string; logo: string | null } | null
+  draft: { year: number; round: number; pick: number; teamAbbr: string | null } | null
+  debutYear: number | null
+  active: boolean | null
+}
+
 // ---- raw shapes (observed 2026-09-09; samples in /samples) -------------------
 
 interface RawTeam {
@@ -213,6 +273,18 @@ interface RawDepthCharts {
     name: string
     positions?: Record<string, { athletes?: { rank: number; athlete: { $ref: string } }[] }>
   }[]
+}
+interface RawAthleteFull extends RawAthlete {
+  jersey?: string
+  college?: { $ref: string }
+  draft?: { year: number; round: number; selection: number; team?: { $ref: string } }
+  debutYear?: number
+  active?: boolean
+}
+interface RawCollege {
+  id: string
+  name: string
+  logos?: { href: string }[]
 }
 interface RawAthlete {
   id: string

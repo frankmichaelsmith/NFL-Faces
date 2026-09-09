@@ -28,6 +28,43 @@ export interface Combo {
   alumni: string[]
 }
 
+// ---- Pro Bowl Mode -------------------------------------------------------------------
+
+export type ProBowlCategory = 'alma' | 'draft' | 'number' | 'position'
+
+export interface ProBowlPlayer {
+  name: string
+  pos: 'QB' | 'RB' | 'WR' | 'TE'
+  /** Most recent number worn. */
+  jersey: number | null
+  /** College id (key into ProBowlSection.colleges), or null. */
+  college: string | null
+  /** Draft team key (into ProBowlSection.teams), 'UDFA' for undrafted, or null when unknown. */
+  draft: string | null
+}
+
+export interface ProBowlCombo {
+  season: number
+  /** Player id. */
+  player: string
+  category: ProBowlCategory
+  /** The correct value: college id, team key or 'UDFA', jersey as a string, or position. */
+  answer: string
+  /** Wrong values eligible for this combo. */
+  distractors: string[]
+}
+
+export interface ProBowlSection {
+  seasons: number[]
+  /** Player ids named to the Pro Bowl in each season (the name reel). */
+  rosters: Record<string, string[]>
+  players: Record<string, ProBowlPlayer>
+  colleges: Record<string, { name: string; logo: string | null }>
+  /** Draft-team tiles: label printed on the tile plus its colours. */
+  teams: Record<string, { label: string; name: string; color: string; alt: string }>
+  combos: ProBowlCombo[]
+}
+
 export interface Bundle {
   buildHash: string
   generatedAt: string
@@ -39,4 +76,6 @@ export interface Bundle {
   teams: BundleTeam[]
   people: Record<string, BundlePerson>
   combos: Combo[]
+  /** Present once Pro Bowl content has been built. */
+  probowl?: ProBowlSection
 }

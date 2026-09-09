@@ -11,6 +11,10 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - ~830 combos (32 teams × 26 seasons, Texans from 2002), ~190 unique QBs.
 - The engine stays **generic**: wheel count, the season range, the team list and the role list are config, so a position wheel or an NBA edition can return later without a rewrite. Do not hard-code "QB" or "2000" into game logic.
 
+## Pro Bowl Mode (Frank, 2026-09-09 — decision 0007)
+
+A second mode with **no photos**. Three wheels: **season** (2000 → last completed season), **player** (QB/RB/WR/TE named to that season's Pro Bowl, replacements included), **category** (alma mater → college logo, draft team → generated tile in era colours or UNDRAFTED, pro number → most recent number, pro position). Three cards, one correct, same streak and timer, a player at most once per streak. Content: `content/probowl_selections.csv` (rosters, curator `espn_id` wins), `content/probowl_players.csv` (attributes + sources), `content/draft_teams.csv` (hand table of era abbreviations, labels, colours). `npm run pull:probowl` fills the first two from Wikipedia + ESPN; `build:content` derives `bundle.probowl`. Milestones: **P1 data** · **P2 engine** (generic option values + selection + simulation) · **P3 screens** (mode picker, three wheels, logo/tile/number/position cards, assets) · **P4 finish** (per-mode best streak, share, analytics, e2e).
+
 ## Working rules (non-negotiable)
 
 1. **Build milestone by milestone (spec §26, adapted below) and checkpoint.** After each milestone: stop, summarize what was built and how it was verified, wait for Frank. Never one-shot multiple milestones. Same rhythm as STREAK CITY: work on `main`, commit as you go.
@@ -87,3 +91,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - [x] M7 — Analytics, audio, haptics (signed off 2026-09-09)
 - [x] M8 — Hardening (signed off 2026-09-09)
 - [ ] M9 — Launch content (photo backfill pass 1 done 2026-09-09: 166/193 faces, 794/862 combos; 27 QBs have no licensed portrait anywhere we can reach — see TODO)
+- [x] Pro Bowl P1 — data (built 2026-09-09: 821 selections, 316 players, 3280 combos; awaiting Frank checkpoint)
+- [ ] Pro Bowl P2 — engine
+- [ ] Pro Bowl P3 — screens and assets
+- [ ] Pro Bowl P4 — finish

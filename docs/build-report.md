@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-09T15:37:45.856Z.
+Generated 2026-09-09T16:30:47.040Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -142,5 +142,56 @@ Answers with no approved photo yet, most combos first. ESPN column = ESPN serves
 - 2008:TB:QB: answer has no approved photo
 
 ## Passing-yards ties at the top (0)
+
+None.
+
+## Pro Bowl Mode
+
+**3376** combos across 26 seasons, 321 players, 114 colleges, 40 draft-team tiles.
+
+By category: alma 844, draft 845, number 842, position 845.
+
+| Season | Named | Resolved | Combos |
+|---|---|---|---|
+| 2000 | 31 | 31 | 124 |
+| 2001 | 33 | 33 | 131 |
+| 2002 | 30 | 30 | 120 |
+| 2003 | 30 | 30 | 120 |
+| 2004 | 29 | 29 | 116 |
+| 2005 | 28 | 28 | 112 |
+| 2006 | 27 | 27 | 108 |
+| 2007 | 30 | 30 | 120 |
+| 2008 | 27 | 27 | 108 |
+| 2009 | 35 | 35 | 140 |
+| 2010 | 31 | 31 | 124 |
+| 2011 | 32 | 32 | 128 |
+| 2012 | 35 | 35 | 140 |
+| 2013 | 35 | 35 | 140 |
+| 2014 | 38 | 38 | 152 |
+| 2015 | 36 | 36 | 144 |
+| 2016 | 40 | 40 | 160 |
+| 2017 | 35 | 35 | 139 |
+| 2018 | 37 | 37 | 147 |
+| 2019 | 35 | 35 | 139 |
+| 2020 | 24 | 24 | 96 |
+| 2021 | 32 | 32 | 128 |
+| 2022 | 32 | 32 | 128 |
+| 2023 | 35 | 35 | 140 |
+| 2024 | 34 | 34 | 136 |
+| 2025 | 34 | 34 | 136 |
+
+### Unresolved selections (0)
+
+None.
+
+### Players missing college (1)
+
+Dwayne Carswell
+
+### Players missing jersey (1)
+
+Zach Ertz
+
+### Players missing draft (0)
 
 None.

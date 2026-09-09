@@ -1,0 +1,105 @@
+rs==
+
+===Team Deion Sanders===
+{| class="toccolours" style="text-align: left;"
+|-
+| colspan=11 style="color:#8F928F;background:#CCFF00; text-align: center"| '''Team Sanders'''
+|-
+|valign="top"|
+
+'''[[Quarterbacks]]'''
+* {{NFLplayer|&nbsp;1| Cam Newton |([[Carolina Panthers]])}}
+* {{NFLplayer|&nbsp;9|Nick Foles  |([[Philadelphia Eagles]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Thank the Patriots – Nick Foles makes Pro Bowl | work=CSNPhilly.com | publisher=ComcastSports.net | url=http://www.csnphilly.com/football-philadelphia-eagles/thank-patriots-nick-foles-makes-pro-bowl | date=January 11, 2014 | access-date=January 12, 2014 | archive-url=https://web.archive.org/web/20140112180417/http://www.csnphilly.com/football-philadelphia-eagles/thank-patriots-nick-foles-makes-pro-bowl | archive-date=January 12, 2014 | url-status=dead }}</ref>
+* {{NFLplayer|12| Andrew Luck |([[Indianapolis Colts]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Andrew Luck is Heading to the Pro Bowl | work=stampedeblue.com  | url=http://www.stampedeblue.com/2014/1/19/5326114/andrew-luck-is-heading-to-the-pro-bowl |access-date=January 19, 2014}}</ref>
+'''[[Running back]]s'''
+* {{NFLplayer|25| Jamaal Charles|([[Kansas City Chiefs]])}} (C)
+* {{NFLplayer|27| Eddie Lacy |([[Green Bay Packers]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Packers RB Eddie Lacy to the Pro Bowl as 49ers, Seahawks Advance
+| work= CheeseheadTV.com | url=http://cheeseheadtv.com/blog/packers-rb-eddie-lacy-to-the-pro-bowl-as-49ers-seahawks-advance |date=January 13, 2014 |access-date=January 13, 2014}}</ref>
+* {{NFLplayer|45| Marcel Reece |([[Oakland Raiders]])}} FB
+* {{NFLplayer|46| Alfred Morris |d=American football|([[Washington Redskins]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Adrian Peterson bows out of Pro Bowl | work=foxsports.com | url=http://msn.foxsports.com/north/story/adrian-peterson-bows-out-of-pro-bowl-011514 |access-date=January 15, 2014}}</ref>
+'''[[Wide receiver]]s'''
+* {{NFLplayer|10| DeSean Jackson |([[Philadelphia Eagles]])}}{{Ref label|injury|a|a}}<ref>{{cite web | title= Desean Jackson replacing Andre Johnson in Pro Bowl | work= profootballtalk.nbcsports.com | date= January 17, 2014 | url=http://profootballtalk.nbcsports.com/2014/01/17/desean-jackson-replacing-andre-johnson-in-pro-bowl/ |access-date=January 17, 2014}}</ref>
+* {{NFLplayer|18| A. J. Green |([[Cincinnati Bengals]])}}
+* {{NFLplayer|84| Antonio Brown|d=wide receiver, born 1988 |([[Pittsburgh Steelers]])}}
+* {{NFLplayer|88| Dez Bryant |([[Dallas Cowboys]])}}
+'''[[Tight end]]s'''
+* {{NFLplayer|87| Rob Gronkowski |([[New England Patriots]])}}
+* {{NFLplayer|82| Jason Witten |([[Dallas Cowboys]])}}{{Ref label|injury|a|a}}<ref>{{cite web | title=Jason Witten added to Pro Bowl | work=ESPN.com | url=https://www.espn.com/blog/dallas/cowboys/post/_/id/4723447/jason-witten-added-to-pro-bowl |access-date=January 19, 2014}}</ref>
+*{{NFLplayer|84|Jordan Cameron|([[Cleveland Browns]])}}{{Ref label|injury|a|a}}
+'''[[Offensive tackle]]s'''
+* {{NFLplayer|71| Trent Williams |([[Washington Redskins]])}}
+* {{NFLplayer|76| Duane Brown |([[Houston Texans]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Duane Brown replaces Jason Peters in Pro Bowl | work= profootballtalk.nbcsports.com | date= January 10, 2014 | url=http://profootballtalk.nbcsports.com/2014/01/10/duane-brown-replaces-jason-peters-in-pro-bowl/ |access-date=January 10, 2014}}</ref>
+* {{NFLplayer|76| Branden Albert |([[Kansas City Chiefs]])}}
+'''[[Guard (American football)|Guards]]'''
+* {{NFLplayer|70| Logan Mankins |([[New England Patriots]])}}
+* {{NFLplayer|73| Marshal Yanda |([[Baltimore Ravens]])}}
+* {{NFLplayer|75| Kyle Long |([[Chicago Bears]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Bears' Kyle Long Added To Pro Bowl | work=chicago.cbslocal.com | date=January 20, 2014 | url=http://chicago.cbslocal.com/2014/01/20/bears-kyle-long-added-to-pro-bowl/ |access-date=January 20, 2014}}</ref>
+'''[[Center (American football)|Centers]]'''
+* {{NFLplayer|51| Mike Pouncey |([[Miami Dolphins]])}}
+* {{NFLplayer|55| Alex Mack |([[Cleveland Browns]])}}
+|width="33"|&nbsp;
+|valign="top"|	
+
+'''[[Defensive end]]s'''
+* {{NFLplayer|76| Greg Hardy |([[Carolina Panthers]])}}
+* {{NFLplayer|94| Mario Williams |([[Buffalo Bills]])}}
+* {{NFLplayer|99|J. J. Watt|([[Houston Texans]])}} (C)
+'''[[Defensive tackle]]s'''
+* {{NFLplayer|90| Ndamukong Suh |([[Detroit Lions]])}}
+* {{NFLplayer|92| Dontari Poe |([[Kansas City Chiefs]])}}
+* {{NFLplayer|93| Gerald McCoy |([[Tampa Bay Buccaneers]])}}
+'''[[Linebacker|Outside Linebackers]]'''
+* {{NFLplayer|55| Terrell Suggs |([[Baltimore Ravens]])}}
+* {{NFLplayer|91| Tamba Hali |([[Kansas City Chiefs]])}}
+* {{NFLplayer|98| Brian Orakpo |([[Washington Redskins]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Brian Orakpo headed to third Pro Bowl | work=washingtonpost.com | url=https://www.washingtonpost.com/blogs/football-insider/wp/2014/01/21/brian-orakpo-headed-to-third-pro-bowl/ |access-date=January 21, 2014}}</ref>
+'''[[Linebacker|Inside Linebackers]]'''
+* {{NFLplayer|51| Paul Posluszny |([[Jacksonville Jaguars]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Poz headed to Hawaii | work=Jaguars.com | url=http://www.jaguars.com/news/article-JaguarsNews/Poz-headed-to-Hawaii/bdfd1e77-0309-4a1b-ae17-6eb44d0dc788 | access-date=January 20, 2014 | archive-url=https://web.archive.org/web/20140124005205/http://www.jaguars.com/news/article-JaguarsNews/Poz-headed-to-Hawaii/bdfd1e77-0309-4a1b-ae17-6eb44d0dc788 | archive-date=January 24, 2014 | url-status=dead }}</ref>
+* {{NFLplayer|59| Luke Kuechly |([[Carolina Panthers]])}}
+'''[[Cornerback]]s'''
+* {{NFLplayer|21| Patrick Peterson |([[Arizona Cardinals]])}}
+* {{NFLplayer|21| Brent Grimes |([[Miami Dolphins]])}}
+* {{NFLplayer|24| Darrelle Revis |([[Tampa Bay Buccaneers]])}}
+* {{NFLplayer|26| Tim Jennings |([[Chicago Bears]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Tim Jennings added to the Pro Bowl | work=ESPN.com | date=January 20, 2014 | url=https://www.espn.com/blog/chicago/bears/post/_/id/4690081/tim-jennings-added-to-the-pro-bowl |access-date=January 20, 2014}}</ref>
+'''[[Defensive back|Safeties]]'''
+* {{NFLplayer|29| Eric Berry |([[Kansas City Chiefs]])}}
+* {{NFLplayer|32| Eric Weddle |([[San Diego Chargers]])}}
+* {{NFLplayer|43| T. J. Ward |([[Cleveland Browns]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=T. J. Ward replaces Troy Polamalu on Pro Bowl roster | work=nbcsports.com | date=January 20, 2014 | url=http://profootballtalk.nbcsports.com/2014/01/20/t-j-ward-replaces-troy-polamalu-on-pro-bowl-roster/ |access-date=January 20, 2014}}</ref>
+|width="33"|&nbsp;
+|valign="top"|	
+
+'''[[Punter (American football)|Punter]]'''
+* {{NFLplayer|&nbsp;2| Brandon Fields |([[Miami Dolphins]])}}
+'''[[Placekicker]]'''
+* {{NFLplayer|&nbsp;9| Justin Tucker |([[Baltimore Ravens]])}}
+'''[[Return specialist|Return Specialist]]'''
+* {{NFLplayer|84| Cordarrelle Patterson |([[Minnesota Vikings]])}}
+'''[[Long snapper|Long Snapper]]'''
+* {{NFLplayer|44| J. J. Jansen |([[Carolina Panthers]])}}
+'''[[Special teams|Special Teamer]]'''
+* {{NFLplayer|18| Matthew Slater |([[New England Patriots]])}}
+|-
+|colspan="7"|<hr />
+|}
+
+===Team Rice===
+{| class="toccolours" style="text-align: left;"
+|-
+| colspan=11 style="color:#FFFFFF;background:#FF7700; text-align: center"| '''Team Rice'''
+|-
+|valign="top"|
+
+'''[[Quarterbacks]]'''
+* {{NFLplayer|&nbsp;9|Drew Brees|([[New Orleans Saints]])}} (C)
+* {{NFLplayer|11| Alex Smith |([[Kansas City Chiefs]])}}{{ref label|replacement|a|a}}<ref name="KC" />
+* {{NFLplayer|17| Philip Rivers |([[San Diego Chargers]])}}
+'''[[Running back]]s'''
+* {{NFLplayer|22| Matt Forte |([[Chicago Bears]])}}
+* {{NFLplayer|25| LeSean McCoy |([[Philadelphia Eagles]])}}
+* {{NFLplayer|29| DeMarco Murray |([[Dallas Cowboys]])}}{{ref label|replacement|a|a}}<ref>{{cite web | first=Nick| last=Eatman| title=DeMarco Murray Added To Pro Bowl Roster; 5th Cowboy
+| work= DallasCowboys.com | url=http://www.dallascowboys.com/news/article-NickEatman/DeMarco-Murray-Added-To-Pro-Bowl-Roster-5th-Cowboy/3dcd6c21-5683-4b40-a97a-1e302fe463fa |date=January 20, 2014 |access-date=January 20, 2014}}</ref>
+* {{NFLplayer|35| Mike Tolbert |([[Carolina Panthers]])}} FB
+'''[[Wide receiver]]s'''
+* {{NFLplayer|11| Larry Fitzgerald |([[Arizona Cardinals]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Cards' Fitzgerald to replace Thomas in Pro Bowl | work=sacbee.com | url=http://www.sacbee.com/2014/01/19/6085126/cards-fitzgerald-to-replace-thomas.html | access-date=January 19, 2014 | archive-url=https://web.archive.org/web/20140201121952/http://www.sacbee.com/2014/01/19/6085126/cards-fitzgerald-to-replace-thomas.html | archive-date=February 1, 2014 | url-status=dead | df=mdy-all }}</ref>
+* {{NFLplayer|12| Josh Gordon |([[Cleveland Browns]])}}
+* {{NFLplayer|15| Brandon Marshall |([[Chicago Bears]])}}
+* {{NFLplayer|17| Alshon Jeffery |([[Chicago Bears]])}}{{ref label|replacement|a|a}}<ref>{{cite web | title=Alshon Jeffery replaces Calvin Johnson on Pro Bowl roster | work= profootballtalk.nbcsports.com | date= January 9, 2014 | url=http://prof

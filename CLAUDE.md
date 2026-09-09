@@ -27,7 +27,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 4. **Grade only from data.** The answer for a combo comes from the content bundle, which comes from ESPN's structured team-leader data. Never infer, estimate, or hand-wave a result.
 5. **Never hotlink images.** Every headshot is downloaded once, cropped, and served from our own hosting. Every person row carries `photo_source`.
 6. **Do not ramp difficulty. Ever.** Static rules only (see alumni weighting).
-7. **No backend, no database, no auth, no server rendering** in v1. Static bundle plus images.
+7. **No server rendering.** The game itself is a static bundle plus images. The one exception is the **daily leaderboard** (decision 0008): Vercel Functions in `api/` over Neon Postgres, with all logic in `server/`. Nothing else may talk to a server.
 8. **Ask before deciding.** Anything the spec leaves open, or any scope change, goes to Frank first. Record the answer in `docs/decisions/`.
 9. **Secrets** only via gitignored `.env` (see `.env.example`). Never hardcode or commit a key.
 10. Keep `TODO.md` current.
@@ -50,7 +50,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - **Analytics:** event layer in `src/analytics/analytics.ts` to the spec §16 shape (`session_started`, `round_completed`, `streak_ended`, `share_clicked`, `mute_toggled`) with a **no-op backend** in production and console in dev. PostHog later = one new backend file chosen in `App.tsx`. No key in v1. Only identity is the anonymous device id.
 - **Sound and haptics (spec §15):** off by default, one toggle for both, persisted in `mute`. Sounds are **synthesized with Web Audio** (`src/audio/feedback.ts`) as placeholders — swap the three `synth*` functions for recorded files when Frank delivers them.
 - **Workflow:** commit to `main`, checkpoint per milestone (STREAK CITY style). **npm**, not pnpm. React 19 + Vite + TypeScript strict + Tailwind v4 + Vitest. Playwright only from M8.
-- **Persistence:** device-local only (spec §13). No sign-in. No leaderboard (spec §14).
+- **Persistence:** game state and best streak stay device-local (spec §13). **Daily leaderboard (Frank, 2026-09-09, decision 0008):** after the first streak ends a player must add an email + display name; every later streak end posts the score; the board is Pro Bowl Mode only, best streak per Eastern calendar day, top 25, no email verification. Backend = Neon Postgres + Vercel Functions (`api/*.ts` → `server/`), secret `DATABASE_URL` only; unset → in-memory store for dev/preview/e2e. Emails go on the legal list (privacy policy).
 - **Share card:** text + PNG, streak + losing roll + URL, no answer face (spec §14 as written).
 
 ## Milestones (adapted from spec §26)
@@ -80,6 +80,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - Timestamps UTC ISO 8601. Seasons are integers (the year the regular season starts).
 - **Reproducible runs:** `?seed=123` in the URL seeds the game's rng (debugging, e2e). Production play stays random.
 - **Live-season refresh:** `.github/workflows/refresh-live-season.yml` re-pulls ESPN every Tuesday, processes new faces, rebuilds, tests, and commits to `main`; Vercel deploys. It needs no secrets.
+- **Leaderboard API** lives in `server/` (pure handlers over a `LeaderboardStore`; `db.ts` is the Drizzle/Neon store, `http.ts` the Web-standard router, `vite-plugin.ts` serves `/api/*` in `vite` and `vite preview`). `api/*.ts` are one-line Vercel Functions. Tests: `server/*.test.ts` (in-memory) and `server/db.test.ts` (PGlite, real SQL). Leaderboard day = Eastern calendar date.
 - **Gates before finishing any task:** `npm run typecheck && npm run lint && npm test && npm run simulate`; after UI work also `npm run build && npm run size && npm run e2e`.
 
 ## Phase status
@@ -100,3 +101,5 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - [x] Pro Bowl P3 — screens and assets (built 2026-09-09; awaiting Frank checkpoint)
 - [ ] Pro Bowl seasons 1995–1999 added 2026-09-09 (980 selections, 367 players, 3881 combos; awaiting Frank checkpoint)
 - [ ] Pro Bowl P4 — finish
+- [x] Leaderboard L1 — server: schema, handlers, routing, dev/preview middleware, tests (built 2026-09-09; awaiting Frank checkpoint + Neon DATABASE_URL)
+- [ ] Leaderboard L2 — client: email gate, score posts, board screen, e2e

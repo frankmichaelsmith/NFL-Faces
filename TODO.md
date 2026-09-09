@@ -2,10 +2,17 @@
 
 ## Waiting on Frank
 
+- **Leaderboard:** create a Neon Postgres database and add `DATABASE_URL` to the Vercel project (Production + Preview) — until then the live API runs the in-memory store, which forgets everything on each cold start. Sign-off on L1, then L2 (client).
+- Privacy policy for email collection (legal list).
+
 - Sign-off on Pro Bowl P3 + the 1995–1999 expansion (2026-09-09), then start P4.
 - Legal list for Ryan/Gabriel: "NFL" in the name, ESPN headshot reuse, player likeness rights, college logos (ESPN set).
 - Brand assets (spec §28): wordmark, icon, share-card template, recorded sounds, placeholder headshot.
 - Phone play-test by two other people; Lighthouse on the live URL.
+
+## Leaderboard L2 — client
+
+- Email + name gate after the first streak ends; score post on every streak end with an offline retry queue; leaderboard screen (top 25 + your rank); handle 401 by re-showing the gate; e2e against the preview server's in-memory store.
 
 ## Pro Bowl P4 — finish
 

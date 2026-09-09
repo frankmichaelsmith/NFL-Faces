@@ -3,10 +3,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import { leaderboardApi } from './server/vite-plugin.ts'
 
 export default defineConfig({
   plugins: [
     react(),
+    leaderboardApi(),
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
@@ -60,6 +62,7 @@ export default defineConfig({
       'tests/**/*.test.tsx',
       'src/**/*.test.ts',
       'scripts/**/*.test.ts',
+      'server/**/*.test.ts',
     ],
     setupFiles: ['tests/setup.ts'],
   },

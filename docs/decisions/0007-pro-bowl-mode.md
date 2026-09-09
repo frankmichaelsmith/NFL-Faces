@@ -13,3 +13,5 @@ A second game mode that never shows a photo. Three wheels: **season** (2000 → 
 **Sources.** Rosters: Wikipedia Pro Bowl pages (two page formats). Attributes: ESPN athlete records first; the player's Wikipedia infobox for jersey/college gaps; the NFL draft page for the draft team (unambiguous full team name). Four names ESPN search could not find were resolved by hand from ESPN team-season leaders and are recorded as manual ids in `probowl_selections.csv`.
 
 **Amendment (Frank, 2026-09-09):** fullbacks are not skill players here. Pro Bowl pages that list fullbacks under running backs (2013–2015) had let four in (Kuhn, Reece, Tolbert, DiMarco); the pull now drops any selection whose ESPN position is FB.
+
+**Amendment (Frank, 2026-09-09):** the Pro Number answer is the number the player wore **in the rolled season**, read from that season's Pro Bowl roster page (Terrell Owens is 81 for 2003, not his last-worn 10). ESPN's last-worn number is only a fallback when the roster page prints none.

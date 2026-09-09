@@ -18,6 +18,8 @@ export const CATEGORIES: ProBowlCategory[] = ['alma', 'draft', 'number', 'positi
 export interface SelectionRow {
   season: number
   pos: Skill
+  /** Number worn that season, from the Pro Bowl roster page. The "Pro Number" answer. */
+  number: number | null
   wiki_title: string
   name: string
   team: string
@@ -62,6 +64,7 @@ export interface DraftTeamRow {
 export const SELECTION_HEADER = [
   'season',
   'pos',
+  'number',
   'wiki_title',
   'name',
   'team',
@@ -112,6 +115,7 @@ function table(
   text: string,
   header: readonly string[],
   errors: string[],
+  optional: readonly string[] = [],
 ): Record<string, string>[] {
   let parsed
   try {
@@ -120,13 +124,14 @@ function table(
     errors.push(`${file}: ${(e as Error).message}`)
     return []
   }
-  const missing = header.filter((h) => !parsed.header.includes(h))
+  const missing = header.filter((h) => !parsed.header.includes(h) && !optional.includes(h))
   if (missing.length) {
     errors.push(`${file}:1: missing columns ${missing.join(', ')}`)
     return []
   }
   return parsed.rows.map((row, i) => {
     const o: Record<string, string> = { __line: String(parsed.lines[i]) }
+    for (const h of header) o[h] = ''
     parsed.header.forEach((h, j) => (o[h] = (row[j] ?? '').trim()))
     return o
   })
@@ -145,6 +150,7 @@ export function parseProBowlContent(files: {
     files.selections,
     SELECTION_HEADER,
     errors,
+    ['number'], // added after the first pull; older files still parse
   ).map((r) => {
     const season = intOrNull(r.season!)
     if (season === null || Number.isNaN(season))
@@ -153,9 +159,13 @@ export function parseProBowlContent(files: {
       errors.push(`probowl_selections.csv:${r.__line}: pos must be one of ${SKILL.join('/')}`)
     if (r.espn_id && !/^\d+$/.test(r.espn_id))
       errors.push(`probowl_selections.csv:${r.__line}: espn_id must be numeric or empty`)
+    const number = intOrNull(r.number!)
+    if (Number.isNaN(number))
+      errors.push(`probowl_selections.csv:${r.__line}: number must be an integer or empty`)
     return {
       season: season ?? 0,
       pos: r.pos as Skill,
+      number,
       wiki_title: r.wiki_title!,
       name: r.name!,
       team: r.team!,
@@ -270,6 +280,7 @@ export function buildProBowl(c: ProBowlContent): {
 
   // Rosters: resolved, included selections per season.
   const rosters: Record<string, string[]> = {}
+  const numbers: Record<string, Record<string, number>> = {}
   const unresolved: ProBowlReport['unresolved'] = []
   const named = new Map<number, number>()
   for (const s of c.selections) {
@@ -280,6 +291,9 @@ export function buildProBowl(c: ProBowlContent): {
     }
     const list = (rosters[String(s.season)] ??= [])
     if (!list.includes(s.espn_id)) list.push(s.espn_id)
+    // The number worn that season; the player's last-worn number only as a fallback.
+    const n = s.number ?? players.get(s.espn_id)!.jersey
+    if (n !== null) (numbers[String(s.season)] ??= {})[s.espn_id] = n
   }
   const seasons = Object.keys(rosters)
     .map(Number)
@@ -295,15 +309,18 @@ export function buildProBowl(c: ProBowlContent): {
     if (p.college_id) collegeIds.add(p.college_id)
     if (p.draft_status === 'drafted') draftKeys.add(p.draft_team)
     if (p.draft_status === 'undrafted') draftKeys.add('UDFA')
-    if (p.jersey !== null)
-      (numbersByPos.get(p.pos) ?? numbersByPos.set(p.pos, new Set()).get(p.pos)!).add(
-        String(p.jersey),
-      )
   }
+  // Wrong numbers come from numbers actually worn by other players at the same position.
+  for (const season of Object.keys(numbers))
+    for (const [id, n] of Object.entries(numbers[season]!)) {
+      const pos = players.get(id)!.pos
+      ;(numbersByPos.get(pos) ?? numbersByPos.set(pos, new Set()).get(pos)!).add(String(n))
+    }
 
   const section: ProBowlSection = {
     seasons,
     rosters,
+    numbers,
     players: {},
     colleges: {},
     teams: {},
@@ -366,11 +383,12 @@ export function buildProBowl(c: ProBowlContent): {
           [...draftKeys].filter((x) => x !== draftAnswer && labelOf(x) !== ansLabel),
         )
       }
-      if (p.jersey !== null)
+      const worn = numbers[String(season)]?.[id]
+      if (worn !== undefined)
         emit(
           'number',
-          String(p.jersey),
-          [...(numbersByPos.get(p.pos) ?? [])].filter((x) => x !== String(p.jersey)),
+          String(worn),
+          [...(numbersByPos.get(p.pos) ?? [])].filter((x) => x !== String(worn)),
         )
       emit(
         'position',
@@ -384,7 +402,7 @@ export function buildProBowl(c: ProBowlContent): {
   for (const id of inPool) {
     const p = players.get(id)!
     if (!p.college_id) missing.college.push(p.name)
-    if (p.jersey === null) missing.jersey.push(p.name)
+    if (!Object.values(numbers).some((m) => id in m)) missing.jersey.push(p.name)
     if (p.draft_status === 'unknown') missing.draft.push(p.name)
   }
   const report: ProBowlReport = {

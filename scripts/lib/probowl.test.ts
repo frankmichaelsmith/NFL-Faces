@@ -48,9 +48,11 @@ const sel = (
   pos: SelectionRow['pos'],
   name: string,
   espn_id: string,
+  number: number | null = null,
 ): SelectionRow => ({
   season,
   pos,
+  number,
   wiki_title: name,
   name,
   team: 'X',
@@ -100,13 +102,13 @@ function fixture() {
       }),
     ],
     selections: [
-      sel(2000, 'QB', 'Ben', '1'),
-      sel(2000, 'QB', 'Aaron', '2'),
-      sel(2000, 'QB', 'Kurt', '3'),
-      sel(2000, 'RB', 'Marshall', '4'),
-      sel(2001, 'RB', 'Bo', '5'),
+      sel(2000, 'QB', 'Ben', '1', 7),
+      sel(2000, 'QB', 'Aaron', '2', 12),
+      sel(2000, 'QB', 'Kurt', '3', 13),
+      sel(2000, 'RB', 'Marshall', '4', 28),
+      sel(2001, 'RB', 'Bo', '5', 34),
       sel(2001, 'TE', 'Rob', '6'),
-      sel(2001, 'RB', 'Ricky', '7'),
+      sel(2001, 'RB', 'Ricky', '7', 21),
       sel(2001, 'QB', 'Ghost', ''),
     ],
   }
@@ -126,6 +128,25 @@ describe('buildProBowl', () => {
     expect(section.teams['LARD']).toMatchObject({ label: 'LA', name: 'Los Angeles Raiders' })
     expect(report.unresolved).toEqual([{ season: 2001, name: 'Ghost', note: '' }])
     expect(report.missing).toEqual({ college: ['Rob'], jersey: ['Rob'], draft: ['Rob'] })
+    expect(section.numbers['2000']).toEqual({ '1': 7, '2': 12, '3': 13, '4': 28 })
+  })
+
+  it('uses the number worn that season, not the last-worn number', () => {
+    const f = fixture()
+    // Ben wore 7 in 2000 but ESPN says his last number was 10; a 2001 selection says 81.
+    f.players.find((p) => p.espn_id === '1')!.jersey = 10
+    f.selections.push(sel(2001, 'QB', 'Ben', '1', 81))
+    const { section } = buildProBowl(f)
+    const n2000 = section.combos.find(
+      (c) => c.player === '1' && c.season === 2000 && c.category === 'number',
+    )!
+    const n2001 = section.combos.find(
+      (c) => c.player === '1' && c.season === 2001 && c.category === 'number',
+    )!
+    expect(n2000.answer).toBe('7')
+    expect(n2001.answer).toBe('81')
+    expect(n2001.distractors).not.toContain('81')
+    expect(n2000.distractors).not.toContain('7')
   })
 
   it('emits one combo per attribute a player has, with pools drawn from the whole roster', () => {
@@ -187,6 +208,7 @@ describe('parseProBowlContent', () => {
     })
     expect(errors).toContain('probowl_selections.csv:3: season must be an integer')
     expect(errors).toContain('probowl_selections.csv:3: pos must be one of QB/RB/WR/TE')
+    expect(errors).toContain('probowl_selections.csv:3: number must be an integer or empty')
     expect(errors).toContain('probowl_players.csv: Ben drafted by unknown team key "ZZZ"')
   })
 })

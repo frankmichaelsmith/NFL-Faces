@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-09T18:25:02.818Z.
+Generated 2026-09-09T18:30:39.034Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -147,9 +147,9 @@ None.
 
 ## Pro Bowl Mode
 
-**3352** combos across 26 seasons, 317 players, 112 colleges, 40 draft-team tiles.
+**3355** combos across 26 seasons, 317 players, 112 colleges, 40 draft-team tiles.
 
-By category: alma 838, draft 839, number 836, position 839.
+By category: alma 838, draft 839, number 839, position 839.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
@@ -170,9 +170,9 @@ By category: alma 838, draft 839, number 836, position 839.
 | 2014 | 36 | 36 | 144 |
 | 2015 | 34 | 34 | 136 |
 | 2016 | 40 | 40 | 160 |
-| 2017 | 35 | 35 | 139 |
-| 2018 | 37 | 37 | 147 |
-| 2019 | 35 | 35 | 139 |
+| 2017 | 35 | 35 | 140 |
+| 2018 | 37 | 37 | 148 |
+| 2019 | 35 | 35 | 140 |
 | 2020 | 24 | 24 | 96 |
 | 2021 | 32 | 32 | 128 |
 | 2022 | 32 | 32 | 128 |
@@ -188,9 +188,9 @@ None.
 
 Dwayne Carswell
 
-### Players missing jersey (1)
+### Players missing jersey (0)
 
-Zach Ertz
+None.
 
 ### Players missing draft (0)
 

@@ -35,7 +35,7 @@ export type ProBowlCategory = 'alma' | 'draft' | 'number' | 'position'
 export interface ProBowlPlayer {
   name: string
   pos: 'QB' | 'RB' | 'WR' | 'TE'
-  /** Most recent number worn. */
+  /** Most recent number worn (informational; the season number lives in ProBowlSection.numbers). */
   jersey: number | null
   /** College id (key into ProBowlSection.colleges), or null. */
   college: string | null
@@ -58,6 +58,8 @@ export interface ProBowlSection {
   seasons: number[]
   /** Player ids named to the Pro Bowl in each season (the name reel). */
   rosters: Record<string, string[]>
+  /** Number worn in that season, by season then player id. The "Pro Number" truth. */
+  numbers: Record<string, Record<string, number>>
   players: Record<string, ProBowlPlayer>
   colleges: Record<string, { name: string; logo: string | null }>
   /** Draft-team tiles: label printed on the tile plus its colours. */

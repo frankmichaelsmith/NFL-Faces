@@ -132,6 +132,7 @@ async function main() {
         selections.push({
           season,
           pos: r.pos,
+          number: r.number,
           wiki_title: r.wikiTitle,
           name: r.name,
           team: r.team,

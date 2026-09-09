@@ -74,6 +74,8 @@ const POS: Record<string, SkillPos> = {
 
 export interface RosterEntry {
   pos: SkillPos
+  /** Jersey number as printed on the Pro Bowl roster for that season, if any. */
+  number: number | null
   /** Article title of the player, e.g. "Rod Smith (wide receiver)". */
   wikiTitle: string
   /** Display name without the disambiguator. */
@@ -91,9 +93,16 @@ export function proBowlTitles(season: number): string[] {
 /** Parse every QB/RB/WR/TE on a Pro Bowl page, replacements included. */
 export function parseProBowlRoster(wikitext: string): RosterEntry[] {
   const out: RosterEntry[] = []
-  const push = (pos: SkillPos, title: string, team: string) => {
+  const push = (pos: SkillPos, num: string, title: string, team: string) => {
     const wikiTitle = title.trim()
-    out.push({ pos, wikiTitle, name: wikiTitle.replace(/\s*\(.*\)$/, ''), team: team.trim() })
+    const m = num.match(/\d+/)
+    out.push({
+      pos,
+      number: m ? Number(m[0]) : null,
+      wikiTitle,
+      name: wikiTitle.replace(/\s*\(.*\)$/, ''),
+      team: team.trim(),
+    })
   }
   // Format A (most years): table rows
   //   | [[Quarterback]] | {{Small|12}} '''[[Tom Brady]]''', [[New England Patriots|New England]]<br/>...
@@ -102,9 +111,9 @@ export function parseProBowlRoster(wikitext: string): RosterEntry[] {
     if (!m) continue
     const pos = POS[m[1]!]!
     const re =
-      /\{\{[Ss]mall\|[^}]*\}\}\s*'*\s*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]'*\s*,\s*\[\[([^\]|]+)(?:\|([^\]]*))?\]\]/g
+      /\{\{[Ss]mall\|([^}]*)\}\}\s*'*\s*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]'*\s*,\s*\[\[([^\]|]+)(?:\|([^\]]*))?\]\]/g
     let x: RegExpExecArray | null
-    while ((x = re.exec(row))) push(pos, x[1]!, x[3] ?? x[2]!)
+    while ((x = re.exec(row))) push(pos, x[1]!, x[2]!, x[4] ?? x[3]!)
   }
   if (out.length >= 10) return dedupe(out)
   // Format B (2013–2015 unconferenced drafts): '''Quarterbacks''' headings, then
@@ -116,9 +125,9 @@ export function parseProBowlRoster(wikitext: string): RosterEntry[] {
     const heading = parts[i]!
     const pos = POS[heading.charAt(0).toUpperCase() + heading.slice(1).toLowerCase()]!
     const body = parts[i + 1]!.split(/'''\s*(?:\[\[)?[A-Z]/)[0]!
-    const re = /\{\{NFLplayer\|[^|]*\|\s*([^|}]+?)\s*\|\s*\(?\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g
+    const re = /\{\{NFLplayer\|([^|]*)\|\s*([^|}]+?)\s*\|\s*\(?\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g
     let x: RegExpExecArray | null
-    while ((x = re.exec(body))) push(pos, x[1]!, x[2]!)
+    while ((x = re.exec(body))) push(pos, x[1]!, x[2]!, x[3]!)
   }
   return dedupe(out)
 }

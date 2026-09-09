@@ -23,6 +23,8 @@ describe('parseProBowlRoster', () => {
     expect(names).toContain('RB Jerome Bettis') // injury withdrawal
     expect(names).toContain('WR Rod Smith')
     expect(r.find((e) => e.name === 'Rod Smith')!.wikiTitle).toBe('Rod Smith (wide receiver)')
+    expect(r.find((e) => e.name === 'Tom Brady')!.number).toBe(12)
+    expect(r.find((e) => e.name === 'Rich Gannon')!.number).toBe(12)
     expect(names.some((n) => n.startsWith('FB') || n.includes('Larry Centers'))).toBe(false)
     expect(r.filter((e) => e.pos === 'QB').length).toBeGreaterThanOrEqual(3)
   })
@@ -31,6 +33,7 @@ describe('parseProBowlRoster', () => {
     const names = r.map((e) => `${e.pos} ${e.name}`)
     expect(names).toContain('QB Cam Newton')
     expect(names).toContain('QB Nick Foles')
+    expect(r.find((e) => e.name === 'Cam Newton')!.number).toBe(1)
     expect(r.filter((e) => e.pos === 'RB').length).toBeGreaterThan(0)
     expect(r.filter((e) => e.pos === 'WR').length).toBeGreaterThan(0)
     expect(new Set(r.map((e) => `${e.pos}:${e.wikiTitle}`)).size).toBe(r.length)

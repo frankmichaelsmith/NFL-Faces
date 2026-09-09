@@ -20,6 +20,7 @@ const combo = (
 const S: ProBowlSection = {
   seasons: [2010, 2011],
   rosters: { '2010': ['brady', 'brees'], '2011': ['brady', 'rodgers'] },
+  numbers: { '2010': { brady: 12, brees: 9 }, '2011': { brady: 12, rodgers: 12 } },
   players: {
     brady: { name: 'Tom Brady', pos: 'QB', jersey: 12, college: 'mich', draft: 'NE' },
     brees: { name: 'Drew Brees', pos: 'QB', jersey: 9, college: 'pur', draft: 'SD' },

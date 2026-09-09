@@ -142,7 +142,7 @@ async function main() {
           : c.category === 'draft'
             ? p.draft
             : c.category === 'number'
-              ? String(p.jersey)
+              ? String(pb.numbers[String(c.season)]?.[c.player])
               : p.pos
       if (truth !== c.answer) fail(`${key}: answer ${c.answer} ≠ player attribute ${truth}`)
       slots[r.answerSlot] = (slots[r.answerSlot] ?? 0) + 1

@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import type { Bundle } from '../game/bundle'
+import { share, type ShareResult } from '../share/share'
 import type { GameApi } from '../state/useGame'
 import { FaceCards } from './FaceCards'
 import { TimerBar } from './TimerBar'
@@ -9,13 +11,36 @@ interface Props {
   bundle: Bundle
   game: GameApi
   imageBaseUrl: string
+  siteUrl: string
 }
 
-export function PlayScreen({ bundle, game, imageBaseUrl }: Props) {
+const TOAST: Record<ShareResult, string | null> = {
+  shared: null,
+  copied: 'Copied to clipboard',
+  downloaded: 'Card saved',
+  cancelled: null,
+  failed: 'Could not share',
+}
+
+export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
   const { state, config } = game
   const round = state.round
   const over = state.phase === 'gameover'
   const roll = round ? config.wheels.map((w) => wheelValue(bundle, w.kind, round)).join(' · ') : ''
+  const [toast, setToast] = useState<string | null>(null)
+  const [sharing, setSharing] = useState(false)
+  useEffect(() => {
+    if (!toast) return
+    const t = setTimeout(() => setToast(null), 1800)
+    return () => clearTimeout(t)
+  }, [toast])
+  const onShare = async () => {
+    if (sharing) return
+    setSharing(true)
+    const result = await share({ streak: state.streak, roll: roll || null, url: siteUrl })
+    setSharing(false)
+    setToast(TOAST[result])
+  }
 
   return (
     <main className="mx-auto flex min-h-full max-w-[720px] flex-col gap-4 p-4">
@@ -90,13 +115,29 @@ export function PlayScreen({ bundle, game, imageBaseUrl }: Props) {
             {state.streak}
           </p>
           <p className="text-xs uppercase tracking-widest text-white/50">Best {state.bestStreak}</p>
-          <button
-            type="button"
-            onClick={game.start}
-            className="min-h-[52px] rounded-2xl bg-accent px-6 text-lg font-black text-ink active:scale-95"
-          >
-            New streak
-          </button>
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={onShare}
+              disabled={sharing}
+              data-testid="share"
+              className="min-h-[52px] rounded-2xl border-2 border-white/20 px-4 text-lg font-black text-white active:scale-95 disabled:opacity-60"
+            >
+              Share
+            </button>
+            <button
+              type="button"
+              onClick={game.start}
+              className="min-h-[52px] rounded-2xl bg-accent px-4 text-lg font-black text-ink active:scale-95"
+            >
+              New streak
+            </button>
+          </div>
+          {toast && (
+            <p role="status" data-testid="toast" className="text-xs text-white/60">
+              {toast}
+            </p>
+          )}
         </section>
       )}
     </main>

@@ -5,8 +5,14 @@ import type { Bundle } from './game/bundle'
 import { GAME_CONFIG, type GameConfig } from './game/config'
 import { defaultRng, type Rng } from './game/rng'
 import { useGame } from './state/useGame'
+import { wheelValue } from './components/Wheels'
+import type { GameState } from './state/machine'
 
 const IMAGE_BASE_URL = (import.meta.env.VITE_IMAGE_BASE_URL as string | undefined) ?? '/faces/'
+/** Public URL printed on share cards. Falls back to wherever the page is served from. */
+export const SITE_URL =
+  (import.meta.env.VITE_SITE_URL as string | undefined) ??
+  (typeof location !== 'undefined' ? location.origin : 'https://nflfaces.app')
 
 interface Props {
   /** Injected in tests; otherwise fetched from /data/bundle.json. */
@@ -32,10 +38,20 @@ export default function App({ bundle: given, config = GAME_CONFIG, rng = default
 }
 
 function Game({ bundle, config, rng }: { bundle: Bundle; config: GameConfig; rng: Rng }) {
-  const game = useGame(bundle, config, rng, IMAGE_BASE_URL)
+  const rollLabel = (s: GameState) =>
+    s.round ? config.wheels.map((w) => wheelValue(bundle, w.kind, s.round!)).join(' · ') : null
+  const game = useGame(bundle, config, rng, IMAGE_BASE_URL, rollLabel)
   if (game.state.phase === 'idle')
-    return <StartScreen bestStreak={game.state.bestStreak} onStart={game.start} />
-  return <PlayScreen bundle={bundle} game={game} imageBaseUrl={game.imageBaseUrl} />
+    return (
+      <StartScreen
+        bestStreak={game.stats.best_streak}
+        bestStreakRoll={game.stats.best_streak_roll}
+        onStart={game.start}
+      />
+    )
+  return (
+    <PlayScreen bundle={bundle} game={game} imageBaseUrl={game.imageBaseUrl} siteUrl={SITE_URL} />
+  )
 }
 
 function Center({ children }: { children: React.ReactNode }) {

@@ -2,17 +2,22 @@
  * React glue for the state machine: supplies rounds, drives the spin and
  * feedback delays, and enforces the decision timer on a monotonic clock.
  */
-import { useCallback, useEffect, useMemo, useReducer } from 'react'
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
 import type { Bundle } from '../game/bundle'
 import type { GameConfig } from '../game/config'
 import { defaultRng, type Rng } from '../game/rng'
 import { nextRound, replaceFace, type Slot } from '../game/select'
+import { loadStats, recordRound, recordStreakEnd, saveStats, type Stats } from '../storage/local'
 import { createReducer, initialState, type Action, type GameState } from './machine'
 
 export interface GameApi {
   state: GameState
   /** Base URL for face images; exposed so the screen and the preloader agree. */
   imageBaseUrl: string
+  /** Device-local stats (best streak, totals). Updated as rounds and streaks finish. */
+  stats: Stats
+  /** The roll that ended the current game, as wheel labels, once in game over. */
+  losingRoll: string | null
   /** Start a new streak (from idle or game over). */
   start: () => void
   /** Player tapped a face card. */
@@ -29,12 +34,35 @@ export function useGame(
   config: GameConfig,
   rng: Rng = defaultRng,
   imageBaseUrl = '/faces/',
+  rollLabel: (state: GameState) => string | null = () => null,
 ): GameApi {
   const reducer = useMemo(
     () => createReducer({ decisionMs: config.decisionMs }),
     [config.decisionMs],
   )
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [stats, setStats] = useState<Stats>(() => loadStats())
+  const [state, dispatch] = useReducer(reducer, initialState, (s) => ({
+    ...s,
+    bestStreak: stats.best_streak,
+  }))
+
+  // Persist outcomes exactly once per round (StrictMode runs effects twice in dev).
+  const recorded = useRef<string | null>(null)
+  const losingRoll = state.phase === 'gameover' ? rollLabel(state) : null
+  useEffect(() => {
+    const isEnd = state.phase === 'gameover' && state.lastOutcome !== null
+    const isRound = state.phase === 'correct' || (isEnd && state.lastOutcome !== 'exhausted')
+    if (!isRound && !isEnd) return
+    const key = `${state.roundIndex}:${state.phase}`
+    if (recorded.current === key) return
+    recorded.current = key
+    setStats((prev) => {
+      let next = isRound ? recordRound(prev) : prev
+      if (isEnd) next = recordStreakEnd(next, state.streak, losingRoll ?? '')
+      saveStats(next)
+      return next
+    })
+  }, [state.phase, state.roundIndex, state.lastOutcome, state.streak, losingRoll])
 
   const pick = useCallback(
     (used: readonly string[]) =>
@@ -123,7 +151,7 @@ export function useGame(
     return () => window.removeEventListener('keydown', onKey)
   }, [tap])
 
-  return { state, start, tap, onPainted, config, imageBaseUrl }
+  return { state, start, tap, onPainted, config, imageBaseUrl, stats, losingRoll }
 }
 
 export type { Action, GameState }

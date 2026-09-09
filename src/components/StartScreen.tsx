@@ -1,9 +1,10 @@
 interface Props {
   bestStreak: number
+  bestStreakRoll?: string | null
   onStart: () => void
 }
 
-export function StartScreen({ bestStreak, onStart }: Props) {
+export function StartScreen({ bestStreak, bestStreakRoll, onStart }: Props) {
   return (
     <main className="mx-auto flex min-h-full max-w-[720px] flex-col items-center justify-center gap-6 p-6 text-center">
       <h1 className="font-display text-7xl font-black uppercase tracking-tight">NFL Faces</h1>
@@ -11,8 +12,11 @@ export function StartScreen({ bestStreak, onStart }: Props) {
         Tap the quarterback who started for that team that season.
       </p>
       {bestStreak > 0 && (
-        <p className="text-sm uppercase tracking-widest text-white/50">
+        <p className="text-sm uppercase tracking-widest text-white/50" data-testid="best">
           Best streak <span className="font-black text-accent">{bestStreak}</span>
+          {bestStreakRoll ? (
+            <span className="text-white/40"> · died on {bestStreakRoll}</span>
+          ) : null}
         </p>
       )}
       <button

@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from '../src/App'
 import type { Bundle } from '../src/game/bundle'
@@ -152,5 +152,30 @@ describe('App', () => {
     expect(screen.getByTestId('game-over')).toBeInTheDocument()
     expect(screen.getByText('Time ran out')).toBeInTheDocument()
     expect(screen.getByTestId('answer-name')).toBeInTheDocument()
+  })
+
+  it('remembers the best streak and its losing roll across a reload, and offers Share', async () => {
+    localStorage.clear()
+    render(<App bundle={bundle} config={config} rng={mulberry32(5)} />)
+    await startRound()
+    fireEvent.pointerDown(screen.getByTestId(`face-${answerSlot()}`))
+    await act(async () => {
+      vi.advanceTimersByTime(config.feedbackMs + 5)
+    })
+    await act(async () => {
+      vi.advanceTimersByTime(config.wheels.length * config.spinMsPerWheel + 5)
+    })
+    await act(async () => {
+      vi.advanceTimersByTime(40)
+    })
+    const slot = answerSlot()
+    fireEvent.pointerDown(screen.getByTestId(`face-${((slot + 1) % 3) as 0 | 1 | 2}`))
+    expect(screen.getByTestId('final-streak').textContent).toBe('1')
+    expect(screen.getByTestId('share')).toBeInTheDocument()
+    const roll = screen.getByTestId('losing-roll').textContent!.replace('Died on ', '')
+    cleanup()
+    render(<App bundle={bundle} config={config} rng={mulberry32(6)} />)
+    expect(screen.getByTestId('best').textContent).toContain('Best streak 1')
+    expect(screen.getByTestId('best').textContent).toContain(roll)
   })
 })

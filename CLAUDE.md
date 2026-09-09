@@ -78,8 +78,8 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - [x] M2 — Game core (signed off 2026-09-09)
 - [x] M3 — Playable loop (signed off 2026-09-09)
 - [x] M4 — Wheels and polish (signed off 2026-09-09)
-- [x] M5 — Photos (built 2026-09-09; awaiting Frank checkpoint; 37 QBs from 2000–09 still need manual photos → M9)
-- [ ] M6 — Persistence and share
+- [x] M5 — Photos (signed off 2026-09-09; 37 QBs from 2000–09 still need manual photos → M9)
+- [x] M6 — Persistence and share (built 2026-09-09; awaiting Frank checkpoint)
 - [ ] M7 — Analytics, audio, haptics
 - [ ] M8 — Hardening
 - [ ] M9 — Launch content

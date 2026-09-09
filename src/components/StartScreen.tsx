@@ -1,0 +1,27 @@
+interface Props {
+  bestStreak: number
+  onStart: () => void
+}
+
+export function StartScreen({ bestStreak, onStart }: Props) {
+  return (
+    <main className="mx-auto flex min-h-full max-w-[720px] flex-col items-center justify-center gap-6 p-6 text-center">
+      <h1 className="text-6xl font-black tracking-tight">NFL Faces</h1>
+      <p className="max-w-xs text-lg text-white/70">
+        Tap the quarterback who started for that team that season.
+      </p>
+      {bestStreak > 0 && (
+        <p className="text-sm uppercase tracking-widest text-white/50">
+          Best streak <span className="font-black text-accent">{bestStreak}</span>
+        </p>
+      )}
+      <button
+        type="button"
+        onClick={onStart}
+        className="min-h-[56px] w-full max-w-xs rounded-2xl bg-accent px-8 text-xl font-black text-ink active:scale-95"
+      >
+        Start
+      </button>
+    </main>
+  )
+}

@@ -20,6 +20,10 @@ export interface GameConfig {
   roles: readonly string[]
   /** Decision timer, milliseconds. Never varies with streak length. */
   decisionMs: number
+  /** Spin-and-land time per wheel; wheels stop left to right, one after another. */
+  spinMsPerWheel: number
+  /** Green flash after a correct tap before the next spin starts on its own. */
+  feedbackMs: number
   /** Per-slot probability that a distractor is drawn from the alumni pool. */
   alumniProb: number
 }
@@ -32,5 +36,7 @@ export const GAME_CONFIG: GameConfig = {
   firstSeason: 2000,
   roles: ['QB'],
   decisionMs: 5000,
+  spinMsPerWheel: 1000,
+  feedbackMs: 300,
   alumniProb: 0.3,
 }

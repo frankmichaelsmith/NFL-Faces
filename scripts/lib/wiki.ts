@@ -129,6 +129,39 @@ export function parseProBowlRoster(wikitext: string): RosterEntry[] {
     let x: RegExpExecArray | null
     while ((x = re.exec(body))) push(pos, x[1]!, x[2]!, x[3]!)
   }
+  if (out.length >= 10) return dedupe(out)
+  // Format C (1995–1997 pages): '''QB'''<br> headings, one player per line, bold = starter:
+  //   '''[[Drew Bledsoe]]''' – New England<br>   [[Eric Green (tight end)|Eric Green]] – PIT (injury replacement)
+  // No jersey numbers are printed.
+  const abbrev: Record<string, SkillPos> = { QB: 'QB', RB: 'RB', WR: 'WR', TE: 'TE' }
+  const cParts = wikitext.split(/'''(QB|RB|WR|TE)'''/)
+  for (let i = 1; i < cParts.length; i += 2) {
+    const pos = abbrev[cParts[i]!]!
+    const body = cParts[i + 1]!.split(/'''[A-Z]{1,3}'''|\{\{Col/)[0]!
+    const re = /'*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]'*\s*[–—-]\s*([^<\n(]+)/g
+    let x: RegExpExecArray | null
+    while ((x = re.exec(body))) push(pos, '', x[1]!, x[2]!)
+  }
+  if (out.length >= 10) return dedupe(out)
+  // Format D (1998–1999 pages): ===Quarterbacks=== headings with bullets:
+  //   *[[Tim Brown (American football)|Tim Brown]] – Oakland Raiders
+  const dParts = wikitext.split(
+    /===\s*(Quarterbacks?|Running backs?|Wide receivers?|Tight ends?)\s*===/i,
+  )
+  for (let i = 1; i < dParts.length; i += 2) {
+    const heading = dParts[i]!.toLowerCase()
+    const pos: SkillPos = heading.startsWith('quarterback')
+      ? 'QB'
+      : heading.startsWith('running')
+        ? 'RB'
+        : heading.startsWith('wide')
+          ? 'WR'
+          : 'TE'
+    const body = dParts[i + 1]!.split(/\n==/)[0]!
+    const re = /^\*\s*'*\[\[([^\]|]+)(?:\|[^\]]*)?\]\]'*\s*[–—-]\s*(.+)$/gm
+    let x: RegExpExecArray | null
+    while ((x = re.exec(body))) push(pos, '', x[1]!, plain(x[2]!))
+  }
   return dedupe(out)
 }
 
@@ -192,8 +225,14 @@ export function parseDraftPage(wikitext: string): DraftRow[] {
 // ---- Player infobox -------------------------------------------------------------------------
 
 export interface InfoboxFacts {
+  /** First number listed (the infobox lists them in career order). */
   number: number | null
+  /** Every number the infobox lists, e.g. "12, 7, 1" → [12, 7, 1]. */
+  numbers: number[]
+  /** The last college listed: the one the player left for the NFL. */
   college: string | null
+  /** Every college listed, in order, with the wikilink target when there is one. */
+  colleges: { name: string; link: string | null }[]
   draftYear: number | null
   draftRound: number | null
   draftPick: number | null
@@ -201,9 +240,53 @@ export interface InfoboxFacts {
   position: string | null
 }
 
+/** An infobox field's raw value, including a bulleted or {{ubl}} list that runs over several lines. */
 const field = (t: string, k: string) => {
-  const m = t.match(new RegExp(`\\|\\s*${k}\\s*=\\s*([^\\n]*)`))
+  const m = t.match(
+    new RegExp(`\\|\\s*${k}\\s*=\\s*([\\s\\S]*?)(?=\\n\\s*\\|\\s*[A-Za-z_]+\\s*=|\\n\\}\\}|$)`),
+  )
   return m ? m[1]!.trim() : ''
+}
+/** Drop citations, comments, templates and tags so only the human-readable value remains. */
+const strip = (s: string) =>
+  s
+    .replace(/<ref[^>]*\/>/g, '')
+    .replace(/<ref[^>]*>[\s\S]*?<\/ref>/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/\{\{[^{}]*\}\}/g, '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]*>/g, ' ')
+/** Split a list value on <br>, newlines, bullets and the pipes of an {{ubl}}/{{plainlist}}, keeping wikilinks intact. */
+const unwrapLists = (raw: string) =>
+  raw
+    .replace(/\{\{\s*(?:ubl|unbulleted list|plainlist|hlist|flatlist)\s*\|/gi, '\n')
+    .replace(/\}\}\s*$/, '')
+const listItems = (body: string): string[] => {
+  const items: string[] = []
+  let cur = ''
+  let depth = 0
+  for (let i = 0; i < body.length; i++) {
+    const two = body.slice(i, i + 2)
+    if (two === '[[' || two === '{{') depth++
+    if (two === ']]' || two === '}}') depth = Math.max(0, depth - 1)
+    const ch = body[i]!
+    if (
+      depth === 0 &&
+      (ch === '\n' ||
+        ch === '|' ||
+        body.slice(i, i + 4).toLowerCase() === '<br>' ||
+        body.slice(i, i + 5).toLowerCase() === '<br/>' ||
+        body.slice(i, i + 6).toLowerCase() === '<br />')
+    ) {
+      items.push(cur)
+      cur = ''
+      if (ch === '<') i += body.slice(i).toLowerCase().indexOf('>')
+      continue
+    }
+    cur += ch
+  }
+  items.push(cur)
+  return items.map((s) => s.replace(/^\s*\*+\s*/, '').trim()).filter(Boolean)
 }
 const int = (s: string) => {
   const m = s.match(/\d+/)
@@ -218,10 +301,51 @@ const plain = (s: string) =>
     .replace(/\s*\(.*$/, '')
     .trim()
 
-export function parseInfobox(wikitext: string): InfoboxFacts {
+/** "[[UNLV Rebels football|UNLV]] (1981–1984)<br>[[Florida Gators football|Florida]]" → both schools, in order. */
+export function parseColleges(raw: string): { name: string; link: string | null }[] {
+  const out: { name: string; link: string | null }[] = []
+  for (const part of listItems(strip(unwrapLists(raw)))) {
+    const links = [...part.matchAll(/\[\[([^\]|]+)(?:\|([^\]]*))?\]\]/g)]
+    if (links.length)
+      for (const l of links) out.push({ name: (l[2] ?? l[1]!).trim(), link: l[1]!.trim() })
+    else {
+      const p = plain(part)
+      if (p) out.push({ name: p, link: null })
+    }
+  }
+  return out.filter((c) => c.name)
+}
+
+/** The {{Infobox …}} template alone, so a `number=` in a citation or navbox further down is never read. */
+export function infoboxBody(wikitext: string): string {
+  const start = wikitext.search(/\{\{\s*Infobox/i)
+  if (start === -1) return wikitext
+  let depth = 0
+  for (let i = start; i < wikitext.length - 1; i++) {
+    const two = wikitext.slice(i, i + 2)
+    if (two === '{{') {
+      depth++
+      i++
+    } else if (two === '}}') {
+      depth--
+      i++
+      if (depth === 0) return wikitext.slice(start, i + 1)
+    }
+  }
+  return wikitext.slice(start)
+}
+
+export function parseInfobox(fullText: string): InfoboxFacts {
+  const wikitext = infoboxBody(fullText)
+  const colleges = parseColleges(field(wikitext, 'college'))
+  const numbers = (strip(field(wikitext, 'number')).match(/\d+/g) ?? [])
+    .map(Number)
+    .filter((n) => n <= 99)
   return {
-    number: int(field(wikitext, 'number')),
-    college: plain(field(wikitext, 'college')) || null,
+    number: numbers[0] ?? null,
+    numbers,
+    college: colleges.at(-1)?.name ?? null,
+    colleges,
     draftYear: int(field(wikitext, 'draftyear')),
     draftRound: int(field(wikitext, 'draftround')),
     draftPick: int(field(wikitext, 'draftpick')),

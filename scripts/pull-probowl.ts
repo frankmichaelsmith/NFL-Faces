@@ -1,14 +1,22 @@
 /**
  * Pull Pro Bowl Mode content.
  *
- *   npm run pull:probowl -- [--first 2000] [--through <season>] [--refresh-espn]
+ *   npm run pull:probowl -- [--first 1995] [--through <season>] [--refresh-espn]
  *
- * 1. Rosters: every QB/RB/WR/TE on each season's Wikipedia Pro Bowl page.
- * 2. Resolve each name to an ESPN athlete via search, verified by position and
- *    career span. A curator-set espn_id in probowl_selections.csv always wins.
+ * 1. Rosters: every QB/RB/WR/TE on each season's Wikipedia Pro Bowl page
+ *    (four page formats; 1996–1998 print no jersey numbers).
+ * 2. Resolve each name to an ESPN athlete via search, then via ESPN's full
+ *    athlete index when search misses, verified by position and career span.
+ *    A curator-set espn_id in probowl_selections.csv always wins.
  * 3. Facts per player: ESPN first (position, jersey, college + logo, draft),
  *    then the player's Wikipedia infobox for jersey/college/draft gaps, then
  *    the NFL draft page for the draft team (era-accurate name → draft_teams.csv).
+ *    College: the last school in the Wikipedia infobox wins when it resolves to
+ *    an ESPN program (ESPN lists Randall Cunningham at Concordia Irvine, not UNLV);
+ *    ESPN supplies the logo either way.
+ *    Jersey: the fallback for a season whose roster page prints no number is
+ *    only used when the player wore a single number in his career, per the
+ *    infobox; a player with several numbers gets no number combo that season.
  *
  * Writes content/probowl_selections.csv and content/probowl_players.csv.
  * Curator columns (espn_id on selections; included/notes on players) survive re-pulls.
@@ -16,7 +24,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { serializeCsv } from './lib/csv'
-import { EspnClient, type EspnAthleteFacts } from './lib/espn'
+import { EspnClient, type EspnAthleteFacts, type EspnCollegeTeam } from './lib/espn'
 import {
   PLAYER_HEADER,
   SELECTION_HEADER,
@@ -34,6 +42,7 @@ import {
   parseDraftPage,
   parseInfobox,
   parseProBowlRoster,
+  type InfoboxFacts,
   proBowlTitles,
   type DraftRow,
 } from './lib/wiki'
@@ -65,7 +74,7 @@ interface Args {
 function parseArgs(argv: string[]): Args {
   const now = new Date()
   // The Pro Bowl for season S is played in January of S+1; the latest complete season is last year.
-  const a: Args = { first: 2000, through: now.getUTCFullYear() - 1, refreshEspn: false }
+  const a: Args = { first: 1995, through: now.getUTCFullYear() - 1, refreshEspn: false }
   for (let i = 0; i < argv.length; i++) {
     const v = argv[i]!
     if (v === '--first') a.first = Number(argv[++i])
@@ -112,10 +121,11 @@ async function main() {
   const existing = await readExisting()
   const draftTeams = existing.draftTeams
   if (!draftTeams.length) throw new Error('content/draft_teams.csv is missing or empty')
+  // Only a curator-set id survives a re-pull: mark it with a note starting "manual".
   const manualIds = new Map(
     existing.selections
-      .filter((s) => s.espn_id)
-      .map((s) => [`${s.season}:${s.wiki_title}`, s.espn_id]),
+      .filter((s) => s.espn_id && /^manual/i.test(s.note))
+      .map((s) => [`${s.season}:${s.wiki_title}`, { id: s.espn_id, note: s.note }]),
   )
   const prevPlayers = new Map(existing.players.map((p) => [p.espn_id, p]))
 
@@ -136,8 +146,9 @@ async function main() {
           wiki_title: r.wikiTitle,
           name: r.name,
           team: r.team,
-          espn_id: manualIds.get(`${season}:${r.wikiTitle}`) ?? '',
-          note: '',
+          espn_id: manualIds.get(`${season}:${r.wikiTitle}`)?.id ?? '',
+          // the curator's note travels with the id, or the next pull would drop both
+          note: manualIds.get(`${season}:${r.wikiTitle}`)?.note ?? '',
         })
       log(`${season}: ${roster.length} skill players (${title})`)
       found = true
@@ -149,10 +160,126 @@ async function main() {
   // 2. Resolve names → ESPN ids
   const factsCache = new Map<string, EspnAthleteFacts | null>()
   const facts = async (id: string) => {
+    if (id.startsWith('wiki:')) return null // no ESPN record; the Wikipedia article carries the row
     if (!factsCache.has(id)) factsCache.set(id, await espn.athleteFacts(id))
     return factsCache.get(id)!
   }
+  const infoboxCache = new Map<string, InfoboxFacts>()
+  const infobox = async (title: string) => {
+    if (!infoboxCache.has(title))
+      infoboxCache.set(title, parseInfobox((await wiki.wikitext(title)) ?? ''))
+    return infoboxCache.get(title)!
+  }
+  // College programs by every name ESPN gives them, for matching the infobox's school.
+  const collegeByKey = new Map<string, EspnCollegeTeam | null>() // null = ambiguous
+  for (const t of await espn.colleges())
+    for (const k of [t.displayName, t.name, t.shortDisplayName, t.abbreviation, t.nickname]) {
+      const key = nameKey(k)
+      if (!key) continue
+      const prev = collegeByKey.get(key)
+      if (prev === undefined) collegeByKey.set(key, t)
+      else if (prev && prev.id !== t.id) collegeByKey.set(key, null)
+    }
+  const resolveCollege = (c: { name: string; link: string | null } | undefined) => {
+    if (!c) return null
+    const keys = [
+      c.link?.replace(/\s+football$/i, ''),
+      c.link?.replace(/\s+football$/i, '').replace(/\s*\([^)]*\)/, ''),
+      c.name,
+    ]
+    for (const k of keys) {
+      const hit = k ? collegeByKey.get(nameKey(k)) : undefined
+      if (hit) return hit
+    }
+    return null
+  }
+  const collegeOverrides: string[] = []
+  const multiNumber: string[] = []
+
+  interface Verified {
+    id: string
+    displayName: string
+    /** ESPN's display name equals the page name, suffix included ("Frank Gore" ≠ "Frank Gore Jr."). */
+    strict: boolean
+    /** Equal once suffixes and punctuation are folded. */
+    loose: boolean
+    /** Draft/debut year, college, or a jersey number agrees with the player's Wikipedia infobox. */
+    corroborated: boolean
+    /** College or draft/debut year agrees: enough to separate namesakes who share a number. */
+    strong: boolean
+  }
+  /**
+   * Which ESPN record is this Pro Bowler? Position and career span must fit; a
+   * record whose college disagrees with Wikipedia is a namesake unless its
+   * draft or debut year corroborates it (ESPN's college is wrong for a dozen
+   * retired players, so a mismatch alone is not disqualifying).
+   */
+  const verify = async (
+    candidates: { id: string; displayName: string }[],
+    s: SelectionRow,
+    query: string,
+  ): Promise<{ pick?: Verified; note: string }> => {
+    const info = await infobox(s.wiki_title)
+    const wikiCollege = resolveCollege(info.colleges.at(-1))
+    const draftYear = info.draftYear ?? info.undraftedYear
+    const plausible: Verified[] = []
+    for (const c of candidates) {
+      const f = await facts(c.id)
+      if (!f) continue
+      // ESPN drops the position on some retired records ("-"); then the name and career span must carry it.
+      const posKnown = !!f.position && f.position !== '-'
+      if (posKnown && !POS_OK[s.pos].includes(f.position!)) continue
+      if (f.debutYear && f.debutYear > s.season + 1) continue
+      const strict = normalizeName(f.displayName).toLowerCase() === query.toLowerCase()
+      const loose = nameKey(f.displayName) === nameKey(query)
+      if (!posKnown && !loose) continue
+      const sameCollege = !!wikiCollege && !!f.college && wikiCollege.id === f.college.id
+      const collegeMismatch = !!wikiCollege && !!f.college && !sameCollege
+      const yearFits =
+        draftYear !== null &&
+        ((f.draft?.year ?? null) === draftYear ||
+          (f.debutYear !== null && Math.abs(f.debutYear - draftYear) <= 1))
+      // Undrafted players have no draft year to match; a jersey the infobox lists still ties the record to the article.
+      const jerseyFits = f.jersey !== null && info.numbers.includes(f.jersey)
+      const corroborated = sameCollege || yearFits || jerseyFits
+      if (collegeMismatch && !corroborated) continue
+      plausible.push({
+        id: c.id,
+        displayName: f.displayName,
+        strict,
+        loose,
+        corroborated,
+        strong: sameCollege || yearFits,
+      })
+    }
+    const ids = (l: Verified[]) => l.map((v) => v.id).join('/')
+    const ss = plausible.filter((v) => v.strict && v.strong)
+    if (ss.length === 1) return { pick: ss[0], note: '' }
+    if (ss.length > 1) return { note: `ambiguous: ESPN ${ids(ss)} all fit` }
+    const sc = plausible.filter((v) => v.strict && v.corroborated)
+    if (sc.length === 1) return { pick: sc[0], note: '' }
+    if (sc.length > 1) return { note: `ambiguous: ESPN ${ids(sc)} share a number with the article` }
+    const st = plausible.filter((v) => v.strict)
+    if (st.length === 1) return { pick: st[0], note: '' }
+    if (st.length > 1) return { note: `ambiguous: ESPN ${ids(st)}, none corroborated by Wikipedia` }
+    const lc = plausible.filter((v) => v.loose && v.corroborated)
+    const pick = lc.length === 1 ? lc[0] : plausible.length === 1 ? plausible[0] : undefined
+    if (pick) return { pick, note: `matched ${pick.displayName} by position/career` }
+    return {
+      note: candidates.length
+        ? `unresolved: ${candidates.length} ESPN candidates, none verified`
+        : 'unresolved: no ESPN search hit',
+    }
+  }
+  /** Wikipedia's own position wording for each slot, for the no-ESPN-record fallback. */
+  const POS_WORDS: Record<Skill, string[]> = {
+    QB: ['quarterback'],
+    RB: ['running back', 'halfback', 'tailback'],
+    WR: ['wide receiver'],
+    TE: ['tight end'],
+  }
   const resolved = new Map<string, string>() // wiki_title → espn_id
+  const wikiKeyed: string[] = []
   for (const s of selections) {
     if (s.espn_id) {
       resolved.set(s.wiki_title, s.espn_id)
@@ -163,32 +290,24 @@ async function main() {
       continue
     }
     const query = normalizeName(ALIASES[s.name] ?? s.name)
-    const candidates = await espn.searchPlayers(query)
-    const verified: { id: string; exact: boolean }[] = []
-    for (const c of candidates.slice(0, 8)) {
-      const f = await facts(c.id)
-      if (!f) continue
-      // ESPN drops the position on some retired records ("-"); then the name and career span must carry it.
-      const posKnown = !!f.position && f.position !== '-'
-      if (posKnown && !POS_OK[s.pos].includes(f.position!)) continue
-      if (f.debutYear && f.debutYear > s.season + 1) continue
-      const exact = nameKey(f.displayName) === nameKey(query)
-      if (!posKnown && !exact) continue
-      verified.push({ id: c.id, exact })
-    }
-    const exact = verified.filter((v) => v.exact)
-    const pick = exact[0] ?? (verified.length === 1 ? verified[0] : undefined)
+    const { pick, note } = await verify(await espn.searchPlayers(query), s, query)
     if (pick) {
       s.espn_id = pick.id
-      resolved.set(s.wiki_title, pick.id)
-      if (!pick.exact)
-        s.note = `matched ${candidates.find((c) => c.id === pick.id)?.displayName} by position/career`
+      s.note = note
     } else {
-      s.note = candidates.length
-        ? `unresolved: ${candidates.length} ESPN candidates, none verified`
-        : 'unresolved: no ESPN search hit'
+      // ESPN has no NFL record at all for a few retired greats (Jerry Rice). The Wikipedia
+      // article, when it names the same position, carries the row: college, draft, numbers.
+      const info = await infobox(s.wiki_title)
+      const pos = info.position?.toLowerCase() ?? ''
+      if (POS_WORDS[s.pos].some((w) => pos.includes(w))) {
+        s.espn_id = `wiki:${s.wiki_title.replace(/ /g, '_')}`
+        s.note = `no ESPN record (${note}); keyed by the Wikipedia article`
+        wikiKeyed.push(`${s.season} ${s.name}`)
+      } else s.note = note
     }
+    if (s.espn_id) resolved.set(s.wiki_title, s.espn_id)
   }
+  if (wikiKeyed.length) log(`keyed by Wikipedia (no ESPN record): ${wikiKeyed.join(', ')}`)
   // Fullbacks share the running-back list on some Pro Bowl pages but are not a skill
   // position in this game (Frank, 2026-09-09: John Kuhn was a FB, not a RB). Drop them.
   const fullbacks: string[] = []
@@ -235,18 +354,39 @@ async function main() {
     const f = await facts(id)
     const prev = prevPlayers.get(id)
     const wikiTitle = titleFor.get(id)!
-    const info = parseInfobox((await wiki.wikitext(wikiTitle)) ?? '')
+    const info = await infobox(wikiTitle)
     const pos = posFor.get(id)!
+    const name = f?.displayName ?? selections.find((s) => s.espn_id === id)!.name
+    // College: Wikipedia's last-listed school wins when ESPN knows the program.
+    let college = f?.college ?? null
+    let collegeSource = college ? 'espn' : info.college ? 'wikipedia (no logo)' : ''
+    const wikiCollege = resolveCollege(info.colleges.at(-1))
+    if (wikiCollege && (!college || wikiCollege.id !== college.id)) {
+      if (college)
+        collegeOverrides.push(`${name}: ESPN ${college.name} → Wikipedia ${wikiCollege.name}`)
+      college = { id: wikiCollege.id, name: wikiCollege.name, logo: wikiCollege.logo }
+      collegeSource = 'wikipedia (ESPN logo)'
+    }
+    // Jersey fallback (used only when a roster page prints no number): safe only for a one-number career.
+    let jersey: number | null = null
+    let jerseySource = ''
+    if (info.numbers.length === 1 && (f?.jersey === null || f?.jersey === info.numbers[0])) {
+      jersey = info.numbers[0]!
+      jerseySource = f?.jersey ? 'espn' : 'wikipedia'
+    } else if (info.numbers.length === 0 && f?.jersey) {
+      jersey = f.jersey
+      jerseySource = 'espn'
+    } else if (info.numbers.length > 1) multiNumber.push(`${name} (${info.numbers.join(', ')})`)
     const row: PlayerRow = {
       espn_id: id,
-      name: f?.displayName ?? selections.find((s) => s.espn_id === id)!.name,
+      name,
       pos,
-      jersey: f?.jersey ?? info.number,
-      jersey_source: f?.jersey ? 'espn' : info.number !== null ? 'wikipedia' : '',
-      college_id: f?.college?.id ?? '',
-      college_name: f?.college?.name ?? info.college ?? '',
-      college_logo: f?.college?.logo ?? '',
-      college_source: f?.college ? 'espn' : info.college ? 'wikipedia (no logo)' : '',
+      jersey,
+      jersey_source: jerseySource,
+      college_id: college?.id ?? '',
+      college_name: college?.name ?? info.college ?? '',
+      college_logo: college?.logo ?? '',
+      college_source: collegeSource,
       draft_status: 'unknown',
       draft_year: null,
       draft_round: null,
@@ -325,9 +465,23 @@ async function main() {
   )
   const skillMismatch = players.filter((p) => !(SKILL as readonly string[]).includes(p.pos))
   if (skillMismatch.length) log(`warning: ${skillMismatch.length} players outside skill positions`)
+  if (collegeOverrides.length)
+    log(
+      `college from Wikipedia over ESPN (${collegeOverrides.length}):\n  ${collegeOverrides.join('\n  ')}`,
+    )
+  if (multiNumber.length)
+    log(
+      `no jersey fallback, several numbers worn (${multiNumber.length}): ${multiNumber.join('; ')}`,
+    )
+  const unresolved = selections.filter((s) => !s.espn_id)
+  if (unresolved.length)
+    log(
+      `unresolved (${unresolved.length}):\n  ${unresolved.map((s) => `${s.season} ${s.pos} ${s.name} — ${s.note}`).join('\n  ')}`,
+    )
 }
 
 function appendNote(notes: string, extra: string): string {
+  if (notes.split('; ').includes(extra)) return notes
   return notes ? `${notes}; ${extra}` : extra
 }
 

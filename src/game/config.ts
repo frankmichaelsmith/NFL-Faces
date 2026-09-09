@@ -31,6 +31,8 @@ export interface GameConfig {
    * The roll picks a category by weight, then a combo uniformly within it.
    */
   categoryWeights?: Readonly<Record<string, number>>
+  /** Relative frequency of a season on the season wheel (missing = 1), keyed by season. */
+  seasonWeights?: Readonly<Record<string, number>>
 }
 
 export type Mode = 'faces' | 'probowl'
@@ -61,6 +63,8 @@ export const PROBOWL_CONFIG: GameConfig = {
   roles: ['QB', 'RB', 'WR', 'TE'],
   // Position is the easy one; Frank (2026-09-09) wants it on ~9% of rolls, the rest even (30.3% each).
   categoryWeights: { alma: 1, draft: 1, number: 1, position: 0.3 },
+  // 1995–1999 are in the pool (Frank, 2026-09-09) but land at 30% of a 2000+ season's rate.
+  seasonWeights: { 1995: 0.3, 1996: 0.3, 1997: 0.3, 1998: 0.3, 1999: 0.3 },
 }
 
 export function configFor(mode: Mode): GameConfig {

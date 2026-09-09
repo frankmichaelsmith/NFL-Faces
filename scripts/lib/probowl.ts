@@ -13,6 +13,8 @@ import { parseCsv } from './csv'
 
 export const SKILL = ['QB', 'RB', 'WR', 'TE'] as const
 export type Skill = (typeof SKILL)[number]
+/** A player key: an ESPN athlete id, or "wiki:Article_Title" when ESPN has no record of the player. */
+export const PLAYER_KEY = /^(\d+|wiki:\S+)$/
 export const CATEGORIES: ProBowlCategory[] = ['alma', 'draft', 'number', 'position']
 
 export interface SelectionRow {
@@ -157,8 +159,10 @@ export function parseProBowlContent(files: {
       errors.push(`probowl_selections.csv:${r.__line}: season must be an integer`)
     if (!(SKILL as readonly string[]).includes(r.pos!))
       errors.push(`probowl_selections.csv:${r.__line}: pos must be one of ${SKILL.join('/')}`)
-    if (r.espn_id && !/^\d+$/.test(r.espn_id))
-      errors.push(`probowl_selections.csv:${r.__line}: espn_id must be numeric or empty`)
+    if (r.espn_id && !PLAYER_KEY.test(r.espn_id))
+      errors.push(
+        `probowl_selections.csv:${r.__line}: espn_id must be numeric, "wiki:Title", or empty`,
+      )
     const number = intOrNull(r.number!)
     if (Number.isNaN(number))
       errors.push(`probowl_selections.csv:${r.__line}: number must be an integer or empty`)
@@ -185,8 +189,8 @@ export function parseProBowlContent(files: {
         errors.push(`probowl_players.csv:${r.__line}: ${k} must be an integer or empty`)
       return v
     }
-    if (!/^\d+$/.test(r.espn_id!))
-      errors.push(`probowl_players.csv:${r.__line}: espn_id must be numeric`)
+    if (!PLAYER_KEY.test(r.espn_id!))
+      errors.push(`probowl_players.csv:${r.__line}: espn_id must be numeric or "wiki:Title"`)
     if (!(SKILL as readonly string[]).includes(r.pos!))
       errors.push(`probowl_players.csv:${r.__line}: pos must be one of ${SKILL.join('/')}`)
     if (!['drafted', 'undrafted', 'unknown'].includes(r.draft_status!))

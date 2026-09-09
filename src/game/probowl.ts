@@ -3,15 +3,16 @@
  * Pro Bowl section.
  *
  * - A roll picks a category by weight (`categoryWeights`, position rarely),
- *   then a uniformly random combo of that category whose player has not yet
- *   been rolled in this streak (one player per streak, any category).
+ *   then a combo of that category weighted by its season (`seasonWeights`,
+ *   1995–1999 rarely) whose player has not yet been rolled in this streak
+ *   (one player per streak, any category).
  * - The two wrong cards are distinct values drawn uniformly from the combo's
  *   distractor pool; the correct card sits in a uniformly random slot.
  * - The roll is decided before anything animates.
  */
 import type { ProBowlCategory, ProBowlCombo, ProBowlSection } from './bundle'
 import { PROBOWL_CONFIG } from './config'
-import { sample, shuffle, type Rng } from './rng'
+import { sample, shuffle, weightedSample, type Rng } from './rng'
 import type { Slot } from './select'
 
 export interface ProBowlRound {
@@ -31,10 +32,18 @@ export const CATEGORY_LABELS: Record<ProBowlCategory, string> = {
   position: 'Position',
 }
 
-export type CategoryWeights = Readonly<Record<string, number>>
+export interface ProBowlWeights {
+  /** Relative frequency per category (missing = 1). */
+  categories?: Readonly<Record<string, number>>
+  /** Relative frequency per season, keyed by season (missing = 1). */
+  seasons?: Readonly<Record<string, number>>
+}
 
-/** Static wheel weights (never ramps): position lands on roughly one roll in eleven. */
-export const CATEGORY_WEIGHTS: CategoryWeights = PROBOWL_CONFIG.categoryWeights ?? {}
+/** Static wheel weights (never ramp): position ≈ one roll in eleven, 1995–1999 at 30% of a later season. */
+export const DEFAULT_WEIGHTS: ProBowlWeights = {
+  categories: PROBOWL_CONFIG.categoryWeights,
+  seasons: PROBOWL_CONFIG.seasonWeights,
+}
 
 /** Combos still available for a streak that has already rolled `used` players. */
 export function eligibleProBowlCombos(
@@ -48,7 +57,7 @@ export function pickProBowlCombo(
   section: ProBowlSection,
   used: ReadonlySet<string>,
   rng: Rng,
-  weights: CategoryWeights = CATEGORY_WEIGHTS,
+  weights: ProBowlWeights = DEFAULT_WEIGHTS,
 ): ProBowlCombo | null {
   const pool = eligibleProBowlCombos(section, used)
   if (!pool.length) return null
@@ -58,21 +67,12 @@ export function pickProBowlCombo(
     if (list) list.push(c)
     else byCategory.set(c.category, [c])
   }
-  const categories = [...byCategory.keys()]
-  const w = categories.map((c) => Math.max(0, weights[c] ?? 1))
-  const total = w.reduce((a, b) => a + b, 0)
-  // Every remaining category weighs nothing: fall back to a plain uniform roll.
-  if (total <= 0) return sample(rng, pool)
-  let r = rng() * total
-  let chosen = categories[categories.length - 1]!
-  for (let i = 0; i < categories.length; i++) {
-    r -= w[i]!
-    if (r < 0) {
-      chosen = categories[i]!
-      break
-    }
-  }
-  return sample(rng, byCategory.get(chosen)!)
+  const category = weightedSample(rng, [...byCategory.keys()], (c) => weights.categories?.[c] ?? 1)
+  return weightedSample(
+    rng,
+    byCategory.get(category)!,
+    (c) => weights.seasons?.[String(c.season)] ?? 1,
+  )
 }
 
 export function buildProBowlRound(combo: ProBowlCombo, rng: Rng): ProBowlRound {
@@ -100,7 +100,7 @@ export function nextProBowlRound(
   section: ProBowlSection,
   used: ReadonlySet<string>,
   rng: Rng,
-  weights: CategoryWeights = CATEGORY_WEIGHTS,
+  weights: ProBowlWeights = DEFAULT_WEIGHTS,
 ): ProBowlRound | null {
   const combo = pickProBowlCombo(section, used, rng, weights)
   return combo ? buildProBowlRound(combo, rng) : null

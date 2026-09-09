@@ -1,0 +1,209 @@
+{{Short description|National Football League all-star game}}
+{{Use mdy dates|date=August 2023}}
+{{Use American English|date=March 2026}}
+{{More citations needed|date=February 2024}}
+{{Infobox Pro Bowl
+|type=pb
+|name=1997
+|image=File:1997 Pro Bowl logo.gif
+|visitor=[[American Football Conference|AFC]]
+|home=[[National Football Conference|NFC]]
+|visitor_qtr1=0
+|home_qtr1=9
+|visitor_qtr2=3
+|home_qtr2=0
+|visitor_qtr3=7
+|home_qtr3=6
+|visitor_qtr4=13
+|home_qtr4=8
+|visitor_qtr5=3
+|home_qtr5=0
+|date=February 2, 1997
+|stadium=[[Aloha Stadium]]
+|city=[[Honolulu, Hawaii]]
+|visitor_coach=[[Tom Coughlin]]
+|visitor_coach_team=[[1996 Jacksonville Jaguars season|Jacksonville Jaguars]]
+|home_coach=[[Dom Capers]]
+|home_coach_team=[[1996 Carolina Panthers season|Carolina Panthers]]
+|MVP=[[Mark Brunell]]
+|MVPteam=[[1996 Jacksonville Jaguars season|Jacksonville Jaguars]]
+|anthem=
+|coin_toss=
+|halftime=
+|referee=[[Larry Nemmers]]
+|attendance=50,031
+|network=[[Monday Night Football|ABC]]
+|announcers=[[Al Michaels]], [[Frank Gifford]], [[Dan Dierdorf]], [[Lynn Swann]] and [[Lesley Visser]]
+}}
+The '''1997 [[Pro Bowl]]''' was the [[National Football League|NFL]]'s [[all-star game]] for the [[1996 NFL season|1996 season]]. The game was played on February 2, 1997, at [[Aloha Stadium]] in [[Honolulu, Hawaii]]. The final score was [[American Football Conference|AFC]] 26, [[National Football Conference|NFC]] 23.<ref>{{cite news|title=AFC finally gets its kicks|url=https://www.tampabay.com/archive/1997/02/03/afc-finally-gets-its-kicks/|work=[[Tampa Bay Times]]|date=February 3, 1997|access-date=February 20, 2024}}</ref> [[Mark Brunell]] of the [[Jacksonville Jaguars]] was the game's [[Most valuable player|MVP]].  In the game, Brunell threw for 236 yards.  He connected with the [[Oakland Raiders]] [[Tim Brown (American football)|Tim Brown]] for an 80-yard touchdown to tie the game at 23 with only 44 seconds to go.
+
+The referee was [[Larry Nemmers]].
+
+To date, this is the most recent Pro Bowl that went to overtime.
+
+==Roster==
+
+Names in '''Bold''' indicate starters<ref>{{cite web|title=1996 NFL Pro Bowlers|url=https://www.pro-football-reference.com/years/1996/probowl.htm|work=[[Pro-Football-Reference.com]]|access-date=February 20, 2024}}</ref>
+{{Col-begin}}
+{{Col-2}}
+'''AFC (American Football Conference) Roster'''<br>
+'''Head coach'''<br>
+[[Tom Coughlin]] – Jacksonville
+
+'''QB'''<br>
+'''[[Drew Bledsoe]]''' – New England<br>
+[[Mark Brunell]] – Jacksonville<br>
+[[John Elway]] – Denver<br>
+[[Vinny Testaverde]] – Baltimore
+
+'''RB'''<br>
+'''[[Jerome Bettis]]''' – Pittsburgh<br>
+'''[[Terrell Davis]]''' – Denver<br>
+[[Curtis Martin]] – New England
+
+'''FB'''<br>
+[[Kimble Anders]] – Kansas City
+
+'''WR'''<br>
+'''[[Carl Pickens]]''' – Cincinnati<br>
+'''[[Tony Martin (American football)|Tony Martin]]''' – San Diego<br>
+[[Keenan McCardell]] – Jacksonville<br>
+[[Tim Brown (American football)|Tim Brown]] – Oakland<br>
+
+'''TE'''<br>
+'''[[Shannon Sharpe]]''' – Denver<br>
+[[Ben Coates]] – New England<br>
+
+'''OL'''<br>
+'''[[Richmond Webb]]''' - Miami<br>
+'''[[Bruce Matthews (American football)|Bruce Matthews]]''' – Houston<br>
+'''[[Dermontti Dawson]]''' – Pittsburgh<br>
+'''[[Will Shields]]''' – Kansas City<br>
+'''[[Bruce Armstrong]]''' – New England<br>
+[[Tony Boselli]] – Jacksonville<br>
+[[Ruben Brown]] – Buffalo<br>
+[[Tom Nalen]] – Denver<br>
+
+'''DL'''<br>
+'''[[Chester McGlockton]]''' – Oakland<br>
+'''[[Michael Sinclair (American football)|Michael Sinclair]]''' – Seattle<br>
+'''[[Cortez Kennedy]]''' - Seattle<br>
+'''[[Alfred Williams]]''' - Denver<br>
+[[Bruce Smith]] – Buffalo<br>
+[[Bryce Paup]] – Buffalo<br>
+[[Ted Washington]] – Buffalo<br>
+
+'''LB'''<br>
+'''[[Derrick Thomas]]''' – Kansas City<br>
+'''[[Junior Seau]]''' – San Diego<br>
+'''[[Chad Brown (linebacker)|Chad Brown]]''' – Pittsburgh<br>
+[[Levon Kirkland]] – Pittsburgh<br>
+[[Chris Slade (American football)|Chris Slade]] – New England<br>
+
+
+'''DB'''<br>
+'''[[Rod Woodson]]''' – Pittsburgh<br>
+'''[[Carnell Lake]]'''– Pittsburgh<br>
+'''[[Eric Turner (American football)|Eric Turner]]''' - Baltimore<br>
+'''[[Ashley Ambrose]]''' – Cincinnati<br>
+[[Dale Carter]] – Kansas City<br>
+[[Steve Atwater]] – Denver<br>
+[[Blaine Bishop]] – Houston<br>
+
+'''K'''<br>
+[[Cary Blanchard]] – Indianapolis
+
+'''P'''<br>
+[[Chris Gardocki]] – Indianapolis<br>
+
+{{Col-break}}
+{{Col-break}}
+'''NFC (National Football Conference) Roster'''<br>
+'''Head coach'''<br>
+[[Dom Capers]] – Carolina
+
+'''QB'''<br>
+'''[[Brett Favre]]''' – Green Bay<br>
+[[Kerry Collins]] – Carolina<br>
+[[Gus Frerotte]] – Washington<br>
+[[Steve Young]] – San Francisco<br>
+[[Troy Aikman]] – Dallas
+
+'''RB'''<br>
+'''[[Terry Allen (running back)|Terry Allen]]''' – Washington<br>
+'''[[Barry Sanders]]''' – Detroit<br>
+[[Ricky Watters]] – Philadelphia
+
+'''FB'''<br>
+[[Larry Centers]] – Arizona
+
+'''WR'''<br>
+'''[[Herman Moore]]''' – Detroit<br>
+'''[[Isaac Bruce]]''' – St. Louis<br>
+[[Cris Carter]] – Minnesota<br>
+[[Irving Fryar]] – Philadelphia<br>
+[[Rob Moore (American football)|Rob Moore]] – Arizona<br>
+[[Michael Bates (American football)|Michael Bates]] – Carolina
+
+'''TE'''<br>
+'''[[Wesley Walls]]''' – Carolina<br>
+[[Keith Jackson (tight end)|Keith Jackson]] – Green Bay
+
+'''OL'''<br>
+[[Erik Williams]] – Dallas<br>
+[[Randall McDaniel]] – Minnesota<br>
+[[Kevin Glover]] – Detroit<br>
+[[Larry Allen]] – Dallas<br>
+[[William Roaf]] – New Orleans<br>
+
+'''DL'''<br>
+'''[[Reggie White]]''' – Green Bay<br>
+'''[[John Randle]]''' – Minnesota<br>
+'''[[Bryant Young]]''' – San Francisco<br>
+'''[[Tony Tolbert]]''' - Dallas<br>
+[[Warren Sapp]] – Tampa Bay<br>
+[[Michael Strahan]] – New York Giants<br>
+[[Chris Doleman]] – San Francisco
+
+'''LB'''<br>
+'''[[Sam Mills]]''' – Carolina<br>
+'''[[Kevin Greene]]''' – Carolina<br>
+'''[[Lamar Lathon]]''' – Carolina<br>
+[[Jessie Armstead]] – New York Giants<br>
+[[Derrick Brooks]] – Tampa Bay<br>
+[[Hardy Nickerson]] – Tampa Bay<br>
+[[Ken Harvey (American football)|Ken Harvey]] – Washington
+
+'''DB'''<br>
+'''[[Eric Davis (American football)|Eric Davis]]''' – Carolina<br>
+'''[[LeRoy Butler]]''' - Green Bay<br>
+'''[[Aeneas Williams]]''' – Arizona<br>
+'''[[Merton Hanks]]''' – San Francisco<br>
+[[Darren Woodson]] – Dallas<br>
+[[Deion Sanders]] – Dallas<br>
+[[Darrell Green]] – Washington
+
+'''K'''<br>
+[[John Kasay]] – Carolina
+
+'''P'''<br>
+[[Matt Turk]] – Washington
+
+{{Col-end}}
+
+==References==
+{{reflist|35em}}
+
+==External links==
+* [https://web.archive.org/web/20090624124756/http://probowlonline.com/pro-bowl-1997.php 1997 Pro Bowl recap] at ProBowlOnline.com
+
+{{Pro Bowl}}
+{{NFL on ABC}}
+
+[[Category:Pro Bowl]]
+[[Category:1996 NFL season|Pro Bowl]]
+[[Category:1997 in American football|Pro Bowl]]
+[[Category:1997 in sports in Hawaii|Pro Bowl]]
+[[Category:American football competitions in Honolulu]]
+[[Category:February 1997 sports events in the United States]]
+[[Category:1990s in Honolulu]]

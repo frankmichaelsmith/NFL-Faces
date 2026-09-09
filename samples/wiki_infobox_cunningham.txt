@@ -1,0 +1,59 @@
+{{Infobox NFL biography
+| name          = Randall Cunningham
+| image         = Randall Cunningham Pro Bowl.JPG
+| upright       = .75
+| alt           = 
+| caption       = Cunningham at the [[1999 Pro Bowl]]
+| number        = 12, 7, 1
+| position      = [[Quarterback]]
+| birth_date    = {{Birth date and age|1963|3|27}}
+| birth_place   = [[Santa Barbara, California]], U.S.
+| death_date    = 
+| death_place   = 
+| height_ft     = 6
+| height_in     = 4
+| weight_lb     = 215
+| high_school   = [[Santa Barbara High School|Santa Barbara]]
+| college       = [[UNLV Rebels football|UNLV]] (1981–1984)
+| draftyear     = 1985
+| draftround    = 2
+| draftpick     = 37
+| pastteams     = 
+* [[Philadelphia Eagles]] ({{NFL Year|1985|1995}})
+* [[Minnesota Vikings]] ({{NFL Year|1997|1999}})
+* [[Dallas Cowboys]] ({{NFL Year|2000}})
+* [[Baltimore Ravens]] ({{NFL Year|2001}})
+| highlights    = 
+* [[PFWA NFL Most Valuable Player Award|PFWA NFL Most Valuable Player]] (1990)
+* [[UPI NFC Offensive Player of the Year]] (1990)
+* [[NFL Comeback Player of the Year Award|NFL Comeback Player of the Year]] (1992)
+* First-team [[All-Pro]] ([[1998 All-Pro Team|1998]])
+* 2× Second-team All-Pro ([[1988 All-Pro Team|1988]], [[1992 All-Pro Team|1992]])
+* 4× [[Pro Bowl]] ([[1989 Pro Bowl|1988]]–[[1991 Pro Bowl|1990]], [[1999 Pro Bowl|1998]])
+* [[List of NFL annual passer rating leaders|NFL passer rating leader]] (1998)
+* [[Jim Thorpe Trophy]] (1998)
+* 3× [[Bert Bell Award]] (1988, 1990, 1998)
+* [[Philadelphia Eagles Hall of Fame]]
+* 2× First-team [[College Football All-America Team|All-American]] ([[1983 College Football All-America Team|1983]], [[1984 College Football All-America Team|1984]])
+* 2× [[Big West Conference|PCAA]] Offensive Player of the Year (1983, 1984)
+* 3× First-team All-PCAA (1982–1984)
+* [[UNLV Rebels football#Retired numbers|UNLV Rebels No. 12]] retired
+| statlabel1    = Passing comp-att
+| statvalue1    = 2,429 / 4,229 (56.6%)
+| statlabel2    = [[Touchdown|TD]]–[[Interception|INT]]
+| statvalue2    = 207–134
+| statlabel3    = [[Passing yards]]
+| statvalue3    = 29,979
+| statlabel4    = [[Passer rating]]
+| statvalue4    = 81.5
+| statlabel5    = [[Rushing yards]]
+| statvalue5    = 4,928
+| statlabel6    = [[Touchdown|Rushing touchdowns]]
+| statvalue6    = 35
+| statlabel7    = Punts
+| statvalue7    = 20
+| statlabel8    = Punting yards
+| statvalue8    = 894
+| pfr           = CunnRa00
+| CollegeHOF    = 2394
+}}

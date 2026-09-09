@@ -13,7 +13,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 
 ## Pro Bowl Mode (Frank, 2026-09-09 — decision 0007)
 
-A second mode with **no photos**. Three wheels: **season** (2000 → last completed season), **player** (QB/RB/WR/TE named to that season's Pro Bowl, replacements included), **category** (alma mater → college logo, draft team → generated tile in era colours or UNDRAFTED, pro number → number worn that season, position). Three cards, one correct, same streak and timer, a player at most once per streak. The category is drawn by static weight (`categoryWeights`; position ≈ 9% of rolls, the rest ≈ 30% each, Frank 2026-09-09), then a combo uniformly within it. Content: `content/probowl_selections.csv` (rosters, curator `espn_id` wins), `content/probowl_players.csv` (attributes + sources), `content/draft_teams.csv` (hand table of era abbreviations, labels, colours). `npm run pull:probowl` fills the first two from Wikipedia + ESPN; `build:content` derives `bundle.probowl`. Milestones: **P1 data** · **P2 engine** (generic option values + selection + simulation) · **P3 screens** (mode picker, three wheels, logo/tile/number/position cards, assets) · **P4 finish** (per-mode best streak, share, analytics, e2e).
+A second mode with **no photos**. Three wheels: **season** (1995 → last completed season; 1995–1999 weighted to 30% of a later season via `seasonWeights`, Frank 2026-09-09), **player** (QB/RB/WR/TE named to that season's Pro Bowl, replacements included), **category** (alma mater → college logo, draft team → generated tile in era colours or UNDRAFTED, pro number → number worn that season, position). Three cards, one correct, same streak and timer, a player at most once per streak. The category is drawn by static weight (`categoryWeights`; position ≈ 9% of rolls, the rest ≈ 30% each, Frank 2026-09-09), then a combo uniformly within it. Content: `content/probowl_selections.csv` (rosters, curator `espn_id` wins), `content/probowl_players.csv` (attributes + sources), `content/draft_teams.csv` (hand table of era abbreviations, labels, colours). `npm run pull:probowl` fills the first two from Wikipedia + ESPN; `build:content` derives `bundle.probowl`. Milestones: **P1 data** · **P2 engine** (generic option values + selection + simulation) · **P3 screens** (mode picker, three wheels, logo/tile/number/position cards, assets) · **P4 finish** (per-mode best streak, share, analytics, e2e).
 
 ## Working rules (non-negotiable)
 
@@ -94,4 +94,5 @@ A second mode with **no photos**. Three wheels: **season** (2000 → last comple
 - [x] Pro Bowl P1 — data (signed off 2026-09-09: 845 selections, 321 players, 3376 combos)
 - [x] Pro Bowl P2 — engine (signed off 2026-09-09)
 - [x] Pro Bowl P3 — screens and assets (built 2026-09-09; awaiting Frank checkpoint)
+- [ ] Pro Bowl seasons 1995–1999 added 2026-09-09 (980 selections, 367 players, 3881 combos; awaiting Frank checkpoint)
 - [ ] Pro Bowl P4 — finish

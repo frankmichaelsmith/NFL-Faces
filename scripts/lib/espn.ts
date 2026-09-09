@@ -164,7 +164,8 @@ export class EspnClient {
 
   /** NFL players matching a name via ESPN's site search. Ids only; verify with athleteFacts(). */
   async searchPlayers(name: string): Promise<{ id: string; displayName: string }[]> {
-    const url = `https://site.web.api.espn.com/apis/search/v2?query=${encodeURIComponent(name)}&limit=10`
+    // 50, not 10: retired stars rank below active players and college namesakes (Ricky Williams, Jerry Rice).
+    const url = `https://site.web.api.espn.com/apis/search/v2?query=${encodeURIComponent(name)}&limit=50`
     const d = await this.get<{
       results?: { type: string; contents: { uid?: string; displayName: string }[] }[]
     }>(url)
@@ -178,6 +179,21 @@ export class EspnClient {
   }
 
   /** Everything Pro Bowl Mode needs from an athlete: position, jersey, college, draft, career span. */
+  /** Every college football program ESPN knows (id, names, logo), for matching Wikipedia's college names. */
+  async colleges(): Promise<EspnCollegeTeam[]> {
+    const d = await this.get<{
+      sports: { leagues: { teams: { team: RawCollegeTeam }[] }[] }[]
+    }>('https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams?limit=1000')
+    return (d.sports[0]?.leagues[0]?.teams ?? []).map(({ team: t }) => ({
+      id: t.id,
+      name: t.location,
+      displayName: t.displayName,
+      shortDisplayName: t.shortDisplayName ?? '',
+      abbreviation: t.abbreviation ?? '',
+      nickname: t.nickname ?? '',
+      logo: t.logos?.[0]?.href ?? null,
+    }))
+  }
   async athleteFacts(id: string): Promise<EspnAthleteFacts | null> {
     let a: RawAthleteFull
     try {
@@ -280,6 +296,25 @@ interface RawAthleteFull extends RawAthlete {
   draft?: { year: number; round: number; selection: number; team?: { $ref: string } }
   debutYear?: number
   active?: boolean
+}
+export interface EspnCollegeTeam {
+  id: string
+  /** ESPN's "location", e.g. "NC State", "Miami (OH)". */
+  name: string
+  displayName: string
+  shortDisplayName: string
+  abbreviation: string
+  nickname: string
+  logo: string | null
+}
+interface RawCollegeTeam {
+  id: string
+  location: string
+  displayName: string
+  shortDisplayName?: string
+  abbreviation?: string
+  nickname?: string
+  logos?: { href: string }[]
 }
 interface RawCollege {
   id: string

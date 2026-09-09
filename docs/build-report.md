@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-09T18:30:39.034Z.
+Generated 2026-09-09T21:21:50.470Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -147,14 +147,19 @@ None.
 
 ## Pro Bowl Mode
 
-**3355** combos across 26 seasons, 317 players, 112 colleges, 40 draft-team tiles.
+**3881** combos across 31 seasons, 367 players, 119 colleges, 42 draft-team tiles.
 
-By category: alma 838, draft 839, number 839, position 839.
+By category: alma 980, draft 980, number 941, position 980.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
+| 1995 | 28 | 28 | 112 |
+| 1996 | 29 | 29 | 103 |
+| 1997 | 29 | 29 | 104 |
+| 1998 | 30 | 30 | 106 |
+| 1999 | 25 | 25 | 100 |
 | 2000 | 31 | 31 | 124 |
-| 2001 | 33 | 33 | 131 |
+| 2001 | 33 | 33 | 132 |
 | 2002 | 30 | 30 | 120 |
 | 2003 | 30 | 30 | 120 |
 | 2004 | 29 | 29 | 116 |
@@ -184,13 +189,13 @@ By category: alma 838, draft 839, number 839, position 839.
 
 None.
 
-### Players missing college (1)
-
-Dwayne Carswell
-
-### Players missing jersey (0)
+### Players missing college (0)
 
 None.
+
+### Players missing jersey (16)
+
+Andre Rison, Chris Chandler, Dorsey Levens, Doug Flutie, Ed McCaffrey, Eric Metcalf, Gus Frerotte, Irving Fryar, Michael Bates, Randall Cunningham, Roell Preston, Terry Allen, Tony Martin, Travis Jervey, Trent Dilfer, Vinny Testaverde
 
 ### Players missing draft (0)
 

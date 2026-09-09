@@ -114,6 +114,7 @@ async function main() {
     const pbRng = mulberry32(seed + 7)
     const slots = [0, 0, 0]
     const byCat: Record<string, number> = {}
+    let legacyRounds = 0
     let pbUsed = new Set<string>()
     let pbStreak = 0
     let pbLongest = 0
@@ -147,6 +148,7 @@ async function main() {
       if (truth !== c.answer) fail(`${key}: answer ${c.answer} ≠ player attribute ${truth}`)
       slots[r.answerSlot] = (slots[r.answerSlot] ?? 0) + 1
       byCat[c.category] = (byCat[c.category] ?? 0) + 1
+      if (c.season < 2000) legacyRounds++
       if (pbRng() < accuracy) {
         pbUsed.add(c.player)
         pbStreak++
@@ -167,6 +169,13 @@ async function main() {
     for (const cat of ['alma', 'draft', 'number']) {
       const s = (byCat[cat] ?? 0) / rounds
       if (s < 0.27 || s > 0.34) fail(`probowl ${cat} share ${(s * 100).toFixed(1)}% outside 27–34%`)
+    }
+    // 1995–1999 are weighted to 30% of a later season (Frank, 2026-09-09): a small share, never zero.
+    const legacyCombos = pb.combos.filter((c) => c.season < 2000).length
+    if (legacyCombos) {
+      const legacyShare = legacyRounds / rounds
+      if (legacyShare < 0.02 || legacyShare > 0.1)
+        fail(`probowl 1995–1999 share ${(legacyShare * 100).toFixed(1)}% outside 2–10%`)
     }
     // perfect play cap = distinct players
     const perfect = new Set<string>()
@@ -189,7 +198,7 @@ async function main() {
         byCat,
       )
         .map(([k, v]) => `${k} ${((100 * v) / rounds).toFixed(0)}%`)
-        .join(', ')}`
+        .join(', ')}, seasons before 2000 ${((100 * legacyRounds) / rounds).toFixed(1)}%`
   }
 
   const pct = (n: number) => `${((100 * n) / rounds).toFixed(1)}%`

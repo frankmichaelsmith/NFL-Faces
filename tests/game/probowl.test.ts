@@ -78,18 +78,49 @@ describe('Pro Bowl roll selection', () => {
   it('honours explicit weights and skips a category weighted to zero', () => {
     const rng = mulberry32(4)
     for (let i = 0; i < 500; i++) {
-      const c = pickProBowlCombo(S, new Set(), rng, { alma: 0, draft: 0, number: 0, position: 1 })!
+      const c = pickProBowlCombo(S, new Set(), rng, {
+        categories: { alma: 0, draft: 0, number: 0, position: 1 },
+      })!
       expect(c.category).toBe('position')
     }
     // once position's only player is used, the remaining categories share evenly
     const seen = new Set<string>()
     for (let i = 0; i < 500; i++)
-      seen.add(pickProBowlCombo(S, new Set(['brady']), rng, { position: 1 })!.category)
+      seen.add(
+        pickProBowlCombo(S, new Set(['brady']), rng, { categories: { position: 1 } })!.category,
+      )
     expect([...seen].sort()).toEqual(['draft', 'number'])
     // every remaining category at zero falls back to a plain uniform roll
     expect(
-      pickProBowlCombo(S, new Set(), rng, { alma: 0, draft: 0, number: 0, position: 0 }),
+      pickProBowlCombo(S, new Set(), rng, {
+        categories: { alma: 0, draft: 0, number: 0, position: 0 },
+      }),
     ).not.toBeNull()
+  })
+  it('weights seasons inside a category (1995–1999 land less often)', () => {
+    const rng = mulberry32(9)
+    const N = 40000
+    let brady = 0
+    let rodgers = 0
+    for (let i = 0; i < N; i++) {
+      const c = pickProBowlCombo(S, new Set(), rng, {
+        categories: { alma: 0, number: 0, position: 0, draft: 1 },
+        seasons: { 2010: 0.1 },
+      })!
+      expect(c.category).toBe('draft')
+      if (c.player === 'brady') brady++
+      else rodgers++
+    }
+    // draft has one 2010 combo (weight 0.1) and one 2011 combo (weight 1)
+    expect(rodgers / brady).toBeGreaterThan(7)
+    expect(rodgers / brady).toBeLessThan(13)
+    // a category whose every season weighs 0 still rolls (uniform fallback)
+    expect(
+      pickProBowlCombo(S, new Set(), rng, {
+        categories: { alma: 1, draft: 0, number: 0, position: 0 },
+        seasons: { 2010: 0 },
+      })!.category,
+    ).toBe('alma')
   })
 })
 

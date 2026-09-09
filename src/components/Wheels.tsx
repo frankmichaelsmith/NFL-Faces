@@ -45,8 +45,12 @@ export function wheelValue(bundle: Bundle, kind: Kind, round: AnyRound): string 
 export function wheelValues(bundle: Bundle, kind: Kind, round: AnyRound | null = null): string[] {
   switch (kind) {
     case 'season': {
+      // Pro Bowl Mode has its own season span (1995 →); Faces uses the bundle's.
+      const pb = round?.kind === 'probowl' ? bundle.probowl : null
+      const first = pb?.seasons[0] ?? bundle.firstSeason
+      const last = pb?.seasons.at(-1) ?? bundle.lastSeason
       const out: string[] = []
-      for (let s = bundle.firstSeason; s <= bundle.lastSeason; s++) out.push(String(s))
+      for (let s = first; s <= last; s++) out.push(String(s))
       return out
     }
     case 'team':

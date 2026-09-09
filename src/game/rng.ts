@@ -31,6 +31,27 @@ export function sample<T>(rng: Rng, items: readonly T[]): T {
   return items[randomInt(rng, items.length)]!
 }
 
+/**
+ * Pick with probability proportional to `weightOf(item)` (negatives count as 0).
+ * If every weight is 0 the pick is uniform, so a fully down-weighted pool still rolls.
+ */
+export function weightedSample<T>(rng: Rng, items: readonly T[], weightOf: (t: T) => number): T {
+  if (items.length === 0) throw new Error('weightedSample() from an empty array')
+  let total = 0
+  const w = items.map((t) => {
+    const x = Math.max(0, weightOf(t))
+    total += x
+    return x
+  })
+  if (total <= 0) return sample(rng, items)
+  let r = rng() * total
+  for (let i = 0; i < items.length; i++) {
+    r -= w[i]!
+    if (r < 0) return items[i]!
+  }
+  return items[items.length - 1]!
+}
+
 /** Fisher–Yates; returns a new array. */
 export function shuffle<T>(rng: Rng, items: readonly T[]): T[] {
   const out = [...items]

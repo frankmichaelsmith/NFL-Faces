@@ -163,10 +163,13 @@ export function useGame(
     (used: readonly string[]) =>
       mode === 'probowl'
         ? bundle.probowl
-          ? nextProBowlRound(bundle.probowl, new Set(used), rng, config.categoryWeights)
+          ? nextProBowlRound(bundle.probowl, new Set(used), rng, {
+              categories: config.categoryWeights,
+              seasons: config.seasonWeights,
+            })
           : null
         : nextRound(bundle, new Set(used), rng, { alumniProb: config.alumniProb }),
-    [bundle, mode, rng, config.alumniProb, config.categoryWeights],
+    [bundle, mode, rng, config.alumniProb, config.categoryWeights, config.seasonWeights],
   )
 
   const start = useCallback(() => {

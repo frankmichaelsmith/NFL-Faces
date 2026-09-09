@@ -199,7 +199,7 @@ describe('parseProBowlContent', () => {
   it('validates types and cross-file references with line numbers', () => {
     const { errors } = parseProBowlContent({
       selections:
-        'season,pos,wiki_title,name,team,espn_id,note\n2000,QB,Ben,Ben,PIT,1,\nabc,LB,Ghost,Ghost,X,,\n',
+        'season,pos,number,wiki_title,name,team,espn_id,note\n2000,QB,7,Ben,Ben,PIT,1,\nabc,LB,x,Ghost,Ghost,X,,\n',
       players:
         'espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,college_source,draft_status,draft_year,draft_round,draft_pick,draft_team,draft_team_name,draft_source,included,notes\n' +
         '1,Ben,QB,7,espn,c1,State,x,espn,drafted,2004,1,11,ZZZ,Nowhere,espn,true,\n',

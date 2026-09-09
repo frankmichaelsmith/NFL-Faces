@@ -15,6 +15,7 @@ npm test               # unit tests
 npm run typecheck
 npm run lint
 npm run photos         # ESPN/Commons → public/faces/*.jpg (add --sheet for contact sheets)
+npm run photos:find    # candidate portraits for anyone still missing a photo → .cache/photos/candidates
 npm run icons          # placeholder app icons → public/icons
 npm run build          # production build (PWA service worker + manifest included)
 npm run size           # gzip budget check on dist/

@@ -1,7 +1,7 @@
 espn_id,person_id,display_name,included,espn_headshot,photo_source,photo_license,photo_crop,photo_approved,notes
 7,moon-warren,Warren Moon,true,false,,,,false,
 8,cunningham-randall,Randall Cunningham,true,false,,,,false,
-9,testaverde-vinny,Vinny Testaverde,true,false,commons:File:Vinny Testaverde throwing the ball during a game in Miami (cropped).jpg,Public domain,,false,Photo: Unknown authorUnknown author
+9,testaverde-vinny,Vinny Testaverde,true,false,commons:File:Vinny_Testaverde_1.jpg,CC BY-SA 2.0,"0.12,0.05,0.62,0.50",true,Photo: Unknown authorUnknown author; Photo: John Mathew Smith &amp; www.celebrity-photos.com
 12,rice-jerry,Jerry Rice,true,false,,,,false,
 18,beuerlein-steve,Steve Beuerlein,true,false,commons:File:Steve Beuerlein.jpg,CC BY-SA 2.0,,false,"Photo: Ken Lund from Las Vegas, Nevada, USA"
 22,brister-bubby,Bubby Brister,true,false,,,,false,
@@ -14,7 +14,7 @@ espn_id,person_id,display_name,included,espn_headshot,photo_source,photo_license
 42,tupa-tom,Tom Tupa,true,false,,,,false,
 44,johnson-lee,Lee Johnson,true,false,,,,false,
 53,aikman-troy,Troy Aikman,true,false,commons:File:Troy aikman 2011 cropped.jpg,CC BY-SA 3.0,"0.30,0.02,0.665,0.48",true,Photo: Leahdi
-59,peete-rodney,Rodney Peete,true,false,,,,false,
+59,peete-rodney,Rodney Peete,true,false,commons:File:Rodney_Peete_in_July_2010.jpg,CC BY 2.0,"0.05,0.0,0.78,0.52",true,Photo: Greg Hernandez
 69,george-jeff,Jeff George,true,false,,,,false,
 72,smith-emmitt,Emmitt Smith,true,false,,,,false,
 74,mitchell-scott,Scott Mitchell,true,false,,,,false,
@@ -39,7 +39,7 @@ espn_id,person_id,display_name,included,espn_headshot,photo_source,photo_license
 367,brown-dave,Dave Brown,true,false,,,,false,
 389,bettis-jerome,Jerome Bettis,true,false,,,,false,
 391,kirby-terry,Terry Kirby,true,false,,,,false,
-393,bledsoe-drew,Drew Bledsoe,true,false,commons:File:DrewBledsoeBillscropped.jpg,Public domain,,false,"Photo: SMSGT RAY LLOYD, USAF"
+393,bledsoe-drew,Drew Bledsoe,true,false,commons:File:DrewBledsoe2012.png,CC BY-SA 3.0,"0.20,0.10,0.50,0.35",true,"Photo: SMSGT RAY LLOYD, USAF; Photo: Meowwcat"
 398,mirer-rick,Rick Mirer,true,false,,,,false,
 399,grbac-elvis,Elvis Grbac,true,false,,,,false,
 445,brunell-mark,Mark Brunell,true,true,espn,ESPN headshot (see docs/decisions/0003),,true,
@@ -49,7 +49,7 @@ espn_id,person_id,display_name,included,espn_headshot,photo_source,photo_license
 520,matthews-shane,Shane Matthews,true,false,,,,false,
 525,pederson-doug,Doug Pederson,true,false,,,,false,
 526,bartrum-mike,Mike Bartrum,true,false,,,,false,
-530,van-pelt-alex,Alex Van Pelt,true,false,commons:File:Alex van Pelt and Bill Callahan (51402096008).jpg,CC BY 2.0,,false,Photo: Erik Drost
+530,van-pelt-alex,Alex Van Pelt,true,false,commons:File:Alex_van_Pelt_(51402095673).jpg,CC BY 2.0,"0.12,0.05,0.60,0.40",true,Photo: Erik Drost
 531,martin-jamie,Jamie Martin,true,false,,,,false,
 538,hentrich-craig,Craig Hentrich,true,false,,,,false,
 548,faulk-marshall,Marshall Faulk,true,false,,,,false,
@@ -61,8 +61,8 @@ espn_id,person_id,display_name,included,espn_headshot,photo_source,photo_license
 622,frerotte-gus,Gus Frerotte,true,false,commons:File:Gus Frerotte.jpg,CC BY-SA 3.0,,false,Photo: RyguyMN (talk)
 637,levens-dorsey,Dorsey Levens,true,false,,,,false,
 640,schroeder-bill,Bill Schroeder,true,false,,,,false,
-649,dilfer-trent,Trent Dilfer,true,false,commons:File:Trent Dilfer 49ers.jpg,CC BY 2.0,,false,"Photo: 49ers_Offense.jpg: John Martinez Pavliga
-derivative work: Lpdrew (talk)"
+649,dilfer-trent,Trent Dilfer,true,false,commons:File:TrentDilfer.jpg,CC BY-SA 4.0,"0.20,0.05,0.42,0.35",true,"Photo: 49ers_Offense.jpg: John Martinez Pavliga
+derivative work: Lpdrew (talk); Photo: Rick Munroe"
 658,bruce-isaac,Isaac Bruce,true,false,,,,false,
 712,fiedler-jay,Jay Fiedler,true,false,commons:File:Jay Fiedler.jpg,CC BY-SA 2.0,"0.26,0.034,0.69,0.545",true,Photo: Chamber of Fear
 726,wilkins-jeff,Jeff Wilkins,true,false,,,,false,
@@ -116,7 +116,7 @@ derivative work: Lpdrew (talk)"
 1411,chancey-robert,Robert Chancey,true,false,,,,false,
 1417,bouman-todd,Todd Bouman,true,false,,,,false,
 1420,allen-james,James Allen,true,false,,,,false,
-1427,leaf-ryan,Ryan Leaf,true,false,,,,false,
+1427,leaf-ryan,Ryan Leaf,true,false,commons:File:RyanLeafImage.jpg,CC BY-SA 4.0,"0.30,0.05,0.40,0.35",true,Photo: Adaadaeheh2
 1428,manning-peyton,Peyton Manning,true,true,espn,ESPN headshot (see docs/decisions/0003),,true,
 1432,green-ahman,Ahman Green,true,false,,,,false,
 1433,moss-randy,Randy Moss,true,true,,,,false,
@@ -133,11 +133,12 @@ derivative work: Lpdrew (talk)"
 1693,delhomme-jake,Jake Delhomme,true,true,espn,ESPN headshot (see docs/decisions/0003),,true,
 1716,akers-david,David Akers,true,true,,,,false,
 1737,craig-dameyune,Dameyune Craig,true,false,,,,false,
-1752,couch-tim,Tim Couch,true,false,,,,false,
+1752,couch-tim,Tim Couch,true,false,commons:File:Tim_Couch.png,CC BY-SA 4.0,"0.0,0.0,0.85,0.66",true,Photo: Mountain Top News
 1753,mcnabb-donovan,Donovan McNabb,true,true,espn,ESPN headshot (see docs/decisions/0003),,true,
 1754,smith-akili,Akili Smith,true,false,commons:File:Akili Smith.jpg,CC BY 2.0,,false,Photo: DanM (Calgary)
 1756,williams-ricky,Ricky Williams,true,true,,,,false,
-1762,culpepper-daunte,Daunte Culpepper,true,false,commons:File:Walsh Culpepper Birk (cropped).JPEG,Public domain,,false,"Photo: SSGT Kenneth Bellard, USAF"
+1762,culpepper-daunte,Daunte Culpepper,true,false,commons:File:Daunte_Culpepper_cropped.JPG,Public domain,"0.40,0.06,0.40,0.24",true,"Photo: SSGT Kenneth Bellard, USAF; Photo: Culpepper.JPG: Wrightsonjackson
+derivative work: Muchness (talk)"
 1763,mcnown-cade,Cade McNown,true,false,commons:File:Cade McNown does the coin toss (5240027537) (cropped).jpg,CC BY 2.0,,false,"Photo: Eric Chan from Hollywood, United States"
 1784,johnson-kevin,Kevin Johnson,true,false,,,,false,
 1798,faulk-kevin,Kevin Faulk,true,true,,,,false,
@@ -232,7 +233,7 @@ derivative work: Lpdrew (talk)"
 3757,givens-david,David Givens,true,false,,,,false,
 3776,peterson-adrian,Adrian Peterson,true,false,,,,false,
 3784,taylor-chester,Chester Taylor,true,true,,,,false,
-3790,hutchinson-chad,Chad Hutchinson,true,false,commons:File:TimChadHutchinsoncoaching1234.png,CC BY-SA 4.0,,false,
+3790,hutchinson-chad,Chad Hutchinson,true,false,commons:File:TimChadHutchinsoncoaching1234.png,CC BY-SA 4.0,"0.45,0.10,0.32,0.30",true,
 4242,fisher-tony,Tony Fisher,true,false,,,,false,
 4260,hill-shaun,Shaun Hill,true,true,espn,ESPN headshot (see docs/decisions/0003),,true,
 4268,gray-sr-quinn,Quinn Gray Sr.,true,false,,,,false,
@@ -306,7 +307,7 @@ derivative work: Lpdrew (talk)"
 8458,arrington-j-j,J.J. Arrington,true,true,,,,false,
 8469,parrish-roscoe,Roscoe Parrish,true,true,,,,false,
 8481,frye-charlie,Charlie Frye,true,true,espn,ESPN headshot (see docs/decisions/0003),,true,
-8483,walter-andrew,Andrew Walter,true,false,,,,false,
+8483,walter-andrew,Andrew Walter,true,false,commons:File:Andrew Walter.jpg,CC BY-SA 3.0,"0.30,0.02,0.40,0.28",true,Photo: Thisonewins
 8513,colquitt-dustin,Dustin Colquitt,true,true,,,,false,
 8520,orton-kyle,Kyle Orton,true,true,espn,ESPN headshot (see docs/decisions/0003),,true,
 8523,barber-marion,Marion Barber,true,true,,,,false,

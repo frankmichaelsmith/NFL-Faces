@@ -18,7 +18,8 @@
     "photos": "tsx scripts/process-photos.ts",
     "icons": "tsx scripts/make-icons.ts",
     "size": "tsx scripts/check-budget.ts",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "photos:find": "tsx scripts/find-photos.ts"
   },
   "dependencies": {
     "react": "^19.2.8",

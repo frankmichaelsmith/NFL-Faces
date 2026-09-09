@@ -18,7 +18,8 @@ import { existsSync } from 'node:fs'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
-import type { Bundle } from '../src/game/bundle'
+import { GAME_CONFIG } from '../src/game/config'
+import { buildBundle } from './lib/build'
 import { serializeCsv } from './lib/csv'
 import { parseContent, PERSON_HEADER, type PersonRow } from './lib/content'
 import { defaultCrop, measureSilhouette, parseCropSpec, planCrop, renderFace } from './lib/photos'
@@ -138,9 +139,6 @@ async function main() {
   const args = parseArgs(process.argv.slice(2))
   await mkdir(RAW, { recursive: true })
   await mkdir(OUT, { recursive: true })
-  const bundle = JSON.parse(
-    await readFile(path.join(ROOT, 'public/data/bundle.json'), 'utf8'),
-  ) as Bundle
   const files = await Promise.all(
     ['teams.csv', 'people.csv', 'stints.csv'].map((f) =>
       readFile(path.join(ROOT, 'content', f), 'utf8'),
@@ -150,6 +148,13 @@ async function main() {
   const { content, errors } = parseContent({ teams, people: peopleCsv, stints })
   if (errors.length) throw new Error(`content invalid:\n${errors.join('\n')}`)
   const people = new Map(content.people.map((p) => [p.espn_id, p]))
+  // Everyone who can appear on a card, photo or not — the photo-required build would hide the very people we need.
+  const { bundle } = buildBundle(content, {
+    firstSeason: GAME_CONFIG.firstSeason,
+    roles: GAME_CONFIG.roles,
+    requirePhoto: false,
+    sources: files,
+  })
   const ids = Object.keys(bundle.people).filter((id) => !args.only || args.only.has(id))
 
   const done: string[] = []

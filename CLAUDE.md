@@ -85,5 +85,5 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - [x] M5 — Photos (signed off 2026-09-09; 37 QBs from 2000–09 still need manual photos → M9)
 - [x] M6 — Persistence and share (signed off 2026-09-09)
 - [x] M7 — Analytics, audio, haptics (signed off 2026-09-09)
-- [x] M8 — Hardening (built 2026-09-09; awaiting Frank checkpoint)
-- [ ] M9 — Launch content
+- [x] M8 — Hardening (signed off 2026-09-09)
+- [ ] M9 — Launch content (photo backfill pass 1 done 2026-09-09: 166/193 faces, 794/862 combos; 27 QBs have no licensed portrait anywhere we can reach — see TODO)

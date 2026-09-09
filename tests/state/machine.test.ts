@@ -134,7 +134,7 @@ describe('state machine', () => {
     const spinning = reduce(initialState, { type: 'START', round: r })
     const swapped = { ...r, faces: ['q', 'ben', 'y'] as const, alumniCount: 1 }
     const s = reduce(spinning, { type: 'SWAP_ROUND', round: swapped })
-    expect(s.round?.faces).toEqual(['q', 'ben', 'y'])
+    expect(s.round?.kind === 'faces' && s.round.faces).toEqual(['q', 'ben', 'y'])
     expect(s.roundIndex).toBe(spinning.roundIndex)
     const other = { ...swapped, combo: { ...r.combo, team: 'NE' } }
     expect(reduce(spinning, { type: 'SWAP_ROUND', round: other })).toBe(spinning)

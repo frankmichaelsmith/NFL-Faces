@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { cyclesFor, ITEM_HEIGHT_PX, reelStrip } from '../../src/components/reel-math'
+import {
+  CENTER_TOP_PX,
+  cyclesFor,
+  drumPose,
+  ITEM_HEIGHT_PX,
+  reelEase,
+  reelStrip,
+} from '../../src/components/reel-math'
 
 describe('reelStrip', () => {
   const values = ['A', 'B', 'C', 'D']
@@ -8,8 +15,9 @@ describe('reelStrip', () => {
     expect(s.items).toEqual(['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D'])
     expect(s.items[s.landIndex]).toBe('C')
     expect(s.landIndex).toBe(10)
-    // the landed item sits in the middle of a three-row window
-    expect(s.finalY).toBe(-9 * ITEM_HEIGHT_PX)
+    // the landed item sits in the middle of the two-item window
+    expect(s.finalY).toBe(-10 * ITEM_HEIGHT_PX + CENTER_TOP_PX)
+    expect(CENTER_TOP_PX).toBe(ITEM_HEIGHT_PX / 2)
     expect(s.items[s.landIndex + 1]).toBe('D')
   })
   it('lands on the first item without a partial tail beyond it', () => {
@@ -28,5 +36,24 @@ describe('cyclesFor', () => {
     expect(cyclesFor(2000, 32)).toBe(3)
     expect(cyclesFor(2000, 100)).toBe(1)
     expect(cyclesFor(100, 5)).toBe(1)
+  })
+})
+
+describe('drum perspective and easing', () => {
+  it('leaves the centre row flat and tilts neighbours away symmetrically', () => {
+    expect(drumPose(0)).toEqual({ rotateX: -0, opacity: 1, scale: 1 })
+    const up = drumPose(-ITEM_HEIGHT_PX)
+    const down = drumPose(ITEM_HEIGHT_PX)
+    expect(up.rotateX).toBeGreaterThan(0)
+    expect(down.rotateX).toBeLessThan(0)
+    expect(up.rotateX).toBeCloseTo(-down.rotateX)
+    expect(up.opacity).toBeLessThan(1)
+    expect(drumPose(1000).rotateX).toBe(-62)
+  })
+  it('eases from 0 to 1 with a small overshoot near the end', () => {
+    expect(reelEase(0)).toBeCloseTo(0)
+    expect(reelEase(1)).toBeCloseTo(1)
+    expect(Math.max(...[0.85, 0.9, 0.95].map(reelEase))).toBeGreaterThan(1)
+    expect(reelEase(0.5)).toBeGreaterThan(0.5)
   })
 })

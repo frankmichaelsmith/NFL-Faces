@@ -48,6 +48,17 @@ body {
 .reel-spinning {
   filter: blur(1.2px);
 }
+.reel-drum {
+  perspective: 420px;
+  perspective-origin: 50% 50%;
+}
+.reel-drum .reel-strip {
+  transform-style: preserve-3d;
+}
+.reel-drum .reel-item {
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+}
 .reel-landed {
   animation: reel-land 180ms ease-out;
 }

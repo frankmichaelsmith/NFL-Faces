@@ -4,9 +4,10 @@
  */
 
 export const ITEM_HEIGHT_PX = 64
-/** Rows visible in the reel window: the landed value plus one neighbour above and below. */
-export const VISIBLE_ROWS = 3
-export const VIEWPORT_HEIGHT_PX = ITEM_HEIGHT_PX * VISIBLE_ROWS
+/** The window shows the landed value in full plus half of each neighbour, like a slot drum. */
+export const VIEWPORT_HEIGHT_PX = ITEM_HEIGHT_PX * 2
+/** Where the landed row's top sits inside the window. */
+export const CENTER_TOP_PX = (VIEWPORT_HEIGHT_PX - ITEM_HEIGHT_PX) / 2
 
 export interface ReelStrip<T> {
   /** Items rendered top to bottom. */
@@ -31,8 +32,7 @@ export function reelStrip<T>(values: readonly T[], target: T, cycles: number): R
   // One more so the row below the landed value is never empty.
   items.push(values[(targetIdx + 1) % values.length]!)
   const landIndex = cycles * values.length + targetIdx
-  const centerOffset = Math.floor(VISIBLE_ROWS / 2)
-  return { items, landIndex, finalY: -(landIndex - centerOffset) * ITEM_HEIGHT_PX }
+  return { items, landIndex, finalY: -landIndex * ITEM_HEIGHT_PX + CENTER_TOP_PX }
 }
 
 /** How many full cycles a spin of `durationMs` should cover. */
@@ -40,4 +40,22 @@ export function cyclesFor(durationMs: number, valueCount: number): number {
   // Roughly one full pass per 600 ms, never fewer than one, capped so the DOM stays small.
   const passes = Math.max(1, Math.round(durationMs / 600))
   return Math.min(passes, Math.max(1, Math.floor(160 / valueCount)))
+}
+
+/**
+ * Drum perspective for a row whose centre is `offsetPx` from the window centre:
+ * rows above tilt back and shrink, rows below tilt forward. Returns the
+ * rotateX angle in degrees and an opacity.
+ */
+export function drumPose(offsetPx: number): { rotateX: number; opacity: number; scale: number } {
+  const t = Math.max(-1, Math.min(1, offsetPx / (ITEM_HEIGHT_PX * 1.25)))
+  return { rotateX: -t * 62, opacity: 1 - Math.abs(t) * 0.55, scale: 1 - Math.abs(t) * 0.12 }
+}
+
+/** Ease-out with a mechanical overshoot (easeOutBack, softened). */
+export function reelEase(p: number): number {
+  const c1 = 0.9
+  const c3 = c1 + 1
+  const q = p - 1
+  return 1 + c3 * q * q * q + c1 * q * q
 }

@@ -20,6 +20,48 @@ test('start, spin, tap the correct face, streak becomes 1', async ({ page }) => 
   await expect(faces).toBeVisible({ timeout: 10_000 })
   await expect(page.getByTestId('wheel-team')).toHaveAttribute('data-settled', 'true')
 
+  // The drum: after landing, the winning row sits in the middle of the window, flat,
+  // with the neighbours tilted away (real rAF runs here, unlike jsdom).
+  await page.waitForTimeout(150)
+  // Typed structurally: the e2e tsconfig has no DOM lib.
+  type Box = { top: number; bottom: number; height: number }
+  type Row = {
+    style: { transform: string }
+    textContent: string | null
+    getBoundingClientRect(): Box
+  }
+  type ReelEl = {
+    getBoundingClientRect(): Box
+    querySelectorAll(sel: string): Iterable<Row>
+    dataset: { value: string }
+  }
+  const drum = await page.getByTestId('wheel-team').evaluate((node) => {
+    const reel = node as unknown as ReelEl
+    const rect = reel.getBoundingClientRect()
+    const rows = [...reel.querySelectorAll('.reel-item')]
+    const value = reel.dataset.value.replace(/\s+/g, '')
+    const inWindow = rows.filter((r) => {
+      const b = r.getBoundingClientRect()
+      return b.bottom > rect.top && b.top < rect.bottom
+    })
+    const winner = inWindow.find((r) => r.textContent!.replace(/\s+/g, '') === value)!
+    const wb = winner.getBoundingClientRect()
+    return {
+      height: Math.round(rect.height),
+      visibleRows: inWindow.length,
+      winnerTop: Math.round(wb.top - rect.top),
+      winnerHeight: Math.round(wb.height),
+      winnerTransform: winner.style.transform,
+      neighbourTransforms: inWindow.filter((r) => r !== winner).map((r) => r.style.transform),
+    }
+  })
+  expect(drum.height).toBeGreaterThanOrEqual(128)
+  expect(drum.height).toBeLessThanOrEqual(132)
+  expect(drum.visibleRows).toBe(3)
+  expect(Math.abs(drum.winnerTop - 32)).toBeLessThanOrEqual(3)
+  expect(drum.winnerTransform).toMatch(/rotateX\((-?0(\.\d+)?)deg\)/)
+  for (const t of drum.neighbourTransforms) expect(t).toMatch(/rotateX\(-?[1-9]\d(\.\d+)?deg\)/)
+
   const season = Number(await page.getByTestId('wheel-season').getAttribute('data-value'))
   const teamLabel = await page.getByTestId('wheel-team').getAttribute('data-value')
   const team = bundle.teams.find((t) => t.label.toUpperCase() === teamLabel)!

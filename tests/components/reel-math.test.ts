@@ -50,10 +50,17 @@ describe('drum perspective and easing', () => {
     expect(up.opacity).toBeLessThan(1)
     expect(drumPose(1000).rotateX).toBe(-62)
   })
-  it('eases from 0 to 1 with a small overshoot near the end', () => {
-    expect(reelEase(0)).toBeCloseTo(0)
-    expect(reelEase(1)).toBeCloseTo(1)
-    expect(Math.max(...[0.85, 0.9, 0.95].map(reelEase))).toBeGreaterThan(1)
-    expect(reelEase(0.5)).toBeGreaterThan(0.5)
+  it('spins down monotonically onto the landing point and never overshoots', () => {
+    expect(reelEase(0)).toBe(0)
+    expect(reelEase(1)).toBe(1)
+    let prev = 0
+    for (let i = 1; i <= 100; i++) {
+      const v = reelEase(i / 100)
+      expect(v).toBeGreaterThanOrEqual(prev)
+      expect(v).toBeLessThanOrEqual(1)
+      prev = v
+    }
+    expect(reelEase(0.5)).toBeGreaterThan(0.85) // most of the travel happens early
+    expect(reelEase(1.5)).toBe(1)
   })
 })

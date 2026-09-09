@@ -30,7 +30,7 @@ interface Props {
  * in the middle with half of each neighbour showing above and below. Rows
  * are tilted around the X axis by their distance from the centre, so the
  * strip reads as a cylinder. The spin is driven by requestAnimationFrame
- * (an eased translate with a mechanical overshoot) because each row's tilt
+ * (a monotonic spin-down, no overshoot) because each row's tilt
  * depends on where the strip is at that instant.
  */
 export function Reel({
@@ -64,7 +64,9 @@ export function Reel({
     const el = stripRef.current
     if (!el) return
     const rows = Array.from(el.children) as HTMLElement[]
-    const pose = (y: number) => {
+    const pose = (raw: number) => {
+      // Never scroll past the landing point or before the first row: a row is always in the window.
+      const y = Math.min(0, Math.max(strip.finalY, raw))
       el.style.transform = `translateY(${y}px)`
       const centre = VIEWPORT_HEIGHT_PX / 2
       const first = Math.max(0, Math.floor((-y - ITEM_HEIGHT_PX) / ITEM_HEIGHT_PX))
@@ -86,7 +88,7 @@ export function Reel({
     const tick = (now: number) => {
       const p = Math.min(1, (now - start) / durationMs)
       pose(strip.finalY * reelEase(p))
-      el.classList.toggle('reel-spinning', p < 0.82)
+      el.classList.toggle('reel-spinning', p < 0.6)
       if (p < 1) raf = requestAnimationFrame(tick)
     }
     raf = requestAnimationFrame(tick)

@@ -52,10 +52,12 @@ export function drumPose(offsetPx: number): { rotateX: number; opacity: number; 
   return { rotateX: -t * 62, opacity: 1 - Math.abs(t) * 0.55, scale: 1 - Math.abs(t) * 0.12 }
 }
 
-/** Ease-out with a mechanical overshoot (easeOutBack, softened). */
+/**
+ * Spin-down easing: fast at first, then a long deceleration straight onto the
+ * landing point. Monotonic and never above 1, so the drum can never overshoot
+ * (Frank, 2026-09-09: no bounce-back).
+ */
 export function reelEase(p: number): number {
-  const c1 = 0.9
-  const c3 = c1 + 1
-  const q = p - 1
-  return 1 + c3 * q * q * q + c1 * q * q
+  const q = Math.max(0, Math.min(1, p))
+  return 1 - Math.pow(1 - q, 4)
 }

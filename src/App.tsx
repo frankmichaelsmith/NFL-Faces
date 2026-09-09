@@ -4,7 +4,7 @@ import { StartScreen } from './components/StartScreen'
 import type { Bundle } from './game/bundle'
 import { GAME_CONFIG, type GameConfig } from './game/config'
 import { defaultRng, type Rng } from './game/rng'
-import { useGame } from './state/useGame'
+import { useGame, type GameDeps } from './state/useGame'
 import { wheelValue } from './components/Wheels'
 import type { GameState } from './state/machine'
 
@@ -19,9 +19,15 @@ interface Props {
   bundle?: Bundle
   config?: GameConfig
   rng?: Rng
+  deps?: GameDeps
 }
 
-export default function App({ bundle: given, config = GAME_CONFIG, rng = defaultRng }: Props) {
+export default function App({
+  bundle: given,
+  config = GAME_CONFIG,
+  rng = defaultRng,
+  deps = {},
+}: Props) {
   const [bundle, setBundle] = useState<Bundle | null>(given ?? null)
   const [error, setError] = useState<string | null>(null)
   useEffect(() => {
@@ -34,19 +40,31 @@ export default function App({ bundle: given, config = GAME_CONFIG, rng = default
 
   if (error) return <Center>Could not load the game data ({error}).</Center>
   if (!bundle) return <Center>Loading…</Center>
-  return <Game bundle={bundle} config={config} rng={rng} />
+  return <Game bundle={bundle} config={config} rng={rng} deps={deps} />
 }
 
-function Game({ bundle, config, rng }: { bundle: Bundle; config: GameConfig; rng: Rng }) {
+function Game({
+  bundle,
+  config,
+  rng,
+  deps,
+}: {
+  bundle: Bundle
+  config: GameConfig
+  rng: Rng
+  deps: GameDeps
+}) {
   const rollLabel = (s: GameState) =>
     s.round ? config.wheels.map((w) => wheelValue(bundle, w.kind, s.round!)).join(' · ') : null
-  const game = useGame(bundle, config, rng, IMAGE_BASE_URL, rollLabel)
+  const game = useGame(bundle, config, rng, IMAGE_BASE_URL, rollLabel, deps)
   if (game.state.phase === 'idle')
     return (
       <StartScreen
         bestStreak={game.stats.best_streak}
         bestStreakRoll={game.stats.best_streak_roll}
         onStart={game.start}
+        muted={game.muted}
+        onToggleMute={game.toggleMute}
       />
     )
   return (

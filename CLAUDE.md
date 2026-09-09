@@ -39,7 +39,8 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - **Stint / pool source: ESPN core API** (`sports.core.api.espn.com`), team leaders per season 2000→ and athlete records. nflverse rejected by Frank; Pro Football Reference blocks automated fetches (403) and is out. Head-coach data not needed.
 - **Team labels:** nickname only, one fixed label per franchise for all seasons. **Washington reads "Washington"** (Frank, 2026-09-09) — no Redskins/Football Team/Commanders aliases. No other franchise changed nickname since 2000, so there is no alias feature.
 - **Hosting: Vercel** (Frank's existing account), not Cloudflare. Headshots start as static assets under `public/faces/` behind `VITE_IMAGE_BASE_URL`; moving them to object storage later is a config change.
-- **Analytics:** build the event layer to the spec §16 shape now with a **no-op backend**. PostHog is wired later by swapping one file. No key in v1.
+- **Analytics:** event layer in `src/analytics/analytics.ts` to the spec §16 shape (`session_started`, `round_completed`, `streak_ended`, `share_clicked`, `mute_toggled`) with a **no-op backend** in production and console in dev. PostHog later = one new backend file chosen in `App.tsx`. No key in v1. Only identity is the anonymous device id.
+- **Sound and haptics (spec §15):** off by default, one toggle for both, persisted in `mute`. Sounds are **synthesized with Web Audio** (`src/audio/feedback.ts`) as placeholders — swap the three `synth*` functions for recorded files when Frank delivers them.
 - **Workflow:** commit to `main`, checkpoint per milestone (STREAK CITY style). **npm**, not pnpm. React 19 + Vite + TypeScript strict + Tailwind v4 + Vitest. Playwright only from M8.
 - **Persistence:** device-local only (spec §13). No sign-in. No leaderboard (spec §14).
 - **Share card:** text + PNG, streak + losing roll + URL, no answer face (spec §14 as written).
@@ -79,7 +80,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 - [x] M3 — Playable loop (signed off 2026-09-09)
 - [x] M4 — Wheels and polish (signed off 2026-09-09)
 - [x] M5 — Photos (signed off 2026-09-09; 37 QBs from 2000–09 still need manual photos → M9)
-- [x] M6 — Persistence and share (built 2026-09-09; awaiting Frank checkpoint)
-- [ ] M7 — Analytics, audio, haptics
+- [x] M6 — Persistence and share (signed off 2026-09-09)
+- [x] M7 — Analytics, audio, haptics (built 2026-09-09; awaiting Frank checkpoint)
 - [ ] M8 — Hardening
 - [ ] M9 — Launch content

@@ -7,7 +7,16 @@ import type { Bundle } from '../game/bundle'
 import type { GameConfig } from '../game/config'
 import { defaultRng, type Rng } from '../game/rng'
 import { nextRound, replaceFace, type Slot } from '../game/select'
-import { loadStats, recordRound, recordStreakEnd, saveStats, type Stats } from '../storage/local'
+import { type Analytics, defaultAnalytics } from '../analytics/analytics'
+import { createFeedback, type Feedback } from '../audio/feedback'
+import {
+  loadStats,
+  recordRound,
+  recordStreakEnd,
+  saveStats,
+  setMute,
+  type Stats,
+} from '../storage/local'
 import { createReducer, initialState, type Action, type GameState } from './machine'
 
 export interface GameApi {
@@ -25,6 +34,16 @@ export interface GameApi {
   /** Face cards report that they are painted; the timer starts now. */
   onPainted: () => void
   config: GameConfig
+  /** A wheel stopped: tick + light haptic. */
+  onWheelLand: (index: number) => void
+  muted: boolean
+  toggleMute: () => void
+  analytics: Analytics
+}
+
+export interface GameDeps {
+  analytics?: Analytics
+  feedback?: Feedback
 }
 
 const now = () => performance.now()
@@ -35,16 +54,29 @@ export function useGame(
   rng: Rng = defaultRng,
   imageBaseUrl = '/faces/',
   rollLabel: (state: GameState) => string | null = () => null,
+  deps: GameDeps = {},
 ): GameApi {
   const reducer = useMemo(
     () => createReducer({ decisionMs: config.decisionMs }),
     [config.decisionMs],
   )
   const [stats, setStats] = useState<Stats>(() => loadStats())
+  const [analytics] = useState(() => deps.analytics ?? defaultAnalytics())
+  const [feedback] = useState(() => deps.feedback ?? createFeedback(stats.mute))
+  const [muted, setMuted] = useState(stats.mute)
   const [state, dispatch] = useReducer(reducer, initialState, (s) => ({
     ...s,
     bestStreak: stats.best_streak,
   }))
+
+  // One session_started per mount, identified by the anonymous device id.
+  const sessionSent = useRef(false)
+  useEffect(() => {
+    if (sessionSent.current) return
+    sessionSent.current = true
+    analytics.identify(stats.device_id)
+    analytics.track('session_started', { build_hash: bundle.buildHash })
+  }, [analytics, stats.device_id, bundle.buildHash])
 
   // Persist outcomes exactly once per round (StrictMode runs effects twice in dev).
   const recorded = useRef<string | null>(null)
@@ -56,13 +88,64 @@ export function useGame(
     const key = `${state.roundIndex}:${state.phase}`
     if (recorded.current === key) return
     recorded.current = key
+    if (isRound && state.round && state.lastOutcome !== 'exhausted') {
+      analytics.track('round_completed', {
+        season: state.round.combo.season,
+        team_id: state.round.combo.team,
+        role: state.round.combo.role,
+        answer_id: state.round.combo.answer,
+        distractor_ids: state.round.faces.filter((f) => f !== state.round!.combo.answer),
+        answer_slot: state.round.answerSlot,
+        tapped_slot: state.tappedSlot,
+        outcome: state.lastOutcome as 'correct' | 'wrong' | 'timeout',
+        time_to_tap_ms: state.timeToTapMs,
+        streak_position: state.phase === 'correct' ? state.streak : state.streak + 1,
+        build_hash: bundle.buildHash,
+      })
+      feedback.play(state.phase === 'correct' ? 'correct' : 'miss')
+    }
     setStats((prev) => {
       let next = isRound ? recordRound(prev) : prev
-      if (isEnd) next = recordStreakEnd(next, state.streak, losingRoll ?? '')
+      if (isEnd) {
+        analytics.track('streak_ended', {
+          streak_length: state.streak,
+          end_reason: state.lastOutcome as 'wrong' | 'timeout' | 'exhausted',
+          is_new_best: state.streak > prev.best_streak,
+        })
+        next = recordStreakEnd(next, state.streak, losingRoll ?? '')
+      }
       saveStats(next)
       return next
     })
-  }, [state.phase, state.roundIndex, state.lastOutcome, state.streak, losingRoll])
+  }, [
+    state.phase,
+    state.roundIndex,
+    state.lastOutcome,
+    state.streak,
+    state.round,
+    state.tappedSlot,
+    state.timeToTapMs,
+    losingRoll,
+    analytics,
+    feedback,
+    bundle.buildHash,
+  ])
+
+  const onWheelLand = useCallback(() => feedback.play('tick'), [feedback])
+  const toggleMute = useCallback(() => {
+    setMuted((m) => {
+      const next = !m
+      feedback.setMuted(next)
+      if (!next) feedback.unlock()
+      analytics.track('mute_toggled', { muted: next })
+      setStats((prev) => {
+        const s = setMute(prev, next)
+        saveStats(s)
+        return s
+      })
+      return next
+    })
+  }, [feedback, analytics])
 
   const pick = useCallback(
     (used: readonly string[]) =>
@@ -70,7 +153,10 @@ export function useGame(
     [bundle, rng, config.alumniProb],
   )
 
-  const start = useCallback(() => dispatch({ type: 'START', round: pick([]) }), [pick])
+  const start = useCallback(() => {
+    feedback.unlock()
+    dispatch({ type: 'START', round: pick([]) })
+  }, [pick, feedback])
   const tap = useCallback((slot: Slot) => dispatch({ type: 'TAP', slot, now: now() }), [])
   const onPainted = useCallback(() => dispatch({ type: 'REVEALED', now: now() }), [])
 
@@ -151,7 +237,20 @@ export function useGame(
     return () => window.removeEventListener('keydown', onKey)
   }, [tap])
 
-  return { state, start, tap, onPainted, config, imageBaseUrl, stats, losingRoll }
+  return {
+    state,
+    start,
+    tap,
+    onPainted,
+    config,
+    imageBaseUrl,
+    stats,
+    losingRoll,
+    onWheelLand,
+    muted,
+    toggleMute,
+    analytics,
+  }
 }
 
 export type { Action, GameState }

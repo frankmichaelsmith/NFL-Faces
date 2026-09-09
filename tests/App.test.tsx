@@ -4,6 +4,8 @@ import App from '../src/App'
 import type { Bundle } from '../src/game/bundle'
 import { GAME_CONFIG } from '../src/game/config'
 import { mulberry32 } from '../src/game/rng'
+import { createAnalytics, memoryBackend } from '../src/analytics/analytics'
+import { createFeedback } from '../src/audio/feedback'
 
 const bundle: Bundle = {
   buildHash: 'test',
@@ -177,5 +179,82 @@ describe('App', () => {
     render(<App bundle={bundle} config={config} rng={mulberry32(6)} />)
     expect(screen.getByTestId('best').textContent).toContain('Best streak 1')
     expect(screen.getByTestId('best').textContent).toContain(roll)
+  })
+
+  it('emits session_started, round_completed and streak_ended in the spec shape', async () => {
+    localStorage.clear()
+    const mem = memoryBackend()
+    render(
+      <App
+        bundle={bundle}
+        config={config}
+        rng={mulberry32(7)}
+        deps={{ analytics: createAnalytics(mem.backend), feedback: createFeedback(true) }}
+      />,
+    )
+    expect(mem.calls[0]).toEqual({ name: 'session_started', props: { build_hash: 'test' } })
+    expect(mem.ids).toHaveLength(1)
+    await startRound()
+    const slot = answerSlot()
+    fireEvent.pointerDown(screen.getByTestId(`face-${slot}`))
+    const round = mem.calls.find((c) => c.name === 'round_completed')!.props as Record<
+      string,
+      unknown
+    >
+    expect(round).toMatchObject({
+      season: 2010,
+      role: 'QB',
+      answer_slot: slot,
+      tapped_slot: slot,
+      outcome: 'correct',
+      streak_position: 1,
+      build_hash: 'test',
+    })
+    expect((round.distractor_ids as string[]).length).toBe(2)
+    expect(typeof round.time_to_tap_ms).toBe('number')
+    await act(async () => {
+      vi.advanceTimersByTime(config.feedbackMs + 5)
+    })
+    await act(async () => {
+      vi.advanceTimersByTime(config.wheels.length * config.spinMsPerWheel + 5)
+    })
+    await act(async () => {
+      vi.advanceTimersByTime(40)
+    })
+    await act(async () => {
+      vi.advanceTimersByTime(config.decisionMs + 100)
+    })
+    const ended = mem.calls.find((c) => c.name === 'streak_ended')!.props
+    expect(ended).toEqual({ streak_length: 1, end_reason: 'timeout', is_new_best: true })
+    const last = mem.calls.filter((c) => c.name === 'round_completed').at(-1)!.props as Record<
+      string,
+      unknown
+    >
+    expect(last).toMatchObject({
+      outcome: 'timeout',
+      tapped_slot: null,
+      time_to_tap_ms: null,
+      streak_position: 2,
+    })
+  })
+
+  it('sound is off by default; the toggle persists and is reported', () => {
+    localStorage.clear()
+    const mem = memoryBackend()
+    render(
+      <App
+        bundle={bundle}
+        config={config}
+        deps={{ analytics: createAnalytics(mem.backend), feedback: createFeedback(true) }}
+      />,
+    )
+    const btn = screen.getByTestId('mute')
+    expect(btn).toHaveAttribute('aria-pressed', 'false')
+    fireEvent.click(btn)
+    expect(screen.getByTestId('mute')).toHaveAttribute('aria-pressed', 'true')
+    expect(mem.calls.at(-1)).toEqual({ name: 'mute_toggled', props: { muted: false } })
+    cleanup()
+    render(<App bundle={bundle} config={config} deps={{ feedback: createFeedback(true) }} />)
+    expect(screen.getByTestId('mute')).toHaveAttribute('aria-pressed', 'true')
   })
 })

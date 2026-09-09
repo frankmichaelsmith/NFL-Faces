@@ -5,6 +5,7 @@ import type { GameApi } from '../state/useGame'
 import { FaceCards } from './FaceCards'
 import { TimerBar } from './TimerBar'
 import { Wheels } from './Wheels'
+import { MuteButton } from './MuteButton'
 import { wheelValue } from './Wheels'
 
 interface Props {
@@ -12,6 +13,17 @@ interface Props {
   game: GameApi
   imageBaseUrl: string
   siteUrl: string
+}
+
+const SHARE_FORMAT: Record<
+  ShareResult,
+  'native' | 'clipboard' | 'download' | 'failed' | 'cancelled'
+> = {
+  shared: 'native',
+  copied: 'clipboard',
+  downloaded: 'download',
+  cancelled: 'cancelled',
+  failed: 'failed',
 }
 
 const TOAST: Record<ShareResult, string | null> = {
@@ -39,6 +51,7 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
     setSharing(true)
     const result = await share({ streak: state.streak, roll: roll || null, url: siteUrl })
     setSharing(false)
+    game.analytics.track('share_clicked', { format: SHARE_FORMAT[result] })
     setToast(TOAST[result])
   }
 
@@ -55,8 +68,11 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
             {state.streak}
           </span>
         </div>
-        <div className="text-xs uppercase tracking-widest text-white/40">
-          Best {state.bestStreak}
+        <div className="flex items-center gap-3">
+          <div className="text-xs uppercase tracking-widest text-white/40">
+            Best {state.bestStreak}
+          </div>
+          <MuteButton muted={game.muted} onToggle={game.toggleMute} />
         </div>
       </header>
 
@@ -66,6 +82,7 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
         config={config}
         round={round}
         spinning={state.phase === 'spinning'}
+        onLand={game.onWheelLand}
       />
 
       <TimerBar

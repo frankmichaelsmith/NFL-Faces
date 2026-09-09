@@ -25,3 +25,77 @@ body {
     transform: scale(1);
   }
 }
+
+/* ---- M4: reels and feedback ------------------------------------------------ */
+
+@theme {
+  --font-display: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+}
+
+/* One spin: fly through the strip, overshoot a touch, snap back onto the target. */
+@keyframes reel {
+  0% {
+    transform: translateY(0);
+  }
+  88% {
+    transform: translateY(calc(var(--reel-final) - 14px));
+    animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  100% {
+    transform: translateY(var(--reel-final));
+  }
+}
+.reel-spinning {
+  filter: blur(1.2px);
+}
+.reel-landed {
+  animation: reel-land 180ms ease-out;
+}
+@keyframes reel-land {
+  0% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 2px rgb(255 255 255 / 0.35) inset;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+.card-wrong {
+  animation: shake 250ms ease-in-out;
+}
+.card-correct {
+  animation: pop 300ms ease-out;
+}
+
+@keyframes warn-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+[data-warn='true'] {
+  animation: warn-pulse 400ms ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-spinning,
+  .reel-landed,
+  .card-wrong,
+  .card-correct,
+  [data-warn='true'] {
+    animation: none;
+    filter: none;
+  }
+}

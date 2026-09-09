@@ -1,21 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 import type { Bundle } from '../game/bundle'
 import type { GameConfig } from '../game/config'
 import type { Round } from '../game/select'
+import { useReducedMotion } from '../hooks/useReducedMotion'
+import { Reel } from './Reel'
 
 interface Props {
   bundle: Bundle
   config: GameConfig
   round: Round | null
+  /** True while the round is in its spin phase. */
   spinning: boolean
+  /** Fired when wheel `index` lands (M7 plays the tick). */
+  onLand?: (index: number) => void
 }
 
+type Kind = GameConfig['wheels'][number]['kind']
+
 /** Label for one wheel given the roll. Teams read in caps on the reel. */
-export function wheelValue(
-  bundle: Bundle,
-  kind: GameConfig['wheels'][number]['kind'],
-  round: Round,
-): string {
+export function wheelValue(bundle: Bundle, kind: Kind, round: Round): string {
   switch (kind) {
     case 'season':
       return String(round.combo.season)
@@ -28,44 +31,57 @@ export function wheelValue(
   }
 }
 
-/**
- * M3: static wheels that reveal left to right, one per spinMsPerWheel.
- * M4 replaces the reveal with a reel animation; the landing cadence stays.
- */
-export function Wheels({ bundle, config, round, spinning }: Props) {
-  // The parent remounts this component every round (key = roundIndex), so
-  // `landed` starts at 0 for each spin without any reset logic.
-  const [landed, setLanded] = useState(0)
-  useEffect(() => {
-    if (!spinning) return
-    const timers = config.wheels.map((_, i) =>
-      setTimeout(() => setLanded(i + 1), (i + 1) * config.spinMsPerWheel - 60),
-    )
-    return () => timers.forEach(clearTimeout)
-  }, [spinning, config.wheels, config.spinMsPerWheel])
+/** Every value a wheel can show, in strip order. */
+export function wheelValues(bundle: Bundle, kind: Kind): string[] {
+  switch (kind) {
+    case 'season': {
+      const out: string[] = []
+      for (let s = bundle.firstSeason; s <= bundle.lastSeason; s++) out.push(String(s))
+      return out
+    }
+    case 'team':
+      return bundle.teams.map((t) => t.label.toUpperCase())
+    case 'role':
+      return bundle.roles
+  }
+}
 
-  const showAll = !spinning && round !== null
+/**
+ * The wheels. Mounted fresh every round by the parent (key = roundIndex), so
+ * each mount is one spin: all reels move from t=0 and stop left to right,
+ * wheel i landing at (i + 1) × spinMsPerWheel.
+ */
+export function Wheels({ bundle, config, round, spinning, onLand }: Props) {
+  const reduceMotion = useReducedMotion()
+  const values = useMemo(
+    () => config.wheels.map((w) => wheelValues(bundle, w.kind)),
+    [bundle, config.wheels],
+  )
   return (
     <div
       className="grid gap-3"
       style={{ gridTemplateColumns: `repeat(${config.wheels.length}, minmax(0, 1fr))` }}
     >
-      {config.wheels.map((w, i) => {
-        const settled = round !== null && (showAll || landed > i)
-        return (
+      {config.wheels.map((w, i) =>
+        round ? (
+          <Reel
+            key={w.kind}
+            testId={`wheel-${w.kind}`}
+            values={values[i]!}
+            target={wheelValue(bundle, w.kind, round)}
+            durationMs={(i + 1) * config.spinMsPerWheel}
+            spin={spinning}
+            reduceMotion={reduceMotion}
+            onLand={onLand ? () => onLand(i) : undefined}
+          />
+        ) : (
           <div
             key={w.kind}
             data-testid={`wheel-${w.kind}`}
-            data-settled={settled}
-            className={
-              'flex h-20 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-b from-white/10 to-black/30 px-2 text-center font-black tracking-wide ' +
-              (settled ? 'text-2xl text-white' : 'text-3xl text-white/25 animate-pulse')
-            }
-          >
-            {settled ? wheelValue(bundle, w.kind, round) : '· · ·'}
-          </div>
-        )
-      })}
+            className="h-20 rounded-xl border border-white/10 bg-black/20"
+          />
+        ),
+      )}
     </div>
   )
 }

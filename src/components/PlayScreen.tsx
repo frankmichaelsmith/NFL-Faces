@@ -25,7 +25,7 @@ export function PlayScreen({ bundle, game, imageBaseUrl }: Props) {
           <span
             key={state.streak}
             data-testid="streak"
-            className="inline-block text-3xl font-black text-accent motion-safe:animate-[pop_300ms_ease-out]"
+            className="font-display inline-block text-4xl font-black text-accent motion-safe:animate-[pop_300ms_ease-out]"
           >
             {state.streak}
           </span>
@@ -86,7 +86,7 @@ export function PlayScreen({ bundle, game, imageBaseUrl }: Props) {
               Died on <span className="font-bold text-white">{roll}</span>
             </p>
           )}
-          <p className="text-5xl font-black text-accent" data-testid="final-streak">
+          <p className="font-display text-6xl font-black text-accent" data-testid="final-streak">
             {state.streak}
           </p>
           <p className="text-xs uppercase tracking-widest text-white/50">Best {state.bestStreak}</p>

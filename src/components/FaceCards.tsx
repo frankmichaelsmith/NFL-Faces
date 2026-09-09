@@ -69,9 +69,9 @@ export function FaceCards({ bundle, round, state, onTap, onPainted, imageBaseUrl
             className={
               'group relative flex min-h-[44px] flex-col items-stretch overflow-hidden rounded-xl border-4 bg-card text-left transition-colors ' +
               (look === 'correct'
-                ? 'border-accent'
+                ? 'card-correct border-accent'
                 : look === 'wrong'
-                  ? 'border-miss'
+                  ? 'card-wrong border-miss'
                   : 'border-white/10 active:border-white/40')
             }
           >

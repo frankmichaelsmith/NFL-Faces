@@ -69,7 +69,7 @@ async function startRound() {
 
 function answerSlot(): 0 | 1 | 2 {
   // The wheels show the team; map it back to the combo and find its answer's slot.
-  const team = screen.getByTestId('wheel-team').textContent!
+  const team = screen.getByTestId('wheel-team').dataset.value!
   const combo = bundle.combos.find(
     (c) => bundle.teams.find((t) => t.id === c.team)!.label.toUpperCase() === team,
   )!
@@ -101,9 +101,9 @@ describe('App', () => {
     render(<App bundle={bundle} config={config} rng={mulberry32(1)} />)
     expect(screen.getByRole('heading', { name: 'NFL Faces' })).toBeInTheDocument()
     await startRound()
-    expect(screen.getByTestId('wheel-season').textContent).toBe('2010')
+    expect(screen.getByTestId('wheel-season').dataset.value).toBe('2010')
     expect(['STEELERS', 'PATRIOTS', 'RAVENS']).toContain(
-      screen.getByTestId('wheel-team').textContent,
+      screen.getByTestId('wheel-team').dataset.value,
     )
     expect(screen.getAllByRole('button', { name: /^Face \d$/ })).toHaveLength(3)
     expect(screen.getByTestId('streak').textContent).toBe('0')

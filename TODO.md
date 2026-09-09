@@ -9,7 +9,6 @@
 
 ## Waiting on Frank
 
-- Washington wheel label: season-accurate "Redskins" (2000–19) or "Commanders" throughout? (config flag `USE_SEASON_ALIASES`)
 - Legal list for Ryan/Gabriel: "NFL" in the name, ESPN headshot reuse, player likeness rights
 - Brand assets before M4 (spec §28): wordmark, icon, share-card template, sounds, placeholder headshot
 

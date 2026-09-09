@@ -10,8 +10,7 @@ describe('game config (locked decisions)', () => {
     expect(GAME_CONFIG.firstSeason).toBe(2000)
     expect(GAME_CONFIG.decisionMs).toBe(5000)
   })
-  it('alumni weighting is a probability, not all-or-nothing', () => {
-    expect(GAME_CONFIG.alumniProb).toBeGreaterThan(0)
-    expect(GAME_CONFIG.alumniProb).toBeLessThan(1)
+  it('alumni weighting is 30% per distractor slot (Frank, 2026-09-09)', () => {
+    expect(GAME_CONFIG.alumniProb).toBe(0.3)
   })
 })

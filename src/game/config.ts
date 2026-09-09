@@ -22,8 +22,6 @@ export interface GameConfig {
   decisionMs: number
   /** Per-slot probability that a distractor is drawn from the alumni pool. */
   alumniProb: number
-  /** Show season-accurate team aliases (e.g. "Redskins" for 2000–19). Open for Frank. */
-  useSeasonAliases: boolean
 }
 
 export const GAME_CONFIG: GameConfig = {
@@ -34,6 +32,5 @@ export const GAME_CONFIG: GameConfig = {
   firstSeason: 2000,
   roles: ['QB'],
   decisionMs: 5000,
-  alumniProb: 0.6,
-  useSeasonAliases: true,
+  alumniProb: 0.3,
 }

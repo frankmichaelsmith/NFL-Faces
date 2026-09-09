@@ -3,9 +3,9 @@
  * Response so the same code runs as a Vercel Function (api/*.ts), in the Vite
  * dev and preview servers (server/vite-plugin.ts) and in tests.
  */
-import type { HealthResponse } from '../src/leaderboard/types.ts'
-import { etDay, leaderboard, postScore, register, type Deps, type Result } from './leaderboard.ts'
-import type { Runtime } from './runtime.ts'
+import type { HealthResponse } from '../src/leaderboard/types.js'
+import { etDay, leaderboard, postScore, register, type Deps, type Result } from './leaderboard.js'
+import type { Runtime } from './runtime.js'
 
 const VERSION =
   process.env.VITE_BUILD_HASH || process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || 'dev'

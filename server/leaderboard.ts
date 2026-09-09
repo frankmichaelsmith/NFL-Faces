@@ -19,7 +19,7 @@ import type {
   LeaderboardRow,
   RegisterResponse,
   ScoreResponse,
-} from '../src/leaderboard/types.ts'
+} from '../src/leaderboard/types.js'
 
 export const BOARD_MODE = 'probowl' as const
 export const BOARD_SIZE = 25

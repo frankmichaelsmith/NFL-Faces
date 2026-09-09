@@ -5,8 +5,8 @@
  */
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Plugin } from 'vite'
-import { route } from './http.ts'
-import { getRuntime } from './runtime.ts'
+import { route } from './http.js'
+import { getRuntime } from './runtime.js'
 
 async function toRequest(req: IncomingMessage): Promise<Request> {
   const chunks: Buffer[] = []

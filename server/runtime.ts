@@ -6,8 +6,8 @@
  */
 import { neon } from '@neondatabase/serverless'
 import { drizzle } from 'drizzle-orm/neon-http'
-import { DrizzleLeaderboardStore, ensureSchema } from './db.ts'
-import { InMemoryLeaderboardStore, type LeaderboardStore } from './leaderboard.ts'
+import { DrizzleLeaderboardStore, ensureSchema } from './db.js'
+import { InMemoryLeaderboardStore, type LeaderboardStore } from './leaderboard.js'
 
 export interface Runtime {
   store: LeaderboardStore

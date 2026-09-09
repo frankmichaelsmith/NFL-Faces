@@ -7,7 +7,7 @@
 import { and, asc, count, desc, eq, lt, gt, or, sql } from 'drizzle-orm'
 import { integer, pgTable, primaryKey, text } from 'drizzle-orm/pg-core'
 import type { PgDatabase } from 'drizzle-orm/pg-core'
-import type { DailyScore, LeaderboardStore, Player, RankedScore } from './leaderboard.ts'
+import type { DailyScore, LeaderboardStore, Player, RankedScore } from './leaderboard.js'
 
 // any Drizzle pg database (neon-http, pglite, …)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

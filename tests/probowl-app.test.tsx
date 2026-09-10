@@ -120,8 +120,8 @@ describe('Pro Bowl Mode', () => {
   it('opens in Pro Bowl Mode with no picker while Faces is hidden, but still honours a forced mode', () => {
     render(<App bundle={bundle} config={config} deps={deps} />)
     expect(screen.queryByTestId('mode-picker')).toBeNull()
-    expect(screen.getByRole('heading', { name: 'NFL Spin Streak' })).toBeInTheDocument()
-    expect(screen.getByText(/a Pro Bowler, and a category/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Spin Streak' })).toBeInTheDocument()
+    expect(screen.getByText(/Tap the correct answer in 6 seconds/i)).toBeInTheDocument()
     cleanup()
     // a device that last played Faces still lands in Pro Bowl Mode
     localStorage.setItem(
@@ -132,7 +132,7 @@ describe('Pro Bowl Mode', () => {
       }),
     )
     render(<App bundle={bundle} config={config} deps={deps} />)
-    expect(screen.getByText(/a Pro Bowler, and a category/i)).toBeInTheDocument()
+    expect(screen.getByText(/Tap the correct answer in 6 seconds/i)).toBeInTheDocument()
     cleanup()
     // a bundle without a Pro Bowl section falls back to Faces
     render(<App bundle={{ ...bundle, probowl: undefined }} config={config} deps={deps} />)

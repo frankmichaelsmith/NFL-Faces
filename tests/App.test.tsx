@@ -117,7 +117,7 @@ describe('App', () => {
 
   it('shows the start screen, then wheels and three face cards after the spin', async () => {
     render(<App bundle={bundle} config={config} rng={mulberry32(1)} />)
-    expect(screen.getByRole('heading', { name: 'NFL Spin Streak' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Spin Streak' })).toBeInTheDocument()
     await startRound()
     expect(screen.getByTestId('wheel-season').dataset.value).toBe('2010')
     expect(['STEELERS', 'PATRIOTS', 'RAVENS']).toContain(

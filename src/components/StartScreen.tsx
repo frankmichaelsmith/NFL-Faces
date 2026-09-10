@@ -64,7 +64,7 @@ export function StartScreen({
       )}
       <p className="max-w-xs text-lg text-white/70">
         {mode === 'probowl'
-          ? 'A season, a Pro Bowler, and a category. Tap the one that matches in 6 seconds or less.'
+          ? 'Tap the correct answer in 6 seconds or less.'
           : 'Tap the quarterback who started for that team that season. Six seconds.'}
       </p>
       {bestStreak > 0 && (

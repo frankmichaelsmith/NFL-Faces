@@ -121,7 +121,7 @@ describe('Pro Bowl Mode', () => {
     render(<App bundle={bundle} config={config} deps={deps} />)
     expect(screen.queryByTestId('mode-picker')).toBeNull()
     expect(screen.getByRole('heading', { name: 'Spin Streak' })).toBeInTheDocument()
-    expect(screen.getByText(/Tap the correct answer in 6 seconds/i)).toBeInTheDocument()
+    expect(screen.getByText(/Tap the correct answer.*6 seconds or less/i)).toBeInTheDocument()
     cleanup()
     // a device that last played Faces still lands in Pro Bowl Mode
     localStorage.setItem(
@@ -132,7 +132,7 @@ describe('Pro Bowl Mode', () => {
       }),
     )
     render(<App bundle={bundle} config={config} deps={deps} />)
-    expect(screen.getByText(/Tap the correct answer in 6 seconds/i)).toBeInTheDocument()
+    expect(screen.getByText(/Tap the correct answer.*6 seconds or less/i)).toBeInTheDocument()
     cleanup()
     // a bundle without a Pro Bowl section falls back to Faces
     render(<App bundle={{ ...bundle, probowl: undefined }} config={config} deps={deps} />)

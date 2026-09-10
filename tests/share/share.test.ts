@@ -27,7 +27,7 @@ const payload = { streak: 4, roll: '2010 · JETS', url: 'https://www.spinstreak.
 describe('share', () => {
   it('uses the native share sheet with text only', async () => {
     const nav = {
-      share: vi.fn(async (_data: ShareData) => {}),
+      share: vi.fn<(data: ShareData) => Promise<void>>(async () => {}),
       clipboard: { writeText: vi.fn(async () => {}) },
     }
     expect(await share(payload, { nav: nav as unknown as Navigator })).toBe('shared')

@@ -32,7 +32,7 @@ export interface Events {
   session_started: { build_hash: string }
   round_completed: RoundCompleted
   streak_ended: StreakEnded
-  share_clicked: { format: 'native' | 'clipboard' | 'failed' | 'cancelled' }
+  share_clicked: { format: 'clipboard' | 'failed' }
   mute_toggled: { muted: boolean }
   /** Leaderboard (decision 0008). No email or name ever goes to analytics. */
   signup_completed: { renamed: boolean }

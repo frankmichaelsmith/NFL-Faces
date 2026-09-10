@@ -23,46 +23,20 @@ describe('shareText', () => {
 })
 
 const payload = { streak: 4, roll: '2010 · JETS', url: 'https://www.spinstreak.app' }
+const TEXT = '🏆 4 CORRECT\n❌ LOST ON 2010\n❌ JETS\nwww.spinstreak.app'
 
 describe('share', () => {
-  it('uses the native share sheet with text only', async () => {
-    const nav = {
-      share: vi.fn<(data: ShareData) => Promise<void>>(async () => {}),
-      clipboard: { writeText: vi.fn(async () => {}) },
-    }
-    expect(await share(payload, { nav: nav as unknown as Navigator })).toBe('shared')
-    expect(nav.share).toHaveBeenCalledWith({
-      text: '🏆 4 CORRECT\n❌ LOST ON 2010\n❌ JETS\nwww.spinstreak.app',
-    })
-    expect(nav.share.mock.calls[0]![0]).not.toHaveProperty('files')
-    expect(nav.clipboard.writeText).not.toHaveBeenCalled()
-  })
-  it('reports a dismissed share sheet as cancelled, not failed', async () => {
-    const nav = {
-      share: vi.fn(async () => {
-        throw Object.assign(new Error('x'), { name: 'AbortError' })
-      }),
-    }
-    expect(await share(payload, { nav: nav as unknown as Navigator })).toBe('cancelled')
-  })
-  it('falls back to the clipboard when there is no share sheet or it refuses', async () => {
+  it('copies the text to the clipboard and never opens a share sheet', async () => {
     const writeText = vi.fn(async () => {})
-    expect(
-      await share(payload, { nav: { clipboard: { writeText } } as unknown as Navigator }),
-    ).toBe('copied')
-    expect(writeText).toHaveBeenCalledWith(
-      '🏆 4 CORRECT\n❌ LOST ON 2010\n❌ JETS\nwww.spinstreak.app',
-    )
-    const refusing = {
-      share: vi.fn(async () => {
-        throw new Error('NotAllowedError')
-      }),
-      clipboard: { writeText },
-    }
-    expect(await share(payload, { nav: refusing as unknown as Navigator })).toBe('copied')
+    const nav = { share: vi.fn(), clipboard: { writeText } }
+    expect(await share(payload, { nav: nav as unknown as Navigator })).toBe('copied')
+    expect(writeText).toHaveBeenCalledWith(TEXT)
+    expect(nav.share).not.toHaveBeenCalled()
   })
-  it('fails quietly when nothing is available', async () => {
-    expect(await share(payload, { nav: {} as Navigator })).toBe('failed')
+  it('falls back to the legacy copy when the async clipboard is missing or blocked', async () => {
+    const legacyCopy = vi.fn(() => true)
+    expect(await share(payload, { nav: {} as Navigator, legacyCopy })).toBe('copied')
+    expect(legacyCopy).toHaveBeenCalledWith(TEXT)
     const blocked = {
       clipboard: {
         writeText: vi.fn(async () => {
@@ -70,6 +44,11 @@ describe('share', () => {
         }),
       },
     }
-    expect(await share(payload, { nav: blocked as unknown as Navigator })).toBe('failed')
+    expect(await share(payload, { nav: blocked as unknown as Navigator, legacyCopy })).toBe(
+      'copied',
+    )
+  })
+  it('fails quietly when nothing can copy', async () => {
+    expect(await share(payload, { nav: {} as Navigator, legacyCopy: () => false })).toBe('failed')
   })
 })

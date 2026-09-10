@@ -22,19 +22,8 @@ interface Props {
   onOpenBoard: () => void
 }
 
-const SHARE_FORMAT: Record<ShareResult, 'native' | 'clipboard' | 'failed' | 'cancelled'> = {
-  shared: 'native',
-  copied: 'clipboard',
-  cancelled: 'cancelled',
-  failed: 'failed',
-}
-
-const TOAST: Record<ShareResult, string | null> = {
-  shared: null,
-  copied: 'Copied to clipboard',
-  cancelled: null,
-  failed: 'Could not share',
-}
+/** What the Share button reads for a moment after a tap (Frank, 2026-09-09: the button itself answers). */
+const SHARE_LABEL: Record<ShareResult, string> = { copied: 'Copied', failed: "Couldn't copy" }
 
 export function PlayScreen({
   bundle,
@@ -48,20 +37,17 @@ export function PlayScreen({
   const round = state.round
   const over = state.phase === 'gameover'
   const roll = round ? config.wheels.map((w) => wheelValue(bundle, w.kind, round)).join(' · ') : ''
-  const [toast, setToast] = useState<string | null>(null)
-  const [sharing, setSharing] = useState(false)
+  const [shareState, setShareState] = useState<ShareResult | null>(null)
   useEffect(() => {
-    if (!toast) return
-    const t = setTimeout(() => setToast(null), 1800)
+    if (!shareState) return
+    const t = setTimeout(() => setShareState(null), 1800)
     return () => clearTimeout(t)
-  }, [toast])
+  }, [shareState])
   const onShare = async () => {
-    if (sharing) return
-    setSharing(true)
+    if (shareState) return
     const result = await share({ streak: state.streak, roll: roll || null, url: siteUrl })
-    setSharing(false)
-    game.analytics.track('share_clicked', { format: SHARE_FORMAT[result] })
-    setToast(TOAST[result])
+    game.analytics.track('share_clicked', { format: result === 'copied' ? 'clipboard' : 'failed' })
+    setShareState(result)
   }
 
   return (
@@ -178,11 +164,18 @@ export function PlayScreen({
                 <button
                   type="button"
                   onClick={onShare}
-                  disabled={sharing}
                   data-testid="share"
-                  className="min-h-[52px] rounded-2xl border-2 border-white/20 px-2 text-base font-black text-white active:scale-95 disabled:opacity-60"
+                  data-state={shareState ?? 'idle'}
+                  className={
+                    'min-h-[52px] rounded-2xl border-2 px-2 text-base font-black transition-colors active:scale-95 ' +
+                    (shareState === 'copied'
+                      ? 'border-accent bg-accent/15 text-accent'
+                      : shareState === 'failed'
+                        ? 'border-miss text-miss'
+                        : 'border-white/20 text-white')
+                  }
                 >
-                  Share
+                  {shareState ? SHARE_LABEL[shareState] : 'Share'}
                 </button>
                 <button
                   type="button"
@@ -201,11 +194,6 @@ export function PlayScreen({
                 </button>
               </div>
             </>
-          )}
-          {toast && (
-            <p role="status" data-testid="toast" className="text-xs text-white/60">
-              {toast}
-            </p>
           )}
         </section>
       )}

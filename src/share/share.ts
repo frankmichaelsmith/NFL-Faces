@@ -1,38 +1,45 @@
 /**
- * Share flow: the native share sheet with the text (Frank, 2026-09-09: no
- * image), else copy the text to the clipboard.
+ * Share (Frank, 2026-09-09): copy the text to the clipboard, nothing else.
+ * No share sheet, no image. The button reports "Copied" itself.
  */
 import { shareText, type SharePayload } from './text'
 
-export type ShareResult = 'shared' | 'copied' | 'cancelled' | 'failed'
+export type ShareResult = 'copied' | 'failed'
 
 export interface ShareDeps {
-  nav?: Pick<Navigator, 'share' | 'clipboard'>
+  nav?: Pick<Navigator, 'clipboard'>
+  /** Last-resort copy for browsers without the async clipboard (hidden textarea + execCommand). */
+  legacyCopy?: (text: string) => boolean
 }
 
 export async function share(payload: SharePayload, deps: ShareDeps = {}): Promise<ShareResult> {
   const nav = deps.nav ?? (typeof navigator !== 'undefined' ? navigator : undefined)
   const text = shareText(payload)
-
-  // 1. Native share sheet (phones).
-  if (nav?.share) {
-    try {
-      await nav.share({ text })
-      return 'shared'
-    } catch (e) {
-      if ((e as Error).name === 'AbortError') return 'cancelled'
-      // fall through to the clipboard
-    }
-  }
-
-  // 2. Clipboard (desktop, or a share sheet that refused).
-  if (nav?.clipboard) {
+  if (nav?.clipboard?.writeText) {
     try {
       await nav.clipboard.writeText(text)
       return 'copied'
     } catch {
-      /* blocked clipboard */
+      /* blocked: try the legacy path */
     }
   }
-  return 'failed'
+  return (deps.legacyCopy ?? legacyCopy)(text) ? 'copied' : 'failed'
+}
+
+function legacyCopy(text: string): boolean {
+  if (typeof document === 'undefined') return false
+  try {
+    const ta = document.createElement('textarea')
+    ta.value = text
+    ta.setAttribute('readonly', '')
+    ta.style.position = 'fixed'
+    ta.style.opacity = '0'
+    document.body.appendChild(ta)
+    ta.select()
+    const ok = document.execCommand('copy')
+    ta.remove()
+    return ok
+  } catch {
+    return false
+  }
 }

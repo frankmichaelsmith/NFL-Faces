@@ -105,6 +105,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - [x] NBA N1 — data: pull, draft-team table, countries + flags, bundle.nba (built 2026-09-10; awaiting Frank checkpoint) — decision 0009
 - [x] NBA N2 — engine + config + per-sport API (built 2026-09-10)
 - [x] NBA N3 — screens: NFL | NBA slider, flag and NONE cards, board toggle at /leaderboard/nba (built 2026-09-10; awaiting Frank checkpoint)
-- [ ] NBA N4 — finish: e2e polish, legal list (NBA mark)
+- [x] NBA N4 — finish: pool_round_completed analytics, weekly workflow pulls both sports, legal list (built 2026-09-10)
+- [x] NFL season numbers for extras via `fill:numbers` (ESPN game rosters 2014→ by id; Wikipedia final rosters by name) (2026-09-10)
 - [x] Leaderboard L1 — server: schema, handlers, routing, dev/preview middleware, tests (built 2026-09-09; awaiting Frank checkpoint + Neon DATABASE_URL)
 - [x] Leaderboard L2 — client: email gate after the first streak, score posts with an offline queue, board screen, e2e (built 2026-09-09; awaiting Frank checkpoint)

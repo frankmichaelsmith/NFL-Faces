@@ -6,7 +6,7 @@
 - Privacy policy for email collection (legal list).
 
 - Sign-off on Pro Bowl P3 + the 1995–1999 expansion (2026-09-09), then start P4.
-- Legal list for Ryan/Gabriel: "NFL" in the name, ESPN headshot reuse, player likeness rights, college logos (ESPN set).
+- Legal list for Ryan/Gabriel: the NFL and NBA names, ESPN headshot reuse, player likeness rights, college logos (ESPN set), country flags (flag-icons, MIT), email collection (privacy policy).
 - Brand assets (spec §28): wordmark, icon, share-card template, recorded sounds, placeholder headshot.
 - Phone play-test by two other people; Lighthouse on the live URL.
 
@@ -18,8 +18,6 @@
 
 ## Pro Bowl P4 — finish
 
-- Pro Bowl rounds in analytics `round_completed`; share copy for the mode; e2e for Pro Bowl Mode.
-- Weekly refresh: run `pull:probowl` too, so a new Pro Bowl roster (February) lands on its own.
 
 ## Content backlog
 

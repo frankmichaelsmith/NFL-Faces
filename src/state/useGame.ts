@@ -117,6 +117,21 @@ export function useGame(
         build_hash: bundle.buildHash,
       })
     }
+    if (isRound && state.round?.kind === 'probowl' && state.lastOutcome !== 'exhausted') {
+      analytics.track('pool_round_completed', {
+        mode: mode === 'nba' ? 'nba' : 'probowl',
+        season: state.round.combo.season,
+        player_id: state.round.combo.player,
+        category: state.round.combo.category,
+        answer: state.round.combo.answer,
+        answer_slot: state.round.answerSlot,
+        tapped_slot: state.tappedSlot,
+        outcome: state.lastOutcome as 'correct' | 'wrong' | 'timeout',
+        time_to_tap_ms: state.timeToTapMs,
+        streak_position: state.phase === 'correct' ? state.streak : state.streak + 1,
+        build_hash: bundle.buildHash,
+      })
+    }
     if (isRound && state.lastOutcome !== 'exhausted')
       feedback.play(state.phase === 'correct' ? 'correct' : 'miss')
     // Side effects stay outside the state updater: StrictMode runs updaters twice in dev.

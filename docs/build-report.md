@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-10T14:42:05.612Z.
+Generated 2026-09-10T15:35:08.740Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -147,40 +147,40 @@ None.
 
 ## Pro Bowl Mode
 
-**6949** combos across 31 seasons, 556 players, 146 colleges, 42 draft-team tiles.
+**7186** combos across 31 seasons, 556 players, 146 colleges, 42 draft-team tiles.
 
-By category: alma 1824, draft 1817, number 1484, position 1824.
+By category: alma 1824, draft 1817, number 1721, position 1824.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
-| 1995 | 39 | 39 | 149 |
-| 1996 | 43 | 43 | 152 |
-| 1997 | 45 | 45 | 165 |
-| 1998 | 52 | 52 | 187 |
-| 1999 | 38 | 38 | 148 |
-| 2000 | 56 | 56 | 213 |
-| 2001 | 59 | 59 | 222 |
-| 2002 | 60 | 60 | 227 |
-| 2003 | 58 | 58 | 218 |
-| 2004 | 58 | 58 | 215 |
-| 2005 | 58 | 58 | 219 |
-| 2006 | 57 | 57 | 216 |
-| 2007 | 60 | 60 | 227 |
-| 2008 | 57 | 57 | 214 |
-| 2009 | 65 | 65 | 245 |
-| 2010 | 61 | 61 | 227 |
-| 2011 | 62 | 62 | 232 |
-| 2012 | 65 | 65 | 246 |
-| 2013 | 63 | 63 | 236 |
-| 2014 | 66 | 66 | 254 |
-| 2015 | 64 | 64 | 241 |
-| 2016 | 70 | 70 | 263 |
-| 2017 | 65 | 65 | 245 |
-| 2018 | 67 | 67 | 264 |
-| 2019 | 65 | 65 | 255 |
-| 2020 | 54 | 54 | 207 |
-| 2021 | 62 | 62 | 244 |
-| 2022 | 62 | 62 | 246 |
+| 1995 | 39 | 39 | 154 |
+| 1996 | 43 | 43 | 168 |
+| 1997 | 45 | 45 | 175 |
+| 1998 | 52 | 52 | 204 |
+| 1999 | 38 | 38 | 152 |
+| 2000 | 56 | 56 | 220 |
+| 2001 | 59 | 59 | 232 |
+| 2002 | 60 | 60 | 237 |
+| 2003 | 58 | 58 | 220 |
+| 2004 | 58 | 58 | 219 |
+| 2005 | 58 | 58 | 220 |
+| 2006 | 57 | 57 | 217 |
+| 2007 | 60 | 60 | 231 |
+| 2008 | 57 | 57 | 216 |
+| 2009 | 65 | 65 | 248 |
+| 2010 | 61 | 61 | 244 |
+| 2011 | 62 | 62 | 247 |
+| 2012 | 65 | 65 | 259 |
+| 2013 | 63 | 63 | 252 |
+| 2014 | 66 | 66 | 264 |
+| 2015 | 64 | 64 | 255 |
+| 2016 | 70 | 70 | 280 |
+| 2017 | 65 | 65 | 260 |
+| 2018 | 67 | 67 | 268 |
+| 2019 | 65 | 65 | 260 |
+| 2020 | 54 | 54 | 216 |
+| 2021 | 62 | 62 | 248 |
+| 2022 | 62 | 62 | 248 |
 | 2023 | 65 | 65 | 260 |
 | 2024 | 64 | 64 | 256 |
 | 2025 | 64 | 64 | 256 |
@@ -193,9 +193,9 @@ None.
 
 None.
 
-### Players missing jersey (103)
+### Players missing jersey (21)
 
-Aaron Hernandez, Alfred Morris, Amani Toomer, Andre Reed, Andre Rison, Antonio Bryant, Antowain Smith, Blake Bortles, Bobby Engram, Brandon LaFell, Brandon Myers, Brandon Stokley, Carlos Hyde, Cecil Shorts III, Chris Chandler, Curtis Conway, Damien Harris, Danny Woodhead, David Carr, DeVante Parker, Devin Funchess, Dominic Rhodes, Dorsey Levens, Doug Flutie, Drew Bennett, Earnest Graham, Ed McCaffrey, Eddie Kennison, Eric Decker, Eric Metcalf, Fred Jackson, Gus Frerotte, Hakeem Nicks, Irving Fryar, Isaiah Crowell, James Robinson, Jason Campbell, Jay Fiedler, Jeff George, Jeremy Hill, Jim Everett, Joey Galloway, Joey Harrington, John Brown, Joique Bell, Josh Freeman, Kelvin Benjamin, Kenny Britt, Kenyan Drake, Kevin Curtis, Kevin Johnson, Knowshon Moreno, Koren Robinson, Kyle Orton, LaMont Jordan, Lance Moore, LeGarrette Blount, Leonard Fournette, Mario Manningham, Mark Sanchez, Marquise Goodwin, Marvin Jones Jr., Michael Bates, Michael Clayton, Michael Floyd, Michael Pittman, Mike Furrey, Mike Sims-Walker, Mike Williams, Nate Washington, Peyton Hillis, Pierre Garcon, Plaxico Burress, Qadry Ismail, Randall Cunningham, Randy McMichael, Rashard Mendenhall, Reggie Bush, Reuben Droughns, Rex Grossman, Rishard Matthews, Robert Brooks, Rod Gardner, Roell Preston, Ronald Jones, Ryan Fitzpatrick, Sam Bradford, Sammy Watkins, Spencer Ware, Stevan Ridley, Steve Slaton, Stevie Johnson, Terry Allen, Tommy Maddox, Tony Martin, Tony McGee, Torrey Smith, Travis Jervey, Trent Dilfer, Trent Richardson, Ty Detmer, Tyrell Williams, Vinny Testaverde
+Antonio Bryant, Antowain Smith, Brandon Stokley, Dominic Rhodes, Dorsey Levens, Drew Bennett, Earnest Graham, Jason Campbell, Joey Harrington, Kevin Curtis, Kevin Johnson, LaMont Jordan, Michael Clayton, Michael Pittman, Mike Furrey, Mike Sims-Walker, Randy McMichael, Robert Brooks, Roell Preston, Steve Slaton, Travis Jervey
 
 ### Players missing draft (6)
 

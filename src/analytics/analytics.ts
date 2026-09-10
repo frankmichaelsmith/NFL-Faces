@@ -28,9 +28,25 @@ export interface StreakEnded {
   is_new_best: boolean
 }
 
+/** A wheel-of-players round (NFL Pro Bowl pool or NBA pool). No names: ids and keys only. */
+export interface PoolRoundCompleted {
+  mode: 'probowl' | 'nba'
+  season: number
+  player_id: string
+  category: string
+  answer: string
+  answer_slot: 0 | 1 | 2
+  tapped_slot: 0 | 1 | 2 | null
+  outcome: Outcome
+  time_to_tap_ms: number | null
+  streak_position: number
+  build_hash: string
+}
+
 export interface Events {
   session_started: { build_hash: string }
   round_completed: RoundCompleted
+  pool_round_completed: PoolRoundCompleted
   streak_ended: StreakEnded
   share_clicked: { format: 'clipboard' | 'failed' }
   mute_toggled: { muted: boolean }

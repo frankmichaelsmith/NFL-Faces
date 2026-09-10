@@ -25,7 +25,8 @@
     "candidates": "tsx scripts/find-candidates.ts",
     "extras": "tsx scripts/add-extras.ts",
     "pull:nba": "tsx scripts/pull-nba.ts",
-    "nba:assets": "tsx scripts/make-nba-assets.ts"
+    "nba:assets": "tsx scripts/make-nba-assets.ts",
+    "fill:numbers": "tsx scripts/fill-numbers.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

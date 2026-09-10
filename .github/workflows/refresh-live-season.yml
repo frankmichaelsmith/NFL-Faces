@@ -1,5 +1,5 @@
-# Weekly refresh of the live season (CLAUDE.md: "whoever is starting right now, refreshed weekly").
-# Re-pulls ESPN, rebuilds the bundle, processes any new starters' faces, and commits to main.
+# Weekly refresh (CLAUDE.md: "whoever is starting right now, refreshed weekly"), plus the Pro Bowl
+# and NBA pools (decisions 0007/0009). Re-pulls ESPN and Wikipedia, rebuilds the bundle, and commits to main.
 # Vercel deploys main on push. No secrets needed: every source is public.
 name: Refresh live season
 
@@ -24,6 +24,12 @@ jobs:
       - run: npm ci
       - run: npm run pull:espn -- --refresh
       - run: npm run photos
+      # Pro Bowl rosters land in January, the NBA pool settles in April; both pulls are cached and cheap otherwise.
+      - run: npm run pull:probowl
+      - run: npm run pull:nba
+      - run: npm run fill:numbers
+      - run: npm run tiles
+      - run: npm run nba:assets
       - run: npm run build:content
       - run: npm test
       - run: npm run simulate
@@ -31,7 +37,7 @@ jobs:
         run: |
           git config user.name "nfl-faces-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add content public/data public/faces docs/build-report.md
+          git add content public/data public/faces public/colleges public/tiles public/flags docs/build-report.md
           if git diff --cached --quiet; then
             echo "no changes"
           else

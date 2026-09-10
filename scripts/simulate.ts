@@ -11,7 +11,7 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import type { Bundle, Combo } from '../src/game/bundle'
-import { GAME_CONFIG } from '../src/game/config'
+import { GAME_CONFIG, NBA_CONFIG, PROBOWL_CONFIG } from '../src/game/config'
 import { mulberry32 } from '../src/game/rng'
 import { nextRound } from '../src/game/select'
 import { nextProBowlRound } from '../src/game/probowl'
@@ -114,6 +114,13 @@ async function main() {
     ['nba', bundle.nba],
   ] as const) {
     if (!pb) continue
+    // Each pool rolls with its own mode's weights (NBA pins USA to 10% of Birthplace rounds).
+    const cfg = label === 'nba' ? NBA_CONFIG : PROBOWL_CONFIG
+    const poolWeights = {
+      categories: cfg.categoryWeights,
+      seasons: cfg.seasonWeights,
+      answerShares: cfg.answerShares,
+    }
     const pbRng = mulberry32(seed + 7)
     const slots = [0, 0, 0]
     const byCat: Record<string, number> = {}
@@ -124,7 +131,7 @@ async function main() {
     let pbStreak = 0
     let pbLongest = 0
     for (let i = 0; i < rounds; i++) {
-      const r = nextProBowlRound(pb, pbUsed, pbRng)
+      const r = nextProBowlRound(pb, pbUsed, pbRng, poolWeights)
       if (!r) {
         fail(`probowl round ${i}: no combo after ${pbStreak} correct`)
         break
@@ -208,7 +215,7 @@ async function main() {
     const perfectRng = mulberry32(seed + 8)
     let cap = 0
     for (;;) {
-      const r = nextProBowlRound(pb, perfect, perfectRng)
+      const r = nextProBowlRound(pb, perfect, perfectRng, poolWeights)
       if (!r) break
       perfect.add(r.combo.player)
       if (++cap > pb.combos.length) {

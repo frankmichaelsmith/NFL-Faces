@@ -3,7 +3,7 @@
  * wrapped so a blocked or missing localStorage never breaks play.
  */
 
-export type StatsMode = 'faces' | 'probowl'
+export type StatsMode = 'faces' | 'probowl' | 'nba'
 
 export interface ModeBest {
   best_streak: number
@@ -59,10 +59,12 @@ export function defaultStats(): Stats {
     modes: {
       faces: { best_streak: 0, best_streak_roll: null },
       probowl: { best_streak: 0, best_streak_roll: null },
+      nba: { best_streak: 0, best_streak_roll: null },
     },
     daily: {
       faces: { day: '', best_streak: 0, best_streak_roll: null, games: 0 },
       probowl: { day: '', best_streak: 0, best_streak_roll: null, games: 0 },
+      nba: { day: '', best_streak: 0, best_streak_roll: null, games: 0 },
     },
     last_mode: 'faces',
   }
@@ -117,7 +119,7 @@ export function loadStats(): Stats {
         best_streak: merged.best_streak,
         best_streak_roll: merged.best_streak_roll,
       }
-    if (merged.last_mode !== 'faces' && merged.last_mode !== 'probowl') merged.last_mode = 'faces'
+    if (!['faces', 'probowl', 'nba'].includes(merged.last_mode)) merged.last_mode = 'faces'
     return merged
   } catch {
     return base

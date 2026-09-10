@@ -69,10 +69,17 @@ export async function route(
         return reply(await postScore(deps, bearer(request), await body(request)))
       case '/api/leaderboard':
         if (request.method !== 'GET') return json(405, { error: 'method', message: 'GET only' })
-        return reply(await leaderboard(deps, bearer(request), url.searchParams.get('day')))
+        return reply(
+          await leaderboard(
+            deps,
+            bearer(request),
+            url.searchParams.get('day'),
+            url.searchParams.get('mode'),
+          ),
+        )
       case '/api/stats':
         if (request.method !== 'GET') return json(405, { error: 'method', message: 'GET only' })
-        return reply(await stats(deps, url.searchParams.get('day')))
+        return reply(await stats(deps, url.searchParams.get('day'), url.searchParams.get('mode')))
       default:
         return json(404, { error: 'not_found', message: `No route ${path}` })
     }

@@ -39,16 +39,16 @@ export interface GameConfig {
   poolKey?: PoolKey
 }
 
-export type Mode = 'faces' | 'probowl'
+export type Mode = 'faces' | 'probowl' | 'nba'
 
-export const MODE_LABELS: Record<Mode, string> = { faces: 'Faces', probowl: 'Pro Bowl Mode' }
+export const MODE_LABELS: Record<Mode, string> = { faces: 'Faces', probowl: 'NFL', nba: 'NBA' }
 
 /**
- * Modes offered on the start screen, in picker order. One entry hides the
- * picker. Faces is hidden for now (Frank, 2026-09-09); it still runs via
- * `?mode=faces` and its code, content and tests stay in place.
+ * Modes offered on the start screen, in picker order (the NFL | NBA slider).
+ * One entry hides the picker. Faces is hidden (Frank, 2026-09-09); it still
+ * runs via `?mode=faces` and its code, content and tests stay in place.
  */
-export const VISIBLE_MODES: readonly Mode[] = ['probowl']
+export const VISIBLE_MODES: readonly Mode[] = ['probowl', 'nba']
 
 /** Title shown on the start screen (the app, repo and share text still say NFL Faces). */
 export const GAME_TITLE = 'Spin Streak'
@@ -82,6 +82,15 @@ export const PROBOWL_CONFIG: GameConfig = {
   seasonWeights: { 1995: 0.3, 1996: 0.3, 1997: 0.3, 1998: 0.3, 1999: 0.3 },
 }
 
+/** NBA (decision 0009): same three wheels over the NBA pool; Birthplace instead of Position. */
+export const NBA_CONFIG: GameConfig = {
+  ...PROBOWL_CONFIG,
+  roles: ['G', 'F', 'C'],
+  poolKey: 'nba',
+  // No easy category here, so the four play evenly; 1995–1999 stay rare as in the NFL.
+  categoryWeights: { alma: 1, draft: 1, number: 1, country: 1 },
+}
+
 export function configFor(mode: Mode): GameConfig {
-  return mode === 'probowl' ? PROBOWL_CONFIG : GAME_CONFIG
+  return mode === 'probowl' ? PROBOWL_CONFIG : mode === 'nba' ? NBA_CONFIG : GAME_CONFIG
 }

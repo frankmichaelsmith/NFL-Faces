@@ -73,7 +73,7 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
     if (!identity) return
     let cancelled = false
     client
-      .board()
+      .board(undefined, mode === 'nba' ? 'nba' : 'probowl')
       .then((b) => {
         if (cancelled || !b.you) return
         setDayBest((prev) =>
@@ -86,7 +86,7 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
     return () => {
       cancelled = true
     }
-  }, [client, identity])
+  }, [client, identity, mode])
 
   // Retry anything queued while offline.
   useEffect(() => {

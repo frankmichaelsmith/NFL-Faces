@@ -173,3 +173,15 @@ describe('describeValue', () => {
     expect(describeValue(S, 'position', 'QB')).toBe('QB')
   })
 })
+
+describe('NBA config', () => {
+  it('plays the NBA pool with Birthplace instead of Position and even category weights', async () => {
+    const { NBA_CONFIG, configFor } = await import('../../src/game/config')
+    expect(configFor('nba')).toBe(NBA_CONFIG)
+    expect(NBA_CONFIG.poolKey).toBe('nba')
+    expect(NBA_CONFIG.roles).toEqual(['G', 'F', 'C'])
+    expect(NBA_CONFIG.categoryWeights).toEqual({ alma: 1, draft: 1, number: 1, country: 1 })
+    expect(NBA_CONFIG.seasonWeights?.['1999']).toBe(0.3)
+    expect(NBA_CONFIG.wheels.map((w) => w.kind)).toEqual(['season', 'player', 'category'])
+  })
+})

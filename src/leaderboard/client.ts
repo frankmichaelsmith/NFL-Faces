@@ -34,8 +34,8 @@ export interface LeaderboardClient {
   submitScore(score: ScoreRequest): Promise<SubmitResult>
   /** Retry queued posts. Safe to call often. */
   flush(): Promise<void>
-  /** Today's board (or a given YYYY-MM-DD). Throws on failure. */
-  board(day?: string): Promise<LeaderboardResponse>
+  /** Today's board (or a given YYYY-MM-DD) for a sport ('probowl' = NFL, 'nba'). Throws on failure. */
+  board(day?: string, mode?: 'probowl' | 'nba'): Promise<LeaderboardResponse>
   signOut(): void
 }
 
@@ -188,12 +188,15 @@ export function createLeaderboardClient(opts: ClientOptions = {}): LeaderboardCl
       return r
     },
     flush,
-    async board(day) {
+    async board(day, mode = 'probowl') {
       const id = identity()
-      const r = await call<LeaderboardResponse>(
-        `/api/leaderboard${day ? `?day=${encodeURIComponent(day)}` : ''}`,
-        { token: id?.token ?? null },
-      )
+      const q = new URLSearchParams()
+      if (day) q.set('day', day)
+      if (mode !== 'probowl') q.set('mode', mode)
+      const qs = q.toString()
+      const r = await call<LeaderboardResponse>(`/api/leaderboard${qs ? `?${qs}` : ''}`, {
+        token: id?.token ?? null,
+      })
       if (r.status !== 200 || !r.body || 'error' in r.body)
         throw new Error(
           r.status === null ? NETWORK_MESSAGE : messageOf(r.body, 'Leaderboard unavailable'),

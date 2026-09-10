@@ -103,6 +103,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - [ ] Pro Bowl seasons 1995–1999 added 2026-09-09 (980 selections, 367 players, 3881 combos; awaiting Frank checkpoint)
 - [ ] Pro Bowl P4 — finish
 - [x] NBA N1 — data: pull, draft-team table, countries + flags, bundle.nba (built 2026-09-10; awaiting Frank checkpoint) — decision 0009
-- [ ] NBA N2 — engine + config · N3 screens (sport slider) · N4 finish
+- [x] NBA N2 — engine + config + per-sport API (built 2026-09-10)
+- [ ] NBA N3 — screens (sport slider, flag cards, board toggle) · N4 finish
 - [x] Leaderboard L1 — server: schema, handlers, routing, dev/preview middleware, tests (built 2026-09-09; awaiting Frank checkpoint + Neon DATABASE_URL)
 - [x] Leaderboard L2 — client: email gate after the first streak, score posts with an offline queue, board screen, e2e (built 2026-09-09; awaiting Frank checkpoint)

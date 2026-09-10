@@ -22,7 +22,9 @@ import type {
   StatsResponse,
 } from '../src/leaderboard/types.js'
 
-export const BOARD_MODE = 'probowl' as const
+export const BOARD_MODES = ['probowl', 'nba'] as const
+export type BoardMode = (typeof BOARD_MODES)[number]
+export const BOARD_MODE: BoardMode = 'probowl'
 export const BOARD_SIZE = 25
 /** A streak cannot exceed the Pro Bowl player pool; anything above is not a real game. */
 export const MAX_STREAK = 1000
@@ -123,7 +125,7 @@ export const scoreSchema = z.object({
     .max(MAX_STREAK + 1)
     .optional(),
   roll: z.string().trim().max(120).nullable().default(null),
-  mode: z.enum(['probowl', 'faces']),
+  mode: z.enum(['probowl', 'nba', 'faces']),
 })
 
 export interface Result<T> {
@@ -210,16 +212,25 @@ export async function postScore(
   return { status: 200, body: { day, best: best?.streak ?? 0, improved, rank } }
 }
 
+/** The sport a board request is for; anything but nba means the NFL board. */
+export function boardMode(param: string | null): BoardMode | null {
+  if (param === null || param === '' || param === 'probowl' || param === 'nfl') return 'probowl'
+  return param === 'nba' ? 'nba' : null
+}
+
 export async function leaderboard(
   deps: Deps,
   token: string | null,
   dayParam: string | null,
+  modeParam: string | null = null,
 ): Promise<Result<LeaderboardResponse>> {
   if (dayParam !== null && !DAY_RE.test(dayParam))
     return fail(400, 'invalid', 'day must be YYYY-MM-DD')
+  const mode = boardMode(modeParam)
+  if (!mode) return fail(400, 'invalid', 'mode must be nfl or nba')
   const day = dayParam ?? etDay(deps.now())
   const me = await authenticate(deps, token)
-  const top = await deps.store.topScores(day, BOARD_MODE, BOARD_SIZE)
+  const top = await deps.store.topScores(day, mode, BOARD_SIZE)
   const rows: LeaderboardRow[] = top.map((s, i) => ({
     rank: i + 1,
     name: s.name,
@@ -228,7 +239,7 @@ export async function leaderboard(
   }))
   let you: LeaderboardResponse['you'] = null
   if (me) {
-    const mine = await deps.store.getScore(me.id, day, BOARD_MODE)
+    const mine = await deps.store.getScore(me.id, day, mode)
     if (mine)
       you = {
         rank: await deps.store.rankOf(mine),
@@ -237,23 +248,29 @@ export async function leaderboard(
         roll: mine.roll,
       }
   }
-  const players = await deps.store.countScores(day, BOARD_MODE)
-  const { rounds } = await deps.store.totals(day, BOARD_MODE)
-  return { status: 200, body: { day, mode: BOARD_MODE, rows, you, players, rounds } }
+  const players = await deps.store.countScores(day, mode)
+  const { rounds } = await deps.store.totals(day, mode)
+  return { status: 200, body: { day, mode: mode, rows, you, players, rounds } }
 }
 
 /** Who played how much today (or on `dayParam`). Public: it shows only board names and counts. */
-export async function stats(deps: Deps, dayParam: string | null): Promise<Result<StatsResponse>> {
+export async function stats(
+  deps: Deps,
+  dayParam: string | null,
+  modeParam: string | null = null,
+): Promise<Result<StatsResponse>> {
   if (dayParam !== null && !DAY_RE.test(dayParam))
     return fail(400, 'invalid', 'day must be YYYY-MM-DD')
+  const mode = boardMode(modeParam)
+  if (!mode) return fail(400, 'invalid', 'mode must be nfl or nba')
   const day = dayParam ?? etDay(deps.now())
-  const rows = await deps.store.playerDays(day, BOARD_MODE)
-  const t = await deps.store.totals(day, BOARD_MODE)
+  const rows = await deps.store.playerDays(day, mode)
+  const t = await deps.store.totals(day, mode)
   return {
     status: 200,
     body: {
       day,
-      mode: BOARD_MODE,
+      mode: mode,
       players: rows.map((r) => ({ name: r.name, rounds: r.rounds, games: r.games, best: r.best })),
       rounds: t.rounds,
       games: t.games,

@@ -22,7 +22,7 @@ export interface ScoreRequest {
   rounds?: number
   /** The losing roll as shown on screen, e.g. "2003 · Daunte Culpepper · Alma Mater". */
   roll: string | null
-  mode: 'probowl' | 'faces'
+  mode: 'probowl' | 'nba' | 'faces'
 }
 export interface ScoreResponse {
   day: string
@@ -42,7 +42,8 @@ export interface LeaderboardRow {
 }
 export interface LeaderboardResponse {
   day: string
-  mode: 'probowl'
+  /** Which sport's board: NFL (probowl) or NBA. */
+  mode: 'probowl' | 'nba'
   rows: LeaderboardRow[]
   /** The caller's own standing, also when outside the listed rows; null when unknown or unranked. */
   you: { rank: number; streak: number; name: string; roll: string | null } | null
@@ -55,7 +56,7 @@ export interface LeaderboardResponse {
 /** Who played how much on one day (names are already public on the board). */
 export interface StatsResponse {
   day: string
-  mode: 'probowl'
+  mode: 'probowl' | 'nba'
   /** Players with at least one posted game, most rounds first. */
   players: { name: string; rounds: number; games: number; best: number }[]
   rounds: number

@@ -163,7 +163,7 @@ export function useGame(
 
   const pick = useCallback(
     (used: readonly string[]) =>
-      mode === 'probowl'
+      config.poolKey
         ? poolOf(bundle, config.poolKey)
           ? nextProBowlRound(poolOf(bundle, config.poolKey)!, new Set(used), rng, {
               categories: config.categoryWeights,
@@ -171,15 +171,7 @@ export function useGame(
             })
           : null
         : nextRound(bundle, new Set(used), rng, { alumniProb: config.alumniProb }),
-    [
-      bundle,
-      mode,
-      rng,
-      config.alumniProb,
-      config.categoryWeights,
-      config.seasonWeights,
-      config.poolKey,
-    ],
+    [bundle, rng, config.alumniProb, config.categoryWeights, config.seasonWeights, config.poolKey],
   )
 
   const start = useCallback(() => {

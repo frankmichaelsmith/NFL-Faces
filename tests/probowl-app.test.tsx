@@ -117,9 +117,13 @@ describe('Pro Bowl Mode', () => {
     cleanup()
   })
 
-  it('opens in Pro Bowl Mode with no picker while Faces is hidden, but still honours a forced mode', () => {
+  it('opens in NFL mode with an NFL | NBA picker, Faces hidden, and still honours a forced mode', () => {
     render(<App bundle={bundle} config={config} deps={deps} />)
-    expect(screen.queryByTestId('mode-picker')).toBeNull()
+    // The slider offers the two sports; Faces is not on it. The test bundle has no NBA pool, so NBA is greyed.
+    expect(screen.getByTestId('mode-picker')).toBeInTheDocument()
+    expect(screen.queryByTestId('mode-faces')).toBeNull()
+    expect(screen.getByTestId('mode-probowl')).toHaveAttribute('aria-checked', 'true')
+    expect(screen.getByTestId('mode-nba')).toBeDisabled()
     expect(screen.getByRole('heading', { name: 'Spin Streak' })).toBeInTheDocument()
     expect(screen.getByText(/Tap the correct answer.*6 seconds or less/i)).toBeInTheDocument()
     cleanup()

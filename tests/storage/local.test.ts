@@ -108,5 +108,7 @@ describe('daily best', () => {
       games: 0,
     })
     expect(todayBest(loadStats(), 'probowl')).toBeNull()
+    expect(loadStats().modes.nba).toEqual({ best_streak: 0, best_streak_roll: null })
+    expect(loadStats().daily.nba.games).toBe(0)
   })
 })

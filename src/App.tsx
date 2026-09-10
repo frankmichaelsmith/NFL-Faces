@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { PlayScreen } from './components/PlayScreen'
 import { StartScreen } from './components/StartScreen'
-import type { Bundle } from './game/bundle'
+import { poolOf, type Bundle } from './game/bundle'
 import { VISIBLE_MODES, type GameConfig, type Mode } from './game/config'
 import { createLeaderboardClient, type LeaderboardClient } from './leaderboard/client'
 import { useLeaderboard } from './leaderboard/useLeaderboard'
@@ -40,7 +40,7 @@ function rngFromLocation(): Rng | null {
 /** `?mode=faces` opens a hidden mode (debugging, e2e). */
 function modeFromLocation(): Mode | null {
   const m = new URLSearchParams(location.search).get('mode')
-  return m === 'faces' || m === 'probowl' ? m : null
+  return m === 'faces' || m === 'probowl' || m === 'nba' ? m : null
 }
 
 export default function App({
@@ -69,7 +69,7 @@ export default function App({
     setMode(m)
   }
   // A remembered or hidden mode only plays if the bundle can serve it and it is on offer (or forced).
-  const available = (m: Mode) => m === 'faces' || !!bundle.probowl
+  const available = (m: Mode) => (m === 'faces' ? true : !!poolOf(bundle, m))
   const effective =
     (mode === forced || VISIBLE_MODES.includes(mode)) && available(mode)
       ? mode
@@ -111,7 +111,12 @@ function Game({
     route.openBoard()
   }
   const board = route.open ? (
-    <LeaderboardScreen client={client} signedIn={!!lb.identity} onClose={route.closeBoard} />
+    <LeaderboardScreen
+      client={client}
+      signedIn={!!lb.identity}
+      onClose={route.closeBoard}
+      mode={mode === 'nba' ? 'nba' : 'probowl'}
+    />
   ) : null
   if (game.state.phase === 'idle')
     return (
@@ -119,7 +124,7 @@ function Game({
         <StartScreen
           mode={mode}
           onMode={onMode}
-          proBowlAvailable={!!bundle.probowl}
+          unavailable={VISIBLE_MODES.filter((m) => m !== 'faces' && !poolOf(bundle, m))}
           today={todayFor(game.stats, mode, lb.dayBest)}
           siteUrl={SITE_URL}
           analytics={game.analytics}

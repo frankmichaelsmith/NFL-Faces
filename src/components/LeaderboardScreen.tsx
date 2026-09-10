@@ -7,6 +7,8 @@ interface Props {
   onClose: () => void
   /** Shown under the list when the device has no email on file. */
   signedIn: boolean
+  /** Which sport's board (N3 adds the toggle). */
+  mode?: 'probowl' | 'nba'
 }
 
 /**
@@ -14,7 +16,7 @@ interface Props {
  * even when outside the list. Arrows step back through earlier days (Frank,
  * 2026-09-10) as far as the board's first day, and forward again to today.
  */
-export function LeaderboardScreen({ client, onClose, signedIn }: Props) {
+export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl' }: Props) {
   // null = today (the server decides which day that is); a date = a past day.
   const [day, setDay] = useState<string | null>(null)
   // Results are keyed by the day they were requested for, so switching days shows a
@@ -27,7 +29,7 @@ export function LeaderboardScreen({ client, onClose, signedIn }: Props) {
   useEffect(() => {
     let cancelled = false
     client
-      .board(day ?? undefined)
+      .board(day ?? undefined, mode)
       .then((b) => {
         if (cancelled) return
         setLoaded({ day, board: b })
@@ -37,7 +39,7 @@ export function LeaderboardScreen({ client, onClose, signedIn }: Props) {
     return () => {
       cancelled = true
     }
-  }, [client, day])
+  }, [client, day, mode])
   const board = loaded && loaded.day === day ? loaded.board : null
   const error = failed && failed.day === day ? failed.message : null
   const shown = board?.day ?? day ?? today

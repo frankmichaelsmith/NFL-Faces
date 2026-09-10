@@ -81,6 +81,8 @@ describe('leaderboard client', () => {
     expect(post.body).toEqual(score)
     await c.board()
     expect(api.calls.at(-1)).toMatchObject({ path: '/api/leaderboard', auth: 'Bearer tok-1' })
+    await c.board('2026-09-09', 'nba')
+    expect(api.calls.at(-1)!.path).toBe('/api/leaderboard?day=2026-09-09&mode=nba')
   })
   it('surfaces the server message on a bad sign-up', async () => {
     localStorage.clear()

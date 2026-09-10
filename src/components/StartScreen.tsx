@@ -9,7 +9,8 @@ import type { Analytics } from '../analytics/analytics'
 interface Props {
   mode: Mode
   onMode: (m: Mode) => void
-  proBowlAvailable: boolean
+  /** Visible modes the bundle cannot serve (greyed out). */
+  unavailable: readonly Mode[]
   /** Today's best in this mode, or null when the device has not played today. */
   today: DailyBest | null
   /** Address printed at the end of the share text. */
@@ -27,7 +28,7 @@ interface Props {
 export function StartScreen({
   mode,
   onMode,
-  proBowlAvailable,
+  unavailable,
   today,
   siteUrl,
   analytics,
@@ -56,7 +57,7 @@ export function StartScreen({
               type="button"
               role="radio"
               aria-checked={mode === m}
-              disabled={m === 'probowl' && !proBowlAvailable}
+              disabled={unavailable.includes(m)}
               onClick={() => onMode(m)}
               data-testid={`mode-${m}`}
               className={
@@ -70,7 +71,7 @@ export function StartScreen({
         </div>
       )}
       <p className="max-w-xs text-lg text-white/70">
-        {mode === 'probowl' ? (
+        {mode !== 'faces' ? (
           // Frank (2026-09-09): two centred lines, fixed break, no full stop.
           <>
             Tap the correct answer

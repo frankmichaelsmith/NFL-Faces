@@ -3,6 +3,8 @@ import {
   loadStats,
   recordRound,
   recordStreakEnd,
+  todayBest,
+  etDay,
   saveStats,
   setMute,
 } from '../../src/storage/local'
@@ -69,5 +71,42 @@ describe('local stats', () => {
     expect(old.modes.faces).toEqual({ best_streak: 6, best_streak_roll: '2001 · RAMS' })
     expect(old.modes.probowl.best_streak).toBe(0)
     expect(old.last_mode).toBe('faces')
+  })
+})
+
+describe('daily best', () => {
+  it('keeps the best of the Eastern day per mode, resets on a new day, and counts games', () => {
+    const d1 = new Date('2026-09-09T20:00:00Z') // Sept 9, 4 pm ET
+    let s = recordStreakEnd(loadStats(), 4, '2008 · BROWNS', 'probowl', d1)
+    s = recordStreakEnd(s, 2, '2001 · RAMS', 'probowl', d1)
+    expect(todayBest(s, 'probowl', d1)).toMatchObject({
+      day: '2026-09-09',
+      best_streak: 4,
+      best_streak_roll: '2008 · BROWNS',
+      games: 2,
+    })
+    expect(todayBest(s, 'faces', d1)).toBeNull() // other mode untouched
+    // 11:59 pm ET is still the same day; 12:01 am ET is the next one
+    expect(todayBest(s, 'probowl', new Date('2026-09-10T03:59:00Z'))).not.toBeNull()
+    expect(todayBest(s, 'probowl', new Date('2026-09-10T04:01:00Z'))).toBeNull()
+    const d2 = new Date('2026-09-10T15:00:00Z')
+    s = recordStreakEnd(s, 1, '2019 · JETS', 'probowl', d2)
+    expect(todayBest(s, 'probowl', d2)).toMatchObject({
+      day: '2026-09-10',
+      best_streak: 1,
+      games: 1,
+    })
+    expect(s.modes.probowl.best_streak).toBe(4) // the all-time best stays
+    expect(etDay(new Date('2026-01-10T04:59:00Z'))).toBe('2026-01-09')
+  })
+  it('stats saved before daily bests existed load with empty ones', () => {
+    localStorage.setItem('nfl-faces:stats:v1', JSON.stringify({ best_streak: 3, total_streaks: 2 }))
+    expect(loadStats().daily.probowl).toEqual({
+      day: '',
+      best_streak: 0,
+      best_streak_roll: null,
+      games: 0,
+    })
+    expect(todayBest(loadStats(), 'probowl')).toBeNull()
   })
 })

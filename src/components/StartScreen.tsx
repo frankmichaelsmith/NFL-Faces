@@ -2,13 +2,19 @@ import { useState } from 'react'
 import { GAME_TITLE, MODE_LABELS, VISIBLE_MODES, type Mode } from '../game/config'
 import { MuteButton } from './MuteButton'
 import { SignUpForm } from './SignUpForm'
+import { ShareButton } from './ShareButton'
+import type { DailyBest } from '../storage/local'
+import type { Analytics } from '../analytics/analytics'
 
 interface Props {
   mode: Mode
   onMode: (m: Mode) => void
   proBowlAvailable: boolean
-  bestStreak: number
-  bestStreakRoll?: string | null
+  /** Today's best in this mode, or null when the device has not played today. */
+  today: DailyBest | null
+  /** Address printed at the end of the share text. */
+  siteUrl: string
+  analytics: Analytics
   onStart: () => void
   muted: boolean
   onToggleMute: () => void
@@ -22,8 +28,9 @@ export function StartScreen({
   mode,
   onMode,
   proBowlAvailable,
-  bestStreak,
-  bestStreakRoll,
+  today,
+  siteUrl,
+  analytics,
   onStart,
   muted,
   onToggleMute,
@@ -74,12 +81,10 @@ export function StartScreen({
           'Tap the quarterback who started for that team that season. Six seconds.'
         )}
       </p>
-      {bestStreak > 0 && (
+      {today && (
         <p className="text-sm uppercase tracking-widest text-white/50" data-testid="best">
-          Best streak <span className="font-black text-accent">{bestStreak}</span>
-          {bestStreakRoll ? (
-            <span className="text-white/40"> · died on {bestStreakRoll}</span>
-          ) : null}
+          Your top streak of the day:{' '}
+          <span className="font-black text-accent">{today.best_streak}</span>
         </p>
       )}
       {needsSignUp && gate ? (
@@ -93,13 +98,24 @@ export function StartScreen({
           />
         </div>
       ) : (
-        <button
-          type="button"
-          onClick={needsSignUp ? () => setGate(true) : onStart}
-          className="min-h-[56px] w-full max-w-xs rounded-2xl bg-accent px-8 text-xl font-black text-ink active:scale-95"
-        >
-          Start
-        </button>
+        <div className="flex w-full max-w-xs gap-3">
+          <button
+            type="button"
+            onClick={needsSignUp ? () => setGate(true) : onStart}
+            className="min-h-[56px] flex-1 rounded-2xl bg-accent px-8 text-xl font-black text-ink active:scale-95"
+          >
+            Start
+          </button>
+          {today && (
+            // Played today: share the day's top streak from here too (Frank, 2026-09-09).
+            <ShareButton
+              payload={{ streak: today.best_streak, roll: today.best_streak_roll, url: siteUrl }}
+              analytics={analytics}
+              className="min-h-[56px] basis-2/5 px-4 text-lg"
+              testId="start-share"
+            />
+          )}
+        </div>
       )}
       <button
         type="button"

@@ -9,7 +9,7 @@ import { useBoardRoute } from './leaderboard/route'
 import { LeaderboardScreen } from './components/LeaderboardScreen'
 import { defaultRng, mulberry32, type Rng } from './game/rng'
 import { useGame, type GameDeps } from './state/useGame'
-import { loadStats, saveStats, setLastMode } from './storage/local'
+import { loadStats, saveStats, setLastMode, todayBest } from './storage/local'
 
 const IMAGE_BASE_URL = (import.meta.env.VITE_IMAGE_BASE_URL as string | undefined) ?? '/faces/'
 /**
@@ -120,8 +120,9 @@ function Game({
           mode={mode}
           onMode={onMode}
           proBowlAvailable={!!bundle.probowl}
-          bestStreak={game.stats.modes[mode].best_streak}
-          bestStreakRoll={game.stats.modes[mode].best_streak_roll}
+          today={todayBest(game.stats, mode)}
+          siteUrl={SITE_URL}
+          analytics={game.analytics}
           onStart={game.start}
           muted={game.muted}
           onToggleMute={game.toggleMute}

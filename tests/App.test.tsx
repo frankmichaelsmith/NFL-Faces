@@ -200,8 +200,9 @@ describe('App', () => {
     const roll = screen.getByTestId('game-over').dataset.roll!
     cleanup()
     render(<App bundle={bundle} config={config} rng={mulberry32(6)} />)
-    expect(screen.getByTestId('best').textContent).toContain('Best streak 1')
-    expect(screen.getByTestId('best').textContent).toContain(roll)
+    expect(screen.getByTestId('best').textContent).toContain('Your top streak of the day: 1')
+    expect(roll).toMatch(/^2010 · /)
+    expect(screen.getByTestId('start-share')).toBeInTheDocument()
   })
 
   it('emits session_started, round_completed and streak_ended in the spec shape', async () => {

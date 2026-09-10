@@ -10,6 +10,23 @@ export interface ModeBest {
   best_streak_roll: string | null
 }
 
+/** Best of one Eastern calendar day (the leaderboard's day), kept per mode. */
+export interface DailyBest extends ModeBest {
+  day: string
+  games: number
+}
+
+const ET_DAY = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'America/New_York',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+})
+/** The leaderboard day for an instant: the calendar date in New York (same rule as the server). */
+export function etDay(now: Date = new Date()): string {
+  return ET_DAY.format(now)
+}
+
 export interface Stats {
   /** Faces mode best (kept as the original fields for compatibility; mirrored in `modes.faces`). */
   best_streak: number
@@ -22,6 +39,8 @@ export interface Stats {
   device_id: string
   /** Per-mode bests. */
   modes: Record<StatsMode, ModeBest>
+  /** Per-mode best of the current Eastern day; stale days are reset on the next streak end. */
+  daily: Record<StatsMode, DailyBest>
   /** Mode last chosen on the start screen. */
   last_mode: StatsMode
 }
@@ -41,8 +60,18 @@ export function defaultStats(): Stats {
       faces: { best_streak: 0, best_streak_roll: null },
       probowl: { best_streak: 0, best_streak_roll: null },
     },
+    daily: {
+      faces: { day: '', best_streak: 0, best_streak_roll: null, games: 0 },
+      probowl: { day: '', best_streak: 0, best_streak_roll: null, games: 0 },
+    },
     last_mode: 'faces',
   }
+}
+
+/** Today's record for a mode, or null when the last game in that mode was on another day. */
+export function todayBest(stats: Stats, mode: StatsMode, now: Date = new Date()): DailyBest | null {
+  const d = stats.daily[mode]
+  return d.day === etDay(now) && d.games > 0 ? d : null
 }
 
 function newDeviceId(): string {
@@ -74,7 +103,12 @@ export function loadStats(): Stats {
       return base
     }
     const parsed = JSON.parse(raw) as Partial<Stats>
-    const merged: Stats = { ...base, ...parsed, modes: { ...base.modes, ...(parsed.modes ?? {}) } }
+    const merged: Stats = {
+      ...base,
+      ...parsed,
+      modes: { ...base.modes, ...(parsed.modes ?? {}) },
+      daily: { ...base.daily, ...(parsed.daily ?? {}) },
+    }
     if (typeof merged.best_streak !== 'number' || !Number.isFinite(merged.best_streak))
       merged.best_streak = 0
     // Stats written before Pro Bowl Mode existed: lift the faces best into the per-mode record.
@@ -115,14 +149,24 @@ export function recordStreakEnd(
   streak: number,
   roll: string,
   mode: StatsMode = 'faces',
+  now: Date = new Date(),
 ): Stats {
   const prev = stats.modes[mode]
   const improved = streak > prev.best_streak
   const next: ModeBest = improved ? { best_streak: streak, best_streak_roll: roll } : prev
+  const day = etDay(now)
+  const d = stats.daily[mode]
+  const today: DailyBest =
+    d.day === day ? d : { day, best_streak: 0, best_streak_roll: null, games: 0 }
+  const daily: DailyBest =
+    streak > today.best_streak
+      ? { day, best_streak: streak, best_streak_roll: roll, games: today.games + 1 }
+      : { ...today, games: today.games + 1 }
   return {
     ...stats,
     total_streaks: stats.total_streaks + 1,
     modes: { ...stats.modes, [mode]: next },
+    daily: { ...stats.daily, [mode]: daily },
     best_streak: mode === 'faces' ? next.best_streak : stats.best_streak,
     best_streak_roll: mode === 'faces' ? next.best_streak_roll : stats.best_streak_roll,
   }

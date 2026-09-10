@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
 import type { Bundle } from '../game/bundle'
-import { share, type ShareResult } from '../share/share'
+import { ShareButton } from './ShareButton'
 import type { GameApi } from '../state/useGame'
 import { FaceCards } from './FaceCards'
 import { OptionCards } from './OptionCards'
@@ -23,8 +22,6 @@ interface Props {
 }
 
 /** What the Share button reads for a moment after a tap (Frank, 2026-09-09: the button itself answers). */
-const SHARE_LABEL: Record<ShareResult, string> = { copied: 'Copied', failed: "Couldn't copy" }
-
 export function PlayScreen({
   bundle,
   game,
@@ -37,18 +34,6 @@ export function PlayScreen({
   const round = state.round
   const over = state.phase === 'gameover'
   const roll = round ? config.wheels.map((w) => wheelValue(bundle, w.kind, round)).join(' · ') : ''
-  const [shareState, setShareState] = useState<ShareResult | null>(null)
-  useEffect(() => {
-    if (!shareState) return
-    const t = setTimeout(() => setShareState(null), 1800)
-    return () => clearTimeout(t)
-  }, [shareState])
-  const onShare = async () => {
-    if (shareState) return
-    const result = await share({ streak: state.streak, roll: roll || null, url: siteUrl })
-    game.analytics.track('share_clicked', { format: result === 'copied' ? 'clipboard' : 'failed' })
-    setShareState(result)
-  }
 
   return (
     <main className="mx-auto flex min-h-full max-w-[720px] flex-col gap-4 p-4">
@@ -161,22 +146,11 @@ export function PlayScreen({
                       : ''}
               </p>
               <div className="grid grid-cols-3 gap-2">
-                <button
-                  type="button"
-                  onClick={onShare}
-                  data-testid="share"
-                  data-state={shareState ?? 'idle'}
-                  className={
-                    'min-h-[52px] rounded-2xl border-2 px-2 text-base font-black transition-colors active:scale-95 ' +
-                    (shareState === 'copied'
-                      ? 'border-accent bg-accent/15 text-accent'
-                      : shareState === 'failed'
-                        ? 'border-miss text-miss'
-                        : 'border-white/20 text-white')
-                  }
-                >
-                  {shareState ? SHARE_LABEL[shareState] : 'Share'}
-                </button>
+                <ShareButton
+                  payload={{ streak: state.streak, roll: roll || null, url: siteUrl }}
+                  analytics={game.analytics}
+                  className="min-h-[52px] px-2 text-base"
+                />
                 <button
                   type="button"
                   onClick={onOpenBoard}

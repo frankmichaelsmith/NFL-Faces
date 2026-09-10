@@ -40,29 +40,28 @@ export function PlayScreen({
 
   return (
     <main className="mx-auto flex min-h-full max-w-[720px] flex-col gap-4 p-4">
-      <header className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={game.home}
-            data-testid="home"
-            aria-label="Spin Streak home"
-            className="font-display min-h-[44px] text-lg font-black uppercase tracking-tight text-white active:opacity-70"
+      {/* Three columns so the streak sits centred above the middle wheel (Frank, 2026-09-10). */}
+      <header className="grid grid-cols-3 items-center">
+        <button
+          type="button"
+          onClick={game.home}
+          data-testid="home"
+          aria-label="Spin Streak home"
+          className="font-display justify-self-start min-h-[44px] text-lg font-black uppercase tracking-tight text-white active:opacity-70"
+        >
+          {GAME_TITLE}
+        </button>
+        <div className="justify-self-center">
+          <span
+            key={state.streak}
+            data-testid="streak"
+            aria-label={`Streak ${state.streak}`}
+            className="font-display inline-block text-4xl font-black text-accent motion-safe:animate-[pop_300ms_ease-out]"
           >
-            {GAME_TITLE}
-          </button>
-          <div className="text-sm uppercase tracking-widest text-white/50">
-            Streak{' '}
-            <span
-              key={state.streak}
-              data-testid="streak"
-              className="font-display inline-block text-4xl font-black text-accent motion-safe:animate-[pop_300ms_ease-out]"
-            >
-              {state.streak}
-            </span>
-          </div>
+            {state.streak}
+          </span>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-self-end gap-3">
           <div className="text-xs uppercase tracking-widest text-white/40">
             Best {state.bestStreak}
           </div>

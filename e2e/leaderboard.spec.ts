@@ -71,15 +71,32 @@ test('first streak gates on email, the score posts, the board lists the player, 
   await expect(page.getByRole('button', { name: 'Play again' })).toBeVisible()
   await expect(page.getByTestId('rank-line')).toContainText(/#\d+ on today's leaderboard/i)
   await page.getByTestId('open-board').click()
+  await expect(page).toHaveURL(/\/leaderboard$/)
   const mine = page.locator('[data-testid="board-row"][data-you="true"]')
   await expect(mine).toContainText(name)
   await expect(mine).toContainText('1')
+  // The browser's Back button closes the board (Frank, 2026-09-09).
+  await page.goBack()
+  await expect(page.getByTestId('leaderboard')).toHaveCount(0)
+  await expect(page).toHaveURL(/\/$/)
+  await page.getByTestId('open-board').click()
   await page.getByTestId('close-board').click()
   await expect(page.getByTestId('leaderboard')).toHaveCount(0)
+  await expect(page).toHaveURL(/\/$/)
 
   // The email is remembered: after a reload, Start plays with no gate.
   await page.reload()
   await page.getByRole('button', { name: 'Start' }).click()
   await expect(page.getByTestId('signup')).toHaveCount(0)
   await expect(page.getByTestId('faces')).toBeVisible({ timeout: 10_000 })
+})
+
+test('/leaderboard opens the board directly and Close lands on the home screen', async ({
+  page,
+}) => {
+  await page.goto('/leaderboard')
+  await expect(page.getByTestId('leaderboard')).toBeVisible()
+  await page.getByTestId('close-board').click()
+  await expect(page).toHaveURL(/\/$/)
+  await expect(page.getByRole('button', { name: 'Start' })).toBeVisible()
 })

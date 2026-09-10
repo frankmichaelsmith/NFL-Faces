@@ -187,8 +187,10 @@ describe('Leaderboard flow (decision 0008)', () => {
     const ours = screen.getAllByTestId('board-row')[1]!
     expect(ours).toHaveTextContent('Frank')
     expect(ours.dataset.you).toBe('true')
+    expect(location.pathname).toBe('/leaderboard')
     fireEvent.click(screen.getByTestId('close-board'))
     expect(screen.queryByTestId('leaderboard')).toBeNull()
+    await until(() => expect(location.pathname).toBe('/'))
     // Play again freely: no gate, and the next streak posts on its own.
     fireEvent.click(screen.getByRole('button', { name: 'Play again' }))
     await act(async () => {
@@ -230,6 +232,15 @@ describe('Leaderboard flow (decision 0008)', () => {
     })
     expect(screen.getByTestId('faces')).toBeInTheDocument()
     expect(client.identity()?.name).toBe('Al')
+  })
+
+  it('opening /leaderboard directly shows the board over the start screen', async () => {
+    history.replaceState(null, '', '/leaderboard')
+    render(<App bundle={bundle} config={config} deps={deps()} rng={mulberry32(1)} />)
+    expect(screen.getByTestId('leaderboard')).toBeInTheDocument()
+    fireEvent.click(screen.getByTestId('close-board'))
+    expect(screen.queryByTestId('leaderboard')).toBeNull()
+    expect(location.pathname).toBe('/')
   })
 
   it('a fresh device is not gated and can browse the board from the start screen', async () => {

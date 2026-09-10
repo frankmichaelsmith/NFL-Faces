@@ -5,6 +5,7 @@ import type { Bundle } from './game/bundle'
 import { VISIBLE_MODES, type GameConfig, type Mode } from './game/config'
 import { createLeaderboardClient, type LeaderboardClient } from './leaderboard/client'
 import { useLeaderboard } from './leaderboard/useLeaderboard'
+import { useBoardRoute } from './leaderboard/route'
 import { LeaderboardScreen } from './components/LeaderboardScreen'
 import { defaultRng, mulberry32, type Rng } from './game/rng'
 import { useGame, type GameDeps } from './state/useGame'
@@ -104,17 +105,13 @@ function Game({
   const game = useGame(bundle, mode, rng, IMAGE_BASE_URL, deps, overrides)
   const [client] = useState(() => deps.leaderboard ?? createLeaderboardClient())
   const lb = useLeaderboard(game, client)
-  const [boardOpen, setBoardOpen] = useState(false)
+  const route = useBoardRoute()
   const openBoard = (from: 'start' | 'gameover') => {
     game.analytics.track('leaderboard_opened', { from })
-    setBoardOpen(true)
+    route.openBoard()
   }
-  const board = boardOpen ? (
-    <LeaderboardScreen
-      client={client}
-      signedIn={!!lb.identity}
-      onClose={() => setBoardOpen(false)}
-    />
+  const board = route.open ? (
+    <LeaderboardScreen client={client} signedIn={!!lb.identity} onClose={route.closeBoard} />
   ) : null
   if (game.state.phase === 'idle')
     return (

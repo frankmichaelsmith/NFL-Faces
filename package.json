@@ -22,7 +22,8 @@
     "photos:find": "tsx scripts/find-photos.ts",
     "pull:probowl": "tsx scripts/pull-probowl.ts",
     "tiles": "tsx scripts/make-tiles.ts",
-    "candidates": "tsx scripts/find-candidates.ts"
+    "candidates": "tsx scripts/find-candidates.ts",
+    "extras": "tsx scripts/add-extras.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

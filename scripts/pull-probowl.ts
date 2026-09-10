@@ -157,6 +157,32 @@ async function main() {
     if (!found) log(`${season}: no Pro Bowl page found`)
   }
 
+  // 1b. Frank's extras (content/extra_selections.csv): non-Pro-Bowlers added to the pool by
+  // hand, already keyed by ESPN id. They stay in their own file (build:content merges them);
+  // here they only join the facts pull. Skipped when the player is on that season's roster.
+  const extraSelections: SelectionRow[] = []
+  try {
+    const { content: extras, errors: extraErrors } = parseProBowlContent({
+      selections: await readFile(path.join(CONTENT, 'extra_selections.csv'), 'utf8'),
+      players: PLAYER_HEADER.join(',') + '\n',
+      draftTeams: await readFile(path.join(CONTENT, 'draft_teams.csv'), 'utf8'),
+    })
+    const fatal = extraErrors.filter((e) => /missing columns|must be/.test(e))
+    if (fatal.length) throw new Error(`extra_selections.csv invalid:\n${fatal.join('\n')}`)
+    const onRoster = new Set(selections.map((s) => `${s.season}:${s.espn_id}`))
+    let added = 0
+    for (const x of extras.selections) {
+      if (x.season < args.first || x.season > args.through) continue
+      if (!x.espn_id || onRoster.has(`${x.season}:${x.espn_id}`)) continue
+      extraSelections.push({ ...x })
+      onRoster.add(`${x.season}:${x.espn_id}`)
+      added++
+    }
+    log(`extras: ${added} selections from extra_selections.csv join the facts pull`)
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e
+  }
+
   // 2. Resolve names → ESPN ids
   const factsCache = new Map<string, EspnAthleteFacts | null>()
   const facts = async (id: string) => {
@@ -322,7 +348,8 @@ async function main() {
   }
   if (fullbacks.length)
     log(`dropped ${fullbacks.length} fullback selection(s): ${fullbacks.reverse().join(', ')}`)
-  const ids = [...new Set(selections.map((s) => s.espn_id).filter(Boolean))]
+  const forFacts = [...selections, ...extraSelections]
+  const ids = [...new Set(forFacts.map((s) => s.espn_id).filter(Boolean))]
   log(
     `${selections.length} selections, ${ids.length} distinct players resolved, ${selections.filter((s) => !s.espn_id).length} unresolved`,
   )
@@ -346,17 +373,15 @@ async function main() {
     ) ?? draftTeams.find((t) => t.abbr === abbr)
 
   const players: PlayerRow[] = []
-  const titleFor = new Map(
-    selections.filter((s) => s.espn_id).map((s) => [s.espn_id, s.wiki_title]),
-  )
-  const posFor = new Map(selections.filter((s) => s.espn_id).map((s) => [s.espn_id, s.pos]))
+  const titleFor = new Map(forFacts.filter((s) => s.espn_id).map((s) => [s.espn_id, s.wiki_title]))
+  const posFor = new Map(forFacts.filter((s) => s.espn_id).map((s) => [s.espn_id, s.pos]))
   for (const id of ids) {
     const f = await facts(id)
     const prev = prevPlayers.get(id)
     const wikiTitle = titleFor.get(id)!
     const info = await infobox(wikiTitle)
     const pos = posFor.get(id)!
-    const name = f?.displayName ?? selections.find((s) => s.espn_id === id)!.name
+    const name = f?.displayName ?? forFacts.find((s) => s.espn_id === id)!.name
     // College: Wikipedia's last-listed school wins when ESPN knows the program.
     let college = f?.college ?? null
     let collegeSource = college ? 'espn' : info.college ? 'wikipedia (no logo)' : ''

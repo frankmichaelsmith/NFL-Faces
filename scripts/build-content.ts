@@ -85,11 +85,20 @@ async function main() {
 async function readProBowl() {
   const read = (f: string) => readFile(path.join(ROOT, 'content', f), 'utf8')
   try {
-    const [selections, players, draftTeams] = await Promise.all([
+    const [roster, players, draftTeams] = await Promise.all([
       read('probowl_selections.csv'),
       read('probowl_players.csv'),
       read('draft_teams.csv'),
     ])
+    // Frank's extras (decision 0007, 2026-09-10): non-Pro-Bowlers in the pool, same columns.
+    let extras = ''
+    try {
+      extras = await read('extra_selections.csv')
+    } catch {
+      /* none */
+    }
+    const extraRows = extras.split('\n').slice(1).join('\n').trim()
+    const selections = extraRows ? roster.trimEnd() + '\n' + extraRows + '\n' : roster
     return { selections, players, draftTeams }
   } catch {
     return null

@@ -23,6 +23,36 @@ export class WikiClient {
     this.last = Date.now()
   }
 
+  /** Article titles matching a full-text search, best first. Cached on disk. */
+  async search(query: string, limit = 5): Promise<string[]> {
+    const key = createHash('sha1')
+      .update('search:' + query)
+      .digest('hex')
+    const file = path.join(this.cacheDir, key + '.json')
+    try {
+      return (JSON.parse(await readFile(file, 'utf8')) as { titles: string[] }).titles
+    } catch {
+      /* miss */
+    }
+    const q = new URLSearchParams({
+      action: 'query',
+      list: 'search',
+      srsearch: query,
+      srlimit: String(limit),
+      format: 'json',
+    })
+    await this.pace()
+    const res = await fetch(`https://en.wikipedia.org/w/api.php?${q}`, {
+      headers: { 'User-Agent': UA },
+    })
+    if (!res.ok) throw new Error(`Wikipedia search HTTP ${res.status} for ${query}`)
+    const body = (await res.json()) as { query?: { search?: { title: string }[] } }
+    const titles = (body.query?.search ?? []).map((r) => r.title)
+    await mkdir(this.cacheDir, { recursive: true })
+    await writeFile(file, JSON.stringify({ titles }))
+    return titles
+  }
+
   /** Wikitext of a page (following redirects), or null if it does not exist. Cached on disk. */
   async wikitext(title: string): Promise<string | null> {
     const key = createHash('sha1').update(title).digest('hex')

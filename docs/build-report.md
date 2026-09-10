@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-09T21:21:50.470Z.
+Generated 2026-09-10T04:21:58.248Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -147,43 +147,43 @@ None.
 
 ## Pro Bowl Mode
 
-**3881** combos across 31 seasons, 367 players, 119 colleges, 42 draft-team tiles.
+**6949** combos across 31 seasons, 556 players, 146 colleges, 42 draft-team tiles.
 
-By category: alma 980, draft 980, number 941, position 980.
+By category: alma 1824, draft 1817, number 1484, position 1824.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
-| 1995 | 28 | 28 | 112 |
-| 1996 | 29 | 29 | 103 |
-| 1997 | 29 | 29 | 104 |
-| 1998 | 30 | 30 | 106 |
-| 1999 | 25 | 25 | 100 |
-| 2000 | 31 | 31 | 124 |
-| 2001 | 33 | 33 | 132 |
-| 2002 | 30 | 30 | 120 |
-| 2003 | 30 | 30 | 120 |
-| 2004 | 29 | 29 | 116 |
-| 2005 | 28 | 28 | 112 |
-| 2006 | 27 | 27 | 108 |
-| 2007 | 30 | 30 | 120 |
-| 2008 | 27 | 27 | 108 |
-| 2009 | 35 | 35 | 140 |
-| 2010 | 31 | 31 | 124 |
-| 2011 | 32 | 32 | 128 |
-| 2012 | 35 | 35 | 140 |
-| 2013 | 33 | 33 | 132 |
-| 2014 | 36 | 36 | 144 |
-| 2015 | 34 | 34 | 136 |
-| 2016 | 40 | 40 | 160 |
-| 2017 | 35 | 35 | 140 |
-| 2018 | 37 | 37 | 148 |
-| 2019 | 35 | 35 | 140 |
-| 2020 | 24 | 24 | 96 |
-| 2021 | 32 | 32 | 128 |
-| 2022 | 32 | 32 | 128 |
-| 2023 | 35 | 35 | 140 |
-| 2024 | 34 | 34 | 136 |
-| 2025 | 34 | 34 | 136 |
+| 1995 | 39 | 39 | 149 |
+| 1996 | 43 | 43 | 152 |
+| 1997 | 45 | 45 | 165 |
+| 1998 | 52 | 52 | 187 |
+| 1999 | 38 | 38 | 148 |
+| 2000 | 56 | 56 | 213 |
+| 2001 | 59 | 59 | 222 |
+| 2002 | 60 | 60 | 227 |
+| 2003 | 58 | 58 | 218 |
+| 2004 | 58 | 58 | 215 |
+| 2005 | 58 | 58 | 219 |
+| 2006 | 57 | 57 | 216 |
+| 2007 | 60 | 60 | 227 |
+| 2008 | 57 | 57 | 214 |
+| 2009 | 65 | 65 | 245 |
+| 2010 | 61 | 61 | 227 |
+| 2011 | 62 | 62 | 232 |
+| 2012 | 65 | 65 | 246 |
+| 2013 | 63 | 63 | 236 |
+| 2014 | 66 | 66 | 254 |
+| 2015 | 64 | 64 | 241 |
+| 2016 | 70 | 70 | 263 |
+| 2017 | 65 | 65 | 245 |
+| 2018 | 67 | 67 | 264 |
+| 2019 | 65 | 65 | 255 |
+| 2020 | 54 | 54 | 207 |
+| 2021 | 62 | 62 | 244 |
+| 2022 | 62 | 62 | 246 |
+| 2023 | 65 | 65 | 260 |
+| 2024 | 64 | 64 | 256 |
+| 2025 | 64 | 64 | 256 |
 
 ### Unresolved selections (0)
 
@@ -193,10 +193,10 @@ None.
 
 None.
 
-### Players missing jersey (16)
+### Players missing jersey (103)
 
-Andre Rison, Chris Chandler, Dorsey Levens, Doug Flutie, Ed McCaffrey, Eric Metcalf, Gus Frerotte, Irving Fryar, Michael Bates, Randall Cunningham, Roell Preston, Terry Allen, Tony Martin, Travis Jervey, Trent Dilfer, Vinny Testaverde
+Aaron Hernandez, Alfred Morris, Amani Toomer, Andre Reed, Andre Rison, Antonio Bryant, Antowain Smith, Blake Bortles, Bobby Engram, Brandon LaFell, Brandon Myers, Brandon Stokley, Carlos Hyde, Cecil Shorts III, Chris Chandler, Curtis Conway, Damien Harris, Danny Woodhead, David Carr, DeVante Parker, Devin Funchess, Dominic Rhodes, Dorsey Levens, Doug Flutie, Drew Bennett, Earnest Graham, Ed McCaffrey, Eddie Kennison, Eric Decker, Eric Metcalf, Fred Jackson, Gus Frerotte, Hakeem Nicks, Irving Fryar, Isaiah Crowell, James Robinson, Jason Campbell, Jay Fiedler, Jeff George, Jeremy Hill, Jim Everett, Joey Galloway, Joey Harrington, John Brown, Joique Bell, Josh Freeman, Kelvin Benjamin, Kenny Britt, Kenyan Drake, Kevin Curtis, Kevin Johnson, Knowshon Moreno, Koren Robinson, Kyle Orton, LaMont Jordan, Lance Moore, LeGarrette Blount, Leonard Fournette, Mario Manningham, Mark Sanchez, Marquise Goodwin, Marvin Jones Jr., Michael Bates, Michael Clayton, Michael Floyd, Michael Pittman, Mike Furrey, Mike Sims-Walker, Mike Williams, Nate Washington, Peyton Hillis, Pierre Garcon, Plaxico Burress, Qadry Ismail, Randall Cunningham, Randy McMichael, Rashard Mendenhall, Reggie Bush, Reuben Droughns, Rex Grossman, Rishard Matthews, Robert Brooks, Rod Gardner, Roell Preston, Ronald Jones, Ryan Fitzpatrick, Sam Bradford, Sammy Watkins, Spencer Ware, Stevan Ridley, Steve Slaton, Stevie Johnson, Terry Allen, Tommy Maddox, Tony Martin, Tony McGee, Torrey Smith, Travis Jervey, Trent Dilfer, Trent Richardson, Ty Detmer, Tyrell Williams, Vinny Testaverde
 
-### Players missing draft (0)
+### Players missing draft (6)
 
-None.
+Allen Hurns, Bill Schroeder, Jackie Harris, James Stewart, Jim Kelly, Ty Detmer

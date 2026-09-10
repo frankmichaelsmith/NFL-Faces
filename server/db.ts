@@ -12,6 +12,7 @@ import type {
   DailyTotals,
   LeaderboardStore,
   Player,
+  PlayerDay,
   RankedScore,
 } from './leaderboard.js'
 
@@ -62,6 +63,20 @@ export const dailyTotals = pgTable(
   (t) => [primaryKey({ columns: [t.day, t.mode] })],
 )
 
+export const playerDays = pgTable(
+  'player_days',
+  {
+    player_id: text('player_id')
+      .notNull()
+      .references(() => players.id),
+    day: text('day').notNull(),
+    mode: text('mode').notNull(),
+    rounds: integer('rounds').notNull(),
+    games: integer('games').notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.player_id, t.day, t.mode] })],
+)
+
 export const ENSURE_SCHEMA_SQL = `
 CREATE TABLE IF NOT EXISTS players (
   id text PRIMARY KEY,
@@ -90,6 +105,14 @@ CREATE TABLE IF NOT EXISTS daily_scores (
   PRIMARY KEY (player_id, day, mode)
 );
 CREATE INDEX IF NOT EXISTS daily_scores_board_idx ON daily_scores (mode, day, streak DESC, achieved_at ASC);
+CREATE TABLE IF NOT EXISTS player_days (
+  player_id text NOT NULL REFERENCES players(id),
+  day text NOT NULL,
+  mode text NOT NULL,
+  rounds integer NOT NULL,
+  games integer NOT NULL,
+  PRIMARY KEY (player_id, day, mode)
+);
 CREATE TABLE IF NOT EXISTS daily_totals (
   day text NOT NULL,
   mode text NOT NULL,
@@ -239,5 +262,45 @@ export class DrizzleLeaderboardStore implements LeaderboardStore {
       .where(and(eq(dailyTotals.day, day), eq(dailyTotals.mode, mode)))
     const r = rows[0]
     return r ? { day, mode, rounds: r.rounds, games: r.games } : { day, mode, rounds: 0, games: 0 }
+  }
+  async addPlayerGame(playerId: string, day: string, mode: string, rounds: number) {
+    await this.db
+      .insert(playerDays)
+      .values({ player_id: playerId, day, mode, rounds, games: 1 })
+      .onConflictDoUpdate({
+        target: [playerDays.player_id, playerDays.day, playerDays.mode],
+        set: {
+          rounds: sql`${playerDays.rounds} + ${rounds}`,
+          games: sql`${playerDays.games} + 1`,
+        },
+      })
+  }
+  async playerDays(
+    day: string,
+    mode: string,
+  ): Promise<(PlayerDay & { name: string; best: number })[]> {
+    const rows = await this.db
+      .select({ pd: playerDays, name: players.name, best: dailyScores.streak })
+      .from(playerDays)
+      .innerJoin(players, eq(players.id, playerDays.player_id))
+      .leftJoin(
+        dailyScores,
+        and(
+          eq(dailyScores.player_id, playerDays.player_id),
+          eq(dailyScores.day, playerDays.day),
+          eq(dailyScores.mode, playerDays.mode),
+        ),
+      )
+      .where(and(eq(playerDays.day, day), eq(playerDays.mode, mode)))
+      .orderBy(desc(playerDays.rounds), desc(playerDays.games))
+    return rows.map((r) => ({
+      playerId: r.pd.player_id,
+      day: r.pd.day,
+      mode: r.pd.mode,
+      rounds: r.pd.rounds,
+      games: r.pd.games,
+      name: r.name,
+      best: r.best ?? 0,
+    }))
   }
 }

@@ -52,6 +52,16 @@ export interface LeaderboardResponse {
   rounds: number
 }
 
+/** Who played how much on one day (names are already public on the board). */
+export interface StatsResponse {
+  day: string
+  mode: 'probowl'
+  /** Players with at least one posted game, most rounds first. */
+  players: { name: string; rounds: number; games: number; best: number }[]
+  rounds: number
+  games: number
+}
+
 export interface HealthResponse {
   ok: boolean
   store: 'neon' | 'memory'

@@ -4,7 +4,15 @@
  * dev and preview servers (server/vite-plugin.ts) and in tests.
  */
 import type { HealthResponse } from '../src/leaderboard/types.js'
-import { etDay, leaderboard, postScore, register, type Deps, type Result } from './leaderboard.js'
+import {
+  etDay,
+  leaderboard,
+  postScore,
+  register,
+  stats,
+  type Deps,
+  type Result,
+} from './leaderboard.js'
 import type { Runtime } from './runtime.js'
 
 const VERSION =
@@ -62,6 +70,9 @@ export async function route(
       case '/api/leaderboard':
         if (request.method !== 'GET') return json(405, { error: 'method', message: 'GET only' })
         return reply(await leaderboard(deps, bearer(request), url.searchParams.get('day')))
+      case '/api/stats':
+        if (request.method !== 'GET') return json(405, { error: 'method', message: 'GET only' })
+        return reply(await stats(deps, url.searchParams.get('day')))
       default:
         return json(404, { error: 'not_found', message: `No route ${path}` })
     }

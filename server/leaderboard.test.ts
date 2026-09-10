@@ -6,10 +6,16 @@ import {
   leaderboard,
   postScore,
   register,
+  stats,
   type Deps,
 } from './leaderboard'
 import { route } from './http'
-import type { LeaderboardResponse, RegisterResponse, ScoreResponse } from '../src/leaderboard/types'
+import type {
+  LeaderboardResponse,
+  RegisterResponse,
+  ScoreResponse,
+  StatsResponse,
+} from '../src/leaderboard/types'
 
 /** A clock that ticks one second per call, starting at a fixed Eastern-evening instant. */
 function clock(start = '2026-09-09T20:00:00.000Z') {
@@ -101,6 +107,20 @@ describe('postScore', () => {
     const b = ok<LeaderboardResponse>(await leaderboard(d, token, null))
     expect(b.rounds).toBe(9)
     expect(await d.store.totals('2026-09-09', 'probowl')).toMatchObject({ rounds: 9, games: 3 })
+    // per player: the same three games, with the day's best alongside
+    const { token: t2 } = ok<RegisterResponse>(
+      await register(d, { email: 'b@b.co', name: 'Bo' }),
+      201,
+    )
+    await postScore(d, t2, { streak: 7, rounds: 8, roll: null, mode: 'probowl' })
+    const s = ok<StatsResponse>(await stats(d, null))
+    expect(s.players).toEqual([
+      { name: 'Al', rounds: 9, games: 3, best: 4 },
+      { name: 'Bo', rounds: 8, games: 1, best: 7 },
+    ])
+    expect(s).toMatchObject({ day: '2026-09-09', rounds: 17, games: 4 })
+    expect((await stats(d, 'nope')).status).toBe(400)
+    expect(ok<StatsResponse>(await stats(d, '2020-01-01')).players).toEqual([])
     expect(
       (await postScore(d, token, { streak: 1, rounds: 5000, roll: null, mode: 'probowl' })).status,
     ).toBe(400)

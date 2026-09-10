@@ -19,6 +19,7 @@ import type {
   LeaderboardRow,
   RegisterResponse,
   ScoreResponse,
+  StatsResponse,
 } from '../src/leaderboard/types.js'
 
 export const BOARD_MODE = 'probowl' as const
@@ -43,6 +44,14 @@ export interface DailyScore {
 }
 export interface RankedScore extends DailyScore {
   name: string
+}
+/** One player's activity on one day and mode: every post counts, improving or not. */
+export interface PlayerDay {
+  playerId: string
+  day: string
+  mode: string
+  rounds: number
+  games: number
 }
 /** Running totals for one day and mode, bumped by every score post (improving or not). */
 export interface DailyTotals {
@@ -70,6 +79,10 @@ export interface LeaderboardStore {
   /** Add one game of `rounds` rounds to the day's totals. */
   addGame(day: string, mode: string, rounds: number): Promise<void>
   totals(day: string, mode: string): Promise<DailyTotals>
+  /** Add one game of `rounds` rounds to the player's own day. */
+  addPlayerGame(playerId: string, day: string, mode: string, rounds: number): Promise<void>
+  /** Every player's activity for the day, most rounds first, with their best streak and name. */
+  playerDays(day: string, mode: string): Promise<(PlayerDay & { name: string; best: number })[]>
 }
 
 // ---- time ---------------------------------------------------------------------------------
@@ -182,7 +195,9 @@ export async function postScore(
   const { streak, roll, mode } = parsed.data
   const now = deps.now()
   const day = etDay(now)
-  await deps.store.addGame(day, mode, parsed.data.rounds ?? streak + 1)
+  const rounds = parsed.data.rounds ?? streak + 1
+  await deps.store.addGame(day, mode, rounds)
+  await deps.store.addPlayerGame(player.id, day, mode, rounds)
   const current = await deps.store.getScore(player.id, day, mode)
   let best = current
   let improved = false
@@ -221,6 +236,25 @@ export async function leaderboard(
   return { status: 200, body: { day, mode: BOARD_MODE, rows, you, players, rounds } }
 }
 
+/** Who played how much today (or on `dayParam`). Public: it shows only board names and counts. */
+export async function stats(deps: Deps, dayParam: string | null): Promise<Result<StatsResponse>> {
+  if (dayParam !== null && !DAY_RE.test(dayParam))
+    return fail(400, 'invalid', 'day must be YYYY-MM-DD')
+  const day = dayParam ?? etDay(deps.now())
+  const rows = await deps.store.playerDays(day, BOARD_MODE)
+  const t = await deps.store.totals(day, BOARD_MODE)
+  return {
+    status: 200,
+    body: {
+      day,
+      mode: BOARD_MODE,
+      players: rows.map((r) => ({ name: r.name, rounds: r.rounds, games: r.games, best: r.best })),
+      rounds: t.rounds,
+      games: t.games,
+    },
+  }
+}
+
 // ---- in-memory store (dev and tests) ----------------------------------------------------------
 
 /** Ordering shared by every store: best streak first, earliest achievement first among equals. */
@@ -233,6 +267,7 @@ export class InMemoryLeaderboardStore implements LeaderboardStore {
   tokens = new Map<string, string>() // token hash → player id
   scores = new Map<string, DailyScore>() // by player:day:mode
   dayTotals = new Map<string, DailyTotals>() // by day:mode
+  playerDayMap = new Map<string, PlayerDay>() // by player:day:mode
 
   async findPlayerByEmail(email: string) {
     return [...this.players.values()].find((p) => p.email === email) ?? null
@@ -274,5 +309,20 @@ export class InMemoryLeaderboardStore implements LeaderboardStore {
   }
   async totals(day: string, mode: string) {
     return this.dayTotals.get(`${day}:${mode}`) ?? { day, mode, rounds: 0, games: 0 }
+  }
+  async addPlayerGame(playerId: string, day: string, mode: string, rounds: number) {
+    const k = `${playerId}:${day}:${mode}`
+    const p = this.playerDayMap.get(k) ?? { playerId, day, mode, rounds: 0, games: 0 }
+    this.playerDayMap.set(k, { ...p, rounds: p.rounds + rounds, games: p.games + 1 })
+  }
+  async playerDays(day: string, mode: string) {
+    return [...this.playerDayMap.values()]
+      .filter((p) => p.day === day && p.mode === mode)
+      .sort((a, b) => b.rounds - a.rounds || b.games - a.games)
+      .map((p) => ({
+        ...p,
+        name: this.players.get(p.playerId)?.name ?? '?',
+        best: this.scores.get(`${p.playerId}:${day}:${mode}`)?.streak ?? 0,
+      }))
   }
 }

@@ -3,8 +3,8 @@ import { PGlite } from '@electric-sql/pglite'
 import { drizzle } from 'drizzle-orm/pglite'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { DrizzleLeaderboardStore, ensureSchema } from './db'
-import { leaderboard, postScore, register, type Deps } from './leaderboard'
-import type { LeaderboardResponse, RegisterResponse } from '../src/leaderboard/types'
+import { leaderboard, postScore, register, stats, type Deps } from './leaderboard'
+import type { LeaderboardResponse, RegisterResponse, StatsResponse } from '../src/leaderboard/types'
 
 /**
  * Parity suite: the Drizzle store against real Postgres (PGlite in-process),
@@ -55,6 +55,10 @@ describe('DrizzleLeaderboardStore', () => {
     expect(board.rounds).toBe(6 + 10 + 6 + 4) // four Pro Bowl posts, each streak + 1
     await postScore(deps, a.token, { streak: 1, rounds: 2, roll: null, mode: 'probowl' })
     expect(await deps.store.totals('2026-09-09', 'probowl')).toMatchObject({ rounds: 28, games: 5 })
+    const s = (await stats(deps, null)).body as StatsResponse
+    expect(s.players[0]).toEqual({ name: 'Ann', rounds: 6 + 4 + 2, games: 3, best: 5 })
+    expect(s.players.map((p) => p.name)).toEqual(['Ann', 'Ben', 'Cal'])
+    expect(s).toMatchObject({ rounds: 28, games: 5 })
     // re-register from another device: same player id, new name, and both tokens keep working
     const a2 = (await register(deps, { email: 'ANN@x.co', name: 'Annie' })).body as RegisterResponse
     expect(a2.playerId).toBe('p1')

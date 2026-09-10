@@ -21,12 +21,15 @@ const SIZE = 512
 const FLAG_SIZE = 320
 
 function tileSvg(label: string, color: string, alt: string, size = SIZE): string {
-  const long = label.length > 4
-  const font = long
-    ? Math.round(size * 0.17)
-    : label.length === 2
-      ? Math.round(size * 0.5)
-      : Math.round(size * 0.42)
+  // Five or more letters (UNDRAFTED) run small; four (NONE, UTAH) must still clear the rounded edges.
+  const font =
+    label.length >= 5
+      ? Math.round(size * 0.17)
+      : label.length === 4
+        ? Math.round(size * 0.3)
+        : label.length === 2
+          ? Math.round(size * 0.5)
+          : Math.round(size * 0.42)
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
   <rect width="${size}" height="${size}" rx="${Math.round(size * 0.22)}" fill="#${color}"/>
   <text x="50%" y="50%" dy="${Math.round(font * 0.36)}" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="900" font-size="${font}" fill="#${alt}" letter-spacing="${-font * 0.03}">${label}</text>

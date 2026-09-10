@@ -63,6 +63,8 @@ export interface ProBowlSection {
   rosters: Record<string, string[]>
   /** Number worn in that season, by season then player id. The "Jersey Number" truth. */
   numbers: Record<string, Record<string, number>>
+  /** Seasons where a player wore more than one number (Jordan 1994–95: 45 and 23); every listed number is a correct answer. */
+  numbersWorn?: Record<string, Record<string, number[]>>
   players: Record<string, ProBowlPlayer>
   colleges: Record<string, { name: string; logo: string | null }>
   /** Draft-team tiles: label printed on the tile plus its colours. */

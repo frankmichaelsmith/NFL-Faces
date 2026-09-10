@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
+  PLAYER_HEADER,
   buildProBowl,
   parseProBowlContent,
   type DraftTeamRow,
@@ -211,7 +212,41 @@ describe('parseProBowlContent', () => {
     })
     expect(errors).toContain('probowl_selections.csv:3: season must be an integer')
     expect(errors).toContain('probowl_selections.csv:3: pos must be one of QB/RB/WR/TE')
-    expect(errors).toContain('probowl_selections.csv:3: number must be an integer or empty')
+    expect(errors).toContain(
+      'probowl_selections.csv:3: number must be integers ("8" or "45/23") or empty',
+    )
     expect(errors).toContain('probowl_players.csv: Ben drafted by unknown team key "ZZZ"')
+  })
+})
+
+describe('two numbers in one season', () => {
+  it('emits one number combo per worn number, with the other never a wrong card', () => {
+    const { content, errors } = parseProBowlContent({
+      selections: `season,pos,number,wiki_title,name,team,espn_id,note
+1995,QB,45/23,Michael Jordan,Michael Jordan,CHI,1035,
+1995,QB,12,Other Guy,Other Guy,X,2,
+1995,QB,7,Third Guy,Third Guy,X,3,
+`,
+      players: `${PLAYER_HEADER.join(',')}
+1035,Michael Jordan,QB,23,espn,c1,State,x,espn,drafted,1984,1,3,PIT,Pittsburgh Steelers,espn,true,
+2,Other Guy,QB,12,espn,c1,State,x,espn,drafted,2000,1,1,PIT,Pittsburgh Steelers,espn,true,
+3,Third Guy,QB,7,espn,c1,State,x,espn,drafted,2000,1,1,PIT,Pittsburgh Steelers,espn,true,
+`,
+      draftTeams:
+        'abbr,label,name,color,alt_color,first_season,last_season,notes\nPIT,PIT,Pittsburgh Steelers,000000,FFB612,1933,,\n',
+    })
+    expect(errors).toEqual([])
+    expect(content.selections[0]!.numbers).toEqual([45, 23])
+    const { section } = buildProBowl(content, { categories: ['number'] })
+    const mj = section.combos.filter((c) => c.player === '1035')
+    expect(mj.map((c) => c.answer).sort()).toEqual(['23', '45'])
+    for (const c of mj) expect(c.distractors.sort()).toEqual(['12', '7'])
+    expect(section.numbersWorn).toEqual({ '1995': { '1035': [45, 23] } })
+    // other players may see 45 or 23 as wrong cards
+    expect(section.combos.find((c) => c.player === '2')!.distractors.sort()).toEqual([
+      '23',
+      '45',
+      '7',
+    ])
   })
 })

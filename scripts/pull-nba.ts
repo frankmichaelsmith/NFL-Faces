@@ -221,9 +221,11 @@ async function main() {
       continue
     }
     if (found.size > 1) {
-      // Traded mid-season and wore two numbers: no safe single answer for that season.
+      // Two numbers in one season: both are correct answers (Frank, 2026-09-10).
       conflicting.push(`${s.season} ${s.name} (${[...found].join('/')})`)
-      s.number = null
+      s.numbers = [...found]
+      s.number = s.numbers[0]!
+      numbered++
       continue
     }
     s.number = [...found][0]!
@@ -415,7 +417,9 @@ async function main() {
     path.join(CONTENT, 'nba_selections.csv'),
     serializeCsv(
       [...SELECTION_HEADER],
-      selections.map((s) => SELECTION_HEADER.map((h) => s[h])),
+      selections.map((s) =>
+        SELECTION_HEADER.map((h) => (h === 'number' && s.numbers ? s.numbers.join('/') : s[h])),
+      ),
     ),
   )
   const header = [...PLAYER_HEADER, ...COUNTRY_COLS] as const

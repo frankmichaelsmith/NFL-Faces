@@ -22,6 +22,8 @@ export interface SelectionRow {
   pos: Skill
   /** Number worn that season, from the Pro Bowl roster page. The "Pro Number" answer. */
   number: number | null
+  /** Every number worn that season when there was more than one ("45/23" in the CSV: Jordan 1994–95). All are correct. */
+  numbers?: number[]
   wiki_title: string
   name: string
   team: string
@@ -173,13 +175,22 @@ export function parseProBowlContent(
       errors.push(
         `probowl_selections.csv:${r.__line}: espn_id must be numeric, "wiki:Title", or empty`,
       )
-    const number = intOrNull(r.number!)
-    if (Number.isNaN(number))
-      errors.push(`probowl_selections.csv:${r.__line}: number must be an integer or empty`)
+    // "8" or, for a season with two numbers worn, "45/23" — both count as correct.
+    const numberParts = r
+      .number!.split('/')
+      .map((x) => x.trim())
+      .filter(Boolean)
+    const numbersWorn = numberParts.map(intOrNull).filter((x): x is number => x !== null)
+    const number = numbersWorn[0] ?? null
+    if (numbersWorn.some(Number.isNaN) || numbersWorn.length !== numberParts.length)
+      errors.push(
+        `probowl_selections.csv:${r.__line}: number must be integers ("8" or "45/23") or empty`,
+      )
     return {
       season: season ?? 0,
       pos: r.pos as Skill,
       number,
+      numbers: numbersWorn.length > 1 ? numbersWorn : undefined,
       wiki_title: r.wiki_title!,
       name: r.name!,
       team: r.team!,
@@ -317,6 +328,7 @@ export function buildProBowl(
   // Rosters: resolved, included selections per season.
   const rosters: Record<string, string[]> = {}
   const numbers: Record<string, Record<string, number>> = {}
+  const numbersWorn: Record<string, Record<string, number[]>> = {}
   const unresolved: ProBowlReport['unresolved'] = []
   const named = new Map<number, number>()
   for (const s of c.selections) {
@@ -330,6 +342,8 @@ export function buildProBowl(
     // The number worn that season; the player's last-worn number only as a fallback.
     const n = s.number ?? players.get(s.espn_id)!.jersey
     if (n !== null) (numbers[String(s.season)] ??= {})[s.espn_id] = n
+    if (s.numbers && s.numbers.length > 1)
+      (numbersWorn[String(s.season)] ??= {})[s.espn_id] = s.numbers
   }
   const seasons = Object.keys(rosters)
     .map(Number)
@@ -356,13 +370,15 @@ export function buildProBowl(
   for (const season of Object.keys(numbers))
     for (const [id, n] of Object.entries(numbers[season]!)) {
       const pos = players.get(id)!.pos
-      ;(numbersByPos.get(pos) ?? numbersByPos.set(pos, new Set()).get(pos)!).add(String(n))
+      const set = numbersByPos.get(pos) ?? numbersByPos.set(pos, new Set()).get(pos)!
+      for (const worn of numbersWorn[season]?.[id] ?? [n]) set.add(String(worn))
     }
 
   const section: ProBowlSection = {
     seasons,
     rosters,
     numbers,
+    numbersWorn,
     players: {},
     colleges: {},
     teams: {},
@@ -439,12 +455,17 @@ export function buildProBowl(
         )
       }
       const worn = numbers[String(season)]?.[id]
-      if (categories.includes('number') && worn !== undefined)
-        emit(
-          'number',
-          String(worn),
-          [...(numbersByPos.get(p.pos) ?? [])].filter((x) => x !== String(worn)),
-        )
+      if (categories.includes('number') && worn !== undefined) {
+        // Two numbers in one season (Frank, 2026-09-10: Jordan 1994–95): one combo per number, each
+        // correct, the other number never a wrong card; a streak rolls a player at most once anyway.
+        const all = (numbersWorn[String(season)]?.[id] ?? [worn]).map(String)
+        for (const n of all)
+          emit(
+            'number',
+            n,
+            [...(numbersByPos.get(p.pos) ?? [])].filter((x) => !all.includes(x)),
+          )
+      }
       if (categories.includes('position'))
         emit(
           'position',

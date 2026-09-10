@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-10T14:29:15.524Z.
+Generated 2026-09-10T14:42:05.612Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -203,13 +203,13 @@ Allen Hurns, Bill Schroeder, Jackie Harris, James Stewart, Jim Kelly, Ty Detmer
 
 ## NBA
 
-**6178** combos across 31 seasons, 358 players, 110 colleges, 36 draft-team tiles.
+**6181** combos across 31 seasons, 358 players, 110 colleges, 36 draft-team tiles.
 
-By category: alma 1550, draft 1550, number 1535, position 0.
+By category: alma 1550, draft 1550, number 1538, position 0.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
-| 1995 | 50 | 50 | 198 |
+| 1995 | 50 | 50 | 200 |
 | 1996 | 50 | 50 | 199 |
 | 1997 | 50 | 50 | 200 |
 | 1998 | 50 | 50 | 200 |
@@ -234,7 +234,7 @@ By category: alma 1550, draft 1550, number 1535, position 0.
 | 2017 | 50 | 50 | 200 |
 | 2018 | 50 | 50 | 200 |
 | 2019 | 50 | 50 | 200 |
-| 2020 | 50 | 50 | 200 |
+| 2020 | 50 | 50 | 201 |
 | 2021 | 50 | 50 | 200 |
 | 2022 | 50 | 50 | 198 |
 | 2023 | 50 | 50 | 199 |

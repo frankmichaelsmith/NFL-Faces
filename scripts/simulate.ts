@@ -140,15 +140,24 @@ async function main() {
         fail(`${key}: player not on that season's roster`)
       // the answer really is the player's attribute
       const p = pb.players[c.player]!
-      const truth =
+      const truths: (string | null)[] =
         c.category === 'alma'
-          ? p.college
+          ? [p.college]
           : c.category === 'draft'
-            ? p.draft
+            ? [p.draft]
             : c.category === 'number'
-              ? String(pb.numbers[String(c.season)]?.[c.player])
-              : p.pos
-      if (truth !== c.answer) fail(`${key}: answer ${c.answer} ≠ player attribute ${truth}`)
+              ? (pb.numbersWorn?.[String(c.season)]?.[c.player]?.map(String) ?? [
+                  String(pb.numbers[String(c.season)]?.[c.player]),
+                ])
+              : c.category === 'country'
+                ? [p.country ?? null]
+                : [p.pos]
+      if (!truths.includes(c.answer))
+        fail(`${key}: answer ${c.answer} ≠ player attribute ${truths.join('/')}`)
+      // A wrong card is never another number the player wore that season (Jordan 1994–95).
+      if (c.category === 'number')
+        for (const o of r.options)
+          if (o !== c.answer && truths.includes(o)) fail(`${key}: ${o} shown as wrong but worn`)
       slots[r.answerSlot] = (slots[r.answerSlot] ?? 0) + 1
       byCat[c.category] = (byCat[c.category] ?? 0) + 1
       if (c.season < 2000) legacyRounds++

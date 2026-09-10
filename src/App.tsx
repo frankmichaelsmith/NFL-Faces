@@ -11,10 +11,12 @@ import { useGame, type GameDeps } from './state/useGame'
 import { loadStats, saveStats, setLastMode } from './storage/local'
 
 const IMAGE_BASE_URL = (import.meta.env.VITE_IMAGE_BASE_URL as string | undefined) ?? '/faces/'
-/** Public URL printed on share cards. Falls back to wherever the page is served from. */
-export const SITE_URL =
-  (import.meta.env.VITE_SITE_URL as string | undefined) ??
-  (typeof location !== 'undefined' ? location.origin : 'https://nflfaces.app')
+/**
+ * Address printed at the end of every share (Frank, 2026-09-09). A constant on
+ * purpose: the Vercel project still carries an old VITE_SITE_URL, and the share
+ * must read www.spinstreak.app wherever the game is served from.
+ */
+export const SITE_URL = 'https://www.spinstreak.app'
 
 interface Props {
   /** Injected in tests; otherwise fetched from /data/bundle.json. */

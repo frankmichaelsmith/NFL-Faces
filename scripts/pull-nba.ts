@@ -27,11 +27,25 @@ import {
   type SelectionRow,
 } from './lib/probowl'
 import { WikiClient, field, nameKey, parseInfobox, plainName } from './lib/wiki'
+import { parseRosterNumbers, teamSeasonTitles } from './lib/nba-rosters'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CONTENT = path.join(ROOT, 'content')
 const NBA_BASE = 'https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba'
 export const NBA_POSITIONS = ['G', 'F', 'C'] as const
+/** ESPN display names that roster tables spell differently (nicknames, later legal names). */
+const ROSTER_ALIASES: Record<string, string[]> = {
+  'Anfernee Hardaway': ['Penny Hardaway'],
+  'Larry D. Johnson': ['Larry Johnson'],
+  'Tyrone Bogues': ['Muggsy Bogues'],
+  'Metta World Peace': ['Ron Artest', 'Metta Sandiford-Artest'],
+  'Enes Freedom': ['Enes Kanter'],
+  'JR Smith': ['J. R. Smith', 'J.R. Smith'],
+  'Isaiah Rider': ['J. R. Rider', 'J.R. Rider', 'Isaiah Rider'],
+  'Yao Ming': ['Ming Yao'],
+}
+/** "j r smith" and "jr smith" are the same key once spaced initials collapse. */
+const looseKey = (name: string) => nameKey(name).replace(/\b([a-z]) (?=[a-z]\b)/g, '$1')
 const TOP_PPG = 40
 const TOP_OTHER = 5
 
@@ -146,11 +160,10 @@ async function main() {
         log(`${season}: ESPN athlete ${id} has no record; skipped`)
         continue
       }
-      const prevSel = existing.selections.find((s) => s.season === season && s.espn_id === id)
       selections.push({
         season,
         pos: (coarsePosition(f.position) || 'F') as SelectionRow['pos'],
-        number: prevSel?.number ?? null,
+        number: null,
         wiki_title: prevTitle.get(id) ?? '',
         name: f.displayName,
         team: '',
@@ -160,6 +173,69 @@ async function main() {
     }
     log(`${season}: ${chosen.size} players`)
   }
+
+  // 1c. Jersey numbers for the season, from Wikipedia team-season roster tables (all 30 teams per season).
+  const rostersBySeason = new Map<number, Map<string, Set<number>>>()
+  const seasonsNeeded = [...new Set(selections.map((s) => s.season))]
+  let pagesRead = 0
+  for (const season of seasonsNeeded) {
+    const byKey = new Map<string, Set<number>>()
+    for (const title of teamSeasonTitles(season)) {
+      const text = await wiki.wikitext(title)
+      if (!text) {
+        log(`${season}: no page "${title}"`)
+        continue
+      }
+      pagesRead++
+      for (const r of parseRosterNumbers(text))
+        (byKey.get(r.key) ?? byKey.set(r.key, new Set()).get(r.key)!).add(r.number)
+    }
+    rostersBySeason.set(season, byKey)
+  }
+  let numbered = 0
+  const conflicting: string[] = []
+  const unlisted: string[] = []
+  const byLast: string[] = []
+  for (const s of selections) {
+    const table = rostersBySeason.get(s.season)
+    let found = table?.get(nameKey(s.name))
+    if (!found && table) {
+      // Aliases, then initials-insensitive keys, then a last name that is unique on that season's rosters.
+      for (const alias of ROSTER_ALIASES[s.name] ?? [])
+        if ((found = table.get(nameKey(alias)))) break
+      if (!found) {
+        const want = looseKey(s.name)
+        for (const [k, v] of table) if (looseKey(k) === want) found = v
+      }
+      if (!found) {
+        const last = nameKey(s.name).split(' ').pop()!
+        const hits = [...table].filter(([k]) => k.split(' ').pop() === last)
+        if (hits.length === 1) {
+          found = hits[0]![1]
+          byLast.push(`${s.season} ${s.name} ← ${hits[0]![0]}`)
+        }
+      }
+    }
+    if (!found || found.size === 0) {
+      unlisted.push(`${s.season} ${s.name}`)
+      continue
+    }
+    if (found.size > 1) {
+      // Traded mid-season and wore two numbers: no safe single answer for that season.
+      conflicting.push(`${s.season} ${s.name} (${[...found].join('/')})`)
+      s.number = null
+      continue
+    }
+    s.number = [...found][0]!
+    numbered++
+  }
+  log(
+    `season numbers: ${numbered}/${selections.length} selections from ${pagesRead} team-season pages; ${conflicting.length} wore two numbers; ${unlisted.length} not on any roster table`,
+  )
+  if (conflicting.length) log(`  two numbers: ${conflicting.join('; ')}`)
+  if (byLast.length) log(`  matched by unique last name (check): ${byLast.join('; ')}`)
+  if (unlisted.length)
+    log(`  not listed: ${unlisted.slice(0, 40).join('; ')}${unlisted.length > 40 ? ' …' : ''}`)
 
   // 2. Wikipedia article per player (for numbers worn and college gaps), verified against ESPN.
   const ids = [...new Set(selections.map((s) => s.espn_id))]
@@ -245,10 +321,8 @@ async function main() {
       countryName = prev.country_name
       countrySource = prev.country_source
     } else {
-      // Order: ESPN citizenship, Wikipedia nationality, ESPN birthplace, Wikipedia birthplace.
+      // Birthplace, not nationality (Frank, 2026-09-10: Kyrie Irving reads Australia). ESPN first, then Wikipedia.
       const tries: [string | null, string][] = [
-        [f.citizenship, 'espn citizenship'],
-        [info.nationality, 'wikipedia nationality'],
         [f.birthCountry, 'espn birthplace'],
         [info.birthCountry, 'wikipedia birthplace'],
       ]
@@ -262,8 +336,12 @@ async function main() {
         country = hit.code
         countryName = hit.name
         countrySource = source
-        if (source.endsWith('birthplace') && hit.code !== 'us')
-          countryReview.push(`${f.displayName}: born ${raw}, no citizenship or nationality on file`)
+        if (
+          hit.code !== 'us' &&
+          f.citizenship &&
+          countries.get(f.citizenship.toLowerCase())?.code !== hit.code
+        )
+          countryReview.push(`${f.displayName}: born ${raw}, citizenship ${f.citizenship}`)
         break
       }
     }

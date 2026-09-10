@@ -25,7 +25,8 @@ function lookFor(state: GameState, slot: Slot): Look {
 
 /** Image file for a value, or null when the category is rendered as text. */
 export function optionImage(category: ProBowlCategory, value: string, base: string): string | null {
-  if (category === 'alma') return `${base}colleges/${value}.png`
+  if (category === 'alma')
+    return value === 'NONE' ? `${base}tiles/NONE.png` : `${base}colleges/${value}.png`
   if (category === 'draft') return `${base}tiles/${value}.png`
   if (category === 'country') return `${base}flags/${value}.png`
   return null

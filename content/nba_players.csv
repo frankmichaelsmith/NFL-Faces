@@ -6,16 +6,16 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 349,Allan Houston,G,,,2633,Tennessee,https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png,espn,drafted,1993,1,11,DET,Detroit Pistons,espn,true,,us,United States,wikipedia birthplace
 366,Allen Iverson,G,,,46,Georgetown,https://a.espncdn.com/i/teamlogos/ncaa/500/46.png,espn,drafted,1996,1,1,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
 580,Alonzo Mourning,C,,,46,Georgetown,https://a.espncdn.com/i/teamlogos/ncaa/500/46.png,espn,drafted,1992,1,2,CHH,Charlotte Hornets,espn,true,,us,United States,espn birthplace
-1727,Amar'e Stoudemire,C,,,,,,,drafted,2002,1,9,PHX,Phoenix Suns,espn,true,,us,United States,wikipedia nationality
-2419,Anderson Varejao,C,,,,,,,drafted,2004,2,30,ORL,Orlando Magic,espn,true,,br,Brazil,espn citizenship
+1727,Amar'e Stoudemire,C,,,,,,,drafted,2002,1,9,PHX,Phoenix Suns,espn,true,,us,United States,wikipedia birthplace
+2419,Anderson Varejao,C,,,,,,,drafted,2004,2,30,ORL,Orlando Magic,espn,true,,br,Brazil,espn birthplace
 6585,Andre Drummond,C,0,wikipedia,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2012,1,9,DET,Detroit Pistons,espn,true,,us,United States,espn birthplace
 2386,Andre Iguodala,F,,,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,2004,1,9,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
 557,Andre Miller,G,,,254,Utah,https://a.espncdn.com/i/teamlogos/ncaa/500/254.png,espn,drafted,1999,1,8,CLE,Cleveland Cavaliers,espn,true,,us,United States,espn birthplace
 2987,Andrea Bargnani,C,,,,,,,drafted,2006,1,1,TOR,Toronto Raptors,espn,true,,it,Italy,espn birthplace
-2747,Andrew Bogut,C,,,254,Utah,https://a.espncdn.com/i/teamlogos/ncaa/500/254.png,espn,drafted,2005,1,1,MIL,Milwaukee Bucks,espn,true,,au,Australia,espn citizenship
+2747,Andrew Bogut,C,,,254,Utah,https://a.espncdn.com/i/teamlogos/ncaa/500/254.png,espn,drafted,2005,1,1,MIL,Milwaukee Bucks,espn,true,,au,Australia,espn birthplace
 2748,Andrew Bynum,C,,,,,,,drafted,2005,1,10,LAL,Los Angeles Lakers,espn,true,,us,United States,wikipedia birthplace
 3059319,Andrew Wiggins,F,22,espn,2305,Kansas,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,espn,drafted,2014,1,1,CLE,Cleveland Cavaliers,espn,true,,ca,Canada,espn birthplace
-2427,Andris Biedrins,C,,,,,,,drafted,2004,1,11,GS,Golden State Warriors,espn,true,,lv,Latvia,wikipedia nationality
+2427,Andris Biedrins,C,,,,,,,drafted,2004,1,11,GS,Golden State Warriors,espn,true,,lv,Latvia,espn birthplace
 302,Anfernee Hardaway,F,7,espn,235,Memphis,https://a.espncdn.com/i/teamlogos/ncaa/500/235.png,espn,drafted,1993,1,3,GS,Golden State Warriors,espn,true,,us,United States,espn birthplace
 4351851,Anfernee Simons,G,5,espn,,,,,drafted,2018,1,24,POR,Portland Trail Blazers,espn,true,,us,United States,espn birthplace
 385,Antawn Jamison,F,,,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,1998,1,4,TOR,Toronto Raptors,espn,true,,us,United States,espn birthplace
@@ -29,11 +29,11 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 3187,Arron Afflalo,G,,,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,2007,1,27,DET,Detroit Pistons,espn,true,,us,United States,wikipedia birthplace
 390,Avery Johnson,G,,,2582,Southern,https://a.espncdn.com/i/teamlogos/ncaa/500/2582.png,espn,undrafted,1988,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",us,United States,wikipedia birthplace
 194,Baron Davis,G,,,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,1999,1,3,CHH,Charlotte Hornets,espn,true,,us,United States,wikipedia birthplace
-2381,Ben Gordon,G,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2004,1,3,CHI,Chicago Bulls,espn,true,,gb,United Kingdom,wikipedia nationality
+2381,Ben Gordon,G,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2004,1,3,CHI,Chicago Bulls,espn,true,,gb,United Kingdom,espn birthplace
 3907387,Ben Simmons,G,25,wikipedia,99,LSU,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,espn,drafted,2016,1,1,PHI,Philadelphia 76ers,espn,true,,au,Australia,espn birthplace
 885,Ben Wallace,F,,,2676,Virginia Union,https://a.espncdn.com/i/teamlogos/ncaa/500/2676.png,espn,undrafted,1996,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",us,United States,wikipedia birthplace
 3989,Blake Griffin,F,,,201,Oklahoma,https://a.espncdn.com/i/teamlogos/ncaa/500/201.png,espn,drafted,2009,1,1,LAC,Los Angeles Clippers,espn,true,,us,United States,espn birthplace
-3593,Bojan Bogdanovic,F,44,espn,,,,,drafted,2011,2,31,MIA,Miami Heat,espn,true,,hr,Croatia,espn citizenship
+3593,Bojan Bogdanovic,F,44,espn,,,,,drafted,2011,2,31,MIA,Miami Heat,espn,true,,rs,Serbia,espn birthplace
 556,Brad Miller,C,,,2509,Purdue,https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png,espn,undrafted,1998,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",us,United States,wikipedia birthplace
 6580,Bradley Beal,G,,,57,Florida,https://a.espncdn.com/i/teamlogos/ncaa/500/57.png,espn,drafted,2012,1,3,WSH,Washington Wizards,espn,true,,us,United States,espn birthplace
 3913176,Brandon Ingram,F,3,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2016,1,2,LAL,Los Angeles Lakers,espn,true,,us,United States,espn birthplace
@@ -42,11 +42,11 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 3027,Brandon Roy,G,,,264,Washington,https://a.espncdn.com/i/teamlogos/ncaa/500/264.png,espn,drafted,2006,1,6,MIN,Minnesota Timberwolves,espn,true,,us,United States,wikipedia birthplace
 440,Brevin Knight,G,,,24,Stanford,https://a.espncdn.com/i/teamlogos/ncaa/500/24.png,espn,drafted,1997,1,16,CLE,Cleveland Cavaliers,espn,true,,us,United States,wikipedia birthplace
 280,Brian Grant,F,,,2752,Xavier,https://a.espncdn.com/i/teamlogos/ncaa/500/2752.png,espn,drafted,1994,1,8,SAC,Sacramento Kings,espn,true,,us,United States,wikipedia birthplace
-3448,Brook Lopez,C,11,espn,24,Stanford,https://a.espncdn.com/i/teamlogos/ncaa/500/24.png,espn,drafted,2008,1,10,NJ,New Jersey Nets,espn,true,,us,United States,espn citizenship
+3448,Brook Lopez,C,11,espn,24,Stanford,https://a.espncdn.com/i/teamlogos/ncaa/500/24.png,espn,drafted,2008,1,10,NJ,New Jersey Nets,espn,true,,us,United States,espn birthplace
 2990984,Buddy Hield,G,8,espn,201,Oklahoma,https://a.espncdn.com/i/teamlogos/ncaa/500/201.png,espn,drafted,2016,1,6,NO,New Orleans Pelicans,espn,true,,bs,Bahamas,espn birthplace
 4432166,Cade Cunningham,G,2,espn,197,Oklahoma State,https://a.espncdn.com/i/teamlogos/ncaa/500/197.png,espn,drafted,2021,1,1,DET,Detroit Pistons,espn,true,,us,United States,espn birthplace
-4432174,Cam Thomas,G,24,espn,99,LSU,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,espn,drafted,2021,1,27,BKN,Brooklyn Nets,espn,true,,us,United States,wikipedia nationality
-1703,Carlos Boozer,F,,,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2002,2,35,CLE,Cleveland Cavaliers,espn,true,,us,United States,wikipedia nationality
+4432174,Cam Thomas,G,24,espn,99,LSU,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,espn,drafted,2021,1,27,BKN,Brooklyn Nets,espn,true,,us,United States,espn birthplace
+1703,Carlos Boozer,F,,,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2002,2,35,CLE,Cleveland Cavaliers,espn,true,,de,Germany,espn birthplace
 1975,Carmelo Anthony,F,,,183,Syracuse,https://a.espncdn.com/i/teamlogos/ncaa/500/183.png,espn,drafted,2003,1,3,DEN,Denver Nuggets,espn,true,,us,United States,espn birthplace
 1705,Caron Butler,F,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2002,1,10,MIA,Miami Heat,espn,true,,us,United States,espn birthplace
 141,Cedric Ceballos,F,,,2239,Cal State Fullerton,https://a.espncdn.com/i/teamlogos/ncaa/500/2239.png,espn,drafted,1990,2,48,PHX,Phoenix Suns,espn,true,,us,United States,wikipedia birthplace
@@ -54,7 +54,7 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 63,Chauncey Billups,G,,,38,Colorado,https://a.espncdn.com/i/teamlogos/ncaa/500/38.png,espn,drafted,1997,1,3,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
 1977,Chris Bosh,F,,,59,Georgia Tech,https://a.espncdn.com/i/teamlogos/ncaa/500/59.png,espn,drafted,2003,1,4,TOR,Toronto Raptors,espn,true,,us,United States,wikipedia birthplace
 265,Chris Gatling,C,,,295,Old Dominion,https://a.espncdn.com/i/teamlogos/ncaa/500/295.png,espn,drafted,1991,1,16,GS,Golden State Warriors,espn,true,,us,United States,wikipedia birthplace
-1982,Chris Kaman,C,,,2117,Central Michigan,https://a.espncdn.com/i/teamlogos/ncaa/500/2117.png,espn,drafted,2003,1,6,LAC,Los Angeles Clippers,espn,true,,us,United States,wikipedia nationality
+1982,Chris Kaman,C,,,2117,Central Michigan,https://a.espncdn.com/i/teamlogos/ncaa/500/2117.png,espn,drafted,2003,1,6,LAC,Los Angeles Clippers,espn,true,,us,United States,wikipedia birthplace
 582,Chris Mullin,F,17,espn,2599,St. John's,https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png,espn,drafted,1985,1,7,GS,Golden State Warriors,espn,true,,us,United States,espn birthplace
 2779,Chris Paul,G,3,wikipedia,154,Wake Forest,https://a.espncdn.com/i/teamlogos/ncaa/500/154.png,espn,drafted,2005,1,4,NOH,New Orleans Hornets,espn,true,,us,United States,espn birthplace
 897,Chris Webber,C,,,130,Michigan,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,espn,drafted,1993,1,1,ORL,Orlando Magic,espn,true,,us,United States,espn birthplace
@@ -74,7 +74,7 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 6606,Damian Lillard,G,0,wikipedia,2692,Weber State,https://a.espncdn.com/i/teamlogos/ncaa/500/2692.png,espn,drafted,2012,1,6,POR,Portland Trail Blazers,espn,true,,us,United States,espn birthplace
 817,Damon Stoudamire,G,,,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,1995,1,7,TOR,Toronto Raptors,espn,true,,us,United States,espn birthplace
 40,Dana Barros,G,,,103,Boston College,https://a.espncdn.com/i/teamlogos/ncaa/500/103.png,espn,drafted,1989,1,16,SEA,Seattle SuperSonics,espn,true,,us,United States,wikipedia birthplace
-3428,Danilo Gallinari,F,,,,,,,drafted,2008,1,6,NY,New York Knicks,espn,true,,it,Italy,espn citizenship
+3428,Danilo Gallinari,F,,,,,,,drafted,2008,1,6,NY,New York Knicks,espn,true,,it,Italy,espn birthplace
 248,Danny Fortson,C,,,2132,Cincinnati,https://a.espncdn.com/i/teamlogos/ncaa/500/2132.png,espn,drafted,1997,1,10,MIL,Milwaukee Bucks,espn,true,,us,United States,espn birthplace
 2760,Danny Granger,F,,,167,New Mexico,https://a.espncdn.com/i/teamlogos/ncaa/500/167.png,espn,drafted,2005,1,17,IND,Indiana Pacers,espn,true,,us,United States,wikipedia birthplace
 506,Danny Manning,F,,,2305,Kansas,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,espn,drafted,1988,1,1,LAC,Los Angeles Clippers,espn,true,,us,United States,espn birthplace
@@ -87,24 +87,24 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 4278129,Deandre Ayton,C,8,wikipedia,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,2018,1,1,PHX,Phoenix Suns,espn,true,,bs,Bahamas,espn birthplace
 3442,DeAndre Jordan,C,6,espn,245,Texas A&M,https://a.espncdn.com/i/teamlogos/ncaa/500/245.png,espn,drafted,2008,2,35,LAC,Los Angeles Clippers,espn,true,,us,United States,espn birthplace
 3907497,Dejounte Murray,G,5,espn,264,Washington,https://a.espncdn.com/i/teamlogos/ncaa/500/264.png,espn,drafted,2016,1,29,SA,San Antonio Spurs,espn,true,,us,United States,espn birthplace
-3978,DeMar DeRozan,G,10,wikipedia,30,USC,https://a.espncdn.com/i/teamlogos/ncaa/500/30.png,espn,drafted,2009,1,9,TOR,Toronto Raptors,espn,true,,us,United States,espn citizenship
+3978,DeMar DeRozan,G,10,wikipedia,30,USC,https://a.espncdn.com/i/teamlogos/ncaa/500/30.png,espn,drafted,2009,1,9,TOR,Toronto Raptors,espn,true,,us,United States,espn birthplace
 4258,DeMarcus Cousins,C,,,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2010,1,5,SAC,Sacramento Kings,espn,true,,us,United States,espn birthplace
 726,Dennis Rodman,F,,,199,Southeastern Oklahoma,https://a.espncdn.com/i/teamlogos/ncaa/500/199.png,espn,drafted,1986,2,27,DET,Detroit Pistons,espn,true,,us,United States,wikipedia birthplace
-3032979,Dennis Schroder,G,,,,,,,drafted,2013,1,17,ATL,Atlanta Hawks,espn,true,,de,Germany,espn citizenship
+3032979,Dennis Schroder,G,,,,,,,drafted,2013,1,17,ATL,Atlanta Hawks,espn,true,,de,Germany,espn birthplace
 2798,Deron Williams,G,,,356,Illinois,https://a.espncdn.com/i/teamlogos/ncaa/500/356.png,espn,drafted,2005,1,3,UTAH,Utah Jazz,espn,true,,us,United States,wikipedia birthplace
 156,Derrick Coleman,F,44,espn,183,Syracuse,https://a.espncdn.com/i/teamlogos/ncaa/500/183.png,espn,drafted,1990,1,1,NJ,New Jersey Nets,espn,true,,us,United States,espn birthplace
 3456,Derrick Rose,G,,,235,Memphis,https://a.espncdn.com/i/teamlogos/ncaa/500/235.png,espn,drafted,2008,1,1,CHI,Chicago Bulls,espn,true,,us,United States,espn birthplace
 4066320,Desmond Bane,G,3,espn,2628,TCU,https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png,espn,drafted,2020,1,30,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
-757,Detlef Schrempf,F,,,264,Washington,https://a.espncdn.com/i/teamlogos/ncaa/500/264.png,espn,drafted,1985,1,8,DAL,Dallas Mavericks,espn,true,,de,Germany,wikipedia nationality
+757,Detlef Schrempf,F,,,264,Washington,https://a.espncdn.com/i/teamlogos/ncaa/500/264.png,espn,drafted,1985,1,8,DAL,Dallas Mavericks,espn,true,,de,Germany,espn birthplace
 3136193,Devin Booker,G,15,espn,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2015,1,13,PHX,Phoenix Suns,espn,true,,us,United States,espn birthplace
 2382,Devin Harris,G,,,275,Wisconsin,https://a.espncdn.com/i/teamlogos/ncaa/500/275.png,espn,drafted,2004,1,5,WSH,Washington Wizards,espn,true,,us,United States,wikipedia birthplace
 3133601,Devonte' Graham,G,18,espn,2305,Kansas,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,espn,drafted,2018,2,34,ATL,Atlanta Hawks,espn,true,,us,United States,espn birthplace
-588,Dikembe Mutombo,C,55,espn,46,Georgetown,https://a.espncdn.com/i/teamlogos/ncaa/500/46.png,espn,drafted,1991,1,4,DEN,Denver Nuggets,espn,true,,cd,DR Congo,wikipedia nationality
+588,Dikembe Mutombo,C,55,espn,46,Georgetown,https://a.espncdn.com/i/teamlogos/ncaa/500/46.png,espn,drafted,1991,1,4,DEN,Denver Nuggets,espn,true,,cd,DR Congo,wikipedia birthplace
 3823,Dino Radja,C,40,espn,,,,,drafted,1989,2,40,BOS,Boston Celtics,espn,true,,rs,Serbia,espn birthplace
 609,Dirk Nowitzki,F,,,,,,,drafted,1998,1,9,MIL,Milwaukee Bucks,espn,true,,de,Germany,espn birthplace
-3155942,Domantas Sabonis,F,11,espn,2250,Gonzaga,https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png,espn,drafted,2016,1,11,ORL,Orlando Magic,espn,true,,lt,Lithuania,espn citizenship
+3155942,Domantas Sabonis,F,11,espn,2250,Gonzaga,https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png,espn,drafted,2016,1,11,ORL,Orlando Magic,espn,true,,lt,Lithuania,espn birthplace
 3532,Dominique Wilkins,F,,,61,Georgia,https://a.espncdn.com/i/teamlogos/ncaa/500/61.png,espn,drafted,1982,1,3,UTAH,Utah Jazz,espn,true,,fr,France,espn birthplace
-3908809,Donovan Mitchell,G,45,espn,97,Louisville,https://a.espncdn.com/i/teamlogos/ncaa/500/97.png,espn,drafted,2017,1,13,DEN,Denver Nuggets,espn,true,,us,United States,espn citizenship
+3908809,Donovan Mitchell,G,45,espn,97,Louisville,https://a.espncdn.com/i/teamlogos/ncaa/500/97.png,espn,drafted,2017,1,13,DEN,Denver Nuggets,espn,true,,us,United States,espn birthplace
 512,Donyell Marshall,F,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,1994,1,4,MIN,Minnesota Timberwolves,espn,true,,us,United States,espn birthplace
 6589,Draymond Green,F,23,espn,127,Michigan State,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,espn,drafted,2012,2,35,GS,Golden State Warriors,espn,true,,us,United States,espn birthplace
 2384,Dwight Howard,C,39,espn,,,,,drafted,2004,1,1,ORL,Orlando Magic,espn,true,,us,United States,espn birthplace
@@ -117,34 +117,34 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 2399,Emeka Okafor,C,50,espn,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2004,1,2,CHAB,Charlotte Bobcats,espn,true,,us,United States,wikipedia birthplace
 6447,Enes Freedom,C,13,espn,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2011,1,3,UTAH,Utah Jazz,espn,true,,ch,Switzerland,espn birthplace
 4238,Eric Bledsoe,G,5,espn,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2010,1,18,OKC,Oklahoma City Thunder,espn,true,,us,United States,espn birthplace
-3431,Eric Gordon,G,,,84,Indiana,https://a.espncdn.com/i/teamlogos/ncaa/500/84.png,espn,drafted,2008,1,7,LAC,Los Angeles Clippers,espn,true,,us,United States,wikipedia nationality
+3431,Eric Gordon,G,,,84,Indiana,https://a.espncdn.com/i/teamlogos/ncaa/500/84.png,espn,drafted,2008,1,7,LAC,Los Angeles Clippers,espn,true,,us,United States,espn birthplace
 796,Eric Snow,G,,,127,Michigan State,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,espn,drafted,1995,2,43,MIL,Milwaukee Bucks,espn,true,,us,United States,wikipedia birthplace
 929,Eric Williams,F,,,2507,Providence,https://a.espncdn.com/i/teamlogos/ncaa/500/2507.png,espn,drafted,1995,1,14,BOS,Boston Celtics,espn,true,,us,United States,wikipedia birthplace
 181,Erick Dampier,C,,,344,Mississippi State,https://a.espncdn.com/i/teamlogos/ncaa/500/344.png,espn,drafted,1996,1,10,IND,Indiana Pacers,espn,true,,us,United States,wikipedia birthplace
 393,Ervin Johnson,C,,,2443,New Orleans,https://a.espncdn.com/i/teamlogos/ncaa/500/2443.png,espn,drafted,1993,1,23,SEA,Seattle SuperSonics,espn,true,,us,United States,wikipedia birthplace
-6588,Evan Fournier,G,,,,,,,drafted,2012,1,20,DEN,Denver Nuggets,espn,true,,fr,France,espn citizenship
+6588,Evan Fournier,G,,,,,,,drafted,2012,1,20,DEN,Denver Nuggets,espn,true,,fr,France,espn birthplace
 4566434,Franz Wagner,F,22,espn,130,Michigan,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,espn,drafted,2021,1,8,ORL,Orlando Magic,espn,true,,de,Germany,espn birthplace
 2991230,Fred VanVleet,G,5,espn,2724,Wichita State,https://a.espncdn.com/i/teamlogos/ncaa/500/2724.png,espn,undrafted,2016,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",us,United States,espn birthplace
 640,Gary Payton,G,20,espn,204,Oregon State,https://a.espncdn.com/i/teamlogos/ncaa/500/204.png,espn,drafted,1990,1,2,SEA,Seattle SuperSonics,espn,true,,us,United States,espn birthplace
 858,Gary Trent,F,,,195,Ohio,https://a.espncdn.com/i/teamlogos/ncaa/500/195.png,espn,drafted,1995,1,11,MIL,Milwaukee Bucks,espn,true,,us,United States,wikipedia birthplace
 524,George McCloud,F,,,52,Florida State,https://a.espncdn.com/i/teamlogos/ncaa/500/52.png,espn,drafted,1989,1,7,IND,Indiana Pacers,espn,true,,us,United States,wikipedia birthplace
 1026,Gerald Wallace,F,,,333,Alabama,https://a.espncdn.com/i/teamlogos/ncaa/500/333.png,espn,drafted,2001,1,25,SAC,Sacramento Kings,espn,true,,us,United States,wikipedia birthplace
-3032977,Giannis Antetokounmpo,F,7,espn,,,,,drafted,2013,1,15,MIL,Milwaukee Bucks,espn,true,,gr,Greece,espn citizenship
+3032977,Giannis Antetokounmpo,F,7,espn,,,,,drafted,2013,1,15,MIL,Milwaukee Bucks,espn,true,,gr,Greece,espn birthplace
 974,Gilbert Arenas,G,,,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,2001,2,31,GS,Golden State Warriors,espn,true,,us,United States,wikipedia birthplace
 702,Glen Rice,F,,,130,Michigan,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,espn,drafted,1989,1,4,MIA,Miami Heat,espn,true,,us,United States,espn birthplace
 717,Glenn Robinson,F,,,2509,Purdue,https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png,espn,drafted,1994,1,1,MIL,Milwaukee Bucks,espn,true,,us,United States,espn birthplace
-3423,Goran Dragic,G,,,,,,,drafted,2008,2,45,SA,San Antonio Spurs,espn,true,,si,Slovenia,wikipedia nationality
+3423,Goran Dragic,G,,,,,,,drafted,2008,2,45,SA,San Antonio Spurs,espn,true,,si,Slovenia,espn birthplace
 4249,Gordon Hayward,F,,,2086,Butler,https://a.espncdn.com/i/teamlogos/ncaa/500/2086.png,espn,drafted,2010,1,9,UTAH,Utah Jazz,espn,true,,us,United States,espn birthplace
 336,Grant Hill,F,33,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,1994,1,3,DET,Detroit Pistons,espn,true,,us,United States,espn birthplace
 4291,Greivis Vasquez,G,,,120,Maryland,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,espn,drafted,2010,1,28,MEM,Memphis Grizzlies,espn,true,,ve,Venezuela,espn birthplace
 619,Hakeem Olajuwon,C,,,248,Houston,https://a.espncdn.com/i/teamlogos/ncaa/500/248.png,espn,drafted,1984,1,1,HOU,Houston Rockets,espn,true,,ng,Nigeria,espn birthplace
-6578,Harrison Barnes,F,40,espn,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,2012,1,7,GS,Golden State Warriors,espn,true,,us,United States,espn citizenship
+6578,Harrison Barnes,F,40,espn,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,2012,1,7,GS,Golden State Warriors,espn,true,,us,United States,espn birthplace
 4262,Hassan Whiteside,C,21,espn,276,Marshall,https://a.espncdn.com/i/teamlogos/ncaa/500/276.png,espn,drafted,2010,2,33,SAC,Sacramento Kings,espn,true,,us,United States,espn birthplace
 862,Hedo Turkoglu,F,,,,,,,drafted,2000,1,16,SAC,Sacramento Kings,espn,true,,tr,Turkey,espn birthplace
-4222252,Isaiah Hartenstein,C,55,espn,,,,,drafted,2017,2,43,HOU,Houston Rockets,espn,true,,us,United States,wikipedia nationality
+4222252,Isaiah Hartenstein,C,55,espn,,,,,drafted,2017,2,43,HOU,Houston Rockets,espn,true,,us,United States,espn birthplace
 705,Isaiah Rider,G,,,2439,UNLV,https://a.espncdn.com/i/teamlogos/ncaa/500/2439.png,espn,drafted,1993,1,5,MIN,Minnesota Timberwolves,espn,true,,us,United States,wikipedia birthplace
 6472,Isaiah Thomas,G,,,264,Washington,https://a.espncdn.com/i/teamlogos/ncaa/500/264.png,espn,drafted,2011,2,60,SAC,Sacramento Kings,espn,true,,us,United States,espn birthplace
-4017837,Ivica Zubac,C,40,espn,,,,,drafted,2016,2,32,LAL,Los Angeles Lakers,espn,true,,hr,Croatia,wikipedia nationality
+4017837,Ivica Zubac,C,40,espn,,,,,drafted,2016,2,32,LAL,Los Angeles Lakers,espn,true,,ba,Bosnia and Herzegovina,espn birthplace
 4279888,Ja Morant,G,1,espn,93,Murray State,https://a.espncdn.com/i/teamlogos/ncaa/500/93.png,espn,drafted,2019,1,2,MEM,Memphis Grizzlies,espn,true,,us,United States,espn birthplace
 3056600,Jabari Parker,F,,,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2014,1,2,MIL,Milwaukee Bucks,espn,true,,us,United States,espn birthplace
 3135048,Jahlil Okafor,C,,,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2015,1,3,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
@@ -168,30 +168,30 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 1018,Jason Richardson,G,,,127,Michigan State,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,espn,drafted,2001,1,5,GS,Golden State Warriors,espn,true,,us,United States,wikipedia birthplace
 841,Jason Terry,G,,,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,1999,1,10,ATL,Atlanta Hawks,espn,true,,us,United States,espn birthplace
 933,Jason Williams,G,,,57,Florida,https://a.espncdn.com/i/teamlogos/ncaa/500/57.png,espn,drafted,1998,1,7,SAC,Sacramento Kings,espn,true,,us,United States,wikipedia birthplace
-3917376,Jaylen Brown,G,7,espn,25,California,https://a.espncdn.com/i/teamlogos/ncaa/500/25.png,espn,drafted,2016,1,3,BOS,Boston Celtics,espn,true,,us,United States,espn citizenship
-4395688,Jaylen Hoard,F,,,154,Wake Forest,https://a.espncdn.com/i/teamlogos/ncaa/500/154.png,espn,undrafted,2019,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",fr,France,wikipedia nationality
-4065648,Jayson Tatum,F,0,wikipedia,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2017,1,3,BOS,Boston Celtics,espn,true,,us,United States,espn citizenship
+3917376,Jaylen Brown,G,7,espn,25,California,https://a.espncdn.com/i/teamlogos/ncaa/500/25.png,espn,drafted,2016,1,3,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
+4395688,Jaylen Hoard,F,,,154,Wake Forest,https://a.espncdn.com/i/teamlogos/ncaa/500/154.png,espn,undrafted,2019,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",fr,France,espn birthplace
+4065648,Jayson Tatum,F,0,wikipedia,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2017,1,3,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
 917,Jayson Williams,C,,,2599,St. John's,https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png,espn,drafted,1990,1,21,PHX,Phoenix Suns,espn,true,,us,United States,wikipedia birthplace
 3775,Jeff Malone,G,,,344,Mississippi State,https://a.espncdn.com/i/teamlogos/ncaa/500/344.png,espn,drafted,1983,1,10,WSB,Washington Bullets,espn,true,,us,United States,wikipedia birthplace
 4015,Jeff Teague,G,,,154,Wake Forest,https://a.espncdn.com/i/teamlogos/ncaa/500/154.png,espn,drafted,2009,1,19,ATL,Atlanta Hawks,espn,true,,us,United States,espn birthplace
 2991070,Jerami Grant,F,9,espn,183,Syracuse,https://a.espncdn.com/i/teamlogos/ncaa/500/183.png,espn,drafted,2014,2,39,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
-4299,Jeremy Lin,G,,,108,Harvard,https://a.espncdn.com/i/teamlogos/ncaa/500/108.png,espn,undrafted,2010,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",us,United States,wikipedia nationality
+4299,Jeremy Lin,G,,,108,Harvard,https://a.espncdn.com/i/teamlogos/ncaa/500/108.png,espn,undrafted,2010,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",us,United States,espn birthplace
 615,Jermaine O'Neal,C,,,,,,,drafted,1996,1,17,POR,Portland Trail Blazers,espn,true,,us,United States,wikipedia birthplace
 930,Jerome Williams,F,,,46,Georgetown,https://a.espncdn.com/i/teamlogos/ncaa/500/46.png,espn,drafted,1996,1,26,DET,Detroit Pistons,espn,true,,us,United States,wikipedia birthplace
 802,Jerry Stackhouse,F,,,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,1995,1,3,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
 372,Jim Jackson,F,,,194,Ohio State,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,espn,drafted,1992,1,4,DAL,Dallas Mavericks,espn,true,,us,United States,espn birthplace
-6430,Jimmy Butler III,F,10,espn,269,Marquette,https://a.espncdn.com/i/teamlogos/ncaa/500/269.png,espn,drafted,2011,1,30,CHI,Chicago Bulls,espn,true,,us,United States,espn citizenship
-3224,Joakim Noah,C,,,57,Florida,https://a.espncdn.com/i/teamlogos/ncaa/500/57.png,espn,drafted,2007,1,9,CHI,Chicago Bulls,espn,true,,fr,France,wikipedia nationality
+6430,Jimmy Butler III,F,10,espn,269,Marquette,https://a.espncdn.com/i/teamlogos/ncaa/500/269.png,espn,drafted,2011,1,30,CHI,Chicago Bulls,espn,true,,us,United States,espn birthplace
+3224,Joakim Noah,C,,,57,Florida,https://a.espncdn.com/i/teamlogos/ncaa/500/57.png,espn,drafted,2007,1,9,CHI,Chicago Bulls,espn,true,,us,United States,wikipedia birthplace
 3689,Joe Dumars,G,,,2377,McNeese,https://a.espncdn.com/i/teamlogos/ncaa/500/2377.png,espn,drafted,1985,1,18,DET,Detroit Pistons,espn,true,,us,United States,wikipedia birthplace
 1007,Joe Johnson,G,,,8,Arkansas,https://a.espncdn.com/i/teamlogos/ncaa/500/8.png,espn,drafted,2001,1,10,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
 788,Joe Smith,F,,,120,Maryland,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,espn,drafted,1995,1,1,GS,Golden State Warriors,espn,true,,us,United States,espn birthplace
-3059318,Joel Embiid,C,21,espn,2305,Kansas,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,espn,drafted,2014,1,3,PHI,Philadelphia 76ers,espn,true,,cm,Cameroon,espn citizenship
+3059318,Joel Embiid,C,21,espn,2305,Kansas,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,espn,drafted,2014,1,3,PHI,Philadelphia 76ers,espn,true,,cm,Cameroon,espn birthplace
 3908845,John Collins,F,20,wikipedia,154,Wake Forest,https://a.espncdn.com/i/teamlogos/ncaa/500/154.png,espn,drafted,2017,1,19,ATL,Atlanta Hawks,espn,true,,us,United States,espn birthplace
 1726,John Salmons,F,,,2390,Miami,https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png,espn,drafted,2002,1,26,SA,San Antonio Spurs,espn,true,,us,United States,wikipedia birthplace
 812,John Stockton,G,,,2250,Gonzaga,https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png,espn,drafted,1984,1,16,UTAH,Utah Jazz,espn,true,,us,United States,wikipedia birthplace
 4237,John Wall,G,,,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2010,1,1,WSH,Washington Wizards,espn,true,,us,United States,espn birthplace
-6477,Jonas Valanciunas,C,17,espn,,,,,drafted,2011,1,5,TOR,Toronto Raptors,espn,true,,lt,Lithuania,espn citizenship
-2806,Jose Calderon,G,81,espn,,,,,undrafted,,,,,,espn (no draft record),true,,es,Spain,espn citizenship
+6477,Jonas Valanciunas,C,17,espn,,,,,drafted,2011,1,5,TOR,Toronto Raptors,espn,true,,lt,Lithuania,espn birthplace
+2806,Jose Calderon,G,81,espn,,,,,undrafted,,,,,,espn (no draft record),true,,es,Spain,espn birthplace
 4871145,Josh Giddey,G,3,espn,,,,,drafted,2021,1,6,OKC,Oklahoma City Thunder,espn,true,,au,Australia,wikipedia birthplace
 2006,Josh Howard,F,,,154,Wake Forest,https://a.espncdn.com/i/teamlogos/ncaa/500/154.png,espn,drafted,2003,1,29,DAL,Dallas Mavericks,espn,true,,us,United States,wikipedia birthplace
 2411,Josh Smith,F,,,,,,,drafted,2004,1,17,ATL,Atlanta Hawks,espn,true,,us,United States,wikipedia birthplace
@@ -201,31 +201,31 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 3102530,Jusuf Nurkic,C,30,espn,,,,,drafted,2014,1,16,CHI,Chicago Bulls,espn,true,,ba,Bosnia and Herzegovina,espn birthplace
 351,Juwan Howard,F,,,130,Michigan,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,espn,drafted,1994,1,5,WSB,Washington Bullets,espn,true,,us,United States,espn birthplace
 501,Karl Malone,F,,,2348,Louisiana Tech,https://a.espncdn.com/i/teamlogos/ncaa/500/2348.png,espn,drafted,1985,1,13,UTAH,Utah Jazz,espn,true,,us,United States,wikipedia birthplace
-3136195,Karl-Anthony Towns,C,32,espn,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2015,1,1,MIN,Minnesota Timberwolves,espn,true,,do,Dominican Republic,espn citizenship
+3136195,Karl-Anthony Towns,C,32,espn,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2015,1,1,MIN,Minnesota Timberwolves,espn,true,,us,United States,espn birthplace
 6450,Kawhi Leonard,F,2,espn,21,San Diego State,https://a.espncdn.com/i/teamlogos/ncaa/500/21.png,espn,drafted,2011,1,15,IND,Indiana Pacers,espn,true,,us,United States,espn birthplace
 869,Keith Van Horn,F,,,254,Utah,https://a.espncdn.com/i/teamlogos/ncaa/500/254.png,espn,drafted,1997,1,2,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
 4395723,Keldon Johnson,F,3,espn,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2019,1,29,SA,San Antonio Spurs,espn,true,,us,United States,espn birthplace
-6479,Kemba Walker,G,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2011,1,9,CHAB,Charlotte Bobcats,espn,true,,us,United States,espn citizenship
+6479,Kemba Walker,G,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2011,1,9,CHAB,Charlotte Bobcats,espn,true,,us,United States,espn birthplace
 269,Kendall Gill,F,,,356,Illinois,https://a.espncdn.com/i/teamlogos/ncaa/500/356.png,espn,drafted,1990,1,5,CHH,Charlotte Hornets,espn,true,,us,United States,wikipedia birthplace
 6607,Kendall Marshall,G,,,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,2012,1,13,PHX,Phoenix Suns,espn,true,,us,United States,wikipedia birthplace
 15,Kenny Anderson,G,,,59,Georgia Tech,https://a.espncdn.com/i/teamlogos/ncaa/500/59.png,espn,drafted,1991,1,2,NJ,New Jersey Nets,espn,true,,us,United States,espn birthplace
 437,Kerry Kittles,G,30,espn,222,Villanova,https://a.espncdn.com/i/teamlogos/ncaa/500/222.png,espn,drafted,1996,1,8,NJ,New Jersey Nets,espn,true,,us,United States,espn birthplace
-3202,Kevin Durant,F,7,espn,251,Texas,https://a.espncdn.com/i/teamlogos/ncaa/500/251.png,espn,drafted,2007,1,2,SEA,Seattle SuperSonics,espn,true,,us,United States,espn citizenship
+3202,Kevin Durant,F,7,espn,251,Texas,https://a.espncdn.com/i/teamlogos/ncaa/500/251.png,espn,drafted,2007,1,2,SEA,Seattle SuperSonics,espn,true,,us,United States,espn birthplace
 261,Kevin Garnett,F,,,,,,,drafted,1995,1,5,MIN,Minnesota Timberwolves,espn,true,,us,United States,wikipedia birthplace
 391,Kevin Johnson,G,,,25,California,https://a.espncdn.com/i/teamlogos/ncaa/500/25.png,espn,drafted,1987,1,7,CLE,Cleveland Cavaliers,espn,true,,us,United States,wikipedia birthplace
 3449,Kevin Love,F,42,espn,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,2008,1,5,MEM,Memphis Grizzlies,espn,true,,us,United States,espn birthplace
 2394,Kevin Martin,G,,,2717,Western Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/2717.png,espn,drafted,2004,1,26,SAC,Sacramento Kings,espn,true,,us,United States,wikipedia birthplace
 937,Kevin Willis,C,,,127,Michigan State,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,espn,drafted,1984,1,11,ATL,Atlanta Hawks,espn,true,,us,United States,wikipedia birthplace
-6609,Khris Middleton,F,22,espn,245,Texas A&M,https://a.espncdn.com/i/teamlogos/ncaa/500/245.png,espn,drafted,2012,2,39,DET,Detroit Pistons,espn,true,,us,United States,espn citizenship
+6609,Khris Middleton,F,22,espn,245,Texas A&M,https://a.espncdn.com/i/teamlogos/ncaa/500/245.png,espn,drafted,2012,2,39,DET,Detroit Pistons,espn,true,,us,United States,espn birthplace
 1981,Kirk Hinrich,G,,,2305,Kansas,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,espn,drafted,2003,1,7,CHI,Chicago Bulls,espn,true,,us,United States,wikipedia birthplace
-6475,Klay Thompson,G,11,wikipedia,265,Washington State,https://a.espncdn.com/i/teamlogos/ncaa/500/265.png,espn,drafted,2011,1,11,GS,Golden State Warriors,espn,true,,us,United States,espn citizenship
+6475,Klay Thompson,G,11,wikipedia,265,Washington State,https://a.espncdn.com/i/teamlogos/ncaa/500/265.png,espn,drafted,2011,1,11,GS,Golden State Warriors,espn,true,,us,United States,espn birthplace
 110,Kobe Bryant,F,,,,,,,drafted,1996,1,13,CHH,Charlotte Hornets,espn,true,,us,United States,wikipedia birthplace
 2433,Kris Humphries,F,,,135,Minnesota,https://a.espncdn.com/i/teamlogos/ncaa/500/135.png,espn,drafted,2004,1,14,UTAH,Utah Jazz,espn,true,,us,United States,wikipedia birthplace
 3102531,Kristaps Porzingis,C,7,espn,,,,,drafted,2015,1,4,NY,New York Knicks,espn,true,,lv,Latvia,espn birthplace
 846,Kurt Thomas,F,,,2628,TCU,https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png,espn,drafted,1995,1,10,MIA,Miami Heat,espn,true,,us,United States,wikipedia birthplace
 3134907,Kyle Kuzma,F,18,espn,254,Utah,https://a.espncdn.com/i/teamlogos/ncaa/500/254.png,espn,drafted,2017,1,27,BKN,Brooklyn Nets,espn,true,,us,United States,espn birthplace
 3012,Kyle Lowry,G,,,222,Villanova,https://a.espncdn.com/i/teamlogos/ncaa/500/222.png,espn,drafted,2006,1,24,MEM,Memphis Grizzlies,espn,true,,us,United States,espn birthplace
-6442,Kyrie Irving,G,11,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2011,1,1,CLE,Cleveland Cavaliers,espn,true,,us,United States,wikipedia nationality
+6442,Kyrie Irving,G,11,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2011,1,1,CLE,Cleveland Cavaliers,espn,true,,au,Australia,espn birthplace
 617,Lamar Odom,F,,,227,Rhode Island,https://a.espncdn.com/i/teamlogos/ncaa/500/227.png,espn,drafted,1999,1,4,LAC,Los Angeles Clippers,espn,true,,us,United States,wikipedia birthplace
 2983,LaMarcus Aldridge,C,,,251,Texas,https://a.espncdn.com/i/teamlogos/ncaa/500/251.png,espn,drafted,2006,1,2,CHI,Chicago Bulls,espn,true,,us,United States,espn birthplace
 4432816,LaMelo Ball,G,1,wikipedia,,,,,drafted,2020,1,3,CHH,Charlotte Hornets,espn,true,,us,United States,espn birthplace
@@ -238,15 +238,15 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 4066421,Lonzo Ball,G,2,espn,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,2017,1,2,LAL,Los Angeles Lakers,espn,true,,us,United States,espn birthplace
 2799,Lou Williams,G,,,,,,,drafted,2005,2,45,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
 875,Loy Vaught,F,35,espn,130,Michigan,https://a.espncdn.com/i/teamlogos/ncaa/500/130.png,espn,drafted,1990,1,13,LAC,Los Angeles Clippers,espn,true,,us,United States,wikipedia birthplace
-1781,Luis Scola,F,,,,,,,drafted,2002,2,56,SA,San Antonio Spurs,espn,true,,ar,Argentina,espn citizenship
+1781,Luis Scola,F,,,,,,,drafted,2002,2,56,SA,San Antonio Spurs,espn,true,,ar,Argentina,espn birthplace
 3945274,Luka Doncic,G,77,espn,,,,,drafted,2018,1,3,ATL,Atlanta Hawks,espn,true,,si,Slovenia,espn birthplace
 1985,Luke Ridnour,G,,,2483,Oregon,https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png,espn,drafted,2003,1,14,SEA,Seattle SuperSonics,espn,true,,us,United States,wikipedia birthplace
-2429,Luol Deng,F,9,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2004,1,7,PHX,Phoenix Suns,espn,true,,ss,South Sudan,wikipedia nationality
+2429,Luol Deng,F,9,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2004,1,7,PHX,Phoenix Suns,espn,true,,sd,Sudan,espn birthplace
 1,Mahmoud Abdul-Rauf,G,,,99,LSU,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,espn,drafted,1990,1,3,DEN,Denver Nuggets,espn,true,,us,United States,espn birthplace
 2566769,Malcolm Brogdon,G,,,258,Virginia,https://a.espncdn.com/i/teamlogos/ncaa/500/258.png,espn,drafted,2016,2,36,MIL,Milwaukee Bucks,espn,true,,us,United States,espn birthplace
 272,Manu Ginobili,G,,,,,,,drafted,1999,2,57,SA,San Antonio Spurs,espn,true,,ar,Argentina,espn birthplace
-3206,Marc Gasol,C,,,,,,,drafted,2007,2,48,LAL,Los Angeles Lakers,espn,true,,es,Spain,espn citizenship
-2758,Marcin Gortat,C,,,,,,,drafted,2005,2,57,PHX,Phoenix Suns,espn,true,,pl,Poland,wikipedia nationality
+3206,Marc Gasol,C,,,,,,,drafted,2007,2,48,LAL,Los Angeles Lakers,espn,true,,es,Spain,espn birthplace
+2758,Marcin Gortat,C,,,,,,,drafted,2005,2,57,PHX,Phoenix Suns,espn,true,,pl,Poland,espn birthplace
 125,Marcus Camby,C,,,113,Massachusetts,https://a.espncdn.com/i/teamlogos/ncaa/500/113.png,espn,drafted,1996,1,2,TOR,Toronto Raptors,espn,true,,us,United States,espn birthplace
 4017,Marcus Thornton,G,,,3252,Kilgore College,,espn,drafted,2009,2,43,MIA,Miami Heat,espn,true,,us,United States,espn birthplace
 370,Mark Jackson,G,,,2599,St. John's,https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png,espn,drafted,1987,1,18,NY,New York Knicks,espn,true,,us,United States,wikipedia birthplace
@@ -269,19 +269,19 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 2751,Monta Ellis,G,,,,,,,drafted,2005,2,40,GS,Golden State Warriors,espn,true,,us,United States,wikipedia birthplace
 868,Nick Van Exel,G,,,2132,Cincinnati,https://a.espncdn.com/i/teamlogos/ncaa/500/2132.png,espn,drafted,1993,2,37,LAL,Los Angeles Lakers,espn,true,,us,United States,espn birthplace
 3243,Nick Young,G,,,30,USC,https://a.espncdn.com/i/teamlogos/ncaa/500/30.png,espn,drafted,2007,1,16,WSH,Washington Wizards,espn,true,,us,United States,wikipedia birthplace
-3112335,Nikola Jokic,C,15,espn,,,,,drafted,2014,2,41,DEN,Denver Nuggets,espn,true,,rs,Serbia,espn citizenship
-6478,Nikola Vucevic,C,9,espn,30,USC,https://a.espncdn.com/i/teamlogos/ncaa/500/30.png,espn,drafted,2011,1,16,PHI,Philadelphia 76ers,espn,true,,me,Montenegro,espn citizenship
+3112335,Nikola Jokic,C,15,espn,,,,,drafted,2014,2,41,DEN,Denver Nuggets,espn,true,,rs,Serbia,espn birthplace
+6478,Nikola Vucevic,C,9,espn,30,USC,https://a.espncdn.com/i/teamlogos/ncaa/500/30.png,espn,drafted,2011,1,16,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace
 2595516,Norman Powell,G,24,wikipedia,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,2015,2,46,MIL,Milwaukee Bucks,espn,true,,us,United States,espn birthplace
 3450,O.J. Mayo,G,,,30,USC,https://a.espncdn.com/i/teamlogos/ncaa/500/30.png,espn,drafted,2008,1,3,MIN,Minnesota Timberwolves,espn,true,,us,United States,wikipedia birthplace
 3414,Omer Asik,C,3,espn,,,,,drafted,2008,2,36,POR,Portland Trail Blazers,espn,true,,tr,Turkey,espn birthplace
-4432573,Paolo Banchero,F,5,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2022,1,1,ORL,Orlando Magic,espn,true,,us,United States,wikipedia nationality
+4432573,Paolo Banchero,F,5,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2022,1,1,ORL,Orlando Magic,espn,true,,us,United States,espn birthplace
 3149673,Pascal Siakam,F,43,espn,166,New Mexico State,https://a.espncdn.com/i/teamlogos/ncaa/500/166.png,espn,drafted,2016,1,27,TOR,Toronto Raptors,espn,true,,cm,Cameroon,espn birthplace
 237,Patrick Ewing,C,6,espn,46,Georgetown,https://a.espncdn.com/i/teamlogos/ncaa/500/46.png,espn,drafted,1985,1,1,NY,New York Knicks,espn,true,,jm,Jamaica,espn birthplace
 996,Pau Gasol,F,,,,,,,drafted,2001,1,3,ATL,Atlanta Hawks,espn,true,,es,Spain,espn birthplace
-4251,Paul George,F,13,espn,278,Fresno State,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,espn,drafted,2010,1,10,IND,Indiana Pacers,espn,true,,us,United States,espn citizenship
+4251,Paul George,F,13,espn,278,Fresno State,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,espn,drafted,2010,1,10,IND,Indiana Pacers,espn,true,,us,United States,espn birthplace
 3015,Paul Millsap,F,,,2348,Louisiana Tech,https://a.espncdn.com/i/teamlogos/ncaa/500/2348.png,espn,drafted,2006,2,47,UTAH,Utah Jazz,espn,true,,us,United States,espn birthplace
 662,Paul Pierce,F,34,espn,2305,Kansas,https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png,espn,drafted,1998,1,10,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
-813,Peja Stojakovic,F,,,,,,,drafted,1996,1,14,SAC,Sacramento Kings,espn,true,,rs,Serbia,wikipedia nationality
+813,Peja Stojakovic,F,,,,,,,drafted,1996,1,14,SAC,Sacramento Kings,espn,true,,rs,Serbia,espn birthplace
 401,Popeye Jones,C,,,93,Murray State,https://a.espncdn.com/i/teamlogos/ncaa/500/93.png,espn,drafted,1992,2,41,HOU,Houston Rockets,espn,true,,us,United States,espn birthplace
 11,Rafer Alston,G,,,278,Fresno State,https://a.espncdn.com/i/teamlogos/ncaa/500/278.png,espn,drafted,1998,2,39,MIL,Milwaukee Bucks,espn,true,,us,United States,wikipedia birthplace
 3026,Rajon Rondo,G,,,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,2006,1,21,PHX,Phoenix Suns,espn,true,,us,United States,espn birthplace
@@ -290,18 +290,18 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 9,Ray Allen,G,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,1996,1,5,MIN,Minnesota Timberwolves,espn,true,,us,United States,espn birthplace
 2753,Raymond Felton,G,,,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,2005,1,5,CHAB,Charlotte Bobcats,espn,true,,us,United States,wikipedia birthplace
 1828,Reggie Evans,C,,,2294,Iowa,https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png,espn,undrafted,2002,,,,,wikipedia infobox,true,"Wikipedia draft team """" not in nba_draft_teams.csv",us,United States,wikipedia birthplace
-6443,Reggie Jackson,G,,,103,Boston College,https://a.espncdn.com/i/teamlogos/ncaa/500/103.png,espn,drafted,2011,1,24,OKC,Oklahoma City Thunder,espn,true,,us,United States,wikipedia nationality
+6443,Reggie Jackson,G,,,103,Boston College,https://a.espncdn.com/i/teamlogos/ncaa/500/103.png,espn,drafted,2011,1,24,OKC,Oklahoma City Thunder,espn,true,,it,Italy,espn birthplace
 552,Reggie Miller,G,,,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,1987,1,11,IND,Indiana Pacers,espn,true,,us,United States,wikipedia birthplace
 294,Richard Hamilton,G,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,1999,1,7,WSH,Washington Wizards,espn,true,,us,United States,espn birthplace
 1006,Richard Jefferson,F,,,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,2001,1,13,HOU,Houston Rockets,espn,true,,us,United States,wikipedia birthplace
 193,Ricky Davis,G,,,2294,Iowa,https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png,espn,drafted,1998,1,21,CHH,Charlotte Hornets,espn,true,,us,United States,wikipedia birthplace
-4011,Ricky Rubio,G,,,,,,,drafted,2009,1,5,MIN,Minnesota Timberwolves,espn,true,,es,Spain,espn citizenship
+4011,Ricky Rubio,G,,,,,,,drafted,2009,1,5,MIN,Minnesota Timberwolves,espn,true,,es,Spain,espn birthplace
 795,Rik Smits,C,,,2368,Marist,https://a.espncdn.com/i/teamlogos/ncaa/500/2368.png,espn,drafted,1988,1,2,IND,Indiana Pacers,espn,true,,nl,Netherlands,espn birthplace
 4395625,RJ Barrett,F,9,espn,150,Duke,https://a.espncdn.com/i/teamlogos/ncaa/500/150.png,espn,drafted,2019,1,3,NY,New York Knicks,espn,true,,ca,Canada,espn birthplace
 818,Rod Strickland,G,,,305,DePaul,https://a.espncdn.com/i/teamlogos/ncaa/500/305.png,espn,drafted,1988,1,19,NY,New York Knicks,espn,true,,us,United States,espn birthplace
 546,Ron Mercer,G,,,96,Kentucky,https://a.espncdn.com/i/teamlogos/ncaa/500/96.png,espn,drafted,1997,1,6,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
 3005,Rudy Gay,F,,,41,UConn,https://a.espncdn.com/i/teamlogos/ncaa/500/41.png,espn,drafted,2006,1,8,HOU,Houston Rockets,espn,true,,us,United States,espn birthplace
-3032976,Rudy Gobert,C,27,espn,,,,,drafted,2013,1,27,DEN,Denver Nuggets,espn,true,,fr,France,espn citizenship
+3032976,Rudy Gobert,C,27,espn,,,,,drafted,2013,1,27,DEN,Denver Nuggets,espn,true,,fr,France,espn birthplace
 3468,Russell Westbrook,G,,,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,2008,1,4,SEA,Seattle SuperSonics,espn,true,,us,United States,espn birthplace
 3412,Ryan Anderson,F,33,espn,25,California,https://a.espncdn.com/i/teamlogos/ncaa/500/25.png,espn,drafted,2008,1,21,NJ,New Jersey Nets,espn,true,,us,United States,wikipedia birthplace
 138,Sam Cassell,G,,,52,Florida State,https://a.espncdn.com/i/teamlogos/ncaa/500/52.png,espn,drafted,1993,1,24,HOU,Houston Rockets,espn,true,,us,United States,espn birthplace
@@ -318,7 +318,7 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 378,Stephen Jackson,F,,,,,,,drafted,1997,2,43,PHX,Phoenix Suns,espn,true,,us,United States,wikipedia birthplace
 509,Stephon Marbury,G,,,59,Georgia Tech,https://a.espncdn.com/i/teamlogos/ncaa/500/59.png,espn,drafted,1996,1,4,MIL,Milwaukee Bucks,espn,true,,us,United States,wikipedia birthplace
 255,Steve Francis,G,,,120,Maryland,https://a.espncdn.com/i/teamlogos/ncaa/500/120.png,espn,drafted,1999,1,2,VAN,Vancouver Grizzlies,espn,true,,us,United States,wikipedia birthplace
-592,Steve Nash,G,,,2541,Santa Clara,https://a.espncdn.com/i/teamlogos/ncaa/500/2541.png,espn,drafted,1996,1,15,PHX,Phoenix Suns,espn,true,,ca,Canada,wikipedia nationality
+592,Steve Nash,G,,,2541,Santa Clara,https://a.espncdn.com/i/teamlogos/ncaa/500/2541.png,espn,drafted,1996,1,15,PHX,Phoenix Suns,espn,true,,za,South Africa,espn birthplace
 781,Steve Smith,G,,,127,Michigan State,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,espn,drafted,1991,1,5,MIA,Miami Heat,espn,true,,us,United States,wikipedia birthplace
 2991235,Steven Adams,C,12,espn,221,Pittsburgh,https://a.espncdn.com/i/teamlogos/ncaa/500/221.png,espn,drafted,2013,1,12,OKC,Oklahoma City Thunder,espn,true,,nz,New Zealand,espn birthplace
 1979,T.J. Ford,G,,,251,Texas,https://a.espncdn.com/i/teamlogos/ncaa/500/251.png,espn,drafted,2003,1,8,MIL,Milwaukee Bucks,espn,true,,us,United States,wikipedia birthplace
@@ -330,8 +330,8 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 301,Tim Hardaway,G,,,2638,UTEP,https://a.espncdn.com/i/teamlogos/ncaa/500/2638.png,espn,drafted,1989,1,14,GS,Golden State Warriors,espn,true,,us,United States,wikipedia birthplace
 6440,Tobias Harris,F,23,wikipedia,2633,Tennessee,https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png,espn,drafted,2011,1,19,CHAB,Charlotte Bobcats,espn,true,,us,United States,espn birthplace
 287,Tom Gugliotta,F,,,152,NC State,https://a.espncdn.com/i/teamlogos/ncaa/500/152.png,espn,drafted,1992,1,6,WSB,Washington Bullets,espn,true,,us,United States,wikipedia birthplace
-446,Toni Kukoc,F,,,,,,,drafted,1990,2,29,CHI,Chicago Bulls,espn,true,,hr,Croatia,wikipedia nationality
-1015,Tony Parker,G,9,espn,,,,,drafted,2001,1,28,SA,San Antonio Spurs,espn,true,,fr,France,espn citizenship
+446,Toni Kukoc,F,,,,,,,drafted,1990,2,29,CHI,Chicago Bulls,espn,true,,rs,Serbia,espn birthplace
+1015,Tony Parker,G,9,espn,,,,,drafted,2001,1,28,SA,San Antonio Spurs,espn,true,,be,Belgium,espn birthplace
 6630,Tony Wroten,G,14,espn,264,Washington,https://a.espncdn.com/i/teamlogos/ncaa/500/264.png,espn,drafted,2012,1,25,MEM,Memphis Grizzlies,espn,true,,us,United States,wikipedia birthplace
 532,Tracy McGrady,G,,,,,,,drafted,1997,1,9,TOR,Toronto Raptors,espn,true,,us,United States,wikipedia birthplace
 4277905,Trae Young,G,3,espn,201,Oklahoma,https://a.espncdn.com/i/teamlogos/ncaa/500/201.png,espn,drafted,2018,1,5,DAL,Dallas Mavericks,espn,true,,us,United States,espn birthplace
@@ -351,7 +351,7 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 34,Vin Baker,F,,,42,Hartford,https://a.espncdn.com/i/teamlogos/ncaa/500/42.png,espn,drafted,1993,1,8,MIL,Milwaukee Bucks,espn,true,,us,United States,espn birthplace
 136,Vince Carter,G,,,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,1998,1,5,GS,Golden State Warriors,espn,true,,us,United States,wikipedia birthplace
 4433136,Walker Kessler,C,14,wikipedia,2,Auburn,https://a.espncdn.com/i/teamlogos/ncaa/500/2.png,espn,drafted,2022,1,22,MEM,Memphis Grizzlies,espn,true,,us,United States,espn birthplace
-831,Wally Szczerbiak,G,,,193,Miami (OH),https://a.espncdn.com/i/teamlogos/ncaa/500/193.png,espn,drafted,1999,1,6,MIN,Minnesota Timberwolves,espn,true,,us,United States,wikipedia nationality
+831,Wally Szczerbiak,G,,,193,Miami (OH),https://a.espncdn.com/i/teamlogos/ncaa/500/193.png,espn,drafted,1999,1,6,MIN,Minnesota Timberwolves,espn,true,,es,Spain,espn birthplace
 1722,Yao Ming,C,,,,,,,drafted,2002,1,1,HOU,Houston Rockets,espn,true,,cn,China,espn birthplace
 3064440,Zach LaVine,G,8,espn,26,UCLA,https://a.espncdn.com/i/teamlogos/ncaa/500/26.png,espn,drafted,2014,1,13,MIN,Minnesota Timberwolves,espn,true,,us,United States,espn birthplace
 1017,Zach Randolph,F,,,127,Michigan State,https://a.espncdn.com/i/teamlogos/ncaa/500/127.png,espn,drafted,2001,1,19,POR,Portland Trail Blazers,espn,true,,us,United States,wikipedia birthplace

@@ -50,7 +50,12 @@ async function main() {
     await sharp(Buffer.from(tileSvg(t.label, t.color, t.alt_color)))
       .png()
       .toFile(path.join(TILES, `nba-${t.abbr}.png`))
-  console.log(`tiles: ${content.draftTeams.length} NBA draft-team tiles written to public/tiles`)
+  await sharp(Buffer.from(tileSvg('NONE', '3A3F4B', 'FFFFFF')))
+    .png()
+    .toFile(path.join(TILES, 'NONE.png'))
+  console.log(
+    `tiles: ${content.draftTeams.length} NBA draft-team tiles + NONE written to public/tiles`,
+  )
 
   // Flags: every code in nba_countries.csv that a player actually uses, plus every code in the table.
   const parsed = parseCsv(await read('nba_countries.csv'))

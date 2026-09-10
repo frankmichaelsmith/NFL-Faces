@@ -72,6 +72,7 @@ async function main() {
     const { section, report: r } = buildProBowl(nbaContent, {
       categories: ['alma', 'draft', 'number', 'country'],
       positions,
+      noCollegeKey: 'NONE', // Frank, 2026-09-10: Dirk and LeBron answer Alma Mater with NONE
     })
     bundle.nba = section
     probowlReport += '\n' + renderProBowlReport(section, r).replace('## Pro Bowl Mode', '## NBA')

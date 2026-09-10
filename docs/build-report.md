@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-10T14:09:32.349Z.
+Generated 2026-09-10T14:29:15.524Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -203,43 +203,43 @@ Allen Hurns, Bill Schroeder, Jackie Harris, James Stewart, Jim Kelly, Ty Detmer
 
 ## NBA
 
-**4978** combos across 31 seasons, 358 players, 109 colleges, 36 draft-team tiles.
+**6178** combos across 31 seasons, 358 players, 110 colleges, 36 draft-team tiles.
 
-By category: alma 1279, draft 1550, number 606, position 0.
+By category: alma 1550, draft 1550, number 1535, position 0.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
-| 1995 | 50 | 50 | 158 |
-| 1996 | 50 | 50 | 157 |
-| 1997 | 50 | 50 | 156 |
-| 1998 | 50 | 50 | 156 |
-| 1999 | 50 | 50 | 152 |
-| 2000 | 50 | 50 | 151 |
-| 2001 | 50 | 50 | 149 |
-| 2002 | 50 | 50 | 148 |
-| 2003 | 50 | 50 | 144 |
-| 2004 | 50 | 50 | 141 |
-| 2005 | 50 | 50 | 144 |
-| 2006 | 50 | 50 | 144 |
-| 2007 | 50 | 50 | 144 |
-| 2008 | 50 | 50 | 144 |
-| 2009 | 50 | 50 | 144 |
-| 2010 | 50 | 50 | 150 |
-| 2011 | 50 | 50 | 147 |
-| 2012 | 50 | 50 | 144 |
-| 2013 | 50 | 50 | 156 |
-| 2014 | 50 | 50 | 165 |
-| 2015 | 50 | 50 | 163 |
-| 2016 | 50 | 50 | 169 |
-| 2017 | 50 | 50 | 174 |
-| 2018 | 50 | 50 | 176 |
-| 2019 | 50 | 50 | 179 |
-| 2020 | 50 | 50 | 185 |
-| 2021 | 50 | 50 | 188 |
-| 2022 | 50 | 50 | 185 |
-| 2023 | 50 | 50 | 187 |
-| 2024 | 50 | 50 | 190 |
-| 2025 | 50 | 50 | 188 |
+| 1995 | 50 | 50 | 198 |
+| 1996 | 50 | 50 | 199 |
+| 1997 | 50 | 50 | 200 |
+| 1998 | 50 | 50 | 200 |
+| 1999 | 50 | 50 | 199 |
+| 2000 | 50 | 50 | 198 |
+| 2001 | 50 | 50 | 200 |
+| 2002 | 50 | 50 | 200 |
+| 2003 | 50 | 50 | 200 |
+| 2004 | 50 | 50 | 198 |
+| 2005 | 50 | 50 | 198 |
+| 2006 | 50 | 50 | 199 |
+| 2007 | 50 | 50 | 198 |
+| 2008 | 50 | 50 | 198 |
+| 2009 | 50 | 50 | 199 |
+| 2010 | 50 | 50 | 200 |
+| 2011 | 50 | 50 | 199 |
+| 2012 | 50 | 50 | 199 |
+| 2013 | 50 | 50 | 199 |
+| 2014 | 50 | 50 | 200 |
+| 2015 | 50 | 50 | 200 |
+| 2016 | 50 | 50 | 200 |
+| 2017 | 50 | 50 | 200 |
+| 2018 | 50 | 50 | 200 |
+| 2019 | 50 | 50 | 200 |
+| 2020 | 50 | 50 | 200 |
+| 2021 | 50 | 50 | 200 |
+| 2022 | 50 | 50 | 198 |
+| 2023 | 50 | 50 | 199 |
+| 2024 | 50 | 50 | 200 |
+| 2025 | 50 | 50 | 200 |
 
 ### Unresolved selections (0)
 
@@ -249,9 +249,9 @@ None.
 
 Al Harrington, Al Jefferson, Amar'e Stoudemire, Anderson Varejao, Andrea Bargnani, Andrew Bynum, Andris Biedrins, Anfernee Simons, Bojan Bogdanovic, Brandon Jennings, Clint Capela, Danilo Gallinari, Dennis Schroder, Dino Radja, Dirk Nowitzki, Dwight Howard, Eddy Curry, Evan Fournier, Giannis Antetokounmpo, Goran Dragic, Hedo Turkoglu, Isaiah Hartenstein, Ivica Zubac, JR Smith, Jalen Green, Jermaine O'Neal, Jonas Valanciunas, Jose Calderon, Josh Giddey, Josh Smith, Jusuf Nurkic, Kevin Garnett, Kobe Bryant, Kristaps Porzingis, LaMelo Ball, LeBron James, Lou Williams, Luis Scola, Luka Doncic, Manu Ginobili, Marc Gasol, Marcin Gortat, Mehmet Okur, Michael Olowokandi, Monta Ellis, Nikola Jokic, Omer Asik, Pau Gasol, Peja Stojakovic, Rashard Lewis, Ricky Rubio, Rudy Gobert, Shawn Kemp, Stephen Jackson, Toni Kukoc, Tony Parker, Tracy McGrady, Tyson Chandler, Victor Wembanyama, Yao Ming
 
-### Players missing jersey (229)
+### Players missing jersey (4)
 
-Aaron Brooks, Al Harrington, Al Jefferson, Allan Houston, Allen Iverson, Alonzo Mourning, Amar'e Stoudemire, Anderson Varejao, Andre Iguodala, Andre Miller, Andrea Bargnani, Andrew Bogut, Andrew Bynum, Andris Biedrins, Antawn Jamison, Anthony Mason, Antoine Walker, Antonio Davis, Antonio McDyess, Arron Afflalo, Avery Johnson, Baron Davis, Ben Gordon, Ben Wallace, Blake Griffin, Brad Miller, Bradley Beal, Brandon Jennings, Brandon Roy, Brevin Knight, Brian Grant, Carlos Boozer, Carmelo Anthony, Caron Butler, Cedric Ceballos, Charles Barkley, Chauncey Billups, Chris Bosh, Chris Gatling, Chris Kaman, Chris Webber, Christian Laettner, Clarence Weatherspoon, Clifford Robinson, Corey Maggette, Corliss Williamson, Cuttino Mobley, D'Angelo Russell, Dale Davis, Damon Stoudamire, Dana Barros, Danilo Gallinari, Danny Fortson, Danny Granger, Danny Manning, David Lee, David Robinson, David Wesley, David West, DeMarcus Cousins, Dennis Rodman, Dennis Schroder, Deron Williams, Derrick Rose, Detlef Schrempf, Devin Harris, Dirk Nowitzki, Dominique Wilkins, Donyell Marshall, Dwyane Wade, Earl Barron, Eddie Jones, Elfrid Payton, Elton Brand, Eric Gordon, Eric Snow, Eric Williams, Erick Dampier, Ervin Johnson, Evan Fournier, Gary Trent, George McCloud, Gerald Wallace, Gilbert Arenas, Glen Rice, Glenn Robinson, Goran Dragic, Gordon Hayward, Greivis Vasquez, Hakeem Olajuwon, Hedo Turkoglu, Isaiah Rider, Isaiah Thomas, JaKarr Sampson, Jabari Parker, Jahlil Okafor, Jalen Duren, Jalen Rose, Jamaal Magloire, Jamaal Tinsley, Jamal Crawford, Jamal Mashburn, Jameer Nelson, Jamie Feick, Jarrett Jack, Jason Kidd, Jason Richardson, Jason Terry, Jason Williams, Jaylen Hoard, Jayson Williams, Jeff Malone, Jeff Teague, Jeremy Lin, Jermaine O'Neal, Jerome Williams, Jerry Stackhouse, Jim Jackson, Joakim Noah, Joe Dumars, Joe Johnson, Joe Smith, John Salmons, John Stockton, John Wall, Josh Howard, Josh Smith, Juwan Howard, Karl Malone, Keith Van Horn, Kemba Walker, Kendall Gill, Kendall Marshall, Kenny Anderson, Kevin Garnett, Kevin Johnson, Kevin Martin, Kevin Willis, Kirk Hinrich, Kobe Bryant, Kris Humphries, Kurt Thomas, Kyle Lowry, LaMarcus Aldridge, LaPhonso Ellis, Lamar Odom, Larry Hughes, Latrell Sprewell, Lou Williams, Luis Scola, Luke Ridnour, Mahmoud Abdul-Rauf, Malcolm Brogdon, Manu Ginobili, MarShon Brooks, Marc Gasol, Marcin Gortat, Marcus Camby, Marcus Thornton, Mark Jackson, Maurice Taylor, Michael Beasley, Michael Dickerson, Michael Finley, Michael Jordan, Michael Olowokandi, Michael Redd, Mike Bibby, Mike James, Mike Miller, Mitch Richmond, Monta Ellis, Nick Van Exel, Nick Young, O.J. Mayo, Pau Gasol, Paul Millsap, Peja Stojakovic, Popeye Jones, Rafer Alston, Rajon Rondo, Rashard Lewis, Rasheed Wallace, Ray Allen, Raymond Felton, Reggie Evans, Reggie Jackson, Reggie Miller, Richard Hamilton, Richard Jefferson, Ricky Davis, Ricky Rubio, Rik Smits, Rod Strickland, Ron Mercer, Rudy Gay, Russell Westbrook, Sam Cassell, Scottie Pippen, Sean Elliott, Shaquille O'Neal, Shareef Abdur-Rahim, Shawn Kemp, Shawn Marion, Skylar Mays, Stephen Jackson, Stephon Marbury, Steve Francis, Steve Nash, Steve Smith, T.J. Ford, Terrell Brandon, Thaddeus Young, Tim Hardaway, Tom Gugliotta, Toni Kukoc, Tracy McGrady, Troy Murphy, Ty Lawson, Tyler Herro, Tyreke Evans, Tyrone Hill, Tyson Chandler, Vin Baker, Vince Carter, Wally Szczerbiak, Yao Ming, Zach Randolph, Zavier Simpson
+Jaylen Hoard, Skylar Mays, Yao Ming, Zavier Simpson
 
 ### Players missing draft (0)
 

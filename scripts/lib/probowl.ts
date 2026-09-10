@@ -300,6 +300,8 @@ export interface BuildOptions {
   categories?: readonly ProBowlCategory[]
   /** Positions the Position wheel can show as wrong cards (NFL: the four skill slots). */
   positions?: readonly string[]
+  /** Players with no college answer Alma Mater with this key (NBA: 'NONE'); it is a wrong card for everyone else. */
+  noCollegeKey?: string
 }
 
 export function buildProBowl(
@@ -341,9 +343,11 @@ export function buildProBowl(
   const positionList = opts.positions ?? SKILL
   const countryCodes = new Set<string>()
   const numbersByPos = new Map<Skill, Set<string>>()
+  const noCollege = opts.noCollegeKey ?? null
+  const collegeOf = (p: PlayerRow) => p.college_id || noCollege || ''
   for (const id of inPool) {
     const p = players.get(id)!
-    if (p.college_id) collegeIds.add(p.college_id)
+    if (collegeOf(p)) collegeIds.add(collegeOf(p))
     if (p.draft_status === 'drafted') draftKeys.add(p.draft_team)
     if (p.draft_status === 'undrafted') draftKeys.add('UDFA')
     if (p.country) countryCodes.add(p.country)
@@ -372,7 +376,7 @@ export function buildProBowl(
       name: p.name,
       pos: p.pos,
       jersey: p.jersey,
-      college: p.college_id || null,
+      college: collegeOf(p) || null,
       draft:
         p.draft_status === 'drafted'
           ? p.draft_team
@@ -388,6 +392,8 @@ export function buildProBowl(
         name: p.college_name,
         logo: p.college_logo ? `${p.college_id}.png` : null,
       }
+    if (!p.college_id && noCollege && !section.colleges[noCollege])
+      section.colleges[noCollege] = { name: 'None', logo: null }
   }
   for (const key of draftKeys) {
     if (key === 'UDFA') continue
@@ -417,11 +423,11 @@ export function buildProBowl(
         section.combos.push({ season, player: id, category, answer, distractors })
         byCategory[category]++
       }
-      if (categories.includes('alma') && p.college_id)
+      if (categories.includes('alma') && collegeOf(p))
         emit(
           'alma',
-          p.college_id,
-          [...collegeIds].filter((x) => x !== p.college_id),
+          collegeOf(p),
+          [...collegeIds].filter((x) => x !== collegeOf(p)),
         )
       const draftAnswer = section.players[id]!.draft
       if (categories.includes('draft') && draftAnswer) {

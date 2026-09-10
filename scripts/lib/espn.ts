@@ -32,6 +32,12 @@ export function idFromRef(ref: string): string {
   return last
 }
 
+const US_STATES = new Set(
+  'AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY DC'.split(
+    ' ',
+  ),
+)
+
 export class EspnClient {
   private readonly opts: Required<EspnClientOptions>
   private inflight = 0
@@ -254,7 +260,10 @@ export class EspnClient {
         : null,
       debutYear: a.debutYear ?? null,
       active: a.active ?? null,
-      birthCountry: a.birthPlace?.country ?? null,
+      // Some US records carry only city and state; a US state code means the USA.
+      birthCountry:
+        a.birthPlace?.country ??
+        (a.birthPlace?.state && US_STATES.has(a.birthPlace.state) ? 'USA' : null),
       citizenship: a.citizenship ?? null,
     }
   }

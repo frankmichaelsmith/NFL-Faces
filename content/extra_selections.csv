@@ -308,26 +308,34 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2008,QB,,Chad Pennington,Chad Pennington,MIA,2149,extra: Frank 2026-09-10
 2008,QB,,David Garrard,David Garrard,JAX,3636,extra: Frank 2026-09-10
 2008,QB,5,Donovan McNabb,Donovan McNabb,PHI,1753,extra: Frank 2026-09-10
+2008,QB,17,Jake Delhomme,Jake Delhomme,CAR,1693,extra: Frank 2026-09-10
+2008,QB,17,Jason Campbell,Jason Campbell,WSH,8440,extra: Frank 2026-09-10
 2008,QB,,Matt Cassel,Matt Cassel,NE,8644,extra: Frank 2026-09-10
 2008,QB,,Matt Ryan (American football),Matt Ryan,ATL,11237,extra: Frank 2026-09-10
 2008,QB,,Philip Rivers,Philip Rivers,LAC,5529,extra: Frank 2026-09-10
 2008,QB,,Tony Romo,Tony Romo,DAL,5209,extra: Frank 2026-09-10
 2008,RB,36,Brian Westbrook,Brian Westbrook,PHI,3619,extra: Frank 2026-09-10
 2008,RB,34,DeAngelo Williams,DeAngelo Williams,CAR,9613,extra: Frank 2026-09-10
+2008,RB,,Derrick Ward,Derrick Ward,NYG,5760,extra: Frank 2026-09-10
 2008,RB,,Frank Gore,Frank Gore,SF,8479,extra: Frank 2026-09-10
 2008,RB,,LaDainian Tomlinson,LaDainian Tomlinson,LAC,2553,extra: Frank 2026-09-10
+2008,RB,,Marion Barber III,Marion Barber,DAL,8523,extra: Frank 2026-09-10
 2008,RB,22,Matt Forte,Matt Forte,CHI,11278,extra: Frank 2026-09-10
 2008,RB,,Maurice Jones-Drew,Maurice Jones-Drew,JAX,9646,extra: Frank 2026-09-10
 2008,RB,,Steve Slaton,Steve Slaton,HOU,11323,extra: Frank 2026-09-10
 2008,RB,,Steven Jackson,Steven Jackson,LAR,5549,extra: Frank 2026-09-10
 2008,TE,,Dallas Clark,Dallas Clark,IND,4482,extra: Frank 2026-09-10
+2008,TE,81,Visanthe Shiancoe,Visanthe Shiancoe,MIN,4549,extra: Frank 2026-09-10
 2008,TE,,"Zach Miller (tight end, born 1985)",Zach Miller,LV,10482,extra: Frank 2026-09-10
 2008,WR,,Antonio Bryant,Antonio Bryant,TB,3591,extra: Frank 2026-09-10
+2008,WR,87,Bernard Berrian,Bernard Berrian,MIN,5603,extra: Frank 2026-09-10
 2008,WR,81,Calvin Johnson,Calvin Johnson,DET,10447,extra: Frank 2026-09-10
 2008,WR,,Derrick Mason,Derrick Mason,BAL,1263,extra: Frank 2026-09-10
+2008,WR,,Donald Driver,Donald Driver,GB,1966,extra: Frank 2026-09-10
 2008,WR,,Dwayne Bowe,Dwayne Bowe,KC,10467,extra: Frank 2026-09-10
 2008,WR,,Greg Jennings,Greg Jennings,GB,9638,extra: Frank 2026-09-10
 2008,WR,86,Hines Ward,Hines Ward,PIT,1494,extra: Frank 2026-09-10
+2008,WR,,Lance Moore,Lance Moore,NO,9400,extra: Frank 2026-09-10
 2008,WR,,Randy Moss,Randy Moss,NE,1433,extra: Frank 2026-09-10
 2008,WR,89,Santana Moss,Santana Moss,WSH,2564,extra: Frank 2026-09-10
 2008,WR,89,Steve Smith Sr.,Steve Smith Sr.,CAR,2622,extra: Frank 2026-09-10
@@ -366,6 +374,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2010,QB,12,Aaron Rodgers,Aaron Rodgers,GB,8439,extra: Frank 2026-09-10
 2010,QB,9,Carson Palmer,Carson Palmer,CIN,4459,extra: Frank 2026-09-10
 2010,QB,10,Eli Manning,Eli Manning,NYG,5526,extra: Frank 2026-09-10
+2010,QB,6,Jay Cutler,Jay Cutler,CHI,9597,extra: Frank 2026-09-10
 2010,QB,5,Joe Flacco,Joe Flacco,BAL,11252,extra: Frank 2026-09-10
 2010,QB,5,Josh Freeman,Josh Freeman,TB,12473,extra: Frank 2026-09-10
 2010,QB,8,Kyle Orton,Kyle Orton,DEN,8520,extra: Frank 2026-09-10
@@ -374,6 +383,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2010,RB,44,Ahmad Bradshaw,Ahmad Bradshaw,NYG,10693,extra: Frank 2026-09-10
 2010,RB,32,Cedric Benson,Cedric Benson,CIN,8419,extra: Frank 2026-09-10
 2010,RB,20,Darren McFadden,Darren McFadden,LV,11238,extra: Frank 2026-09-10
+2010,RB,21,Frank Gore,Frank Gore,SF,8479,extra: Frank 2026-09-10
 2010,RB,25,LeSean McCoy,LeSean McCoy,PHI,12514,extra: Frank 2026-09-10
 2010,RB,22,Matt Forte,Matt Forte,CHI,11278,extra: Frank 2026-09-10
 2010,RB,40,Peyton Hillis,Peyton Hillis,CLE,11461,extra: Frank 2026-09-10
@@ -382,7 +392,9 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2010,TE,47,Chris Cooley (American football),Chris Cooley,WSH,5606,extra: Frank 2026-09-10
 2010,TE,82,Kellen Winslow II,Kellen Winslow,TB,5531,extra: Frank 2026-09-10
 2010,TE,85,Vernon Davis,Vernon Davis,SF,9592,extra: Frank 2026-09-10
+2010,WR,81,Anquan Boldin,Anquan Boldin,BAL,4512,extra: Frank 2026-09-10
 2010,WR,19,Brandon Marshall,Brandon Marshall,MIA,9705,extra: Frank 2026-09-10
+2010,WR,17,Braylon Edwards,Braylon Edwards,NYJ,8418,extra: Frank 2026-09-10
 2010,WR,88,Hakeem Nicks,Hakeem Nicks,NYG,12586,extra: Frank 2026-09-10
 2010,WR,18,Jeremy Maclin,Jeremy Maclin,PHI,12579,extra: Frank 2026-09-10
 2010,WR,13,Johnny Knox,Johnny Knox,CHI,12678,extra: Frank 2026-09-10
@@ -399,10 +411,12 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2011,QB,8,Matt Hasselbeck,Matt Hasselbeck,TEN,1575,extra: Frank 2026-09-10
 2011,QB,2,Matt Ryan (American football),Matt Ryan,ATL,11237,extra: Frank 2026-09-10
 2011,QB,9,Matthew Stafford,Matthew Stafford,DET,12483,extra: Frank 2026-09-10
+2011,QB,,Michael Vick,Mike Vick,PHI,2549,extra: Frank 2026-09-10
 2011,QB,14,Ryan Fitzpatrick,Ryan Fitzpatrick,BUF,8664,extra: Frank 2026-09-10
 2011,QB,,Tony Romo,Tony Romo,DAL,5209,extra: Frank 2026-09-10
 2011,RB,28,Adrian Peterson,Adrian Peterson,MIN,10452,extra: Frank 2026-09-10
 2011,RB,,Chris Johnson (running back),Chris Johnson,TEN,11258,extra: Frank 2026-09-10
+2011,RB,43,Darren Sproles,Darren Sproles,NO,8544,extra: Frank 2026-09-10
 2011,RB,22,Fred Jackson (running back),Fred Jackson,BUF,10195,extra: Frank 2026-09-10
 2011,RB,29,Michael Bush,Michael Bush,LV,10544,extra: Frank 2026-09-10
 2011,RB,33,Michael Turner (American football),Michael Turner,ATL,5679,extra: Frank 2026-09-10
@@ -420,6 +434,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2011,WR,11,Julio Jones,Julio Jones,ATL,13982,extra: Frank 2026-09-10
 2011,WR,12,Marques Colston,Marques Colston,NO,9838,extra: Frank 2026-09-10
 2011,WR,85,Nate Washington,Nate Washington,TEN,9307,extra: Frank 2026-09-10
+2011,WR,12,Percy Harvin,Percy Harvin,MIN,12569,extra: Frank 2026-09-10
 2011,WR,,Steve Smith Sr.,Steve Smith Sr.,CAR,2622,extra: Frank 2026-09-10
 2011,WR,13,Stevie Johnson,Stevie Johnson,BUF,11458,extra: Frank 2026-09-10
 2011,WR,80,Victor Cruz (American football),Victor Cruz,NYG,13553,extra: Frank 2026-09-10
@@ -456,6 +471,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2013,QB,14,Andy Dalton,Andy Dalton,CIN,14012,extra: Frank 2026-09-10
 2013,QB,7,Ben Roethlisberger,Ben Roethlisberger,PIT,5536,extra: Frank 2026-09-10
 2013,QB,3,Carson Palmer,Carson Palmer,ARI,4459,extra: Frank 2026-09-10
+2013,QB,10,Eli Manning,Eli Manning,NYG,5526,extra: Frank 2026-09-10
 2013,QB,5,Joe Flacco,Joe Flacco,BAL,11252,extra: Frank 2026-09-10
 2013,QB,2,Matt Ryan (American football),Matt Ryan,ATL,11237,extra: Frank 2026-09-10
 2013,QB,9,Matthew Stafford,Matthew Stafford,DET,12483,extra: Frank 2026-09-10
@@ -478,6 +494,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2013,WR,87,Jordy Nelson,Jordy Nelson,GB,11270,extra: Frank 2026-09-10
 2013,WR,11,Julian Edelman,Julian Edelman,NE,12649,extra: Frank 2026-09-10
 2013,WR,13,Keenan Allen,Keenan Allen,LAC,15818,extra: Frank 2026-09-10
+2013,WR,13,Kendall Wright,Kendall Wright,TEN,14909,extra: Frank 2026-09-10
 2013,WR,15,Michael Floyd,Michael Floyd,ARI,14908,extra: Frank 2026-09-10
 2013,WR,88,Pierre Garçon,Pierre Garcon,WSH,11439,extra: Frank 2026-09-10
 2013,WR,13,T. Y. Hilton,T.Y. Hilton,IND,14924,extra: Frank 2026-09-10
@@ -543,6 +560,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2015,WR,15,Michael Crabtree,Michael Crabtree,LV,12563,extra: Frank 2026-09-10
 2015,WR,13,Mike Evans (wide receiver),Mike Evans,TB,16737,extra: Frank 2026-09-10
 2015,WR,14,Sammy Watkins,Sammy Watkins,BUF,16725,extra: Frank 2026-09-10
+2015,WR,11,Travis Benjamin,Travis Benjamin,CLE,15062,extra: Frank 2026-09-10
 2016,QB,12,Andrew Luck,Andrew Luck,IND,14874,extra: Frank 2026-09-10
 2016,QB,5,Blake Bortles,Blake Bortles,JAX,16724,extra: Frank 2026-09-10
 2016,QB,3,Carson Palmer,Carson Palmer,ARI,4459,extra: Frank 2026-09-10
@@ -666,14 +684,19 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2020,QB,6,Baker Mayfield,Baker Mayfield,CLE,3052587,extra: Frank 2026-09-10
 2020,QB,7,Ben Roethlisberger,Ben Roethlisberger,PIT,5536,extra: Frank 2026-09-10
 2020,QB,4,Derek Carr,Derek Carr,LV,16757,extra: Frank 2026-09-10
+2020,QB,9,Drew Brees,Drew Brees,NO,2580,extra: Frank 2026-09-10
 2020,QB,16,Jared Goff,Jared Goff,LAR,3046779,extra: Frank 2026-09-10
 2020,QB,10,Justin Herbert,Justin Herbert,LAC,4038941,extra: Frank 2026-09-10
 2020,QB,8,Kirk Cousins,Kirk Cousins,MIN,14880,extra: Frank 2026-09-10
+2020,QB,8,Lamar Jackson,Lamar Jackson,BAL,3916387,extra: Frank 2026-09-10
 2020,QB,2,Matt Ryan (American football),Matt Ryan,ATL,11237,extra: Frank 2026-09-10
 2020,QB,9,Matthew Stafford,Matthew Stafford,DET,12483,extra: Frank 2026-09-10
 2020,QB,17,Philip Rivers,Philip Rivers,IND,5529,extra: Frank 2026-09-10
 2020,QB,17,Ryan Tannehill,Ryan Tannehill,TEN,14876,extra: Frank 2026-09-10
+2020,QB,5,Teddy Bridgewater,Teddy Bridgewater,CAR,16728,extra: Frank 2026-09-10
 2020,QB,12,Tom Brady,Tom Brady,TB,2330,extra: Frank 2026-09-10
+2020,RB,24,Antonio Gibson,Antonio Gibson,WSH,4360294,extra: Frank 2026-09-10
+2020,RB,25,Clyde Edwards-Helaire,Clyde Edwards-Helaire,KC,4242214,extra: Frank 2026-09-10
 2020,RB,32,David Montgomery (American football),David Montgomery,CHI,4035538,extra: Frank 2026-09-10
 2020,RB,21,Ezekiel Elliott,Ezekiel Elliott,DAL,3051392,extra: Frank 2026-09-10
 2020,RB,30,James Robinson (running back),James Robinson,JAX,4052042,extra: Frank 2026-09-10
@@ -681,16 +704,22 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2020,RB,27,Kareem Hunt,Kareem Hunt,CLE,3059915,extra: Frank 2026-09-10
 2020,RB,41,Kenyan Drake,Kenyan Drake,ARI,2979843,extra: Frank 2026-09-10
 2020,RB,25,Melvin Gordon,Melvin Gordon III,DEN,2576434,extra: Frank 2026-09-10
+2020,RB,26,Miles Sanders,Miles Sanders,PHI,4045163,extra: Frank 2026-09-10
 2020,RB,27,Ronald Jones II,Ronald Jones,TB,3912550,extra: Frank 2026-09-10
+2020,TE,89,Mark Andrews (American football),Mark Andrews,BAL,3116365,extra: Frank 2026-09-10
 2020,WR,19,Adam Thielen,Adam Thielen,MIN,16460,extra: Frank 2026-09-10
 2020,WR,12,Allen Robinson,Allen Robinson,CHI,16799,extra: Frank 2026-09-10
 2020,WR,19,Amari Cooper,Amari Cooper,DAL,2976499,extra: Frank 2026-09-10
 2020,WR,13,Brandin Cooks,Brandin Cooks,HOU,16731,extra: Frank 2026-09-10
 2020,WR,18,Calvin Ridley,Calvin Ridley,ATL,3925357,extra: Frank 2026-09-10
+2020,WR,84,Corey Davis (wide receiver),Corey Davis,TEN,3042778,extra: Frank 2026-09-10
+2020,WR,18,Diontae Johnson,Diontae Johnson,PIT,3932905,extra: Frank 2026-09-10
 2020,WR,12,D. J. Moore,DJ Moore,CAR,3915416,extra: Frank 2026-09-10
 2020,WR,11,Marvin Jones (wide receiver),Marvin Jones Jr.,DET,15072,extra: Frank 2026-09-10
 2020,WR,13,Mike Evans (wide receiver),Mike Evans,TB,16737,extra: Frank 2026-09-10
+2020,WR,15,Nelson Agholor,Nelson Agholor,LV,2971618,extra: Frank 2026-09-10
 2020,WR,11,Robbie Chosen,Robbie Chosen,CAR,2574808,extra: Frank 2026-09-10
+2020,WR,17,"Robert Woods (wide receiver, born 1992)",Robert Woods,LAR,15880,extra: Frank 2026-09-10
 2020,WR,17,Terry McLaurin,Terry McLaurin,WSH,3121422,extra: Frank 2026-09-10
 2020,WR,16,Tyler Lockett,Tyler Lockett,SEA,2577327,extra: Frank 2026-09-10
 2021,QB,7,Ben Roethlisberger,Ben Roethlisberger,PIT,5536,extra: Frank 2026-09-10
@@ -701,9 +730,11 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2021,QB,17,Josh Allen,Josh Allen,BUF,3918298,extra: Frank 2026-09-10
 2021,QB,2,Matt Ryan (American football),Matt Ryan,ATL,11237,extra: Frank 2026-09-10
 2021,QB,9,Matthew Stafford,Matthew Stafford,LAR,12483,extra: Frank 2026-09-10
+2021,QB,17,Ryan Tannehill,Ryan Tannehill,TEN,14876,extra: Frank 2026-09-10
 2021,RB,33,Aaron Jones (running back),Aaron Jones Sr.,GB,3042519,extra: Frank 2026-09-10
 2021,RB,24,Antonio Gibson,Antonio Gibson,WSH,4360294,extra: Frank 2026-09-10
 2021,RB,30,Austin Ekeler,Austin Ekeler,LAC,3068267,extra: Frank 2026-09-10
+2021,RB,84,Cordarrelle Patterson,Cordarrelle Patterson,ATL,15807,extra: Frank 2026-09-10
 2021,RB,37,Damien Harris,Damien Harris,NE,3925347,extra: Frank 2026-09-10
 2021,RB,21,Ezekiel Elliott,Ezekiel Elliott,DAL,3051392,extra: Frank 2026-09-10
 2021,RB,33,Javonte Williams,Javonte Williams,DEN,4361579,extra: Frank 2026-09-10
@@ -717,6 +748,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2021,WR,11,Darnell Mooney,Darnell Mooney,CHI,4040655,extra: Frank 2026-09-10
 2021,WR,2,D. J. Moore,DJ Moore,CAR,3915416,extra: Frank 2026-09-10
 2021,WR,14,DK Metcalf,DK Metcalf,SEA,4047650,extra: Frank 2026-09-10
+2021,WR,5,,Hollywood Brown,BAL,4241372,extra: Frank 2026-09-10; no Wikipedia article verified
 2021,WR,17,Jaylen Waddle,Jaylen Waddle,MIA,4372016,extra: Frank 2026-09-10
 2021,WR,11,Michael Pittman Jr.,Michael Pittman Jr.,IND,4035687,extra: Frank 2026-09-10
 2021,WR,81,"Mike Williams (wide receiver, born 1994)",Mike Williams,LAC,3045138,extra: Frank 2026-09-10
@@ -728,6 +760,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2022,QB,8,Daniel Jones (American football),Daniel Jones,NYG,3917792,extra: Frank 2026-09-10
 2022,QB,10,Davis Mills,Davis Mills,HOU,4242546,extra: Frank 2026-09-10
 2022,QB,10,Justin Herbert,Justin Herbert,LAC,4038941,extra: Frank 2026-09-10
+2022,QB,10,Mac Jones,Mac Jones,NE,4241464,extra: Frank 2026-09-10
 2022,QB,2,Matt Ryan (American football),Matt Ryan,IND,11237,extra: Frank 2026-09-10
 2022,QB,3,Russell Wilson,Russell Wilson,DEN,14881,extra: Frank 2026-09-10
 2022,QB,12,Tom Brady,Tom Brady,TB,2330,extra: Frank 2026-09-10
@@ -737,6 +770,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2022,RB,30,Austin Ekeler,Austin Ekeler,LAC,3068267,extra: Frank 2026-09-10
 2022,RB,30,Jamaal Williams,Jamaal Williams,DET,2980453,extra: Frank 2026-09-10
 2022,RB,28,Joe Mixon,Joe Mixon,CIN,3116385,extra: Frank 2026-09-10
+2022,RB,9,Kenneth Walker III,Kenneth Walker III,SEA,4567048,extra: Frank 2026-09-10
 2022,RB,22,Najee Harris,Najee Harris,PIT,4241457,extra: Frank 2026-09-10
 2022,RB,38,Rhamondre Stevenson,Rhamondre Stevenson,NE,4569173,extra: Frank 2026-09-10
 2022,RB,1,Travis Etienne,Travis Etienne Jr.,JAX,4239996,extra: Frank 2026-09-10
@@ -750,6 +784,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2022,WR,14,DK Metcalf,DK Metcalf,SEA,4047650,extra: Frank 2026-09-10
 2022,WR,17,Garrett Wilson,Garrett Wilson,NYJ,4569618,extra: Frank 2026-09-10
 2022,WR,17,Jaylen Waddle,Jaylen Waddle,MIA,4372016,extra: Frank 2026-09-10
+2022,WR,10,Jerry Jeudy,Jerry Jeudy,DEN,4241463,extra: Frank 2026-09-10
 2022,WR,13,Mike Evans (wide receiver),Mike Evans,TB,16737,extra: Frank 2026-09-10
 2022,WR,85,Tee Higgins,Tee Higgins,CIN,4239993,extra: Frank 2026-09-10
 2022,WR,16,Tyler Lockett,Tyler Lockett,SEA,2577327,extra: Frank 2026-09-10
@@ -805,6 +840,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2024,WR,11,A. J. Brown,A.J. Brown,PHI,4047646,extra: Frank 2026-09-10
 2024,WR,0,Calvin Ridley,Calvin Ridley,TEN,3925357,extra: Frank 2026-09-10
 2024,WR,14,Courtland Sutton,Courtland Sutton,DEN,3128429,extra: Frank 2026-09-10
+2024,WR,1,Darnell Mooney,Darnell Mooney,ATL,4040655,extra: Frank 2026-09-10
 2024,WR,17,Davante Adams,Davante Adams,NYJ,16800,extra: Frank 2026-09-10
 2024,WR,5,Drake London,Drake London,ATL,4426502,extra: Frank 2026-09-10
 2024,WR,5,Garrett Wilson,Garrett Wilson,NYJ,4569618,extra: Frank 2026-09-10
@@ -837,6 +873,7 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2025,WR,12,Chris Olave,Chris Olave,NO,4361370,extra: Frank 2026-09-10
 2025,WR,17,Davante Adams,Davante Adams,LAR,16800,extra: Frank 2026-09-10
 2025,WR,6,DeVonta Smith,DeVonta Smith,PHI,4241478,extra: Frank 2026-09-10
+2025,WR,5,Drake London,Drake London,ATL,4426502,extra: Frank 2026-09-10
 2025,WR,1,Jameson Williams,Jameson Williams,DET,4426388,extra: Frank 2026-09-10
 2025,WR,18,Justin Jefferson,Justin Jefferson,MIN,4262921,extra: Frank 2026-09-10
 2025,WR,14,Michael Wilson (wide receiver),Michael Wilson,ARI,4360761,extra: Frank 2026-09-10

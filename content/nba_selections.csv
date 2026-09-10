@@ -1,11 +1,11 @@
 season,pos,number,wiki_title,name,team,espn_id,note
-1995,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 29.3 ppg · 11.4 rpg
-1995,C,34,Hakeem Olajuwon,Hakeem Olajuwon,,619,ppg · 27.8 ppg · 10.8 rpg
-1995,C,50,David Robinson,David Robinson,,715,ppg · 27.6 ppg · 10.8 rpg
+1995,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 29.3 ppg · 11.4 rpg · 2.7 apg
+1995,C,34,Hakeem Olajuwon,Hakeem Olajuwon,,619,ppg · 27.8 ppg · 10.8 rpg · 3.5 apg
+1995,C,50,David Robinson,David Robinson,,715,ppg · 27.6 ppg · 10.8 rpg · 2.9 apg
 1995,G,45/23,Michael Jordan,Michael Jordan,,1035,ppg · 26.9 ppg · 6.9 rpg · 5.3 apg
-1995,F,32,Karl Malone,Karl Malone,,501,ppg · 26.7 ppg · 10.6 rpg
-1995,F,24,Jim Jackson (basketball),Jim Jackson,,372,ppg · 25.7 ppg
-1995,F,32,Jamal Mashburn,Jamal Mashburn,,516,ppg · 24.1 ppg
+1995,F,32,Karl Malone,Karl Malone,,501,ppg · 26.7 ppg · 10.6 rpg · 3.5 apg
+1995,F,24,Jim Jackson (basketball),Jim Jackson,,372,ppg · 25.7 ppg · 5.1 rpg · 3.7 apg
+1995,F,32,Jamal Mashburn,Jamal Mashburn,,516,ppg · 24.1 ppg · 3.7 apg
 1995,C,33,,Patrick Ewing,,237,ppg · 23.9 ppg · 11.0 rpg
 1995,F,34,Charles Barkley,Charles Barkley,,37,ppg · 23.0 ppg · 11.1 rpg · 4.1 apg
 1995,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 22.8 ppg · 3.8 apg
@@ -14,112 +14,112 @@ season,pos,number,wiki_title,name,team,espn_id,note
 1995,G,22,Clyde Drexler,Clyde Drexler,,3686,ppg · 21.8 ppg · 6.3 rpg · 4.8 apg
 1995,F,23,Cedric Ceballos,Cedric Ceballos,,141,ppg · 21.7 ppg · 8.0 rpg
 1995,F,33,Scottie Pippen,Scottie Pippen,,663,ppg · 21.4 ppg · 8.1 rpg · 5.2 apg
-1995,F,3,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 21.3 ppg
+1995,F,3,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 21.3 ppg · 5.6 rpg
 1995,C,33,Alonzo Mourning,Alonzo Mourning,,580,ppg · 21.3 ppg · 9.9 rpg
 1995,F,1,,Anfernee Hardaway,,302,ppg · 20.9 ppg · 7.2 apg
 1995,G,20,,Gary Payton,,640,ppg · 20.6 ppg · 7.1 apg
 1995,G,15,Latrell Sprewell,Latrell Sprewell,,800,ppg · 20.6 ppg · 4.0 apg
 1995,G,3,Dana Barros,Dana Barros,,40,ppg · 20.6 ppg · 7.5 apg
-1995,F,44,Derrick Coleman,Derrick Coleman,,156,ppg · 20.5 ppg · 10.6 rpg
-1995,G,34,Isaiah Rider,Isaiah Rider,,705,ppg · 20.4 ppg
+1995,F,44,Derrick Coleman,Derrick Coleman,,156,ppg · 20.5 ppg · 10.6 rpg · 3.3 apg
+1995,G,34,Isaiah Rider,Isaiah Rider,,705,ppg · 20.4 ppg · 3.3 apg
 1995,G,10,Tim Hardaway,Tim Hardaway,,301,ppg · 20.1 ppg · 9.3 apg
 1995,C,2,Chris Webber,Chris Webber,,897,ppg · 20.1 ppg · 9.6 rpg · 4.7 apg
 1995,F,33,Grant Hill,Grant Hill,,336,ppg · 19.9 ppg · 6.4 rpg · 5.0 apg
-1995,G,31,Reggie Miller,Reggie Miller,,552,ppg · 19.6 ppg
-1995,F,11,Detlef Schrempf,Detlef Schrempf,,757,ppg · 19.2 ppg
+1995,G,31,Reggie Miller,Reggie Miller,,552,ppg · 19.6 ppg · 3.0 apg
+1995,F,11,Detlef Schrempf,Detlef Schrempf,,757,ppg · 19.2 ppg · 6.2 rpg · 3.8 apg
 1995,F,17,Chris Mullin,Chris Mullin,,582,ppg · 19.0 ppg · 5.0 apg
-1995,G,1,Rod Strickland,Rod Strickland,,818,ppg · 18.9 ppg · 8.8 apg
+1995,G,1,Rod Strickland,Rod Strickland,,818,ppg · 18.9 ppg · 5.0 rpg · 8.8 apg
 1995,F,2,,Larry D. Johnson,,392,ppg · 18.8 ppg · 7.2 rpg · 4.6 apg
 1995,C,40,Shawn Kemp,Shawn Kemp,,420,ppg · 18.7 ppg · 10.9 rpg
 1995,G,25,Jeff Malone,Jeff Malone,,3775,ppg · 18.4 ppg
 1995,G,4,Joe Dumars,Joe Dumars,,3689,ppg · 18.1 ppg · 5.5 apg
 1995,F,32,Sean Elliott,Sean Elliott,,225,ppg · 18.1 ppg
-1995,F,35,Clarence Weatherspoon,Clarence Weatherspoon,,896,ppg · 18.1 ppg · 6.9 rpg
+1995,F,35,Clarence Weatherspoon,Clarence Weatherspoon,,896,ppg · 18.1 ppg · 6.9 rpg · 2.8 apg
 1995,C,45,Rik Smits,Rik Smits,,795,ppg · 17.9 ppg · 7.7 rpg
-1995,F,15,Danny Manning,Danny Manning,,506,ppg · 17.9 ppg
-1995,F,12,Dominique Wilkins,Dominique Wilkins,,3532,ppg · 17.8 ppg
-1995,F,42,Vin Baker,Vin Baker,,34,ppg · 17.7 ppg · 10.3 rpg
+1995,F,15,Danny Manning,Danny Manning,,506,ppg · 17.9 ppg · 6.0 rpg · 3.3 apg
+1995,F,12,Dominique Wilkins,Dominique Wilkins,,3532,ppg · 17.8 ppg · 5.2 rpg
+1995,F,42,Vin Baker,Vin Baker,,34,ppg · 17.7 ppg · 10.3 rpg · 3.6 apg
 1995,F,10,Dennis Rodman,Dennis Rodman,,726,rpg · 16.8 rpg
 1995,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 12.5 rpg
-1995,F,32,Tyrone Hill,Tyrone Hill,,334,rpg · 10.9 rpg
+1995,F,32,Tyrone Hill,Tyrone Hill,,334,rpg · 13.8 ppg · 10.9 rpg
 1995,C,42,Kevin Willis,Kevin Willis,,937,rpg · 17.2 ppg · 10.9 rpg
 1995,C,54,Popeye Jones,Popeye Jones,,401,rpg · 10.6 rpg
-1995,G,12,John Stockton,John Stockton,,812,apg · 12.3 apg
+1995,G,12,John Stockton,John Stockton,,812,apg · 14.7 ppg · 12.3 apg
 1995,G,7,Kenny Anderson (basketball),Kenny Anderson,,15,apg · 17.6 ppg · 9.4 apg
 1995,G,1,,Tyrone Bogues,,73,apg · 8.7 apg
 1995,G,9,Nick Van Exel,Nick Van Exel,,868,apg · 16.9 ppg · 8.2 apg
-1995,G,6,Avery Johnson,Avery Johnson,,390,apg · 8.2 apg
+1995,G,6,Avery Johnson,Avery Johnson,,390,apg · 13.4 ppg · 8.2 apg
 1996,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 30.4 ppg · 6.6 rpg · 4.3 apg
-1996,C,34,Hakeem Olajuwon,Hakeem Olajuwon,,619,ppg · 26.9 ppg · 10.9 rpg
-1996,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 26.6 ppg · 11.0 rpg
+1996,C,34,Hakeem Olajuwon,Hakeem Olajuwon,,619,ppg · 26.9 ppg · 10.9 rpg · 3.6 apg
+1996,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 26.6 ppg · 11.0 rpg · 2.9 apg
 1996,F,32,Karl Malone,Karl Malone,,501,ppg · 25.7 ppg · 9.8 rpg · 4.2 apg
-1996,C,50,David Robinson,David Robinson,,715,ppg · 25.0 ppg · 12.2 rpg
+1996,C,50,David Robinson,David Robinson,,715,ppg · 25.0 ppg · 12.2 rpg · 3.0 apg
 1996,C,4,Chris Webber,Chris Webber,,897,ppg · 23.7 ppg · 7.6 rpg · 5.0 apg
-1996,F,32,Jamal Mashburn,Jamal Mashburn,,516,ppg · 23.4 ppg
+1996,F,32,Jamal Mashburn,Jamal Mashburn,,516,ppg · 23.4 ppg · 5.4 rpg · 2.8 apg
 1996,F,34,Charles Barkley,Charles Barkley,,37,ppg · 23.2 ppg · 11.6 rpg · 3.7 apg
 1996,C,33,Alonzo Mourning,Alonzo Mourning,,580,ppg · 23.2 ppg · 10.4 rpg
-1996,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 23.1 ppg
+1996,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 23.1 ppg · 3.1 apg
 1996,C,33,,Patrick Ewing,,237,ppg · 22.5 ppg · 10.6 rpg
 1996,F,5,Juwan Howard,Juwan Howard,,351,ppg · 22.1 ppg · 8.1 rpg · 4.4 apg
 1996,F,1,,Anfernee Hardaway,,302,ppg · 21.7 ppg · 7.1 apg
-1996,F,41,Glen Rice,Glen Rice,,702,ppg · 21.6 ppg
+1996,F,41,Glen Rice,Glen Rice,,702,ppg · 21.6 ppg · 4.8 rpg · 2.9 apg
 1996,F,23,Cedric Ceballos,Cedric Ceballos,,141,ppg · 21.2 ppg · 6.9 rpg
-1996,G,31,Reggie Miller,Reggie Miller,,552,ppg · 21.1 ppg
+1996,G,31,Reggie Miller,Reggie Miller,,552,ppg · 21.1 ppg · 3.3 apg
 1996,F,42,Vin Baker,Vin Baker,,34,ppg · 21.1 ppg · 9.9 rpg
-1996,F,3,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 21.1 ppg
+1996,F,3,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 21.1 ppg · 5.7 rpg
 1996,F,2,,Larry D. Johnson,,392,ppg · 20.5 ppg · 8.4 rpg · 4.4 apg
-1996,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.2 ppg
+1996,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.2 ppg · 6.1 rpg · 3.6 apg
 1996,F,33,Grant Hill,Grant Hill,,336,ppg · 20.2 ppg · 9.8 rpg · 6.8 apg
-1996,F,32,Sean Elliott,Sean Elliott,,225,ppg · 20.0 ppg
-1996,G,20,Allan Houston,Allan Houston,,349,ppg · 19.7 ppg
+1996,F,32,Sean Elliott,Sean Elliott,,225,ppg · 20.0 ppg · 5.1 rpg
+1996,G,20,Allan Houston,Allan Houston,,349,ppg · 19.7 ppg · 3.0 apg
 1996,C,40,,Dino Radja,,3823,ppg · 19.7 ppg · 9.8 rpg
 1996,C,40,Shawn Kemp,Shawn Kemp,,420,ppg · 19.6 ppg · 11.4 rpg
-1996,G,34,Isaiah Rider,Isaiah Rider,,705,ppg · 19.6 ppg
-1996,F,24,Jim Jackson (basketball),Jim Jackson,,372,ppg · 19.6 ppg
+1996,G,34,Isaiah Rider,Isaiah Rider,,705,ppg · 19.6 ppg · 2.8 apg
+1996,F,24,Jim Jackson (basketball),Jim Jackson,,372,ppg · 19.6 ppg · 5.0 rpg · 2.9 apg
 1996,F,33,Scottie Pippen,Scottie Pippen,,663,ppg · 19.4 ppg · 6.4 rpg · 5.9 apg
 1996,G,22,Clyde Drexler,Clyde Drexler,,3686,ppg · 19.3 ppg · 7.2 rpg · 5.8 apg
 1996,G,1,Terrell Brandon,Terrell Brandon,,92,ppg · 19.3 ppg · 6.5 apg
 1996,G,20,,Gary Payton,,640,ppg · 19.3 ppg · 7.5 apg
 1996,F,42,Jerry Stackhouse,Jerry Stackhouse,,802,ppg · 19.2 ppg · 3.9 apg
 1996,G,1,Mahmoud Abdul-Rauf,Mahmoud Abdul-Rauf,,1,ppg · 19.2 ppg · 6.8 apg
-1996,F,21,George McCloud,George McCloud,,524,ppg · 18.9 ppg
-1996,G,15,Latrell Sprewell,Latrell Sprewell,,800,ppg · 18.9 ppg · 4.2 apg
+1996,F,21,George McCloud,George McCloud,,524,ppg · 18.9 ppg · 4.8 rpg
+1996,G,15,Latrell Sprewell,Latrell Sprewell,,800,ppg · 18.9 ppg · 4.9 rpg · 4.2 apg
 1996,G,1,Rod Strickland,Rod Strickland,,818,ppg · 18.7 ppg · 9.6 apg
 1996,G,7,Kevin Johnson (basketball player),Kevin Johnson,,391,ppg · 18.7 ppg · 9.2 apg
 1996,C,45,Rik Smits,Rik Smits,,795,ppg · 18.5 ppg · 6.9 rpg
 1996,F,43,,Armon Gilliam,,271,ppg · 18.3 ppg · 9.1 rpg
-1996,G,8,Steve Smith (basketball),Steve Smith,,781,ppg · 18.1 ppg
+1996,G,8,Steve Smith (basketball),Steve Smith,,781,ppg · 18.1 ppg · 2.8 apg
 1996,F,91,Dennis Rodman,Dennis Rodman,,726,rpg · 14.9 rpg
 1996,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 11.8 rpg
 1996,C,54,Popeye Jones,Popeye Jones,,401,rpg · 10.8 rpg
 1996,F,35,Loy Vaught,Loy Vaught,,875,rpg · 16.2 ppg · 10.1 rpg
 1996,C,55,Jayson Williams,Jayson Williams,,917,rpg · 10.0 rpg
-1996,G,12,John Stockton,John Stockton,,812,apg · 11.2 apg
+1996,G,12,John Stockton,John Stockton,,812,apg · 14.7 ppg · 11.2 apg
 1996,G,5,Jason Kidd,Jason Kidd,,429,apg · 16.6 ppg · 6.8 rpg · 9.7 apg
-1996,G,6,Avery Johnson,Avery Johnson,,390,apg · 9.6 apg
+1996,G,6,Avery Johnson,Avery Johnson,,390,apg · 13.1 ppg · 9.6 apg
 1996,G,12,Kenny Anderson (basketball),Kenny Anderson,,15,apg · 15.2 ppg · 8.3 apg
 1996,G,10,Tim Hardaway,Tim Hardaway,,301,apg · 15.2 ppg · 8.0 apg
-1997,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 29.6 ppg · 4.3 apg
+1997,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 29.6 ppg · 5.9 rpg · 4.3 apg
 1997,F,32,Karl Malone,Karl Malone,,501,ppg · 27.4 ppg · 9.9 rpg · 4.5 apg
 1997,F,41,Glen Rice,Glen Rice,,702,ppg · 26.8 ppg
-1997,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 26.2 ppg · 12.5 rpg
+1997,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 26.2 ppg · 12.5 rpg · 3.1 apg
 1997,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 25.9 ppg · 4.2 apg
 1997,G,15,Latrell Sprewell,Latrell Sprewell,,800,ppg · 24.2 ppg · 6.3 apg
 1997,G,3,Allen Iverson,Allen Iverson,,366,ppg · 23.5 ppg · 7.5 apg
-1997,C,34,Hakeem Olajuwon,Hakeem Olajuwon,,619,ppg · 23.2 ppg · 9.2 rpg
+1997,C,34,Hakeem Olajuwon,Hakeem Olajuwon,,619,ppg · 23.2 ppg · 9.2 rpg · 3.0 apg
 1997,C,33,,Patrick Ewing,,237,ppg · 22.4 ppg · 10.7 rpg
 1997,F,20,LaPhonso Ellis,LaPhonso Ellis,,229,ppg · 21.9 ppg · 7.0 rpg
-1997,F,13,Kendall Gill,Kendall Gill,,269,ppg · 21.8 ppg · 4.0 apg
+1997,F,13,Kendall Gill,Kendall Gill,,269,ppg · 21.8 ppg · 6.1 rpg · 4.0 apg
 1997,G,20,,Gary Payton,,640,ppg · 21.8 ppg · 7.1 apg
-1997,G,31,Reggie Miller,Reggie Miller,,552,ppg · 21.6 ppg
+1997,G,31,Reggie Miller,Reggie Miller,,552,ppg · 21.6 ppg · 3.4 apg
 1997,F,33,Grant Hill,Grant Hill,,336,ppg · 21.4 ppg · 9.0 rpg · 7.3 apg
-1997,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 21.1 ppg
-1997,F,42,Vin Baker,Vin Baker,,34,ppg · 21.0 ppg · 10.3 rpg
-1997,F,42,Jerry Stackhouse,Jerry Stackhouse,,802,ppg · 20.7 ppg
+1997,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 21.1 ppg · 6.3 rpg · 3.1 apg
+1997,F,42,Vin Baker,Vin Baker,,34,ppg · 21.0 ppg · 10.3 rpg · 2.7 apg
+1997,F,42,Jerry Stackhouse,Jerry Stackhouse,,802,ppg · 20.7 ppg · 3.1 apg
 1997,F,24,Tom Gugliotta,Tom Gugliotta,,287,ppg · 20.6 ppg · 8.7 rpg · 4.1 apg
 1997,F,1,,Anfernee Hardaway,,302,ppg · 20.5 ppg · 5.6 apg
 1997,G,10,Tim Hardaway,Tim Hardaway,,301,ppg · 20.3 ppg · 8.6 apg
-1997,F,33,Scottie Pippen,Scottie Pippen,,663,ppg · 20.2 ppg · 5.7 apg
+1997,F,33,Scottie Pippen,Scottie Pippen,,663,ppg · 20.2 ppg · 6.5 rpg · 5.7 apg
 1997,G,20,Damon Stoudamire,Damon Stoudamire,,817,ppg · 20.2 ppg · 8.8 apg
 1997,G,7,Kevin Johnson (basketball player),Kevin Johnson,,391,ppg · 20.1 ppg · 9.3 apg
 1997,G,8,Steve Smith (basketball),Steve Smith,,781,ppg · 20.1 ppg · 4.2 apg
@@ -133,110 +133,110 @@ season,pos,number,wiki_title,name,team,espn_id,note
 1997,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 18.7 ppg · 6.9 rpg
 1997,F,32,Joe Smith (basketball),Joe Smith,,788,ppg · 18.7 ppg · 8.5 rpg
 1997,F,24,Antonio McDyess,Antonio McDyess,,530,ppg · 18.3 ppg · 7.3 rpg
-1997,F,21,Dominique Wilkins,Dominique Wilkins,,3532,ppg · 18.2 ppg
-1997,F,32,Christian Laettner,Christian Laettner,,453,ppg · 18.1 ppg · 8.8 rpg
-1997,F,44,Derrick Coleman,Derrick Coleman,,156,ppg · 18.1 ppg · 10.1 rpg
-1997,G,22,Clyde Drexler,Clyde Drexler,,3686,ppg · 18.0 ppg · 5.7 apg
+1997,F,21,Dominique Wilkins,Dominique Wilkins,,3532,ppg · 18.2 ppg · 6.4 rpg
+1997,F,32,Christian Laettner,Christian Laettner,,453,ppg · 18.1 ppg · 8.8 rpg · 2.7 apg
+1997,F,44,Derrick Coleman,Derrick Coleman,,156,ppg · 18.1 ppg · 10.1 rpg · 3.4 apg
+1997,G,22,Clyde Drexler,Clyde Drexler,,3686,ppg · 18.0 ppg · 6.0 rpg · 5.7 apg
 1997,C,50,David Robinson,David Robinson,,715,ppg · 17.7 ppg · 8.5 rpg
 1997,G,7,Kenny Anderson (basketball),Kenny Anderson,,15,ppg · 17.5 ppg · 7.1 apg
-1997,F,91,Dennis Rodman,Dennis Rodman,,726,rpg · 16.1 rpg
-1997,C,55,Jayson Williams,Jayson Williams,,917,rpg · 13.5 rpg
-1997,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 11.6 rpg
+1997,F,91,Dennis Rodman,Dennis Rodman,,726,rpg · 16.1 rpg · 3.1 apg
+1997,C,55,Jayson Williams,Jayson Williams,,917,rpg · 13.4 ppg · 13.5 rpg
+1997,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 13.3 ppg · 11.6 rpg
 1997,F,14,Anthony Mason (basketball),Anthony Mason,,517,rpg · 16.2 ppg · 11.4 rpg · 5.7 apg
 1997,C,50,Ervin Johnson,Ervin Johnson,,393,rpg · 11.1 rpg
 1997,G,13,Mark Jackson,Mark Jackson,,370,apg · 11.4 apg
-1997,G,12,John Stockton,John Stockton,,812,apg · 10.5 apg
+1997,G,12,John Stockton,John Stockton,,812,apg · 14.4 ppg · 10.5 apg
 1997,G,32,Jason Kidd,Jason Kidd,,429,apg · 9.0 apg
 1997,G,1,Rod Strickland,Rod Strickland,,818,apg · 17.2 ppg · 8.9 apg
 1997,G,9,Nick Van Exel,Nick Van Exel,,868,apg · 15.3 ppg · 8.5 apg
-1998,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 28.7 ppg
+1998,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 28.7 ppg · 5.8 rpg · 3.5 apg
 1998,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 28.3 ppg · 11.4 rpg
 1998,F,32,Karl Malone,Karl Malone,,501,ppg · 27.0 ppg · 10.3 rpg · 3.9 apg
-1998,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 23.4 ppg
+1998,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 23.4 ppg · 5.5 rpg · 2.8 apg
 1998,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 23.2 ppg · 4.0 apg
-1998,F,8,Antoine Walker,Antoine Walker,,881,ppg · 22.4 ppg · 10.2 rpg
+1998,F,8,Antoine Walker,Antoine Walker,,881,ppg · 22.4 ppg · 10.2 rpg · 3.3 apg
 1998,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 22.3 ppg · 7.1 rpg
 1998,F,41,Glen Rice,Glen Rice,,702,ppg · 22.3 ppg
 1998,G,3,Allen Iverson,Allen Iverson,,366,ppg · 22.0 ppg · 6.2 apg
 1998,C,4,Chris Webber,Chris Webber,,897,ppg · 21.9 ppg · 9.5 rpg · 3.8 apg
 1998,C,50,David Robinson,David Robinson,,715,ppg · 21.6 ppg · 10.6 rpg
-1998,G,4,Michael Finley,Michael Finley,,242,ppg · 21.5 ppg · 4.9 apg
+1998,G,4,Michael Finley,Michael Finley,,242,ppg · 21.5 ppg · 5.3 rpg · 4.9 apg
 1998,G,15,Latrell Sprewell,Latrell Sprewell,,800,ppg · 21.4 ppg · 4.9 apg
 1998,F,33,Grant Hill,Grant Hill,,336,ppg · 21.1 ppg · 7.7 rpg · 6.8 apg
-1998,C,21,Tim Duncan,Tim Duncan,,215,ppg · 21.1 ppg · 11.9 rpg
+1998,C,21,Tim Duncan,Tim Duncan,,215,ppg · 21.1 ppg · 11.9 rpg · 2.7 apg
 1998,C,33,,Patrick Ewing,,237,ppg · 20.8 ppg · 10.2 rpg
 1998,F,24,Tom Gugliotta,Tom Gugliotta,,287,ppg · 20.1 ppg · 8.7 rpg · 4.1 apg
 1998,G,8,Steve Smith (basketball),Steve Smith,,781,ppg · 20.1 ppg · 4.0 apg
-1998,F,32,"Eric Williams (basketball, born 1972)",Eric Williams,,929,ppg · 19.8 ppg
-1998,G,34,Isaiah Rider,Isaiah Rider,,705,ppg · 19.7 ppg
-1998,F,44,Keith Van Horn,Keith Van Horn,,869,ppg · 19.7 ppg
+1998,F,32,"Eric Williams (basketball, born 1972)",Eric Williams,,929,ppg · 19.8 ppg · 5.2 rpg · 3.0 apg
+1998,G,34,Isaiah Rider,Isaiah Rider,,705,ppg · 19.7 ppg · 3.1 apg
+1998,F,44,Keith Van Horn,Keith Van Horn,,869,ppg · 19.7 ppg · 6.6 rpg
 1998,G,10,Sam Cassell,Sam Cassell,,138,ppg · 19.6 ppg · 8.0 apg
 1998,G,34,Ray Allen,Ray Allen,,9,ppg · 19.5 ppg · 4.3 apg
 1998,G,31,Reggie Miller,Reggie Miller,,552,ppg · 19.5 ppg
 1998,C,33,Alonzo Mourning,Alonzo Mourning,,580,ppg · 19.2 ppg · 9.6 rpg
 1998,F,42,Vin Baker,Vin Baker,,34,ppg · 19.2 ppg · 8.0 rpg
 1998,G,20,,Gary Payton,,640,ppg · 19.2 ppg · 8.3 apg
-1998,F,33,Scottie Pippen,Scottie Pippen,,663,ppg · 19.1 ppg · 5.8 apg
+1998,F,33,Scottie Pippen,Scottie Pippen,,663,ppg · 19.1 ppg · 5.2 rpg · 5.8 apg
 1998,G,10,Tim Hardaway,Tim Hardaway,,301,ppg · 18.9 ppg · 8.3 apg
 1998,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 18.5 ppg · 9.6 rpg · 4.2 apg
-1998,F,5,Juwan Howard,Juwan Howard,,351,ppg · 18.5 ppg · 7.0 rpg
+1998,F,5,Juwan Howard,Juwan Howard,,351,ppg · 18.5 ppg · 7.0 rpg · 3.2 apg
 1998,G,20,Allan Houston,Allan Houston,,349,ppg · 18.4 ppg
-1998,G,22,Clyde Drexler,Clyde Drexler,,3686,ppg · 18.4 ppg · 5.5 apg
+1998,G,22,Clyde Drexler,Clyde Drexler,,3686,ppg · 18.4 ppg · 4.9 rpg · 5.5 apg
 1998,C,4,Shawn Kemp,Shawn Kemp,,420,ppg · 18.0 ppg · 9.3 rpg
-1998,G,1,Rod Strickland,Rod Strickland,,818,ppg · 17.8 ppg · 10.5 apg
-1998,F,4,Corliss Williamson,Corliss Williamson,,936,ppg · 17.7 ppg
+1998,G,1,Rod Strickland,Rod Strickland,,818,ppg · 17.8 ppg · 5.3 rpg · 10.5 apg
+1998,F,4,Corliss Williamson,Corliss Williamson,,936,ppg · 17.7 ppg · 5.6 rpg · 2.9 apg
 1998,G,3,Stephon Marbury,Stephon Marbury,,509,ppg · 17.7 ppg · 8.6 apg
 1998,F,44,Derrick Coleman,Derrick Coleman,,156,ppg · 17.6 ppg · 9.9 rpg
 1998,G,3,Damon Stoudamire,Damon Stoudamire,,817,ppg · 17.3 ppg · 8.2 apg
 1998,G,30,Kerry Kittles,Kerry Kittles,,437,ppg · 17.2 ppg
-1998,F,91,Dennis Rodman,Dennis Rodman,,726,rpg · 15.0 rpg
-1998,C,55,Jayson Williams,Jayson Williams,,917,rpg · 13.6 rpg
-1998,F,4,Charles Barkley,Charles Barkley,,37,rpg · 11.7 rpg
-1998,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 11.4 rpg
+1998,F,91,Dennis Rodman,Dennis Rodman,,726,rpg · 15.0 rpg · 2.9 apg
+1998,C,55,Jayson Williams,Jayson Williams,,917,rpg · 12.9 ppg · 13.6 rpg
+1998,F,4,Charles Barkley,Charles Barkley,,37,rpg · 15.2 ppg · 11.7 rpg · 3.2 apg
+1998,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 13.4 ppg · 11.4 rpg
 1998,F,42,Tyrone Hill,Tyrone Hill,,334,rpg · 10.7 rpg
-1998,G,32,Jason Kidd,Jason Kidd,,429,apg · 9.1 apg
+1998,G,32,Jason Kidd,Jason Kidd,,429,apg · 6.2 rpg · 9.1 apg
 1998,G,13,Mark Jackson,Mark Jackson,,370,apg · 8.7 apg
-1998,G,12,John Stockton,John Stockton,,812,apg · 8.5 apg
+1998,G,12,John Stockton,John Stockton,,812,apg · 12.0 ppg · 8.5 apg
 1998,G,12,Brevin Knight,Brevin Knight,,440,apg · 8.2 apg
 1998,G,6,Avery Johnson,Avery Johnson,,390,apg · 7.9 apg
 1999,G,3,Allen Iverson,Allen Iverson,,366,ppg · 26.8 ppg · 4.6 apg
 1999,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 26.3 ppg · 10.7 rpg
 1999,F,32,Karl Malone,Karl Malone,,501,ppg · 23.8 ppg · 9.4 rpg · 4.1 apg
-1999,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 23.0 ppg · 7.5 rpg
+1999,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 23.0 ppg · 7.5 rpg · 3.4 apg
 1999,F,44,Keith Van Horn,Keith Van Horn,,869,ppg · 21.8 ppg · 8.5 rpg
-1999,C,21,Tim Duncan,Tim Duncan,,215,ppg · 21.7 ppg · 11.4 rpg
+1999,C,21,Tim Duncan,Tim Duncan,,215,ppg · 21.7 ppg · 11.4 rpg · 2.4 apg
 1999,G,20,,Gary Payton,,640,ppg · 21.7 ppg · 8.7 apg
 1999,G,33,Stephon Marbury,Stephon Marbury,,509,ppg · 21.3 ppg · 8.9 apg
 1999,F,24,Antonio McDyess,Antonio McDyess,,530,ppg · 21.2 ppg · 10.7 rpg
 1999,F,33,Grant Hill,Grant Hill,,336,ppg · 21.1 ppg · 7.1 rpg · 6.0 apg
 1999,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 20.8 ppg · 10.4 rpg · 4.3 apg
 1999,C,4,Shawn Kemp,Shawn Kemp,,420,ppg · 20.5 ppg · 9.2 rpg
-1999,G,4,Michael Finley,Michael Finley,,242,ppg · 20.2 ppg · 4.4 apg
+1999,G,4,Michael Finley,Michael Finley,,242,ppg · 20.2 ppg · 5.3 rpg · 4.4 apg
 1999,C,33,Alonzo Mourning,Alonzo Mourning,,580,ppg · 20.1 ppg · 11.0 rpg
 1999,C,4,Chris Webber,Chris Webber,,897,ppg · 20.0 ppg · 13.0 rpg · 4.1 apg
-1999,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 19.9 ppg · 3.8 apg
-1999,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 19.7 ppg
-1999,F,5,Juwan Howard,Juwan Howard,,351,ppg · 18.9 ppg · 8.1 rpg
+1999,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 19.9 ppg · 5.3 rpg · 3.8 apg
+1999,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 19.7 ppg · 2.4 apg
+1999,F,5,Juwan Howard,Juwan Howard,,351,ppg · 18.9 ppg · 8.1 rpg · 3.0 apg
 1999,C,34,Hakeem Olajuwon,Hakeem Olajuwon,,619,ppg · 18.9 ppg · 9.6 rpg
 1999,F,7,Toni Kukoč,Toni Kukoc,,446,ppg · 18.8 ppg · 7.0 rpg · 5.3 apg
-1999,G,8,Steve Smith (basketball),Steve Smith,,781,ppg · 18.7 ppg
-1999,F,8,Antoine Walker,Antoine Walker,,881,ppg · 18.7 ppg · 8.5 rpg
-1999,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 18.4 ppg
+1999,G,8,Steve Smith (basketball),Steve Smith,,781,ppg · 18.7 ppg · 3.3 apg
+1999,F,8,Antoine Walker,Antoine Walker,,881,ppg · 18.7 ppg · 8.5 rpg · 3.1 apg
+1999,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 18.4 ppg · 5.9 rpg
 1999,G,31,Reggie Miller,Reggie Miller,,552,ppg · 18.4 ppg
-1999,G,15,Vince Carter,Vince Carter,,136,ppg · 18.3 ppg
-1999,F,41,Glen Rice,Glen Rice,,702,ppg · 17.5 ppg
+1999,G,15,Vince Carter,Vince Carter,,136,ppg · 18.3 ppg · 5.7 rpg · 3.0 apg
+1999,F,41,Glen Rice,Glen Rice,,702,ppg · 17.5 ppg · 2.6 apg
 1999,G,10,Tim Hardaway,Tim Hardaway,,301,ppg · 17.4 ppg · 7.3 apg
 1999,C,33,,Patrick Ewing,,237,ppg · 17.3 ppg · 9.9 rpg
 1999,G,34,Ray Allen,Ray Allen,,9,ppg · 17.1 ppg · 3.6 apg
-1999,G,5,Ron Mercer,Ron Mercer,,546,ppg · 17.0 ppg
-1999,F,24,Tom Gugliotta,Tom Gugliotta,,287,ppg · 17.0 ppg · 8.9 rpg
+1999,G,5,Ron Mercer,Ron Mercer,,546,ppg · 17.0 ppg · 2.5 apg
+1999,F,24,Tom Gugliotta,Tom Gugliotta,,287,ppg · 17.0 ppg · 8.9 rpg · 2.8 apg
 1999,G,32,Jason Kidd,Jason Kidd,,429,ppg · 16.9 ppg · 6.8 rpg · 10.8 apg
-1999,F,23,Maurice Taylor,Maurice Taylor,,837,ppg · 16.8 ppg
+1999,F,23,Maurice Taylor,Maurice Taylor,,837,ppg · 16.8 ppg · 5.3 rpg
 1999,G,31,Nick Van Exel,Nick Van Exel,,868,ppg · 16.5 ppg · 7.4 apg
-1999,F,34,Paul Pierce,Paul Pierce,,662,ppg · 16.5 ppg
-1999,F,30,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 16.4 ppg
-1999,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 16.4 ppg
-1999,G,20,Allan Houston,Allan Houston,,349,ppg · 16.3 ppg
+1999,F,34,Paul Pierce,Paul Pierce,,662,ppg · 16.5 ppg · 6.4 rpg
+1999,F,30,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 16.4 ppg · 2.6 apg
+1999,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 16.4 ppg · 2.5 apg
+1999,G,20,Allan Houston,Allan Houston,,349,ppg · 16.3 ppg · 2.7 apg
 1999,F,4,Charles Barkley,Charles Barkley,,37,ppg · 16.1 ppg · 12.3 rpg · 4.6 apg
 1999,F,33,Gary Trent,Gary Trent,,858,ppg · 16.0 ppg · 7.8 rpg
 1999,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 12.2 rpg
@@ -252,36 +252,36 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2000,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 29.7 ppg · 13.6 rpg · 3.8 apg
 2000,G,3,Allen Iverson,Allen Iverson,,366,ppg · 28.4 ppg · 4.7 apg
 2000,F,33,Grant Hill,Grant Hill,,336,ppg · 25.8 ppg · 6.6 rpg · 5.2 apg
-2000,G,15,Vince Carter,Vince Carter,,136,ppg · 25.7 ppg · 3.9 apg
-2000,F,32,Karl Malone,Karl Malone,,501,ppg · 25.5 ppg · 9.5 rpg
+2000,G,15,Vince Carter,Vince Carter,,136,ppg · 25.7 ppg · 5.8 rpg · 3.9 apg
+2000,F,32,Karl Malone,Karl Malone,,501,ppg · 25.5 ppg · 9.5 rpg · 3.7 apg
 2000,C,4,Chris Webber,Chris Webber,,897,ppg · 24.5 ppg · 10.5 rpg · 4.6 apg
 2000,G,20,,Gary Payton,,640,ppg · 24.2 ppg · 6.5 rpg · 8.9 apg
 2000,F,42,Jerry Stackhouse,Jerry Stackhouse,,802,ppg · 23.6 ppg · 4.5 apg
-2000,C,21,Tim Duncan,Tim Duncan,,215,ppg · 23.2 ppg · 12.4 rpg
+2000,C,21,Tim Duncan,Tim Duncan,,215,ppg · 23.2 ppg · 12.4 rpg · 3.2 apg
 2000,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 22.9 ppg · 11.8 rpg · 5.0 apg
-2000,G,4,Michael Finley,Michael Finley,,242,ppg · 22.6 ppg · 5.3 apg
-2000,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 22.5 ppg · 4.9 apg
+2000,G,4,Michael Finley,Michael Finley,,242,ppg · 22.6 ppg · 6.3 rpg · 5.3 apg
+2000,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 22.5 ppg · 6.3 rpg · 4.9 apg
 2000,G,33,Stephon Marbury,Stephon Marbury,,509,ppg · 22.2 ppg · 8.4 apg
 2000,G,34,Ray Allen,Ray Allen,,9,ppg · 22.1 ppg · 3.8 apg
 2000,C,33,Alonzo Mourning,Alonzo Mourning,,580,ppg · 21.7 ppg · 9.5 rpg
-2000,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.9 ppg
+2000,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.9 ppg · 6.0 rpg
 2000,F,8,Antoine Walker,Antoine Walker,,881,ppg · 20.5 ppg · 8.0 rpg · 3.7 apg
-2000,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 20.3 ppg · 10.1 rpg
+2000,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 20.3 ppg · 10.1 rpg · 3.3 apg
 2000,F,42,Elton Brand,Elton Brand,,91,ppg · 20.1 ppg · 10.0 rpg
 2000,G,6,Eddie Jones (basketball),Eddie Jones,,402,ppg · 20.1 ppg · 4.2 apg
-2000,G,20,Allan Houston,Allan Houston,,349,ppg · 19.7 ppg
+2000,G,20,Allan Houston,Allan Houston,,349,ppg · 19.7 ppg · 2.7 apg
 2000,F,33,Antawn Jamison,Antawn Jamison,,385,ppg · 19.6 ppg · 8.3 rpg
-2000,F,34,Paul Pierce,Paul Pierce,,662,ppg · 19.5 ppg
-2000,G,,Isaiah Rider,Isaiah Rider,,705,ppg · 19.3 ppg
+2000,F,34,Paul Pierce,Paul Pierce,,662,ppg · 19.5 ppg · 5.4 rpg · 3.0 apg
+2000,G,,Isaiah Rider,Isaiah Rider,,705,ppg · 19.3 ppg · 3.7 apg
 2000,F,44,Keith Van Horn,Keith Van Horn,,869,ppg · 19.2 ppg · 8.4 rpg
 2000,F,24,Antonio McDyess,Antonio McDyess,,530,ppg · 19.1 ppg · 8.5 rpg
 2000,G,10,Sam Cassell,Sam Cassell,,138,ppg · 18.6 ppg · 9.0 apg
 2000,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 18.6 ppg · 4.0 apg
-2000,F,30,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 18.5 ppg
+2000,F,30,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 18.5 ppg · 2.8 apg
 2000,G,8,Michael Dickerson,Michael Dickerson,,203,ppg · 18.2 ppg
 2000,G,5,Jalen Rose,Jalen Rose,,738,ppg · 18.2 ppg · 4.0 apg
 2000,G,31,Reggie Miller,Reggie Miller,,552,ppg · 18.1 ppg
-2000,G,3,Steve Francis,Steve Francis,,255,ppg · 18.0 ppg · 6.6 apg
+2000,G,3,Steve Francis,Steve Francis,,255,ppg · 18.0 ppg · 5.3 rpg · 6.6 apg
 2000,C,4,Shawn Kemp,Shawn Kemp,,420,ppg · 17.8 ppg · 8.8 rpg
 2000,C,50,David Robinson,David Robinson,,715,ppg · 17.8 ppg · 9.6 rpg
 2000,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 17.5 ppg · 6.5 rpg
@@ -289,93 +289,123 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2000,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 17.4 ppg
 2000,F,23,Maurice Taylor,Maurice Taylor,,837,ppg · 17.1 ppg · 6.5 rpg
 2000,G,7,Terrell Brandon,Terrell Brandon,,92,ppg · 17.1 ppg · 8.9 apg
+2000,F,1,,Anfernee Hardaway,,302,ppg · 16.9 ppg · 5.8 rpg · 5.2 apg
+2000,G,5,Ron Mercer,Ron Mercer,,546,ppg · 16.9 ppg
+2000,G,1,Derek Anderson (basketball),Derek Anderson,,18,ppg · 16.9 ppg · 3.4 apg
+2000,F,44,Derrick Coleman,Derrick Coleman,,156,ppg · 16.7 ppg · 8.5 rpg
+2000,F,22,Jim Jackson (basketball),Jim Jackson,,372,ppg · 16.7 ppg · 2.9 apg
+2000,F,23,Cedric Ceballos,Cedric Ceballos,,141,ppg · 16.6 ppg · 6.7 rpg
+2000,F,42,Vin Baker,Vin Baker,,34,ppg · 16.6 ppg · 7.7 rpg
+2000,F,7,Lamar Odom,Lamar Odom,,617,ppg · 16.6 ppg · 7.8 rpg · 4.2 apg
+2000,F,30,Rasheed Wallace,Rasheed Wallace,,883,ppg · 16.4 ppg · 7.0 rpg
+2000,G,10,Darrell Armstrong,Darrell Armstrong,,24,ppg · 16.2 ppg · 6.1 apg
+2000,G,31,Nick Van Exel,Nick Van Exel,,868,ppg · 16.1 ppg · 9.0 apg
+2000,F,34,Chris Mills (basketball),Chris Mills,,560,ppg · 16.1 ppg · 6.2 rpg
+2000,F,41,Glen Rice,Glen Rice,,702,ppg · 15.9 ppg
+2000,F,30,Lamond Murray,Lamond Murray,,586,ppg · 15.9 ppg · 5.7 rpg
+2000,G,5,Cuttino Mobley,Cuttino Mobley,,566,ppg · 15.8 ppg
 2000,F,,Dennis Rodman,Dennis Rodman,,726,rpg · 14.2 rpg
 2000,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 14.1 rpg
-2000,F,4,Charles Barkley,Charles Barkley,,37,rpg · 10.4 rpg
-2000,F,3,Donyell Marshall,Donyell Marshall,,512,rpg · 10.0 rpg
+2000,F,4,Charles Barkley,Charles Barkley,,37,rpg · 14.4 ppg · 10.4 rpg · 3.2 apg
+2000,F,3,Donyell Marshall,Donyell Marshall,,512,rpg · 14.2 ppg · 10.0 rpg
 2000,F,32,Dale Davis (basketball),Dale Davis,,187,rpg · 9.9 rpg
-2000,G,32,Jason Kidd,Jason Kidd,,429,apg · 7.2 rpg · 10.1 apg
-2000,G,31,Nick Van Exel,Nick Van Exel,,868,apg · 16.1 ppg · 9.0 apg
-2000,G,12,John Stockton,John Stockton,,812,apg · 8.6 apg
-2000,G,10,Mike Bibby,Mike Bibby,,61,apg · 8.1 apg
+2000,G,32,Jason Kidd,Jason Kidd,,429,apg · 14.3 ppg · 7.2 rpg · 10.1 apg
+2000,G,12,John Stockton,John Stockton,,812,apg · 12.1 ppg · 8.6 apg
+2000,G,10,Mike Bibby,Mike Bibby,,61,apg · 14.5 ppg · 8.1 apg
 2000,G,13,Mark Jackson,Mark Jackson,,370,apg · 8.0 apg
+2000,G,20,Eric Snow,Eric Snow,,796,apg · 7.6 apg
 2001,G,3,Allen Iverson,Allen Iverson,,366,ppg · 31.1 ppg · 4.6 apg
 2001,F,42,Jerry Stackhouse,Jerry Stackhouse,,802,ppg · 29.8 ppg · 5.1 apg
 2001,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 28.7 ppg · 12.7 rpg · 3.7 apg
-2001,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 28.5 ppg · 5.0 apg
-2001,G,15,Vince Carter,Vince Carter,,136,ppg · 27.6 ppg · 3.9 apg
+2001,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 28.5 ppg · 5.9 rpg · 5.0 apg
+2001,G,15,Vince Carter,Vince Carter,,136,ppg · 27.6 ppg · 5.5 rpg · 3.9 apg
 2001,C,4,Chris Webber,Chris Webber,,897,ppg · 27.1 ppg · 11.1 rpg · 4.2 apg
 2001,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 26.8 ppg · 7.5 rpg · 4.6 apg
-2001,F,34,Paul Pierce,Paul Pierce,,662,ppg · 25.3 ppg
+2001,F,34,Paul Pierce,Paul Pierce,,662,ppg · 25.3 ppg · 6.4 rpg · 3.1 apg
 2001,F,33,Antawn Jamison,Antawn Jamison,,385,ppg · 24.9 ppg · 8.7 rpg
 2001,G,33,Stephon Marbury,Stephon Marbury,,509,ppg · 23.9 ppg · 7.6 apg
 2001,F,8,Antoine Walker,Antoine Walker,,881,ppg · 23.4 ppg · 8.9 rpg · 5.5 apg
 2001,F,32,Karl Malone,Karl Malone,,501,ppg · 23.2 ppg · 8.3 rpg · 4.5 apg
 2001,G,20,,Gary Payton,,640,ppg · 23.1 ppg · 8.1 apg
-2001,C,21,Tim Duncan,Tim Duncan,,215,ppg · 22.2 ppg · 12.2 rpg
-2001,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 22.0 ppg · 6.9 rpg
+2001,C,21,Tim Duncan,Tim Duncan,,215,ppg · 22.2 ppg · 12.2 rpg · 3.0 apg
+2001,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 22.0 ppg · 6.9 rpg · 3.3 apg
 2001,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 22.0 ppg · 11.4 rpg · 5.0 apg
-2001,G,34,Ray Allen,Ray Allen,,9,ppg · 22.0 ppg · 4.6 apg
+2001,G,34,Ray Allen,Ray Allen,,9,ppg · 22.0 ppg · 5.2 rpg · 4.6 apg
 2001,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 21.8 ppg · 9.2 rpg
-2001,G,4,Michael Finley,Michael Finley,,242,ppg · 21.5 ppg · 4.4 apg
+2001,G,4,Michael Finley,Michael Finley,,242,ppg · 21.5 ppg · 5.2 rpg · 4.4 apg
 2001,F,24,Antonio McDyess,Antonio McDyess,,530,ppg · 20.8 ppg · 12.1 rpg
-2001,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 20.5 ppg · 9.1 rpg
+2001,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 20.5 ppg · 9.1 rpg · 3.1 apg
 2001,G,5,Jalen Rose,Jalen Rose,,738,ppg · 20.5 ppg · 6.0 apg
-2001,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 20.4 ppg
-2001,F,42,Elton Brand,Elton Brand,,91,ppg · 20.1 ppg · 10.1 rpg
+2001,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 20.4 ppg · 5.8 rpg
+2001,F,42,Elton Brand,Elton Brand,,91,ppg · 20.1 ppg · 10.1 rpg · 3.2 apg
 2001,F,24,Jamal Mashburn,Jamal Mashburn,,516,ppg · 20.1 ppg · 7.6 rpg · 5.4 apg
 2001,G,3,Steve Francis,Steve Francis,,255,ppg · 19.9 ppg · 6.9 rpg · 6.5 apg
 2001,G,31,Jason Terry,Jason Terry,,841,ppg · 19.7 ppg · 4.9 apg
-2001,G,5,Ron Mercer,Ron Mercer,,546,ppg · 19.7 ppg
+2001,G,5,Ron Mercer,Ron Mercer,,546,ppg · 19.7 ppg · 3.3 apg
 2001,G,5,Cuttino Mobley,Cuttino Mobley,,566,ppg · 19.5 ppg
 2001,F,30,Rasheed Wallace,Rasheed Wallace,,883,ppg · 19.2 ppg · 7.8 rpg
-2001,G,31,Reggie Miller,Reggie Miller,,552,ppg · 18.9 ppg
+2001,G,31,Reggie Miller,Reggie Miller,,552,ppg · 18.9 ppg · 3.2 apg
 2001,G,20,Allan Houston,Allan Houston,,349,ppg · 18.7 ppg
 2001,G,10,Sam Cassell,Sam Cassell,,138,ppg · 18.2 ppg · 7.6 apg
-2001,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 18.1 ppg
+2001,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 18.1 ppg · 2.9 apg
 2001,F,5,Juwan Howard,Juwan Howard,,351,ppg · 18.0 ppg · 7.1 rpg
 2001,G,31,Nick Van Exel,Nick Van Exel,,868,ppg · 17.7 ppg · 8.5 apg
-2001,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 17.7 ppg
+2001,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 17.7 ppg · 3.5 apg
 2001,G,6,Eddie Jones (basketball),Eddie Jones,,402,ppg · 17.4 ppg
 2001,G,31,Shawn Marion,Shawn Marion,,510,ppg · 17.3 ppg · 10.7 rpg
 2001,G,4,David Wesley,David Wesley,,904,ppg · 17.2 ppg · 4.4 apg
-2001,C,21,Danny Fortson,Danny Fortson,,248,rpg · 16.7 ppg · 16.3 rpg
+2001,F,7,Lamar Odom,Lamar Odom,,617,ppg · 17.2 ppg · 7.8 rpg · 5.2 apg
+2001,F,44,Keith Van Horn,Keith Van Horn,,869,ppg · 17.0 ppg · 7.1 rpg
+2001,G,32,Jason Kidd,Jason Kidd,,429,ppg · 16.9 ppg · 6.4 rpg · 9.8 apg
+2001,C,21,Danny Fortson,Danny Fortson,,248,ppg · 16.7 ppg · 16.3 rpg
+2001,G,20,Larry Hughes,Larry Hughes,,356,ppg · 16.5 ppg · 5.5 rpg · 4.5 apg
+2001,F,30,"Clifford Robinson (basketball, born 1966)",Clifford Robinson,,714,ppg · 16.4 ppg · 2.9 apg
+2001,G,8,Michael Dickerson,Michael Dickerson,,203,ppg · 16.3 ppg · 3.3 apg
+2001,G,2,Mitch Richmond,Mitch Richmond,,704,ppg · 16.2 ppg · 3.0 apg
+2001,F,14,Anthony Mason (basketball),Anthony Mason,,517,ppg · 16.1 ppg · 9.6 rpg · 3.1 apg
+2001,G,7,Terrell Brandon,Terrell Brandon,,92,ppg · 16.0 ppg · 7.5 apg
+2001,G,10,Mike Bibby,Mike Bibby,,61,ppg · 15.9 ppg · 8.4 apg
+2001,G,10,Darrell Armstrong,Darrell Armstrong,,24,ppg · 15.9 ppg · 7.0 apg
+2001,G,24,Andre Miller,Andre Miller,,557,ppg · 15.8 ppg · 8.0 apg
+2001,G,13,Steve Nash,Steve Nash,,592,ppg · 15.6 ppg · 7.3 apg
+2001,G,1,Derek Anderson (basketball),Derek Anderson,,18,ppg · 15.5 ppg · 3.7 apg
 2001,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 13.5 rpg
 2001,F,3,Ben Wallace (basketball),Ben Wallace,,885,rpg · 13.1 rpg
-2001,C,23,Marcus Camby,Marcus Camby,,125,rpg · 11.5 rpg
-2001,F,33,Antonio Davis,Antonio Davis,,189,rpg · 10.1 rpg
-2001,G,32,Jason Kidd,Jason Kidd,,429,apg · 16.9 ppg · 9.8 apg
-2001,G,12,John Stockton,John Stockton,,812,apg · 8.7 apg
-2001,G,10,Mike Bibby,Mike Bibby,,61,apg · 15.9 ppg · 8.4 apg
-2001,G,24,Andre Miller,Andre Miller,,557,apg · 15.8 ppg · 8.0 apg
+2001,C,23,Marcus Camby,Marcus Camby,,125,rpg · 12.0 ppg · 11.5 rpg
+2001,F,33,Antonio Davis,Antonio Davis,,189,rpg · 13.7 ppg · 10.1 rpg
+2001,C,7,Jermaine O'Neal,Jermaine O'Neal,,615,rpg · 12.9 ppg · 9.8 rpg
+2001,G,12,John Stockton,John Stockton,,812,apg · 11.5 ppg · 8.7 apg
 2001,G,31,Mark Jackson,Mark Jackson,,370,apg · 8.0 apg
+2001,G,20,Eric Snow,Eric Snow,,796,apg · 7.4 apg
+2001,G,1,Baron Davis,Baron Davis,,194,apg · 13.8 ppg · 7.3 apg
+2001,G,10,Mookie Blaylock,Mookie Blaylock,,68,apg · 6.7 apg
 2002,G,3,Allen Iverson,Allen Iverson,,366,ppg · 31.4 ppg · 5.5 apg
-2002,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 27.2 ppg · 10.7 rpg
-2002,F,34,Paul Pierce,Paul Pierce,,662,ppg · 26.1 ppg · 6.9 rpg
+2002,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 27.2 ppg · 10.7 rpg · 3.0 apg
+2002,F,34,Paul Pierce,Paul Pierce,,662,ppg · 26.1 ppg · 6.9 rpg · 3.2 apg
 2002,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 25.6 ppg · 7.9 rpg · 5.3 apg
 2002,C,21,Tim Duncan,Tim Duncan,,215,ppg · 25.5 ppg · 12.7 rpg · 3.7 apg
-2002,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 25.2 ppg · 5.5 apg
-2002,G,15,Vince Carter,Vince Carter,,136,ppg · 24.7 ppg · 4.0 apg
+2002,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 25.2 ppg · 5.5 rpg · 5.5 apg
+2002,G,15,Vince Carter,Vince Carter,,136,ppg · 24.7 ppg · 5.2 rpg · 4.0 apg
 2002,C,4,Chris Webber,Chris Webber,,897,ppg · 24.5 ppg · 10.1 rpg · 4.8 apg
 2002,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 23.4 ppg · 9.9 rpg
-2002,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 22.9 ppg · 5.2 apg
+2002,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 22.9 ppg · 5.7 rpg · 5.2 apg
 2002,F,32,Karl Malone,Karl Malone,,501,ppg · 22.4 ppg · 8.6 rpg · 4.3 apg
 2002,F,8,Antoine Walker,Antoine Walker,,881,ppg · 22.1 ppg · 8.8 rpg · 5.0 apg
 2002,G,20,,Gary Payton,,640,ppg · 22.1 ppg · 9.0 apg
 2002,G,34,Ray Allen,Ray Allen,,9,ppg · 21.8 ppg · 3.9 apg
 2002,G,5,Cuttino Mobley,Cuttino Mobley,,566,ppg · 21.7 ppg
 2002,G,3,Steve Francis,Steve Francis,,255,ppg · 21.6 ppg · 7.0 rpg · 6.4 apg
-2002,F,24,Jamal Mashburn,Jamal Mashburn,,516,ppg · 21.5 ppg · 4.3 apg
+2002,F,24,Jamal Mashburn,Jamal Mashburn,,516,ppg · 21.5 ppg · 6.1 rpg · 4.3 apg
 2002,F,42,Jerry Stackhouse,Jerry Stackhouse,,802,ppg · 21.4 ppg · 5.3 apg
-2002,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 21.2 ppg · 9.0 rpg
-2002,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 21.2 ppg
+2002,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 21.2 ppg · 9.0 rpg · 3.1 apg
+2002,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 21.2 ppg · 5.3 rpg
 2002,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 21.2 ppg · 12.1 rpg · 5.2 apg
-2002,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.7 ppg
-2002,G,4,Michael Finley,Michael Finley,,242,ppg · 20.6 ppg
+2002,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.7 ppg · 6.2 rpg
+2002,G,4,Michael Finley,Michael Finley,,242,ppg · 20.6 ppg · 5.2 rpg · 3.3 apg
 2002,G,5,Jalen Rose,Jalen Rose,,738,ppg · 20.4 ppg · 4.3 apg
 2002,G,3,Stephon Marbury,Stephon Marbury,,509,ppg · 20.4 ppg · 8.1 apg
 2002,G,20,Allan Houston,Allan Houston,,349,ppg · 20.4 ppg
-2002,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 20.0 ppg
+2002,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 20.0 ppg · 2.7 apg
 2002,F,33,Antawn Jamison,Antawn Jamison,,385,ppg · 19.7 ppg · 6.8 rpg
 2002,G,10,Sam Cassell,Sam Cassell,,138,ppg · 19.7 ppg · 6.7 apg
 2002,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 19.4 ppg · 3.9 apg
@@ -383,186 +413,246 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2002,F,30,Rasheed Wallace,Rasheed Wallace,,883,ppg · 19.3 ppg · 8.2 rpg
 2002,G,31,Shawn Marion,Shawn Marion,,510,ppg · 19.1 ppg · 9.9 rpg
 2002,C,7,Jermaine O'Neal,Jermaine O'Neal,,615,ppg · 19.0 ppg · 10.5 rpg
-2002,G,10,Wally Szczerbiak,Wally Szczerbiak,,831,ppg · 18.7 ppg
+2002,G,10,Wally Szczerbiak,Wally Szczerbiak,,831,ppg · 18.7 ppg · 3.1 apg
 2002,G,31,Nick Van Exel,Nick Van Exel,,868,ppg · 18.4 ppg · 6.6 apg
-2002,G,6,Eddie Jones (basketball),Eddie Jones,,402,ppg · 18.3 ppg
+2002,G,6,Eddie Jones (basketball),Eddie Jones,,402,ppg · 18.3 ppg · 3.2 apg
 2002,F,42,Elton Brand,Elton Brand,,91,ppg · 18.2 ppg · 11.6 rpg
 2002,G,1,Baron Davis,Baron Davis,,194,ppg · 18.1 ppg · 8.5 apg
 2002,G,13,Steve Nash,Steve Nash,,592,ppg · 17.9 ppg · 7.7 apg
+2002,F,16,Pau Gasol,Pau Gasol,,996,ppg · 17.6 ppg · 8.9 rpg · 2.7 apg
+2002,G,6,Bonzi Wells,Bonzi Wells,,901,ppg · 17.0 ppg · 6.0 rpg · 2.8 apg
+2002,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 16.8 ppg · 7.0 rpg
+2002,F,33,Grant Hill,Grant Hill,,336,ppg · 16.8 ppg · 8.9 rpg · 4.6 apg
+2002,F,30,Lamond Murray,Lamond Murray,,586,ppg · 16.6 ppg · 5.2 rpg
+2002,G,31,Reggie Miller,Reggie Miller,,552,ppg · 16.5 ppg · 3.2 apg
+2002,G,24,Andre Miller,Andre Miller,,557,ppg · 16.5 ppg · 10.9 apg
+2002,C,33,Alonzo Mourning,Alonzo Mourning,,580,ppg · 15.7 ppg · 8.4 rpg
+2002,G,50,"Mike Miller (basketball, born 1980)",Mike Miller,,558,ppg · 15.2 ppg · 3.1 apg
+2002,F,44,Derrick Coleman,Derrick Coleman,,156,ppg · 15.1 ppg · 8.8 rpg
+2002,F,1,Wesley Person,Wesley Person,,655,ppg · 15.1 ppg
+2002,F,6,Kenyon Martin,Kenyon Martin,,515,ppg · 14.9 ppg · 5.3 rpg · 2.6 apg
+2002,F,42,Donyell Marshall,Donyell Marshall,,512,ppg · 14.8 ppg · 7.6 rpg
+2002,F,44,Keith Van Horn,Keith Van Horn,,869,ppg · 14.8 ppg · 7.5 rpg
+2002,G,2,"Jason Williams (basketball, born 1975)",Jason Williams,,933,ppg · 14.8 ppg · 8.0 apg
 2002,F,3,Ben Wallace (basketball),Ben Wallace,,885,rpg · 13.0 rpg
 2002,C,21,Danny Fortson,Danny Fortson,,248,rpg · 11.7 rpg
 2002,C,23,Marcus Camby,Marcus Camby,,125,rpg · 11.1 rpg
 2002,C,55,Dikembe Mutombo,Dikembe Mutombo,,588,rpg · 10.8 rpg
 2002,F,32,Tyrone Hill,Tyrone Hill,,334,rpg · 10.5 rpg
-2002,G,24,Andre Miller,Andre Miller,,557,apg · 16.5 ppg · 10.9 apg
 2002,G,5,Jason Kidd,Jason Kidd,,429,apg · 14.7 ppg · 7.3 rpg · 9.9 apg
-2002,G,7,Terrell Brandon,Terrell Brandon,,92,apg · 8.2 apg
-2002,G,12,John Stockton,John Stockton,,812,apg · 8.2 apg
+2002,G,7,Terrell Brandon,Terrell Brandon,,92,apg · 12.4 ppg · 8.2 apg
+2002,G,12,John Stockton,John Stockton,,812,apg · 13.4 ppg · 8.2 apg
 2002,G,11,Jamaal Tinsley,Jamaal Tinsley,,1024,apg · 8.1 apg
+2002,G,13,Mark Jackson,Mark Jackson,,370,apg · 7.4 apg
 2003,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 32.1 ppg · 6.5 rpg · 5.5 apg
 2003,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 30.0 ppg · 6.9 rpg · 5.9 apg
 2003,G,3,Allen Iverson,Allen Iverson,,366,ppg · 27.6 ppg · 5.5 apg
-2003,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 27.5 ppg · 11.1 rpg
+2003,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 27.5 ppg · 11.1 rpg · 3.1 apg
 2003,F,34,Paul Pierce,Paul Pierce,,662,ppg · 25.9 ppg · 7.3 rpg · 4.4 apg
-2003,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 25.1 ppg · 9.9 rpg
+2003,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 25.1 ppg · 9.9 rpg · 3.0 apg
 2003,C,21,Tim Duncan,Tim Duncan,,215,ppg · 23.3 ppg · 12.9 rpg · 3.9 apg
 2003,C,4,Chris Webber,Chris Webber,,897,ppg · 23.0 ppg · 10.5 rpg · 5.4 apg
 2003,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 23.0 ppg · 13.4 rpg · 6.0 apg
-2003,G,34,Ray Allen,Ray Allen,,9,ppg · 22.5 ppg · 4.4 apg
-2003,G,20,Allan Houston,Allan Houston,,349,ppg · 22.5 ppg
+2003,G,34,Ray Allen,Ray Allen,,9,ppg · 22.5 ppg · 5.0 rpg · 4.4 apg
+2003,G,20,Allan Houston,Allan Houston,,349,ppg · 22.5 ppg · 2.7 apg
 2003,G,3,Stephon Marbury,Stephon Marbury,,509,ppg · 22.3 ppg · 8.1 apg
 2003,F,33,Antawn Jamison,Antawn Jamison,,385,ppg · 22.2 ppg · 7.0 rpg
 2003,G,5,Jalen Rose,Jalen Rose,,738,ppg · 22.1 ppg · 4.8 apg
-2003,F,24,Jamal Mashburn,Jamal Mashburn,,516,ppg · 21.6 ppg · 5.6 apg
+2003,F,24,Jamal Mashburn,Jamal Mashburn,,516,ppg · 21.6 ppg · 6.1 rpg · 5.6 apg
 2003,F,42,Jerry Stackhouse,Jerry Stackhouse,,802,ppg · 21.5 ppg · 4.5 apg
 2003,G,31,Shawn Marion,Shawn Marion,,510,ppg · 21.2 ppg · 9.5 rpg
-2003,G,3,Steve Francis,Steve Francis,,255,ppg · 21.0 ppg · 6.2 apg
-2003,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.8 ppg · 6.6 rpg
+2003,G,3,Steve Francis,Steve Francis,,255,ppg · 21.0 ppg · 6.2 rpg · 6.2 apg
+2003,F,13,Glenn Robinson,Glenn Robinson,,717,ppg · 20.8 ppg · 6.6 rpg · 3.0 apg
 2003,C,7,Jermaine O'Neal,Jermaine O'Neal,,615,ppg · 20.8 ppg · 10.3 rpg
 2003,G,31,Ricky Davis,Ricky Davis,,193,ppg · 20.6 ppg · 5.5 apg
 2003,F,32,Karl Malone,Karl Malone,,501,ppg · 20.6 ppg · 7.8 rpg · 4.7 apg
-2003,G,15,Vince Carter,Vince Carter,,136,ppg · 20.6 ppg
+2003,G,15,Vince Carter,Vince Carter,,136,ppg · 20.6 ppg · 3.3 apg
 2003,G,20,,Gary Payton,,640,ppg · 20.4 ppg · 8.3 apg
 2003,F,8,Antoine Walker,Antoine Walker,,881,ppg · 20.1 ppg · 7.2 rpg · 4.8 apg
-2003,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 20.0 ppg · 3.8 apg
-2003,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 19.9 ppg · 8.4 rpg
+2003,G,23,Michael Jordan,Michael Jordan,,1035,ppg · 20.0 ppg · 6.1 rpg · 3.8 apg
+2003,F,3,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 19.9 ppg · 8.4 rpg · 3.0 apg
 2003,G,10,Sam Cassell,Sam Cassell,,138,ppg · 19.7 ppg · 5.8 apg
 2003,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 19.7 ppg
-2003,G,4,Michael Finley,Michael Finley,,242,ppg · 19.3 ppg
-2003,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 19.2 ppg
-2003,F,16,Pau Gasol,Pau Gasol,,996,ppg · 19.0 ppg · 8.8 rpg
-2003,G,5,Jason Kidd,Jason Kidd,,429,ppg · 18.7 ppg · 8.9 apg
+2003,G,4,Michael Finley,Michael Finley,,242,ppg · 19.3 ppg · 5.8 rpg · 3.0 apg
+2003,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 19.2 ppg · 5.5 rpg
+2003,F,16,Pau Gasol,Pau Gasol,,996,ppg · 19.0 ppg · 8.8 rpg · 2.8 apg
+2003,G,5,Jason Kidd,Jason Kidd,,429,ppg · 18.7 ppg · 6.3 rpg · 8.9 apg
 2003,G,6,Eddie Jones (basketball),Eddie Jones,,402,ppg · 18.5 ppg · 3.7 apg
 2003,F,42,Elton Brand,Elton Brand,,91,ppg · 18.5 ppg · 11.3 rpg
-2003,F,5,Juwan Howard,Juwan Howard,,351,ppg · 18.4 ppg · 7.6 rpg
+2003,F,5,Juwan Howard,Juwan Howard,,351,ppg · 18.4 ppg · 7.6 rpg · 3.0 apg
 2003,G,0,Gilbert Arenas,Gilbert Arenas,,974,ppg · 18.3 ppg · 6.3 apg
 2003,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 18.1 ppg · 6.5 rpg
 2003,F,30,Rasheed Wallace,Rasheed Wallace,,883,ppg · 18.1 ppg · 7.4 rpg
 2003,G,13,Steve Nash,Steve Nash,,592,ppg · 17.7 ppg · 7.3 apg
+2003,F,15,Matt Harpring,Matt Harpring,,306,ppg · 17.6 ppg · 6.6 rpg
+2003,G,10,Wally Szczerbiak,Wally Szczerbiak,,831,ppg · 17.6 ppg
+2003,G,5,Cuttino Mobley,Cuttino Mobley,,566,ppg · 17.5 ppg · 2.8 apg
+2003,G,31,Jason Terry,Jason Terry,,841,ppg · 17.2 ppg · 7.4 apg
+2003,C,11,Zydrunas Ilgauskas,Zydrunas Ilgauskas,,362,ppg · 17.2 ppg · 7.5 rpg
+2003,G,1,Baron Davis,Baron Davis,,194,ppg · 17.1 ppg · 6.4 apg
+2003,F,50,Corey Maggette,Corey Maggette,,497,ppg · 16.8 ppg · 5.0 rpg
+2003,G,4,David Wesley,David Wesley,,904,ppg · 16.7 ppg · 3.4 apg
+2003,F,6,Kenyon Martin,Kenyon Martin,,515,ppg · 16.7 ppg · 8.3 rpg
+2003,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 16.4 ppg · 4.5 apg
+2003,G,1,Chauncey Billups,Chauncey Billups,,63,ppg · 16.2 ppg · 3.9 apg
+2003,G,10,Mike Bibby,Mike Bibby,,61,ppg · 15.9 ppg · 5.2 apg
+2003,F,4,Keith Van Horn,Keith Van Horn,,869,ppg · 15.9 ppg · 7.1 rpg
+2003,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 15.6 ppg · 3.0 apg
+2003,G,33,"Mike Miller (basketball, born 1980)",Mike Miller,,558,ppg · 15.6 ppg · 5.2 rpg
 2003,F,3,Ben Wallace (basketball),Ben Wallace,,885,rpg · 15.4 rpg
 2003,F,44,Brian Grant,Brian Grant,,280,rpg · 10.2 rpg
-2003,F,1,Troy Murphy,Troy Murphy,,1013,rpg · 10.2 rpg
+2003,F,1,Troy Murphy,Troy Murphy,,1013,rpg · 11.7 ppg · 10.2 rpg
 2003,F,13,Jerome Williams (basketball),Jerome Williams,,930,rpg · 9.2 rpg
-2003,C,34,Michael Olowokandi,Michael Olowokandi,,621,rpg · 9.1 rpg
-2003,G,2,"Jason Williams (basketball, born 1975)",Jason Williams,,933,apg · 8.3 apg
-2003,G,12,John Stockton,John Stockton,,812,apg · 7.7 apg
+2003,C,34,Michael Olowokandi,Michael Olowokandi,,621,rpg · 12.2 ppg · 9.1 rpg
+2003,G,2,"Jason Williams (basketball, born 1975)",Jason Williams,,933,apg · 12.1 ppg · 8.3 apg
+2003,G,12,John Stockton,John Stockton,,812,apg · 10.8 ppg · 7.7 apg
 2003,G,11,Jamaal Tinsley,Jamaal Tinsley,,1024,apg · 7.5 apg
-2003,G,31,Jason Terry,Jason Terry,,841,apg · 17.2 ppg · 7.4 apg
-2003,G,24,Andre Miller,Andre Miller,,557,apg · 6.7 apg
-2004,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 28.0 ppg · 5.5 apg
+2003,G,24,Andre Miller,Andre Miller,,557,apg · 13.6 ppg · 6.7 apg
+2003,G,20,Eric Snow,Eric Snow,,796,apg · 12.9 ppg · 6.6 apg
+2004,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 28.0 ppg · 6.0 rpg · 5.5 apg
 2004,G,3,Allen Iverson,Allen Iverson,,366,ppg · 26.4 ppg · 6.8 apg
-2004,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 24.2 ppg
+2004,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 24.2 ppg · 6.3 rpg
 2004,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 24.2 ppg · 13.9 rpg · 5.0 apg
-2004,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 24.0 ppg · 5.1 apg
-2004,G,34,Ray Allen,Ray Allen,,9,ppg · 23.0 ppg · 4.8 apg
+2004,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 24.0 ppg · 5.5 rpg · 5.1 apg
+2004,G,34,Ray Allen,Ray Allen,,9,ppg · 23.0 ppg · 5.1 rpg · 4.8 apg
 2004,F,34,Paul Pierce,Paul Pierce,,662,ppg · 23.0 ppg · 6.5 rpg · 5.1 apg
 2004,G,1,Baron Davis,Baron Davis,,194,ppg · 22.9 ppg · 7.5 apg
 2004,G,15,Vince Carter,Vince Carter,,136,ppg · 22.5 ppg · 4.8 apg
-2004,C,21,Tim Duncan,Tim Duncan,,215,ppg · 22.3 ppg · 12.4 rpg
-2004,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 21.8 ppg · 8.7 rpg
+2004,C,21,Tim Duncan,Tim Duncan,,215,ppg · 22.3 ppg · 12.4 rpg · 3.1 apg
+2004,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 21.8 ppg · 8.7 rpg · 2.7 apg
 2004,G,22,Michael Redd,Michael Redd,,692,ppg · 21.7 ppg
-2004,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 21.5 ppg · 11.5 rpg
-2004,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 21.0 ppg
-2004,F,23,LeBron James,LeBron James,,1966,ppg · 20.9 ppg · 5.9 apg
-2004,F,24,Jamal Mashburn,Jamal Mashburn,,516,ppg · 20.8 ppg
-2004,F,50,Corey Maggette,Corey Maggette,,497,ppg · 20.7 ppg
+2004,C,34,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 21.5 ppg · 11.5 rpg · 2.9 apg
+2004,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 21.0 ppg · 6.1 rpg · 2.8 apg
+2004,F,23,LeBron James,LeBron James,,1966,ppg · 20.9 ppg · 5.5 rpg · 5.9 apg
+2004,F,24,Jamal Mashburn,Jamal Mashburn,,516,ppg · 20.8 ppg · 6.2 rpg
+2004,F,50,Corey Maggette,Corey Maggette,,497,ppg · 20.7 ppg · 5.9 rpg · 3.1 apg
 2004,C,32,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 20.6 ppg · 9.0 rpg
 2004,G,3,Stephon Marbury,Stephon Marbury,,509,ppg · 20.2 ppg · 8.9 apg
 2004,C,7,Jermaine O'Neal,Jermaine O'Neal,,615,ppg · 20.1 ppg · 10.0 rpg
 2004,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 20.1 ppg · 10.5 rpg
-2004,F,42,Elton Brand,Elton Brand,,91,ppg · 20.0 ppg · 10.3 rpg
+2004,F,42,Elton Brand,Elton Brand,,91,ppg · 20.0 ppg · 10.3 rpg · 3.3 apg
 2004,G,19,Sam Cassell,Sam Cassell,,138,ppg · 19.8 ppg · 7.3 apg
 2004,G,0,Gilbert Arenas,Gilbert Arenas,,974,ppg · 19.6 ppg · 5.0 apg
-2004,G,31,Shawn Marion,Shawn Marion,,510,ppg · 19.0 ppg · 9.3 rpg
-2004,G,20,Larry Hughes,Larry Hughes,,356,ppg · 18.8 ppg
-2004,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 18.7 ppg · 6.7 rpg
+2004,G,31,Shawn Marion,Shawn Marion,,510,ppg · 19.0 ppg · 9.3 rpg · 2.7 apg
+2004,G,20,Larry Hughes,Larry Hughes,,356,ppg · 18.8 ppg · 5.3 rpg
+2004,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 18.7 ppg · 6.7 rpg · 2.9 apg
 2004,C,4,Chris Webber,Chris Webber,,897,ppg · 18.7 ppg · 8.7 rpg · 4.6 apg
-2004,G,4,Michael Finley,Michael Finley,,242,ppg · 18.6 ppg
+2004,G,4,Michael Finley,Michael Finley,,242,ppg · 18.6 ppg · 2.9 apg
 2004,G,20,Allan Houston,Allan Houston,,349,ppg · 18.5 ppg
-2004,F,24,Richard Jefferson,Richard Jefferson,,1006,ppg · 18.5 ppg · 3.8 apg
+2004,F,24,Richard Jefferson,Richard Jefferson,,1006,ppg · 18.5 ppg · 5.7 rpg · 3.8 apg
 2004,G,10,Mike Bibby,Mike Bibby,,61,ppg · 18.4 ppg · 5.4 apg
-2004,F,23,,Metta World Peace,,25,ppg · 18.3 ppg
-2004,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 18.1 ppg
+2004,F,23,,Metta World Peace,,25,ppg · 18.3 ppg · 5.3 rpg · 3.7 apg
+2004,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 18.1 ppg · 3.0 apg
 2004,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 17.8 ppg · 6.5 rpg
 2004,F,16,Pau Gasol,Pau Gasol,,996,ppg · 17.7 ppg · 7.7 rpg
 2004,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 17.6 ppg · 4.0 apg
 2004,C,,Yao Ming,Yao Ming,,1722,ppg · 17.5 ppg · 9.0 rpg
-2004,G,6,Eddie Jones (basketball),Eddie Jones,,402,ppg · 17.3 ppg
+2004,G,6,Eddie Jones (basketball),Eddie Jones,,402,ppg · 17.3 ppg · 3.2 apg
 2004,G,1,Jamal Crawford,Jamal Crawford,,165,ppg · 17.3 ppg · 5.1 apg
+2004,F,3,Quentin Richardson,Quentin Richardson,,703,ppg · 17.2 ppg · 6.4 rpg
+2004,F,7,Lamar Odom,Lamar Odom,,617,ppg · 17.1 ppg · 9.7 rpg · 4.1 apg
+2004,F,5,Juwan Howard,Juwan Howard,,351,ppg · 17.0 ppg · 7.0 rpg
+2004,G,1,Chauncey Billups,Chauncey Billups,,63,ppg · 16.9 ppg · 5.7 apg
+2004,G,31,Jason Terry,Jason Terry,,841,ppg · 16.8 ppg · 5.4 apg
+2004,G,8,Latrell Sprewell,Latrell Sprewell,,800,ppg · 16.8 ppg · 3.5 apg
+2004,F,6,Kenyon Martin,Kenyon Martin,,515,ppg · 16.7 ppg · 9.5 rpg
+2004,G,2,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 16.7 ppg · 4.4 apg
+2004,F,31,Glenn Robinson,Glenn Robinson,,717,ppg · 16.6 ppg
+2004,G,3,Steve Francis,Steve Francis,,255,ppg · 16.6 ppg · 5.5 rpg · 6.2 apg
+2004,F,47,Andrei Kirilenko,Andrei Kirilenko,,434,ppg · 16.5 ppg · 8.1 rpg · 3.1 apg
+2004,F,33,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 16.3 ppg · 7.5 rpg
+2004,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 16.2 ppg · 4.5 apg
+2004,F,15,Matt Harpring,Matt Harpring,,306,ppg · 16.2 ppg · 8.0 rpg
+2004,F,44,Keith Van Horn,Keith Van Horn,,869,ppg · 16.1 ppg · 7.0 rpg
 2004,F,3,Ben Wallace (basketball),Ben Wallace,,885,rpg · 12.4 rpg
-2004,C,25,Erick Dampier,Erick Dampier,,181,rpg · 12.0 rpg
+2004,C,25,Erick Dampier,Erick Dampier,,181,rpg · 12.3 ppg · 12.0 rpg
 2004,F,1,Carlos Boozer,Carlos Boozer,,1703,rpg · 15.5 ppg · 11.4 rpg
-2004,C,21,Jamaal Magloire,Jamaal Magloire,,498,rpg · 10.3 rpg
-2004,C,52,Brad Miller (basketball),Brad Miller,,556,rpg · 10.3 rpg · 4.3 apg
+2004,C,21,Jamaal Magloire,Jamaal Magloire,,498,rpg · 13.6 ppg · 10.3 rpg
+2004,C,52,Brad Miller (basketball),Brad Miller,,556,rpg · 14.1 ppg · 10.3 rpg · 4.3 apg
 2004,G,5,Jason Kidd,Jason Kidd,,429,apg · 15.5 ppg · 6.4 rpg · 9.2 apg
-2004,G,13,Steve Nash,Steve Nash,,592,apg · 8.8 apg
+2004,G,13,Steve Nash,Steve Nash,,592,apg · 14.5 ppg · 8.8 apg
 2004,G,20,Eric Snow,Eric Snow,,796,apg · 6.9 apg
 2004,G,2,"Jason Williams (basketball, born 1975)",Jason Williams,,933,apg · 6.8 apg
-2004,G,12,Kirk Hinrich,Kirk Hinrich,,1981,apg · 6.8 apg
+2004,G,12,Kirk Hinrich,Kirk Hinrich,,1981,apg · 12.0 ppg · 6.8 apg
 2005,G,3,Allen Iverson,Allen Iverson,,366,ppg · 30.7 ppg · 7.9 apg
-2005,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 27.6 ppg · 6.0 apg
+2005,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 27.6 ppg · 5.9 rpg · 6.0 apg
 2005,F,23,LeBron James,LeBron James,,1966,ppg · 27.2 ppg · 7.3 rpg · 7.2 apg
-2005,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 26.1 ppg · 9.7 rpg
+2005,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 26.1 ppg · 9.7 rpg · 3.1 apg
 2005,C,32,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 26.0 ppg · 8.9 rpg
-2005,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 25.7 ppg · 5.7 apg
+2005,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 25.7 ppg · 6.2 rpg · 5.7 apg
 2005,G,0,Gilbert Arenas,Gilbert Arenas,,974,ppg · 25.5 ppg · 5.1 apg
-2005,F,91,,Metta World Peace,,25,ppg · 24.6 ppg · 6.4 rpg
+2005,F,91,,Metta World Peace,,25,ppg · 24.6 ppg · 6.4 rpg · 3.1 apg
 2005,G,15,Vince Carter,Vince Carter,,136,ppg · 24.5 ppg · 4.2 apg
 2005,C,7,Jermaine O'Neal,Jermaine O'Neal,,615,ppg · 24.3 ppg · 8.8 rpg
 2005,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 24.1 ppg · 6.8 apg
-2005,G,34,Ray Allen,Ray Allen,,9,ppg · 23.9 ppg
+2005,G,34,Ray Allen,Ray Allen,,9,ppg · 23.9 ppg · 3.7 apg
 2005,G,22,Michael Redd,Michael Redd,,692,ppg · 23.0 ppg
-2005,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 22.9 ppg · 10.4 rpg
+2005,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 22.9 ppg · 10.4 rpg · 2.7 apg
 2005,F,24,Richard Jefferson,Richard Jefferson,,1006,ppg · 22.2 ppg · 7.3 rpg · 4.0 apg
-2005,F,50,Corey Maggette,Corey Maggette,,497,ppg · 22.2 ppg
+2005,F,50,Corey Maggette,Corey Maggette,,497,ppg · 22.2 ppg · 6.0 rpg · 3.4 apg
 2005,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 22.2 ppg · 13.5 rpg · 5.7 apg
-2005,G,20,Larry Hughes,Larry Hughes,,356,ppg · 22.0 ppg · 4.7 apg
+2005,G,20,Larry Hughes,Larry Hughes,,356,ppg · 22.0 ppg · 6.3 rpg · 4.7 apg
 2005,G,3,Stephon Marbury,Stephon Marbury,,509,ppg · 21.7 ppg · 8.1 apg
-2005,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 21.7 ppg · 3.9 apg
+2005,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 21.7 ppg · 5.9 rpg · 3.9 apg
 2005,F,34,Paul Pierce,Paul Pierce,,662,ppg · 21.6 ppg · 6.6 rpg · 4.2 apg
-2005,G,3,Steve Francis,Steve Francis,,255,ppg · 21.3 ppg · 7.0 apg
-2005,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 20.8 ppg
-2005,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 20.5 ppg
-2005,C,21,Tim Duncan,Tim Duncan,,215,ppg · 20.3 ppg · 11.1 rpg
+2005,G,3,Steve Francis,Steve Francis,,255,ppg · 21.3 ppg · 5.8 rpg · 7.0 apg
+2005,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 20.8 ppg · 5.7 rpg · 2.6 apg
+2005,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 20.5 ppg · 5.5 rpg
+2005,C,21,Tim Duncan,Tim Duncan,,215,ppg · 20.3 ppg · 11.1 rpg · 2.7 apg
 2005,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 20.1 ppg
-2005,F,42,Elton Brand,Elton Brand,,91,ppg · 20.0 ppg · 9.5 rpg
-2005,F,33,Grant Hill,Grant Hill,,336,ppg · 19.7 ppg
+2005,F,42,Elton Brand,Elton Brand,,91,ppg · 20.0 ppg · 9.5 rpg · 2.6 apg
+2005,F,33,Grant Hill,Grant Hill,,336,ppg · 19.7 ppg · 3.3 apg
 2005,G,10,Mike Bibby,Mike Bibby,,61,ppg · 19.6 ppg · 6.8 apg
 2005,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 19.6 ppg · 7.6 rpg
 2005,C,4,Chris Webber,Chris Webber,,897,ppg · 19.5 ppg · 9.1 rpg · 4.7 apg
 2005,G,31,Shawn Marion,Shawn Marion,,510,ppg · 19.4 ppg · 11.3 rpg
 2005,G,5,Baron Davis,Baron Davis,,194,ppg · 19.2 ppg · 7.9 apg
-2005,F,88,Antoine Walker,Antoine Walker,,881,ppg · 19.1 ppg · 9.0 rpg
+2005,F,88,Antoine Walker,Antoine Walker,,881,ppg · 19.1 ppg · 9.0 rpg · 3.4 apg
 2005,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 18.9 ppg · 9.6 rpg
 2005,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 18.7 ppg · 4.9 apg
 2005,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 18.7 ppg
-2005,G,5,Jalen Rose,Jalen Rose,,738,ppg · 18.5 ppg
+2005,G,5,Jalen Rose,Jalen Rose,,738,ppg · 18.5 ppg · 2.6 apg
 2005,C,,Yao Ming,Yao Ming,,1722,ppg · 18.3 ppg · 8.4 rpg
-2005,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 17.8 ppg · 9.0 rpg
+2005,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 17.8 ppg · 9.0 rpg · 2.8 apg
+2005,F,16,Pau Gasol,Pau Gasol,,996,ppg · 17.8 ppg · 7.3 rpg
+2005,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 17.7 ppg · 4.3 apg
+2005,F,3,Al Harrington,Al Harrington,,308,ppg · 17.5 ppg · 7.0 rpg · 3.2 apg
+2005,F,24,Desmond Mason,Desmond Mason,,518,ppg · 17.2 ppg · 2.7 apg
+2005,G,5/3,Cuttino Mobley,Cuttino Mobley,,566,ppg · 17.2 ppg · 2.8 apg
+2005,G,2,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 17.1 ppg · 3.5 apg
+2005,C,11,Zydrunas Ilgauskas,Zydrunas Ilgauskas,,362,ppg · 16.9 ppg · 8.6 rpg
+2005,F,33,Shareef Abdur-Rahim,Shareef Abdur-Rahim,,3,ppg · 16.8 ppg · 7.3 rpg
+2005,F,4,Chris Bosh,Chris Bosh,,1977,ppg · 16.8 ppg · 8.9 rpg
+2005,G,9,Tony Parker,Tony Parker,,1015,ppg · 16.6 ppg · 6.1 apg
+2005,G,1,Chauncey Billups,Chauncey Billups,,63,ppg · 16.5 ppg · 5.8 apg
+2005,F,21,Bobby Simmons,Bobby Simmons,,1022,ppg · 16.4 ppg · 5.9 rpg · 2.7 apg
+2005,F,2,Eddy Curry,Eddy Curry,,990,ppg · 16.1 ppg · 5.4 rpg
+2005,G,20,Manu Ginóbili,Manu Ginobili,,272,ppg · 16.0 ppg · 3.9 apg
+2005,G,12,Ricky Davis,Ricky Davis,,193,ppg · 16.0 ppg · 3.0 apg
 2005,F,3,Ben Wallace (basketball),Ben Wallace,,885,rpg · 12.2 rpg
-2005,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 10.9 rpg
-2005,F,1,Troy Murphy,Troy Murphy,,1013,rpg · 10.8 rpg
+2005,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 15.1 ppg · 10.9 rpg
+2005,F,1,Troy Murphy,Troy Murphy,,1013,rpg · 15.4 ppg · 10.8 rpg
 2005,F,40,Kurt Thomas (basketball),Kurt Thomas,,846,rpg · 10.4 rpg
-2005,F,7,Lamar Odom,Lamar Odom,,617,rpg · 10.2 rpg
-2005,G,13,Steve Nash,Steve Nash,,592,apg · 11.5 apg
+2005,F,7,Lamar Odom,Lamar Odom,,617,rpg · 15.2 ppg · 10.2 rpg · 3.7 apg
+2005,G,13,Steve Nash,Steve Nash,,592,apg · 15.5 ppg · 11.5 apg
 2005,G,22,Brevin Knight,Brevin Knight,,440,apg · 9.0 apg
-2005,G,5,Jason Kidd,Jason Kidd,,429,apg · 7.4 rpg · 8.3 apg
-2005,G,24,Andre Miller,Andre Miller,,557,apg · 6.9 apg
-2005,G,11,Rafer Alston,Rafer Alston,,11,apg · 6.4 apg
-2006,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 35.4 ppg · 4.5 apg
+2005,G,5,Jason Kidd,Jason Kidd,,429,apg · 14.4 ppg · 7.4 rpg · 8.3 apg
+2005,G,24,Andre Miller,Andre Miller,,557,apg · 13.6 ppg · 6.9 apg
+2005,G,11,Rafer Alston,Rafer Alston,,11,apg · 14.2 ppg · 6.4 apg
+2006,F,8,Kobe Bryant,Kobe Bryant,,110,ppg · 35.4 ppg · 5.3 rpg · 4.5 apg
 2006,G,3,Allen Iverson,Allen Iverson,,366,ppg · 33.0 ppg · 7.4 apg
 2006,F,23,LeBron James,LeBron James,,1966,ppg · 31.4 ppg · 7.0 rpg · 6.6 apg
 2006,G,0,Gilbert Arenas,Gilbert Arenas,,974,ppg · 29.3 ppg · 6.1 apg
-2006,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 27.2 ppg · 6.7 apg
+2006,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 27.2 ppg · 5.7 rpg · 6.7 apg
 2006,F,34,Paul Pierce,Paul Pierce,,662,ppg · 26.8 ppg · 6.7 rpg · 4.7 apg
-2006,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 26.6 ppg · 9.0 rpg
-2006,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 26.5 ppg
-2006,G,22,Michael Redd,Michael Redd,,692,ppg · 25.4 ppg
+2006,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 26.6 ppg · 9.0 rpg · 2.8 apg
+2006,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 26.5 ppg · 2.7 apg
+2006,G,22,Michael Redd,Michael Redd,,692,ppg · 25.4 ppg · 2.9 apg
 2006,G,34,Ray Allen,Ray Allen,,9,ppg · 25.1 ppg · 3.7 apg
 2006,F,42,Elton Brand,Elton Brand,,91,ppg · 24.7 ppg · 10.0 rpg
 2006,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 24.4 ppg · 6.5 rpg · 4.8 apg
-2006,G,15,Vince Carter,Vince Carter,,136,ppg · 24.2 ppg · 4.3 apg
-2006,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 23.2 ppg
+2006,G,15,Vince Carter,Vince Carter,,136,ppg · 24.2 ppg · 5.8 rpg · 4.3 apg
+2006,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 23.2 ppg · 5.8 rpg · 3.1 apg
 2006,F,4,Chris Bosh,Chris Bosh,,1977,ppg · 22.5 ppg · 9.2 rpg
 2006,C,,Yao Ming,Yao Ming,,1722,ppg · 22.3 ppg · 10.2 rpg
 2006,G,31,Shawn Marion,Shawn Marion,,510,ppg · 21.8 ppg · 11.8 rpg
@@ -571,192 +661,252 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2006,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 20.5 ppg · 9.3 rpg
 2006,F,16,Pau Gasol,Pau Gasol,,996,ppg · 20.4 ppg · 8.9 rpg · 4.6 apg
 2006,G,13,"Mike James (basketball, born 1975)",Mike James,,1051,ppg · 20.3 ppg · 5.8 apg
-2006,C,4,Chris Webber,Chris Webber,,897,ppg · 20.2 ppg · 9.9 rpg
+2006,C,4,Chris Webber,Chris Webber,,897,ppg · 20.2 ppg · 9.9 rpg · 3.4 apg
 2006,G,2,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 20.2 ppg · 6.5 apg
-2006,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 20.1 ppg
-2006,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 20.1 ppg
+2006,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 20.1 ppg · 3.4 apg
+2006,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 20.1 ppg · 5.0 rpg
 2006,C,7,Jermaine O'Neal,Jermaine O'Neal,,615,ppg · 20.1 ppg · 9.3 rpg
 2006,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 20.0 ppg · 9.2 rpg
 2006,F,24,Richard Jefferson,Richard Jefferson,,1006,ppg · 19.5 ppg · 6.8 rpg · 3.8 apg
 2006,G,31,Ricky Davis,Ricky Davis,,193,ppg · 19.4 ppg · 5.1 apg
-2006,G,55,Wally Szczerbiak,Wally Szczerbiak,,831,ppg · 19.0 ppg
+2006,G,55,Wally Szczerbiak,Wally Szczerbiak,,831,ppg · 19.0 ppg · 3.0 apg
 2006,G,9,Tony Parker,Tony Parker,,1015,ppg · 18.9 ppg · 5.8 apg
 2006,G,13,Steve Nash,Steve Nash,,592,ppg · 18.8 ppg · 10.5 apg
-2006,F,3,Al Harrington,Al Harrington,,308,ppg · 18.6 ppg · 6.9 rpg
-2006,C,21,Tim Duncan,Tim Duncan,,215,ppg · 18.6 ppg · 11.0 rpg
+2006,F,3,Al Harrington,Al Harrington,,308,ppg · 18.6 ppg · 6.9 rpg · 3.1 apg
+2006,C,21,Tim Duncan,Tim Duncan,,215,ppg · 18.6 ppg · 11.0 rpg · 3.2 apg
 2006,G,1,Chauncey Billups,Chauncey Billups,,63,ppg · 18.5 ppg · 8.6 apg
-2006,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 18.2 ppg
+2006,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 18.2 ppg · 5.8 rpg
 2006,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 18.0 ppg · 8.0 rpg
 2006,C,13,Mehmet Okur,Mehmet Okur,,1014,ppg · 18.0 ppg · 9.1 rpg
 2006,G,5,Baron Davis,Baron Davis,,194,ppg · 17.9 ppg · 8.9 apg
-2006,C,12,Dwight Howard,Dwight Howard,,2384,rpg · 15.8 ppg · 12.5 rpg
-2006,C,23,Marcus Camby,Marcus Camby,,125,rpg · 11.9 rpg
+2006,F,50,Corey Maggette,Corey Maggette,,497,ppg · 17.8 ppg · 5.3 rpg
+2006,F,3,Caron Butler,Caron Butler,,1705,ppg · 17.6 ppg · 6.2 rpg
+2006,F,93,,Metta World Peace,,25,ppg · 17.6 ppg · 5.1 rpg · 3.6 apg
+2006,G,19,Sam Cassell,Sam Cassell,,138,ppg · 17.2 ppg · 6.3 apg
+2006,G,31,Jason Terry,Jason Terry,,841,ppg · 17.1 ppg · 3.8 apg
+2006,F,30,David West (basketball),David West,,2177,ppg · 17.1 ppg · 7.4 rpg
+2006,G,7,Ben Gordon,Ben Gordon,,2381,ppg · 16.9 ppg · 3.0 apg
+2006,G,24,Morris Peterson,Morris Peterson,,656,ppg · 16.8 ppg
+2006,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 16.4 ppg · 2.8 apg
+2006,G,3,Stephon Marbury,Stephon Marbury,,509,ppg · 16.3 ppg · 6.4 apg
+2006,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 16.3 ppg · 8.6 rpg · 2.7 apg
+2006,G,3,Chris Paul,Chris Paul,,2779,ppg · 16.1 ppg · 5.1 rpg · 7.8 apg
+2006,G,12,Kirk Hinrich,Kirk Hinrich,,1981,ppg · 15.9 ppg · 6.3 apg
+2006,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 15.8 ppg · 12.5 rpg
+2006,F,5,Josh Howard,Josh Howard,,2006,ppg · 15.6 ppg · 6.3 rpg
+2006,C,23,Marcus Camby,Marcus Camby,,125,rpg · 12.8 ppg · 11.9 rpg
 2006,F,3,Ben Wallace (basketball),Ben Wallace,,885,rpg · 11.3 rpg
-2006,F,1,Troy Murphy,Troy Murphy,,1013,rpg · 10.0 rpg
-2006,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 10.0 rpg
-2006,G,22,Brevin Knight,Brevin Knight,,440,apg · 8.8 apg
-2006,G,5,Jason Kidd,Jason Kidd,,429,apg · 7.2 rpg · 8.4 apg
-2006,G,24,Andre Miller,Andre Miller,,557,apg · 8.2 apg
-2006,G,3,Chris Paul,Chris Paul,,2779,apg · 16.1 ppg · 7.8 apg
+2006,F,1,Troy Murphy,Troy Murphy,,1013,rpg · 14.0 ppg · 10.0 rpg
+2006,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 13.2 ppg · 10.0 rpg
+2006,C,35,Chris Kaman,Chris Kaman,,1982,rpg · 9.6 rpg
+2006,G,22,Brevin Knight,Brevin Knight,,440,apg · 12.6 ppg · 8.8 apg
+2006,G,5,Jason Kidd,Jason Kidd,,429,apg · 13.3 ppg · 7.2 rpg · 8.4 apg
+2006,G,24,Andre Miller,Andre Miller,,557,apg · 13.7 ppg · 8.2 apg
 2006,G,8,Luke Ridnour,Luke Ridnour,,1985,apg · 7.0 apg
-2007,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 31.6 ppg · 5.4 apg
-2007,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 28.9 ppg · 3.8 apg
+2006,G,12,Rafer Alston,Rafer Alston,,11,apg · 6.7 apg
+2007,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 31.6 ppg · 5.7 rpg · 5.4 apg
+2007,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 28.9 ppg · 6.0 rpg · 3.8 apg
 2007,G,0,Gilbert Arenas,Gilbert Arenas,,974,ppg · 28.4 ppg · 6.0 apg
 2007,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 27.4 ppg · 7.5 apg
 2007,F,23,LeBron James,LeBron James,,1966,ppg · 27.3 ppg · 6.7 rpg · 6.0 apg
 2007,G,22,Michael Redd,Michael Redd,,692,ppg · 26.7 ppg
 2007,G,34,Ray Allen,Ray Allen,,9,ppg · 26.4 ppg · 4.1 apg
 2007,G,3,Allen Iverson,Allen Iverson,,366,ppg · 26.3 ppg · 7.2 apg
-2007,G,15,Vince Carter,Vince Carter,,136,ppg · 25.2 ppg · 4.8 apg
+2007,G,15,Vince Carter,Vince Carter,,136,ppg · 25.2 ppg · 6.0 rpg · 4.8 apg
 2007,C,,Yao Ming,Yao Ming,,1722,ppg · 25.0 ppg · 9.4 rpg
 2007,G,2,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 25.0 ppg · 4.4 apg
-2007,F,34,Paul Pierce,Paul Pierce,,662,ppg · 25.0 ppg · 4.1 apg
-2007,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 24.6 ppg · 6.5 apg
-2007,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 24.6 ppg · 8.9 rpg
+2007,F,34,Paul Pierce,Paul Pierce,,662,ppg · 25.0 ppg · 5.9 rpg · 4.1 apg
+2007,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 24.6 ppg · 5.3 rpg · 6.5 apg
+2007,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 24.6 ppg · 8.9 rpg · 3.4 apg
 2007,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 23.6 ppg · 10.1 rpg
 2007,F,4,Chris Bosh,Chris Bosh,,1977,ppg · 22.6 ppg · 10.7 rpg
 2007,F,21,Kevin Garnett,Kevin Garnett,,261,ppg · 22.4 ppg · 12.8 rpg · 4.1 apg
 2007,F,7,Rashard Lewis,Rashard Lewis,,469,ppg · 22.4 ppg · 6.6 rpg
-2007,G,7,Ben Gordon,Ben Gordon,,2381,ppg · 21.4 ppg
-2007,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 20.9 ppg · 11.7 rpg
-2007,F,16,Pau Gasol,Pau Gasol,,996,ppg · 20.8 ppg · 9.8 rpg
-2007,F,42,Elton Brand,Elton Brand,,91,ppg · 20.5 ppg · 9.3 rpg
+2007,G,7,Ben Gordon,Ben Gordon,,2381,ppg · 21.4 ppg · 3.6 apg
+2007,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 20.9 ppg · 11.7 rpg · 3.0 apg
+2007,F,16,Pau Gasol,Pau Gasol,,996,ppg · 20.8 ppg · 9.8 rpg · 3.4 apg
+2007,F,42,Elton Brand,Elton Brand,,91,ppg · 20.5 ppg · 9.3 rpg · 2.9 apg
 2007,C,1,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 20.4 ppg · 9.6 rpg
 2007,G,23,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 20.2 ppg
 2007,G,5,Baron Davis,Baron Davis,,194,ppg · 20.1 ppg · 8.1 apg
-2007,C,21,Tim Duncan,Tim Duncan,,215,ppg · 20.0 ppg · 10.6 rpg
+2007,C,21,Tim Duncan,Tim Duncan,,215,ppg · 20.0 ppg · 10.6 rpg · 3.4 apg
 2007,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 19.8 ppg · 8.0 rpg
-2007,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 19.8 ppg
+2007,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 19.8 ppg · 3.8 apg
 2007,F,34,Eddy Curry,Eddy Curry,,990,ppg · 19.5 ppg · 7.0 rpg
 2007,C,7,Jermaine O'Neal,Jermaine O'Neal,,615,ppg · 19.4 ppg · 9.6 rpg
-2007,F,3,Caron Butler,Caron Butler,,1705,ppg · 19.1 ppg · 7.4 rpg
+2007,F,3,Caron Butler,Caron Butler,,1705,ppg · 19.1 ppg · 7.4 rpg · 3.7 apg
 2007,F,5,Josh Howard,Josh Howard,,2006,ppg · 18.9 ppg · 6.8 rpg
-2007,F,93,,Metta World Peace,,25,ppg · 18.8 ppg · 6.5 rpg
+2007,F,93,,Metta World Peace,,25,ppg · 18.8 ppg · 6.5 rpg · 3.4 apg
 2007,F,9,Luol Deng,Luol Deng,,2429,ppg · 18.8 ppg · 7.1 rpg
 2007,G,13,Steve Nash,Steve Nash,,592,ppg · 18.6 ppg · 11.6 apg
 2007,G,9,Tony Parker,Tony Parker,,1015,ppg · 18.6 ppg · 5.5 apg
-2007,G,33,"Mike Miller (basketball, born 1980)",Mike Miller,,558,ppg · 18.5 ppg · 4.3 apg
+2007,G,33,"Mike Miller (basketball, born 1980)",Mike Miller,,558,ppg · 18.5 ppg · 5.4 rpg · 4.3 apg
 2007,F,30,David West (basketball),David West,,2177,ppg · 18.2 ppg · 8.2 rpg
-2007,F,9,Andre Iguodala,Andre Iguodala,,2386,ppg · 18.2 ppg · 5.7 apg
+2007,F,9,Andre Iguodala,Andre Iguodala,,2386,ppg · 18.2 ppg · 5.7 rpg · 5.7 apg
 2007,F,3,Gerald Wallace,Gerald Wallace,,1026,ppg · 18.1 ppg · 7.2 rpg
+2007,G,10,Leandro Barbosa,Leandro Barbosa,,2166,ppg · 18.0 ppg · 4.0 apg
+2007,F,16,Peja Stojaković,Peja Stojakovic,,813,ppg · 17.8 ppg
+2007,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 17.6 ppg · 4.4 apg
+2007,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 17.6 ppg · 12.3 rpg
+2007,C,13,Mehmet Okur,Mehmet Okur,,1014,ppg · 17.6 ppg · 7.2 rpg
+2007,G,31,Shawn Marion,Shawn Marion,,510,ppg · 17.5 ppg · 9.8 rpg
+2007,G,25,Mo Williams,Mo Williams,,2178,ppg · 17.3 ppg · 6.1 apg
+2007,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 17.2 ppg · 7.4 rpg
+2007,G,3,Chris Paul,Chris Paul,,2779,ppg · 17.2 ppg · 8.9 apg
+2007,G,10,Mike Bibby,Mike Bibby,,61,ppg · 17.1 ppg · 4.7 apg
+2007,G,1,Chauncey Billups,Chauncey Billups,,63,ppg · 17.0 ppg · 7.2 apg
+2007,G,31,Ricky Davis,Ricky Davis,,193,ppg · 17.0 ppg · 4.8 apg
+2007,F,50,Corey Maggette,Corey Maggette,,497,ppg · 16.9 ppg · 5.9 rpg
+2007,G,7,Brandon Roy,Brandon Roy,,3027,ppg · 16.8 ppg · 4.0 apg
+2007,G,31,Jason Terry,Jason Terry,,841,ppg · 16.7 ppg · 5.2 apg
 2007,C,6,Tyson Chandler,Tyson Chandler,,984,rpg · 12.4 rpg
-2007,C,12,Dwight Howard,Dwight Howard,,2384,rpg · 17.6 ppg · 12.3 rpg
-2007,C,23,Marcus Camby,Marcus Camby,,125,rpg · 11.7 rpg
-2007,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 11.3 rpg
-2007,C,7,Al Jefferson,Al Jefferson,,2389,rpg · 11.0 rpg
-2007,G,8,Deron Williams,Deron Williams,,2798,apg · 9.3 apg
-2007,G,5,Jason Kidd,Jason Kidd,,429,apg · 8.2 rpg · 9.2 apg
-2007,G,3,Chris Paul,Chris Paul,,2779,apg · 17.2 ppg · 8.9 apg
-2007,G,11,T. J. Ford,T.J. Ford,,1979,apg · 7.9 apg
-2007,G,7,Andre Miller,Andre Miller,,557,apg · 7.8 apg
+2007,C,23,Marcus Camby,Marcus Camby,,125,rpg · 11.7 rpg · 3.2 apg
+2007,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 14.4 ppg · 11.3 rpg
+2007,C,7,Al Jefferson,Al Jefferson,,2389,rpg · 16.0 ppg · 11.0 rpg
+2007,F,3,Ben Wallace (basketball),Ben Wallace,,885,rpg · 10.7 rpg
+2007,G,8,Deron Williams,Deron Williams,,2798,apg · 16.2 ppg · 9.3 apg
+2007,G,5,Jason Kidd,Jason Kidd,,429,apg · 13.0 ppg · 8.2 rpg · 9.2 apg
+2007,G,11,T. J. Ford,T.J. Ford,,1979,apg · 14.0 ppg · 7.9 apg
+2007,G,7,Andre Miller,Andre Miller,,557,apg · 13.4 ppg · 7.8 apg
+2007,G,20,Raymond Felton,Raymond Felton,,2753,apg · 14.0 ppg · 7.0 apg
 2008,F,23,LeBron James,LeBron James,,1966,ppg · 30.0 ppg · 7.9 rpg · 7.2 apg
 2008,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 28.3 ppg · 6.3 rpg · 5.4 apg
 2008,G,3,Allen Iverson,Allen Iverson,,366,ppg · 26.4 ppg · 7.1 apg
-2008,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 25.7 ppg · 7.4 rpg
+2008,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 25.7 ppg · 7.4 rpg · 3.4 apg
 2008,C,1,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 25.2 ppg · 9.1 rpg
 2008,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 24.6 ppg · 6.9 apg
 2008,G,23,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 23.7 ppg
-2008,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 23.6 ppg · 8.6 rpg
-2008,G,22,Michael Redd,Michael Redd,,692,ppg · 22.7 ppg
-2008,F,24,Richard Jefferson,Richard Jefferson,,1006,ppg · 22.6 ppg
+2008,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 23.6 ppg · 8.6 rpg · 3.5 apg
+2008,G,22,Michael Redd,Michael Redd,,692,ppg · 22.7 ppg · 3.4 apg
+2008,F,24,Richard Jefferson,Richard Jefferson,,1006,ppg · 22.6 ppg · 3.1 apg
 2008,F,4,Chris Bosh,Chris Bosh,,1977,ppg · 22.3 ppg · 8.7 rpg
-2008,F,50,Corey Maggette,Corey Maggette,,497,ppg · 22.1 ppg
+2008,F,50,Corey Maggette,Corey Maggette,,497,ppg · 22.1 ppg · 5.6 rpg · 2.7 apg
 2008,C,,Yao Ming,Yao Ming,,1722,ppg · 22.0 ppg · 10.8 rpg
 2008,G,5,Baron Davis,Baron Davis,,194,ppg · 21.8 ppg · 7.6 apg
-2008,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 21.8 ppg
+2008,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 21.8 ppg · 5.4 rpg · 3.1 apg
 2008,G,2,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 21.7 ppg · 5.8 apg
-2008,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 21.6 ppg · 5.9 apg
+2008,G,1,Tracy McGrady,Tracy McGrady,,532,ppg · 21.6 ppg · 5.1 rpg · 5.9 apg
 2008,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 21.4 ppg · 10.2 rpg
-2008,G,15,Vince Carter,Vince Carter,,136,ppg · 21.3 ppg · 5.1 apg
-2008,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 21.1 ppg · 10.4 rpg
+2008,G,15,Vince Carter,Vince Carter,,136,ppg · 21.3 ppg · 6.0 rpg · 5.1 apg
+2008,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 21.1 ppg · 10.4 rpg · 2.9 apg
 2008,G,3,Chris Paul,Chris Paul,,2779,ppg · 21.0 ppg · 11.6 apg
 2008,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 21.0 ppg · 11.1 rpg
 2008,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 20.7 ppg · 14.2 rpg
 2008,F,30,David West (basketball),David West,,2177,ppg · 20.6 ppg · 8.9 rpg
 2008,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 20.6 ppg · 5.0 apg
-2008,F,93,,Metta World Peace,,25,ppg · 20.5 ppg
+2008,F,93,,Metta World Peace,,25,ppg · 20.5 ppg · 5.8 rpg · 3.5 apg
 2008,F,3,Caron Butler,Caron Butler,,1705,ppg · 20.3 ppg · 6.7 rpg · 4.9 apg
 2008,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 20.3 ppg
-2008,G,8,Monta Ellis,Monta Ellis,,2751,ppg · 20.2 ppg · 3.9 apg
-2008,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 20.1 ppg
+2008,G,8,Monta Ellis,Monta Ellis,,2751,ppg · 20.2 ppg · 5.0 rpg · 3.9 apg
+2008,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 20.1 ppg · 6.2 rpg
 2008,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 20.1 ppg · 4.1 apg
 2008,F,5,Josh Howard,Josh Howard,,2006,ppg · 19.9 ppg · 7.0 rpg
-2008,F,9,Andre Iguodala,Andre Iguodala,,2386,ppg · 19.9 ppg · 4.8 apg
-2008,F,34,Paul Pierce,Paul Pierce,,662,ppg · 19.6 ppg · 4.5 apg
-2008,F,33,Danny Granger,Danny Granger,,2760,ppg · 19.6 ppg
-2008,F,15,Hedo Türkoğlu,Hedo Turkoglu,,862,ppg · 19.5 ppg · 5.0 apg
+2008,F,9,Andre Iguodala,Andre Iguodala,,2386,ppg · 19.9 ppg · 5.4 rpg · 4.8 apg
+2008,F,34,Paul Pierce,Paul Pierce,,662,ppg · 19.6 ppg · 5.1 rpg · 4.5 apg
+2008,F,33,Danny Granger,Danny Granger,,2760,ppg · 19.6 ppg · 6.1 rpg
+2008,F,15,Hedo Türkoğlu,Hedo Turkoglu,,862,ppg · 19.5 ppg · 5.7 rpg · 5.0 apg
 2008,G,20,Manu Ginóbili,Manu Ginobili,,272,ppg · 19.5 ppg · 4.5 apg
 2008,G,0,Gilbert Arenas,Gilbert Arenas,,974,ppg · 19.4 ppg · 5.1 apg
-2008,F,3,Gerald Wallace,Gerald Wallace,,1026,ppg · 19.4 ppg
-2008,C,21,Tim Duncan,Tim Duncan,,215,ppg · 19.3 ppg · 11.3 rpg
-2008,C,23,Marcus Camby,Marcus Camby,,125,rpg · 13.1 rpg
-2008,C,35,Chris Kaman,Chris Kaman,,1982,rpg · 12.7 rpg
+2008,F,3,Gerald Wallace,Gerald Wallace,,1026,ppg · 19.4 ppg · 6.0 rpg · 3.5 apg
+2008,C,21,Tim Duncan,Tim Duncan,,215,ppg · 19.3 ppg · 11.3 rpg · 2.8 apg
+2008,G,7,Brandon Roy,Brandon Roy,,3027,ppg · 19.1 ppg · 5.8 apg
+2008,G,17,Mike Dunleavy Jr.,Mike Dunleavy,,1708,ppg · 19.1 ppg · 5.2 rpg · 3.5 apg
+2008,F,16,Pau Gasol,Pau Gasol,,996,ppg · 18.9 ppg · 8.4 rpg · 3.2 apg
+2008,G,8,Deron Williams,Deron Williams,,2798,ppg · 18.8 ppg · 10.5 apg
+2008,F,5,Kevin Garnett,Kevin Garnett,,261,ppg · 18.8 ppg · 9.2 rpg · 3.4 apg
+2008,G,,Tony Parker,Tony Parker,,1015,ppg · 18.8 ppg · 6.0 apg
+2008,G,7,Ben Gordon,Ben Gordon,,2381,ppg · 18.6 ppg · 3.0 apg
+2008,F,9,Rashard Lewis,Rashard Lewis,,469,ppg · 18.2 ppg · 5.4 rpg
+2008,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 17.8 ppg · 7.6 rpg
+2008,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 17.6 ppg · 10.3 rpg
+2008,F,42,Elton Brand,Elton Brand,,91,ppg · 17.6 ppg · 8.0 rpg
+2008,G,20,Ray Allen,Ray Allen,,9,ppg · 17.4 ppg · 3.1 apg
+2008,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 17.3 ppg · 4.2 apg
+2008,G,25,Mo Williams,Mo Williams,,2178,ppg · 17.2 ppg · 6.3 apg
+2008,F,5,Josh Smith,Josh Smith,,2411,ppg · 17.2 ppg · 8.2 rpg · 3.4 apg
+2008,C,23,Marcus Camby,Marcus Camby,,125,rpg · 13.1 rpg · 3.3 apg
+2008,C,35,Chris Kaman,Chris Kaman,,1982,rpg · 15.7 ppg · 12.7 rpg
 2008,C,6,Tyson Chandler,Tyson Chandler,,984,rpg · 11.7 rpg
-2008,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 10.7 rpg
-2008,F,7,Lamar Odom,Lamar Odom,,617,rpg · 10.6 rpg
+2008,C,50,Emeka Okafor,Emeka Okafor,,2399,rpg · 13.8 ppg · 10.7 rpg
+2008,F,7,Lamar Odom,Lamar Odom,,617,rpg · 14.2 ppg · 10.6 rpg · 3.5 apg
 2008,G,13,Steve Nash,Steve Nash,,592,apg · 16.9 ppg · 11.1 apg
-2008,G,8,Deron Williams,Deron Williams,,2798,apg · 18.8 ppg · 10.5 apg
 2008,G,2,Jason Kidd,Jason Kidd,,429,apg · 7.5 rpg · 10.1 apg
 2008,G,11,Jamaal Tinsley,Jamaal Tinsley,,1024,apg · 8.4 apg
 2008,G,8,,Jose Calderon,,2806,apg · 8.3 apg
+2008,G,7,Ramon Sessions,Ramon Sessions,,3231,apg · 7.5 apg
 2009,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 30.2 ppg · 7.5 apg
 2009,F,23,LeBron James,LeBron James,,1966,ppg · 28.4 ppg · 7.6 rpg · 7.2 apg
-2009,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 26.8 ppg · 4.9 apg
+2009,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 26.8 ppg · 5.2 rpg · 4.9 apg
 2009,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 25.9 ppg · 8.4 rpg
-2009,F,33,Danny Granger,Danny Granger,,2760,ppg · 25.8 ppg
-2009,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 25.3 ppg
-2009,G,23,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 24.6 ppg
+2009,F,33,Danny Granger,Danny Granger,,2760,ppg · 25.8 ppg · 5.1 rpg · 2.7 apg
+2009,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 25.3 ppg · 6.5 rpg · 2.8 apg
+2009,G,23,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 24.6 ppg · 2.7 apg
 2009,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 23.1 ppg · 11.0 rpg
-2009,G,3,Chris Paul,Chris Paul,,2779,ppg · 22.8 ppg · 11.0 apg
-2009,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 22.8 ppg · 6.8 rpg
-2009,F,4,Chris Bosh,Chris Bosh,,1977,ppg · 22.7 ppg · 10.0 rpg
+2009,G,3,Chris Paul,Chris Paul,,2779,ppg · 22.8 ppg · 5.5 rpg · 11.0 apg
+2009,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 22.8 ppg · 6.8 rpg · 3.4 apg
+2009,F,4,Chris Bosh,Chris Bosh,,1977,ppg · 22.7 ppg · 10.0 rpg · 2.5 apg
 2009,G,7,Brandon Roy,Brandon Roy,,3027,ppg · 22.6 ppg · 5.1 apg
 2009,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 22.2 ppg · 8.9 rpg
 2009,G,9,Tony Parker,Tony Parker,,1015,ppg · 22.0 ppg · 6.9 apg
 2009,C,1,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 21.4 ppg · 8.1 rpg
 2009,G,2,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 21.4 ppg · 5.8 apg
 2009,G,34,Devin Harris,Devin Harris,,2382,ppg · 21.3 ppg · 6.9 apg
-2009,G,22,Michael Redd,Michael Redd,,692,ppg · 21.2 ppg
+2009,G,22,Michael Redd,Michael Redd,,692,ppg · 21.2 ppg · 2.7 apg
 2009,F,30,David West (basketball),David West,,2177,ppg · 21.0 ppg · 8.5 rpg
 2009,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 20.8 ppg · 10.1 rpg
-2009,F,3,Caron Butler,Caron Butler,,1705,ppg · 20.8 ppg · 4.3 apg
-2009,G,15,Vince Carter,Vince Carter,,136,ppg · 20.8 ppg · 4.7 apg
-2009,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 20.7 ppg · 6.5 apg
-2009,G,7,Ben Gordon,Ben Gordon,,2381,ppg · 20.7 ppg
+2009,F,3,Caron Butler,Caron Butler,,1705,ppg · 20.8 ppg · 6.2 rpg · 4.3 apg
+2009,G,15,Vince Carter,Vince Carter,,136,ppg · 20.8 ppg · 5.1 rpg · 4.7 apg
+2009,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 20.7 ppg · 5.1 rpg · 6.5 apg
+2009,G,7,Ben Gordon,Ben Gordon,,2381,ppg · 20.7 ppg · 3.4 apg
 2009,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 20.6 ppg · 13.8 rpg
-2009,F,34,Paul Pierce,Paul Pierce,,662,ppg · 20.5 ppg · 3.6 apg
-2009,F,7,Al Harrington,Al Harrington,,308,ppg · 20.1 ppg
+2009,F,34,Paul Pierce,Paul Pierce,,662,ppg · 20.5 ppg · 5.6 rpg · 3.6 apg
+2009,F,7,Al Harrington,Al Harrington,,308,ppg · 20.1 ppg · 6.2 rpg
 2009,G,6,Jamal Crawford,Jamal Crawford,,165,ppg · 19.7 ppg · 4.4 apg
 2009,C,,Yao Ming,Yao Ming,,1722,ppg · 19.7 ppg · 9.9 rpg
 2009,F,24,Richard Jefferson,Richard Jefferson,,1006,ppg · 19.6 ppg
-2009,G,31,Jason Terry,Jason Terry,,841,ppg · 19.6 ppg
+2009,G,31,Jason Terry,Jason Terry,,841,ppg · 19.6 ppg · 3.4 apg
 2009,G,8,Deron Williams,Deron Williams,,2798,ppg · 19.4 ppg · 10.7 apg
 2009,C,21,Tim Duncan,Tim Duncan,,215,ppg · 19.3 ppg · 10.7 rpg · 3.5 apg
 2009,G,8,Monta Ellis,Monta Ellis,,2751,ppg · 19.0 ppg · 3.7 apg
-2009,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 18.9 ppg
-2009,F,16,Pau Gasol,Pau Gasol,,996,ppg · 18.9 ppg · 9.6 rpg
-2009,F,9,Andre Iguodala,Andre Iguodala,,2386,ppg · 18.8 ppg · 5.3 apg
-2009,F,50,Corey Maggette,Corey Maggette,,497,ppg · 18.6 ppg
-2009,G,32,O. J. Mayo,O.J. Mayo,,3450,ppg · 18.5 ppg
-2009,F,15,John Salmons,John Salmons,,1726,ppg · 18.3 ppg
-2009,F,3,Troy Murphy,Troy Murphy,,1013,rpg · 11.8 rpg
-2009,F,42,David Lee (basketball),David Lee,,2772,rpg · 11.7 rpg
+2009,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 18.9 ppg · 5.5 rpg
+2009,F,16,Pau Gasol,Pau Gasol,,996,ppg · 18.9 ppg · 9.6 rpg · 3.5 apg
+2009,F,9,Andre Iguodala,Andre Iguodala,,2386,ppg · 18.8 ppg · 5.7 rpg · 5.3 apg
+2009,F,50,Corey Maggette,Corey Maggette,,497,ppg · 18.6 ppg · 5.5 rpg
+2009,G,32,O. J. Mayo,O.J. Mayo,,3450,ppg · 18.5 ppg · 3.2 apg
+2009,F,15,John Salmons,John Salmons,,1726,ppg · 18.3 ppg · 3.2 apg
+2009,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 18.3 ppg · 4.4 apg
+2009,G,20,Ray Allen,Ray Allen,,9,ppg · 18.2 ppg · 2.8 apg
+2009,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 18.1 ppg · 7.5 rpg
+2009,F,5,Josh Howard,Josh Howard,,2006,ppg · 18.0 ppg
+2009,G,2,Mo Williams,Mo Williams,,2178,ppg · 17.8 ppg · 4.1 apg
+2009,C,32,Shaquille O'Neal,Shaquille O'Neal,,614,ppg · 17.8 ppg · 8.4 rpg
+2009,F,9,Rashard Lewis,Rashard Lewis,,469,ppg · 17.7 ppg · 5.7 rpg · 2.6 apg
+2009,G,7,Chauncey Billups,Chauncey Billups,,63,ppg · 17.7 ppg · 6.4 apg
+2009,G,1,Allen Iverson,Allen Iverson,,366,ppg · 17.5 ppg · 5.0 apg
+2009,G,4,Nate Robinson,Nate Robinson,,2782,ppg · 17.2 ppg · 4.1 apg
+2009,F,96,,Metta World Peace,,25,ppg · 17.1 ppg · 5.2 rpg · 3.3 apg
+2009,C,13,Mehmet Okur,Mehmet Okur,,1014,ppg · 17.0 ppg · 7.7 rpg
+2009,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 16.8 ppg
+2009,F,12,Al Thornton,Al Thornton,,3237,ppg · 16.8 ppg · 5.2 rpg
+2009,F,15,Hedo Türkoğlu,Hedo Turkoglu,,862,ppg · 16.8 ppg · 5.3 rpg · 4.9 apg
+2009,F,3,Troy Murphy,Troy Murphy,,1013,rpg · 14.3 ppg · 11.8 rpg
+2009,F,42,David Lee (basketball),David Lee,,2772,rpg · 16.0 ppg · 11.7 rpg
 2009,C,15,Andris Biedriņš,Andris Biedrins,,2427,rpg · 11.2 rpg
 2009,C,23,Marcus Camby,Marcus Camby,,125,rpg · 11.1 rpg
-2009,F,5,Carlos Boozer,Carlos Boozer,,1703,rpg · 10.4 rpg
+2009,F,5,Carlos Boozer,Carlos Boozer,,1703,rpg · 16.2 ppg · 10.4 rpg
 2009,G,0,Gilbert Arenas,Gilbert Arenas,,974,apg · 10.0 apg
-2009,G,13,Steve Nash,Steve Nash,,592,apg · 9.7 apg
+2009,G,13,Steve Nash,Steve Nash,,592,apg · 15.7 ppg · 9.7 apg
 2009,G,8,,Jose Calderon,,2806,apg · 8.9 apg
-2009,G,2,Jason Kidd,Jason Kidd,,429,apg · 8.7 apg
-2009,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 8.2 apg
-2010,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 30.1 ppg · 7.6 rpg
+2009,G,2,Jason Kidd,Jason Kidd,,429,apg · 6.2 rpg · 8.7 apg
+2009,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 5.2 rpg · 8.2 apg
+2010,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 30.1 ppg · 7.6 rpg · 2.8 apg
 2010,F,23,LeBron James,LeBron James,,1966,ppg · 29.7 ppg · 7.3 rpg · 8.6 apg
-2010,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 28.2 ppg · 6.6 rpg
-2010,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 27.0 ppg · 5.0 apg
+2010,F,15,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 28.2 ppg · 6.6 rpg · 3.2 apg
+2010,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 27.0 ppg · 5.4 rpg · 5.0 apg
 2010,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 26.6 ppg · 6.5 apg
 2010,G,8,Monta Ellis,Monta Ellis,,2751,ppg · 25.5 ppg · 5.3 apg
-2010,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 25.0 ppg · 7.7 rpg
-2010,F,33,Danny Granger,Danny Granger,,2760,ppg · 24.1 ppg
+2010,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 25.0 ppg · 7.7 rpg · 2.7 apg
+2010,F,33,Danny Granger,Danny Granger,,2760,ppg · 24.1 ppg · 5.5 rpg · 2.8 apg
 2010,F,4,Chris Bosh,Chris Bosh,,1977,ppg · 24.0 ppg · 10.8 rpg
 2010,C,1,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 23.1 ppg · 8.9 rpg
 2010,G,0,Gilbert Arenas,Gilbert Arenas,,974,ppg · 22.6 ppg · 7.2 apg
@@ -767,107 +917,137 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2010,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 20.6 ppg · 3.7 apg
 2010,G,12,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 20.6 ppg
 2010,F,42,David Lee (basketball),David Lee,,2772,ppg · 20.2 ppg · 11.7 rpg · 3.6 apg
-2010,G,13,Tyreke Evans,Tyreke Evans,,3983,ppg · 20.1 ppg · 5.8 apg
-2010,F,50,Corey Maggette,Corey Maggette,,497,ppg · 19.8 ppg
-2010,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 19.6 ppg
+2010,G,13,Tyreke Evans,Tyreke Evans,,3983,ppg · 20.1 ppg · 5.3 rpg · 5.8 apg
+2010,F,50,Corey Maggette,Corey Maggette,,497,ppg · 19.8 ppg · 5.3 rpg
+2010,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 19.6 ppg · 5.9 rpg
 2010,G,0,Aaron Brooks (basketball),Aaron Brooks,,3192,ppg · 19.6 ppg · 5.3 apg
 2010,G,7,Chauncey Billups,Chauncey Billups,,63,ppg · 19.5 ppg · 5.6 apg
-2010,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 19.5 ppg · 11.2 rpg
-2010,F,30,David West (basketball),David West,,2177,ppg · 19.0 ppg · 7.5 rpg
+2010,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 19.5 ppg · 11.2 rpg · 3.2 apg
+2010,F,30,David West (basketball),David West,,2177,ppg · 19.0 ppg · 7.5 rpg · 3.0 apg
 2010,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 18.8 ppg · 8.6 rpg
 2010,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 18.7 ppg · 8.4 rpg
 2010,G,3,Chris Paul,Chris Paul,,2779,ppg · 18.7 ppg · 10.7 apg
 2010,G,8,Deron Williams,Deron Williams,,2798,ppg · 18.7 ppg · 10.5 apg
 2010,C,35,Chris Kaman,Chris Kaman,,1982,ppg · 18.5 ppg · 9.3 rpg
 2010,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 18.3 ppg · 13.2 rpg
-2010,F,16,Pau Gasol,Pau Gasol,,996,ppg · 18.3 ppg · 11.3 rpg
-2010,F,34,Paul Pierce,Paul Pierce,,662,ppg · 18.3 ppg
+2010,F,16,Pau Gasol,Pau Gasol,,996,ppg · 18.3 ppg · 11.3 rpg · 3.4 apg
+2010,F,34,Paul Pierce,Paul Pierce,,662,ppg · 18.3 ppg · 3.1 apg
 2010,F,3,Gerald Wallace,Gerald Wallace,,1026,ppg · 18.2 ppg · 10.0 rpg
 2010,G,32,Richard Hamilton (basketball),Richard Hamilton,,294,ppg · 18.1 ppg · 4.4 apg
-2010,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 18.0 ppg
-2010,C,21,Tim Duncan,Tim Duncan,,215,ppg · 17.9 ppg · 10.1 rpg
+2010,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 18.0 ppg · 3.0 apg
+2010,C,21,Tim Duncan,Tim Duncan,,215,ppg · 17.9 ppg · 10.1 rpg · 3.2 apg
 2010,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 17.9 ppg · 8.0 rpg
-2010,F,7,Al Harrington,Al Harrington,,308,ppg · 17.7 ppg
+2010,F,7,Al Harrington,Al Harrington,,308,ppg · 17.7 ppg · 5.6 rpg
 2010,F,9,Luol Deng,Luol Deng,,2429,ppg · 17.6 ppg · 7.3 rpg
+2010,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 17.5 ppg · 5.9 apg
+2010,G,32,O. J. Mayo,O.J. Mayo,,3450,ppg · 17.5 ppg · 3.0 apg
+2010,C,7,Andrea Bargnani,Andrea Bargnani,,2987,ppg · 17.2 ppg · 6.2 rpg
+2010,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 17.1 ppg · 9.2 rpg
+2010,F,9,Andre Iguodala,Andre Iguodala,,2386,ppg · 17.1 ppg · 6.5 rpg · 5.8 apg
+2010,G,34,Devin Harris,Devin Harris,,2382,ppg · 16.9 ppg · 6.6 apg
+2010,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 16.9 ppg · 3.0 apg
+2010,F,24,Carl Landry,Carl Landry,,3217,ppg · 16.8 ppg · 5.8 rpg
+2010,G,3,Rodney Stuckey,Rodney Stuckey,,3235,ppg · 16.6 ppg · 4.8 apg
+2010,G,31,Jason Terry,Jason Terry,,841,ppg · 16.6 ppg · 3.8 apg
+2010,G,15,Vince Carter,Vince Carter,,136,ppg · 16.6 ppg · 3.1 apg
+2010,G,20,Manu Ginóbili,Manu Ginobili,,272,ppg · 16.5 ppg · 4.9 apg
+2010,G,13,Steve Nash,Steve Nash,,592,ppg · 16.5 ppg · 11.0 apg
+2010,G,20,Ray Allen,Ray Allen,,9,ppg · 16.3 ppg
+2010,F,4,Caron Butler,Caron Butler,,1705,ppg · 16.3 ppg · 6.2 rpg
 2010,C,21,Marcus Camby,Marcus Camby,,125,rpg · 11.8 rpg
 2010,C,13,Joakim Noah,Joakim Noah,,3224,rpg · 11.0 rpg
 2010,C,30,Earl Barron,Earl Barron,,2477,rpg · 11.0 rpg
-2010,F,42,Kevin Love,Kevin Love,,3449,rpg · 11.0 rpg
-2010,F,3,Troy Murphy,Troy Murphy,,1013,rpg · 10.2 rpg
-2010,G,13,Steve Nash,Steve Nash,,592,apg · 16.5 ppg · 11.0 apg
-2010,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 9.8 apg
-2010,G,2,Jason Kidd,Jason Kidd,,429,apg · 9.1 apg
-2010,G,1,Baron Davis,Baron Davis,,194,apg · 8.0 apg
+2010,F,42,Kevin Love,Kevin Love,,3449,rpg · 14.0 ppg · 11.0 rpg
+2010,F,3,Troy Murphy,Troy Murphy,,1013,rpg · 14.6 ppg · 10.2 rpg
+2010,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 13.7 ppg · 9.8 apg
+2010,G,2,Jason Kidd,Jason Kidd,,429,apg · 5.6 rpg · 9.1 apg
+2010,G,1,Baron Davis,Baron Davis,,194,apg · 15.3 ppg · 8.0 apg
 2010,G,0,Russell Westbrook,Russell Westbrook,,3468,apg · 16.1 ppg · 8.0 apg
-2011,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 27.7 ppg · 6.8 rpg
+2010,G,8,,Jose Calderon,,2806,apg · 5.9 apg
+2011,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 27.7 ppg · 6.8 rpg · 2.7 apg
 2011,F,6,LeBron James,LeBron James,,1966,ppg · 26.7 ppg · 7.5 rpg · 7.0 apg
-2011,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 25.6 ppg · 7.3 rpg
-2011,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 25.5 ppg · 4.6 apg
-2011,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 25.3 ppg · 4.7 apg
-2011,C,1,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 25.3 ppg · 8.2 rpg
+2011,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 25.6 ppg · 7.3 rpg · 2.9 apg
+2011,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 25.5 ppg · 6.4 rpg · 4.6 apg
+2011,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 25.3 ppg · 5.1 rpg · 4.7 apg
+2011,C,1,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 25.3 ppg · 8.2 rpg · 2.6 apg
 2011,G,1,Derrick Rose,Derrick Rose,,3456,ppg · 25.0 ppg · 7.7 apg
 2011,G,8,Monta Ellis,Monta Ellis,,2751,ppg · 24.1 ppg · 5.6 apg
-2011,G,12,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 23.5 ppg
-2011,F,,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 23.0 ppg · 7.0 rpg
+2011,G,12,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 23.5 ppg · 2.5 apg
+2011,F,,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 23.0 ppg · 7.0 rpg · 2.6 apg
 2011,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 22.9 ppg · 14.1 rpg
 2011,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 22.5 ppg · 12.1 rpg · 3.8 apg
 2011,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 22.3 ppg · 4.4 apg
 2011,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 21.9 ppg · 8.2 apg
 2011,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 21.8 ppg · 8.8 rpg
-2011,C,7,Andrea Bargnani,Andrea Bargnani,,2987,ppg · 21.4 ppg
-2011,F,33,Danny Granger,Danny Granger,,2760,ppg · 20.5 ppg
-2011,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 20.4 ppg
-2011,F,42,Kevin Love,Kevin Love,,3449,ppg · 20.2 ppg · 15.2 rpg
+2011,C,7,Andrea Bargnani,Andrea Bargnani,,2987,ppg · 21.4 ppg · 5.2 rpg
+2011,F,33,Danny Granger,Danny Granger,,2760,ppg · 20.5 ppg · 5.4 rpg · 2.6 apg
+2011,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 20.4 ppg · 6.0 rpg
+2011,F,42,Kevin Love,Kevin Love,,3449,ppg · 20.2 ppg · 15.2 rpg · 2.5 apg
 2011,G,8,Deron Williams,Deron Williams,,2798,ppg · 20.1 ppg · 10.3 apg
 2011,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 20.1 ppg · 12.2 rpg
-2011,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 19.8 ppg
-2011,F,8,Michael Beasley,Michael Beasley,,3418,ppg · 19.2 ppg
-2011,F,34,Paul Pierce,Paul Pierce,,662,ppg · 18.9 ppg
+2011,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 19.8 ppg · 6.2 rpg · 2.8 apg
+2011,F,8,Michael Beasley,Michael Beasley,,3418,ppg · 19.2 ppg · 5.6 rpg
+2011,F,34,Paul Pierce,Paul Pierce,,662,ppg · 18.9 ppg · 5.4 rpg · 3.2 apg
 2011,F,30,David West (basketball),David West,,2177,ppg · 18.9 ppg · 7.6 rpg
 2011,F,16,Pau Gasol,Pau Gasol,,996,ppg · 18.8 ppg · 10.2 rpg · 3.3 apg
 2011,F,1,Chris Bosh,Chris Bosh,,1977,ppg · 18.7 ppg · 8.3 rpg
 2011,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 18.6 ppg · 9.7 rpg
 2011,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 18.6 ppg · 5.8 apg
 2011,F,1,Stephen Jackson,Stephen Jackson,,378,ppg · 18.5 ppg · 3.6 apg
-2011,F,4,Luis Scola,Luis Scola,,1781,ppg · 18.3 ppg · 8.2 rpg
+2011,F,4,Luis Scola,Luis Scola,,1781,ppg · 18.3 ppg · 8.2 rpg · 2.5 apg
 2011,G,2,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 18.2 ppg · 4.7 apg
 2011,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 18.0 ppg · 6.7 rpg
 2011,G,13,Tyreke Evans,Tyreke Evans,,3983,ppg · 17.8 ppg · 5.6 apg
 2011,G,9,Tony Parker,Tony Parker,,1015,ppg · 17.5 ppg · 6.6 apg
 2011,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 17.5 ppg · 9.6 rpg
-2011,F,9,Luol Deng,Luol Deng,,2429,ppg · 17.4 ppg
+2011,F,9,Luol Deng,Luol Deng,,2429,ppg · 17.4 ppg · 5.8 rpg · 2.8 apg
 2011,G,1,Nick Young,Nick Young,,3243,ppg · 17.4 ppg
 2011,G,20,Manu Ginóbili,Manu Ginobili,,272,ppg · 17.4 ppg · 4.9 apg
 2011,F,24,Paul Millsap,Paul Millsap,,3015,ppg · 17.3 ppg · 7.6 rpg
+2011,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 17.2 ppg
+2011,C,7,Andray Blatche,Andray Blatche,,2746,ppg · 16.8 ppg · 8.2 rpg
+2011,G,4,Chauncey Billups,Chauncey Billups,,63,ppg · 16.8 ppg · 5.4 apg
+2011,F,5,Josh Smith,Josh Smith,,2411,ppg · 16.5 ppg · 8.5 rpg · 3.3 apg
+2011,G,20,Ray Allen,Ray Allen,,9,ppg · 16.5 ppg · 2.7 apg
+2011,F,10,David Lee (basketball),David Lee,,2772,ppg · 16.5 ppg · 9.8 rpg · 3.2 apg
+2011,G,2,John Wall,John Wall,,4237,ppg · 16.4 ppg · 8.3 apg
+2011,F,1,Dorell Wright,Dorell Wright,,2423,ppg · 16.4 ppg · 5.3 rpg · 3.0 apg
+2011,G,3,Brandon Jennings,Brandon Jennings,,3997,ppg · 16.2 ppg · 4.8 apg
+2011,G,2,Wesley Matthews,Wesley Matthews,,4032,ppg · 15.9 ppg
+2011,G,3,Chris Paul,Chris Paul,,2779,ppg · 15.9 ppg · 9.8 apg
+2011,G,,Jason Terry,Jason Terry,,841,ppg · 15.8 ppg · 4.1 apg
+2011,F,3,Gerald Wallace,Gerald Wallace,,1026,ppg · 15.7 ppg · 8.0 rpg
+2011,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 15.6 ppg · 4.9 rpg
+2011,G,23,Jason Richardson,Jason Richardson,,1018,ppg · 15.6 ppg
 2011,C,30,Reggie Evans,Reggie Evans,,1828,rpg · 11.5 rpg
-2011,C,6,Andrew Bogut,Andrew Bogut,,2747,rpg · 11.1 rpg
+2011,C,6,Andrew Bogut,Andrew Bogut,,2747,rpg · 12.8 ppg · 11.1 rpg
 2011,F,43,Kris Humphries,Kris Humphries,,2433,rpg · 10.4 rpg
 2011,C,13,Joakim Noah,Joakim Noah,,3224,rpg · 10.4 rpg
 2011,C,23,Marcus Camby,Marcus Camby,,125,rpg · 10.3 rpg
-2011,G,13,Steve Nash,Steve Nash,,592,apg · 11.4 apg
+2011,G,13,Steve Nash,Steve Nash,,592,apg · 14.7 ppg · 11.4 apg
 2011,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 11.2 apg
-2011,G,3,Chris Paul,Chris Paul,,2779,apg · 15.9 ppg · 9.8 apg
 2011,G,8,,Jose Calderon,,2806,apg · 8.9 apg
 2011,G,20,Raymond Felton,Raymond Felton,,2753,apg · 15.5 ppg · 8.3 apg
+2011,G,,Jason Kidd,Jason Kidd,,429,apg · 8.2 apg
 2012,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 28.0 ppg · 8.0 rpg · 3.5 apg
-2012,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 27.9 ppg · 4.6 apg
+2012,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 27.9 ppg · 5.4 rpg · 4.6 apg
 2012,F,6,LeBron James,LeBron James,,1966,ppg · 27.1 ppg · 7.9 rpg · 6.2 apg
 2012,F,42,Kevin Love,Kevin Love,,3449,ppg · 26.0 ppg · 13.3 rpg
 2012,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 23.6 ppg · 5.5 apg
-2012,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 22.6 ppg · 3.6 apg
+2012,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 22.6 ppg · 6.3 rpg · 3.6 apg
 2012,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 22.1 ppg · 4.6 apg
 2012,G,1,Derrick Rose,Derrick Rose,,3456,ppg · 21.8 ppg · 7.9 apg
 2012,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 21.7 ppg · 8.0 rpg
 2012,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 21.6 ppg · 6.8 rpg
 2012,G,8,Deron Williams,Deron Williams,,2798,ppg · 21.0 ppg · 8.7 apg
-2012,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 20.7 ppg · 10.9 rpg
+2012,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 20.7 ppg · 10.9 rpg · 3.2 apg
 2012,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 20.6 ppg · 14.5 rpg
-2012,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 20.6 ppg
+2012,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 20.6 ppg · 3.4 apg
 2012,G,11,Monta Ellis,Monta Ellis,,2751,ppg · 20.4 ppg · 6.0 apg
-2012,F,10,David Lee (basketball),David Lee,,2772,ppg · 20.1 ppg · 9.6 rpg
+2012,F,10,David Lee (basketball),David Lee,,2772,ppg · 20.1 ppg · 9.6 rpg · 2.8 apg
 2012,G,3,Chris Paul,Chris Paul,,2779,ppg · 19.8 ppg · 9.1 apg
-2012,C,7,Andrea Bargnani,Andrea Bargnani,,2987,ppg · 19.5 ppg
-2012,F,,Paul Pierce,Paul Pierce,,662,ppg · 19.4 ppg · 4.5 apg
+2012,C,7,Andrea Bargnani,Andrea Bargnani,,2987,ppg · 19.5 ppg · 5.5 rpg
+2012,F,,Paul Pierce,Paul Pierce,,662,ppg · 19.4 ppg · 5.2 rpg · 4.5 apg
 2012,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 19.2 ppg
 2012,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 19.2 ppg · 9.6 rpg
 2012,G,3,Brandon Jennings,Brandon Jennings,,3997,ppg · 19.1 ppg · 5.5 apg
@@ -883,28 +1063,43 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2012,F,1,Chris Bosh,Chris Bosh,,1977,ppg · 18.0 ppg · 7.9 rpg
 2012,C,1,Amar'e Stoudemire,Amar'e Stoudemire,,1727,ppg · 17.5 ppg · 7.8 rpg
 2012,F,16,Pau Gasol,Pau Gasol,,996,ppg · 17.4 ppg · 10.4 rpg · 3.7 apg
-2012,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 17.2 ppg
-2012,G,12,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 17.0 ppg
+2012,F,4,Antawn Jamison,Antawn Jamison,,385,ppg · 17.2 ppg · 6.3 rpg
+2012,G,12,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 17.0 ppg · 2.8 apg
 2012,G,13,James Harden,James Harden,,3992,ppg · 16.8 ppg · 3.7 apg
 2012,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 16.7 ppg
 2012,F,24,Paul Millsap,Paul Millsap,,3015,ppg · 16.6 ppg · 8.8 rpg
 2012,G,13,Tyreke Evans,Tyreke Evans,,3983,ppg · 16.5 ppg · 4.5 apg
+2012,G,3,Ty Lawson,Ty Lawson,,4000,ppg · 16.4 ppg · 6.6 apg
+2012,G,2,John Wall,John Wall,,4237,ppg · 16.3 ppg · 8.0 apg
+2012,F,33,"Ryan Anderson (basketball, born 1988)",Ryan Anderson,,3412,ppg · 16.1 ppg · 7.7 rpg
+2012,F,,Kevin Garnett,Kevin Garnett,,261,ppg · 15.8 ppg · 8.2 rpg · 2.9 apg
+2012,G,2,Jarrett Jack,Jarrett Jack,,2768,ppg · 15.6 ppg · 6.3 apg
+2012,F,4,Luis Scola,Luis Scola,,1781,ppg · 15.5 ppg · 6.5 rpg
+2012,C,21,Tim Duncan,Tim Duncan,,215,ppg · 15.4 ppg · 9.0 rpg
+2012,C,4,Marcin Gortat,Marcin Gortat,,2758,ppg · 15.4 ppg · 10.0 rpg
+2012,C,10,Greg Monroe,Greg Monroe,,4260,ppg · 15.4 ppg · 9.7 rpg
+2012,F,9,Luol Deng,Luol Deng,,2429,ppg · 15.3 ppg · 6.5 rpg · 2.9 apg
+2012,G,6,Arron Afflalo,Arron Afflalo,,3187,ppg · 15.2 ppg
+2012,G,,Gerald Henderson Jr.,Gerald Henderson,,3993,ppg · 15.1 ppg
+2012,G,31,Jason Terry,Jason Terry,,841,ppg · 15.1 ppg · 3.6 apg
+2012,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 15.0 ppg · 8.5 rpg
+2012,F,,Corey Maggette,Corey Maggette,,497,ppg · 15.0 ppg
 2012,C,17,Anderson Varejão,Anderson Varejao,,2419,rpg · 11.5 rpg
-2012,F,43,Kris Humphries,Kris Humphries,,2433,rpg · 11.0 rpg
-2012,C,4,Marcin Gortat,Marcin Gortat,,2758,rpg · 15.4 ppg · 10.0 rpg
+2012,F,43,Kris Humphries,Kris Humphries,,2433,rpg · 13.8 ppg · 11.0 rpg
 2012,C,6,Tyson Chandler,Tyson Chandler,,984,rpg · 9.9 rpg
 2012,C,13,Joakim Noah,Joakim Noah,,3224,rpg · 9.8 rpg
+2012,C,29,Marcus Camby,Marcus Camby,,125,rpg · 9.0 rpg
 2012,G,,Rajon Rondo,Rajon Rondo,,3026,apg · 11.7 apg
-2012,G,13,Steve Nash,Steve Nash,,592,apg · 10.7 apg
+2012,G,13,Steve Nash,Steve Nash,,592,apg · 12.5 ppg · 10.7 apg
 2012,G,8,,Jose Calderon,,2806,apg · 8.8 apg
 2012,G,9,Ricky Rubio,Ricky Rubio,,4011,apg · 8.2 apg
-2012,G,2,John Wall,John Wall,,4237,apg · 16.3 ppg · 8.0 apg
+2012,G,24,Andre Miller,Andre Miller,,557,apg · 6.7 apg
 2013,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 28.7 ppg · 6.9 rpg
 2013,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 28.1 ppg · 7.9 rpg · 4.6 apg
-2013,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 27.3 ppg · 6.0 apg
+2013,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 27.3 ppg · 5.6 rpg · 6.0 apg
 2013,F,6,LeBron James,LeBron James,,1966,ppg · 26.8 ppg · 8.0 rpg · 7.2 apg
 2013,G,13,James Harden,James Harden,,3992,ppg · 25.9 ppg · 5.8 apg
-2013,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 23.2 ppg · 7.4 apg
+2013,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 23.2 ppg · 5.2 rpg · 7.4 apg
 2013,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 22.9 ppg · 6.9 apg
 2013,G,2,Kyrie Irving,Kyrie Irving,,6442,ppg · 22.5 ppg · 5.9 apg
 2013,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 21.2 ppg · 5.1 apg
@@ -914,13 +1109,13 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2013,G,11,Monta Ellis,Monta Ellis,,2751,ppg · 19.2 ppg · 6.0 apg
 2013,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 19.0 ppg · 6.5 apg
 2013,G,8,Deron Williams,Deron Williams,,2798,ppg · 18.9 ppg · 7.7 apg
-2013,F,34,Paul Pierce,Paul Pierce,,662,ppg · 18.6 ppg · 4.8 apg
+2013,F,34,Paul Pierce,Paul Pierce,,662,ppg · 18.6 ppg · 6.3 rpg · 4.8 apg
 2013,G,2,John Wall,John Wall,,4237,ppg · 18.5 ppg · 7.6 apg
-2013,F,10,David Lee (basketball),David Lee,,2772,ppg · 18.5 ppg · 11.2 rpg
+2013,F,10,David Lee (basketball),David Lee,,2772,ppg · 18.5 ppg · 11.2 rpg · 3.5 apg
 2013,F,42,Kevin Love,Kevin Love,,3449,ppg · 18.3 ppg · 14.0 rpg
-2013,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 18.2 ppg
+2013,F,22,Rudy Gay,Rudy Gay,,3005,ppg · 18.2 ppg · 6.1 rpg
 2013,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 18.1 ppg
-2013,G,8,,JR Smith,,2444,ppg · 18.1 ppg
+2013,G,8,,JR Smith,,2444,ppg · 18.1 ppg · 5.3 rpg · 2.7 apg
 2013,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 18.0 ppg · 8.3 rpg · 3.7 apg
 2013,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 17.8 ppg · 9.2 rpg
 2013,C,21,Tim Duncan,Tim Duncan,,215,ppg · 17.8 ppg · 9.9 rpg
@@ -929,95 +1124,125 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2013,G,3,Brandon Jennings,Brandon Jennings,,3997,ppg · 17.5 ppg · 6.5 apg
 2013,F,5,Josh Smith,Josh Smith,,2411,ppg · 17.5 ppg · 8.4 rpg · 4.2 apg
 2013,F,24,Paul George,Paul George,,4251,ppg · 17.4 ppg · 7.6 rpg · 4.1 apg
-2013,C,15,Al Horford,Al Horford,,3213,ppg · 17.4 ppg · 10.2 rpg
+2013,C,15,Al Horford,Al Horford,,3213,ppg · 17.4 ppg · 10.2 rpg · 3.2 apg
 2013,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 17.3 ppg · 6.8 rpg
-2013,F,21,David West (basketball),David West,,2177,ppg · 17.1 ppg · 7.7 rpg
+2013,F,21,David West (basketball),David West,,2177,ppg · 17.1 ppg · 7.7 rpg · 2.9 apg
 2013,C,15,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 17.1 ppg · 9.9 rpg
 2013,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 17.1 ppg · 12.4 rpg
-2013,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 17.0 ppg
+2013,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 17.0 ppg · 3.3 apg
 2013,G,3,Chris Paul,Chris Paul,,2779,ppg · 16.9 ppg · 9.7 apg
 2013,G,3,Ty Lawson,Ty Lawson,,4000,ppg · 16.7 ppg · 6.9 apg
 2013,F,1,Chris Bosh,Chris Bosh,,1977,ppg · 16.6 ppg · 6.8 rpg
 2013,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 16.6 ppg
-2013,C,17,Anderson Varejão,Anderson Varejao,,2419,rpg · 14.4 rpg
-2013,C,9,Nikola Vučević,Nikola Vucevic,,6478,rpg · 11.9 rpg
+2013,G,4,Arron Afflalo,Arron Afflalo,,3187,ppg · 16.5 ppg · 3.2 apg
+2013,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 16.5 ppg
+2013,F,9,Luol Deng,Luol Deng,,2429,ppg · 16.5 ppg · 6.3 rpg · 3.0 apg
+2013,C,14,Nikola Peković,Nikola Pekovic,,3453,ppg · 16.3 ppg · 8.8 rpg
+2013,G,7,Joe Johnson (basketball),Joe Johnson,,1007,ppg · 16.2 ppg · 3.5 apg
+2013,F,5,Carlos Boozer,Carlos Boozer,,1703,ppg · 16.2 ppg · 9.8 rpg
+2013,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 16.2 ppg · 5.2 rpg
+2013,F,33,"Ryan Anderson (basketball, born 1988)",Ryan Anderson,,3412,ppg · 16.2 ppg · 6.4 rpg
+2013,C,10,Greg Monroe,Greg Monroe,,4260,ppg · 16.0 ppg · 9.6 rpg · 3.5 apg
+2013,G,9,Gerald Henderson Jr.,Gerald Henderson,,3993,ppg · 15.5 ppg
+2013,F,25,Chandler Parsons,Chandler Parsons,,6466,ppg · 15.5 ppg · 5.3 rpg · 3.5 apg
+2013,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 15.4 ppg · 11.2 rpg
+2013,G,32,O. J. Mayo,O.J. Mayo,,3450,ppg · 15.3 ppg · 4.4 apg
+2013,G,13,Tyreke Evans,Tyreke Evans,,3983,ppg · 15.2 ppg · 3.5 apg
+2013,F,11,Glen Davis (basketball),Glen Davis,,3200,ppg · 15.1 ppg · 7.2 rpg
+2013,C,17,Anderson Varejão,Anderson Varejao,,2419,rpg · 14.1 ppg · 14.4 rpg · 3.4 apg
+2013,C,9,Nikola Vučević,Nikola Vucevic,,6478,rpg · 13.1 ppg · 11.9 rpg
 2013,C,,,Omer Asik,,3414,rpg · 11.7 rpg
-2013,F,50,Zach Randolph,Zach Randolph,,1017,rpg · 15.4 ppg · 11.2 rpg
 2013,C,13,Joakim Noah,Joakim Noah,,3224,rpg · 11.1 rpg · 4.0 apg
-2013,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 11.1 apg
-2013,G,21,Greivis Vásquez,Greivis Vasquez,,4291,apg · 9.0 apg
+2013,C,30,Reggie Evans,Reggie Evans,,1828,rpg · 11.1 rpg
+2013,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 13.7 ppg · 5.6 rpg · 11.1 apg
+2013,G,21,Greivis Vásquez,Greivis Vasquez,,4291,apg · 13.9 ppg · 9.0 apg
 2013,G,1,Goran Dragić,Goran Dragic,,3423,apg · 14.7 ppg · 7.4 apg
 2013,G,14,Jameer Nelson,Jameer Nelson,,2439,apg · 14.7 ppg · 7.4 apg
 2013,G,9,Ricky Rubio,Ricky Rubio,,4011,apg · 7.3 apg
 2014,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 32.0 ppg · 7.4 rpg · 5.5 apg
-2014,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 27.4 ppg · 8.1 rpg
+2014,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 27.4 ppg · 8.1 rpg · 3.1 apg
 2014,F,6,LeBron James,LeBron James,,1966,ppg · 27.1 ppg · 6.9 rpg · 6.4 apg
 2014,F,42,Kevin Love,Kevin Love,,3449,ppg · 26.1 ppg · 12.5 rpg · 4.4 apg
 2014,G,13,James Harden,James Harden,,3992,ppg · 25.4 ppg · 6.1 apg
 2014,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 24.1 ppg · 9.5 rpg · 3.9 apg
 2014,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 24.0 ppg · 8.5 apg
 2014,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 23.2 ppg · 11.1 rpg
-2014,C,15,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 22.7 ppg · 11.7 rpg
+2014,C,15,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 22.7 ppg · 11.7 rpg · 2.9 apg
 2014,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 22.7 ppg · 4.0 apg
 2014,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 21.8 ppg · 10.8 rpg
-2014,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 21.8 ppg · 6.9 apg
-2014,F,24,Paul George,Paul George,,4251,ppg · 21.7 ppg · 6.8 rpg
-2014,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 21.7 ppg
+2014,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 21.8 ppg · 5.7 rpg · 6.9 apg
+2014,F,24,Paul George,Paul George,,4251,ppg · 21.7 ppg · 6.8 rpg · 3.5 apg
+2014,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 21.7 ppg · 6.2 rpg
 2014,G,2,Kyrie Irving,Kyrie Irving,,6442,ppg · 20.8 ppg · 6.1 apg
 2014,F,23,Anthony Davis,Anthony Davis,,6583,ppg · 20.8 ppg · 10.0 rpg
-2014,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 20.7 ppg
+2014,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 20.7 ppg · 6.0 rpg
 2014,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 20.7 ppg · 5.6 apg
 2014,G,22,Isaiah Thomas (basketball),Isaiah Thomas,,6472,ppg · 20.3 ppg · 6.3 apg
 2014,G,1,Goran Dragić,Goran Dragic,,3423,ppg · 20.3 ppg · 5.9 apg
-2014,F,8,Rudy Gay,Rudy Gay,,3005,ppg · 20.0 ppg
+2014,F,8,Rudy Gay,Rudy Gay,,3005,ppg · 20.0 ppg · 6.0 rpg · 2.9 apg
 2014,F,33,"Ryan Anderson (basketball, born 1988)",Ryan Anderson,,3412,ppg · 19.8 ppg · 6.5 rpg
 2014,G,2,John Wall,John Wall,,4237,ppg · 19.3 ppg · 8.8 apg
 2014,G,3,Chris Paul,Chris Paul,,2779,ppg · 19.1 ppg · 10.7 apg
 2014,G,23,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 19.1 ppg
 2014,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 19.0 ppg · 4.7 apg
 2014,G,11,Monta Ellis,Monta Ellis,,2751,ppg · 19.0 ppg · 5.7 apg
-2014,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 18.6 ppg
+2014,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 18.6 ppg · 3.2 apg
 2014,C,15,Al Horford,Al Horford,,3213,ppg · 18.6 ppg · 8.4 rpg
 2014,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 18.4 ppg
 2014,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 18.3 ppg · 12.2 rpg
-2014,G,4,Arron Afflalo,Arron Afflalo,,3187,ppg · 18.2 ppg
+2014,G,4,Arron Afflalo,Arron Afflalo,,3187,ppg · 18.2 ppg · 3.4 apg
 2014,F,10,David Lee (basketball),David Lee,,2772,ppg · 18.2 ppg · 9.3 rpg
-2014,F,4,Paul Millsap,Paul Millsap,,3015,ppg · 17.9 ppg · 8.5 rpg
+2014,F,4,Paul Millsap,Paul Millsap,,3015,ppg · 17.9 ppg · 8.5 rpg · 3.1 apg
 2014,G,7,Kyle Lowry,Kyle Lowry,,3012,ppg · 17.9 ppg · 7.4 apg
-2014,F,21,Thaddeus Young,Thaddeus Young,,3244,ppg · 17.9 ppg
+2014,F,21,Thaddeus Young,Thaddeus Young,,3244,ppg · 17.9 ppg · 6.0 rpg
 2014,G,11,Brandon Knight (basketball),Brandon Knight,,6448,ppg · 17.9 ppg · 4.9 apg
 2014,G,0,Nick Young,Nick Young,,3243,ppg · 17.9 ppg
 2014,G,2,Eric Bledsoe,Eric Bledsoe,,4238,ppg · 17.7 ppg · 5.5 apg
 2014,G,15,Kemba Walker,Kemba Walker,,6479,ppg · 17.7 ppg · 6.1 apg
+2014,G,3,Ty Lawson,Ty Lawson,,4000,ppg · 17.6 ppg · 8.8 apg
+2014,C,14,Nikola Peković,Nikola Pekovic,,3453,ppg · 17.4 ppg · 8.7 rpg
+2014,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 17.4 ppg · 10.1 rpg
+2014,F,16,Pau Gasol,Pau Gasol,,996,ppg · 17.4 ppg · 9.7 rpg · 3.3 apg
+2014,G,11,Mike Conley (basketball),Mike Conley,,3195,ppg · 17.2 ppg · 6.0 apg
+2014,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 17.1 ppg · 3.3 apg
+2014,F,8,Jeff Green (basketball),Jeff Green,,3209,ppg · 16.9 ppg
+2014,G,9,Tony Parker,Tony Parker,,1015,ppg · 16.7 ppg · 5.7 apg
+2014,G,1,Michael Carter-Williams,Michael Carter-Williams,,2596108,ppg · 16.7 ppg · 6.2 rpg · 6.3 apg
+2014,F,25,Chandler Parsons,Chandler Parsons,,6466,ppg · 16.6 ppg · 5.5 rpg · 4.0 apg
+2014,G,0,Jeff Teague,Jeff Teague,,4015,ppg · 16.5 ppg · 6.7 apg
+2014,F,6,Josh Smith,Josh Smith,,2411,ppg · 16.4 ppg · 6.8 rpg · 3.3 apg
+2014,G,2,Wesley Matthews,Wesley Matthews,,4032,ppg · 16.4 ppg
+2014,F,1,Chris Bosh,Chris Bosh,,1977,ppg · 16.2 ppg · 6.6 rpg
+2014,F,20,Gordon Hayward,Gordon Hayward,,4249,ppg · 16.2 ppg · 5.2 apg
 2014,C,6,DeAndre Jordan,DeAndre Jordan,,3442,rpg · 13.6 rpg
-2014,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 13.2 rpg
+2014,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 13.5 ppg · 13.2 rpg
 2014,C,13,Joakim Noah,Joakim Noah,,3224,rpg · 11.2 rpg · 5.4 apg
-2014,C,9,Nikola Vučević,Nikola Vucevic,,6478,rpg · 11.0 rpg
-2014,F,50,Zach Randolph,Zach Randolph,,1017,rpg · 17.4 ppg · 10.1 rpg
-2014,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 9.8 apg
+2014,C,9,Nikola Vučević,Nikola Vucevic,,6478,rpg · 14.2 ppg · 11.0 rpg
+2014,C,12,Andrew Bogut,Andrew Bogut,,2747,rpg · 10.0 rpg
+2014,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 5.5 rpg · 9.8 apg
 2014,G,12,Kendall Marshall,Kendall Marshall,,6607,apg · 8.8 apg
-2014,G,3,Ty Lawson,Ty Lawson,,4000,apg · 17.6 ppg · 8.8 apg
 2014,G,9,Ricky Rubio,Ricky Rubio,,4011,apg · 8.6 apg
-2014,G,11,Jrue Holiday,Jrue Holiday,,3995,apg · 7.9 apg
+2014,G,11,Jrue Holiday,Jrue Holiday,,3995,apg · 14.3 ppg · 7.9 apg
+2014,G,7,Brandon Jennings,Brandon Jennings,,3997,apg · 15.5 ppg · 7.6 apg
 2015,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 28.1 ppg · 7.3 rpg · 8.6 apg
-2015,G,13,James Harden,James Harden,,3992,ppg · 27.4 ppg · 7.0 apg
+2015,G,13,James Harden,James Harden,,3992,ppg · 27.4 ppg · 5.7 rpg · 7.0 apg
 2015,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 25.4 ppg · 6.6 rpg · 4.1 apg
-2015,F,23,LeBron James,LeBron James,,1966,ppg · 25.3 ppg · 7.4 apg
+2015,F,23,LeBron James,LeBron James,,1966,ppg · 25.3 ppg · 6.0 rpg · 7.4 apg
 2015,F,23,Anthony Davis,Anthony Davis,,6583,ppg · 24.4 ppg · 10.2 rpg
-2015,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 24.1 ppg · 6.6 rpg
-2015,C,15,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 24.1 ppg · 12.7 rpg
+2015,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 24.1 ppg · 6.6 rpg · 3.0 apg
+2015,C,15,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 24.1 ppg · 12.7 rpg · 3.6 apg
 2015,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 23.8 ppg · 7.7 apg
 2015,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 23.4 ppg · 10.2 rpg
-2015,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 22.3 ppg · 5.6 apg
+2015,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 22.3 ppg · 5.7 rpg · 5.6 apg
 2015,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 21.9 ppg · 7.6 rpg · 5.3 apg
 2015,G,2,Kyrie Irving,Kyrie Irving,,6442,ppg · 21.7 ppg · 5.2 apg
-2015,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 21.7 ppg
+2015,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 21.7 ppg · 2.9 apg
 2015,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 21.5 ppg · 4.8 apg
 2015,F,1,Chris Bosh,Chris Bosh,,1977,ppg · 21.1 ppg · 7.0 rpg
-2015,F,8,Rudy Gay,Rudy Gay,,3005,ppg · 21.1 ppg
+2015,F,8,Rudy Gay,Rudy Gay,,3005,ppg · 21.1 ppg · 5.9 rpg · 3.7 apg
 2015,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 21.0 ppg · 6.2 apg
-2015,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 20.1 ppg
-2015,F,21,Jimmy Butler,Jimmy Butler III,,6430,ppg · 20.0 ppg
+2015,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 20.1 ppg · 3.5 apg
+2015,F,21,Jimmy Butler,Jimmy Butler III,,6430,ppg · 20.0 ppg · 5.8 rpg · 3.3 apg
 2015,G,23,"Kevin Martin (basketball, born 1983)",Kevin Martin,,2394,ppg · 20.0 ppg
 2015,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 19.3 ppg · 10.9 rpg
 2015,F,20,Gordon Hayward,Gordon Hayward,,4249,ppg · 19.2 ppg · 4.1 apg
@@ -1030,29 +1255,44 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2015,G,2,John Wall,John Wall,,4237,ppg · 17.6 ppg · 10.0 apg
 2015,C,33,Marc Gasol,Marc Gasol,,3206,ppg · 17.4 ppg · 7.8 rpg · 3.8 apg
 2015,G,15,Kemba Walker,Kemba Walker,,6479,ppg · 17.3 ppg · 5.1 apg
-2015,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 17.3 ppg
+2015,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 17.3 ppg · 5.9 rpg
 2015,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 17.2 ppg · 7.4 rpg
-2015,F,12,Tobias Harris,Tobias Harris,,6440,ppg · 17.1 ppg
+2015,F,12,Tobias Harris,Tobias Harris,,6440,ppg · 17.1 ppg · 6.3 rpg
 2015,G,2,Eric Bledsoe,Eric Bledsoe,,4238,ppg · 17.0 ppg · 6.1 apg
 2015,G,3,Brandon Knight (basketball),Brandon Knight,,6448,ppg · 17.0 ppg · 5.2 apg
 2015,F,,Andrew Wiggins,Andrew Wiggins,,3059319,ppg · 16.9 ppg
 2015,G,8,Tony Wroten,Tony Wroten,,6630,ppg · 16.9 ppg · 5.2 apg
-2015,F,4,Paul Millsap,Paul Millsap,,3015,ppg · 16.7 ppg · 7.8 rpg
+2015,F,4,Paul Millsap,Paul Millsap,,3015,ppg · 16.7 ppg · 7.8 rpg · 3.1 apg
 2015,C,25,Al Jefferson,Al Jefferson,,2389,ppg · 16.6 ppg · 8.4 rpg
+2015,G,1,Tyreke Evans,Tyreke Evans,,3983,ppg · 16.6 ppg · 5.3 rpg · 6.6 apg
+2015,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 16.5 ppg · 7.2 rpg
+2015,G,4,Isaiah Thomas (basketball),Isaiah Thomas,,6472,ppg · 16.4 ppg · 4.2 apg
+2015,F,0,Kevin Love,Kevin Love,,3449,ppg · 16.4 ppg · 9.7 rpg
+2015,G,4,JJ Redick,JJ Redick,,3024,ppg · 16.4 ppg
+2015,G,7,Goran Dragić,Goran Dragic,,3423,ppg · 16.3 ppg · 4.5 apg
+2015,G,7,Darren Collison,Darren Collison,,3973,ppg · 16.1 ppg · 5.6 apg
+2015,F,50,Zach Randolph,Zach Randolph,,1017,ppg · 16.1 ppg · 10.5 rpg
+2015,G,3,George Hill (basketball),George Hill,,3438,ppg · 16.1 ppg · 5.1 apg
+2015,F,15,Derrick Favors,Derrick Favors,,4257,ppg · 16.0 ppg · 8.2 rpg
+2015,G,2,Wesley Matthews,Wesley Matthews,,4032,ppg · 15.9 ppg
+2015,G,0,Jeff Teague,Jeff Teague,,4015,ppg · 15.9 ppg · 7.0 apg
+2015,C,10,Greg Monroe,Greg Monroe,,4260,ppg · 15.9 ppg · 10.2 rpg
+2015,G,11,Mike Conley (basketball),Mike Conley,,3195,ppg · 15.8 ppg · 5.4 apg
+2015,G,11,Jamal Crawford,Jamal Crawford,,165,ppg · 15.8 ppg
 2015,C,6,DeAndre Jordan,DeAndre Jordan,,3442,rpg · 15.0 rpg
-2015,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 13.5 rpg
+2015,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 13.8 ppg · 13.5 rpg
 2015,C,6,Tyson Chandler,Tyson Chandler,,984,rpg · 11.5 rpg
-2015,F,50,Zach Randolph,Zach Randolph,,1017,rpg · 16.1 ppg · 10.5 rpg
 2015,C,12,Dwight Howard,Dwight Howard,,2384,rpg · 15.8 ppg · 10.5 rpg
-2015,G,3,Ty Lawson,Ty Lawson,,4000,apg · 9.6 apg
-2015,G,9,Ricky Rubio,Ricky Rubio,,4011,apg · 8.8 apg
-2015,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 7.9 apg
-2015,G,0,Jeff Teague,Jeff Teague,,4015,apg · 15.9 ppg · 7.0 apg
-2015,G,11,Jrue Holiday,Jrue Holiday,,3995,apg · 6.8 apg
-2016,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 30.1 ppg · 6.7 apg
-2016,G,13,James Harden,James Harden,,3992,ppg · 29.0 ppg · 7.5 apg
+2015,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 10.0 rpg
+2015,G,3,Ty Lawson,Ty Lawson,,4000,apg · 15.2 ppg · 9.6 apg
+2015,G,9,Ricky Rubio,Ricky Rubio,,4011,apg · 5.7 rpg · 8.8 apg
+2015,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 5.5 rpg · 7.9 apg
+2015,G,11,Jrue Holiday,Jrue Holiday,,3995,apg · 14.8 ppg · 6.8 apg
+2015,G,5,Michael Carter-Williams,Michael Carter-Williams,,2596108,apg · 14.6 ppg · 5.3 rpg · 6.7 apg
+2016,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 30.1 ppg · 5.4 rpg · 6.7 apg
+2016,G,13,James Harden,James Harden,,3992,ppg · 29.0 ppg · 6.1 rpg · 7.5 apg
 2016,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 28.2 ppg · 8.2 rpg · 5.0 apg
-2016,C,15,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 26.9 ppg · 11.5 rpg
+2016,C,15,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 26.9 ppg · 11.5 rpg · 3.3 apg
 2016,F,23,LeBron James,LeBron James,,1966,ppg · 25.3 ppg · 7.4 rpg · 6.8 apg
 2016,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 25.1 ppg · 6.8 apg
 2016,F,23,Anthony Davis,Anthony Davis,,6583,ppg · 24.3 ppg · 10.3 rpg
@@ -1065,188 +1305,248 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2016,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 21.4 ppg · 8.4 rpg · 4.9 apg
 2016,G,7,Kyle Lowry,Kyle Lowry,,3012,ppg · 21.2 ppg · 6.4 apg
 2016,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 21.2 ppg · 6.8 rpg
-2016,F,21,Jimmy Butler,Jimmy Butler III,,6430,ppg · 20.9 ppg · 4.8 apg
+2016,F,21,Jimmy Butler,Jimmy Butler III,,6430,ppg · 20.9 ppg · 5.3 rpg · 4.8 apg
 2016,G,15,Kemba Walker,Kemba Walker,,6479,ppg · 20.9 ppg · 5.2 apg
 2016,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 20.8 ppg · 4.3 apg
 2016,F,22,Andrew Wiggins,Andrew Wiggins,,3059319,ppg · 20.7 ppg
 2016,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 20.6 ppg · 7.8 rpg
 2016,G,2,Eric Bledsoe,Eric Bledsoe,,4238,ppg · 20.4 ppg · 6.1 apg
 2016,G,2,John Wall,John Wall,,4237,ppg · 19.9 ppg · 10.2 apg
-2016,F,20,Gordon Hayward,Gordon Hayward,,4249,ppg · 19.7 ppg
+2016,F,20,Gordon Hayward,Gordon Hayward,,4249,ppg · 19.7 ppg · 3.7 apg
 2016,G,2,Kyrie Irving,Kyrie Irving,,6442,ppg · 19.6 ppg · 4.7 apg
 2016,G,3,Brandon Knight (basketball),Brandon Knight,,6448,ppg · 19.6 ppg · 5.1 apg
-2016,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 19.5 ppg
+2016,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 19.5 ppg · 5.3 rpg
 2016,G,3,Chris Paul,Chris Paul,,2779,ppg · 19.5 ppg · 10.0 apg
 2016,F,1,Chris Bosh,Chris Bosh,,1977,ppg · 19.1 ppg · 7.4 rpg
 2016,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 19.0 ppg · 4.6 apg
 2016,G,1,"Reggie Jackson (basketball, born 1990)",Reggie Jackson,,6443,ppg · 18.8 ppg · 6.2 apg
 2016,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 18.3 ppg · 10.5 rpg
 2016,F,41,Dirk Nowitzki,Dirk Nowitzki,,609,ppg · 18.3 ppg · 6.5 rpg
-2016,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 18.2 ppg · 8.9 rpg
+2016,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 18.2 ppg · 8.9 rpg · 2.8 apg
 2016,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 18.2 ppg · 4.2 apg
 2016,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 18.0 ppg · 8.5 rpg
-2016,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 17.6 ppg
+2016,F,24,Kobe Bryant,Kobe Bryant,,110,ppg · 17.6 ppg · 2.8 apg
 2016,C,8,Jahlil Okafor,Jahlil Okafor,,3135048,ppg · 17.5 ppg · 7.0 rpg
-2016,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 17.4 ppg
+2016,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 17.4 ppg · 2.9 apg
 2016,F,8,Rudy Gay,Rudy Gay,,3005,ppg · 17.2 ppg · 6.5 rpg
-2016,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 16.2 ppg · 14.8 rpg
-2016,C,6,DeAndre Jordan,DeAndre Jordan,,3442,rpg · 13.8 rpg
-2016,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 11.8 rpg
-2016,C,12,Dwight Howard,Dwight Howard,,2384,rpg · 11.8 rpg
-2016,F,16,Pau Gasol,Pau Gasol,,996,rpg · 16.5 ppg · 11.0 rpg · 4.1 apg
-2016,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 11.7 apg
+2016,F,4,Paul Millsap,Paul Millsap,,3015,ppg · 17.1 ppg · 9.0 rpg · 3.3 apg
+2016,F,33,"Ryan Anderson (basketball, born 1988)",Ryan Anderson,,3412,ppg · 17.0 ppg · 6.0 rpg
+2016,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 16.9 ppg · 7.7 rpg · 4.3 apg
+2016,G,11,Jrue Holiday,Jrue Holiday,,3995,ppg · 16.8 ppg · 6.0 apg
+2016,C,33,Marc Gasol,Marc Gasol,,3206,ppg · 16.6 ppg · 7.0 rpg · 3.8 apg
+2016,F,16,Pau Gasol,Pau Gasol,,996,ppg · 16.5 ppg · 11.0 rpg · 4.1 apg
+2016,F,15,Derrick Favors,Derrick Favors,,4257,ppg · 16.4 ppg · 8.1 rpg
+2016,G,1,Derrick Rose,Derrick Rose,,3456,ppg · 16.4 ppg · 4.7 apg
+2016,G,4,JJ Redick,JJ Redick,,3024,ppg · 16.3 ppg
+2016,C,0,Andre Drummond,Andre Drummond,,6585,ppg · 16.2 ppg · 14.8 rpg
+2016,F,0,Kevin Love,Kevin Love,,3449,ppg · 16.0 ppg · 9.9 rpg
+2016,G,5,Victor Oladipo,Victor Oladipo,,2527963,ppg · 16.0 ppg · 3.9 apg
+2016,G,0,Jeff Teague,Jeff Teague,,4015,ppg · 15.7 ppg · 5.9 apg
+2016,G,6,Jordan Clarkson,Jordan Clarkson,,2528426,ppg · 15.5 ppg
+2016,G,10,Evan Fournier,Evan Fournier,,6588,ppg · 15.4 ppg · 2.7 apg
+2016,C,6,DeAndre Jordan,DeAndre Jordan,,3442,rpg · 12.7 ppg · 13.8 rpg
+2016,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 14.2 ppg · 11.8 rpg
+2016,C,12,Dwight Howard,Dwight Howard,,2384,rpg · 13.7 ppg · 11.8 rpg
+2016,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 11.0 rpg
+2016,F,30,Julius Randle,Julius Randle,,3064514,rpg · 10.2 rpg
+2016,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 6.0 rpg · 11.7 apg
 2016,G,9,Ricky Rubio,Ricky Rubio,,4011,apg · 8.6 apg
-2016,F,23,Draymond Green,Draymond Green,,6589,apg · 9.5 rpg · 7.4 apg
-2016,G,2,Jarrett Jack,Jarrett Jack,,2768,apg · 7.4 apg
-2016,G,1,Tyreke Evans,Tyreke Evans,,3983,apg · 6.6 apg
+2016,F,23,Draymond Green,Draymond Green,,6589,apg · 14.0 ppg · 9.5 rpg · 7.4 apg
+2016,G,2,Jarrett Jack,Jarrett Jack,,2768,apg · 12.8 ppg · 7.4 apg
+2016,G,1,Tyreke Evans,Tyreke Evans,,3983,apg · 15.2 ppg · 6.6 apg
 2017,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 31.6 ppg · 10.7 rpg · 10.4 apg
 2017,G,13,James Harden,James Harden,,3992,ppg · 29.1 ppg · 8.1 rpg · 11.2 apg
 2017,G,4,Isaiah Thomas (basketball),Isaiah Thomas,,6472,ppg · 28.9 ppg · 5.9 apg
 2017,F,23,Anthony Davis,Anthony Davis,,6583,ppg · 28.0 ppg · 11.8 rpg
-2017,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 27.3 ppg · 3.9 apg
+2017,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 27.3 ppg · 5.2 rpg · 3.9 apg
 2017,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 27.0 ppg · 5.9 apg
 2017,C,0,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 27.0 ppg · 11.0 rpg · 4.6 apg
 2017,F,23,LeBron James,LeBron James,,1966,ppg · 26.4 ppg · 8.6 rpg · 8.7 apg
-2017,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 25.5 ppg
+2017,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 25.5 ppg · 5.8 rpg · 3.5 apg
 2017,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 25.3 ppg · 6.6 apg
 2017,G,2,Kyrie Irving,Kyrie Irving,,6442,ppg · 25.2 ppg · 5.8 apg
-2017,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 25.1 ppg · 12.3 rpg
+2017,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 25.1 ppg · 12.3 rpg · 2.7 apg
 2017,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 25.1 ppg · 8.3 rpg · 4.8 apg
-2017,F,21,Jimmy Butler,Jimmy Butler III,,6430,ppg · 23.9 ppg · 5.5 apg
-2017,F,13,Paul George,Paul George,,4251,ppg · 23.7 ppg · 6.6 rpg
+2017,F,21,Jimmy Butler,Jimmy Butler III,,6430,ppg · 23.9 ppg · 6.2 rpg · 5.5 apg
+2017,F,13,Paul George,Paul George,,4251,ppg · 23.7 ppg · 6.6 rpg · 3.3 apg
 2017,F,22,Andrew Wiggins,Andrew Wiggins,,3059319,ppg · 23.6 ppg
 2017,G,15,Kemba Walker,Kemba Walker,,6479,ppg · 23.2 ppg · 5.5 apg
 2017,G,2,John Wall,John Wall,,4237,ppg · 23.1 ppg · 10.7 apg
-2017,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 23.1 ppg
-2017,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 23.0 ppg
+2017,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 23.1 ppg · 3.5 apg
+2017,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 23.0 ppg · 3.6 apg
 2017,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 22.9 ppg · 8.8 rpg · 5.4 apg
-2017,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 22.4 ppg
+2017,F,7,Carmelo Anthony,Carmelo Anthony,,1975,ppg · 22.4 ppg · 5.9 rpg · 2.9 apg
 2017,G,7,Kyle Lowry,Kyle Lowry,,3012,ppg · 22.4 ppg · 6.9 apg
 2017,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 22.3 ppg
-2017,G,1,Devin Booker,Devin Booker,,3136193,ppg · 22.1 ppg
-2017,F,20,Gordon Hayward,Gordon Hayward,,4249,ppg · 21.9 ppg
+2017,G,1,Devin Booker,Devin Booker,,3136193,ppg · 22.1 ppg · 3.4 apg
+2017,F,20,Gordon Hayward,Gordon Hayward,,4249,ppg · 21.9 ppg · 5.4 rpg · 3.5 apg
 2017,F,32,Blake Griffin,Blake Griffin,,3989,ppg · 21.6 ppg · 8.1 rpg · 4.9 apg
 2017,G,2,Eric Bledsoe,Eric Bledsoe,,4238,ppg · 21.1 ppg · 6.3 apg
-2017,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 20.5 ppg
+2017,C,11,Brook Lopez,Brook Lopez,,3448,ppg · 20.5 ppg · 5.4 rpg
 2017,G,11,Mike Conley (basketball),Mike Conley,,3195,ppg · 20.5 ppg · 6.3 apg
 2017,G,7,Goran Dragić,Goran Dragic,,3423,ppg · 20.3 ppg · 5.8 apg
 2017,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 20.2 ppg · 7.8 rpg
-2017,F,12,Jabari Parker,Jabari Parker,,3056600,ppg · 20.1 ppg
-2017,C,33,Marc Gasol,Marc Gasol,,3206,ppg · 19.5 ppg · 4.6 apg
+2017,F,12,Jabari Parker,Jabari Parker,,3056600,ppg · 20.1 ppg · 6.2 rpg · 2.8 apg
+2017,C,33,Marc Gasol,Marc Gasol,,3206,ppg · 19.5 ppg · 6.3 rpg · 4.6 apg
 2017,F,40,Harrison Barnes,Harrison Barnes,,6578,ppg · 19.2 ppg
 2017,F,0,Kevin Love,Kevin Love,,3449,ppg · 19.0 ppg · 11.1 rpg
-2017,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 18.9 ppg
-2017,F,8,Rudy Gay,Rudy Gay,,3005,ppg · 18.7 ppg · 6.3 rpg
+2017,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 18.9 ppg · 3.0 apg
+2017,F,8,Rudy Gay,Rudy Gay,,3005,ppg · 18.7 ppg · 6.3 rpg · 2.8 apg
 2017,G,3,Dwyane Wade,Dwyane Wade,,1987,ppg · 18.3 ppg · 3.8 apg
-2017,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 18.2 ppg
-2017,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 17.0 ppg · 14.1 rpg
-2017,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 13.8 rpg
+2017,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 18.2 ppg · 5.2 rpg
+2017,C,6,Kristaps Porziņģis,Kristaps Porzingis,,3102531,ppg · 18.1 ppg · 7.2 rpg
+2017,G,3,Chris Paul,Chris Paul,,2779,ppg · 18.1 ppg · 9.2 apg
+2017,F,4,Paul Millsap,Paul Millsap,,3015,ppg · 18.1 ppg · 7.7 rpg · 3.7 apg
+2017,G,25,Derrick Rose,Derrick Rose,,3456,ppg · 18.0 ppg · 4.4 apg
+2017,G,17,Dennis Schröder,Dennis Schroder,,3032979,ppg · 17.9 ppg · 6.3 apg
+2017,G,12,Lou Williams,Lou Williams,,2799,ppg · 17.5 ppg · 3.0 apg
+2017,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 17.3 ppg · 7.3 rpg
+2017,G,10,Evan Fournier,Evan Fournier,,6588,ppg · 17.2 ppg · 3.0 apg
+2017,C,21,Hassan Whiteside,Hassan Whiteside,,4262,ppg · 17.0 ppg · 14.1 rpg
+2017,G,3,George Hill (basketball),George Hill,,3438,ppg · 16.9 ppg · 4.2 apg
+2017,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 16.7 ppg · 9.8 rpg · 4.9 apg
+2017,G,0,Avery Bradley,Avery Bradley,,4240,ppg · 16.3 ppg · 6.1 rpg
+2017,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 16.2 ppg
+2017,F,34,Tobias Harris,Tobias Harris,,6440,ppg · 16.1 ppg
+2017,G,5,Victor Oladipo,Victor Oladipo,,2527963,ppg · 15.9 ppg
+2017,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 13.6 ppg · 13.8 rpg
 2017,C,6,DeAndre Jordan,DeAndre Jordan,,3442,rpg · 13.8 rpg
-2017,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 12.8 rpg
-2017,C,8,Dwight Howard,Dwight Howard,,2384,rpg · 12.7 rpg
-2017,G,3,Chris Paul,Chris Paul,,2779,apg · 18.1 ppg · 9.2 apg
+2017,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 14.0 ppg · 12.8 rpg
+2017,C,8,Dwight Howard,Dwight Howard,,2384,rpg · 13.5 ppg · 12.7 rpg
+2017,C,4,Tyson Chandler,Tyson Chandler,,984,rpg · 11.5 rpg
 2017,G,9,Ricky Rubio,Ricky Rubio,,4011,apg · 9.1 apg
 2017,G,44,Jeff Teague,Jeff Teague,,4015,apg · 15.3 ppg · 7.8 apg
 2017,G,11,Jrue Holiday,Jrue Holiday,,3995,apg · 15.4 ppg · 7.3 apg
 2017,F,23,Draymond Green,Draymond Green,,6589,apg · 7.9 rpg · 7.0 apg
-2018,G,13,James Harden,James Harden,,3992,ppg · 30.4 ppg · 8.8 apg
+2017,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 6.7 apg
+2018,G,13,James Harden,James Harden,,3992,ppg · 30.4 ppg · 5.4 rpg · 8.8 apg
 2018,F,23,Anthony Davis,Anthony Davis,,6583,ppg · 28.1 ppg · 11.1 rpg
 2018,F,23,LeBron James,LeBron James,,1966,ppg · 27.5 ppg · 8.6 rpg · 9.1 apg
 2018,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 26.9 ppg · 6.6 apg
 2018,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 26.9 ppg · 10.0 rpg · 4.8 apg
-2018,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 26.4 ppg · 6.1 apg
+2018,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 26.4 ppg · 5.1 rpg · 6.1 apg
 2018,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 26.4 ppg · 6.8 rpg · 5.4 apg
 2018,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 25.4 ppg · 10.1 rpg · 10.2 apg
 2018,C,0,DeMarcus Cousins,DeMarcus Cousins,,4258,ppg · 25.2 ppg · 12.9 rpg · 5.4 apg
 2018,G,1,Devin Booker,Devin Booker,,3136193,ppg · 24.9 ppg · 4.7 apg
 2018,G,11,Kyrie Irving,Kyrie Irving,,6442,ppg · 24.4 ppg · 5.1 apg
 2018,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 23.1 ppg · 8.5 rpg
-2018,G,4,Victor Oladipo,Victor Oladipo,,2527963,ppg · 23.1 ppg · 4.3 apg
+2018,G,4,Victor Oladipo,Victor Oladipo,,2527963,ppg · 23.1 ppg · 5.2 rpg · 4.3 apg
 2018,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 23.0 ppg · 5.2 apg
-2018,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 22.9 ppg · 11.0 rpg
+2018,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 22.9 ppg · 11.0 rpg · 3.2 apg
 2018,C,6,Kristaps Porziņģis,Kristaps Porzingis,,3102531,ppg · 22.7 ppg · 6.6 rpg
 2018,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 22.6 ppg · 4.5 apg
 2018,G,23,Lou Williams,Lou Williams,,2799,ppg · 22.6 ppg · 5.3 apg
-2018,F,23,Jimmy Butler,Jimmy Butler III,,6430,ppg · 22.2 ppg · 4.9 apg
+2018,F,23,Jimmy Butler,Jimmy Butler III,,6430,ppg · 22.2 ppg · 5.3 rpg · 4.9 apg
 2018,G,15,Kemba Walker,Kemba Walker,,6479,ppg · 22.1 ppg · 5.6 apg
-2018,F,13,Paul George,Paul George,,4251,ppg · 21.9 ppg
+2018,F,13,Paul George,Paul George,,4251,ppg · 21.9 ppg · 5.7 rpg · 3.3 apg
 2018,F,23,Blake Griffin,Blake Griffin,,3989,ppg · 21.4 ppg · 7.4 rpg · 5.8 apg
-2018,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 21.4 ppg
+2018,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 21.4 ppg · 3.4 apg
 2018,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 21.3 ppg · 12.3 rpg
-2018,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 20.5 ppg
-2018,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.1 ppg · 4.0 apg
-2018,G,8,MarShon Brooks,MarShon Brooks,,6428,ppg · 20.1 ppg
+2018,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 20.5 ppg · 3.7 apg
+2018,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.1 ppg · 5.2 rpg · 4.0 apg
+2018,G,8,MarShon Brooks,MarShon Brooks,,6428,ppg · 20.1 ppg · 3.6 apg
 2018,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 20.0 ppg
-2018,F,12,T. J. Warren,T.J. Warren,,2982334,ppg · 19.6 ppg
+2018,F,12,T. J. Warren,T.J. Warren,,2982334,ppg · 19.6 ppg · 5.1 rpg
 2018,G,2,John Wall,John Wall,,4237,ppg · 19.4 ppg · 9.6 apg
 2018,G,12,Tyreke Evans,Tyreke Evans,,3983,ppg · 19.4 ppg · 5.2 apg
 2018,G,17,Dennis Schröder,Dennis Schroder,,3032979,ppg · 19.4 ppg · 6.2 apg
 2018,G,11,Jrue Holiday,Jrue Holiday,,3995,ppg · 19.0 ppg · 6.0 apg
-2018,F,40,Harrison Barnes,Harrison Barnes,,6578,ppg · 18.9 ppg
-2018,G,3,Chris Paul,Chris Paul,,2779,ppg · 18.6 ppg · 7.9 apg
-2018,F,34,Tobias Harris,Tobias Harris,,6440,ppg · 18.6 ppg
+2018,F,40,Harrison Barnes,Harrison Barnes,,6578,ppg · 18.9 ppg · 6.1 rpg
+2018,G,3,Chris Paul,Chris Paul,,2779,ppg · 18.6 ppg · 5.4 rpg · 7.9 apg
+2018,F,34,Tobias Harris,Tobias Harris,,6440,ppg · 18.6 ppg · 5.5 rpg
 2018,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 18.5 ppg · 10.7 rpg · 6.1 apg
 2018,G,10,Eric Gordon,Eric Gordon,,3431,ppg · 18.0 ppg
 2018,G,7,Jeremy Lin,Jeremy Lin,,4299,ppg · 18.0 ppg · 4.0 apg
 2018,G,10,Evan Fournier,Evan Fournier,,6588,ppg · 17.8 ppg
-2018,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 16.0 rpg
+2018,G,6,Eric Bledsoe,Eric Bledsoe,,4238,ppg · 17.7 ppg · 5.0 apg
+2018,F,22,Andrew Wiggins,Andrew Wiggins,,3059319,ppg · 17.7 ppg
+2018,F,0,Aaron Gordon,Aaron Gordon,,3064290,ppg · 17.6 ppg · 7.9 rpg
+2018,F,0,Kevin Love,Kevin Love,,3449,ppg · 17.6 ppg · 9.3 rpg
+2018,G,3,Tim Hardaway Jr.,Tim Hardaway Jr.,,2528210,ppg · 17.5 ppg
+2018,G,14,Gary Harris,Gary Harris,,2999547,ppg · 17.5 ppg
+2018,G,7,Goran Dragić,Goran Dragic,,3423,ppg · 17.3 ppg · 4.8 apg
+2018,C,33,Marc Gasol,Marc Gasol,,3206,ppg · 17.2 ppg · 8.1 rpg · 4.2 apg
+2018,G,17,JJ Redick,JJ Redick,,3024,ppg · 17.1 ppg
+2018,G,11,Mike Conley (basketball),Mike Conley,,3195,ppg · 17.1 ppg · 4.1 apg
+2018,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 16.7 ppg
+2018,G,27,Jamal Murray,Jamal Murray,,3936299,ppg · 16.7 ppg · 3.4 apg
+2018,C,12,Dwight Howard,Dwight Howard,,2384,ppg · 16.6 ppg · 12.5 rpg
+2018,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 16.5 ppg · 9.2 rpg · 3.4 apg
+2018,G,7,Kyle Lowry,Kyle Lowry,,3012,ppg · 16.2 ppg · 5.6 rpg · 6.9 apg
+2018,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 15.0 ppg · 16.0 rpg
 2018,C,6,DeAndre Jordan,DeAndre Jordan,,3442,rpg · 15.2 rpg
-2018,C,12,Dwight Howard,Dwight Howard,,2384,rpg · 16.6 ppg · 12.5 rpg
-2018,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 11.4 rpg
-2018,C,0,,Enes Freedom,,6447,rpg · 11.0 rpg
+2018,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 14.0 ppg · 11.4 rpg
+2018,C,0,,Enes Freedom,,6447,rpg · 14.1 ppg · 11.0 rpg
+2018,C,15,Clint Capela,Clint Capela,,3102529,rpg · 13.9 ppg · 10.8 rpg
 2018,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 8.2 apg
-2018,G,25,Ben Simmons,Ben Simmons,,3907387,apg · 8.1 rpg · 8.2 apg
+2018,G,25,Ben Simmons,Ben Simmons,,3907387,apg · 15.8 ppg · 8.1 rpg · 8.2 apg
 2018,F,23,Draymond Green,Draymond Green,,6589,apg · 7.6 rpg · 7.3 apg
 2018,G,2,Lonzo Ball,Lonzo Ball,,4066421,apg · 6.9 rpg · 7.2 apg
-2018,G,0,Jeff Teague,Jeff Teague,,4015,apg · 7.0 apg
-2019,G,13,James Harden,James Harden,,3992,ppg · 36.1 ppg · 7.5 apg
+2018,G,0,Jeff Teague,Jeff Teague,,4015,apg · 14.2 ppg · 7.0 apg
+2019,G,13,James Harden,James Harden,,3992,ppg · 36.1 ppg · 6.6 rpg · 7.5 apg
 2019,F,13,Paul George,Paul George,,4251,ppg · 28.0 ppg · 8.2 rpg · 4.1 apg
 2019,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 27.7 ppg · 12.5 rpg · 5.9 apg
-2019,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 27.5 ppg · 13.6 rpg
+2019,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 27.5 ppg · 13.6 rpg · 3.7 apg
 2019,F,23,LeBron James,LeBron James,,1966,ppg · 27.4 ppg · 8.5 rpg · 8.3 apg
-2019,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 27.3 ppg · 5.2 apg
-2019,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 26.6 ppg · 7.3 rpg
+2019,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 27.3 ppg · 5.3 rpg · 5.2 apg
+2019,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 26.6 ppg · 7.3 rpg · 3.3 apg
 2019,G,1,Devin Booker,Devin Booker,,3136193,ppg · 26.6 ppg · 6.8 apg
-2019,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 26.0 ppg · 5.9 apg
-2019,F,23,Anthony Davis,Anthony Davis,,6583,ppg · 25.9 ppg · 12.0 rpg
+2019,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 26.0 ppg · 6.4 rpg · 5.9 apg
+2019,F,23,Anthony Davis,Anthony Davis,,6583,ppg · 25.9 ppg · 12.0 rpg · 3.9 apg
 2019,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 25.8 ppg · 6.9 apg
 2019,G,15,Kemba Walker,Kemba Walker,,6479,ppg · 25.6 ppg · 5.9 apg
 2019,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 25.6 ppg · 5.5 apg
 2019,F,23,Blake Griffin,Blake Griffin,,3989,ppg · 24.5 ppg · 7.5 rpg · 5.4 apg
-2019,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 24.4 ppg · 12.4 rpg
+2019,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 24.4 ppg · 12.4 rpg · 3.4 apg
 2019,G,11,Kyrie Irving,Kyrie Irving,,6442,ppg · 23.8 ppg · 6.9 apg
 2019,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 23.8 ppg · 4.2 apg
 2019,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 23.7 ppg · 4.5 apg
 2019,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 22.9 ppg · 11.1 rpg · 10.7 apg
 2019,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 21.5 ppg
-2019,F,30,Julius Randle,Julius Randle,,3064514,ppg · 21.4 ppg · 8.7 rpg
+2019,F,30,Julius Randle,Julius Randle,,3064514,ppg · 21.4 ppg · 8.7 rpg · 3.1 apg
 2019,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 21.3 ppg · 9.2 rpg
-2019,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 21.2 ppg · 6.2 apg
+2019,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 21.2 ppg · 6.0 rpg · 6.2 apg
 2019,G,77,Luka Dončić,Luka Doncic,,3945274,ppg · 21.2 ppg · 7.8 rpg · 6.0 apg
 2019,G,11,Jrue Holiday,Jrue Holiday,,3995,ppg · 21.2 ppg · 7.7 apg
 2019,G,1,D'Angelo Russell,D'Angelo Russell,,3136776,ppg · 21.1 ppg · 7.0 apg
 2019,G,11,Mike Conley (basketball),Mike Conley,,3195,ppg · 21.1 ppg · 6.4 apg
 2019,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 21.0 ppg
-2019,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 20.8 ppg · 12.0 rpg
+2019,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 20.8 ppg · 12.0 rpg · 3.8 apg
 2019,G,2,John Wall,John Wall,,4237,ppg · 20.7 ppg · 8.7 apg
 2019,G,24,Buddy Hield,Buddy Hield,,2990984,ppg · 20.7 ppg
 2019,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 20.0 ppg · 10.8 rpg · 7.2 apg
 2019,F,33,Tobias Harris,Tobias Harris,,6440,ppg · 20.0 ppg · 7.9 rpg
 2019,F,41,JaKarr Sampson,JaKarr Sampson,,2608891,ppg · 20.0 ppg · 8.0 rpg
 2019,G,23,Lou Williams,Lou Williams,,2799,ppg · 20.0 ppg · 5.4 apg
-2019,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 19.8 ppg
+2019,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 19.8 ppg · 6.1 rpg
 2019,F,20,John Collins (basketball),John Collins,,3908845,ppg · 19.5 ppg · 9.8 rpg
 2019,G,11,Trae Young,Trae Young,,4277905,ppg · 19.1 ppg · 8.1 apg
-2019,G,4,Victor Oladipo,Victor Oladipo,,2527963,ppg · 18.8 ppg · 5.2 apg
+2019,G,4,Victor Oladipo,Victor Oladipo,,2527963,ppg · 18.8 ppg · 5.6 rpg · 5.2 apg
 2019,F,24,Lauri Markkanen,Lauri Markkanen,,4066336,ppg · 18.7 ppg · 9.0 rpg
-2019,C,0,Andre Drummond,Andre Drummond,,6585,rpg · 17.3 ppg · 15.6 rpg
+2019,F,23,Jimmy Butler,Jimmy Butler III,,6430,ppg · 18.7 ppg · 4.0 apg
+2019,F,0,Kyle Kuzma,Kyle Kuzma,,3134907,ppg · 18.7 ppg · 5.5 rpg
+2019,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 18.3 ppg · 6.0 rpg · 4.3 apg
+2019,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 18.3 ppg
+2019,G,27,Jamal Murray,Jamal Murray,,3936299,ppg · 18.2 ppg · 4.8 apg
+2019,F,22,Andrew Wiggins,Andrew Wiggins,,3059319,ppg · 18.1 ppg
+2019,G,11,Tim Hardaway Jr.,Tim Hardaway Jr.,,2528210,ppg · 18.1 ppg
+2019,G,17,JJ Redick,JJ Redick,,3024,ppg · 18.1 ppg
+2019,G,25,Derrick Rose,Derrick Rose,,3456,ppg · 18.0 ppg · 4.3 apg
+2019,F,12,T. J. Warren,T.J. Warren,,2982334,ppg · 18.0 ppg
+2019,F,44,Bojan Bogdanović,Bojan Bogdanovic,,3593,ppg · 18.0 ppg
+2019,C,0,Andre Drummond,Andre Drummond,,6585,ppg · 17.3 ppg · 15.6 rpg
+2019,G,5,De'Aaron Fox,De'Aaron Fox,,4066259,ppg · 17.3 ppg · 7.3 apg
+2019,F,0,Kevin Love,Kevin Love,,3449,ppg · 17.0 ppg · 10.9 rpg
+2019,G,28,R. J. Hunter,RJ Hunter,,2983727,ppg · 17.0 ppg
 2019,C,6,DeAndre Jordan,DeAndre Jordan,,3442,rpg · 13.1 rpg
-2019,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 12.9 rpg
-2019,C,15,Clint Capela,Clint Capela,,3102529,rpg · 12.7 rpg
+2019,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 15.9 ppg · 12.9 rpg
+2019,C,15,Clint Capela,Clint Capela,,3102529,rpg · 16.6 ppg · 12.7 rpg
 2019,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 11.3 rpg
-2019,G,7,Kyle Lowry,Kyle Lowry,,3012,apg · 8.7 apg
+2019,C,27,Jusuf Nurkić,Jusuf Nurkic,,3102530,rpg · 15.6 ppg · 10.4 rpg · 3.2 apg
+2019,G,7,Kyle Lowry,Kyle Lowry,,3012,apg · 14.2 ppg · 8.7 apg
 2019,G,0,Jeff Teague,Jeff Teague,,4015,apg · 8.2 apg
-2019,G,3,Chris Paul,Chris Paul,,2779,apg · 8.2 apg
+2019,G,3,Chris Paul,Chris Paul,,2779,apg · 15.6 ppg · 8.2 apg
 2019,G,9,Rajon Rondo,Rajon Rondo,,3026,apg · 8.0 apg
 2019,G,25,Ben Simmons,Ben Simmons,,3907387,apg · 16.9 ppg · 8.8 rpg · 7.7 apg
 2020,G,13,James Harden,James Harden,,3992,ppg · 34.3 ppg · 6.6 rpg · 7.5 apg
@@ -1260,23 +1560,23 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2020,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 27.1 ppg · 7.1 rpg · 4.9 apg
 2020,G,1,Devin Booker,Devin Booker,,3136193,ppg · 26.6 ppg · 6.5 apg
 2020,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 26.5 ppg · 10.8 rpg · 4.4 apg
-2020,F,3,Anthony Davis,Anthony Davis,,6583,ppg · 26.1 ppg · 9.3 rpg
+2020,F,3,Anthony Davis,Anthony Davis,,6583,ppg · 26.1 ppg · 9.3 rpg · 3.2 apg
 2020,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 25.5 ppg · 4.2 apg
 2020,F,23,LeBron James,LeBron James,,1966,ppg · 25.3 ppg · 7.8 rpg · 10.2 apg
 2020,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 24.0 ppg · 4.3 apg
-2020,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 23.8 ppg · 4.2 apg
+2020,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 23.8 ppg · 6.1 rpg · 4.2 apg
 2020,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 23.4 ppg · 7.0 rpg
 2020,G,0,D'Angelo Russell,D'Angelo Russell,,3136776,ppg · 23.1 ppg · 6.3 apg
 2020,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 23.0 ppg · 11.6 rpg
-2020,F,43,Pascal Siakam,Pascal Siakam,,3149673,ppg · 22.9 ppg · 7.3 rpg
-2020,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 22.5 ppg
+2020,F,43,Pascal Siakam,Pascal Siakam,,3149673,ppg · 22.9 ppg · 7.3 rpg · 3.5 apg
+2020,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 22.5 ppg · 6.2 rpg
 2020,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 22.2 ppg · 4.4 apg
-2020,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 22.1 ppg · 5.6 apg
-2020,F,22,Andrew Wiggins,Andrew Wiggins,,3059319,ppg · 21.8 ppg
+2020,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 22.1 ppg · 5.5 rpg · 5.6 apg
+2020,F,22,Andrew Wiggins,Andrew Wiggins,,3059319,ppg · 21.8 ppg · 3.7 apg
 2020,F,20,John Collins (basketball),John Collins,,3908845,ppg · 21.6 ppg · 10.1 rpg
-2020,F,13,Paul George,Paul George,,4251,ppg · 21.5 ppg
+2020,F,13,Paul George,Paul George,,4251,ppg · 21.5 ppg · 5.7 rpg · 3.9 apg
 2020,G,5,De'Aaron Fox,De'Aaron Fox,,4066259,ppg · 21.1 ppg · 6.8 apg
-2020,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.9 ppg · 4.3 apg
+2020,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.9 ppg · 6.2 rpg · 4.3 apg
 2020,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 20.8 ppg · 6.6 apg
 2020,G,2,Collin Sexton,Collin Sexton,,4277811,ppg · 20.8 ppg
 2020,G,26,Spencer Dinwiddie,Spencer Dinwiddie,,2580782,ppg · 20.6 ppg · 6.8 apg
@@ -1287,45 +1587,60 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2020,F,22,Jimmy Butler,Jimmy Butler III,,6430,ppg · 19.9 ppg · 6.7 rpg · 6.0 apg
 2020,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 19.9 ppg · 9.7 rpg · 7.0 apg
 2020,F,1,T. J. Warren,T.J. Warren,,2982334,ppg · 19.8 ppg
-2020,F,12,Tobias Harris,Tobias Harris,,6440,ppg · 19.6 ppg · 6.9 rpg
-2020,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 19.6 ppg · 10.9 rpg
-2020,C,3,Andre Drummond,Andre Drummond,,6585,rpg · 15.2 rpg
+2020,F,12,Tobias Harris,Tobias Harris,,6440,ppg · 19.6 ppg · 6.9 rpg · 3.2 apg
+2020,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 19.6 ppg · 10.9 rpg · 3.6 apg
+2020,F,30,Julius Randle,Julius Randle,,3064514,ppg · 19.5 ppg · 9.7 rpg · 3.1 apg
+2020,G,7,Kyle Lowry,Kyle Lowry,,3012,ppg · 19.4 ppg · 7.5 apg
+2020,G,24,Buddy Hield,Buddy Hield,,2990984,ppg · 19.2 ppg
+2020,G,11,Jrue Holiday,Jrue Holiday,,3995,ppg · 19.1 ppg · 6.7 apg
+2020,G,2,Shai Gilgeous-Alexander,Shai Gilgeous-Alexander,,4278073,ppg · 19.0 ppg · 5.9 rpg · 3.3 apg
+2020,G,17,Dennis Schröder,Dennis Schroder,,3032979,ppg · 18.9 ppg · 4.0 apg
+2020,C,12,LaMarcus Aldridge,LaMarcus Aldridge,,2983,ppg · 18.9 ppg · 7.4 rpg
+2020,G,22,Caris LeVert,Caris LeVert,,2991043,ppg · 18.7 ppg · 4.4 apg
+2020,F,8,Danilo Gallinari,Danilo Gallinari,,3428,ppg · 18.7 ppg
+2020,G,3,Kelly Oubre Jr.,Kelly Oubre Jr.,,3133603,ppg · 18.7 ppg · 6.4 rpg
+2020,C,5,Montrezl Harrell,Montrezl Harrell,,2991055,ppg · 18.6 ppg · 7.1 rpg
+2020,G,10,Evan Fournier,Evan Fournier,,6588,ppg · 18.5 ppg · 3.2 apg
+2020,F,11,Domantas Sabonis,Domantas Sabonis,,3155942,ppg · 18.5 ppg · 12.4 rpg · 5.0 apg
+2020,G,27,Jamal Murray,Jamal Murray,,3936299,ppg · 18.5 ppg · 4.8 apg
+2020,G,23,Lou Williams,Lou Williams,,2799,ppg · 18.2 ppg · 5.6 apg
+2020,C,3,Andre Drummond,Andre Drummond,,6585,rpg · 17.7 ppg · 15.2 rpg
 2020,C,17/15,Clint Capela,Clint Capela,,3102529,rpg · 13.8 rpg
-2020,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 13.5 rpg
-2020,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 13.5 rpg
-2020,F,11,Domantas Sabonis,Domantas Sabonis,,3155942,rpg · 18.5 ppg · 12.4 rpg · 5.0 apg
+2020,C,21,Hassan Whiteside,Hassan Whiteside,,4262,rpg · 15.5 ppg · 13.5 rpg
+2020,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 15.1 ppg · 13.5 rpg
+2020,C,22,Deandre Ayton,Deandre Ayton,,4278129,rpg · 18.2 ppg · 11.5 rpg
 2020,G,11,Ricky Rubio,Ricky Rubio,,4011,apg · 8.8 apg
-2020,G,25,Ben Simmons,Ben Simmons,,3907387,apg · 7.8 rpg · 8.0 apg
+2020,G,25,Ben Simmons,Ben Simmons,,3907387,apg · 16.4 ppg · 7.8 rpg · 8.0 apg
 2020,G,4,Devonte' Graham,Devonte' Graham,,3133601,apg · 18.2 ppg · 7.5 apg
-2020,G,7,Kyle Lowry,Kyle Lowry,,3012,apg · 19.4 ppg · 7.5 apg
 2020,G,12,Ja Morant,Ja Morant,,4279888,apg · 17.8 ppg · 7.3 apg
-2021,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 32.0 ppg · 5.8 apg
-2021,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 31.3 ppg
+2020,G,6,Elfrid Payton,Elfrid Payton,,2583639,apg · 7.2 apg
+2021,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 32.0 ppg · 5.5 rpg · 5.8 apg
+2021,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 31.3 ppg · 4.4 apg
 2021,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 28.8 ppg · 7.5 apg
 2021,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 28.5 ppg · 10.6 rpg
 2021,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 28.1 ppg · 11.0 rpg · 5.9 apg
 2021,G,77,Luka Dončić,Luka Doncic,,3945274,ppg · 27.7 ppg · 8.0 rpg · 8.6 apg
 2021,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 27.4 ppg · 4.9 apg
-2021,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 27.0 ppg · 7.2 rpg
+2021,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 27.0 ppg · 7.2 rpg · 3.7 apg
 2021,F,7,Kevin Durant,Kevin Durant,,3202,ppg · 26.9 ppg · 7.1 rpg · 5.6 apg
 2021,G,11,Kyrie Irving,Kyrie Irving,,6442,ppg · 26.9 ppg · 6.0 apg
-2021,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 26.4 ppg · 7.4 rpg
+2021,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 26.4 ppg · 7.4 rpg · 4.3 apg
 2021,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 26.4 ppg · 5.2 apg
 2021,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 26.4 ppg · 10.8 rpg · 8.3 apg
-2021,G,1,Devin Booker,Devin Booker,,3136193,ppg · 25.6 ppg
+2021,G,1,Devin Booker,Devin Booker,,3136193,ppg · 25.6 ppg · 4.3 apg
 2021,G,11,Trae Young,Trae Young,,4277905,ppg · 25.3 ppg · 9.4 apg
 2021,G,5,De'Aaron Fox,De'Aaron Fox,,4066259,ppg · 25.2 ppg · 7.2 apg
 2021,F,23,LeBron James,LeBron James,,1966,ppg · 25.0 ppg · 7.7 rpg · 7.8 apg
-2021,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 24.8 ppg · 5.2 apg
+2021,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 24.8 ppg · 6.5 rpg · 5.2 apg
 2021,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 24.8 ppg · 10.6 rpg · 4.5 apg
-2021,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 24.7 ppg
+2021,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 24.7 ppg · 6.0 rpg · 3.4 apg
 2021,G,13,James Harden,James Harden,,3992,ppg · 24.6 ppg · 7.9 rpg · 10.8 apg
-2021,G,2,Collin Sexton,Collin Sexton,,4277811,ppg · 24.3 ppg
+2021,G,2,Collin Sexton,Collin Sexton,,4277811,ppg · 24.3 ppg · 4.4 apg
 2021,F,30,Julius Randle,Julius Randle,,3064514,ppg · 24.1 ppg · 10.2 rpg · 6.0 apg
 2021,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 23.8 ppg · 4.9 apg
 2021,G,2,Shai Gilgeous-Alexander,Shai Gilgeous-Alexander,,4278073,ppg · 23.7 ppg · 5.9 apg
-2021,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 23.4 ppg · 11.7 rpg
-2021,F,13,Paul George,Paul George,,4251,ppg · 23.3 ppg · 5.2 apg
+2021,C,9,Nikola Vučević,Nikola Vucevic,,6478,ppg · 23.4 ppg · 11.7 rpg · 3.8 apg
+2021,F,13,Paul George,Paul George,,4251,ppg · 23.3 ppg · 6.6 rpg · 5.2 apg
 2021,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 23.1 ppg · 4.7 apg
 2021,F,9,Jerami Grant,Jerami Grant,,2991070,ppg · 22.3 ppg
 2021,G,4,Russell Westbrook,Russell Westbrook,,3468,ppg · 22.2 ppg · 11.5 rpg · 11.7 apg
@@ -1337,19 +1652,34 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2021,G,7,Malcolm Brogdon,Malcolm Brogdon,,2566769,ppg · 21.2 ppg · 5.9 apg
 2021,F,35,Christian Wood,Christian Wood,,3058254,ppg · 21.0 ppg · 9.6 rpg
 2021,G,1,John Wall,John Wall,,4237,ppg · 20.6 ppg · 6.9 apg
-2021,G,3,Terry Rozier,Terry Rozier,,3074752,ppg · 20.4 ppg
-2021,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.4 ppg · 5.4 apg
-2021,C,15,Clint Capela,Clint Capela,,3102529,rpg · 14.3 rpg
-2021,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 13.5 rpg
-2021,C,17,Jonas Valančiūnas,Jonas Valanciunas,,6477,rpg · 12.5 rpg
-2021,C,2,Andre Drummond,Andre Drummond,,6585,rpg · 12.0 rpg
-2021,F,11,Domantas Sabonis,Domantas Sabonis,,3155942,rpg · 20.3 ppg · 12.0 rpg · 6.7 apg
-2021,G,3,Chris Paul,Chris Paul,,2779,apg · 8.9 apg
+2021,G,3,Terry Rozier,Terry Rozier,,3074752,ppg · 20.4 ppg · 4.2 apg
+2021,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.4 ppg · 6.0 rpg · 5.4 apg
+2021,F,11,Domantas Sabonis,Domantas Sabonis,,3155942,ppg · 20.3 ppg · 12.0 rpg · 6.7 apg
+2021,G,22,Caris LeVert,Caris LeVert,,2991043,ppg · 20.2 ppg · 5.2 apg
+2021,C,6,Kristaps Porziņģis,Kristaps Porzingis,,3102531,ppg · 20.1 ppg · 8.9 rpg
+2021,G,4,Victor Oladipo,Victor Oladipo,,2527963,ppg · 19.8 ppg · 4.6 apg
+2021,F,20,Gordon Hayward,Gordon Hayward,,4249,ppg · 19.6 ppg · 5.9 rpg · 4.1 apg
+2021,G,23,Fred VanVleet,Fred VanVleet,,2991230,ppg · 19.6 ppg · 6.3 apg
+2021,G,5,Malik Beasley,Malik Beasley,,3907822,ppg · 19.6 ppg
+2021,F,12,Tobias Harris,Tobias Harris,,6440,ppg · 19.5 ppg · 6.8 rpg · 3.5 apg
+2021,G,1,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 19.3 ppg
+2021,G,8,Kemba Walker,Kemba Walker,,6479,ppg · 19.3 ppg · 4.9 apg
+2021,G,12,Ja Morant,Ja Morant,,4279888,ppg · 19.1 ppg · 7.4 apg
+2021,F,1,Michael Porter Jr.,Michael Porter Jr.,,4278104,ppg · 19.0 ppg · 7.3 rpg
+2021,G,0,D'Angelo Russell,D'Angelo Russell,,3136776,ppg · 19.0 ppg · 5.8 apg
+2021,C,13,Bam Adebayo,Bam Adebayo,,4066261,ppg · 18.7 ppg · 9.0 rpg · 5.4 apg
+2021,G,24,Norman Powell,Norman Powell,,2595516,ppg · 18.6 ppg
+2021,C,15,Clint Capela,Clint Capela,,3102529,rpg · 15.2 ppg · 14.3 rpg
+2021,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 14.3 ppg · 13.5 rpg
+2021,C,17,Jonas Valančiūnas,Jonas Valanciunas,,6477,rpg · 17.1 ppg · 12.5 rpg
+2021,C,2,Andre Drummond,Andre Drummond,,6585,rpg · 14.9 ppg · 12.0 rpg
+2021,C,11,,Enes Freedom,,6447,rpg · 11.0 rpg
+2021,G,3,Chris Paul,Chris Paul,,2779,apg · 16.4 ppg · 8.9 apg
 2021,F,23,Draymond Green,Draymond Green,,6589,apg · 7.1 rpg · 8.9 apg
-2021,G,12,Ja Morant,Ja Morant,,4279888,apg · 19.1 ppg · 7.4 apg
-2021,G,7,Kyle Lowry,Kyle Lowry,,3012,apg · 7.3 apg
-2021,G,25,Ben Simmons,Ben Simmons,,3907387,apg · 7.2 rpg · 6.9 apg
-2022,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 30.6 ppg · 11.7 rpg
+2021,G,7,Kyle Lowry,Kyle Lowry,,3012,apg · 17.2 ppg · 7.3 apg
+2021,G,25,Ben Simmons,Ben Simmons,,3907387,apg · 14.3 ppg · 7.2 rpg · 6.9 apg
+2021,G,9,T. J. McConnell,T.J. McConnell,,2530530,apg · 6.6 apg
+2022,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 30.6 ppg · 11.7 rpg · 4.2 apg
 2022,F,6,LeBron James,LeBron James,,1966,ppg · 30.3 ppg · 8.2 rpg · 6.2 apg
 2022,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 29.9 ppg · 11.6 rpg · 5.8 apg
 2022,F,7,Kevin Durant,Kevin Durant,,3202,ppg · 29.9 ppg · 7.4 rpg · 6.4 apg
@@ -1357,102 +1687,132 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2022,G,11,Trae Young,Trae Young,,4277905,ppg · 28.4 ppg · 9.7 apg
 2022,G,11,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 27.9 ppg · 4.9 apg
 2022,G,11,Kyrie Irving,Kyrie Irving,,6442,ppg · 27.4 ppg · 5.8 apg
-2022,G,12,Ja Morant,Ja Morant,,4279888,ppg · 27.4 ppg · 6.7 apg
+2022,G,12,Ja Morant,Ja Morant,,4279888,ppg · 27.4 ppg · 5.7 rpg · 6.7 apg
 2022,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 27.1 ppg · 13.8 rpg · 7.9 apg
-2022,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 26.9 ppg · 8.0 rpg
+2022,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 26.9 ppg · 8.0 rpg · 4.4 apg
 2022,G,1,Devin Booker,Devin Booker,,3136193,ppg · 26.8 ppg · 4.8 apg
 2022,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 25.9 ppg · 5.3 apg
 2022,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 25.5 ppg · 6.3 apg
-2022,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 24.6 ppg · 9.8 rpg
+2022,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 24.6 ppg · 9.8 rpg · 3.6 apg
 2022,G,2,Shai Gilgeous-Alexander,Shai Gilgeous-Alexander,,4278073,ppg · 24.5 ppg · 5.9 apg
 2022,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 24.4 ppg · 4.5 apg
 2022,F,13,Paul George,Paul George,,4251,ppg · 24.3 ppg · 6.9 rpg · 5.7 apg
 2022,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 24.0 ppg · 7.3 apg
-2022,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 23.6 ppg
+2022,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 23.6 ppg · 6.1 rpg · 3.5 apg
 2022,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 23.2 ppg · 6.6 apg
 2022,F,3,Anthony Davis,Anthony Davis,,6583,ppg · 23.2 ppg · 9.9 rpg
 2022,G,5,De'Aaron Fox,De'Aaron Fox,,4066259,ppg · 23.2 ppg · 5.6 apg
 2022,F,43,Pascal Siakam,Pascal Siakam,,3149673,ppg · 22.8 ppg · 8.5 rpg · 5.3 apg
-2022,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 22.7 ppg · 5.6 apg
+2022,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 22.7 ppg · 5.8 rpg · 5.6 apg
 2022,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 22.1 ppg · 5.1 apg
 2022,G,1,James Harden,James Harden,,3992,ppg · 22.0 ppg · 7.7 rpg · 10.3 apg
 2022,G,10,Darius Garland,Darius Garland,,4396907,ppg · 21.7 ppg · 8.6 apg
-2022,F,22,Jimmy Butler,Jimmy Butler III,,6430,ppg · 21.4 ppg · 5.5 apg
-2022,G,1,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 21.3 ppg
+2022,F,22,Jimmy Butler,Jimmy Butler III,,6430,ppg · 21.4 ppg · 5.9 rpg · 5.5 apg
+2022,G,1,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 21.3 ppg · 3.8 apg
 2022,G,5,Dejounte Murray,Dejounte Murray,,3907497,ppg · 21.1 ppg · 8.3 rpg · 9.2 apg
-2022,G,14,Tyler Herro,Tyler Herro,,4395725,ppg · 20.7 ppg
+2022,G,14,Tyler Herro,Tyler Herro,,4395725,ppg · 20.7 ppg · 4.0 apg
 2022,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 20.4 ppg
 2022,G,23,Fred VanVleet,Fred VanVleet,,2991230,ppg · 20.3 ppg · 6.7 apg
 2022,C,6,Kristaps Porziņģis,Kristaps Porzingis,,3102531,ppg · 20.2 ppg · 8.1 rpg
-2022,F,0,Miles Bridges,Miles Bridges,,4066383,ppg · 20.2 ppg · 7.0 rpg
+2022,F,0,Miles Bridges,Miles Bridges,,4066383,ppg · 20.2 ppg · 7.0 rpg · 3.8 apg
 2022,G,2,LaMelo Ball,LaMelo Ball,,4432816,ppg · 20.1 ppg · 6.7 rpg · 7.6 apg
 2022,F,30,Julius Randle,Julius Randle,,3064514,ppg · 20.1 ppg · 9.9 rpg · 5.1 apg
-2022,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.1 ppg · 5.4 apg
-2022,F,9,RJ Barrett,RJ Barrett,,4395625,ppg · 20.0 ppg
-2022,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 14.7 rpg
-2022,F,10,Domantas Sabonis,Domantas Sabonis,,3155942,rpg · 18.9 ppg · 12.1 rpg · 5.2 apg
-2022,F,,Jaylen Hoard,Jaylen Hoard,,4395688,rpg · 12.0 rpg
+2022,F,22,Khris Middleton,Khris Middleton,,6609,ppg · 20.1 ppg · 5.4 rpg · 5.4 apg
+2022,F,9,RJ Barrett,RJ Barrett,,4395625,ppg · 20.0 ppg · 5.8 rpg
+2022,G,3,Terry Rozier,Terry Rozier,,3074752,ppg · 19.3 ppg · 4.5 apg
+2022,F,9,Jerami Grant,Jerami Grant,,2991070,ppg · 19.2 ppg
+2022,G,7,Malcolm Brogdon,Malcolm Brogdon,,2566769,ppg · 19.1 ppg · 5.9 apg
+2022,C,13,Bam Adebayo,Bam Adebayo,,4066261,ppg · 19.1 ppg · 10.1 rpg · 3.4 apg
+2022,G,24,Norman Powell,Norman Powell,,2595516,ppg · 19.0 ppg
+2022,F,10,Domantas Sabonis,Domantas Sabonis,,3155942,ppg · 18.9 ppg · 12.1 rpg · 5.2 apg
+2022,G,3,Jordan Poole,Jordan Poole,,4277956,ppg · 18.5 ppg · 4.0 apg
+2022,G,0,Russell Westbrook,Russell Westbrook,,3468,ppg · 18.5 ppg · 7.4 rpg · 7.1 apg
+2022,F,24,Dillon Brooks,Dillon Brooks,,3155526,ppg · 18.4 ppg
+2022,G,33,Gary Trent Jr.,Gary Trent Jr.,,4277843,ppg · 18.3 ppg
+2022,G,21,Jrue Holiday,Jrue Holiday,,3995,ppg · 18.3 ppg · 6.8 apg
+2022,G,22,Desmond Bane,Desmond Bane,,4066320,ppg · 18.2 ppg
+2022,G,0,D'Angelo Russell,D'Angelo Russell,,3136776,ppg · 18.1 ppg · 7.1 apg
+2022,F,44,Bojan Bogdanović,Bojan Bogdanovic,,3593,ppg · 18.1 ppg
+2022,F,35,Christian Wood,Christian Wood,,3058254,ppg · 17.9 ppg · 10.1 rpg
+2022,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 15.6 ppg · 14.7 rpg
+2022,F,,Jaylen Hoard,Jaylen Hoard,,4395688,rpg · 14.7 ppg · 12.0 rpg
 2022,C,15,Clint Capela,Clint Capela,,3102529,rpg · 11.9 rpg
 2022,C,17,Jonas Valančiūnas,Jonas Valanciunas,,6477,rpg · 17.8 ppg · 11.4 rpg
-2022,G,3,Chris Paul,Chris Paul,,2779,apg · 10.8 apg
-2022,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,apg · 8.2 apg
+2022,C,27,Jusuf Nurkić,Jusuf Nurkic,,3102530,rpg · 15.0 ppg · 11.1 rpg
+2022,G,3,Chris Paul,Chris Paul,,2779,apg · 14.7 ppg · 10.8 apg
+2022,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,apg · 15.3 ppg · 8.2 apg
 2022,G,7,Kyle Lowry,Kyle Lowry,,3012,apg · 7.5 apg
 2022,G,,Zavier Simpson,Zavier Simpson,,4066377,apg · 7.5 apg
-2022,G,0,D'Angelo Russell,D'Angelo Russell,,3136776,apg · 18.1 ppg · 7.1 apg
-2023,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 33.1 ppg · 10.2 rpg
+2022,G,,Derrick Walton,Derrick Walton Jr.,,3056273,apg · 7.0 apg
+2023,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 33.1 ppg · 10.2 rpg · 4.2 apg
 2023,G,77,Luka Dončić,Luka Doncic,,3945274,ppg · 32.4 ppg · 8.6 rpg · 8.0 apg
 2023,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 32.2 ppg · 7.3 apg
 2023,G,2,Shai Gilgeous-Alexander,Shai Gilgeous-Alexander,,4278073,ppg · 31.4 ppg · 5.5 apg
 2023,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 31.1 ppg · 11.8 rpg · 5.7 apg
-2023,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 30.1 ppg · 8.8 rpg
-2023,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 29.4 ppg · 6.3 apg
+2023,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 30.1 ppg · 8.8 rpg · 4.6 apg
+2023,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 29.4 ppg · 6.1 rpg · 6.3 apg
 2023,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 29.1 ppg · 6.7 rpg · 5.0 apg
 2023,F,6,LeBron James,LeBron James,,1966,ppg · 28.9 ppg · 8.3 rpg · 6.8 apg
-2023,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 28.3 ppg
+2023,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 28.3 ppg · 4.4 apg
 2023,G,1,Devin Booker,Devin Booker,,3136193,ppg · 27.8 ppg · 5.5 apg
 2023,G,2,Kyrie Irving,Kyrie Irving,,6442,ppg · 27.0 ppg · 5.5 apg
 2023,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 26.6 ppg · 6.9 rpg
 2023,G,11,Trae Young,Trae Young,,4277905,ppg · 26.2 ppg · 10.2 apg
-2023,G,12,Ja Morant,Ja Morant,,4279888,ppg · 26.2 ppg · 8.1 apg
-2023,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 26.0 ppg · 7.0 rpg
+2023,G,12,Ja Morant,Ja Morant,,4279888,ppg · 26.2 ppg · 5.9 rpg · 8.1 apg
+2023,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 26.0 ppg · 7.0 rpg · 4.6 apg
 2023,F,3,Anthony Davis,Anthony Davis,,6583,ppg · 25.9 ppg · 12.5 rpg
 2023,F,23,Lauri Markkanen,Lauri Markkanen,,4066336,ppg · 25.6 ppg · 8.6 rpg
-2023,F,30,Julius Randle,Julius Randle,,3064514,ppg · 25.1 ppg · 10.0 rpg
+2023,F,30,Julius Randle,Julius Randle,,3064514,ppg · 25.1 ppg · 10.0 rpg · 4.1 apg
 2023,G,5,De'Aaron Fox,De'Aaron Fox,,4066259,ppg · 25.0 ppg · 6.1 apg
-2023,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 24.8 ppg
-2023,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 24.7 ppg · 5.8 apg
-2023,G,1,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 24.6 ppg
+2023,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 24.8 ppg · 4.2 apg
+2023,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 24.7 ppg · 5.5 rpg · 5.8 apg
+2023,G,1,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 24.6 ppg · 5.8 rpg · 4.4 apg
 2023,G,11,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 24.5 ppg · 5.1 apg
 2023,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 24.5 ppg · 11.8 rpg · 9.8 apg
 2023,F,43,Pascal Siakam,Pascal Siakam,,3149673,ppg · 24.2 ppg · 7.8 rpg · 5.8 apg
 2023,G,11,Jalen Brunson,Jalen Brunson,,3934672,ppg · 24.0 ppg · 6.2 apg
-2023,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 23.8 ppg · 6.5 rpg
-2023,F,13,Paul George,Paul George,,4251,ppg · 23.8 ppg · 5.1 apg
-2023,G,1,LaMelo Ball,LaMelo Ball,,4432816,ppg · 23.3 ppg · 8.4 apg
+2023,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 23.8 ppg · 6.5 rpg · 3.9 apg
+2023,F,13,Paul George,Paul George,,4251,ppg · 23.8 ppg · 6.1 rpg · 5.1 apg
+2023,G,1,LaMelo Ball,LaMelo Ball,,4432816,ppg · 23.3 ppg · 6.4 rpg · 8.4 apg
 2023,G,3,Bradley Beal,Bradley Beal,,6580,ppg · 23.2 ppg · 5.4 apg
 2023,C,6,Kristaps Porziņģis,Kristaps Porzingis,,3102531,ppg · 23.2 ppg · 8.4 rpg
-2023,F,22,Jimmy Butler,Jimmy Butler III,,6430,ppg · 22.9 ppg · 5.3 apg
-2023,G,4,Jalen Green,Jalen Green,,4437244,ppg · 22.1 ppg
+2023,F,22,Jimmy Butler,Jimmy Butler III,,6430,ppg · 22.9 ppg · 5.9 rpg · 5.3 apg
+2023,G,4,Jalen Green,Jalen Green,,4437244,ppg · 22.1 ppg · 3.7 apg
 2023,F,3,Keldon Johnson,Keldon Johnson,,4395723,ppg · 22.0 ppg
 2023,G,11,Klay Thompson,Klay Thompson,,6475,ppg · 21.9 ppg
 2023,G,10,Darius Garland,Darius Garland,,4396907,ppg · 21.6 ppg · 7.8 apg
 2023,F,44,Bojan Bogdanović,Bojan Bogdanovic,,3593,ppg · 21.6 ppg
-2023,G,22,Desmond Bane,Desmond Bane,,4066320,ppg · 21.5 ppg
-2023,F,33,Kyle Kuzma,Kyle Kuzma,,3134907,ppg · 21.2 ppg · 7.2 rpg
-2023,F,10,Domantas Sabonis,Domantas Sabonis,,3155942,rpg · 12.3 rpg · 7.3 apg
+2023,G,22,Desmond Bane,Desmond Bane,,4066320,ppg · 21.5 ppg · 4.4 apg
+2023,F,33,Kyle Kuzma,Kyle Kuzma,,3134907,ppg · 21.2 ppg · 7.2 rpg · 3.7 apg
+2023,G,3,Terry Rozier,Terry Rozier,,3074752,ppg · 21.1 ppg · 5.1 apg
+2023,G,1,Anfernee Simons,Anfernee Simons,,4351851,ppg · 21.1 ppg · 4.1 apg
+2023,G,1,James Harden,James Harden,,3992,ppg · 21.0 ppg · 6.1 rpg · 10.7 apg
+2023,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 20.9 ppg · 5.7 apg
+2023,G,0,Jordan Clarkson,Jordan Clarkson,,2528426,ppg · 20.8 ppg · 4.4 apg
+2023,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 20.8 ppg · 8.1 rpg · 4.8 apg
+2023,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,ppg · 20.7 ppg · 10.4 apg
+2023,F,9,Jerami Grant,Jerami Grant,,2991070,ppg · 20.5 ppg
+2023,G,5,Dejounte Murray,Dejounte Murray,,3907497,ppg · 20.5 ppg · 5.3 rpg · 6.1 apg
+2023,G,3,Jordan Poole,Jordan Poole,,4277956,ppg · 20.4 ppg · 4.5 apg
+2023,C,13,Bam Adebayo,Bam Adebayo,,4066261,ppg · 20.4 ppg · 9.2 rpg
+2023,G,0,Tyrese Maxey,Tyrese Maxey,,4431678,ppg · 20.3 ppg · 3.5 apg
+2023,G,12,Kelly Oubre Jr.,Kelly Oubre Jr.,,3133603,ppg · 20.2 ppg · 5.2 rpg
+2023,G,1,Mikal Bridges,Mikal Bridges,,3147657,ppg · 20.1 ppg
+2023,G,14,Tyler Herro,Tyler Herro,,4395725,ppg · 20.1 ppg · 5.4 rpg · 4.2 apg
+2023,F,10,Domantas Sabonis,Domantas Sabonis,,3155942,rpg · 19.1 ppg · 12.3 rpg · 7.3 apg
 2023,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 11.6 rpg
 2023,C,4,Steven Adams,Steven Adams,,2991235,rpg · 11.5 rpg
 2023,C,15,Clint Capela,Clint Capela,,3102529,rpg · 11.0 rpg
-2023,C,9,Nikola Vučević,Nikola Vucevic,,6478,rpg · 11.0 rpg
-2023,G,1,James Harden,James Harden,,3992,apg · 21.0 ppg · 10.7 apg
-2023,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,apg · 20.7 ppg · 10.4 apg
+2023,C,9,Nikola Vučević,Nikola Vucevic,,6478,rpg · 17.6 ppg · 11.0 rpg
 2023,G,3,Chris Paul,Chris Paul,,2779,apg · 8.9 apg
-2023,G,,Skylar Mays,Skylar Mays,,4066269,apg · 8.3 apg
-2023,G,0,Russell Westbrook,Russell Westbrook,,3468,apg · 7.5 apg
+2023,G,,Skylar Mays,Skylar Mays,,4066269,apg · 15.3 ppg · 8.3 apg
+2023,G,0,Russell Westbrook,Russell Westbrook,,3468,apg · 15.9 ppg · 5.8 rpg · 7.5 apg
+2023,G,21,Jrue Holiday,Jrue Holiday,,3995,apg · 19.3 ppg · 7.4 apg
+2023,G,23,Fred VanVleet,Fred VanVleet,,2991230,apg · 19.3 ppg · 7.2 apg
 2024,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 34.7 ppg · 11.0 rpg · 5.6 apg
 2024,G,77,Luka Dončić,Luka Doncic,,3945274,ppg · 33.9 ppg · 9.2 rpg · 9.8 apg
 2024,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 30.4 ppg · 11.5 rpg · 6.5 apg
-2024,G,2,Shai Gilgeous-Alexander,Shai Gilgeous-Alexander,,4278073,ppg · 30.1 ppg · 6.2 apg
+2024,G,2,Shai Gilgeous-Alexander,Shai Gilgeous-Alexander,,4278073,ppg · 30.1 ppg · 5.5 rpg · 6.2 apg
 2024,G,11,Jalen Brunson,Jalen Brunson,,3934672,ppg · 28.7 ppg · 6.7 apg
 2024,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 27.1 ppg · 6.6 rpg · 5.0 apg
 2024,G,1,Devin Booker,Devin Booker,,3136193,ppg · 27.1 ppg · 6.9 apg
@@ -1462,90 +1822,120 @@ season,pos,number,wiki_title,name,team,espn_id,note
 2024,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 26.4 ppg · 5.1 apg
 2024,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 26.4 ppg · 12.4 rpg · 9.0 apg
 2024,G,0,Tyrese Maxey,Tyrese Maxey,,4431678,ppg · 25.9 ppg · 6.2 apg
-2024,G,5,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 25.9 ppg · 5.1 apg
+2024,G,5,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 25.9 ppg · 5.4 rpg · 5.1 apg
 2024,G,11,Trae Young,Trae Young,,4277905,ppg · 25.7 ppg · 10.8 apg
 2024,F,23,LeBron James,LeBron James,,1966,ppg · 25.7 ppg · 7.3 rpg · 8.3 apg
 2024,G,11,Kyrie Irving,Kyrie Irving,,6442,ppg · 25.6 ppg · 5.2 apg
-2024,G,12,Ja Morant,Ja Morant,,4279888,ppg · 25.1 ppg · 8.1 apg
+2024,G,12,Ja Morant,Ja Morant,,4279888,ppg · 25.1 ppg · 5.6 rpg · 8.1 apg
 2024,F,3,Anthony Davis,Anthony Davis,,6583,ppg · 24.7 ppg · 12.6 rpg
 2024,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 24.3 ppg · 7.0 apg
 2024,G,11,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 24.0 ppg · 5.3 apg
 2024,F,30,Julius Randle,Julius Randle,,3064514,ppg · 24.0 ppg · 9.2 rpg · 5.0 apg
 2024,G,1,LaMelo Ball,LaMelo Ball,,4432816,ppg · 23.9 ppg · 8.0 apg
 2024,G,22,Desmond Bane,Desmond Bane,,4066320,ppg · 23.7 ppg · 5.5 apg
-2024,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 23.7 ppg
+2024,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 23.7 ppg · 6.1 rpg · 3.6 apg
 2024,F,23,Lauri Markkanen,Lauri Markkanen,,4066336,ppg · 23.2 ppg · 8.2 rpg
-2024,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 23.0 ppg
-2024,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 22.9 ppg · 5.0 apg
+2024,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 23.0 ppg · 5.5 rpg · 3.6 apg
+2024,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 22.9 ppg · 5.8 rpg · 5.0 apg
 2024,G,2,Cade Cunningham,Cade Cunningham,,4432166,ppg · 22.7 ppg · 7.5 apg
 2024,G,1,Anfernee Simons,Anfernee Simons,,4351851,ppg · 22.6 ppg · 5.5 apg
 2024,F,13,Paul George,Paul George,,4251,ppg · 22.6 ppg
 2024,F,5,Paolo Banchero,Paolo Banchero,,4432573,ppg · 22.5 ppg · 6.9 rpg · 5.4 apg
-2024,F,13,Jaren Jackson Jr.,Jaren Jackson Jr.,,4277961,ppg · 22.5 ppg
-2024,G,5,Dejounte Murray,Dejounte Murray,,3907497,ppg · 22.5 ppg · 6.4 apg
+2024,F,13,Jaren Jackson Jr.,Jaren Jackson Jr.,,4277961,ppg · 22.5 ppg · 5.5 rpg
+2024,G,5,Dejounte Murray,Dejounte Murray,,3907497,ppg · 22.5 ppg · 5.3 rpg · 6.4 apg
 2024,G,24,Cam Thomas,Cam Thomas,,4432174,ppg · 22.5 ppg
-2024,F,33,Kyle Kuzma,Kyle Kuzma,,3134907,ppg · 22.2 ppg · 6.6 rpg
+2024,F,33,Kyle Kuzma,Kyle Kuzma,,3134907,ppg · 22.2 ppg · 6.6 rpg · 4.2 apg
 2024,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 21.8 ppg · 8.3 rpg
-2024,F,43,Pascal Siakam,Pascal Siakam,,3149673,ppg · 21.7 ppg · 7.1 rpg
-2024,F,1,Victor Wembanyama,Victor Wembanyama,,5104157,ppg · 21.4 ppg · 10.6 rpg
+2024,F,43,Pascal Siakam,Pascal Siakam,,3149673,ppg · 21.7 ppg · 7.1 rpg · 4.3 apg
+2024,F,1,Victor Wembanyama,Victor Wembanyama,,5104157,ppg · 21.4 ppg · 10.6 rpg · 3.9 apg
 2024,G,27,Jamal Murray,Jamal Murray,,3936299,ppg · 21.2 ppg · 6.5 apg
+2024,C,28,Alperen Şengün,Alperen Sengun,,4871144,ppg · 21.1 ppg · 9.3 rpg · 5.0 apg
+2024,F,0,Miles Bridges,Miles Bridges,,4066383,ppg · 21.0 ppg · 7.3 rpg
+2024,F,9,Jerami Grant,Jerami Grant,,2991070,ppg · 21.0 ppg
+2024,G,14,Tyler Herro,Tyler Herro,,4395725,ppg · 20.8 ppg · 5.3 rpg · 4.5 apg
+2024,F,14,Brandon Ingram,Brandon Ingram,,3913176,ppg · 20.8 ppg · 5.7 apg
+2024,F,22,Jimmy Butler,Jimmy Butler III,,6430,ppg · 20.8 ppg · 5.3 rpg · 5.0 apg
+2024,F,9,RJ Barrett,RJ Barrett,,4395625,ppg · 20.2 ppg · 5.4 rpg
+2024,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,ppg · 20.1 ppg · 10.9 apg
+2024,C,8,Kristaps Porziņģis,Kristaps Porzingis,,3102531,ppg · 20.1 ppg · 7.2 rpg
+2024,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 20.0 ppg · 4.6 apg
+2024,F,4,Scottie Barnes,Scottie Barnes,,4433134,ppg · 19.9 ppg · 8.2 rpg · 6.1 apg
+2024,G,2,Terry Rozier,Terry Rozier,,3074752,ppg · 19.8 ppg · 5.6 apg
+2024,F,22,Franz Wagner,Franz Wagner,,4566434,ppg · 19.7 ppg · 5.3 rpg · 3.7 apg
+2024,G,4,Jalen Green,Jalen Green,,4437244,ppg · 19.6 ppg
+2024,G,1,Mikal Bridges,Mikal Bridges,,3147657,ppg · 19.6 ppg · 3.6 apg
 2024,F,10,Domantas Sabonis,Domantas Sabonis,,3155942,rpg · 19.4 ppg · 13.7 rpg · 8.2 apg
 2024,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 12.9 rpg
 2024,C,0,Jalen Duren,Jalen Duren,,4433621,rpg · 11.6 rpg
-2024,C,2,Deandre Ayton,Deandre Ayton,,4278129,rpg · 11.1 rpg
-2024,C,20,Jusuf Nurkić,Jusuf Nurkic,,3102530,rpg · 11.0 rpg
-2024,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,apg · 20.1 ppg · 10.9 apg
-2024,G,1,James Harden,James Harden,,3992,apg · 8.5 apg
-2024,G,5,Fred VanVleet,Fred VanVleet,,2991230,apg · 8.1 apg
+2024,C,2,Deandre Ayton,Deandre Ayton,,4278129,rpg · 16.7 ppg · 11.1 rpg
+2024,C,20,Jusuf Nurkić,Jusuf Nurkic,,3102530,rpg · 11.0 rpg · 4.0 apg
+2024,G,1,James Harden,James Harden,,3992,apg · 16.6 ppg · 8.5 apg
+2024,G,5,Fred VanVleet,Fred VanVleet,,2991230,apg · 17.4 ppg · 8.1 apg
 2024,G,5,Tyus Jones,Tyus Jones,,3135046,apg · 7.3 apg
 2024,G,3,Chris Paul,Chris Paul,,2779,apg · 6.8 apg
+2024,G,10,Darius Garland,Darius Garland,,4396907,apg · 18.0 ppg · 6.5 apg
 2025,G,2,Shai Gilgeous-Alexander,Shai Gilgeous-Alexander,,4278073,ppg · 32.7 ppg · 6.4 apg
 2025,F,34,Giannis Antetokounmpo,Giannis Antetokounmpo,,3032977,ppg · 30.4 ppg · 11.9 rpg · 6.5 apg
 2025,C,15,Nikola Jokić,Nikola Jokic,,3112335,ppg · 29.6 ppg · 12.7 rpg · 10.2 apg
 2025,G,77,Luka Dončić,Luka Doncic,,3945274,ppg · 28.2 ppg · 8.2 rpg · 7.7 apg
-2025,G,5,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 27.6 ppg
+2025,G,5,Anthony Edwards (basketball),Anthony Edwards,,4594268,ppg · 27.6 ppg · 5.7 rpg · 4.5 apg
 2025,F,0,Jayson Tatum,Jayson Tatum,,4065648,ppg · 26.8 ppg · 8.7 rpg · 6.0 apg
-2025,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 26.6 ppg
+2025,F,35,Kevin Durant,Kevin Durant,,3202,ppg · 26.6 ppg · 6.0 rpg · 4.2 apg
 2025,G,0,Tyrese Maxey,Tyrese Maxey,,4431678,ppg · 26.3 ppg · 6.1 apg
-2025,G,2,Cade Cunningham,Cade Cunningham,,4432166,ppg · 26.1 ppg · 9.1 apg
+2025,G,2,Cade Cunningham,Cade Cunningham,,4432166,ppg · 26.1 ppg · 6.1 rpg · 9.1 apg
 2025,G,11,Jalen Brunson,Jalen Brunson,,3934672,ppg · 26.0 ppg · 7.3 apg
 2025,F,5,Paolo Banchero,Paolo Banchero,,4432573,ppg · 25.9 ppg · 7.5 rpg · 4.8 apg
 2025,G,1,Devin Booker,Devin Booker,,3136193,ppg · 25.6 ppg · 7.1 apg
 2025,G,1,LaMelo Ball,LaMelo Ball,,4432816,ppg · 25.2 ppg · 7.4 apg
 2025,G,0,Damian Lillard,Damian Lillard,,6606,ppg · 24.9 ppg · 7.1 apg
 2025,F,3,Anthony Davis,Anthony Davis,,6583,ppg · 24.7 ppg · 11.6 rpg
-2025,G,11,Kyrie Irving,Kyrie Irving,,6442,ppg · 24.7 ppg
+2025,G,11,Kyrie Irving,Kyrie Irving,,6442,ppg · 24.7 ppg · 4.6 apg
 2025,F,1,Zion Williamson,Zion Williamson,,4395628,ppg · 24.6 ppg · 7.2 rpg · 5.3 apg
 2025,G,30,Stephen Curry,Stephen Curry,,3975,ppg · 24.5 ppg · 6.0 apg
 2025,C,32,Karl-Anthony Towns,Karl-Anthony Towns,,3136195,ppg · 24.4 ppg · 12.8 rpg
 2025,F,23,LeBron James,LeBron James,,1966,ppg · 24.4 ppg · 7.8 rpg · 8.2 apg
-2025,F,1,Victor Wembanyama,Victor Wembanyama,,5104157,ppg · 24.3 ppg · 11.0 rpg
+2025,F,1,Victor Wembanyama,Victor Wembanyama,,5104157,ppg · 24.3 ppg · 11.0 rpg · 3.7 apg
 2025,G,11,Trae Young,Trae Young,,4277905,ppg · 24.2 ppg · 11.6 apg
-2025,F,22,Franz Wagner,Franz Wagner,,4566434,ppg · 24.1 ppg · 4.7 apg
-2025,G,24,Cam Thomas,Cam Thomas,,4432174,ppg · 24.0 ppg
+2025,F,22,Franz Wagner,Franz Wagner,,4566434,ppg · 24.1 ppg · 5.7 rpg · 4.7 apg
+2025,G,24,Cam Thomas,Cam Thomas,,4432174,ppg · 24.0 ppg · 3.8 apg
 2025,G,45,Donovan Mitchell,Donovan Mitchell,,3908809,ppg · 24.0 ppg · 5.0 apg
 2025,G,14,Tyler Herro,Tyler Herro,,4395725,ppg · 23.9 ppg · 5.5 apg
-2025,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 23.8 ppg · 8.2 rpg
+2025,C,21,Joel Embiid,Joel Embiid,,3059318,ppg · 23.8 ppg · 8.2 rpg · 4.5 apg
 2025,G,4,De'Aaron Fox,De'Aaron Fox,,4066259,ppg · 23.5 ppg · 6.3 apg
-2025,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 23.3 ppg
+2025,G,8,Zach LaVine,Zach LaVine,,3064440,ppg · 23.3 ppg · 4.2 apg
 2025,G,12,Ja Morant,Ja Morant,,4279888,ppg · 23.2 ppg · 7.3 apg
-2025,G,1,James Harden,James Harden,,3992,ppg · 22.8 ppg · 8.7 apg
+2025,G,1,James Harden,James Harden,,3992,ppg · 22.8 ppg · 5.8 rpg · 8.7 apg
 2025,F,3,Brandon Ingram,Brandon Ingram,,3913176,ppg · 22.2 ppg · 5.2 apg
-2025,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 22.2 ppg
-2025,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 22.2 ppg
-2025,F,13,Jaren Jackson Jr.,Jaren Jackson Jr.,,4277961,ppg · 22.2 ppg
+2025,G,10,DeMar DeRozan,DeMar DeRozan,,3978,ppg · 22.2 ppg · 4.4 apg
+2025,G,7,Jaylen Brown,Jaylen Brown,,3917376,ppg · 22.2 ppg · 5.8 rpg · 4.5 apg
+2025,F,13,Jaren Jackson Jr.,Jaren Jackson Jr.,,4277961,ppg · 22.2 ppg · 5.6 rpg
 2025,G,24,Norman Powell,Norman Powell,,2595516,ppg · 21.8 ppg
 2025,G,8,Jalen Williams,Jalen Williams,,4593803,ppg · 21.6 ppg · 5.1 apg
-2025,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 21.5 ppg
+2025,F,2,Kawhi Leonard,Kawhi Leonard,,6450,ppg · 21.5 ppg · 5.9 rpg
 2025,G,27,Jamal Murray,Jamal Murray,,3936299,ppg · 21.4 ppg · 6.0 apg
 2025,F,25,Trey Murphy III,Trey Murphy III,,4397688,ppg · 21.2 ppg
-2025,F,11,Domantas Sabonis,Domantas Sabonis,,3155942,rpg · 19.1 ppg · 13.9 rpg · 6.0 apg
-2025,C,40,Ivica Zubac,Ivica Zubac,,4017837,rpg · 12.6 rpg
+2025,G,3,CJ McCollum,CJ McCollum,,2490149,ppg · 21.1 ppg · 4.1 apg
+2025,F,9,RJ Barrett,RJ Barrett,,4395625,ppg · 21.1 ppg · 6.3 rpg · 5.4 apg
+2025,F,24,"Brandon Miller (basketball, born 2002)",Brandon Miller,,4433287,ppg · 21.0 ppg · 3.6 apg
+2025,G,4,Jalen Green,Jalen Green,,4437244,ppg · 21.0 ppg
+2025,G,10,Darius Garland,Darius Garland,,4396907,ppg · 20.6 ppg · 6.7 apg
+2025,G,13,Jordan Poole,Jordan Poole,,4277956,ppg · 20.5 ppg · 4.5 apg
+2025,G,0,Coby White,Coby White,,4395651,ppg · 20.4 ppg · 4.5 apg
+2025,F,0,Miles Bridges,Miles Bridges,,4066383,ppg · 20.3 ppg · 7.5 rpg · 3.9 apg
+2025,F,43,Pascal Siakam,Pascal Siakam,,3149673,ppg · 20.2 ppg · 6.9 rpg
+2025,G,15,Austin Reaves,Austin Reaves,,4066457,ppg · 20.2 ppg · 5.8 apg
+2025,C,8,Kristaps Porziņģis,Kristaps Porzingis,,3102531,ppg · 19.5 ppg · 6.8 rpg
+2025,F,4,Scottie Barnes,Scottie Barnes,,4433134,ppg · 19.3 ppg · 7.7 rpg · 5.8 apg
+2025,G,1,Anfernee Simons,Anfernee Simons,,4351851,ppg · 19.3 ppg · 4.8 apg
+2025,G,22,Desmond Bane,Desmond Bane,,4066320,ppg · 19.2 ppg · 6.1 rpg · 5.3 apg
+2025,F,11,Domantas Sabonis,Domantas Sabonis,,3155942,ppg · 19.1 ppg · 13.9 rpg · 6.0 apg
+2025,C,40,Ivica Zubac,Ivica Zubac,,4017837,rpg · 16.8 ppg · 12.6 rpg
 2025,C,24,Walker Kessler,Walker Kessler,,4433136,rpg · 12.2 rpg
 2025,C,27,Rudy Gobert,Rudy Gobert,,3032976,rpg · 10.9 rpg
-2025,C,55,Isaiah Hartenstein,Isaiah Hartenstein,,4222252,rpg · 10.7 rpg
-2025,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,apg · 9.2 apg
+2025,C,55,Isaiah Hartenstein,Isaiah Hartenstein,,4222252,rpg · 10.7 rpg · 3.8 apg
+2025,C,0,Jalen Duren,Jalen Duren,,4433621,rpg · 10.3 rpg
+2025,G,0,Tyrese Haliburton,Tyrese Haliburton,,4396993,apg · 18.6 ppg · 9.2 apg
 2025,G,3,Chris Paul,Chris Paul,,2779,apg · 7.4 apg
-2025,G,5,Dejounte Murray,Dejounte Murray,,3907497,apg · 7.4 apg
-2025,G,3,Josh Giddey,Josh Giddey,,4871145,apg · 8.1 rpg · 7.2 apg
+2025,G,5,Dejounte Murray,Dejounte Murray,,3907497,apg · 17.5 ppg · 6.5 rpg · 7.4 apg
+2025,G,3,Josh Giddey,Josh Giddey,,4871145,apg · 14.6 ppg · 8.1 rpg · 7.2 apg
 2025,G,4,Elfrid Payton,Elfrid Payton,,2583639,apg · 6.9 apg

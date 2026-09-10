@@ -1,8 +1,9 @@
 /**
  * NBA pool (decision 0009, Frank 2026-09-10): per season since 1995 (labelled
- * by the year the season ends), the top 40 by points per game plus the top 5
- * by rebounds and by assists who are not already in, from ESPN's league
- * leaders (ESPN's own qualifiers apply). Facts per player from ESPN (college
+ * by the year the season ends), the top scorers by points per game plus the
+ * top 5 by rebounds and by assists who are not already in, from ESPN's league
+ * leaders (ESPN's own qualifiers apply). Pool size: 50 through 1999, 65 from
+ * 2000 on (Frank, 2026-09-10) — the scoring cut moves to hit the size. Facts per player from ESPN (college
  * + logo, draft with the era-correct team, jersey, country) and the player's
  * Wikipedia infobox (numbers worn, college gaps).
  *
@@ -46,7 +47,8 @@ const ROSTER_ALIASES: Record<string, string[]> = {
 }
 /** "j r smith" and "jr smith" are the same key once spaced initials collapse. */
 const looseKey = (name: string) => nameKey(name).replace(/\b([a-z]) (?=[a-z]\b)/g, '$1')
-const TOP_PPG = 40
+/** Pool size per season (end year): 50 through 1999, 65 from 2000 (Frank, 2026-09-10). */
+const poolSize = (season: number) => (season >= 2000 ? 65 : 50)
 const TOP_OTHER = 5
 
 function parseArgs(argv: string[]) {
@@ -124,14 +126,16 @@ async function main() {
   }
   const selections: SelectionRow[] = []
   for (let season = args.first; season <= args.through; season++) {
-    const leaders = await espn.leagueLeaders(season, 60)
+    const leaders = await espn.leagueLeaders(season, 100)
     const ppg = leaders['pointsPerGame'] ?? []
     if (!ppg.length) {
       log(`${season}: no leaders on ESPN`)
       continue
     }
+    const target = poolSize(season)
     const chosen = new Map<string, { ppg?: string; rpg?: string; apg?: string; why: string }>()
-    for (const l of ppg.slice(0, TOP_PPG)) chosen.set(l.athleteId, { ppg: l.display, why: 'ppg' })
+    for (const l of ppg.slice(0, target - 2 * TOP_OTHER))
+      chosen.set(l.athleteId, { ppg: l.display, why: 'ppg' })
     for (const [cat, key, label] of [
       ['reboundsPerGame', 'rpg', 'rpg'],
       ['assistsPerGame', 'apg', 'apg'],
@@ -143,6 +147,11 @@ async function main() {
         chosen.set(l.athleteId, { [key]: l.display, why: label })
         added++
       }
+    }
+    // Rebounders or passers who were already top scorers left room: fill it with the next scorers.
+    for (const l of ppg) {
+      if (chosen.size >= target) break
+      if (!chosen.has(l.athleteId)) chosen.set(l.athleteId, { ppg: l.display, why: 'ppg' })
     }
     // Attach the other averages to every chosen player for the note.
     for (const [cat, key] of [

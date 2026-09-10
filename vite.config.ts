@@ -37,7 +37,7 @@ export default defineConfig({
         // App shell + content bundle are precached; faces are cached as they are seen.
         globPatterns: ['**/*.{js,css,html,svg,png,json}'],
         // The content bundle is ~3 MB raw (115 KB over the wire); workbox's default cap is 2 MiB.
-        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
+        maximumFileSizeToCacheInBytes: 12 * 1024 * 1024,
         globIgnores: ['faces/**', 'colleges/**', 'tiles/**'],
         runtimeCaching: [
           {

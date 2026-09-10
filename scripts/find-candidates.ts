@@ -44,18 +44,21 @@ const CATS: Record<string, keyof Omit<Line, 'id' | 'team'>> = {
 }
 
 function args() {
-  const a = { first: 1995, through: 2025, perSeason: 30 }
+  const a = { first: 1995, through: 2025, perSeason: 30, fillTo: 0 }
   const v = process.argv.slice(2)
   for (let i = 0; i < v.length; i++) {
     if (v[i] === '--first') a.first = Number(v[++i])
     else if (v[i] === '--through') a.through = Number(v[++i])
     else if (v[i] === '--per-season') a.perSeason = Number(v[++i])
+    // --fill-to N: instead of 30 suggestions, propose exactly enough players (not yet in the
+    // pool, extras included) to bring each season to N. Writes content/candidates_fill.csv.
+    else if (v[i] === '--fill-to') a.fillTo = Number(v[++i])
   }
   return a
 }
 
 async function main() {
-  const { first, through, perSeason } = args()
+  const { first, through, perSeason, fillTo } = args()
   const espn = new EspnClient({ cacheDir: path.join(ROOT, '.cache/espn'), refresh: false })
   const read = (f: string) => readFile(path.join(ROOT, 'content', f), 'utf8')
   const { content, errors } = parseProBowlContent({
@@ -68,6 +71,21 @@ async function main() {
   for (const s of content.selections) {
     if (!s.espn_id) continue
     ;(proBowlers.get(s.season) ?? proBowlers.set(s.season, new Set()).get(s.season)!).add(s.espn_id)
+  }
+  // Extras already in the pool count too when filling.
+  try {
+    const extras = parseProBowlContent({
+      selections: await read('extra_selections.csv'),
+      players: await read('probowl_players.csv'),
+      draftTeams: await read('draft_teams.csv'),
+    })
+    for (const s of extras.content.selections)
+      if (s.espn_id)
+        (proBowlers.get(s.season) ?? proBowlers.set(s.season, new Set()).get(s.season)!).add(
+          s.espn_id,
+        )
+  } catch {
+    /* no extras file */
   }
   const pool = new Set(content.players.map((p) => p.espn_id))
   const teamAbbr = new Map<string, string>()
@@ -160,11 +178,23 @@ async function main() {
       const take = left.filter((c) => c.pos === pos).slice(0, QUOTA[pos])
       picked.push(...take)
     }
-    for (const c of left) if (picked.length < perSeason && !picked.includes(c)) picked.push(c)
-    picked.sort((a, b) => a.pos.localeCompare(b.pos) || b.score - a.score)
-    out.push(...picked.slice(0, perSeason))
+    const want = fillTo ? Math.max(0, fillTo - pb.size) : perSeason
+    // Filling: scores are not comparable across positions (a passer's yards dwarf a back's),
+    // so rank within each position and interleave in roster proportions (QB 8 : RB 8 : WR 11 : TE 3).
+    const rankWithin = new Map<Candidate, number>()
+    for (const pos of ['QB', 'RB', 'WR', 'TE'] as const)
+      left.filter((c) => c.pos === pos).forEach((c, i) => rankWithin.set(c, (i + 1) / QUOTA[pos]))
+    const interleaved = [...left].sort((a, b) => rankWithin.get(a)! - rankWithin.get(b)!)
+    const chosenList = fillTo
+      ? interleaved.slice(0, want)
+      : (() => {
+          for (const c of left) if (picked.length < perSeason && !picked.includes(c)) picked.push(c)
+          picked.sort((a, b) => a.pos.localeCompare(b.pos) || b.score - a.score)
+          return picked.slice(0, perSeason)
+        })()
+    out.push(...chosenList)
     console.log(
-      `${season}: ${picked.slice(0, perSeason).length} candidates (${lines.size} leaders, ${pb.size} Pro Bowlers excluded)`,
+      `${season}: ${chosenList.length} candidates (${lines.size} leaders, ${pb.size} already in the pool${fillTo ? `, target ${fillTo}` : ''})`,
     )
   }
 
@@ -184,7 +214,7 @@ async function main() {
     'approved',
   ]
   await writeFile(
-    path.join(ROOT, 'content', 'candidates.csv'),
+    path.join(ROOT, 'content', fillTo ? 'candidates_fill.csv' : 'candidates.csv'),
     serializeCsv(
       header,
       out.map((c) => [
@@ -204,7 +234,9 @@ async function main() {
       ]),
     ),
   )
-  console.log(`wrote ${out.length} candidates to content/candidates.csv`)
+  console.log(
+    `wrote ${out.length} candidates to content/${fillTo ? 'candidates_fill.csv' : 'candidates.csv'}`,
+  )
 }
 
 main().catch((e) => {

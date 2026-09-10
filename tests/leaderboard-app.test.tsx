@@ -71,7 +71,11 @@ const fetchFn = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
         streak: r.streak,
         you: r.token === token,
       })),
-      you: null,
+      you: (() => {
+        const i = sorted.findIndex((r) => r.token === token)
+        const me = sorted[i]
+        return me ? { rank: i + 1, streak: me.streak, name: me.name, roll: '2014 · X · Y' } : null
+      })(),
       players: sorted.length,
       rounds: 57,
     })
@@ -241,6 +245,19 @@ describe('Leaderboard flow (decision 0008)', () => {
     fireEvent.click(screen.getByTestId('close-board'))
     expect(screen.queryByTestId('leaderboard')).toBeNull()
     expect(location.pathname).toBe('/')
+  })
+
+  it("shows the server's best for today on the home screen when the device has no record of it", async () => {
+    rows.push({ name: 'Frank', streak: 22, token: 'tok-Frank' })
+    localStorage.setItem(
+      'nfl-faces:player:v1',
+      JSON.stringify({ playerId: 'Frank', name: 'Frank', email: 'f@x.co', token: 'tok-Frank' }),
+    )
+    render(<App bundle={bundle} config={config} deps={deps()} rng={mulberry32(1)} />)
+    await until(() =>
+      expect(screen.getByTestId('best')).toHaveTextContent('Your top streak of the day: 22'),
+    )
+    expect(screen.getByTestId('start-share')).toBeInTheDocument()
   })
 
   it('a fresh device is not gated and can browse the board from the start screen', async () => {

@@ -19,6 +19,8 @@ export interface LeaderboardApi {
   posted: ScoreResponse | null
   /** Why the last post did not land, if it did not. */
   postError: string | null
+  /** The server's record of this player's best today (the leaderboard's truth), once known. */
+  dayBest: { streak: number; roll: string | null } | null
 }
 
 export function useLeaderboard(game: GameApi, client: LeaderboardClient): LeaderboardApi {
@@ -30,6 +32,7 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
     error: string | null
   } | null>(null)
   const postedFor = useRef<number | null>(null)
+  const [dayBest, setDayBest] = useState<{ streak: number; roll: string | null } | null>(null)
   const { state, mode, losingRoll, analytics } = game
   const over = state.phase === 'gameover' && state.lastOutcome !== null
 
@@ -40,6 +43,12 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
     const r = await client.submitScore({ streak: state.streak, rounds, roll: losingRoll, mode })
     if (r.ok) {
       setOutcome({ round, result: r.result, error: null })
+      // The server's best for the day: this streak if it improved it, else what it already had.
+      setDayBest((prev) =>
+        r.result.improved || !prev || r.result.best > prev.streak
+          ? { streak: r.result.best, roll: r.result.improved ? losingRoll : (prev?.roll ?? null) }
+          : prev,
+      )
       analytics.track('score_posted', {
         streak: state.streak,
         rank: r.result.rank,
@@ -57,6 +66,27 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
     postedFor.current = state.roundIndex
     void submit()
   }, [over, state.roundIndex, submit])
+
+  // Signed in: ask the server for today's best, so the home screen agrees with the board
+  // (the device may have played on another day, another browser, or before local tracking).
+  useEffect(() => {
+    if (!identity) return
+    let cancelled = false
+    client
+      .board()
+      .then((b) => {
+        if (cancelled || !b.you) return
+        setDayBest((prev) =>
+          prev && prev.streak >= b.you!.streak
+            ? prev
+            : { streak: b.you!.streak, roll: b.you!.roll },
+        )
+      })
+      .catch(() => {})
+    return () => {
+      cancelled = true
+    }
+  }, [client, identity])
 
   // Retry anything queued while offline.
   useEffect(() => {
@@ -86,5 +116,6 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
     signUp,
     posted: current?.result ?? null,
     postError: current?.error ?? null,
+    dayBest,
   }
 }

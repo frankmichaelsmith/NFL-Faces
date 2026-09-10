@@ -185,7 +185,7 @@ describe('leaderboard', () => {
       '3 Cal 5 *',
       '4 Dee 1',
     ])
-    expect(b.you).toEqual({ rank: 3, streak: 5, name: 'Cal' })
+    expect(b.you).toEqual({ rank: 3, streak: 5, name: 'Cal', roll: null })
     expect(b.players).toBe(4)
     // rounds: each seeded game posted no rounds field, so it counts streak + 1
     expect(b.rounds).toBe(6 + 10 + 6 + 2)

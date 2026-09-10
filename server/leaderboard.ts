@@ -229,7 +229,13 @@ export async function leaderboard(
   let you: LeaderboardResponse['you'] = null
   if (me) {
     const mine = await deps.store.getScore(me.id, day, BOARD_MODE)
-    if (mine) you = { rank: await deps.store.rankOf(mine), streak: mine.streak, name: me.name }
+    if (mine)
+      you = {
+        rank: await deps.store.rankOf(mine),
+        streak: mine.streak,
+        name: me.name,
+        roll: mine.roll,
+      }
   }
   const players = await deps.store.countScores(day, BOARD_MODE)
   const { rounds } = await deps.store.totals(day, BOARD_MODE)

@@ -50,7 +50,7 @@ describe('DrizzleLeaderboardStore', () => {
       '2 Ann 5',
       '3 Cal 5 *',
     ])
-    expect(board.you).toEqual({ rank: 3, streak: 5, name: 'Cal' })
+    expect(board.you).toEqual({ rank: 3, streak: 5, name: 'Cal', roll: null })
     expect(board.players).toBe(3)
     expect(board.rounds).toBe(6 + 10 + 6 + 4) // four Pro Bowl posts, each streak + 1
     await postScore(deps, a.token, { streak: 1, rounds: 2, roll: null, mode: 'probowl' })

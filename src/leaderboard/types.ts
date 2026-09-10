@@ -45,7 +45,7 @@ export interface LeaderboardResponse {
   mode: 'probowl'
   rows: LeaderboardRow[]
   /** The caller's own standing, also when outside the listed rows; null when unknown or unranked. */
-  you: { rank: number; streak: number; name: string } | null
+  you: { rank: number; streak: number; name: string; roll: string | null } | null
   /** Players with a score today. */
   players: number
   /** Rounds played today across every posted game. */

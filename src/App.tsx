@@ -9,7 +9,7 @@ import { useBoardRoute } from './leaderboard/route'
 import { LeaderboardScreen } from './components/LeaderboardScreen'
 import { defaultRng, mulberry32, type Rng } from './game/rng'
 import { useGame, type GameDeps } from './state/useGame'
-import { loadStats, saveStats, setLastMode, todayBest } from './storage/local'
+import { loadStats, saveStats, setLastMode, todayBest, type DailyBest } from './storage/local'
 
 const IMAGE_BASE_URL = (import.meta.env.VITE_IMAGE_BASE_URL as string | undefined) ?? '/faces/'
 /**
@@ -120,7 +120,7 @@ function Game({
           mode={mode}
           onMode={onMode}
           proBowlAvailable={!!bundle.probowl}
-          today={todayBest(game.stats, mode)}
+          today={todayFor(game.stats, mode, lb.dayBest)}
           siteUrl={SITE_URL}
           analytics={game.analytics}
           onStart={game.start}
@@ -146,6 +146,23 @@ function Game({
       {board}
     </>
   )
+}
+
+/** Today's best for the home screen: the server's number when it knows more than this device does. */
+function todayFor(
+  stats: Parameters<typeof todayBest>[0],
+  mode: Mode,
+  server: { streak: number; roll: string | null } | null,
+): DailyBest | null {
+  const local = todayBest(stats, mode)
+  if (server && (!local || server.streak > local.best_streak))
+    return {
+      day: local?.day ?? '',
+      best_streak: server.streak,
+      best_streak_roll: server.roll,
+      games: local?.games ?? 1,
+    }
+  return local
 }
 
 function Center({ children }: { children: React.ReactNode }) {

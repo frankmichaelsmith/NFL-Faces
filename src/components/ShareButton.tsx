@@ -8,13 +8,21 @@ interface Props {
   analytics: Analytics
   className?: string
   testId?: string
+  /** Idle label; "Share" on the game-over panel, "Share Score" on the home screen. */
+  label?: string
 }
 
 /** What the button reads for a moment after a tap (Frank, 2026-09-09: the button itself answers). */
 const LABEL: Record<ShareResult, string> = { copied: 'Copied', failed: "Couldn't copy" }
 
 /** Copies the share text to the clipboard and says so on the button. No share sheet. */
-export function ShareButton({ payload, analytics, className = '', testId = 'share' }: Props) {
+export function ShareButton({
+  payload,
+  analytics,
+  className = '',
+  testId = 'share',
+  label = 'Share',
+}: Props) {
   const [state, setState] = useState<ShareResult | null>(null)
   useEffect(() => {
     if (!state) return
@@ -44,7 +52,7 @@ export function ShareButton({ payload, analytics, className = '', testId = 'shar
         className
       }
     >
-      {state ? LABEL[state] : 'Share'}
+      {state ? LABEL[state] : label}
     </button>
   )
 }

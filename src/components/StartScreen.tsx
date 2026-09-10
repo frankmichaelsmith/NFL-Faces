@@ -81,12 +81,6 @@ export function StartScreen({
           'Tap the quarterback who started for that team that season. Six seconds.'
         )}
       </p>
-      {today && (
-        <p className="text-sm uppercase tracking-widest text-white/50" data-testid="best">
-          Your top streak of the day:{' '}
-          <span className="font-black text-accent">{today.best_streak}</span>
-        </p>
-      )}
       {needsSignUp && gate ? (
         <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-card p-4">
           <SignUpForm
@@ -99,29 +93,36 @@ export function StartScreen({
         </div>
       ) : (
         <div className="flex w-full max-w-xs gap-3">
-          <button
-            type="button"
-            onClick={needsSignUp ? () => setGate(true) : onStart}
-            className="min-h-[56px] flex-1 rounded-2xl bg-accent px-8 text-xl font-black text-ink active:scale-95"
-          >
-            Start
-          </button>
           {today && (
             // Played today: share the day's top streak from here too (Frank, 2026-09-09).
             <ShareButton
               payload={{ streak: today.best_streak, roll: today.best_streak_roll, url: siteUrl }}
               analytics={analytics}
-              className="min-h-[56px] basis-2/5 px-4 text-lg"
+              className="min-h-[56px] flex-1 px-4 text-lg"
               testId="start-share"
+              label="Share Score"
             />
           )}
+          <button
+            type="button"
+            onClick={needsSignUp ? () => setGate(true) : onStart}
+            className="min-h-[56px] flex-1 rounded-2xl bg-accent px-6 text-xl font-black text-ink active:scale-95"
+          >
+            {today ? 'Play Again' : 'Start'}
+          </button>
         </div>
+      )}
+      {today && (
+        <p className="text-sm uppercase tracking-widest text-white/50" data-testid="best">
+          Your top streak of the day:{' '}
+          <span className="font-black text-accent">{today.best_streak}</span>
+        </p>
       )}
       <button
         type="button"
         onClick={onOpenBoard}
         data-testid="open-board"
-        className="min-h-[44px] rounded-xl px-4 text-sm font-bold uppercase tracking-widest text-white/60 underline-offset-4 hover:underline"
+        className="min-h-[44px] rounded-xl px-4 text-sm font-bold uppercase tracking-widest text-white/60 underline decoration-white/40 underline-offset-4 hover:decoration-white"
       >
         Today&apos;s leaderboard
       </button>

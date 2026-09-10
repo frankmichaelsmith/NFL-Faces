@@ -57,7 +57,7 @@ const config = { ...GAME_CONFIG, spinMsPerWheel: 10, feedbackMs: 10, decisionMs:
 
 /** Drive the app from the start screen to a painted round. Returns the answer slot. */
 async function startRound() {
-  fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+  fireEvent.click(screen.getByRole('button', { name: /^(Start|Play Again)$/ }))
   // spin → landed
   await act(async () => {
     vi.advanceTimersByTime(config.wheels.length * config.spinMsPerWheel + 5)

@@ -105,7 +105,7 @@ async function until(check: () => void) {
 }
 
 async function startRound() {
-  fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+  fireEvent.click(screen.getByRole('button', { name: /^(Start|Play Again)$/ }))
   await act(async () => {
     vi.advanceTimersByTime(3 * config.spinMsPerWheel + 5)
   })
@@ -220,7 +220,7 @@ describe('Leaderboard flow (decision 0008)', () => {
     )
     render(<App bundle={bundle} config={config} deps={deps()} rng={mulberry32(1)} />)
     expect(screen.queryByTestId('signup')).toBeNull()
-    fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+    fireEvent.click(screen.getByRole('button', { name: /^(Start|Play Again)$/ }))
     expect(screen.getByTestId('signup')).toBeInTheDocument()
     expect(screen.queryByTestId('faces')).toBeNull()
     fireEvent.change(screen.getByTestId('signup-email'), { target: { value: 'a@b.co' } })

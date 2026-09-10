@@ -73,7 +73,7 @@ const config = { spinMsPerWheel: 10, feedbackMs: 10, decisionMs: GAME_CONFIG.dec
 const deps = { feedback: createFeedback(true) }
 
 async function startRound(wheels: number) {
-  fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+  fireEvent.click(screen.getByRole('button', { name: /^(Start|Play Again)$/ }))
   await act(async () => {
     vi.advanceTimersByTime(wheels * config.spinMsPerWheel + 5)
   })

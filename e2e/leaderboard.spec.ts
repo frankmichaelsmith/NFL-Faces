@@ -86,7 +86,7 @@ test('first streak gates on email, the score posts, the board lists the player, 
 
   // The email is remembered: after a reload, Start plays with no gate.
   await page.reload()
-  await page.getByRole('button', { name: 'Start' }).click()
+  await page.getByRole('button', { name: 'Play Again' }).click()
   await expect(page.getByTestId('signup')).toHaveCount(0)
   await expect(page.getByTestId('faces')).toBeVisible({ timeout: 10_000 })
 })

@@ -14,9 +14,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icons/favicon.svg', 'icons/apple-touch-icon.png'],
       manifest: {
-        name: 'NFL Faces',
-        short_name: 'NFL Faces',
-        description: 'Two wheels, three faces, six seconds. Tap the quarterback.',
+        name: 'Spin Streak',
+        short_name: 'Spin Streak',
+        description: 'A season, a Pro Bowler, a category. Tap the correct answer in 6 seconds or less.',
         theme_color: '#0b1020',
         background_color: '#0b1020',
         display: 'standalone',

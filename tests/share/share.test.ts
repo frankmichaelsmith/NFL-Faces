@@ -6,11 +6,11 @@ import { shareText } from '../../src/share/text'
 describe('shareText', () => {
   it('matches the spec format with streak, losing roll and url', () => {
     expect(shareText({ streak: 12, roll: '2005 · BENGALS', url: 'https://nflfaces.app' })).toBe(
-      'NFL Faces 🏈 12 in a row. Died on 2005 BENGALS. https://nflfaces.app',
+      'Spin Streak 🏈 12 in a row. Died on 2005 BENGALS. https://nflfaces.app',
     )
   })
   it('handles a streak of one and a missing roll', () => {
-    expect(shareText({ streak: 1, roll: null, url: 'u' })).toBe('NFL Faces 🏈 1 in a row. u')
+    expect(shareText({ streak: 1, roll: null, url: 'u' })).toBe('Spin Streak 🏈 1 in a row. u')
   })
 })
 
@@ -47,7 +47,7 @@ describe('share flow', () => {
     expect(r).toBe('shared')
     const arg = shareFn.mock.calls[0]![0]
     expect(arg.text).toContain('4 in a row')
-    expect(arg.files![0]!.name).toBe('nfl-faces-4.png')
+    expect(arg.files![0]!.name).toBe('spin-streak-4.png')
   })
 
   it('shares text only when files are not shareable', async () => {
@@ -79,7 +79,7 @@ describe('share flow', () => {
     })
     expect(r).toBe('copied')
     expect(writeText).toHaveBeenCalledWith(shareText(payload))
-    expect(download).toHaveBeenCalledWith(png, 'nfl-faces-4.png')
+    expect(download).toHaveBeenCalledWith(png, 'spin-streak-4.png')
   })
 
   it('reports failure when nothing works', async () => {

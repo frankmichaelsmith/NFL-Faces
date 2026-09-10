@@ -86,7 +86,7 @@ export async function renderShareCard(
   ctx.textBaseline = 'alphabetic'
   ctx.fillStyle = theme.text
   ctx.font = `900 ${L.title.size}px ${theme.displayFont}`
-  ctx.fillText((payload.gameName ?? 'NFL Faces').toUpperCase(), L.title.x, L.title.y)
+  ctx.fillText((payload.gameName ?? 'Spin Streak').toUpperCase(), L.title.x, L.title.y)
 
   ctx.fillStyle = theme.accent
   ctx.font = `900 ${L.streak.size}px ${theme.displayFont}`

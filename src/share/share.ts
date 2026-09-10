@@ -18,7 +18,7 @@ export async function share(payload: SharePayload, deps: ShareDeps = {}): Promis
   const render = deps.render ?? renderShareCard
   const download = deps.download ?? downloadBlob
   const text = shareText(payload)
-  const filename = `nfl-faces-${payload.streak}.png`
+  const filename = `spin-streak-${payload.streak}.png`
 
   const png = await render(payload, 'square').catch(() => null)
 

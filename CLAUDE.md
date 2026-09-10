@@ -13,7 +13,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 
 ## Start screen (Frank, 2026-09-09)
 
-The start screen is titled **Spin Streak** (tagline "Tap the correct answer in 6 seconds or less.") (`GAME_TITLE`) and offers **only Pro Bowl Mode** (`VISIBLE_MODES = ['probowl']`); the mode picker appears only when more than one mode is visible. Faces mode is hidden, not removed: `?mode=faces` opens it, and its code, content, photos and tests stay green. The app name, tab title, PWA manifest and share text still say NFL Faces until Frank renames them.
+The start screen is titled **Spin Streak** (tagline "Tap the correct answer in 6 seconds or less.") (`GAME_TITLE`) and offers **only Pro Bowl Mode** (`VISIBLE_MODES = ['probowl']`); the mode picker appears only when more than one mode is visible. Faces mode is hidden, not removed: `?mode=faces` opens it, and its code, content, photos and tests stay green. Tab title, PWA manifest, icons and share text say **Spin Streak** (renamed 2026-09-09; the repo, Vercel project and content pipeline keep the NFL Faces name). Domain: **https://spinstreak.app** (www redirects per Vercel's default; `nfl-faces.vercel.app` still serves).
 
 ## Pro Bowl Mode (Frank, 2026-09-09 — decision 0007)
 

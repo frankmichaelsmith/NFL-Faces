@@ -8,7 +8,7 @@ export interface SharePayload {
   gameName?: string
 }
 
-export function shareText({ streak, roll, url, gameName = 'NFL Faces' }: SharePayload): string {
+export function shareText({ streak, roll, url, gameName = 'Spin Streak' }: SharePayload): string {
   const count = streak === 1 ? '1 in a row' : `${streak} in a row`
   const died = roll ? ` Died on ${roll.replace(/\s*·\s*/g, ' ')}.` : ''
   return `${gameName} 🏈 ${count}.${died} ${url}`.trim()

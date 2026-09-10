@@ -385,7 +385,8 @@ export function parseInfobox(fullText: string): InfoboxFacts {
   const birthCountry = birthPlace ? (birthPlace.split(',').pop() ?? '').trim() || null : null
   const nationality =
     plain(strip(field(wikitext, 'nationality'))).split(/\s*(?:[/,]|&|\band\b)\s*/)[0] || null
-  const numbers = (strip(field(wikitext, 'number')).match(/\d+/g) ?? [])
+  // Football infoboxes write number; basketball ones write career_number.
+  const numbers = (strip(fieldAny(wikitext, 'number', 'career_number')).match(/\d+/g) ?? [])
     .map(Number)
     .filter((n) => n <= 99)
   return {

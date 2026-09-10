@@ -156,7 +156,7 @@ describe('parseInfobox', () => {
   })
   it('an empty field stays empty instead of swallowing the next line; basketball fields are read too', () => {
     const f = parseInfobox(
-      '{{Infobox basketball biography\n| name = Kobe Bryant\n| birth_place = \n| birth_date = 1978\n| draft_year = 1996\n| draft_round = 1\n| draft_pick = 13\n| nationality = Polish & American\n| number = 8, 24\n}}\n',
+      '{{Infobox basketball biography\n| name = Kobe Bryant\n| birth_place = \n| birth_date = 1978\n| draft_year = 1996\n| draft_round = 1\n| draft_pick = 13\n| nationality = Polish & American\n| career_number = 8, 24\n}}\n',
     )
     expect(f.birthCountry).toBeNull()
     expect(f.draftYear).toBe(1996)

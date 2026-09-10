@@ -121,7 +121,12 @@ describe('leaderboard client', () => {
     expect(c.identity()).toBeNull() // nothing persisted, no crash
   })
   it('formats the board day as a calendar date', () => {
-    expect(formatDay('2026-09-09')).toBe('Wed, Sep 9')
+    expect(formatDay('2026-09-09')).toBe('September 9th')
+    expect(formatDay('2026-01-01')).toBe('January 1st')
+    expect(formatDay('2026-02-02')).toBe('February 2nd')
+    expect(formatDay('2026-03-03')).toBe('March 3rd')
+    expect(formatDay('2026-11-11')).toBe('November 11th')
+    expect(formatDay('2026-12-22')).toBe('December 22nd')
     expect(formatDay('junk')).toBe('junk')
   })
 })

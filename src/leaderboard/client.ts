@@ -206,10 +206,21 @@ export function createLeaderboardClient(opts: ClientOptions = {}): LeaderboardCl
   }
 }
 
-/** "2026-09-09" → "Wed, Sep 9". Parsed as calendar parts, so no time-zone drift. */
+/** "2026-09-09" → "September 9th". Parsed as calendar parts, so no time-zone drift. */
 export function formatDay(day: string): string {
   const m = day.match(/^(\d{4})-(\d{2})-(\d{2})$/)
   if (!m) return day
-  const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]))
-  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+  const n = Number(m[3])
+  const d = new Date(Number(m[1]), Number(m[2]) - 1, n)
+  const suffix =
+    n % 100 >= 11 && n % 100 <= 13
+      ? 'th'
+      : n % 10 === 1
+        ? 'st'
+        : n % 10 === 2
+          ? 'nd'
+          : n % 10 === 3
+            ? 'rd'
+            : 'th'
+  return `${d.toLocaleDateString('en-US', { month: 'long' })} ${n}${suffix}`
 }

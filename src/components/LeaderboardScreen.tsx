@@ -40,7 +40,7 @@ export function LeaderboardScreen({ client, onClose, signedIn }: Props) {
             </h2>
             <p className="text-xs uppercase tracking-widest text-white/50">
               {board
-                ? `${formatDay(board.day)} · ${board.rounds.toLocaleString()} rounds played · resets midnight ET`
+                ? `${formatDay(board.day)} · ${board.rounds.toLocaleString()} rounds played`
                 : ' '}
             </p>
           </div>

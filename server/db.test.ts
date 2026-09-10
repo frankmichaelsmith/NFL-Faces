@@ -55,11 +55,14 @@ describe('DrizzleLeaderboardStore', () => {
     expect(board.rounds).toBe(6 + 10 + 6 + 4) // four Pro Bowl posts, each streak + 1
     await postScore(deps, a.token, { streak: 1, rounds: 2, roll: null, mode: 'probowl' })
     expect(await deps.store.totals('2026-09-09', 'probowl')).toMatchObject({ rounds: 28, games: 5 })
-    // re-register: same player id, new name and token; the old token stops working
+    // re-register from another device: same player id, new name, and both tokens keep working
     const a2 = (await register(deps, { email: 'ANN@x.co', name: 'Annie' })).body as RegisterResponse
     expect(a2.playerId).toBe('p1')
     expect(
       (await postScore(deps, a.token, { streak: 1, roll: null, mode: 'probowl' })).status,
+    ).toBe(200)
+    expect(
+      (await postScore(deps, 'bogus', { streak: 1, roll: null, mode: 'probowl' })).status,
     ).toBe(401)
     const again = (await leaderboard(deps, a2.token, null)).body as LeaderboardResponse
     expect(again.rows[1]).toMatchObject({ name: 'Annie', streak: 5, you: true })

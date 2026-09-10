@@ -4,9 +4,9 @@
  * without a network or a database.
  *
  * - A player is an email (lower-cased, unique) with a display name and one
- *   bearer token. Registering an email again issues a fresh token and may
- *   rename; the previous device is signed out. No verification (Frank,
- *   2026-09-09): fastest to ship, typos and fakes accepted.
+ *   bearer token per device. Registering an email again adds a token and may
+ *   rename; every device the player joined on stays signed in (Frank,
+ *   2026-09-09). No verification: fastest to ship, typos and fakes accepted.
  * - The board is Pro Bowl Mode only, one row per player per Eastern calendar
  *   day: the best streak of the day, ties broken by who reached it first.
  * - A score post never lowers a day's best; a lower or equal streak is a
@@ -30,7 +30,6 @@ export interface Player {
   id: string
   email: string
   name: string
-  tokenHash: string
   createdAt: string
   updatedAt: string
 }
@@ -58,6 +57,8 @@ export interface LeaderboardStore {
   findPlayerByTokenHash(hash: string): Promise<Player | null>
   /** Insert, or replace every field of the player with this email. */
   upsertPlayer(player: Player): Promise<void>
+  /** Remember one more device token for the player. Existing tokens stay valid. */
+  addToken(playerId: string, tokenHash: string, createdAt: string): Promise<void>
   getScore(playerId: string, day: string, mode: string): Promise<DailyScore | null>
   /** Insert or replace the (player, day, mode) row. */
   putScore(score: DailyScore): Promise<void>
@@ -153,11 +154,11 @@ export async function register(deps: Deps, input: unknown): Promise<Result<Regis
     id: existing?.id ?? (deps.newId ?? randomUUID)(),
     email,
     name,
-    tokenHash: hashToken(token),
     createdAt: existing?.createdAt ?? now.toISOString(),
     updatedAt: now.toISOString(),
   }
   await deps.store.upsertPlayer(player)
+  await deps.store.addToken(player.id, hashToken(token), now.toISOString())
   return {
     status: existing ? 200 : 201,
     body: { playerId: player.id, name: player.name, token, day: etDay(now) },
@@ -229,6 +230,7 @@ export function beats(a: DailyScore, b: DailyScore): boolean {
 
 export class InMemoryLeaderboardStore implements LeaderboardStore {
   players = new Map<string, Player>() // by id
+  tokens = new Map<string, string>() // token hash → player id
   scores = new Map<string, DailyScore>() // by player:day:mode
   dayTotals = new Map<string, DailyTotals>() // by day:mode
 
@@ -236,10 +238,14 @@ export class InMemoryLeaderboardStore implements LeaderboardStore {
     return [...this.players.values()].find((p) => p.email === email) ?? null
   }
   async findPlayerByTokenHash(hash: string) {
-    return [...this.players.values()].find((p) => p.tokenHash === hash) ?? null
+    const id = this.tokens.get(hash)
+    return id ? (this.players.get(id) ?? null) : null
   }
   async upsertPlayer(player: Player) {
     this.players.set(player.id, player)
+  }
+  async addToken(playerId: string, tokenHash: string) {
+    this.tokens.set(tokenHash, playerId)
   }
   async getScore(playerId: string, day: string, mode: string) {
     return this.scores.get(`${playerId}:${day}:${mode}`) ?? null

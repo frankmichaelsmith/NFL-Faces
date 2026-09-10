@@ -23,9 +23,17 @@ export const players = pgTable('players', {
   id: text('id').primaryKey(),
   email: text('email').notNull().unique(),
   name: text('name').notNull(),
-  token_hash: text('token_hash').notNull().unique(),
   created_at: text('created_at').notNull(),
   updated_at: text('updated_at').notNull(),
+})
+
+/** One row per device a player joined on. Tokens are never rotated away (Frank, 2026-09-09). */
+export const playerTokens = pgTable('player_tokens', {
+  token_hash: text('token_hash').primaryKey(),
+  player_id: text('player_id')
+    .notNull()
+    .references(() => players.id),
+  created_at: text('created_at').notNull(),
 })
 
 export const dailyScores = pgTable(
@@ -59,10 +67,19 @@ CREATE TABLE IF NOT EXISTS players (
   id text PRIMARY KEY,
   email text NOT NULL UNIQUE,
   name text NOT NULL,
-  token_hash text NOT NULL UNIQUE,
   created_at text NOT NULL,
   updated_at text NOT NULL
 );
+CREATE TABLE IF NOT EXISTS player_tokens (
+  token_hash text PRIMARY KEY,
+  player_id text NOT NULL REFERENCES players(id),
+  created_at text NOT NULL
+);
+ALTER TABLE players ADD COLUMN IF NOT EXISTS token_hash text;
+ALTER TABLE players ALTER COLUMN token_hash DROP NOT NULL;
+INSERT INTO player_tokens (token_hash, player_id, created_at)
+  SELECT token_hash, id, updated_at FROM players WHERE token_hash IS NOT NULL
+  ON CONFLICT (token_hash) DO NOTHING;
 CREATE TABLE IF NOT EXISTS daily_scores (
   player_id text NOT NULL REFERENCES players(id),
   day text NOT NULL,
@@ -94,7 +111,6 @@ const toPlayer = (r: typeof players.$inferSelect): Player => ({
   id: r.id,
   email: r.email,
   name: r.name,
-  tokenHash: r.token_hash,
   createdAt: r.created_at,
   updatedAt: r.updated_at,
 })
@@ -115,15 +131,24 @@ export class DrizzleLeaderboardStore implements LeaderboardStore {
     return rows[0] ? toPlayer(rows[0]) : null
   }
   async findPlayerByTokenHash(hash: string) {
-    const rows = await this.db.select().from(players).where(eq(players.token_hash, hash))
-    return rows[0] ? toPlayer(rows[0]) : null
+    const rows = await this.db
+      .select({ player: players })
+      .from(playerTokens)
+      .innerJoin(players, eq(players.id, playerTokens.player_id))
+      .where(eq(playerTokens.token_hash, hash))
+    return rows[0] ? toPlayer(rows[0].player) : null
+  }
+  async addToken(playerId: string, tokenHash: string, createdAt: string) {
+    await this.db
+      .insert(playerTokens)
+      .values({ token_hash: tokenHash, player_id: playerId, created_at: createdAt })
+      .onConflictDoNothing()
   }
   async upsertPlayer(p: Player) {
     const row = {
       id: p.id,
       email: p.email,
       name: p.name,
-      token_hash: p.tokenHash,
       created_at: p.createdAt,
       updated_at: p.updatedAt,
     }

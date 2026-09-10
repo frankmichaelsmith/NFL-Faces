@@ -48,17 +48,19 @@ describe('register', () => {
       201,
     )
     expect(r).toEqual({ playerId: 'p1', name: 'Frank', token: 'tok1', day: '2026-09-09' })
-    const p = await d.store.findPlayerByEmail('frank@example.com')
-    expect(p?.tokenHash).toBe(hashToken('tok1'))
+    const p = await d.store.findPlayerByTokenHash(hashToken('tok1'))
+    expect(p?.email).toBe('frank@example.com')
   })
-  it('registering the same email again keeps the player, renames, and rotates the token', async () => {
+  it('registering the same email on another device keeps the player, renames, and keeps both devices signed in', async () => {
     const d = fresh()
     await register(d, { email: 'a@b.co', name: 'One' })
     const r = ok<RegisterResponse>(await register(d, { email: 'A@B.CO', name: 'Two' }), 200)
     expect(r.playerId).toBe('p1')
     expect(r.name).toBe('Two')
     expect(r.token).toBe('tok2')
-    expect(await d.store.findPlayerByTokenHash(hashToken('tok1'))).toBeNull()
+    // the first device's token still works (Frank, 2026-09-09: stay signed in everywhere)
+    expect((await d.store.findPlayerByTokenHash(hashToken('tok1')))?.name).toBe('Two')
+    expect((await d.store.findPlayerByTokenHash(hashToken('tok2')))?.id).toBe('p1')
   })
   it('rejects bad emails and names with a readable message', async () => {
     const d = fresh()

@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest'
 import {
   IDENTITY_KEY,
   QUEUE_KEY,
+  addDays,
   createLeaderboardClient,
   formatDay,
 } from '../../src/leaderboard/client'
@@ -119,6 +120,13 @@ describe('leaderboard client', () => {
     const c = createLeaderboardClient({ fetch: api.fetchFn, storage: null })
     expect((await c.register('a@b.co', 'Al')).ok).toBe(true)
     expect(c.identity()).toBeNull() // nothing persisted, no crash
+  })
+  it('steps days as calendar arithmetic across month and year ends', () => {
+    expect(addDays('2026-09-10', -1)).toBe('2026-09-09')
+    expect(addDays('2026-09-01', -1)).toBe('2026-08-31')
+    expect(addDays('2026-01-01', -1)).toBe('2025-12-31')
+    expect(addDays('2026-02-28', 1)).toBe('2026-03-01')
+    expect(addDays('junk', 1)).toBe('junk')
   })
   it('formats the board day as a calendar date', () => {
     expect(formatDay('2026-09-09')).toBe('September 9th')

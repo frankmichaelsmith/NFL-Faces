@@ -61,9 +61,14 @@ const fetchFn = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
     return json(200, { day: '2026-09-09', best: me.streak, improved: true, rank })
   }
   if (path.includes('/api/leaderboard')) {
-    const sorted = [...rows].filter((r) => r.streak > 0).sort((a, b) => b.streak - a.streak)
+    const day = new URL(path, 'http://x').searchParams.get('day') ?? '2026-09-10'
+    // Only today has scores in this fake; any earlier day is empty.
+    const sorted =
+      day === '2026-09-10'
+        ? [...rows].filter((r) => r.streak > 0).sort((a, b) => b.streak - a.streak)
+        : []
     return json(200, {
-      day: '2026-09-09',
+      day,
       mode: 'probowl',
       rows: sorted.map((r, i) => ({
         rank: i + 1,
@@ -236,6 +241,25 @@ describe('Leaderboard flow (decision 0008)', () => {
     })
     expect(screen.getByTestId('faces')).toBeInTheDocument()
     expect(client.identity()?.name).toBe('Al')
+  })
+
+  it('the arrows step back to earlier days and forward again to today', async () => {
+    render(<App bundle={bundle} config={config} deps={deps()} rng={mulberry32(1)} />)
+    fireEvent.click(screen.getByTestId('open-board'))
+    await until(() => expect(screen.getByTestId('board-day')).toHaveTextContent('September 10th'))
+    expect(screen.getByTestId('board-next')).toBeDisabled()
+    expect(screen.getByRole('heading', { name: /today's leaderboard/i })).toBeInTheDocument()
+    fireEvent.click(screen.getByTestId('board-prev'))
+    await until(() => expect(screen.getByTestId('board-day')).toHaveTextContent('September 9th'))
+    await until(() =>
+      expect(screen.getByText(/No streaks were posted that day/)).toBeInTheDocument(),
+    )
+    expect(screen.getByRole('heading', { name: /^leaderboard$/i })).toBeInTheDocument()
+    // the board's first day: no further back
+    expect(screen.getByTestId('board-prev')).toBeDisabled()
+    fireEvent.click(screen.getByTestId('board-next'))
+    await until(() => expect(screen.getByTestId('board-day')).toHaveTextContent('September 10th'))
+    expect(screen.getByTestId('board-next')).toBeDisabled()
   })
 
   it('opening /leaderboard directly shows the board over the start screen', async () => {

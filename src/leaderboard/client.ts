@@ -206,6 +206,17 @@ export function createLeaderboardClient(opts: ClientOptions = {}): LeaderboardCl
   }
 }
 
+/** The first day the leaderboard existed; the day arrows never go earlier. */
+export const FIRST_BOARD_DAY = '2026-09-09'
+
+/** "2026-09-10" ± n days, as calendar arithmetic (no time zones involved). */
+export function addDays(day: string, n: number): string {
+  const m = day.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  if (!m) return day
+  const d = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]) + n))
+  return d.toISOString().slice(0, 10)
+}
+
 /** "2026-09-09" → "September 9th". Parsed as calendar parts, so no time-zone drift. */
 export function formatDay(day: string): string {
   const m = day.match(/^(\d{4})-(\d{2})-(\d{2})$/)

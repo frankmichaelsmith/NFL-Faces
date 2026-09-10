@@ -63,9 +63,16 @@ export function StartScreen({
         </div>
       )}
       <p className="max-w-xs text-lg text-white/70">
-        {mode === 'probowl'
-          ? 'Tap the correct answer in 6 seconds or less.'
-          : 'Tap the quarterback who started for that team that season. Six seconds.'}
+        {mode === 'probowl' ? (
+          // Frank (2026-09-09): two centred lines, fixed break, no full stop.
+          <>
+            Tap the correct answer
+            <br />
+            in 6 seconds or less
+          </>
+        ) : (
+          'Tap the quarterback who started for that team that season. Six seconds.'
+        )}
       </p>
       {bestStreak > 0 && (
         <p className="text-sm uppercase tracking-widest text-white/50" data-testid="best">

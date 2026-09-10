@@ -154,6 +154,17 @@ describe('parseInfobox', () => {
       ).numbers,
     ).toEqual([13])
   })
+  it('an empty field stays empty instead of swallowing the next line; basketball fields are read too', () => {
+    const f = parseInfobox(
+      '{{Infobox basketball biography\n| name = Kobe Bryant\n| birth_place = \n| birth_date = 1978\n| draft_year = 1996\n| draft_round = 1\n| draft_pick = 13\n| nationality = Polish & American\n| number = 8, 24\n}}\n',
+    )
+    expect(f.birthCountry).toBeNull()
+    expect(f.draftYear).toBe(1996)
+    expect(f.draftPick).toBe(13)
+    expect(f.nationality).toBe('Polish')
+    expect(f.numbers).toEqual([8, 24])
+    expect(parseInfobox('| birth_place = Akron, Ohio, U.S.\n').birthCountry).toBe('U.S.')
+  })
   it('reads only the infobox, not a number= or college= in a later template', () => {
     const marino = parseInfobox(
       '{{Infobox NFL biography\n| name = Dan Marino\n| position = [[Quarterback]]\n| college = [[Pittsburgh Panthers football|Pittsburgh]] (1979–1982)\n}}\nBody text.\n{{cite web | number = 8, 3, 25 | college = Nowhere}}\n',

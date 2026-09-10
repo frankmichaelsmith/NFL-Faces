@@ -14,6 +14,8 @@ const UA = 'nfl-faces-pull/0.1 (+https://github.com/frankmichaelsmith/nfl-faces)
 
 export interface EspnClientOptions {
   cacheDir: string
+  /** League root; defaults to the NFL. NBA: https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba */
+  base?: string
   /** Max in-flight requests. ESPN is tolerant but not infinite. */
   concurrency?: number
   /** Bypass the cache (still writes it). */
@@ -36,7 +38,7 @@ export class EspnClient {
   private readonly queue: Array<() => void> = []
 
   constructor(opts: EspnClientOptions) {
-    this.opts = { concurrency: 12, refresh: false, log: () => {}, ...opts }
+    this.opts = { concurrency: 12, refresh: false, log: () => {}, base: BASE, ...opts }
   }
 
   private async slot<T>(fn: () => Promise<T>): Promise<T> {
@@ -54,7 +56,7 @@ export class EspnClient {
 
   /** GET a JSON document, with disk cache and retry. Throws NotFound on 404. */
   async get<T = unknown>(pathname: string): Promise<T> {
-    const url = pathname.startsWith('http') ? pathname : BASE + pathname
+    const url = pathname.startsWith('http') ? pathname : this.opts.base + pathname
     const key = createHash('sha1').update(url).digest('hex')
     const file = path.join(this.opts.cacheDir, key + '.json')
     if (!this.opts.refresh) {
@@ -179,6 +181,33 @@ export class EspnClient {
   }
 
   /** Everything Pro Bowl Mode needs from an athlete: position, jersey, college, draft, career span. */
+  /** League-wide season leaders: category name → athletes best first (ESPN's qualifiers apply). */
+  async leagueLeaders(
+    season: number,
+    limit = 60,
+  ): Promise<Record<string, { athleteId: string; value: number; display: string }[]>> {
+    let doc: {
+      categories?: {
+        name: string
+        leaders: { value: number; displayValue: string; athlete: { $ref: string } }[]
+      }[]
+    }
+    try {
+      doc = await this.get(`/seasons/${season}/types/2/leaders?limit=${limit}`)
+    } catch (e) {
+      if (e instanceof NotFound) return {}
+      throw e
+    }
+    const out: Record<string, { athleteId: string; value: number; display: string }[]> = {}
+    for (const c of doc.categories ?? [])
+      out[c.name] = c.leaders.map((l) => ({
+        athleteId: idFromRef(l.athlete.$ref),
+        value: l.value,
+        display: l.displayValue,
+      }))
+    return out
+  }
+
   /** Every college football program ESPN knows (id, names, logo), for matching Wikipedia's college names. */
   async colleges(): Promise<EspnCollegeTeam[]> {
     const d = await this.get<{
@@ -220,10 +249,13 @@ export class EspnClient {
             round: a.draft.round,
             pick: a.draft.selection,
             teamAbbr: draftTeam?.abbreviation ?? null,
+            teamName: draftTeam?.displayName ?? null,
           }
         : null,
       debutYear: a.debutYear ?? null,
       active: a.active ?? null,
+      birthCountry: a.birthPlace?.country ?? null,
+      citizenship: a.citizenship ?? null,
     }
   }
 
@@ -268,14 +300,26 @@ export interface EspnAthleteFacts {
   position: string | null
   jersey: number | null
   college: { id: string; name: string; logo: string | null } | null
-  draft: { year: number; round: number; pick: number; teamAbbr: string | null } | null
+  draft: {
+    year: number
+    round: number
+    pick: number
+    teamAbbr: string | null
+    /** The team's name in the draft season (era-correct: "Seattle SuperSonics"). */
+    teamName: string | null
+  } | null
   debutYear: number | null
   active: boolean | null
+  /** Country of birth as ESPN spells it ("USA", "West Germany"), or null. */
+  birthCountry: string | null
+  /** Citizenship when ESPN records one (recent internationals), or null. */
+  citizenship: string | null
 }
 
 // ---- raw shapes (observed 2026-09-09; samples in /samples) -------------------
 
 interface RawTeam {
+  displayName?: string
   id: string
   abbreviation: string
   name: string
@@ -292,6 +336,8 @@ interface RawDepthCharts {
 }
 interface RawAthleteFull extends RawAthlete {
   jersey?: string
+  birthPlace?: { city?: string; state?: string; country?: string }
+  citizenship?: string
   college?: { $ref: string }
   draft?: { year: number; round: number; selection: number; team?: { $ref: string } }
   debutYear?: number

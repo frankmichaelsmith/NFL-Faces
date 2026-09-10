@@ -419,6 +419,9 @@ async function main() {
       draft_team: '',
       draft_team_name: '',
       draft_source: '',
+      country: '',
+      country_name: '',
+      country_source: '',
       included: prev?.included ?? true,
       notes: prev?.notes ?? '',
     }

@@ -59,6 +59,31 @@ async function main() {
       `probowl: ${section.combos.length} combos, ${section.seasons.length} seasons, ${Object.keys(section.players).length} players, ${r.unresolved.length} unresolved selections`,
     )
   }
+  // NBA pool (decision 0009): same builder, Country instead of Position.
+  const nba = await readNba()
+  if (nba) {
+    const positions = ['G', 'F', 'C']
+    const { content: nbaContent, errors: nbaErrors } = parseProBowlContent(nba, { positions })
+    if (nbaErrors.length) {
+      console.error(`NBA content validation failed with ${nbaErrors.length} error(s):`)
+      for (const e of nbaErrors.slice(0, 50)) console.error('  ' + e)
+      process.exit(1)
+    }
+    const { section, report: r } = buildProBowl(nbaContent, {
+      categories: ['alma', 'draft', 'number', 'country'],
+      positions,
+    })
+    bundle.nba = section
+    probowlReport += '\n' + renderProBowlReport(section, r).replace('## Pro Bowl Mode', '## NBA')
+    if (r.hardFailures.length) {
+      console.error(`NBA HARD FAILURES (${r.hardFailures.length}):`)
+      for (const f of r.hardFailures) console.error('  ' + f)
+      process.exit(1)
+    }
+    console.log(
+      `nba: ${section.combos.length} combos, ${section.seasons.length} seasons, ${Object.keys(section.players).length} players, ${Object.keys(section.countries ?? {}).length} countries`,
+    )
+  }
   await mkdir(path.join(ROOT, 'public/data'), { recursive: true })
   await writeFile(path.join(ROOT, 'public/data/bundle.json'), JSON.stringify(bundle))
   await writeFile(
@@ -79,6 +104,20 @@ async function main() {
     console.error(`HARD FAILURES (${report.hardFailures.length}):`)
     for (const f of report.hardFailures) console.error('  ' + f)
     process.exit(1)
+  }
+}
+
+async function readNba() {
+  const read = (f: string) => readFile(path.join(ROOT, 'content', f), 'utf8')
+  try {
+    const [selections, players, draftTeams] = await Promise.all([
+      read('nba_selections.csv'),
+      read('nba_players.csv'),
+      read('nba_draft_teams.csv'),
+    ])
+    return { selections, players, draftTeams }
+  } catch {
+    return null
   }
 }
 

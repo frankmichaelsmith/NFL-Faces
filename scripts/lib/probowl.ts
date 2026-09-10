@@ -48,6 +48,10 @@ export interface PlayerRow {
   draft_team: string
   draft_team_name: string
   draft_source: string
+  /** Country code for the flag (NBA), or ''. */
+  country: string
+  country_name: string
+  country_source: string
   included: boolean
   notes: string
 }
@@ -93,6 +97,8 @@ export const PLAYER_HEADER = [
   'included',
   'notes',
 ] as const
+/** Extra player columns for pools that play Country (NBA); optional when reading. */
+export const COUNTRY_COLS = ['country', 'country_name', 'country_source'] as const
 export const DRAFT_TEAM_HEADER = [
   'abbr',
   'label',
@@ -141,12 +147,16 @@ function table(
 
 const intOrNull = (v: string) => (v === '' ? null : /^-?\d+$/.test(v) ? Number(v) : NaN)
 
-export function parseProBowlContent(files: {
-  selections: string
-  players: string
-  draftTeams: string
-}): { content: ProBowlContent; errors: string[] } {
+export function parseProBowlContent(
+  files: {
+    selections: string
+    players: string
+    draftTeams: string
+  },
+  opts: { positions?: readonly string[]; label?: string } = {},
+): { content: ProBowlContent; errors: string[] } {
   const errors: string[] = []
+  const positions = opts.positions ?? SKILL
   const selections: SelectionRow[] = table(
     'probowl_selections.csv',
     files.selections,
@@ -157,8 +167,8 @@ export function parseProBowlContent(files: {
     const season = intOrNull(r.season!)
     if (season === null || Number.isNaN(season))
       errors.push(`probowl_selections.csv:${r.__line}: season must be an integer`)
-    if (!(SKILL as readonly string[]).includes(r.pos!))
-      errors.push(`probowl_selections.csv:${r.__line}: pos must be one of ${SKILL.join('/')}`)
+    if (!positions.includes(r.pos!))
+      errors.push(`probowl_selections.csv:${r.__line}: pos must be one of ${positions.join('/')}`)
     if (r.espn_id && !PLAYER_KEY.test(r.espn_id))
       errors.push(
         `probowl_selections.csv:${r.__line}: espn_id must be numeric, "wiki:Title", or empty`,
@@ -180,8 +190,9 @@ export function parseProBowlContent(files: {
   const players: PlayerRow[] = table(
     'probowl_players.csv',
     files.players,
-    PLAYER_HEADER,
+    [...PLAYER_HEADER, ...COUNTRY_COLS],
     errors,
+    COUNTRY_COLS,
   ).map((r) => {
     const num = (k: string) => {
       const v = intOrNull(r[k]!)
@@ -191,8 +202,8 @@ export function parseProBowlContent(files: {
     }
     if (!PLAYER_KEY.test(r.espn_id!))
       errors.push(`probowl_players.csv:${r.__line}: espn_id must be numeric or "wiki:Title"`)
-    if (!(SKILL as readonly string[]).includes(r.pos!))
-      errors.push(`probowl_players.csv:${r.__line}: pos must be one of ${SKILL.join('/')}`)
+    if (!positions.includes(r.pos!))
+      errors.push(`probowl_players.csv:${r.__line}: pos must be one of ${positions.join('/')}`)
     if (!['drafted', 'undrafted', 'unknown'].includes(r.draft_status!))
       errors.push(`probowl_players.csv:${r.__line}: draft_status must be drafted|undrafted|unknown`)
     return {
@@ -212,6 +223,9 @@ export function parseProBowlContent(files: {
       draft_team: r.draft_team!,
       draft_team_name: r.draft_team_name!,
       draft_source: r.draft_source!,
+      country: r.country ?? '',
+      country_name: r.country_name ?? '',
+      country_source: r.country_source ?? '',
       included: r.included === 'true' || r.included === '',
       notes: r.notes!,
     }
@@ -275,7 +289,23 @@ export interface ProBowlReport {
   hardFailures: string[]
 }
 
-export function buildProBowl(c: ProBowlContent): {
+export const DEFAULT_CATEGORIES: readonly ProBowlCategory[] = [
+  'alma',
+  'draft',
+  'number',
+  'position',
+]
+
+export interface BuildOptions {
+  categories?: readonly ProBowlCategory[]
+  /** Positions the Position wheel can show as wrong cards (NFL: the four skill slots). */
+  positions?: readonly string[]
+}
+
+export function buildProBowl(
+  c: ProBowlContent,
+  opts: BuildOptions = {},
+): {
   section: ProBowlSection
   report: ProBowlReport
 } {
@@ -307,12 +337,16 @@ export function buildProBowl(c: ProBowlContent): {
   // Value pools across the whole player pool.
   const collegeIds = new Set<string>()
   const draftKeys = new Set<string>()
+  const categories = opts.categories ?? DEFAULT_CATEGORIES
+  const positionList = opts.positions ?? SKILL
+  const countryCodes = new Set<string>()
   const numbersByPos = new Map<Skill, Set<string>>()
   for (const id of inPool) {
     const p = players.get(id)!
     if (p.college_id) collegeIds.add(p.college_id)
     if (p.draft_status === 'drafted') draftKeys.add(p.draft_team)
     if (p.draft_status === 'undrafted') draftKeys.add('UDFA')
+    if (p.country) countryCodes.add(p.country)
   }
   // Wrong numbers come from numbers actually worn by other players at the same position.
   for (const season of Object.keys(numbers))
@@ -328,6 +362,8 @@ export function buildProBowl(c: ProBowlContent): {
     players: {},
     colleges: {},
     teams: {},
+    countries: {},
+    categories: [...categories],
     combos: [],
   }
   for (const id of [...inPool].sort()) {
@@ -343,7 +379,10 @@ export function buildProBowl(c: ProBowlContent): {
           : p.draft_status === 'undrafted'
             ? 'UDFA'
             : null,
+      country: p.country || null,
     }
+    if (p.country && !section.countries![p.country])
+      section.countries![p.country] = { name: p.country_name || p.country }
     if (p.college_id && !section.colleges[p.college_id])
       section.colleges[p.college_id] = {
         name: p.college_name,
@@ -356,7 +395,13 @@ export function buildProBowl(c: ProBowlContent): {
     section.teams[key] = { label: t.label, name: t.name, color: t.color, alt: t.alt_color }
   }
 
-  const byCategory: Record<ProBowlCategory, number> = { alma: 0, draft: 0, number: 0, position: 0 }
+  const byCategory: Record<ProBowlCategory, number> = {
+    alma: 0,
+    draft: 0,
+    number: 0,
+    position: 0,
+    country: 0,
+  }
   const hardFailures: string[] = []
   const labelOf = (key: string) => (key === 'UDFA' ? 'UDFA' : teams.get(key)?.label)
   for (const season of seasons) {
@@ -372,14 +417,14 @@ export function buildProBowl(c: ProBowlContent): {
         section.combos.push({ season, player: id, category, answer, distractors })
         byCategory[category]++
       }
-      if (p.college_id)
+      if (categories.includes('alma') && p.college_id)
         emit(
           'alma',
           p.college_id,
           [...collegeIds].filter((x) => x !== p.college_id),
         )
       const draftAnswer = section.players[id]!.draft
-      if (draftAnswer) {
+      if (categories.includes('draft') && draftAnswer) {
         const ansLabel = labelOf(draftAnswer)
         emit(
           'draft',
@@ -388,17 +433,24 @@ export function buildProBowl(c: ProBowlContent): {
         )
       }
       const worn = numbers[String(season)]?.[id]
-      if (worn !== undefined)
+      if (categories.includes('number') && worn !== undefined)
         emit(
           'number',
           String(worn),
           [...(numbersByPos.get(p.pos) ?? [])].filter((x) => x !== String(worn)),
         )
-      emit(
-        'position',
-        p.pos,
-        SKILL.filter((x) => x !== p.pos),
-      )
+      if (categories.includes('position'))
+        emit(
+          'position',
+          p.pos,
+          positionList.filter((x) => x !== p.pos),
+        )
+      if (categories.includes('country') && p.country)
+        emit(
+          'country',
+          p.country,
+          [...countryCodes].filter((x) => x !== p.country),
+        )
     }
   }
 

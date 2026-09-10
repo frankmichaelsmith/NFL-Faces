@@ -23,7 +23,9 @@
     "pull:probowl": "tsx scripts/pull-probowl.ts",
     "tiles": "tsx scripts/make-tiles.ts",
     "candidates": "tsx scripts/find-candidates.ts",
-    "extras": "tsx scripts/add-extras.ts"
+    "extras": "tsx scripts/add-extras.ts",
+    "pull:nba": "tsx scripts/pull-nba.ts",
+    "nba:assets": "tsx scripts/make-nba-assets.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
@@ -46,6 +48,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^10.10.0",
     "eslint-plugin-react-hooks": "^7.1.1",
+    "flag-icons": "^7.5.0",
     "globals": "^17.12.0",
     "jsdom": "^30.0.1",
     "prettier": "^3.9.6",

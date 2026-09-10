@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from 'react'
-import type { Bundle, ProBowlCategory } from '../game/bundle'
+import { poolOf, type Bundle, type PoolKey, type ProBowlCategory } from '../game/bundle'
 import { describeValue, type ProBowlRound } from '../game/probowl'
 import type { Slot } from '../game/select'
 import type { GameState } from '../state/machine'
@@ -11,6 +11,7 @@ interface Props {
   onTap: (slot: Slot) => void
   onPainted: () => void
   assetBaseUrl: string
+  poolKey?: PoolKey
 }
 
 type Look = 'neutral' | 'correct' | 'wrong'
@@ -26,6 +27,7 @@ function lookFor(state: GameState, slot: Slot): Look {
 export function optionImage(category: ProBowlCategory, value: string, base: string): string | null {
   if (category === 'alma') return `${base}colleges/${value}.png`
   if (category === 'draft') return `${base}tiles/${value}.png`
+  if (category === 'country') return `${base}flags/${value}.png`
   return null
 }
 
@@ -34,7 +36,15 @@ export function optionImage(category: ProBowlCategory, value: string, base: stri
  * position. Names of values appear only after a tap (the tapped card, and the
  * answer after a miss), mirroring the face cards.
  */
-export function OptionCards({ bundle, round, state, onTap, onPainted, assetBaseUrl }: Props) {
+export function OptionCards({
+  bundle,
+  round,
+  state,
+  onTap,
+  onPainted,
+  assetBaseUrl,
+  poolKey = 'probowl',
+}: Props) {
   useLayoutEffect(() => {
     let raf2 = 0
     const raf1 = requestAnimationFrame(() => {
@@ -50,7 +60,7 @@ export function OptionCards({ bundle, round, state, onTap, onPainted, assetBaseU
   const active = state.phase === 'awaiting' && state.revealAt !== null
   const settled = state.phase === 'correct' || state.phase === 'gameover'
   const [broken, setBroken] = useState<Record<string, true>>({})
-  const section = bundle.probowl!
+  const section = poolOf(bundle, poolKey)!
   const category = round.combo.category
 
   return (
@@ -62,7 +72,7 @@ export function OptionCards({ bundle, round, state, onTap, onPainted, assetBaseU
         const img = broken[value] ? null : optionImage(category, value, assetBaseUrl)
         const label = describeValue(section, category, value)
         // A caption only helps when the card is a picture; "#80" under "80" is noise (Frank, 2026-09-09).
-        const captioned = category === 'alma' || category === 'draft'
+        const captioned = category === 'alma' || category === 'draft' || category === 'country'
         const showName =
           captioned &&
           settled &&

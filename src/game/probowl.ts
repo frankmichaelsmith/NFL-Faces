@@ -30,6 +30,7 @@ export const CATEGORY_LABELS: Record<ProBowlCategory, string> = {
   draft: 'Draft Team',
   number: 'Jersey Number',
   position: 'Position',
+  country: 'Country',
 }
 
 export interface ProBowlWeights {
@@ -121,5 +122,7 @@ export function describeValue(
       return `#${value}`
     case 'position':
       return value
+    case 'country':
+      return section.countries?.[value]?.name ?? value
   }
 }

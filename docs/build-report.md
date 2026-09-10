@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-10T04:21:58.248Z.
+Generated 2026-09-10T14:07:54.149Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -200,3 +200,59 @@ Aaron Hernandez, Alfred Morris, Amani Toomer, Andre Reed, Andre Rison, Antonio B
 ### Players missing draft (6)
 
 Allen Hurns, Bill Schroeder, Jackie Harris, James Stewart, Jim Kelly, Ty Detmer
+
+## NBA
+
+**5804** combos across 31 seasons, 358 players, 109 colleges, 36 draft-team tiles.
+
+By category: alma 1279, draft 1550, number 1432, position 0.
+
+| Season | Named | Resolved | Combos |
+|---|---|---|---|
+| 1995 | 50 | 50 | 196 |
+| 1996 | 50 | 50 | 194 |
+| 1997 | 50 | 50 | 197 |
+| 1998 | 50 | 50 | 195 |
+| 1999 | 50 | 50 | 192 |
+| 2000 | 50 | 50 | 192 |
+| 2001 | 50 | 50 | 191 |
+| 2002 | 50 | 50 | 189 |
+| 2003 | 50 | 50 | 188 |
+| 2004 | 50 | 50 | 183 |
+| 2005 | 50 | 50 | 184 |
+| 2006 | 50 | 50 | 183 |
+| 2007 | 50 | 50 | 179 |
+| 2008 | 50 | 50 | 180 |
+| 2009 | 50 | 50 | 184 |
+| 2010 | 50 | 50 | 187 |
+| 2011 | 50 | 50 | 182 |
+| 2012 | 50 | 50 | 177 |
+| 2013 | 50 | 50 | 181 |
+| 2014 | 50 | 50 | 189 |
+| 2015 | 50 | 50 | 187 |
+| 2016 | 50 | 50 | 187 |
+| 2017 | 50 | 50 | 187 |
+| 2018 | 50 | 50 | 185 |
+| 2019 | 50 | 50 | 188 |
+| 2020 | 50 | 50 | 188 |
+| 2021 | 50 | 50 | 191 |
+| 2022 | 50 | 50 | 185 |
+| 2023 | 50 | 50 | 187 |
+| 2024 | 50 | 50 | 189 |
+| 2025 | 50 | 50 | 187 |
+
+### Unresolved selections (0)
+
+None.
+
+### Players missing college (60)
+
+Al Harrington, Al Jefferson, Amar'e Stoudemire, Anderson Varejao, Andrea Bargnani, Andrew Bynum, Andris Biedrins, Anfernee Simons, Bojan Bogdanovic, Brandon Jennings, Clint Capela, Danilo Gallinari, Dennis Schroder, Dino Radja, Dirk Nowitzki, Dwight Howard, Eddy Curry, Evan Fournier, Giannis Antetokounmpo, Goran Dragic, Hedo Turkoglu, Isaiah Hartenstein, Ivica Zubac, JR Smith, Jalen Green, Jermaine O'Neal, Jonas Valanciunas, Jose Calderon, Josh Giddey, Josh Smith, Jusuf Nurkic, Kevin Garnett, Kobe Bryant, Kristaps Porzingis, LaMelo Ball, LeBron James, Lou Williams, Luis Scola, Luka Doncic, Manu Ginobili, Marc Gasol, Marcin Gortat, Mehmet Okur, Michael Olowokandi, Monta Ellis, Nikola Jokic, Omer Asik, Pau Gasol, Peja Stojakovic, Rashard Lewis, Ricky Rubio, Rudy Gobert, Shawn Kemp, Stephen Jackson, Toni Kukoc, Tony Parker, Tracy McGrady, Tyson Chandler, Victor Wembanyama, Yao Ming
+
+### Players missing jersey (34)
+
+Andrea Bargnani, Baron Davis, Bradley Beal, Chris Paul, D'Angelo Russell, Dana Barros, David Wesley, DeMarcus Cousins, Dennis Schroder, Elfrid Payton, Eric Gordon, Evan Fournier, Gary Trent, Gerald Wallace, JaKarr Sampson, Jabari Parker, Jahlil Okafor, Jalen Duren, Jason Kidd, Jaylen Hoard, Jeremy Lin, Lamar Odom, Michael Finley, Nick Young, Popeye Jones, Rafer Alston, Reggie Jackson, Ricky Rubio, Sam Cassell, Skylar Mays, T.J. Ford, Terrell Brandon, Tyler Herro, Zavier Simpson
+
+### Players missing draft (0)
+
+None.

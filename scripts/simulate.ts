@@ -108,9 +108,12 @@ async function main() {
     fail(`perfect streak cap ${cap} ≠ distinct answers ${distinctAnswers}`)
 
   // ---- Pro Bowl Mode -------------------------------------------------------------------
-  const pb = bundle.probowl
   let pbSummary = ''
-  if (pb) {
+  for (const [label, pb] of [
+    ['probowl', bundle.probowl],
+    ['nba', bundle.nba],
+  ] as const) {
+    if (!pb) continue
     const pbRng = mulberry32(seed + 7)
     const slots = [0, 0, 0]
     const byCat: Record<string, number> = {}
@@ -162,17 +165,19 @@ async function main() {
     for (const [i, s] of share.entries())
       if (s < 0.3 || s > 0.37)
         fail(`probowl slot ${i} share ${(s * 100).toFixed(1)}% outside 30–37%`)
-    // Position is weighted down (Frank, 2026-09-09): ~9% of rolls, the other three even.
+    // Position is weighted down (Frank, 2026-09-09): ~9% of rolls, the other three even. NFL only:
+    // the NBA pool plays Country instead and gets its own weights in N2.
     const posShare = (byCat['position'] ?? 0) / rounds
-    if (posShare < 0.06 || posShare > 0.12)
+    if (label === 'probowl' && (posShare < 0.06 || posShare > 0.12))
       fail(`probowl position share ${(posShare * 100).toFixed(1)}% outside 6–12%`)
     for (const cat of ['alma', 'draft', 'number']) {
       const s = (byCat[cat] ?? 0) / rounds
-      if (s < 0.27 || s > 0.34) fail(`probowl ${cat} share ${(s * 100).toFixed(1)}% outside 27–34%`)
+      if (label === 'probowl' && (s < 0.27 || s > 0.34))
+        fail(`probowl ${cat} share ${(s * 100).toFixed(1)}% outside 27–34%`)
     }
     // 1995–1999 are weighted to 30% of a later season (Frank, 2026-09-09): a small share, never zero.
     const legacyCombos = pb.combos.filter((c) => c.season < 2000).length
-    if (legacyCombos) {
+    if (legacyCombos && label === 'probowl') {
       const legacyShare = legacyRounds / rounds
       if (legacyShare < 0.02 || legacyShare > 0.1)
         fail(`probowl 1995–1999 share ${(legacyShare * 100).toFixed(1)}% outside 2–10%`)
@@ -192,8 +197,8 @@ async function main() {
     }
     if (cap !== Object.keys(pb.players).length)
       fail(`probowl perfect cap ${cap} ≠ players ${Object.keys(pb.players).length}`)
-    pbSummary =
-      `probowl: ${pb.combos.length} combos, longest ${pbLongest}, perfect-play cap ${cap} (= players), ` +
+    pbSummary +=
+      `\n  ${label}: ${pb.combos.length} combos, longest ${pbLongest}, perfect-play cap ${cap} (= players), ` +
       `slots ${share.map((s) => (s * 100).toFixed(1) + '%').join(' / ')}, categories ${Object.entries(
         byCat,
       )

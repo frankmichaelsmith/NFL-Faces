@@ -1,4 +1,4 @@
-import type { Bundle } from '../game/bundle'
+import { poolOf, type Bundle } from '../game/bundle'
 import { ShareButton } from './ShareButton'
 import type { GameApi } from '../state/useGame'
 import { FaceCards } from './FaceCards'
@@ -33,7 +33,9 @@ export function PlayScreen({
   const { state, config } = game
   const round = state.round
   const over = state.phase === 'gameover'
-  const roll = round ? config.wheels.map((w) => wheelValue(bundle, w.kind, round)).join(' · ') : ''
+  const roll = round
+    ? config.wheels.map((w) => wheelValue(bundle, w.kind, round, config.poolKey)).join(' · ')
+    : ''
 
   return (
     <main className="mx-auto flex min-h-full max-w-[720px] flex-col gap-4 p-4">
@@ -80,8 +82,12 @@ export function PlayScreen({
               ? `${state.lastOutcome === 'timeout' ? 'Time ran out' : 'Wrong'}. The answer was ${
                   round?.kind === 'faces'
                     ? bundle.people[round.combo.answer]?.name
-                    : round && bundle.probowl
-                      ? describeValue(bundle.probowl, round.combo.category, round.combo.answer)
+                    : round && poolOf(bundle, config.poolKey)
+                      ? describeValue(
+                          poolOf(bundle, config.poolKey)!,
+                          round.combo.category,
+                          round.combo.answer,
+                        )
                       : ''
                 }. Streak ${state.streak}.`
               : null
@@ -105,6 +111,7 @@ export function PlayScreen({
           onTap={game.tap}
           onPainted={game.onPainted}
           assetBaseUrl={import.meta.env.BASE_URL}
+          poolKey={config.poolKey}
         />
       ) : (
         <div className="grid grid-cols-3 gap-3" aria-hidden>

@@ -3,7 +3,7 @@
  * feedback delays, and enforces the decision timer on a monotonic clock.
  */
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react'
-import type { Bundle } from '../game/bundle'
+import { poolOf, type Bundle } from '../game/bundle'
 import { configFor, type GameConfig, type Mode } from '../game/config'
 import { nextProBowlRound } from '../game/probowl'
 import { defaultRng, type Rng } from '../game/rng'
@@ -63,7 +63,9 @@ export function useGame(
 ): GameApi {
   const config = useMemo(() => ({ ...configFor(mode), ...overrides }), [mode, overrides])
   const rollLabel = (s: GameState) =>
-    s.round ? config.wheels.map((w) => wheelValue(bundle, w.kind, s.round!)).join(' · ') : null
+    s.round
+      ? config.wheels.map((w) => wheelValue(bundle, w.kind, s.round!, config.poolKey)).join(' · ')
+      : null
   const reducer = useMemo(
     () => createReducer({ decisionMs: config.decisionMs }),
     [config.decisionMs],
@@ -162,14 +164,22 @@ export function useGame(
   const pick = useCallback(
     (used: readonly string[]) =>
       mode === 'probowl'
-        ? bundle.probowl
-          ? nextProBowlRound(bundle.probowl, new Set(used), rng, {
+        ? poolOf(bundle, config.poolKey)
+          ? nextProBowlRound(poolOf(bundle, config.poolKey)!, new Set(used), rng, {
               categories: config.categoryWeights,
               seasons: config.seasonWeights,
             })
           : null
         : nextRound(bundle, new Set(used), rng, { alumniProb: config.alumniProb }),
-    [bundle, mode, rng, config.alumniProb, config.categoryWeights, config.seasonWeights],
+    [
+      bundle,
+      mode,
+      rng,
+      config.alumniProb,
+      config.categoryWeights,
+      config.seasonWeights,
+      config.poolKey,
+    ],
   )
 
   const start = useCallback(() => {

@@ -1,0 +1,40 @@
+abbr,label,name,color,alt_color,first_season,last_season,notes
+ATL,ATL,Atlanta Hawks,C8102E,FDB927,1968,,
+BOS,BOS,Boston Celtics,008348,FFFFFF,1946,,
+BKN,BKN,Brooklyn Nets,000000,FFFFFF,2012,,
+NJ,NJ,New Jersey Nets,002A60,CD1041,1977,2011,ESPN abbr NJ
+CHA,CHA,Charlotte Hornets,00788C,1D1160,2014,,current Hornets (Bobcats lineage)
+CHAB,CHA,Charlotte Bobcats,F26532,2D5D8F,2004,2013,tile reads CHA in Bobcats orange
+CHH,CHH,Charlotte Hornets,00788C,1D1160,1988,2001,original Hornets in teal/purple
+CHI,CHI,Chicago Bulls,CE1141,000000,1966,,
+CLE,CLE,Cleveland Cavaliers,860038,BC945C,1970,,
+DAL,DAL,Dallas Mavericks,0064B1,BBC4CA,1980,,
+DEN,DEN,Denver Nuggets,0E2240,FEC524,1967,,
+DET,DET,Detroit Pistons,1D428A,C8102E,1948,,
+GS,GS,Golden State Warriors,1D428A,FDB927,1971,,
+HOU,HOU,Houston Rockets,CE0E2D,000000,1971,,
+IND,IND,Indiana Pacers,0C2340,FFD520,1967,,
+LAC,LAC,Los Angeles Clippers,12173F,C8102E,1984,,
+SDC,SD,San Diego Clippers,1D428A,ED174C,1978,1983,tile reads SD
+LAL,LAL,Los Angeles Lakers,552583,FDB927,1960,,
+MEM,MEM,Memphis Grizzlies,5D76A9,12173F,2001,,
+VAN,VAN,Vancouver Grizzlies,00B2A9,E43C40,1995,2000,ESPN keeps MEM for these years
+MIA,MIA,Miami Heat,98002E,000000,1988,,
+MIL,MIL,Milwaukee Bucks,00471B,EEE1C6,1968,,
+MIN,MIN,Minnesota Timberwolves,266092,79BC43,1989,,
+NO,NO,New Orleans Pelicans,0A2240,B4975A,2013,,
+NOH,NO,New Orleans Hornets,00778B,FFC72C,2002,2012,tile reads NO in Hornets teal; includes the 2005–07 New Orleans/Oklahoma City years
+NY,NY,New York Knicks,1D428A,F58426,1946,,
+OKC,OKC,Oklahoma City Thunder,007AC1,EF3B24,2008,,
+SEA,SEA,Seattle SuperSonics,00653A,FFC200,1967,2007,
+ORL,ORL,Orlando Magic,0150B5,9CA0A3,1989,,
+PHI,PHI,Philadelphia 76ers,1D428A,E01234,1963,,
+PHX,PHX,Phoenix Suns,29127A,E56020,1968,,
+POR,POR,Portland Trail Blazers,E03A3E,000000,1970,,
+SAC,SAC,Sacramento Kings,5A2D81,6A7A82,1985,,
+KCK,KC,Kansas City Kings,1D428A,C8102E,1975,1984,tile reads KC
+SA,SA,San Antonio Spurs,000000,C4CED4,1976,,
+TOR,TOR,Toronto Raptors,D91244,000000,1995,,
+UTAH,UTAH,Utah Jazz,4E008E,79A3DC,1979,,
+WSH,WSH,Washington Wizards,E31837,002B5C,1997,,
+WSB,WSB,Washington Bullets,C8102E,002B5C,1974,1996,

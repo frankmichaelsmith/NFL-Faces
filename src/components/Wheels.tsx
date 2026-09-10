@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import type { Bundle } from '../game/bundle'
+import { poolOf, type Bundle, type PoolKey } from '../game/bundle'
 import type { GameConfig } from '../game/config'
 import { CATEGORY_LABELS } from '../game/probowl'
 import type { AnyRound } from '../state/machine'
@@ -20,7 +20,12 @@ interface Props {
 type Kind = GameConfig['wheels'][number]['kind']
 
 /** Label for one wheel given the roll. Teams read in caps on the reel. */
-export function wheelValue(bundle: Bundle, kind: Kind, round: AnyRound): string {
+export function wheelValue(
+  bundle: Bundle,
+  kind: Kind,
+  round: AnyRound,
+  poolKey: PoolKey = 'probowl',
+): string {
   switch (kind) {
     case 'season':
       return String(round.combo.season)
@@ -34,7 +39,7 @@ export function wheelValue(bundle: Bundle, kind: Kind, round: AnyRound): string 
       return round.kind === 'faces' ? round.combo.role : ''
     case 'player':
       return round.kind === 'probowl'
-        ? (bundle.probowl?.players[round.combo.player]?.name ?? '')
+        ? (poolOf(bundle, poolKey)?.players[round.combo.player]?.name ?? '')
         : ''
     case 'category':
       return round.kind === 'probowl' ? CATEGORY_LABELS[round.combo.category] : ''
@@ -42,11 +47,16 @@ export function wheelValue(bundle: Bundle, kind: Kind, round: AnyRound): string 
 }
 
 /** Every value a wheel can show, in strip order. The player reel is that season's Pro Bowlers. */
-export function wheelValues(bundle: Bundle, kind: Kind, round: AnyRound | null = null): string[] {
+export function wheelValues(
+  bundle: Bundle,
+  kind: Kind,
+  round: AnyRound | null = null,
+  poolKey: PoolKey = 'probowl',
+): string[] {
   switch (kind) {
     case 'season': {
       // Pro Bowl Mode has its own season span (1995 →); Faces uses the bundle's.
-      const pb = round?.kind === 'probowl' ? bundle.probowl : null
+      const pb = round?.kind === 'probowl' ? poolOf(bundle, poolKey) : null
       const first = pb?.seasons[0] ?? bundle.firstSeason
       const last = pb?.seasons.at(-1) ?? bundle.lastSeason
       const out: string[] = []
@@ -58,13 +68,16 @@ export function wheelValues(bundle: Bundle, kind: Kind, round: AnyRound | null =
     case 'role':
       return bundle.roles
     case 'player': {
-      const pb = bundle.probowl
+      const pb = poolOf(bundle, poolKey)
       if (!pb) return []
       const ids = round ? (pb.rosters[String(round.combo.season)] ?? []) : Object.keys(pb.players)
       return ids.map((id) => pb.players[id]?.name ?? id)
     }
-    case 'category':
-      return Object.values(CATEGORY_LABELS)
+    case 'category': {
+      // The reel lists this pool's categories (NFL plays Position, NBA plays Country).
+      const cats = poolOf(bundle, poolKey)?.categories ?? ['alma', 'draft', 'number', 'position']
+      return cats.map((c) => CATEGORY_LABELS[c])
+    }
   }
 }
 
@@ -76,8 +89,8 @@ export function wheelValues(bundle: Bundle, kind: Kind, round: AnyRound | null =
 export function Wheels({ bundle, config, round, spinning, onLand }: Props) {
   const reduceMotion = useReducedMotion()
   const values = useMemo(
-    () => config.wheels.map((w) => wheelValues(bundle, w.kind, round)),
-    [bundle, config.wheels, round],
+    () => config.wheels.map((w) => wheelValues(bundle, w.kind, round, config.poolKey)),
+    [bundle, config.wheels, round, config.poolKey],
   )
   return (
     <div
@@ -91,7 +104,7 @@ export function Wheels({ bundle, config, round, spinning, onLand }: Props) {
             kind={w.kind}
             testId={`wheel-${w.kind}`}
             values={values[i]!}
-            target={wheelValue(bundle, w.kind, round)}
+            target={wheelValue(bundle, w.kind, round, config.poolKey)}
             durationMs={(i + 1) * config.spinMsPerWheel}
             spin={spinning}
             reduceMotion={reduceMotion}

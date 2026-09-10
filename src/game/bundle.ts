@@ -30,17 +30,20 @@ export interface Combo {
 
 // ---- Pro Bowl Mode -------------------------------------------------------------------
 
-export type ProBowlCategory = 'alma' | 'draft' | 'number' | 'position'
+export type ProBowlCategory = 'alma' | 'draft' | 'number' | 'position' | 'country'
 
 export interface ProBowlPlayer {
   name: string
-  pos: 'QB' | 'RB' | 'WR' | 'TE'
+  /** QB/RB/WR/TE for football; G/F/C for basketball. */
+  pos: string
   /** Most recent number worn (informational; the season number lives in ProBowlSection.numbers). */
   jersey: number | null
   /** College id (key into ProBowlSection.colleges), or null. */
   college: string | null
   /** Draft team key (into ProBowlSection.teams), 'UDFA' for undrafted, or null when unknown. */
   draft: string | null
+  /** Country code (key into ProBowlSection.countries), NBA only. */
+  country?: string | null
 }
 
 export interface ProBowlCombo {
@@ -64,8 +67,15 @@ export interface ProBowlSection {
   colleges: Record<string, { name: string; logo: string | null }>
   /** Draft-team tiles: label printed on the tile plus its colours. */
   teams: Record<string, { label: string; name: string; color: string; alt: string }>
+  /** Country flags (NBA): code → name; the flag image is flags/{code}.png. */
+  countries?: Record<string, { name: string }>
+  /** Which categories this pool plays; the category wheel lists exactly these. */
+  categories?: ProBowlCategory[]
   combos: ProBowlCombo[]
 }
+
+/** Which pool a mode plays: the Pro Bowl (NFL) section or the NBA section. */
+export type PoolKey = 'probowl' | 'nba'
 
 export interface Bundle {
   buildHash: string
@@ -80,4 +90,11 @@ export interface Bundle {
   combos: Combo[]
   /** Present once Pro Bowl content has been built. */
   probowl?: ProBowlSection
+  /** NBA pool (decision 0009): same shape, Country instead of Position. */
+  nba?: ProBowlSection
+}
+
+/** The pool section for a key, if the bundle carries it. */
+export function poolOf(bundle: Bundle, key: PoolKey = 'probowl'): ProBowlSection | undefined {
+  return key === 'nba' ? bundle.nba : bundle.probowl
 }

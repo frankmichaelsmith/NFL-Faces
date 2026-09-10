@@ -268,12 +268,16 @@ export interface InfoboxFacts {
   draftPick: number | null
   undraftedYear: number | null
   position: string | null
+  /** Last segment of birth_place, e.g. "U.S." or "Nigeria" (basketball and newer football infoboxes). */
+  birthCountry: string | null
+  /** First nationality listed, e.g. "American" (rarely filled). */
+  nationality: string | null
 }
 
 /** An infobox field's raw value, including a bulleted or {{ubl}} list that runs over several lines. */
-const field = (t: string, k: string) => {
+export const field = (t: string, k: string) => {
   const m = t.match(
-    new RegExp(`\\|\\s*${k}\\s*=\\s*([\\s\\S]*?)(?=\\n\\s*\\|\\s*[A-Za-z_]+\\s*=|\\n\\}\\}|$)`),
+    new RegExp(`\\|\\s*${k}\\s*=[ \\t]*([\\s\\S]*?)(?=\\n\\s*\\|\\s*[A-Za-z_]+\\s*=|\\n\\}\\}|$)`),
   )
   return m ? m[1]!.trim() : ''
 }
@@ -365,9 +369,22 @@ export function infoboxBody(wikitext: string): string {
   return wikitext.slice(start)
 }
 
+/** The football infobox writes draftyear; the basketball one writes draft_year. */
+const fieldAny = (t: string, ...keys: string[]) => {
+  for (const k of keys) {
+    const v = field(t, k)
+    if (v) return v
+  }
+  return ''
+}
+
 export function parseInfobox(fullText: string): InfoboxFacts {
   const wikitext = infoboxBody(fullText)
   const colleges = parseColleges(field(wikitext, 'college'))
+  const birthPlace = plain(strip(field(wikitext, 'birth_place')))
+  const birthCountry = birthPlace ? (birthPlace.split(',').pop() ?? '').trim() || null : null
+  const nationality =
+    plain(strip(field(wikitext, 'nationality'))).split(/\s*(?:[/,]|&|\band\b)\s*/)[0] || null
   const numbers = (strip(field(wikitext, 'number')).match(/\d+/g) ?? [])
     .map(Number)
     .filter((n) => n <= 99)
@@ -376,11 +393,13 @@ export function parseInfobox(fullText: string): InfoboxFacts {
     numbers,
     college: colleges.at(-1)?.name ?? null,
     colleges,
-    draftYear: int(field(wikitext, 'draftyear')),
-    draftRound: int(field(wikitext, 'draftround')),
-    draftPick: int(field(wikitext, 'draftpick')),
-    undraftedYear: int(field(wikitext, 'undraftedyear')),
+    draftYear: int(fieldAny(wikitext, 'draftyear', 'draft_year')),
+    draftRound: int(fieldAny(wikitext, 'draftround', 'draft_round')),
+    draftPick: int(fieldAny(wikitext, 'draftpick', 'draft_pick')),
+    undraftedYear: int(fieldAny(wikitext, 'undraftedyear', 'undrafted_year')),
     position: plain(field(wikitext, 'position')) || null,
+    birthCountry,
+    nationality,
   }
 }
 
@@ -401,4 +420,9 @@ export function nameKey(s: string): string {
     .replace(/[^a-z ]/g, '')
     .replace(/\s+/g, ' ')
     .trim()
+}
+
+/** "[[Seattle SuperSonics]]" → "Seattle SuperSonics"; templates and tags dropped. */
+export function plainName(raw: string): string {
+  return plain(strip(raw))
 }

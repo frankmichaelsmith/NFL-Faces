@@ -4,6 +4,8 @@
  * come back later without touching game logic (CLAUDE.md, locked decisions).
  */
 
+import type { PoolKey } from './bundle'
+
 export type WheelKind = 'season' | 'team' | 'role' | 'player' | 'category'
 
 export interface WheelConfig {
@@ -33,6 +35,8 @@ export interface GameConfig {
   categoryWeights?: Readonly<Record<string, number>>
   /** Relative frequency of a season on the season wheel (missing = 1), keyed by season. */
   seasonWeights?: Readonly<Record<string, number>>
+  /** Which bundle section a wheel-of-players mode reads (Pro Bowl = NFL, nba = NBA). */
+  poolKey?: PoolKey
 }
 
 export type Mode = 'faces' | 'probowl'
@@ -71,6 +75,7 @@ export const PROBOWL_CONFIG: GameConfig = {
     { kind: 'category', label: 'Category' },
   ],
   roles: ['QB', 'RB', 'WR', 'TE'],
+  poolKey: 'probowl',
   // Position is the easy one; Frank (2026-09-09) wants it on ~9% of rolls, the rest even (30.3% each).
   categoryWeights: { alma: 1, draft: 1, number: 1, position: 0.3 },
   // 1995–1999 are in the pool (Frank, 2026-09-09) but land at 30% of a 2000+ season's rate.

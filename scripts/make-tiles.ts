@@ -142,10 +142,24 @@ async function main() {
     .toFile(path.join(TILES, 'UDFA.png'))
   console.log(`tiles: ${content.draftTeams.length + 1} written to public/tiles`)
 
-  // College logos
+  // College logos: every college referenced by either sport's players.
   const colleges = new Map<string, string>()
   for (const p of content.players)
     if (p.college_id && p.college_logo) colleges.set(p.college_id, p.college_logo)
+  try {
+    const nba = parseProBowlContent(
+      {
+        selections: await read('nba_selections.csv'),
+        players: await read('nba_players.csv'),
+        draftTeams: await read('nba_draft_teams.csv'),
+      },
+      { positions: ['G', 'F', 'C'] },
+    )
+    for (const p of nba.content.players)
+      if (p.college_id && p.college_logo) colleges.set(p.college_id, p.college_logo)
+  } catch {
+    /* no NBA content yet */
+  }
   let ok = 0
   const failed: string[] = []
   const haloed: string[] = []

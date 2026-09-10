@@ -104,7 +104,7 @@ describe('Pro Bowl Mode', () => {
   it('opens in Pro Bowl Mode with no picker while Faces is hidden, but still honours a forced mode', () => {
     render(<App bundle={bundle} config={config} deps={deps} />)
     expect(screen.queryByTestId('mode-picker')).toBeNull()
-    expect(screen.getByRole('heading', { name: 'NFL Spins' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'NFL Spin Streak' })).toBeInTheDocument()
     expect(screen.getByText(/a Pro Bowler, and a category/i)).toBeInTheDocument()
     cleanup()
     // a device that last played Faces still lands in Pro Bowl Mode

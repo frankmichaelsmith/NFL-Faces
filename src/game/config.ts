@@ -47,7 +47,7 @@ export const MODE_LABELS: Record<Mode, string> = { faces: 'Faces', probowl: 'Pro
 export const VISIBLE_MODES: readonly Mode[] = ['probowl']
 
 /** Title shown on the start screen (the app, repo and share text still say NFL Faces). */
-export const GAME_TITLE = 'NFL Spins'
+export const GAME_TITLE = 'NFL Spin Streak'
 
 export const GAME_CONFIG: GameConfig = {
   wheels: [

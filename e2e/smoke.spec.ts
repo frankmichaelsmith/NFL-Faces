@@ -13,7 +13,7 @@ interface Bundle {
 test('start, spin, tap the correct face, streak becomes 1', async ({ page }) => {
   // Faces is hidden from the start screen for now; ?mode=faces still opens it.
   await page.goto('/?mode=faces')
-  await expect(page.getByRole('heading', { name: /NFL Spins/i })).toBeVisible()
+  await expect(page.getByRole('heading', { name: /NFL Spin Streak/i })).toBeVisible()
   const bundle = (await (await page.request.get('/data/bundle.json')).json()) as Bundle
 
   await page.getByRole('button', { name: 'Start' }).click()

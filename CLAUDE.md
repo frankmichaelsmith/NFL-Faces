@@ -13,7 +13,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 
 ## Start screen (Frank, 2026-09-09)
 
-The start screen is titled **NFL Spins** (`GAME_TITLE`) and offers **only Pro Bowl Mode** (`VISIBLE_MODES = ['probowl']`); the mode picker appears only when more than one mode is visible. Faces mode is hidden, not removed: `?mode=faces` opens it, and its code, content, photos and tests stay green. The app name, tab title, PWA manifest and share text still say NFL Faces until Frank renames them.
+The start screen is titled **NFL Spin Streak** (`GAME_TITLE`) and offers **only Pro Bowl Mode** (`VISIBLE_MODES = ['probowl']`); the mode picker appears only when more than one mode is visible. Faces mode is hidden, not removed: `?mode=faces` opens it, and its code, content, photos and tests stay green. The app name, tab title, PWA manifest and share text still say NFL Faces until Frank renames them.
 
 ## Pro Bowl Mode (Frank, 2026-09-09 — decision 0007)
 

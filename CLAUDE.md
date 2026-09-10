@@ -51,7 +51,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - **Sound and haptics (spec §15):** off by default, one toggle for both, persisted in `mute`. Sounds are **synthesized with Web Audio** (`src/audio/feedback.ts`) as placeholders — swap the three `synth*` functions for recorded files when Frank delivers them.
 - **Workflow:** commit to `main`, checkpoint per milestone (STREAK CITY style). **npm**, not pnpm. React 19 + Vite + TypeScript strict + Tailwind v4 + Vitest. Playwright only from M8.
 - **Persistence:** game state and best streak stay device-local (spec §13). **Daily leaderboard (Frank, 2026-09-09, decision 0008):** after the first streak ends a player must add an email + display name; every later streak end posts the score; the board is Pro Bowl Mode only, best streak per Eastern calendar day, top 25, no email verification. Backend = Neon Postgres + Vercel Functions (`api/*.ts` → `server/`), secret `DATABASE_URL` only; unset → in-memory store for dev/preview/e2e. Emails go on the legal list (privacy policy).
-- **Share card:** text + PNG, streak + losing roll + URL, no answer face (spec §14 as written).
+- **Share (Frank, 2026-09-09):** plain text only, no image: `🏆 16 CORRECT`, one `❌` line per wheel of the losing roll (`❌ LOST ON 2019` / `❌ JACK DOYLE` / `❌ JERSEY NUMBER`), then the bare address (`www.spinstreak.app`). Native share sheet, else clipboard. Replaces the spec §14 PNG card.
 
 ## Milestones (adapted from spec §26)
 

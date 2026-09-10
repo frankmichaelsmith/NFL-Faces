@@ -22,13 +22,9 @@ interface Props {
   onOpenBoard: () => void
 }
 
-const SHARE_FORMAT: Record<
-  ShareResult,
-  'native' | 'clipboard' | 'download' | 'failed' | 'cancelled'
-> = {
+const SHARE_FORMAT: Record<ShareResult, 'native' | 'clipboard' | 'failed' | 'cancelled'> = {
   shared: 'native',
   copied: 'clipboard',
-  downloaded: 'download',
   cancelled: 'cancelled',
   failed: 'failed',
 }
@@ -36,7 +32,6 @@ const SHARE_FORMAT: Record<
 const TOAST: Record<ShareResult, string | null> = {
   shared: null,
   copied: 'Copied to clipboard',
-  downloaded: 'Card saved',
   cancelled: null,
   failed: 'Could not share',
 }

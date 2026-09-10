@@ -1,65 +1,38 @@
 /**
- * Share flow (spec §14): native share sheet with the PNG where supported,
- * plain-text share next, clipboard + download as the last resort.
+ * Share flow: the native share sheet with the text (Frank, 2026-09-09: no
+ * image), else copy the text to the clipboard.
  */
-import { renderShareCard, type CardSize } from './card'
 import { shareText, type SharePayload } from './text'
 
-export type ShareResult = 'shared' | 'copied' | 'downloaded' | 'cancelled' | 'failed'
+export type ShareResult = 'shared' | 'copied' | 'cancelled' | 'failed'
 
 export interface ShareDeps {
-  nav?: Pick<Navigator, 'share' | 'canShare' | 'clipboard'>
-  render?: (payload: SharePayload, size: CardSize) => Promise<Blob | null>
-  download?: (blob: Blob, filename: string) => void
+  nav?: Pick<Navigator, 'share' | 'clipboard'>
 }
 
 export async function share(payload: SharePayload, deps: ShareDeps = {}): Promise<ShareResult> {
   const nav = deps.nav ?? (typeof navigator !== 'undefined' ? navigator : undefined)
-  const render = deps.render ?? renderShareCard
-  const download = deps.download ?? downloadBlob
   const text = shareText(payload)
-  const filename = `spin-streak-${payload.streak}.png`
 
-  const png = await render(payload, 'square').catch(() => null)
-
-  // 1. Native share with the image.
+  // 1. Native share sheet (phones).
   if (nav?.share) {
-    const files = png ? [new File([png], filename, { type: 'image/png' })] : []
-    const withFiles = files.length > 0 && nav.canShare?.({ files }) === true
     try {
-      await nav.share(withFiles ? { text, files } : { text })
+      await nav.share({ text })
       return 'shared'
     } catch (e) {
       if ((e as Error).name === 'AbortError') return 'cancelled'
-      // fall through to the copy path
+      // fall through to the clipboard
     }
   }
 
-  // 2. Clipboard + download.
-  const copied = nav?.clipboard
-    ? await nav.clipboard.writeText(text).then(
-        () => true,
-        () => false,
-      )
-    : false
-  if (png) {
+  // 2. Clipboard (desktop, or a share sheet that refused).
+  if (nav?.clipboard) {
     try {
-      download(png, filename)
-      return copied ? 'copied' : 'downloaded'
+      await nav.clipboard.writeText(text)
+      return 'copied'
     } catch {
-      /* ignore */
+      /* blocked clipboard */
     }
   }
-  return copied ? 'copied' : 'failed'
-}
-
-function downloadBlob(blob: Blob, filename: string) {
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = filename
-  document.body.appendChild(a)
-  a.click()
-  a.remove()
-  setTimeout(() => URL.revokeObjectURL(url), 10_000)
+  return 'failed'
 }

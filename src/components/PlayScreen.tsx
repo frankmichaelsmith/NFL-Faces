@@ -1,4 +1,5 @@
 import { poolOf, type Bundle } from '../game/bundle'
+import { GAME_TITLE } from '../game/config'
 import { ShareButton } from './ShareButton'
 import type { GameApi } from '../state/useGame'
 import { FaceCards } from './FaceCards'
@@ -40,15 +41,26 @@ export function PlayScreen({
   return (
     <main className="mx-auto flex min-h-full max-w-[720px] flex-col gap-4 p-4">
       <header className="flex items-center justify-between">
-        <div className="text-sm uppercase tracking-widest text-white/50">
-          Streak{' '}
-          <span
-            key={state.streak}
-            data-testid="streak"
-            className="font-display inline-block text-4xl font-black text-accent motion-safe:animate-[pop_300ms_ease-out]"
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={game.home}
+            data-testid="home"
+            aria-label="Spin Streak home"
+            className="font-display min-h-[44px] text-lg font-black uppercase tracking-tight text-white active:opacity-70"
           >
-            {state.streak}
-          </span>
+            {GAME_TITLE}
+          </button>
+          <div className="text-sm uppercase tracking-widest text-white/50">
+            Streak{' '}
+            <span
+              key={state.streak}
+              data-testid="streak"
+              className="font-display inline-block text-4xl font-black text-accent motion-safe:animate-[pop_300ms_ease-out]"
+            >
+              {state.streak}
+            </span>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <div className="text-xs uppercase tracking-widest text-white/40">

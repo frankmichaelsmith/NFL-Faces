@@ -282,3 +282,48 @@ describe('App', () => {
     expect(screen.getByTestId('mute')).toHaveAttribute('aria-pressed', 'true')
   })
 })
+
+describe('home wordmark', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    localStorage.setItem(
+      'nfl-faces:player:v1',
+      JSON.stringify({ playerId: 'p', name: 'Tester', email: 't@x.co', token: 'tok' }),
+    )
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(
+        async () =>
+          new Response(JSON.stringify({ day: '2026-09-09', best: 1, improved: true, rank: 1 }), {
+            status: 200,
+          }),
+      ),
+    )
+    vi.useFakeTimers({
+      toFake: [
+        'setTimeout',
+        'clearTimeout',
+        'requestAnimationFrame',
+        'cancelAnimationFrame',
+        'performance',
+      ],
+    })
+  })
+  afterEach(() => {
+    vi.unstubAllGlobals()
+    vi.useRealTimers()
+  })
+  it('tapping the Spin Streak wordmark returns to the start screen, mid-game or after game over', async () => {
+    render(<App bundle={bundle} config={config} rng={mulberry32(2)} />)
+    await startRound()
+    fireEvent.click(screen.getByTestId('home'))
+    expect(screen.getByRole('heading', { name: 'Spin Streak' })).toBeInTheDocument()
+    expect(screen.queryByTestId('faces')).toBeNull()
+    await startRound()
+    const slot = answerSlot()
+    fireEvent.pointerDown(screen.getByTestId(`face-${((slot + 1) % 3) as 0 | 1 | 2}`))
+    expect(screen.getByTestId('game-over')).toBeInTheDocument()
+    fireEvent.click(screen.getByTestId('home'))
+    expect(screen.getByRole('heading', { name: 'Spin Streak' })).toBeInTheDocument()
+  })
+})

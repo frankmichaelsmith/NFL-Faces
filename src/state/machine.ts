@@ -44,6 +44,8 @@ export type Action =
   | { type: 'NEXT'; round: AnyRound | null }
   /** Replace the faces of the round being spun (a photo failed to preload). Same combo, same roundIndex. */
   | { type: 'SWAP_ROUND'; round: AnyRound }
+  /** Back to the start screen from anywhere (the header wordmark, Frank 2026-09-10). A live streak is abandoned, not recorded. */
+  | { type: 'HOME' }
 
 export const initialState: GameState = {
   phase: 'idle',
@@ -110,6 +112,8 @@ export function createReducer(config: MachineConfig) {
 
   return function reducer(s: GameState, a: Action): GameState {
     switch (a.type) {
+      case 'HOME':
+        return { ...initialState, bestStreak: Math.max(s.bestStreak, s.streak) }
       case 'START':
         if (s.phase !== 'idle' && s.phase !== 'gameover') return s
         return spin({ ...s, bestStreak: Math.max(s.bestStreak, s.streak) }, a.round, 0, [])

@@ -33,6 +33,8 @@ export interface GameApi {
   losingRoll: string | null
   /** Start a new streak (from idle or game over). */
   start: () => void
+  /** Back to the start screen from anywhere; a streak in progress is abandoned. */
+  home: () => void
   /** Player tapped a face card. */
   tap: (slot: Slot) => void
   /** Face cards report that they are painted; the timer starts now. */
@@ -202,6 +204,7 @@ export function useGame(
     feedback.unlock()
     dispatch({ type: 'START', round: pick([]) })
   }, [pick, feedback])
+  const home = useCallback(() => dispatch({ type: 'HOME' }), [])
   const tap = useCallback((slot: Slot) => dispatch({ type: 'TAP', slot, now: now() }), [])
   const onPainted = useCallback(() => dispatch({ type: 'REVEALED', now: now() }), [])
 
@@ -306,6 +309,7 @@ export function useGame(
     state,
     mode,
     start,
+    home,
     tap,
     onPainted,
     config,

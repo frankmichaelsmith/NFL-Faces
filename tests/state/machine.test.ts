@@ -142,3 +142,22 @@ describe('state machine', () => {
     expect(reduce(landed, { type: 'SWAP_ROUND', round: swapped })).toBe(landed)
   })
 })
+
+describe('HOME', () => {
+  it('returns to idle from any phase and keeps the best streak', async () => {
+    const { createReducer, initialState } = await import('../../src/state/machine')
+    const reducer = createReducer({ decisionMs: 1000 })
+    const mid = {
+      ...initialState,
+      phase: 'awaiting' as const,
+      streak: 7,
+      bestStreak: 3,
+      roundIndex: 7,
+    }
+    const home = reducer(mid, { type: 'HOME' })
+    expect(home.phase).toBe('idle')
+    expect(home.streak).toBe(0)
+    expect(home.bestStreak).toBe(7)
+    expect(home.roundIndex).toBe(0)
+  })
+})

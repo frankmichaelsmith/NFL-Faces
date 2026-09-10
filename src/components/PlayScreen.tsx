@@ -154,20 +154,10 @@ export function PlayScreen({
       {over && (
         <section
           data-testid="game-over"
+          data-roll={roll || undefined}
           className="mt-auto flex flex-col gap-3 rounded-2xl border border-white/10 bg-card p-4 text-center"
         >
-          <p className="text-xs uppercase tracking-widest text-white/50">
-            {state.lastOutcome === 'timeout'
-              ? 'Time ran out'
-              : state.lastOutcome === 'exhausted'
-                ? 'You cleared every quarterback'
-                : 'Wrong face'}
-          </p>
-          {roll && (
-            <p className="text-sm text-white/70" data-testid="losing-roll">
-              Died on <span className="font-bold text-white">{roll}</span>
-            </p>
-          )}
+          {/* Frank (2026-09-09): nothing above the number; the roll lives in data-roll for the share card and tests. */}
           <p className="font-display text-6xl font-black text-accent" data-testid="final-streak">
             {state.streak}
           </p>
@@ -177,38 +167,42 @@ export function PlayScreen({
             <SignUpForm onSubmit={leaderboard.signUp} />
           ) : (
             <>
-              <button
-                type="button"
-                onClick={onOpenBoard}
-                data-testid="open-board"
-                className="min-h-[44px] rounded-xl text-sm font-bold uppercase tracking-widest text-white/70 underline-offset-4 hover:underline"
+              <p
+                data-testid="rank-line"
+                className="min-h-[20px] text-sm font-bold uppercase tracking-widest text-white/70"
               >
-                {leaderboard.posted
-                  ? leaderboard.posted.rank > 0
-                    ? `You're #${leaderboard.posted.rank} today · leaderboard`
-                    : "Today's leaderboard"
+                {leaderboard.posted && leaderboard.posted.rank > 0
+                  ? `You're #${leaderboard.posted.rank} on today's leaderboard`
                   : leaderboard.postError
-                    ? `${leaderboard.postError} · leaderboard`
+                    ? leaderboard.postError
                     : leaderboard.identity
-                      ? 'Posting your streak… · leaderboard'
-                      : "Today's leaderboard"}
-              </button>
-              <div className="grid grid-cols-2 gap-3">
+                      ? 'Posting your streak…'
+                      : ''}
+              </p>
+              <div className="grid grid-cols-3 gap-2">
                 <button
                   type="button"
                   onClick={onShare}
                   disabled={sharing}
                   data-testid="share"
-                  className="min-h-[52px] rounded-2xl border-2 border-white/20 px-4 text-lg font-black text-white active:scale-95 disabled:opacity-60"
+                  className="min-h-[52px] rounded-2xl border-2 border-white/20 px-2 text-base font-black text-white active:scale-95 disabled:opacity-60"
                 >
                   Share
                 </button>
                 <button
                   type="button"
-                  onClick={game.start}
-                  className="min-h-[52px] rounded-2xl bg-accent px-4 text-lg font-black text-ink active:scale-95"
+                  onClick={onOpenBoard}
+                  data-testid="open-board"
+                  className="min-h-[52px] rounded-2xl border-2 border-white/20 px-2 text-base font-black text-white active:scale-95"
                 >
-                  New streak
+                  Leaderboard
+                </button>
+                <button
+                  type="button"
+                  onClick={game.start}
+                  className="min-h-[52px] rounded-2xl bg-accent px-2 text-base font-black text-ink active:scale-95"
+                >
+                  Play again
                 </button>
               </div>
             </>

@@ -28,7 +28,7 @@ export interface ProBowlRound {
 export const CATEGORY_LABELS: Record<ProBowlCategory, string> = {
   alma: 'Alma Mater',
   draft: 'Draft Team',
-  number: 'Pro Number',
+  number: 'Jersey Number',
   position: 'Position',
 }
 

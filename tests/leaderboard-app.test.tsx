@@ -161,7 +161,7 @@ describe('Leaderboard flow (decision 0008)', () => {
     await tapWrong() // game over at 1
     // The gate replaces the buttons.
     expect(screen.getByTestId('signup')).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: 'New streak' })).toBeNull()
+    expect(screen.queryByRole('button', { name: 'Play again' })).toBeNull()
     expect(screen.queryByTestId('share')).toBeNull()
     // A bad email shows the server's message.
     fireEvent.change(screen.getByTestId('signup-email'), { target: { value: 'nope' } })
@@ -172,10 +172,12 @@ describe('Leaderboard flow (decision 0008)', () => {
     fireEvent.change(screen.getByTestId('signup-email'), { target: { value: 'frank@example.com' } })
     fireEvent.submit(screen.getByTestId('signup'))
     await until(() =>
-      expect(screen.getByRole('button', { name: 'New streak' })).toBeInTheDocument(),
+      expect(screen.getByRole('button', { name: 'Play again' })).toBeInTheDocument(),
     )
     // The streak that just ended was posted with the new token: Rival has 3, so we are #2.
-    await until(() => expect(screen.getByTestId('open-board')).toHaveTextContent("You're #2 today"))
+    await until(() =>
+      expect(screen.getByTestId('rank-line')).toHaveTextContent("You're #2 on today's leaderboard"),
+    )
     expect(rows.find((r) => r.name === 'Frank')!.streak).toBe(1)
     // The board marks our row.
     fireEvent.click(screen.getByTestId('open-board'))
@@ -186,7 +188,7 @@ describe('Leaderboard flow (decision 0008)', () => {
     fireEvent.click(screen.getByTestId('close-board'))
     expect(screen.queryByTestId('leaderboard')).toBeNull()
     // Play again freely: no gate, and the next streak posts on its own.
-    fireEvent.click(screen.getByRole('button', { name: 'New streak' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Play again' }))
     await act(async () => {
       vi.advanceTimersByTime(3 * config.spinMsPerWheel + 5)
     })
@@ -195,7 +197,9 @@ describe('Leaderboard flow (decision 0008)', () => {
     })
     await tapWrong()
     expect(screen.queryByTestId('signup')).toBeNull()
-    await until(() => expect(screen.getByTestId('open-board')).toHaveTextContent('leaderboard'))
+    await until(() =>
+      expect(screen.getByTestId('rank-line')).toHaveTextContent(/#\d+ on today's leaderboard/),
+    )
   })
 
   it('a device that played before but has no email is gated on the start screen too', async () => {

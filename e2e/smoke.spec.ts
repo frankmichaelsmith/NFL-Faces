@@ -111,5 +111,8 @@ test('a wrong tap ends the streak and reveals the answer with a share button', a
   await expect(page.getByTestId('game-over')).toBeVisible()
   await expect(page.getByTestId('answer-name')).toBeVisible()
   await expect(page.getByTestId('share')).toBeVisible()
-  await expect(page.getByTestId('losing-roll')).toContainText(String(season))
+  await expect(page.getByTestId('game-over')).toHaveAttribute(
+    'data-roll',
+    new RegExp(String(season)),
+  )
 })

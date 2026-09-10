@@ -70,8 +70,7 @@ export function SignUpForm({ onSubmit, title = 'Add your email to keep playing' 
         {busy ? 'Joining…' : 'Join the leaderboard'}
       </button>
       <p className="text-center text-[11px] leading-snug text-white/40">
-        We use your email only for the leaderboard and news about Spin Streak. No spam, no
-        sharing.
+        We use your email only for the leaderboard and news about Spin Streak. No spam, no sharing.
       </p>
     </form>
   )

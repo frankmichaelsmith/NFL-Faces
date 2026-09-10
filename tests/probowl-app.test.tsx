@@ -153,7 +153,7 @@ describe('Pro Bowl Mode', () => {
       (id) => bundle.probowl!.players[id]!.name,
     )
     expect(rosterNames).toContain(player)
-    expect(['Alma Mater', 'Draft Team', 'Pro Number', 'Position']).toContain(category)
+    expect(['Alma Mater', 'Draft Team', 'Jersey Number', 'Position']).toContain(category)
     const cards = [0, 1, 2].map((i) => screen.getByTestId(`face-${i}`))
     expect(cards).toHaveLength(3)
     const combo = bundle.probowl!.combos.find(
@@ -204,8 +204,8 @@ describe('Pro Bowl Mode', () => {
       expect(screen.queryByTestId('answer-name')).toBeNull()
       expect(screen.queryByTestId('tapped-name')).toBeNull()
     }
-    expect(screen.getByTestId('losing-roll').textContent).toMatch(
-      /Died on 20\d\d · .+ · (Alma Mater|Draft Team|Pro Number|Position)/,
+    expect(screen.getByTestId('game-over').dataset.roll).toMatch(
+      /^20\d\d · .+ · (Alma Mater|Draft Team|Jersey Number|Position)$/,
     )
     cleanup()
     render(<App bundle={bundle} config={config} deps={deps} mode="probowl" />)

@@ -153,11 +153,11 @@ describe('App', () => {
     expect(screen.getByTestId(`face-${slot}`).dataset.look).toBe('correct')
     expect(screen.getByTestId('answer-name')).toBeInTheDocument()
     expect(screen.getByTestId('final-streak').textContent).toBe('0')
-    expect(screen.getByTestId('losing-roll').textContent).toMatch(/Died on 2010 · /)
+    expect(screen.getByTestId('game-over').dataset.roll).toMatch(/^2010 · /)
     // second tap is ignored
     fireEvent.pointerDown(screen.getByTestId(`face-${slot}`))
     expect(screen.getByTestId(`face-${wrong}`).dataset.look).toBe('wrong')
-    fireEvent.click(screen.getByRole('button', { name: 'New streak' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Play again' }))
     expect(screen.queryByTestId('game-over')).toBeNull()
   })
 
@@ -168,7 +168,9 @@ describe('App', () => {
       vi.advanceTimersByTime(config.decisionMs + 50)
     })
     expect(screen.getByTestId('game-over')).toBeInTheDocument()
-    expect(screen.getByText('Time ran out')).toBeInTheDocument()
+    // The panel shows only the number (Frank, 2026-09-09); the outcome is announced for screen readers.
+    expect(screen.getByTestId('game-over')).toBeInTheDocument()
+    expect(screen.getByText(/Time ran out/)).toBeInTheDocument()
     expect(screen.getByTestId('answer-name')).toBeInTheDocument()
   })
 
@@ -195,7 +197,7 @@ describe('App', () => {
     fireEvent.pointerDown(screen.getByTestId(`face-${((slot + 1) % 3) as 0 | 1 | 2}`))
     expect(screen.getByTestId('final-streak').textContent).toBe('1')
     expect(screen.getByTestId('share')).toBeInTheDocument()
-    const roll = screen.getByTestId('losing-roll').textContent!.replace('Died on ', '')
+    const roll = screen.getByTestId('game-over').dataset.roll!
     cleanup()
     render(<App bundle={bundle} config={config} rng={mulberry32(6)} />)
     expect(screen.getByTestId('best').textContent).toContain('Best streak 1')

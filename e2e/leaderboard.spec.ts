@@ -13,7 +13,7 @@ interface ProBowl {
 const CATEGORY: Record<string, string> = {
   'Alma Mater': 'alma',
   'Draft Team': 'draft',
-  'Pro Number': 'number',
+  'Jersey Number': 'number',
   Position: 'position',
 }
 
@@ -61,15 +61,15 @@ test('first streak gates on email, the score posts, the board lists the player, 
 
   // The gate replaces the buttons.
   await expect(page.getByTestId('signup')).toBeVisible()
-  await expect(page.getByRole('button', { name: 'New streak' })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: 'Play again' })).toHaveCount(0)
   const name = `PW ${Date.now().toString(36).slice(-4)}`
   await page.getByTestId('signup-email').fill(`e2e-${Date.now()}@example.com`)
   await page.getByTestId('signup-name').fill(name)
   await page.getByTestId('signup-submit').click()
 
   // Joined: the streak that just ended is on the board with a rank.
-  await expect(page.getByRole('button', { name: 'New streak' })).toBeVisible()
-  await expect(page.getByTestId('open-board')).toContainText(/#\d+ today/)
+  await expect(page.getByRole('button', { name: 'Play again' })).toBeVisible()
+  await expect(page.getByTestId('rank-line')).toContainText(/#\d+ on today's leaderboard/i)
   await page.getByTestId('open-board').click()
   const mine = page.locator('[data-testid="board-row"][data-you="true"]')
   await expect(mine).toContainText(name)

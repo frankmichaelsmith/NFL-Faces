@@ -64,17 +64,28 @@ export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl',
       className="fixed inset-0 z-20 flex flex-col bg-ink/95 p-4 backdrop-blur"
     >
       <div className="mx-auto flex w-full max-w-[720px] flex-1 flex-col gap-3 overflow-hidden">
-        <header className="flex items-center justify-between">
-          <div>
+        <header className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
             <h2 className="font-display text-3xl font-black uppercase tracking-tight">
               {isToday ? "Today's leaderboard" : 'Leaderboard'}
             </h2>
+            <button
+              type="button"
+              onClick={onClose}
+              data-testid="close-board"
+              className="min-h-[44px] rounded-xl border border-white/20 px-4 text-sm font-bold"
+            >
+              Close
+            </button>
+          </div>
+          {/* One centred line (Frank, 2026-09-10): sport toggle, then the day with its arrows. */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {onMode && (
               <div
                 role="radiogroup"
                 aria-label="Sport"
                 data-testid="board-sport"
-                className="my-1 inline-flex rounded-xl border border-white/15 p-0.5 text-xs font-bold"
+                className="inline-flex rounded-xl border border-white/15 p-0.5 text-xs font-bold"
               >
                 {(['probowl', 'nba'] as const).map((m) => (
                   <button
@@ -124,14 +135,6 @@ export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl',
               </button>
             </p>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            data-testid="close-board"
-            className="min-h-[44px] rounded-xl border border-white/20 px-4 text-sm font-bold"
-          >
-            Close
-          </button>
         </header>
         <ol className="flex-1 overflow-y-auto rounded-2xl border border-white/10 bg-card">
           {error && (

@@ -64,7 +64,7 @@ export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl',
       className="fixed inset-0 z-20 flex flex-col bg-ink/95 p-4 backdrop-blur"
     >
       <div className="mx-auto flex w-full max-w-[720px] flex-1 flex-col gap-3 overflow-hidden">
-        <header className="flex flex-col gap-2">
+        <header className="mb-2 flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <h2 className="font-display text-3xl font-black uppercase tracking-tight">
               {isToday ? "Today's leaderboard" : 'Leaderboard'}
@@ -78,8 +78,8 @@ export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl',
               Close
             </button>
           </div>
-          {/* One centred line (Frank, 2026-09-10): sport toggle, then the day with its arrows. */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          {/* One line, left-aligned (Frank, 2026-09-10): sport toggle, then the day with its arrows. */}
+          <div className="flex flex-wrap items-center justify-start gap-3">
             {onMode && (
               <div
                 role="radiogroup"

@@ -6,6 +6,7 @@
  * Exit 1 on any validation error or hard failure (a combo with < 2 distractors).
  */
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
 import path from 'node:path'
 import { GAME_CONFIG } from '../src/game/config'
 import { parseContent } from './lib/content'
@@ -47,7 +48,7 @@ async function main() {
       for (const e of pbErrors.slice(0, 50)) console.error('  ' + e)
       process.exit(1)
     }
-    const { section, report: r } = buildProBowl(pbContent)
+    const { section, report: r } = buildProBowl(pbContent, { collegeLogoExists: logoExists })
     bundle.probowl = section
     probowlReport = '\n' + renderProBowlReport(section, r)
     if (r.hardFailures.length) {
@@ -73,6 +74,7 @@ async function main() {
       categories: ['alma', 'draft', 'number', 'country'],
       positions,
       noCollegeKey: 'NONE', // Frank, 2026-09-10: Dirk and LeBron answer Alma Mater with NONE
+      collegeLogoExists: logoExists,
     })
     bundle.nba = section
     probowlReport += '\n' + renderProBowlReport(section, r).replace('## Pro Bowl Mode', '## NBA')
@@ -107,6 +109,9 @@ async function main() {
     process.exit(1)
   }
 }
+
+/** A college is in the Alma Mater pool only if its logo is on disk (Frank, 2026-09-10). */
+const logoExists = (id: string) => existsSync(path.join(ROOT, 'public/colleges', `${id}.png`))
 
 async function readNba() {
   const read = (f: string) => readFile(path.join(ROOT, 'content', f), 'utf8')

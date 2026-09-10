@@ -313,6 +313,8 @@ export interface BuildOptions {
   positions?: readonly string[]
   /** Players with no college answer Alma Mater with this key (NBA: 'NONE'); it is a wrong card for everyone else. */
   noCollegeKey?: string
+  /** Whether a college's logo file exists. A college without one is out of the Alma Mater pool (Frank, 2026-09-10). */
+  collegeLogoExists?: (collegeId: string) => boolean
 }
 
 export function buildProBowl(
@@ -358,7 +360,17 @@ export function buildProBowl(
   const countryCodes = new Set<string>()
   const numbersByPos = new Map<Skill, Set<string>>()
   const noCollege = opts.noCollegeKey ?? null
-  const collegeOf = (p: PlayerRow) => p.college_id || noCollege || ''
+  // Every Alma Mater card must be a logo: a college with no logo is neither an answer nor a wrong card,
+  // and its players simply get no Alma Mater round (never NONE — that would be wrong data).
+  const logoOk = (p: PlayerRow) =>
+    !!p.college_id && !!p.college_logo && (opts.collegeLogoExists?.(p.college_id) ?? true)
+  const noLogo: string[] = []
+  const collegeOf = (p: PlayerRow) => {
+    if (!p.college_id) return noCollege || ''
+    if (logoOk(p)) return p.college_id
+    noLogo.push(`${p.name} (${p.college_name})`)
+    return ''
+  }
   for (const id of inPool) {
     const p = players.get(id)!
     if (collegeOf(p)) collegeIds.add(collegeOf(p))
@@ -403,7 +415,7 @@ export function buildProBowl(
     }
     if (p.country && !section.countries![p.country])
       section.countries![p.country] = { name: p.country_name || p.country }
-    if (p.college_id && !section.colleges[p.college_id])
+    if (collegeOf(p) && collegeOf(p) !== noCollege && !section.colleges[p.college_id])
       section.colleges[p.college_id] = {
         name: p.college_name,
         logo: p.college_logo ? `${p.college_id}.png` : null,
@@ -481,10 +493,14 @@ export function buildProBowl(
     }
   }
 
-  const missing: ProBowlReport['missing'] = { college: [], jersey: [], draft: [] }
+  const missing: ProBowlReport['missing'] = {
+    college: [...new Set(noLogo)],
+    jersey: [],
+    draft: [],
+  }
   for (const id of inPool) {
     const p = players.get(id)!
-    if (!p.college_id) missing.college.push(p.name)
+    if (!p.college_id && !noCollege) missing.college.push(p.name)
     if (!Object.values(numbers).some((m) => id in m)) missing.jersey.push(p.name)
     if (p.draft_status === 'unknown') missing.draft.push(p.name)
   }

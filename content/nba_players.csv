@@ -267,7 +267,7 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 4432816,LaMelo Ball,G,1,wikipedia,,,,,drafted,2020,1,3,CHH,Charlotte Hornets,espn,true,,us,United States,espn birthplace
 586,Lamond Murray,F,,,25,California,https://a.espncdn.com/i/teamlogos/ncaa/500/25.png,espn,drafted,1994,1,7,LAC,Los Angeles Clippers,espn,true,,us,United States,espn birthplace
 229,LaPhonso Ellis,F,,,87,Notre Dame,https://a.espncdn.com/i/teamlogos/ncaa/500/87.png,espn,drafted,1992,1,5,DEN,Denver Nuggets,espn,true,,us,United States,wikipedia birthplace
-392,Larry D. Johnson,F,99,espn,110319,Odessa,,espn,drafted,1991,1,1,CHH,Charlotte Hornets,espn,true,,us,United States,espn birthplace
+392,Larry D. Johnson,F,,,2439,UNLV,https://a.espncdn.com/i/teamlogos/ncaa/500/2439.png,wikipedia (ESPN logo),drafted,1991,1,1,CHH,Charlotte Hornets,espn,true,,us,United States,espn birthplace
 356,Larry Hughes,G,,,139,Saint Louis,https://a.espncdn.com/i/teamlogos/ncaa/500/139.png,espn,drafted,1998,1,8,PHI,Philadelphia 76ers,espn,true,,us,United States,wikipedia birthplace
 800,Latrell Sprewell,G,,,333,Alabama,https://a.espncdn.com/i/teamlogos/ncaa/500/333.png,espn,drafted,1992,1,24,GS,Golden State Warriors,espn,true,,us,United States,espn birthplace
 4066336,Lauri Markkanen,F,23,espn,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,2017,1,7,MIN,Minnesota Timberwolves,espn,true,,fi,Finland,espn birthplace
@@ -287,7 +287,7 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 3206,Marc Gasol,C,,,,,,,drafted,2007,2,48,LAL,Los Angeles Lakers,espn,true,,es,Spain,espn birthplace
 2758,Marcin Gortat,C,,,,,,,drafted,2005,2,57,PHX,Phoenix Suns,espn,true,,pl,Poland,espn birthplace
 125,Marcus Camby,C,,,113,Massachusetts,https://a.espncdn.com/i/teamlogos/ncaa/500/113.png,espn,drafted,1996,1,2,TOR,Toronto Raptors,espn,true,,us,United States,espn birthplace
-4017,Marcus Thornton,G,,,3252,Kilgore College,,espn,drafted,2009,2,43,MIA,Miami Heat,espn,true,,us,United States,espn birthplace
+4017,Marcus Thornton,G,,,99,LSU,https://a.espncdn.com/i/teamlogos/ncaa/500/99.png,wikipedia (ESPN logo),drafted,2009,2,43,MIA,Miami Heat,espn,true,,us,United States,espn birthplace
 370,Mark Jackson,G,,,2599,St. John's,https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png,espn,drafted,1987,1,18,NY,New York Knicks,espn,true,,us,United States,espn birthplace
 6428,MarShon Brooks,G,,,2507,Providence,https://a.espncdn.com/i/teamlogos/ncaa/500/2507.png,espn,drafted,2011,1,25,BOS,Boston Celtics,espn,true,,us,United States,espn birthplace
 306,Matt Harpring,F,,,59,Georgia Tech,https://a.espncdn.com/i/teamlogos/ncaa/500/59.png,espn,drafted,1998,1,15,ORL,Orlando Magic,espn,true,,us,United States,espn birthplace
@@ -299,7 +299,7 @@ espn_id,name,pos,jersey,jersey_source,college_id,college_name,college_logo,colle
 203,Michael Dickerson,G,,,12,Arizona,https://a.espncdn.com/i/teamlogos/ncaa/500/12.png,espn,drafted,1998,1,14,HOU,Houston Rockets,espn,true,,us,United States,espn birthplace
 242,Michael Finley,G,,,275,Wisconsin,https://a.espncdn.com/i/teamlogos/ncaa/500/275.png,espn,drafted,1995,1,21,PHX,Phoenix Suns,espn,true,,us,United States,espn birthplace
 1035,Michael Jordan,G,,,153,North Carolina,https://a.espncdn.com/i/teamlogos/ncaa/500/153.png,espn,drafted,1984,1,3,CHI,Chicago Bulls,espn,true,,us,United States,espn birthplace
-621,Michael Olowokandi,C,,,,Pacific,,wikipedia (no logo),drafted,1998,1,1,LAC,Los Angeles Clippers,espn,true,,ng,Nigeria,espn birthplace
+621,Michael Olowokandi,C,,,279,Pacific,https://a.espncdn.com/i/teamlogos/ncaa/500/279.png,wikipedia (ESPN logo),drafted,1998,1,1,LAC,Los Angeles Clippers,espn,true,,ng,Nigeria,espn birthplace
 4278104,Michael Porter Jr.,F,17,espn,142,Missouri,https://a.espncdn.com/i/teamlogos/ncaa/500/142.png,espn,drafted,2018,1,14,DEN,Denver Nuggets,espn,true,,us,United States,espn birthplace
 692,Michael Redd,G,,,194,Ohio State,https://a.espncdn.com/i/teamlogos/ncaa/500/194.png,espn,drafted,2000,2,43,MIL,Milwaukee Bucks,espn,true,,us,United States,espn birthplace
 3147657,Mikal Bridges,G,25,espn,222,Villanova,https://a.espncdn.com/i/teamlogos/ncaa/500/222.png,espn,drafted,2018,1,10,PHI,Philadelphia 76ers,espn,true,,us,United States,espn birthplace

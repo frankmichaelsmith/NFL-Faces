@@ -427,3 +427,13 @@ export function nameKey(s: string): string {
 export function plainName(raw: string): string {
   return plain(strip(raw))
 }
+
+/** content/wiki_titles.csv: curator-pinned article titles by ESPN id (espn_id,wiki_title,note). */
+export function parseWikiTitles(csvText: string): Map<string, string> {
+  const out = new Map<string, string>()
+  for (const line of csvText.split('\n').slice(1)) {
+    const m = line.match(/^(\d+),("([^"]*)"|[^,]*)/)
+    if (m && m[1]) out.set(m[1], (m[3] ?? m[2] ?? '').trim())
+  }
+  return out
+}

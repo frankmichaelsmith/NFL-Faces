@@ -43,6 +43,7 @@ import {
   parseInfobox,
   parseProBowlRoster,
   type InfoboxFacts,
+  parseWikiTitles,
   proBowlTitles,
   type DraftRow,
 } from './lib/wiki'
@@ -128,6 +129,9 @@ async function main() {
       .map((s) => [`${s.season}:${s.wiki_title}`, { id: s.espn_id, note: s.note }]),
   )
   const prevPlayers = new Map(existing.players.map((p) => [p.espn_id, p]))
+  const pinnedTitles = parseWikiTitles(
+    await readFile(path.join(CONTENT, 'wiki_titles.csv'), 'utf8').catch(() => ''),
+  )
 
   // 1. Rosters
   const selections: SelectionRow[] = []
@@ -373,7 +377,11 @@ async function main() {
     ) ?? draftTeams.find((t) => t.abbr === abbr)
 
   const players: PlayerRow[] = []
-  const titleFor = new Map(forFacts.filter((s) => s.espn_id).map((s) => [s.espn_id, s.wiki_title]))
+  const titleFor = new Map(
+    forFacts
+      .filter((s) => s.espn_id)
+      .map((s) => [s.espn_id, pinnedTitles.get(s.espn_id) ?? s.wiki_title]),
+  )
   const posFor = new Map(forFacts.filter((s) => s.espn_id).map((s) => [s.espn_id, s.pos]))
   for (const id of ids) {
     const f = await facts(id)

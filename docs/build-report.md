@@ -1,6 +1,6 @@
 # Build report — cebb6639952d
 
-Generated 2026-09-10T16:12:26.555Z.
+Generated 2026-09-10T17:14:14.434Z.
 
 **794** answerable combos across 27 seasons (2000–2026, 2026 live from the depth chart), 193 distinct answers, 166 people in the bundle.
 
@@ -147,26 +147,26 @@ None.
 
 ## Pro Bowl Mode
 
-**7325** combos across 31 seasons, 567 players, 148 colleges, 42 draft-team tiles.
+**7318** combos across 31 seasons, 567 players, 143 colleges, 42 draft-team tiles.
 
-By category: alma 1861, draft 1854, number 1749, position 1861.
+By category: alma 1853, draft 1855, number 1749, position 1861.
 
 | Season | Named | Resolved | Combos |
 |---|---|---|---|
 | 1995 | 39 | 39 | 154 |
-| 1996 | 43 | 43 | 168 |
+| 1996 | 43 | 43 | 169 |
 | 1997 | 45 | 45 | 175 |
 | 1998 | 52 | 52 | 204 |
 | 1999 | 38 | 38 | 152 |
-| 2000 | 56 | 56 | 220 |
-| 2001 | 59 | 59 | 232 |
-| 2002 | 60 | 60 | 237 |
-| 2003 | 58 | 58 | 218 |
-| 2004 | 58 | 58 | 218 |
+| 2000 | 56 | 56 | 218 |
+| 2001 | 59 | 59 | 230 |
+| 2002 | 60 | 60 | 236 |
+| 2003 | 58 | 58 | 217 |
+| 2004 | 58 | 58 | 217 |
 | 2005 | 58 | 58 | 219 |
 | 2006 | 57 | 57 | 217 |
 | 2007 | 60 | 60 | 230 |
-| 2008 | 65 | 65 | 245 |
+| 2008 | 65 | 65 | 244 |
 | 2009 | 65 | 65 | 248 |
 | 2010 | 65 | 65 | 260 |
 | 2011 | 65 | 65 | 258 |
@@ -189,21 +189,21 @@ By category: alma 1861, draft 1854, number 1749, position 1861.
 
 None.
 
-### Players missing college (0)
+### Players missing college (4)
 
-None.
+Bill Schroeder (Dallas Baptist), Derrick Ward (Ottawa (KS)), Dominic Rhodes (Midwestern State), Joe Horn (Itawamba CC MS)
 
 ### Players missing jersey (22)
 
 Antonio Bryant, Antowain Smith, Brandon Stokley, Byron Leftwich, Derrick Ward, Dominic Rhodes, Dorsey Levens, Drew Bennett, Earnest Graham, Joey Harrington, Kevin Curtis, Kevin Johnson, LaMont Jordan, Michael Clayton, Michael Pittman, Mike Furrey, Mike Sims-Walker, Randy McMichael, Robert Brooks, Roell Preston, Steve Slaton, Travis Jervey
 
-### Players missing draft (6)
+### Players missing draft (5)
 
-Allen Hurns, Bill Schroeder, Jackie Harris, James Stewart, Jim Kelly, Ty Detmer
+Allen Hurns, Bill Schroeder, Jackie Harris, James Stewart, Jim Kelly
 
 ## NBA
 
-**7743** combos across 31 seasons, 418 players, 117 colleges, 36 draft-team tiles.
+**7743** combos across 31 seasons, 418 players, 116 colleges, 36 draft-team tiles.
 
 By category: alma 1940, draft 1940, number 1923, position 0.
 
@@ -245,9 +245,9 @@ By category: alma 1940, draft 1940, number 1923, position 0.
 
 None.
 
-### Players missing college (67)
+### Players missing college (0)
 
-Al Harrington, Al Jefferson, Alperen Sengun, Amar'e Stoudemire, Anderson Varejao, Andray Blatche, Andrea Bargnani, Andrei Kirilenko, Andrew Bynum, Andris Biedrins, Anfernee Simons, Bojan Bogdanovic, Brandon Jennings, Clint Capela, Danilo Gallinari, Dennis Schroder, Dino Radja, Dirk Nowitzki, Dorell Wright, Dwight Howard, Eddy Curry, Evan Fournier, Giannis Antetokounmpo, Goran Dragic, Hedo Turkoglu, Isaiah Hartenstein, Ivica Zubac, JR Smith, Jalen Green, Jermaine O'Neal, Jonas Valanciunas, Jose Calderon, Josh Giddey, Josh Smith, Jusuf Nurkic, Kevin Garnett, Kobe Bryant, Kristaps Porzingis, LaMelo Ball, LeBron James, Leandro Barbosa, Lou Williams, Luis Scola, Luka Doncic, Manu Ginobili, Marc Gasol, Marcin Gortat, Mehmet Okur, Michael Olowokandi, Monta Ellis, Nikola Jokic, Nikola Pekovic, Omer Asik, Pau Gasol, Peja Stojakovic, Rashard Lewis, Ricky Rubio, Rudy Gobert, Shawn Kemp, Stephen Jackson, Toni Kukoc, Tony Parker, Tracy McGrady, Tyson Chandler, Victor Wembanyama, Yao Ming, Zydrunas Ilgauskas
+None.
 
 ### Players missing jersey (5)
 

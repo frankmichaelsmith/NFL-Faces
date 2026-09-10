@@ -27,7 +27,7 @@ import {
   type PlayerRow,
   type SelectionRow,
 } from './lib/probowl'
-import { WikiClient, field, nameKey, parseInfobox, plainName } from './lib/wiki'
+import { WikiClient, field, nameKey, parseInfobox, parseWikiTitles, plainName } from './lib/wiki'
 import { parseRosterNumbers, teamSeasonTitles } from './lib/nba-rosters'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
@@ -106,6 +106,33 @@ async function main() {
   const prevTitle = new Map(
     existing.selections.filter((s) => s.wiki_title).map((s) => [s.espn_id, s.wiki_title]),
   )
+  // Curator-pinned titles (content/wiki_titles.csv) beat remembered and searched ones.
+  const pinned = parseWikiTitles(await read('wiki_titles.csv'))
+  for (const [id, title] of pinned) prevTitle.set(id, title)
+  // College programs by every name ESPN gives them (the basketball list: Pacific has no football team).
+  const collegeByKey = new Map<string, { id: string; name: string; logo: string | null } | null>()
+  for (const t of await espn.colleges('basketball'))
+    for (const k of [t.displayName, t.name, t.shortDisplayName, t.abbreviation, t.nickname]) {
+      const key = nameKey(k)
+      if (!key) continue
+      const prev = collegeByKey.get(key)
+      if (prev === undefined) collegeByKey.set(key, { id: t.id, name: t.name, logo: t.logo })
+      else if (prev && prev.id !== t.id) collegeByKey.set(key, null)
+    }
+  const resolveCollege = (c: { name: string; link: string | null } | undefined) => {
+    if (!c) return null
+    const keys = [
+      c.link?.replace(/\s+(men's )?basketball$/i, ''),
+      c.link?.replace(/\s+(men's )?basketball$/i, '').replace(/\s*\([^)]*\)/, ''),
+      c.name,
+    ]
+    for (const k of keys) {
+      const hit = k ? collegeByKey.get(nameKey(k)) : undefined
+      if (hit) return hit
+    }
+    return null
+  }
+  const collegeOverrides: string[] = []
   // Country names as ESPN spells them → flag code + display name (content/nba_countries.csv).
   const countries = new Map<string, { code: string; name: string }>()
   {
@@ -356,16 +383,29 @@ async function main() {
         break
       }
     }
+    // College: Wikipedia's last-listed school wins when ESPN's basketball list knows it (ESPN keeps
+    // junior colleges and the odd wrong school; Wikipedia keeps the school the player left for the NBA).
+    let college = f.college ?? null
+    let collegeSource = college ? 'espn' : info.college ? 'wikipedia (no logo)' : ''
+    const wikiCollege = resolveCollege(info.colleges.at(-1))
+    if (wikiCollege && (!college || wikiCollege.id !== college.id)) {
+      if (college)
+        collegeOverrides.push(
+          `${f.displayName}: ESPN ${college.name} → Wikipedia ${wikiCollege.name}`,
+        )
+      college = { id: wikiCollege.id, name: wikiCollege.name, logo: wikiCollege.logo }
+      collegeSource = 'wikipedia (ESPN logo)'
+    }
     const row: PlayerRow = {
       espn_id: id,
       name: f.displayName,
       pos: (coarsePosition(f.position) || 'F') as PlayerRow['pos'],
       jersey,
       jersey_source: jerseySource,
-      college_id: f.college?.id ?? '',
-      college_name: f.college?.name ?? info.college ?? '',
-      college_logo: f.college?.logo ?? '',
-      college_source: f.college ? 'espn' : info.college ? 'wikipedia (no logo)' : '',
+      college_id: college?.id ?? '',
+      college_name: college?.name ?? info.college ?? '',
+      college_logo: college?.logo ?? '',
+      college_source: collegeSource,
       draft_status: 'unknown',
       draft_year: null,
       draft_round: null,
@@ -445,6 +485,10 @@ async function main() {
   )
   if (unverified.length)
     log(`no verified Wikipedia article (${unverified.length}): ${unverified.join('; ')}`)
+  if (collegeOverrides.length)
+    log(
+      `college from Wikipedia over ESPN (${collegeOverrides.length}):\n  ${collegeOverrides.join('\n  ')}`,
+    )
   if (unknownCountry.size)
     log(`countries not in nba_countries.csv: ${[...unknownCountry].join(', ')}`)
   if (countryReview.length)

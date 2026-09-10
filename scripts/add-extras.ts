@@ -16,7 +16,7 @@ import path from 'node:path'
 import { parseCsv, serializeCsv } from './lib/csv'
 import { EspnClient } from './lib/espn'
 import { SELECTION_HEADER, parseProBowlContent, type SelectionRow } from './lib/probowl'
-import { WikiClient, nameKey, parseInfobox } from './lib/wiki'
+import { WikiClient, nameKey, parseInfobox, parseWikiTitles } from './lib/wiki'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const POS_WORDS: Record<string, string[]> = {
@@ -43,6 +43,13 @@ async function main() {
   for (const s of content.selections)
     if (s.espn_id && s.wiki_title) knownTitle.set(s.espn_id, s.wiki_title)
   const onRoster = new Set(content.selections.map((s) => `${s.season}:${s.espn_id}`))
+  // Curator-pinned titles (content/wiki_titles.csv) beat both.
+  try {
+    for (const [id, title] of parseWikiTitles(await read('wiki_titles.csv')))
+      knownTitle.set(id, title)
+  } catch {
+    /* none */
+  }
 
   const parsed = parseCsv(await readFile(input, 'utf8'))
   const rows = parsed.rows.map((cells) =>

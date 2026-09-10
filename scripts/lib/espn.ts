@@ -215,10 +215,12 @@ export class EspnClient {
   }
 
   /** Every college football program ESPN knows (id, names, logo), for matching Wikipedia's college names. */
-  async colleges(): Promise<EspnCollegeTeam[]> {
+  async colleges(sport: 'football' | 'basketball' = 'football'): Promise<EspnCollegeTeam[]> {
+    const league =
+      sport === 'basketball' ? 'basketball/mens-college-basketball' : 'football/college-football'
     const d = await this.get<{
       sports: { leagues: { teams: { team: RawCollegeTeam }[] }[] }[]
-    }>('https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams?limit=1000')
+    }>(`https://site.api.espn.com/apis/site/v2/sports/${league}/teams?limit=1000`)
     return (d.sports[0]?.leagues[0]?.teams ?? []).map(({ team: t }) => ({
       id: t.id,
       name: t.location,

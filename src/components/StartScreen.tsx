@@ -45,12 +45,23 @@ export function StartScreen({
       <MuteButton muted={muted} onToggle={onToggleMute} className="absolute right-4 top-4" />
       <h1 className="font-display text-7xl font-black uppercase tracking-tight">{GAME_TITLE}</h1>
       {VISIBLE_MODES.length > 1 && (
+        // The sport slider (Frank, 2026-09-10): a pill that slides under NFL | NBA.
         <div
           role="radiogroup"
-          aria-label="Game mode"
-          className="flex rounded-2xl border border-white/15 p-1 text-sm font-bold"
+          aria-label="Sport"
+          className="relative grid w-56 rounded-2xl border border-white/15 bg-black/30 p-1 text-base font-black"
+          style={{ gridTemplateColumns: `repeat(${VISIBLE_MODES.length}, minmax(0, 1fr))` }}
           data-testid="mode-picker"
         >
+          <span
+            aria-hidden
+            className="absolute bottom-1 top-1 rounded-xl bg-white transition-transform duration-200 ease-out motion-reduce:transition-none"
+            style={{
+              width: `calc((100% - 0.5rem) / ${VISIBLE_MODES.length})`,
+              left: '0.25rem',
+              transform: `translateX(${Math.max(0, VISIBLE_MODES.indexOf(mode)) * 100}%)`,
+            }}
+          />
           {VISIBLE_MODES.map((m) => (
             <button
               key={m}
@@ -61,8 +72,8 @@ export function StartScreen({
               onClick={() => onMode(m)}
               data-testid={`mode-${m}`}
               className={
-                'min-h-[44px] rounded-xl px-5 disabled:opacity-40 ' +
-                (mode === m ? 'bg-white text-ink' : 'text-white/70')
+                'relative z-10 min-h-[44px] rounded-xl px-4 uppercase tracking-wide transition-colors disabled:opacity-40 ' +
+                (mode === m ? 'text-ink' : 'text-white/70')
               }
             >
               {MODE_LABELS[m]}

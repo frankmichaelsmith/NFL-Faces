@@ -9,7 +9,11 @@ Live at https://nfl-faces.vercel.app. Static site, no backend. See `CLAUDE.md` f
 ```
 npm run dev            # local dev server
 npm run pull:espn      # ESPN → content/*.csv (add --refresh to bypass the cache, --samples to refresh /samples)
-npm run pull:probowl   # Wikipedia + ESPN → content/probowl_*.csv (Pro Bowl Mode rosters and attributes)
+npm run pull:probowl   # Wikipedia + ESPN → content/probowl_*.csv (Pro Bowl rosters and attributes)
+npm run candidates     # ESPN team leaders → content/candidates.csv (non-Pro-Bowlers for Frank to approve)
+npm run extras -- content/candidates_approved.csv   # approved rows → content/extra_selections.csv
+npm run pull:nba       # ESPN league leaders + Wikipedia → content/nba_*.csv (NBA pool, season numbers)
+npm run nba:assets     # NBA draft tiles, NONE tile, flags → public/tiles, public/flags
 
 # Leaderboard API (decision 0008): api/*.ts → server/. `npm run dev` and `vite preview` serve /api/*
 # with an in-memory store; set DATABASE_URL in .env (Neon) to use Postgres locally.

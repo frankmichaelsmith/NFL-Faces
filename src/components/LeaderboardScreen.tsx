@@ -7,8 +7,10 @@ interface Props {
   onClose: () => void
   /** Shown under the list when the device has no email on file. */
   signedIn: boolean
-  /** Which sport's board (N3 adds the toggle). */
+  /** Which sport's board. */
   mode?: 'probowl' | 'nba'
+  /** The NFL | NBA toggle, when the app offers both. */
+  onMode?: (mode: 'probowl' | 'nba') => void
 }
 
 /**
@@ -16,7 +18,7 @@ interface Props {
  * even when outside the list. Arrows step back through earlier days (Frank,
  * 2026-09-10) as far as the board's first day, and forward again to today.
  */
-export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl' }: Props) {
+export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl', onMode }: Props) {
   // null = today (the server decides which day that is); a date = a past day.
   const [day, setDay] = useState<string | null>(null)
   // Results are keyed by the day they were requested for, so switching days shows a
@@ -57,7 +59,7 @@ export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl' 
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Today's leaderboard"
+      aria-label={`${mode === 'nba' ? 'NBA' : 'NFL'} leaderboard`}
       data-testid="leaderboard"
       className="fixed inset-0 z-20 flex flex-col bg-ink/95 p-4 backdrop-blur"
     >
@@ -67,6 +69,31 @@ export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl' 
             <h2 className="font-display text-3xl font-black uppercase tracking-tight">
               {isToday ? "Today's leaderboard" : 'Leaderboard'}
             </h2>
+            {onMode && (
+              <div
+                role="radiogroup"
+                aria-label="Sport"
+                data-testid="board-sport"
+                className="my-1 inline-flex rounded-xl border border-white/15 p-0.5 text-xs font-bold"
+              >
+                {(['probowl', 'nba'] as const).map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    role="radio"
+                    aria-checked={mode === m}
+                    onClick={() => onMode(m)}
+                    data-testid={`board-mode-${m}`}
+                    className={
+                      'min-h-[32px] rounded-lg px-3 ' +
+                      (mode === m ? 'bg-white text-ink' : 'text-white/70')
+                    }
+                  >
+                    {m === 'nba' ? 'NBA' : 'NFL'}
+                  </button>
+                ))}
+              </div>
+            )}
             <p className="flex items-center gap-2 text-xs uppercase tracking-widest text-white/50">
               <button
                 type="button"

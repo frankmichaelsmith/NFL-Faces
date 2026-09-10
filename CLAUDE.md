@@ -13,7 +13,7 @@ A fast, endless, mobile-first web game. **Two** slot-machine wheels land on a **
 
 ## Start screen (Frank, 2026-09-09)
 
-The start screen is titled **Spin Streak** (tagline "Tap the correct answer in 6 seconds or less.") (`GAME_TITLE`) and offers **only Pro Bowl Mode** (`VISIBLE_MODES = ['probowl']`); the mode picker appears only when more than one mode is visible. Faces mode is hidden, not removed: `?mode=faces` opens it, and its code, content, photos and tests stay green. Tab title, PWA manifest, icons and share text say **Spin Streak** (renamed 2026-09-09; the repo, Vercel project and content pipeline keep the NFL Faces name). Domain: **https://spinstreak.app** (www redirects per Vercel's default; `nfl-faces.vercel.app` still serves).
+The start screen offers an **NFL | NBA slider** (`VISIBLE_MODES = ['probowl', 'nba']`, decision 0009; `probowl` is the NFL pool). It is titled **Spin Streak** (tagline "Tap the correct answer in 6 seconds or less.") (`GAME_TITLE`) and offers **only Pro Bowl Mode** (`VISIBLE_MODES = ['probowl']`); the mode picker appears only when more than one mode is visible. Faces mode is hidden, not removed: `?mode=faces` opens it, and its code, content, photos and tests stay green. Tab title, PWA manifest, icons and share text say **Spin Streak** (renamed 2026-09-09; the repo, Vercel project and content pipeline keep the NFL Faces name). Domain: **https://spinstreak.app** (www redirects per Vercel's default; `nfl-faces.vercel.app` still serves).
 
 ## Pro Bowl Mode (Frank, 2026-09-09 — decision 0007)
 
@@ -80,7 +80,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - Timestamps UTC ISO 8601. Seasons are integers (the year the regular season starts).
 - **Reproducible runs:** `?seed=123` in the URL seeds the game's rng (debugging, e2e). Production play stays random.
 - **Live-season refresh:** `.github/workflows/refresh-live-season.yml` re-pulls ESPN every Tuesday, processes new faces, rebuilds, tests, and commits to `main`; Vercel deploys. It needs no secrets.
-- **Leaderboard client** lives in `src/leaderboard/` (`client.ts`: identity in `nfl-faces:player:v1`, offline queue in `nfl-faces:score-queue:v1`, no React; `useLeaderboard.ts`: one score post per finished game, the sign-up gate = played once with no identity). Screens: `SignUpForm`, `LeaderboardScreen` (at **/leaderboard** via `route.ts` + `vercel.json` rewrite, so Back returns to the game). Tests inject a fake `fetch` through `deps.leaderboard`; the old App tests seed an identity so the gate stays out of their way.
+- **Leaderboard client** lives in `src/leaderboard/` (`client.ts`: identity in `nfl-faces:player:v1`, offline queue in `nfl-faces:score-queue:v1`, no React; `useLeaderboard.ts`: one score post per finished game, the sign-up gate = played once with no identity). Screens: `SignUpForm`, `LeaderboardScreen` (at **/leaderboard** for NFL and **/leaderboard/nba** via `route.ts` + `vercel.json` rewrites, so Back returns to the game; the board has its own NFL | NBA toggle). Tests inject a fake `fetch` through `deps.leaderboard`; the old App tests seed an identity so the gate stays out of their way.
 - **Leaderboard API** lives in `server/` (pure handlers over a `LeaderboardStore`; `db.ts` is the Drizzle/Neon store, `http.ts` the Web-standard router, `vite-plugin.ts` serves `/api/*` in `vite` and `vite preview`). `api/*.ts` are one-line Vercel Functions. Tests: `server/*.test.ts` (in-memory) and `server/db.test.ts` (PGlite, real SQL). Leaderboard day = Eastern calendar date.
 - **Gates before finishing any task:** `npm run typecheck && npm run lint && npm test && npm run simulate`; after UI work also `npm run build && npm run size && npm run e2e`.
 
@@ -104,6 +104,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - [ ] Pro Bowl P4 — finish
 - [x] NBA N1 — data: pull, draft-team table, countries + flags, bundle.nba (built 2026-09-10; awaiting Frank checkpoint) — decision 0009
 - [x] NBA N2 — engine + config + per-sport API (built 2026-09-10)
-- [ ] NBA N3 — screens (sport slider, flag cards, board toggle) · N4 finish
+- [x] NBA N3 — screens: NFL | NBA slider, flag and NONE cards, board toggle at /leaderboard/nba (built 2026-09-10; awaiting Frank checkpoint)
+- [ ] NBA N4 — finish: e2e polish, legal list (NBA mark)
 - [x] Leaderboard L1 — server: schema, handlers, routing, dev/preview middleware, tests (built 2026-09-09; awaiting Frank checkpoint + Neon DATABASE_URL)
 - [x] Leaderboard L2 — client: email gate after the first streak, score posts with an offline queue, board screen, e2e (built 2026-09-09; awaiting Frank checkpoint)

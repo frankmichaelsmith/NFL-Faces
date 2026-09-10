@@ -108,14 +108,15 @@ function Game({
   const route = useBoardRoute()
   const openBoard = (from: 'start' | 'gameover') => {
     game.analytics.track('leaderboard_opened', { from })
-    route.openBoard()
+    route.openBoard(mode === 'nba' ? 'nba' : 'probowl')
   }
   const board = route.open ? (
     <LeaderboardScreen
       client={client}
       signedIn={!!lb.identity}
       onClose={route.closeBoard}
-      mode={mode === 'nba' ? 'nba' : 'probowl'}
+      mode={route.mode}
+      onMode={route.setMode}
     />
   ) : null
   if (game.state.phase === 'idle')

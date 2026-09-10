@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/leaderboard", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/leaderboard", "destination": "/index.html" },
+    { "source": "/leaderboard/:sport", "destination": "/index.html" }
+  ]
 }

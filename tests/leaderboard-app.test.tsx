@@ -61,7 +61,9 @@ const fetchFn = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
     return json(200, { day: '2026-09-09', best: me.streak, improved: true, rank })
   }
   if (path.includes('/api/leaderboard')) {
-    const day = new URL(path, 'http://x').searchParams.get('day') ?? '2026-09-10'
+    const url = new URL(path, 'http://x')
+    const day = url.searchParams.get('day') ?? '2026-09-10'
+    const mode = url.searchParams.get('mode') === 'nba' ? 'nba' : 'probowl'
     // Only today has scores in this fake; any earlier day is empty.
     const sorted =
       day === '2026-09-10'
@@ -69,7 +71,7 @@ const fetchFn = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
         : []
     return json(200, {
       day,
-      mode: 'probowl',
+      mode,
       rows: sorted.map((r, i) => ({
         rank: i + 1,
         name: r.name,
@@ -260,6 +262,22 @@ describe('Leaderboard flow (decision 0008)', () => {
     fireEvent.click(screen.getByTestId('board-next'))
     await until(() => expect(screen.getByTestId('board-day')).toHaveTextContent('September 10th'))
     expect(screen.getByTestId('board-next')).toBeDisabled()
+  })
+
+  it('each sport has its own board address, and the toggle switches between them', async () => {
+    history.replaceState(null, '', '/leaderboard/nba')
+    render(<App bundle={bundle} config={config} deps={deps()} rng={mulberry32(1)} />)
+    expect(screen.getByTestId('leaderboard')).toHaveAttribute('aria-label', 'NBA leaderboard')
+    expect(screen.getByTestId('board-mode-nba')).toHaveAttribute('aria-checked', 'true')
+    await until(() => expect(screen.getByTestId('board-day')).toHaveTextContent('September 10th'))
+    expect(fetchFn).toHaveBeenLastCalledWith(expect.stringContaining('mode=nba'), expect.anything())
+    fireEvent.click(screen.getByTestId('board-mode-probowl'))
+    expect(location.pathname).toBe('/leaderboard')
+    expect(screen.getByTestId('leaderboard')).toHaveAttribute('aria-label', 'NFL leaderboard')
+    fireEvent.click(screen.getByTestId('board-mode-nba'))
+    expect(location.pathname).toBe('/leaderboard/nba')
+    fireEvent.click(screen.getByTestId('close-board'))
+    expect(location.pathname).toBe('/')
   })
 
   it('opening /leaderboard directly shows the board over the start screen', async () => {

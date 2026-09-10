@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { wheelValues } from '../../src/components/Wheels'
+import { optionImage } from '../../src/components/OptionCards'
 import type { Bundle } from '../../src/game/bundle'
 import type { AnyRound } from '../../src/state/machine'
 
@@ -43,5 +44,17 @@ describe('season wheel span', () => {
     expect(wheelValues(bundle, 'season', probowlRound)[0]).toBe('1995')
     expect(wheelValues(bundle, 'season', probowlRound).at(-1)).toBe('2001')
     expect(wheelValues(bundle, 'season', probowlRound)).toHaveLength(7)
+  })
+})
+
+describe('card images per sport', () => {
+  it('reads NFL draft tiles from tiles/ and NBA ones from tiles/nba/, sharing UNDRAFTED and NONE', () => {
+    expect(optionImage('draft', 'MIA', '/')).toBe('/tiles/MIA.png')
+    expect(optionImage('draft', 'MIA', '/', 'nba')).toBe('/tiles/nba/MIA.png')
+    expect(optionImage('draft', 'UDFA', '/', 'nba')).toBe('/tiles/UDFA.png')
+    expect(optionImage('alma', 'NONE', '/', 'nba')).toBe('/tiles/NONE.png')
+    expect(optionImage('alma', '2390', '/', 'nba')).toBe('/colleges/2390.png')
+    expect(optionImage('country', 'au', '/', 'nba')).toBe('/flags/au.png')
+    expect(optionImage('number', '23', '/', 'nba')).toBeNull()
   })
 })

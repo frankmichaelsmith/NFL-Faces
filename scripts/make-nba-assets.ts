@@ -1,6 +1,7 @@
 /**
  * NBA assets (decision 0009):
- * - draft-team tiles from content/nba_draft_teams.csv → public/tiles/nba-{key}.png (+ UNDRAFTED shares the NFL tile)
+ * - draft-team tiles from content/nba_draft_teams.csv → public/tiles/nba/{key}.png, in each
+ *   franchise's own colours (the NFL tiles share abbreviations like MIA and MIN, so they live apart)
  * - country flags from the flag-icons set (MIT) → public/flags/{code}.png, 4:3 flag centred on a 320 px square
  * College logos for NBA players are written by `npm run tiles`, which reads both player files.
  *
@@ -33,7 +34,7 @@ function tileSvg(label: string, color: string, alt: string, size = SIZE): string
 }
 
 async function main() {
-  await mkdir(TILES, { recursive: true })
+  await mkdir(path.join(TILES, 'nba'), { recursive: true })
   await mkdir(FLAGS, { recursive: true })
   const read = (f: string) => readFile(path.join(ROOT, 'content', f), 'utf8')
   const { content, errors } = parseProBowlContent(
@@ -49,7 +50,7 @@ async function main() {
   for (const t of content.draftTeams)
     await sharp(Buffer.from(tileSvg(t.label, t.color, t.alt_color)))
       .png()
-      .toFile(path.join(TILES, `nba-${t.abbr}.png`))
+      .toFile(path.join(TILES, 'nba', `${t.abbr}.png`))
   await sharp(Buffer.from(tileSvg('NONE', '3A3F4B', 'FFFFFF')))
     .png()
     .toFile(path.join(TILES, 'NONE.png'))

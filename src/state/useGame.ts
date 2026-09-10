@@ -251,14 +251,14 @@ export function useGame(
     const base = typeof import.meta.env.BASE_URL === 'string' ? import.meta.env.BASE_URL : '/'
     const imgs: HTMLImageElement[] = []
     for (const value of state.round.options) {
-      const src = optionImage(state.round.combo.category, value, base)
+      const src = optionImage(state.round.combo.category, value, base, config.poolKey)
       if (!src) continue
       const img = new Image()
       img.src = src
       imgs.push(img)
     }
     return () => imgs.forEach((img) => (img.src = ''))
-  }, [state.phase, state.round])
+  }, [state.phase, state.round, config.poolKey])
 
   // Awaiting: enforce the deadline. The reducer re-checks the clock, so a
   // throttled timer can only fire late, never early.

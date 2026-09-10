@@ -43,6 +43,8 @@ test('NBA: pick the sport, play a round, and the category wheel offers Birthplac
   const right = page.locator(`[data-testid^="face-"][data-value="${combo.answer}"]`)
   if (combo.category === 'country')
     await expect(right.locator('img')).toHaveAttribute('src', /\/flags\//)
+  if (combo.category === 'draft' && combo.answer !== 'UDFA')
+    await expect(right.locator('img')).toHaveAttribute('src', /\/tiles\/nba\//)
   await right.dispatchEvent('pointerdown')
   await expect(page.getByTestId('streak')).toHaveText('1')
   // The reel lists the NBA categories, Birthplace included, Position excluded.

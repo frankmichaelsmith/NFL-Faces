@@ -23,11 +23,23 @@ function lookFor(state: GameState, slot: Slot): Look {
   return 'neutral'
 }
 
-/** Image file for a value, or null when the category is rendered as text. */
-export function optionImage(category: ProBowlCategory, value: string, base: string): string | null {
+/**
+ * Image file for a value, or null when the category is rendered as text.
+ * Draft tiles live per sport (tiles/ for the NFL, tiles/nba/ for the NBA): the two
+ * leagues share abbreviations like MIA and MIN but not colours. UNDRAFTED is shared.
+ */
+export function optionImage(
+  category: ProBowlCategory,
+  value: string,
+  base: string,
+  poolKey: PoolKey = 'probowl',
+): string | null {
   if (category === 'alma')
     return value === 'NONE' ? `${base}tiles/NONE.png` : `${base}colleges/${value}.png`
-  if (category === 'draft') return `${base}tiles/${value}.png`
+  if (category === 'draft')
+    return value === 'UDFA' || poolKey !== 'nba'
+      ? `${base}tiles/${value}.png`
+      : `${base}tiles/nba/${value}.png`
   if (category === 'country') return `${base}flags/${value}.png`
   return null
 }
@@ -70,7 +82,7 @@ export function OptionCards({
         const slot = i as Slot
         const look = lookFor(state, slot)
         const isAnswer = slot === round.answerSlot
-        const img = broken[value] ? null : optionImage(category, value, assetBaseUrl)
+        const img = broken[value] ? null : optionImage(category, value, assetBaseUrl, poolKey)
         const label = describeValue(section, category, value)
         // A caption only helps when the card is a picture; "#80" under "80" is noise (Frank, 2026-09-09).
         const captioned = category === 'alma' || category === 'draft' || category === 'country'

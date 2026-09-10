@@ -34,6 +34,10 @@ export interface Events {
   streak_ended: StreakEnded
   share_clicked: { format: 'native' | 'text' | 'clipboard' | 'download' | 'failed' | 'cancelled' }
   mute_toggled: { muted: boolean }
+  /** Leaderboard (decision 0008). No email or name ever goes to analytics. */
+  signup_completed: { renamed: boolean }
+  score_posted: { streak: number; rank: number; improved: boolean }
+  leaderboard_opened: { from: 'start' | 'gameover' }
 }
 
 export type EventName = keyof Events

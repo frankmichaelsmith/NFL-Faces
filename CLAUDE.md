@@ -80,6 +80,7 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - Timestamps UTC ISO 8601. Seasons are integers (the year the regular season starts).
 - **Reproducible runs:** `?seed=123` in the URL seeds the game's rng (debugging, e2e). Production play stays random.
 - **Live-season refresh:** `.github/workflows/refresh-live-season.yml` re-pulls ESPN every Tuesday, processes new faces, rebuilds, tests, and commits to `main`; Vercel deploys. It needs no secrets.
+- **Leaderboard client** lives in `src/leaderboard/` (`client.ts`: identity in `nfl-faces:player:v1`, offline queue in `nfl-faces:score-queue:v1`, no React; `useLeaderboard.ts`: one score post per finished game, the sign-up gate = played once with no identity). Screens: `SignUpForm`, `LeaderboardScreen`. Tests inject a fake `fetch` through `deps.leaderboard`; the old App tests seed an identity so the gate stays out of their way.
 - **Leaderboard API** lives in `server/` (pure handlers over a `LeaderboardStore`; `db.ts` is the Drizzle/Neon store, `http.ts` the Web-standard router, `vite-plugin.ts` serves `/api/*` in `vite` and `vite preview`). `api/*.ts` are one-line Vercel Functions. Tests: `server/*.test.ts` (in-memory) and `server/db.test.ts` (PGlite, real SQL). Leaderboard day = Eastern calendar date.
 - **Gates before finishing any task:** `npm run typecheck && npm run lint && npm test && npm run simulate`; after UI work also `npm run build && npm run size && npm run e2e`.
 
@@ -102,4 +103,4 @@ A second mode with **no photos**. Three wheels: **season** (1995 → last comple
 - [ ] Pro Bowl seasons 1995–1999 added 2026-09-09 (980 selections, 367 players, 3881 combos; awaiting Frank checkpoint)
 - [ ] Pro Bowl P4 — finish
 - [x] Leaderboard L1 — server: schema, handlers, routing, dev/preview middleware, tests (built 2026-09-09; awaiting Frank checkpoint + Neon DATABASE_URL)
-- [ ] Leaderboard L2 — client: email gate, score posts, board screen, e2e
+- [x] Leaderboard L2 — client: email gate after the first streak, score posts with an offline queue, board screen, e2e (built 2026-09-09; awaiting Frank checkpoint)

@@ -85,6 +85,21 @@ function answerSlot(): 0 | 1 | 2 {
 
 describe('App', () => {
   beforeEach(() => {
+    // An email is on file and the API is stubbed, so the leaderboard gate stays out of these tests.
+    localStorage.setItem(
+      'nfl-faces:player:v1',
+      JSON.stringify({ playerId: 'p', name: 'Tester', email: 't@x.co', token: 'tok' }),
+    )
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(
+        async () =>
+          new Response(JSON.stringify({ day: '2026-09-09', best: 1, improved: true, rank: 1 }), {
+            status: 200,
+            headers: { 'content-type': 'application/json' },
+          }),
+      ),
+    )
     vi.useFakeTimers({
       toFake: [
         'setTimeout',
@@ -96,6 +111,7 @@ describe('App', () => {
     })
   })
   afterEach(() => {
+    vi.unstubAllGlobals()
     vi.useRealTimers()
   })
 
@@ -158,6 +174,11 @@ describe('App', () => {
 
   it('remembers the best streak and its losing roll across a reload, and offers Share', async () => {
     localStorage.clear()
+    // keep the email on file, or the leaderboard gate would replace the Share button
+    localStorage.setItem(
+      'nfl-faces:player:v1',
+      JSON.stringify({ playerId: 'p', name: 'Tester', email: 't@x.co', token: 'tok' }),
+    )
     render(<App bundle={bundle} config={config} rng={mulberry32(5)} />)
     await startRound()
     fireEvent.pointerDown(screen.getByTestId(`face-${answerSlot()}`))

@@ -3,6 +3,9 @@ import { PlayScreen } from './components/PlayScreen'
 import { StartScreen } from './components/StartScreen'
 import type { Bundle } from './game/bundle'
 import { VISIBLE_MODES, type GameConfig, type Mode } from './game/config'
+import { createLeaderboardClient, type LeaderboardClient } from './leaderboard/client'
+import { useLeaderboard } from './leaderboard/useLeaderboard'
+import { LeaderboardScreen } from './components/LeaderboardScreen'
 import { defaultRng, mulberry32, type Rng } from './game/rng'
 import { useGame, type GameDeps } from './state/useGame'
 import { loadStats, saveStats, setLastMode } from './storage/local'
@@ -17,7 +20,7 @@ interface Props {
   /** Injected in tests; otherwise fetched from /data/bundle.json. */
   bundle?: Bundle
   rng?: Rng
-  deps?: GameDeps
+  deps?: GameDeps & { leaderboard?: LeaderboardClient }
   /** Initial mode; defaults to the last one chosen on this device. */
   mode?: Mode
   /** Timing/config overrides (tests). */
@@ -92,26 +95,56 @@ function Game({
   bundle: Bundle
   mode: Mode
   rng: Rng
-  deps: GameDeps
+  deps: GameDeps & { leaderboard?: LeaderboardClient }
   onMode: (m: Mode) => void
   overrides?: Partial<GameConfig>
 }) {
   const game = useGame(bundle, mode, rng, IMAGE_BASE_URL, deps, overrides)
+  const [client] = useState(() => deps.leaderboard ?? createLeaderboardClient())
+  const lb = useLeaderboard(game, client)
+  const [boardOpen, setBoardOpen] = useState(false)
+  const openBoard = (from: 'start' | 'gameover') => {
+    game.analytics.track('leaderboard_opened', { from })
+    setBoardOpen(true)
+  }
+  const board = boardOpen ? (
+    <LeaderboardScreen
+      client={client}
+      signedIn={!!lb.identity}
+      onClose={() => setBoardOpen(false)}
+    />
+  ) : null
   if (game.state.phase === 'idle')
     return (
-      <StartScreen
-        mode={mode}
-        onMode={onMode}
-        proBowlAvailable={!!bundle.probowl}
-        bestStreak={game.stats.modes[mode].best_streak}
-        bestStreakRoll={game.stats.modes[mode].best_streak_roll}
-        onStart={game.start}
-        muted={game.muted}
-        onToggleMute={game.toggleMute}
-      />
+      <>
+        <StartScreen
+          mode={mode}
+          onMode={onMode}
+          proBowlAvailable={!!bundle.probowl}
+          bestStreak={game.stats.modes[mode].best_streak}
+          bestStreakRoll={game.stats.modes[mode].best_streak_roll}
+          onStart={game.start}
+          muted={game.muted}
+          onToggleMute={game.toggleMute}
+          needsSignUp={lb.needsSignUp}
+          onSignUp={lb.signUp}
+          onOpenBoard={() => openBoard('start')}
+        />
+        {board}
+      </>
     )
   return (
-    <PlayScreen bundle={bundle} game={game} imageBaseUrl={game.imageBaseUrl} siteUrl={SITE_URL} />
+    <>
+      <PlayScreen
+        bundle={bundle}
+        game={game}
+        imageBaseUrl={game.imageBaseUrl}
+        siteUrl={SITE_URL}
+        leaderboard={lb}
+        onOpenBoard={() => openBoard('gameover')}
+      />
+      {board}
+    </>
   )
 }
 

@@ -10,12 +10,16 @@ import { Wheels } from './Wheels'
 import { MuteButton } from './MuteButton'
 import { Announcer } from './Announcer'
 import { wheelValue } from './Wheels'
+import { SignUpForm } from './SignUpForm'
+import type { LeaderboardApi } from '../leaderboard/useLeaderboard'
 
 interface Props {
   bundle: Bundle
   game: GameApi
   imageBaseUrl: string
   siteUrl: string
+  leaderboard: LeaderboardApi
+  onOpenBoard: () => void
 }
 
 const SHARE_FORMAT: Record<
@@ -37,7 +41,14 @@ const TOAST: Record<ShareResult, string | null> = {
   failed: 'Could not share',
 }
 
-export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
+export function PlayScreen({
+  bundle,
+  game,
+  imageBaseUrl,
+  siteUrl,
+  leaderboard,
+  onOpenBoard,
+}: Props) {
   const { state, config } = game
   const round = state.round
   const over = state.phase === 'gameover'
@@ -161,24 +172,47 @@ export function PlayScreen({ bundle, game, imageBaseUrl, siteUrl }: Props) {
             {state.streak}
           </p>
           <p className="text-xs uppercase tracking-widest text-white/50">Best {state.bestStreak}</p>
-          <div className="grid grid-cols-2 gap-3">
-            <button
-              type="button"
-              onClick={onShare}
-              disabled={sharing}
-              data-testid="share"
-              className="min-h-[52px] rounded-2xl border-2 border-white/20 px-4 text-lg font-black text-white active:scale-95 disabled:opacity-60"
-            >
-              Share
-            </button>
-            <button
-              type="button"
-              onClick={game.start}
-              className="min-h-[52px] rounded-2xl bg-accent px-4 text-lg font-black text-ink active:scale-95"
-            >
-              New streak
-            </button>
-          </div>
+          {leaderboard.needsSignUp ? (
+            // First streak on this device: the email gate replaces the buttons (decision 0008).
+            <SignUpForm onSubmit={leaderboard.signUp} />
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={onOpenBoard}
+                data-testid="open-board"
+                className="min-h-[44px] rounded-xl text-sm font-bold uppercase tracking-widest text-white/70 underline-offset-4 hover:underline"
+              >
+                {leaderboard.posted
+                  ? leaderboard.posted.rank > 0
+                    ? `You're #${leaderboard.posted.rank} today · leaderboard`
+                    : "Today's leaderboard"
+                  : leaderboard.postError
+                    ? `${leaderboard.postError} · leaderboard`
+                    : leaderboard.identity
+                      ? 'Posting your streak… · leaderboard'
+                      : "Today's leaderboard"}
+              </button>
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  type="button"
+                  onClick={onShare}
+                  disabled={sharing}
+                  data-testid="share"
+                  className="min-h-[52px] rounded-2xl border-2 border-white/20 px-4 text-lg font-black text-white active:scale-95 disabled:opacity-60"
+                >
+                  Share
+                </button>
+                <button
+                  type="button"
+                  onClick={game.start}
+                  className="min-h-[52px] rounded-2xl bg-accent px-4 text-lg font-black text-ink active:scale-95"
+                >
+                  New streak
+                </button>
+              </div>
+            </>
+          )}
           {toast && (
             <p role="status" data-testid="toast" className="text-xs text-white/60">
               {toast}

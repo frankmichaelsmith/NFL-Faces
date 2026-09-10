@@ -85,6 +85,21 @@ async function startRound(wheels: number) {
 
 describe('Pro Bowl Mode', () => {
   beforeEach(() => {
+    // An email is on file and the API is stubbed, so the leaderboard gate stays out of these tests.
+    localStorage.setItem(
+      'nfl-faces:player:v1',
+      JSON.stringify({ playerId: 'p', name: 'Tester', email: 't@x.co', token: 'tok' }),
+    )
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(
+        async () =>
+          new Response(JSON.stringify({ day: '2026-09-09', best: 1, improved: true, rank: 1 }), {
+            status: 200,
+            headers: { 'content-type': 'application/json' },
+          }),
+      ),
+    )
     localStorage.clear()
     vi.useFakeTimers({
       toFake: [
@@ -97,6 +112,7 @@ describe('Pro Bowl Mode', () => {
     })
   })
   afterEach(() => {
+    vi.unstubAllGlobals()
     vi.useRealTimers()
     cleanup()
   })

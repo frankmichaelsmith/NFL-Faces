@@ -79,6 +79,21 @@ test('start, spin, tap the correct face, streak becomes 1', async ({ page }) => 
 })
 
 test('a wrong tap ends the streak and reveals the answer with a share button', async ({ page }) => {
+  // An email on file (registered for real against the preview API), or the leaderboard gate
+  // would replace the Share button after this first streak.
+  const reg = await page.request.post('/api/register', {
+    data: { email: `smoke-${Date.now()}@example.com`, name: 'Smoke' },
+  })
+  expect(reg.ok()).toBeTruthy()
+  const { playerId, token } = (await reg.json()) as { playerId: string; token: string }
+  await page.addInitScript(
+    (id: { playerId: string; token: string }) =>
+      localStorage.setItem(
+        'nfl-faces:player:v1',
+        JSON.stringify({ ...id, name: 'Smoke', email: 'smoke@example.com' }),
+      ),
+    { playerId, token },
+  )
   await page.goto('/?mode=faces')
   const bundle = (await (await page.request.get('/data/bundle.json')).json()) as Bundle
   await page.getByRole('button', { name: 'Start' }).click()

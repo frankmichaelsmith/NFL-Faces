@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { GAME_TITLE, MODE_LABELS, VISIBLE_MODES, type Mode } from '../game/config'
 import { MuteButton } from './MuteButton'
+import { SignUpForm } from './SignUpForm'
 
 interface Props {
   mode: Mode
@@ -10,6 +12,10 @@ interface Props {
   onStart: () => void
   muted: boolean
   onToggleMute: () => void
+  /** Played once with no email on file: Start opens the sign-up form first (decision 0008). */
+  needsSignUp: boolean
+  onSignUp: (email: string, name: string) => Promise<string | null>
+  onOpenBoard: () => void
 }
 
 export function StartScreen({
@@ -21,7 +27,11 @@ export function StartScreen({
   onStart,
   muted,
   onToggleMute,
+  needsSignUp,
+  onSignUp,
+  onOpenBoard,
 }: Props) {
+  const [gate, setGate] = useState(false)
   return (
     <main className="relative mx-auto flex min-h-full max-w-[720px] flex-col items-center justify-center gap-6 p-6 text-center">
       <MuteButton muted={muted} onToggle={onToggleMute} className="absolute right-4 top-4" />
@@ -65,12 +75,32 @@ export function StartScreen({
           ) : null}
         </p>
       )}
+      {needsSignUp && gate ? (
+        <div className="w-full max-w-xs rounded-2xl border border-white/10 bg-card p-4">
+          <SignUpForm
+            onSubmit={async (email, name) => {
+              const err = await onSignUp(email, name)
+              if (!err) onStart()
+              return err
+            }}
+          />
+        </div>
+      ) : (
+        <button
+          type="button"
+          onClick={needsSignUp ? () => setGate(true) : onStart}
+          className="min-h-[56px] w-full max-w-xs rounded-2xl bg-accent px-8 text-xl font-black text-ink active:scale-95"
+        >
+          Start
+        </button>
+      )}
       <button
         type="button"
-        onClick={onStart}
-        className="min-h-[56px] w-full max-w-xs rounded-2xl bg-accent px-8 text-xl font-black text-ink active:scale-95"
+        onClick={onOpenBoard}
+        data-testid="open-board"
+        className="min-h-[44px] rounded-xl px-4 text-sm font-bold uppercase tracking-widest text-white/60 underline-offset-4 hover:underline"
       >
-        Start
+        Today&apos;s leaderboard
       </button>
       <a
         href="/attribution.html"

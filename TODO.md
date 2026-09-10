@@ -2,7 +2,7 @@
 
 ## Waiting on Frank
 
-- **Leaderboard:** create a Neon Postgres database and add `DATABASE_URL` to the Vercel project (Production + Preview) — until then the live API runs the in-memory store, which forgets everything on each cold start. Sign-off on L1, then L2 (client).
+- **Leaderboard:** sign-off on L1 + L2 (Neon is connected; live health reports `store: neon`).
 - Privacy policy for email collection (legal list).
 
 - Sign-off on Pro Bowl P3 + the 1995–1999 expansion (2026-09-09), then start P4.
@@ -10,9 +10,11 @@
 - Brand assets (spec §28): wordmark, icon, share-card template, recorded sounds, placeholder headshot.
 - Phone play-test by two other people; Lighthouse on the live URL.
 
-## Leaderboard L2 — client
+## Leaderboard — later
 
-- Email + name gate after the first streak ends; score post on every streak end with an offline retry queue; leaderboard screen (top 25 + your rank); handle 401 by re-showing the gate; e2e against the preview server's in-memory store.
+- Server-issued round tokens if faked scores ever show up (scores are client-reported today).
+- Email verification (magic link) if the list fills with typos; a way for a player to change their name.
+- Analytics backend (PostHog) so `signup_completed` / `score_posted` / `leaderboard_opened` are actually recorded.
 
 ## Pro Bowl P4 — finish
 

@@ -35,6 +35,8 @@ export interface GameConfig {
   categoryWeights?: Readonly<Record<string, number>>
   /** Relative frequency of a season on the season wheel (missing = 1), keyed by season. */
   seasonWeights?: Readonly<Record<string, number>>
+  /** Share of a category's rolls pinned to one answer, e.g. Birthplace → USA 10%. */
+  answerShares?: Readonly<Record<string, Readonly<Record<string, number>>>>
   /** Which bundle section a wheel-of-players mode reads (Pro Bowl = NFL, nba = NBA). */
   poolKey?: PoolKey
 }
@@ -89,6 +91,8 @@ export const NBA_CONFIG: GameConfig = {
   poolKey: 'nba',
   // No easy category here, so the four play evenly; 1995–1999 stay rare as in the NFL.
   categoryWeights: { alma: 1, draft: 1, number: 1, country: 1 },
+  // Birthplace rounds answer USA one time in ten; the rest are international (Frank, 2026-09-10).
+  answerShares: { country: { us: 0.1 } },
 }
 
 export function configFor(mode: Mode): GameConfig {

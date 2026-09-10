@@ -10,6 +10,7 @@ A second sport inside the same app, chosen with a slider on the home screen (NFL
 - **Season label:** the year the season **ends** (2016 = 2015–16).
 - **Categories:** Alma Mater, Draft Team, Jersey Number, **Birthplace** (flag tile; Frank renamed it from Country on 2026-09-10 — Kyrie Irving reads Australia on purpose) — Birthplace replaces Position.
 - **Leaderboard:** one sign-in, **a separate daily board per sport**.
+- **Birthplace rounds answer USA only 10% of the time** (Frank, 2026-09-10); the other 90% have an international answer. A static roll weight (`answerShares` in `NBA_CONFIG`), not difficulty ramping.
 
 **Data.** `scripts/pull-nba.ts` → `content/nba_selections.csv` + `content/nba_players.csv` (Pro Bowl columns plus `country`, `country_name`, `country_source`). Draft teams: `content/nba_draft_teams.csv`, a hand table of era identities (Sonics, Vancouver, Bullets, original Hornets…) matched by the draft-season team name ESPN returns. Countries: `content/nba_countries.csv` maps ESPN and Wikipedia spellings and demonyms to a flag code; the flag images come from the MIT-licensed flag-icons set (`npm run nba:assets` → `public/flags/{code}.png`). Birthplace order of truth: a curator's manual value, ESPN's birthplace, then the Wikipedia infobox birth_place. The pull lists players whose ESPN citizenship differs from their birthplace, for information only.
 

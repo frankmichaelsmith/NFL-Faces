@@ -118,6 +118,8 @@ async function main() {
     const slots = [0, 0, 0]
     const byCat: Record<string, number> = {}
     let legacyRounds = 0
+    let countryRounds = 0
+    let usRounds = 0
     let pbUsed = new Set<string>()
     let pbStreak = 0
     let pbLongest = 0
@@ -161,6 +163,10 @@ async function main() {
       slots[r.answerSlot] = (slots[r.answerSlot] ?? 0) + 1
       byCat[c.category] = (byCat[c.category] ?? 0) + 1
       if (c.season < 2000) legacyRounds++
+      if (c.category === 'country') {
+        countryRounds++
+        if (c.answer === 'us') usRounds++
+      }
       if (pbRng() < accuracy) {
         pbUsed.add(c.player)
         pbStreak++
@@ -183,6 +189,12 @@ async function main() {
       const s = (byCat[cat] ?? 0) / rounds
       if (label === 'probowl' && (s < 0.27 || s > 0.34))
         fail(`probowl ${cat} share ${(s * 100).toFixed(1)}% outside 27–34%`)
+    }
+    // NBA Birthplace: USA answers one round in ten (Frank, 2026-09-10).
+    if (label === 'nba' && countryRounds) {
+      const usShare = usRounds / countryRounds
+      if (usShare < 0.07 || usShare > 0.13)
+        fail(`nba Birthplace USA share ${(usShare * 100).toFixed(1)}% outside 7–13%`)
     }
     // 1995–1999 are weighted to 30% of a later season (Frank, 2026-09-09): a small share, never zero.
     const legacyCombos = pb.combos.filter((c) => c.season < 2000).length
@@ -212,7 +224,9 @@ async function main() {
         byCat,
       )
         .map(([k, v]) => `${k} ${((100 * v) / rounds).toFixed(0)}%`)
-        .join(', ')}, seasons before 2000 ${((100 * legacyRounds) / rounds).toFixed(1)}%`
+        .join(
+          ', ',
+        )}, seasons before 2000 ${((100 * legacyRounds) / rounds).toFixed(1)}%${countryRounds ? `, Birthplace USA ${((100 * usRounds) / countryRounds).toFixed(1)}%` : ''}`
   }
 
   const pct = (n: number) => `${((100 * n) / rounds).toFixed(1)}%`

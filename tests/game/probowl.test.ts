@@ -182,6 +182,49 @@ describe('NBA config', () => {
     expect(NBA_CONFIG.roles).toEqual(['G', 'F', 'C'])
     expect(NBA_CONFIG.categoryWeights).toEqual({ alma: 1, draft: 1, number: 1, country: 1 })
     expect(NBA_CONFIG.seasonWeights?.['1999']).toBe(0.3)
+    expect(NBA_CONFIG.answerShares).toEqual({ country: { us: 0.1 } })
     expect(NBA_CONFIG.wheels.map((w) => w.kind)).toEqual(['season', 'player', 'category'])
+  })
+})
+
+describe('answer shares', () => {
+  it('pins USA to one Birthplace round in ten whatever its count in the pool', () => {
+    const combo2 = (player: string, answer: string): ProBowlCombo => ({
+      season: 2010,
+      player,
+      category: 'country',
+      answer,
+      distractors: ['fr', 'es', 'us', 'de'].filter((x) => x !== answer),
+    })
+    const section: ProBowlSection = {
+      ...S,
+      rosters: { '2010': ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'] },
+      // nine Americans, one Frenchman: naturally USA would answer 90% of the time
+      combos: [
+        ...['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'].map((p) => combo2(p, 'us')),
+        combo2('j', 'fr'),
+      ],
+    }
+    const rng = mulberry32(21)
+    let us = 0
+    const N = 20000
+    for (let i = 0; i < N; i++)
+      if (
+        pickProBowlCombo(section, new Set(), rng, { answerShares: { country: { us: 0.1 } } })!
+          .answer === 'us'
+      )
+        us++
+    expect(us / N).toBeGreaterThan(0.08)
+    expect(us / N).toBeLessThan(0.12)
+    // without the share, the natural 90%
+    let plain = 0
+    for (let i = 0; i < N; i++)
+      if (pickProBowlCombo(section, new Set(), rng, {})!.answer === 'us') plain++
+    expect(plain / N).toBeGreaterThan(0.85)
+    // a pool with no international players still rolls (share cannot apply)
+    const allUs = { ...section, combos: section.combos.filter((c) => c.answer === 'us') }
+    expect(
+      pickProBowlCombo(allUs, new Set(), rng, { answerShares: { country: { us: 0.1 } } }),
+    ).not.toBeNull()
   })
 })

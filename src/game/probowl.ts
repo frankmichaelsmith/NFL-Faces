@@ -38,12 +38,19 @@ export interface ProBowlWeights {
   categories?: Readonly<Record<string, number>>
   /** Relative frequency per season, keyed by season (missing = 1). */
   seasons?: Readonly<Record<string, number>>
+  /**
+   * Share of a category's rolls whose answer is a given value, e.g.
+   * `{ country: { us: 0.1 } }`: one Birthplace round in ten answers USA, the
+   * rest are international (Frank, 2026-09-10). Static, never ramps.
+   */
+  answerShares?: Readonly<Record<string, Readonly<Record<string, number>>>>
 }
 
 /** Static wheel weights (never ramp): position ≈ one roll in eleven, 1995–1999 at 30% of a later season. */
 export const DEFAULT_WEIGHTS: ProBowlWeights = {
   categories: PROBOWL_CONFIG.categoryWeights,
   seasons: PROBOWL_CONFIG.seasonWeights,
+  answerShares: PROBOWL_CONFIG.answerShares,
 }
 
 /** Combos still available for a streak that has already rolled `used` players. */
@@ -69,11 +76,24 @@ export function pickProBowlCombo(
     else byCategory.set(c.category, [c])
   }
   const category = weightedSample(rng, [...byCategory.keys()], (c) => weights.categories?.[c] ?? 1)
-  return weightedSample(
-    rng,
-    byCategory.get(category)!,
-    (c) => weights.seasons?.[String(c.season)] ?? 1,
-  )
+  const catPool = byCategory.get(category)!
+  const seasonWeight = (c: ProBowlCombo) => weights.seasons?.[String(c.season)] ?? 1
+  // Answer shares: scale the combos with a pinned answer so that, together, they take
+  // exactly their share of this category's rolls, whatever their count in the pool.
+  const shares = weights.answerShares?.[category]
+  const factor = new Map<string, number>()
+  if (shares) {
+    const total = catPool.reduce((t, c) => t + seasonWeight(c), 0)
+    for (const [answer, share] of Object.entries(shares)) {
+      const own = catPool
+        .filter((c) => c.answer === answer)
+        .reduce((t, c) => t + seasonWeight(c), 0)
+      const rest = total - own
+      if (own > 0 && rest > 0 && share > 0 && share < 1)
+        factor.set(answer, (share / (1 - share)) * (rest / own))
+    }
+  }
+  return weightedSample(rng, catPool, (c) => seasonWeight(c) * (factor.get(c.answer) ?? 1))
 }
 
 export function buildProBowlRound(combo: ProBowlCombo, rng: Rng): ProBowlRound {

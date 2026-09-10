@@ -75,7 +75,7 @@ export function LeaderboardScreen({ client, onClose, signedIn, mode = 'probowl',
               data-testid="close-board"
               className="min-h-[44px] rounded-xl border border-white/20 px-4 text-sm font-bold"
             >
-              Close
+              Back
             </button>
           </div>
           {/* One line, left-aligned (Frank, 2026-09-10): sport toggle, then the day with its arrows. */}

@@ -7,7 +7,13 @@
 import { and, asc, count, desc, eq, lt, gt, or, sql } from 'drizzle-orm'
 import { integer, pgTable, primaryKey, text } from 'drizzle-orm/pg-core'
 import type { PgDatabase } from 'drizzle-orm/pg-core'
-import type { DailyScore, LeaderboardStore, Player, RankedScore } from './leaderboard.js'
+import type {
+  DailyScore,
+  DailyTotals,
+  LeaderboardStore,
+  Player,
+  RankedScore,
+} from './leaderboard.js'
 
 // any Drizzle pg database (neon-http, pglite, …)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,6 +43,17 @@ export const dailyScores = pgTable(
   (t) => [primaryKey({ columns: [t.player_id, t.day, t.mode] })],
 )
 
+export const dailyTotals = pgTable(
+  'daily_totals',
+  {
+    day: text('day').notNull(),
+    mode: text('mode').notNull(),
+    rounds: integer('rounds').notNull(),
+    games: integer('games').notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.day, t.mode] })],
+)
+
 export const ENSURE_SCHEMA_SQL = `
 CREATE TABLE IF NOT EXISTS players (
   id text PRIMARY KEY,
@@ -56,6 +73,13 @@ CREATE TABLE IF NOT EXISTS daily_scores (
   PRIMARY KEY (player_id, day, mode)
 );
 CREATE INDEX IF NOT EXISTS daily_scores_board_idx ON daily_scores (mode, day, streak DESC, achieved_at ASC);
+CREATE TABLE IF NOT EXISTS daily_totals (
+  day text NOT NULL,
+  mode text NOT NULL,
+  rounds integer NOT NULL,
+  games integer NOT NULL,
+  PRIMARY KEY (day, mode)
+);
 `
 
 /** Run the bootstrap one statement at a time (neon-http accepts a single statement per call). */
@@ -170,5 +194,25 @@ export class DrizzleLeaderboardStore implements LeaderboardStore {
       .from(dailyScores)
       .where(and(eq(dailyScores.day, day), eq(dailyScores.mode, mode)))
     return Number(rows[0]?.n ?? 0)
+  }
+  async addGame(day: string, mode: string, rounds: number) {
+    await this.db
+      .insert(dailyTotals)
+      .values({ day, mode, rounds, games: 1 })
+      .onConflictDoUpdate({
+        target: [dailyTotals.day, dailyTotals.mode],
+        set: {
+          rounds: sql`${dailyTotals.rounds} + ${rounds}`,
+          games: sql`${dailyTotals.games} + 1`,
+        },
+      })
+  }
+  async totals(day: string, mode: string): Promise<DailyTotals> {
+    const rows = await this.db
+      .select()
+      .from(dailyTotals)
+      .where(and(eq(dailyTotals.day, day), eq(dailyTotals.mode, mode)))
+    const r = rows[0]
+    return r ? { day, mode, rounds: r.rounds, games: r.games } : { day, mode, rounds: 0, games: 0 }
   }
 }

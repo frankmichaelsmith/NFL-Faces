@@ -73,6 +73,7 @@ const fetchFn = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
       })),
       you: null,
       players: sorted.length,
+      rounds: 57,
     })
   }
   return json(404, { error: 'not_found', message: 'no' })
@@ -182,6 +183,7 @@ describe('Leaderboard flow (decision 0008)', () => {
     // The board marks our row.
     fireEvent.click(screen.getByTestId('open-board'))
     await until(() => expect(screen.getAllByTestId('board-row')).toHaveLength(2))
+    expect(screen.getByText(/57 rounds played/)).toBeInTheDocument()
     const ours = screen.getAllByTestId('board-row')[1]!
     expect(ours).toHaveTextContent('Frank')
     expect(ours.dataset.you).toBe('true')

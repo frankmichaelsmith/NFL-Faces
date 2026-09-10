@@ -45,6 +45,13 @@ export interface DailyScore {
 export interface RankedScore extends DailyScore {
   name: string
 }
+/** Running totals for one day and mode, bumped by every score post (improving or not). */
+export interface DailyTotals {
+  day: string
+  mode: string
+  rounds: number
+  games: number
+}
 
 export interface LeaderboardStore {
   findPlayerByEmail(email: string): Promise<Player | null>
@@ -59,6 +66,9 @@ export interface LeaderboardStore {
   /** 1 + the number of rows that beat this one (higher streak, or same streak reached earlier). */
   rankOf(score: DailyScore): Promise<number>
   countScores(day: string, mode: string): Promise<number>
+  /** Add one game of `rounds` rounds to the day's totals. */
+  addGame(day: string, mode: string, rounds: number): Promise<void>
+  totals(day: string, mode: string): Promise<DailyTotals>
 }
 
 // ---- time ---------------------------------------------------------------------------------
@@ -91,6 +101,13 @@ export const registerSchema = z.object({
 })
 export const scoreSchema = z.object({
   streak: z.number().int().min(0).max(MAX_STREAK),
+  // Older clients post no rounds; a game is its streak plus the round that ended it.
+  rounds: z
+    .number()
+    .int()
+    .min(0)
+    .max(MAX_STREAK + 1)
+    .optional(),
   roll: z.string().trim().max(120).nullable().default(null),
   mode: z.enum(['probowl', 'faces']),
 })
@@ -164,6 +181,7 @@ export async function postScore(
   const { streak, roll, mode } = parsed.data
   const now = deps.now()
   const day = etDay(now)
+  await deps.store.addGame(day, mode, parsed.data.rounds ?? streak + 1)
   const current = await deps.store.getScore(player.id, day, mode)
   let best = current
   let improved = false
@@ -198,7 +216,8 @@ export async function leaderboard(
     if (mine) you = { rank: await deps.store.rankOf(mine), streak: mine.streak, name: me.name }
   }
   const players = await deps.store.countScores(day, BOARD_MODE)
-  return { status: 200, body: { day, mode: BOARD_MODE, rows, you, players } }
+  const { rounds } = await deps.store.totals(day, BOARD_MODE)
+  return { status: 200, body: { day, mode: BOARD_MODE, rows, you, players, rounds } }
 }
 
 // ---- in-memory store (dev and tests) ----------------------------------------------------------
@@ -211,6 +230,7 @@ export function beats(a: DailyScore, b: DailyScore): boolean {
 export class InMemoryLeaderboardStore implements LeaderboardStore {
   players = new Map<string, Player>() // by id
   scores = new Map<string, DailyScore>() // by player:day:mode
+  dayTotals = new Map<string, DailyTotals>() // by day:mode
 
   async findPlayerByEmail(email: string) {
     return [...this.players.values()].find((p) => p.email === email) ?? null
@@ -241,5 +261,12 @@ export class InMemoryLeaderboardStore implements LeaderboardStore {
   }
   async countScores(day: string, mode: string) {
     return this.forDay(day, mode).length
+  }
+  async addGame(day: string, mode: string, rounds: number) {
+    const t = await this.totals(day, mode)
+    this.dayTotals.set(`${day}:${mode}`, { ...t, rounds: t.rounds + rounds, games: t.games + 1 })
+  }
+  async totals(day: string, mode: string) {
+    return this.dayTotals.get(`${day}:${mode}`) ?? { day, mode, rounds: 0, games: 0 }
   }
 }

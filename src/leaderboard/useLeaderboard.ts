@@ -35,7 +35,9 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
 
   const submit = useCallback(async () => {
     const round = state.roundIndex
-    const r = await client.submitScore({ streak: state.streak, roll: losingRoll, mode })
+    // Rounds in this game: every correct tap plus the one that ended it (none when the pool ran out).
+    const rounds = state.streak + (state.lastOutcome === 'exhausted' ? 0 : 1)
+    const r = await client.submitScore({ streak: state.streak, rounds, roll: losingRoll, mode })
     if (r.ok) {
       setOutcome({ round, result: r.result, error: null })
       analytics.track('score_posted', {
@@ -47,7 +49,7 @@ export function useLeaderboard(game: GameApi, client: LeaderboardClient): Leader
       setOutcome({ round, result: null, error: r.reason === 'unregistered' ? null : r.message })
       if (r.reason === 'signed_out') setIdentity(null)
     }
-  }, [client, state.roundIndex, state.streak, losingRoll, mode, analytics])
+  }, [client, state.roundIndex, state.streak, state.lastOutcome, losingRoll, mode, analytics])
 
   // One post per finished game, as soon as it ends.
   useEffect(() => {

@@ -89,6 +89,20 @@ describe('postScore', () => {
     expect(r).toMatchObject({ best: 9, improved: true })
     expect((await d.store.getScore('p1', '2026-09-09', 'probowl'))?.roll).toBe('z')
   })
+  it('every post adds its rounds to the day total, improving or not', async () => {
+    const d = fresh()
+    const { token } = ok<RegisterResponse>(await register(d, { email: 'a@b.co', name: 'Al' }), 201)
+    await postScore(d, token, { streak: 4, rounds: 5, roll: null, mode: 'probowl' })
+    await postScore(d, token, { streak: 2, rounds: 3, roll: null, mode: 'probowl' })
+    await postScore(d, token, { streak: 0, rounds: 1, roll: null, mode: 'probowl' })
+    await postScore(d, token, { streak: 9, rounds: 10, roll: null, mode: 'faces' }) // other mode
+    const b = ok<LeaderboardResponse>(await leaderboard(d, token, null))
+    expect(b.rounds).toBe(9)
+    expect(await d.store.totals('2026-09-09', 'probowl')).toMatchObject({ rounds: 9, games: 3 })
+    expect(
+      (await postScore(d, token, { streak: 1, rounds: 5000, roll: null, mode: 'probowl' })).status,
+    ).toBe(400)
+  })
   it('a zero streak records nothing', async () => {
     const d = fresh()
     const { token } = ok<RegisterResponse>(await register(d, { email: 'a@b.co', name: 'Al' }), 201)
@@ -151,6 +165,8 @@ describe('leaderboard', () => {
     ])
     expect(b.you).toEqual({ rank: 3, streak: 5, name: 'Cal' })
     expect(b.players).toBe(4)
+    // rounds: each seeded game posted no rounds field, so it counts streak + 1
+    expect(b.rounds).toBe(6 + 10 + 6 + 2)
   })
   it('reports the caller outside the top rows and nothing for the unranked', async () => {
     const d = fresh()

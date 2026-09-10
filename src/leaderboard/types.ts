@@ -18,6 +18,8 @@ export interface RegisterResponse {
 
 export interface ScoreRequest {
   streak: number
+  /** Rounds played in this game (the streak plus the losing round). Feeds the day's total. */
+  rounds?: number
   /** The losing roll as shown on screen, e.g. "2003 · Daunte Culpepper · Alma Mater". */
   roll: string | null
   mode: 'probowl' | 'faces'
@@ -46,6 +48,8 @@ export interface LeaderboardResponse {
   you: { rank: number; streak: number; name: string } | null
   /** Players with a score today. */
   players: number
+  /** Rounds played today across every posted game. */
+  rounds: number
 }
 
 export interface HealthResponse {

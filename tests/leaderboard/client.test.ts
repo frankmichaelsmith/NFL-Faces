@@ -40,7 +40,14 @@ function fakeApi() {
       return json(200, { day: '2026-09-09', best: b.streak, improved: true, rank: 2 })
     }
     if (path.includes('/api/leaderboard'))
-      return json(200, { day: '2026-09-09', mode: 'probowl', rows: [], you: null, players: 0 })
+      return json(200, {
+        day: '2026-09-09',
+        mode: 'probowl',
+        rows: [],
+        you: null,
+        players: 0,
+        rounds: 0,
+      })
     return json(404, { error: 'not_found', message: 'no' })
   })
   return {
